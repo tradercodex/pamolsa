@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
+
+.Footer-pm {
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+    background: #ECECEC;
+}
+
+.container-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 100px 20px 100px;
+    margin-bottom: 40px;
+}
+
+.contact .title h6 {
+    font-family: 'Raleway';
+    font-size: 14px;
+    text-decoration: underline;
+    color: #3d3d3d;
+    font-weight: 700;
+}
+
+.contact .info-contact {
+    font-family: 'Raleway';
+    font-weight: 300;
+    font-size: 14px;
+    color: #767676;
+}
+
+.contact .info-contact div {
+    margin-top: 23px;
+}
+
+.Footer-pm hr {
+    width: 90%;
+    margin: 0 auto;
+    color: none;
+    border: 1px solid rgba(118, 118, 118, 0.15);
+}
+
+.copy-socials {
+    padding: 30px 100px 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copy-right {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.copy-right div.span {
+    font-family: 'Amble-light';
+    font-size: 14px;
+    color: #767676;
+}
+
+.copy p {
+    color: rgba(0, 0, 0, 0.8);
+    font-family: 'Amble';
+    font-size: 14px;
+}
+
+.socials a {
+    margin-left: 10px;
+    cursor: pointer;
+}

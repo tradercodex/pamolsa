@@ -1,0 +1,164 @@
+.Informations {
+    position: relative;
+    z-index: 1024;
+    max-width: 1440px;
+    margin: 0 auto;
+    height: auto;
+    background: #Fff;
+    overflow: hidden;
+    padding-bottom: 50px;
+}
+
+.square-information {
+    position: absolute;
+    width: 1708.8px;
+    height: 1219.8px;
+    left: -50px;
+    top: -670px;
+    background: #005286;
+    border-radius: 191px;
+    transform: rotate(-16.18deg);
+}
+
+.container-informations {
+    position: relative;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(7,1fr);
+    grid-gap: 60px;
+    margin-bottom: 320px;
+}
+
+.img-carbajal {
+    position: relative;
+    z-index: 1024;
+    display: flex;
+    top: 100px;
+    justify-content: flex-end;
+    grid-column: 1/5;   
+}
+
+.img-carbajal .wc {
+    width: 578.45px;
+}
+
+.square-carbajal {
+    position: absolute;
+    top: 0px;
+    width: 560.67px;
+    height: 393.04px;
+    right: 80px;
+    z-index: 1020;
+    background: rgba(255, 255, 255, 0.14);
+    border-radius: 50px;
+    transform: rotate(9.05deg);
+}
+
+.img-carbajal img {
+    position: relative;
+    z-index: 1022;
+    border-radius: 30px;
+}
+
+.info-carbajal {
+    display: flex;
+    justify-content: start;
+    align-items: flex-end;
+    grid-column: 5/8;
+}
+
+.info-carbajal div {
+    width: 351px;
+}
+
+.info-carbajal img {
+    position: relative;
+    right: 20px;
+}
+
+.info-carbajal h6 {
+    font-family: 'Amble';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+    color: #fff;
+    margin-top: 30px;
+}
+
+.info-carbajal p {
+    font-family: 'Amble-light';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 132.3%;
+    color: #fff;
+    margin-top: 30px;
+}
+
+.container-documents {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.info-documents {
+    grid-column: 1/4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.info-documents .idms {
+    width: 383px;
+}
+
+.info-documents h5 {
+    font-family: 'Amble';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    color: #005286;
+}
+
+.info-documents p {
+    font-family: 'Amble-light';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 132.3%;
+    color: #4D4D4C;
+    margin-top: 40px;
+}
+
+.documents {
+    grid-column: 4/8;
+    display: flex;
+    justify-content: center;
+}
+
+.document {
+    box-shadow: 0px 4px 20px rgba(216, 216, 216, 0.3);
+    border-radius: 31.5px;
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 431px;
+}
+
+.document button{
+    background: #009FE3;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.document p {
+    margin-left: 20px;
+    font-family: 'Amble-light';
+    text-decoration: underline;
+    color: #005286;
+    font-size: 14px;
+}

@@ -1,0 +1,56 @@
+.Quotes-pm {
+    max-width: 1440px;
+    background: #fff;
+    height: auto;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+}
+
+.Sidebar-Material_Quote {
+    grid-column: 1/3;
+    background: rgba(244, 243, 243, 0.57);
+    height: 100vh;
+    padding: 20px;
+}
+
+.Materials-sidebar_pm {
+    margin-top: 20px;
+}
+
+.Materials-sidebar_pm p {
+    font-size: 10px;
+    color: #4c4c4c;
+    font-family: 'Amble';
+}
+
+.Materials-sidebar_pm span {
+    font-size: 10px;
+    color: #009FE3;
+    font-family: 'Amble';
+}
+
+.Materials-sidebar_pm h5 {
+    font-size: 12px;
+    margin-top: 20px;
+    color: #4c4c4c;
+    font-family: 'Amble';
+}
+
+.Materials-sidebar_pm .material {
+    position: relative;
+    font-size: 14px;
+    margin-top: 10px;
+    color: #4c4c4c;
+    font-family: 'Amble-light';
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(118, 118, 118, 0.45);
+}
+
+li a.active-category {
+    background: #009FE3;
+    padding: 8px ;
+    border-radius: 30px;
+}

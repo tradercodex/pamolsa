@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'Amble';
+    src: url('../fonts/Amble-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Amble-Light';
+    src: url('../fonts/Amble-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Amble-Bold';
+    src: url('../fonts/Amble-Bold.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #E5E5E5;
+    position: relative;
+}
+
+.container {
+    position: relative;
+    max-width: 1440px;
+    overflow: hidden;
+    margin: 0 auto;
+    background: #FFFFFF;
+}
+
+.container-grid {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+}

@@ -1,0 +1,93 @@
+.Header-pm {
+    width: 100%;
+    background: #FFFFFF;
+    height: 88px;
+    z-index: 1024;
+    box-shadow: 0px 4px 30px rgba(172, 172, 172, 0.15);
+}
+
+.Container-header_pm {
+    position: relative;
+    top: 10px;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    align-items: flex-end;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.Container-header_pm .Logo-pm{
+    display: flex;
+    justify-content: flex-end;
+    grid-column: 1/2;
+}
+
+.Container-header_pm .Nav-pm {
+    grid-column: 2/6;
+    display: flex;
+    justify-content: center;
+}
+
+.Container-header_pm .Nav-pm ul{
+    display: flex;
+    list-style: none;
+}
+
+.Container-header_pm .Nav-pm ul li{
+    margin-left: 30px;
+}
+
+.Container-header_pm .Nav-pm ul li a{
+    font-size: 14px;
+    color: #4D4D4C;
+    font-family: 'Amble-Light';
+}
+
+.Container-header_pm .Options-pm_qe {
+    grid-column: 6/8;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 20px;
+}
+
+.Container-header_pm .Options-pm_qe .Quote-btn {
+    margin-right: 40px;
+}
+
+.Container-header_pm .Options-pm_qe .Ecommerce-btn button {
+    background: #009FE3;
+    border-radius: 30px;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Amble';
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.Container-header_pm .Options-pm_qe .Ecommerce-btn button svg{
+    margin-right: 10px;
+}
+
+.Nav-pm ul li {
+    position: relative;
+    z-index: 1;
+}
+
+.Nav-pm ul li a {
+    text-decoration: none;
+}
+
+.Nav-pm ul li a.active {
+    color: #8DB72E;
+    border-bottom: 2px solid #8DB72E;
+    font-family: 'Amble-bold';
+    padding-bottom: 22px;
+    transition: 2s
+}
+
+

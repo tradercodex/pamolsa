@@ -1,0 +1,375 @@
+.Slicks-pm {
+    position: relative;
+    max-width: 1440px;
+    overflow: hidden;
+    margin: 0 auto;
+    height: 140vh;
+    background: #FFFFFF;
+}
+
+.Slicks-us_pm {
+    position: relative;
+    max-width: 1440px;
+    overflow: hidden;
+    margin: 0 auto;
+    height: 75vh;
+    background: #FFFFFF;
+}
+
+.Slicks-sb_pm , .Slicks-wwu_pm, .Slicks-news_pm, .Slicks-cnt_pm {
+    position: relative;
+    max-width: 1440px;
+    overflow: hidden;
+    margin: 0 auto;
+    height: 75vh;
+    background: #FFFFFF;
+}
+
+.Slicks-clts_pm {
+    position: relative;
+    max-width: 1440px;
+    overflow: hidden;
+    margin: 0 auto;
+    height: 75vh;
+    background: #FFFFFF;
+}
+
+
+.slick-slider {
+    width: 100%;
+    height: 100%;
+}
+
+.slick-list {
+    z-index: 2;
+}
+
+.Radius {
+    position: absolute;
+    width: 1767.76px;
+    height: 140vh;
+    left: -158px;
+    top: -260.45px;
+    background: rgba(152, 194, 29, 0.35);
+    border-radius: 191px;
+    transform: rotate(-16.85deg);
+}
+
+.Radius-us{
+    position: absolute;
+    width: 1767.76px;
+    height: 55vh;
+    left: -58px;
+    top: -49.45px;
+    background: rgba(0, 82, 134, 0.16);
+    border-radius: 191px;
+    transform: rotate(-16.85deg);
+}
+
+.Radius-sb, .Radius-wwu, .Radius-cnt {
+    position: absolute;
+    width: 1767.76px;
+    height: 55vh;
+    left: -58px;
+    top: -49.45px;
+    background: rgba(0, 82, 134, 0.16);
+    border-radius: 191px;
+    transform: rotate(-16.85deg);
+}
+
+.Radius-clts, .Radius-news {
+    position: absolute;
+    width: 1767.76px;
+    height: 55vh;
+    left: -58px;
+    top: -49.45px;
+    background: rgba(50, 113, 30, 0.2);
+    border-radius: 191px;
+    transform: rotate(-16.85deg);
+}
+
+.Rotate-slick {
+    overflow: hidden;
+    position: relative;
+    width: 1920px;
+    height: 140vh;
+    top: -330px;
+    left: -102px;
+    border-radius: 191px;
+    transform: rotate(-21.34deg);
+}
+
+.Rotate-slick_us {
+    overflow: hidden;
+    position: relative;
+    width: 2700px;
+    height: 94vh;
+    top: -600px;
+    left: -102px;
+    border-radius: 191px;
+    transform: rotate(-21.34deg);
+}
+
+.Rotate-slick_sb, .Rotate-slick_wwu, .Rotate-slick_clts, .Rotate-slick_news, .Rotate-slick_cnt {
+    overflow: hidden;
+    position: relative;
+    width: 2700px;
+    height: 94vh;
+    top: -600px;
+    left: -102px;
+    border-radius: 191px;
+    transform: rotate(-21.34deg);
+}
+
+.Rotate-slick::before {
+    position: absolute;
+    z-index: 1023;
+    content: '';
+    background-color: rgba(0, 82, 134, 0.1);
+    left: -3px;
+    top: 260px;
+    transform: rotate(21.34deg);
+    width: 1440px;
+    height: 136vh;
+}
+
+.Rotate-slick_us::before ,
+.Rotate-slick_sb::before , 
+.Rotate-slick_wwu::before, 
+.Rotate-slick_clts::before, 
+.Rotate-slick_news::before,
+.Rotate-slick_cnt::before  {
+    position: absolute;
+    z-index: 1023;
+    content: '';
+    width: 1781.73px;
+    height: 1315.57px;
+    left: -318px;
+    background-color: rgba(0, 82, 134, 0.3);
+    border-radius: 191px;
+    transform: rotate(-21.34deg);
+}
+
+.Rotate-slick::after {
+    content: '';
+    z-index: 1022;
+    position: absolute;
+    background-image: url('../images/img/bannerpm.png');
+    background-blend-mode: soft-light;
+    background-color: rgba(0, 82, 134, 0.2);
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 0px;
+    top: 190px;
+    transform: rotate(21.34deg);
+    width: 1560px;
+    height: 144vh;
+}
+
+.Rotate-slick_us::after {
+    content: '';
+    z-index: 1022;
+    position: absolute;
+    background-image: url('../images/img/us.png');
+    background-blend-mode: soft-light;
+    background-color: rgba(0, 82, 134, 0.2);
+    background-repeat: no-repeat;
+    background-size: contain;
+    left: -55px;
+    top: 350px;
+    opacity: 1;
+    transform: rotate(21.34deg);
+    width: 1560px;
+    height: 80vh;
+}
+
+.Rotate-slick_wwu::after {
+    content: '';
+    z-index: 1022;
+    position: absolute;
+    background-image: url('../images/img/workwithus.png');
+    background-blend-mode: soft-light;
+    background-color: rgba(0, 82, 134, 0.2);
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: -55px;
+    top: 350px;
+    opacity: 1;
+    transform: rotate(21.34deg);
+    width: 1560px;
+    height: 80vh;
+}
+
+
+.Rotate-slick_sb::after {
+    content: '';
+    z-index: 1022;
+    position: absolute;
+    background-image: url('../images/img/sostenibilidad.png');
+    background-blend-mode: soft-light;
+    background-color: rgba(0, 82, 134, 0.2);
+    background-repeat: no-repeat;
+    background-size: contain;
+    left: -55px;
+    top: 350px;
+    opacity: 1;
+    transform: rotate(21.34deg);
+    width: 1560px;
+    height: 80vh;
+}
+
+.Rotate-slick_clts::after {
+    content: '';
+    z-index: 1022;
+    position: absolute;
+    background-image: url('../images/img/clients.png');
+    background-blend-mode: soft-light;
+    background-color: rgba(0, 82, 134, 0.2);
+    background-repeat: no-repeat;
+    background-size: contain;
+    left: -55px;
+    top: 350px;
+    opacity: 1;
+    transform: rotate(21.34deg);
+    width: 1560px;
+    height: 80vh;
+}
+
+.Rotate-slick_news::after {
+    content: '';
+    z-index: 1022;
+    position: absolute;
+    background-image: url('../images/img/news.png');
+    background-blend-mode: soft-light;
+    background-color: rgba(20, 20, 20, 0.2);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    left: -55px;
+    top: 350px;
+    opacity: 1;
+    transform: rotate(21.34deg);
+    width: 1560px;
+    height: 80vh;
+}
+
+.Rotate-slick_cnt::after {
+    content: '';
+    z-index: 1022;
+    position: absolute;
+    background-image: url('../images/img/contacto.png');
+    background-blend-mode: soft-light;
+    background-color: rgba(0, 82, 134, 0.2);
+    background-repeat: no-repeat;
+    background-size: contain;
+    left: -55px;
+    top: 350px;
+    opacity: 1;
+    transform: rotate(21.34deg);
+    width: 1560px;
+    height: 80vh;
+}
+
+.Rotate-prueba {
+    overflow: hidden;
+    position: relative;
+    width: 1920px;
+    height: 100vh;
+    top: -330px;
+    left: -152px;
+    border-radius: 191px;
+    transform: rotate(-21.34deg);
+}
+
+.Elipse {
+    position: absolute;
+    z-index: 1022;
+    width: 500px;
+    height: 500px;
+    top: -100px;
+    background-repeat: no-repeat;
+    background-image: url('../images/img/elipse.png');
+}
+
+.Elipse img {
+    position: relative;
+    top: 160px;
+    left: 100px;
+}
+
+.Slicks-pm ul.slick-dots {
+    transform: rotate(90deg);
+    right: 700px;
+    top: -250px;
+    z-index: 1000;
+    height: 100%;
+    width: 140px;
+}
+
+.slick-dots li button:before {
+    opacity: 1 !important;
+    color: transparent !important;
+    padding: 1px !important;
+    width: 8px !important; 
+    height: 8px !important;
+}
+
+
+.slick-dots li.slick-active button:before {
+    opacity: 1 !important;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.slick-dots li {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 12px !important; 
+    height: 12px !important;
+}
+
+.info-slick,.info-slick_sb ,.info-slick_wwu, .info-slick_clts, .info-slick_news {
+    position: relative;
+    left: 100px;
+    top: 830px;
+    z-index: 999999;
+    transform: rotate(21.34deg);
+}
+
+.info-slick h2, .info-slick_sb h2, .info-slick_wwu h2, .info-slick_clts h2, .info-slick_news h2  {
+    color: #fff;
+    font-size: 50px;
+    width: 485px;
+    font-family: 'Amble';
+}
+
+.info-slick p , .info-slick_sb p, .info-slick_wwu p, .info-slick_clts p , .info-slick_news p{
+    color: #fff;
+    font-size: 19px;
+    margin-top: 20px;
+    font-family: 'Amble-light';
+}
+
+.info-slick .more-btn button{
+    color: #fff;
+    font-size: 14px;
+    margin-top: 20px;
+    background: #32711E;
+    font-family: 'Amble-light';
+    border: none;
+    border-radius: 30px;
+    padding: 10px 45px;
+    cursor: pointer;
+}
+
+.footer-slick {
+    position: relative;
+    top: -280px;
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
+.footer-slick .tree-pm img {
+    position: absolute;
+    z-index: 1;
+}

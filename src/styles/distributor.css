@@ -1,0 +1,88 @@
+.Distributor-pm {
+    max-width: 1440px;
+    position: relative;
+    background-image: url('../images/img/distributorbanner.png');
+    height: 50vh;
+    background-size: cover;
+    width: 100%;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+}
+
+.Postulation-pm {
+    max-width: 1440px;
+    position: relative;
+    background-image: url('../images/img/workwithus.png');
+    height: 50vh;
+    background-size: cover;
+    width: 100%;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+}
+
+.Distributor-pm::after, .Postulation-pm::after {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 82, 134, 0.2);
+    content: '';
+}
+
+.back button {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+    outline: none;
+    border: 1px solid #fff;
+    background: rgba(118, 118, 118, 0.06);
+    border-radius: 30px;
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Amble';
+    padding: 8px 20px;
+    cursor: pointer;
+}
+
+.form-container input {
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 40px;
+    padding: 14px;
+    margin-right: 10px;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+    font-family: 'Amble';
+}
+
+.form-container input::placeholder {
+    color: rgba(77, 77, 76, 0.6);
+    font-family: 'Amble-light';
+}
+
+.grid-form_doble {
+    grid-gap: 20px;
+    display: grid;
+    margin-top: 20px;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.grid-form_doble_right {
+    grid-gap: 20px;
+    display: grid;
+    margin-top: 20px;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.grid-form_triple {
+    grid-gap: 20px;
+    display: grid;
+    margin-top: 20px;
+    grid-template-columns: repeat(3,1fr);
+}
