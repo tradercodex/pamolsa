@@ -36,3 +36,27 @@ body {
     display: grid;
     grid-template-columns: repeat(7,1fr);
 }
+
+.tree-left {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: -84px;
+    left: 0px;
+    width: 232.98px;
+    height: 284.53px;
+    z-index: 3;
+    background-image: url('../images/img/fondocaña2.png');
+}
+
+.tree-right {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    right: 0px;
+    border-radius: 0px 50px 50px 0px;
+    width: 232.98px;
+    height: 284.53px;
+    z-index: 3;
+    background-image: url('../images/img/fondocaña1.png');
+}
