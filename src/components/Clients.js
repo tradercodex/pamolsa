@@ -16,8 +16,8 @@ const Clients = ({match}) => {
         centerMode: true,
         centerPadding: "60px",
         initialSlade: 0,
-        // autoplay: true,
-        // autoplaySpeed: 4000,
+        autoplay: true,
+        autoplaySpeed: 4000,
         appendDots: dots => (
             <div
                 style={{
@@ -69,8 +69,15 @@ const Clients = ({match}) => {
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div className="img-clients">
+                    <div className="container-clients">
+                        <div className="title-client">
+                            <div>
+                                <h4>Nuestros clientes</h4>
+                                <p>Creciendo y mejorando con ustedes</p>
+                            </div>
+                        </div>
+                        <div className="img-clients_pm">
+                            <div className="img-clients">
                             <div className="img-client_slick">
                                 <img src={require('../images/img/client1.png')} />
                             </div>
@@ -91,6 +98,7 @@ const Clients = ({match}) => {
                             </div>
                             <div className="img-client_slick">
                                 <img src={require('../images/img/client7.png')} />
+                            </div>
                             </div>
                         </div>
                     </div>

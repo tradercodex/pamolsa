@@ -13,9 +13,9 @@ const Slicks = ({ match }) => {
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        // autoplay: true,
-        // autoplaySpeed: 2000,
-        // pauseOnHover: true
+        autoplay: true,
+        autoplaySpeed: 2000,
+        pauseOnHover: true
     };
 
     return (
@@ -38,8 +38,14 @@ const Slicks = ({ match }) => {
                                     </div>
                                 </div>
                                 <div>
-                                    <div className="Rotate-prueba">
-
+                                    <div className="Rotate-slick">
+                                        <div className="info-slick">
+                                            <h2>Conoce la primera línea de empaques biodegradables</h2>
+                                            <p>100% bagazo en caña de azucar</p>
+                                            <div className="more-btn">
+                                                <button>Conocer más</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </Slider>

@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import Slider from "react-slick";
 import { withRouter, Link } from 'react-router-dom'
 import '../styles/news.css'
-import zIndex from '@material-ui/core/styles/zIndex';
 
 const News = ({ match }) => {
 
@@ -13,9 +12,9 @@ const News = ({ match }) => {
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        // autoplay: true,
-        // autoplaySpeed: 2000,
-        // pauseOnHover: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        pauseOnHover: true,
         appendDots: dots => (
             <div
                 style={{
@@ -35,9 +34,9 @@ const News = ({ match }) => {
         infinite: true,
         slidesToShow: 1.5,
         slidesToScroll: 1,
-        // autoplay: true,
-        // autoplaySpeed: 2000,
-        // pauseOnHover: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        pauseOnHover: true,
         appendDots: dots => (
             <div
                 style={{
