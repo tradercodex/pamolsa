@@ -3,7 +3,7 @@
     max-width: 1440px;
     overflow: hidden;
     margin: 0 auto;
-    height: 140vh;
+    height: 100vh;
     background: #FFFFFF;
 }
 
@@ -34,7 +34,6 @@
     background: #FFFFFF;
 }
 
-
 .slick-slider {
     width: 100%;
     height: 100%;
@@ -47,7 +46,7 @@
 .Radius {
     position: absolute;
     width: 1767.76px;
-    height: 140vh;
+    height: 108vh;
     left: -158px;
     top: -300.45px;
     background: rgba(152, 194, 29, 0.35);
@@ -92,9 +91,9 @@
     overflow: hidden;
     position: relative;
     width: 1640px;
-    height: 140vh;
-    top: -310px;
-    left: -102px;
+    height: 120vh;
+    top: -410px;
+    left: -155px;
     border-radius: 191px;
     transform: rotate(-21.34deg);
 }
@@ -125,12 +124,12 @@
     position: absolute;
     z-index: 1023;
     content: '';
-    background-color: rgba(0, 82, 134, 0.1);
-    left: -3px;
+    background-color: rgba(0, 82, 134, 0.2);
+    left: 0px;
     top: 240px;
     transform: rotate(21.34deg);
-    width: 1440px;
-    height: 136vh;
+    width: 100%;
+    height: 150vh;
 }
 
 .Rotate-slick_us::before ,
@@ -156,14 +155,14 @@
     position: absolute;
     background-image: url('../images/img/bannerpm.png');
     background-blend-mode: soft-light;
-    background-color: rgba(0, 82, 134, 0.2);
+    background-color: rgba(156, 167, 8, 0.1);
     background-repeat: no-repeat;
-    background-size: cover;
-    left: 21px;
-    top: 190px;
+    background-size: unset;
+    left: -26px;
+    top: 346px;
     transform: rotate(21.34deg);
-    width: 1440px;
-    height: 144vh;
+    width: 100%;
+    height: 150vh;
 }
 
 .Rotate-slick_us::after {
@@ -293,14 +292,14 @@
 
 .Elipse img {
     position: relative;
-    top: 160px;
-    left: 100px;
+    top: 170px;
+    left: 120px;
 }
 
 .Slicks-pm ul.slick-dots {
     transform: rotate(90deg);
-    right: 620px;
-    top: -250px;
+    right: 480px;
+    top: -160px;
     z-index: 1000;
     height: 100%;
     width: 140px;
@@ -330,8 +329,8 @@
 
 .info-slick,.info-slick_sb ,.info-slick_wwu, .info-slick_clts, .info-slick_news {
     position: relative;
-    left: 100px;
-    top: 830px;
+    left: 170px;
+    top: 770px;
     z-index: 999999;
     transform: rotate(21.34deg);
 }
@@ -352,14 +351,21 @@
 
 .info-slick .more-btn button{
     color: #fff;
-    font-size: 14px;
+    font-size: 15px;
     margin-top: 20px;
     background: #32711E;
-    font-family: 'Amble-light';
+    font-family: 'Amble-bold';
     border: none;
     border-radius: 30px;
     padding: 10px 45px;
     cursor: pointer;
+    transition: 0.6s;
+    outline: none;
+}
+
+.info-slick .more-btn button:hover{
+    background: #409427 !important;
+    transition: 0.6s;
 }
 
 .footer-slick {
@@ -372,4 +378,33 @@
 .footer-slick .tree-pm img {
     position: absolute;
     z-index: 1;
+}
+
+@media only screen and (max-width: 1440px) {
+    .Slicks-pm {
+        height: 115vh;
+    }
+    .Rotate-slick {
+        height: 125vh;
+        top: -410px;
+        left: -146px;
+    }
+    .Rotate-slick::after {
+        left: -22px;
+        top: 346px;
+        height: 150vh;
+    }
+    .info-slick,.info-slick_sb ,.info-slick_wwu, .info-slick_clts, .info-slick_news {
+        left: 165px;
+        top: 770px;
+    }
+    .Radius {
+        height: 117vh;
+        left: -158px;
+        top: -300.45px;
+    }
+    .Slicks-pm ul.slick-dots {
+        right: 480px;
+        top: -230px;
+    }
 }

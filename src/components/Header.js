@@ -6,7 +6,7 @@ import Quote from '../images/svg/quote';
 
 import '../styles/header.css'
 
-const Header = ({match}) => {
+const Header = ({ match }) => {
 
     let pathname = match.path
     let rut = match.params.name
@@ -28,7 +28,7 @@ const Header = ({match}) => {
                         <li><Link to="/trabaja-con-nosotros" className={pathname === "/trabaja-con-nosotros" ? "active" : ""}>Trabaja con nosotros</Link></li>
                         <li><Link to="/clientes" className={pathname === "/clientes" ? "active" : ""}>Clientes</Link></li>
                         <li><Link to="/noticias" className={pathname === "/noticias" ? "active" : ""}>Noticias</Link></li>
-                        <li><Link to="/contacto"className={pathname === "/contacto" ? "active" : ""}>Contacto</Link></li>
+                        <li><Link to="/contacto" className={pathname === "/contacto" ? "active" : ""}>Contacto</Link></li>
                     </ul>
                 </nav>
                 <div className="Options-pm_qe">
@@ -37,6 +37,16 @@ const Header = ({match}) => {
                     </div>
                     <div className="Ecommerce-btn">
                         <button><Cart />Ir a ecommerce</button>
+                    </div>
+                    <div class="select-sim" id="select-color">
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="color" value="" id="color-" checked />
+                                <label for="color-rojo">
+                                    <img src={require('../images/img/peru.png')} alt="" /><span>Perú</span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

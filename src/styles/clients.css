@@ -14,7 +14,7 @@
     position: relative;
     z-index: 99999999;
     max-width: 1440px;
-    background: #F7F7F7;
+    background: #F9F9F9;
     height: auto;
     margin: 0 auto;
     padding-bottom: 80px;
@@ -39,7 +39,7 @@
 }
 
 .info-clients h2 {
-    width: 543px;
+    width: 301px;
     color: #32711E;
     font-family: 'Amble-bold';
     font-size: 50px;
@@ -88,7 +88,7 @@
     position: relative;
     grid-column: 5/7;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .footer-client_main h6 {
