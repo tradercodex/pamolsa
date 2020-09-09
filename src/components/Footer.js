@@ -9,6 +9,32 @@ const Footer = () => {
                 <div className="logo">
                     <Logo />
                 </div>
+                <div className="declaration">
+                    <div className="title">
+                        <h6>Declaración de beneficiario final</h6>
+                        <div className="info-contact">
+                            <div className="center">
+                                <a href="">Peruana de Modelos SAC</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="information">
+                    <div className="title">
+                        <h6>Documento informativo</h6>
+                        <div className="info-contact">
+                            <div className="center">
+                                <a href="">Politica de privacidad</a>
+                            </div>
+                            <div className="cell">
+                                <a href="">Documento 1</a>
+                            </div>
+                            <div className="cell">
+                                <a href="">Documento 2</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div className="contact">
                     <div className="title">
                         <h6>Contacto</h6>

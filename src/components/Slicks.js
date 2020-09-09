@@ -34,7 +34,8 @@ class Slicks extends React.Component {
                                 <div className="Radius"></div>
                                 <Slider {...settings}>
                                     <div>
-                                        <div className="Rotate-slick">
+                                        <div className="Rotate-slick"
+                                        >
                                             <div className="info-slick">
                                                 <h2
                                                     className="wow animate__animated animate__fadeInUp"
@@ -51,7 +52,7 @@ class Slicks extends React.Component {
                                                     data-wow-duration="2s"
                                                     data-wow-delay="1.3s"
                                                 >
-                                                    <button>Conocer más</button>
+                                                        <button>Conocer más</button>
                                                 </div>
                                             </div>
                                         </div>

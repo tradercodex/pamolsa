@@ -10,39 +10,35 @@ const categories = [
     },
     {
         "_id": 1,
-        "name": "Bandejas"
+        "name": "Envases y Tapas"
     },
     {
         "_id": 2,
-        "name": "Platos"
+        "name": "Envase Bisagra"
     },
     {
         "_id": 3,
-        "name": "Envases circulares"
+        "name": "Bandeja"
     },
     {
         "_id": 4,
-        "name": "Envases rectangulares"
+        "name": "Domos y Bases"
     },
     {
         "_id": 5,
-        "name": "Envases visagra"
+        "name": "Vasos y Tapas"
     },
     {
         "_id": 6,
-        "name": "Domos y pisos de torta"
+        "name": "Salseros"
     },
     {
         "_id": 7,
-        "name": "Vasos"
+        "name": "Films"
     },
     {
         "_id": 8,
-        "name": "Accesorios"
-    },
-    {
-        "_id": 9,
-        "name": "Clamshells y Pummets"
+        "name": "Otros"
     },
 ]
 

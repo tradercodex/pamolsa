@@ -19,8 +19,9 @@ const QuoteProducts = () => {
                 </div>
                 <div className="Products-Quote_2">
                     <div className="tree-right"></div>
+                    <div className="tree-left"></div>
                     <div className="info-product_bf_2">
-                        <h4>Contenedor Bioform de fifra</h4>
+                        <h4>Línea Food Service</h4>
                         <button>Cotizar</button>
                     </div>
                     <div className="img-bioform_product_2">
@@ -30,17 +31,19 @@ const QuoteProducts = () => {
                 <div className="Products-Quote_3">
                     <div className="pen"></div>
                     <div className="info-product_bf_3">
-                        <h4>Contenedor de plastico PET</h4>
+                        <h4>Línea Industrial Consumo</h4>
                         <button>Cotizar</button>
                     </div>
                     <div className="img-bioform_product_3">
+                    <img src={require('../images/img/bioformproduct3.png')} />
                     </div>
                 </div>
                 <div className="Products-Quote_4">
                     <div className="pen_2"></div>
                     <div className="pen_3"></div>
+                    <div className="filter-shadow-blue"></div>
                     <div className="info-product_bf_4">
-                        <h4>Mira nuestra linea de Clamshells de visagra</h4>
+                        <h4>Línea Agroinsdustrial</h4>
                         <button>Ver más</button>
                     </div>
                     <div className="img-bioform_product_4">

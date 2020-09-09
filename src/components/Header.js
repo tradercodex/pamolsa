@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link, withRouter } from 'react-router-dom'
 import Logo from '../images/svg/logo'
 import Cart from '../images/svg/cart'
 import Quote from '../images/svg/quote';
 
 import '../styles/header.css'
+import Phone from '../images/svg/phone';
 
 const Header = ({ match }) => {
 
@@ -14,8 +15,19 @@ const Header = ({ match }) => {
     console.log(url)
 
     return (
-        <div className="Header-pm">
-            <div className="Container-header_pm">
+        <Fragment>
+            <div className="Call-pm" style={{background: "#ECECEC"}}>
+                <div className="Container-header_pm">
+                    <div className="phones">
+                        <div className="icon">
+                            <Phone />
+                        </div>
+                        <span>Llámanos: Central: (511) 710-3020 | Ventas: 994644843 / 994647087</span>
+                    </div>
+                </div>
+            </div>
+            <div className="Header-pm">
+            <div className="Container-header_pm" style={{top: "10px"}}>
                 <div className="Logo-pm">
                     <Logo />
                 </div>
@@ -23,8 +35,8 @@ const Header = ({ match }) => {
                     <ul>
                         <li><Link to="/" className={pathname === "/" || pathname === "/home/distribuidores" ? "active" : ""}>Home</Link></li>
                         <li><Link to="/nosotros" className={pathname === "/nosotros" ? "active" : ""}>Nosotros</Link></li>
-                        <li><Link to="/sostenibilidad" className={pathname === "/sostenibilidad" ? "active" : ""}>Sostenibilidad</Link></li>
                         <li><Link to="/productos" className={pathname === "/productos" || url === `/productos/${rut}` ? "active" : ""}>Productos</Link></li>
+                        <li><Link to="/sostenibilidad" className={pathname === "/sostenibilidad" ? "active" : ""}>Sostenibilidad</Link></li>
                         <li><Link to="/trabaja-con-nosotros" className={pathname === "/trabaja-con-nosotros" ? "active" : ""}>Trabaja con nosotros</Link></li>
                         <li><Link to="/clientes" className={pathname === "/clientes" ? "active" : ""}>Clientes</Link></li>
                         <li><Link to="/noticias" className={pathname === "/noticias" ? "active" : ""}>Noticias</Link></li>
@@ -38,19 +50,10 @@ const Header = ({ match }) => {
                     <div className="Ecommerce-btn">
                         <button><Cart />Ir a ecommerce</button>
                     </div>
-                    <div class="select-sim" id="select-color">
-                        <div class="options">
-                            <div class="option">
-                                <input type="radio" name="color" value="" id="color-" checked />
-                                <label for="color-rojo">
-                                    <img src={require('../images/img/peru.png')} alt="" /><span>Perú</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
+        </Fragment>
     );
 }
 

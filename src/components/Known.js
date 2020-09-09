@@ -34,14 +34,14 @@ class Known extends React.Component {
                         <div className="container-products_pm">
                             <div className="bioform-pm wow animate__animated animate__fadeInLeft"
                                 data-wow-duration="2s"
-                                data-wow-delay="2.4s"
+                                data-wow-delay="0.4"
                             >
                                 <img src={require('../images/img/bioformknown.png')} />
                                 <p>Bioform</p>
                             </div>
                             <div className="line-products_pm top wow animate__animated animate__fadeInDown"
                                 data-wow-duration="2s"
-                                data-wow-delay="2.4s"
+                                data-wow-delay="0.4"
                             >
                                 <img src={require('../images/img/lineproducts.png')} />
                                 <p>Línea de productos</p>
@@ -63,39 +63,92 @@ class Known extends React.Component {
                         </div>
                     </div>
                 </div>
-                <OurClients />
+                <div className="Known-pm">
+                    <div className="container-known_business">
+                        <h6 className="wow animate__animated animate__fadeInLeft"
+                            data-wow-duration="2s"
+                            data-wow-delay="0.4">Negocios a los que atendemos</h6>
+                        <div className="container-products_business">
+                            <div>
+                                <div className="line-products_pm wow animate__animated animate__fadeInUp"
+                                    data-wow-duration="2s"
+                                    data-wow-delay="0.4"
+                                >
+                                    <img src={require('../images/img/business1.png')} />
+                                    <p>Food Service</p>
+
+                                </div>
+                                <div className="button-cat">
+                                    <button className="wow animate__animated animate__fadeInUp"
+                                        data-wow-duration="4s"
+                                        data-wow-delay="2.4">Ver cátalogo</button>
+                                </div>
+                            </div>
+                            <div>
+                                <div className="line-products_pm wow animate__animated animate__fadeInUp"
+                                    data-wow-duration="2s"
+                                    data-wow-delay="0.4"
+                                >
+                                    <img src={require('../images/img/business2.png')} />
+                                    <p>Industrial</p>
+
+                                </div>
+                                <div className="button-cat">
+                                    <button className="wow animate__animated animate__fadeInUp"
+                                        data-wow-duration="4s"
+                                        data-wow-delay="2.4">Ver cátalogo</button>
+                                </div>
+                            </div>
+                            <div>
+                                <div className="line-products_pm wow animate__animated animate__fadeInUp"
+                                    data-wow-duration="2s"
+                                    data-wow-delay="0.4"
+                                >
+                                    <img src={require('../images/img/business3.png')} />
+                                    <p>Agroindustrial</p>
+
+                                </div>
+                                <div className="button-cat">
+                                    <button className="wow animate__animated animate__fadeInUp"
+                                        data-wow-duration="4s"
+                                        data-wow-delay="2.4">Ver cátalogo</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div className="container-distributor">
                     <div className="info-distributor_hm">
                         <div>
                             <h3 className="wow animate__animated animate__fadeInLeft"
                                 data-wow-duration="2s"
                                 data-wow-delay="0.6s">Conoce nuestros distribuidores más cercanos</h3>
-                            <p 
-                            className="wow animate__animated animate__fadeInLeft"
-                            data-wow-duration="2s"
-                            data-wow-delay="1s">
+                            <p
+                                className="wow animate__animated animate__fadeInLeft"
+                                data-wow-duration="2s"
+                                data-wow-delay="1s">
                                 Ingresa y busca tu producto y el distribuidor más cercano a tu úbicación.
                             </p>
-                            <Link 
-                            className="wow animate__animated animate__fadeInLeft"
-                            data-wow-duration="2s"
-                            data-wow-delay="1.4s"
-                            to="/home/distribuidores"><button>Ver distribuidores</button></Link>
+                            <Link
+                                className="wow animate__animated animate__fadeInLeft"
+                                data-wow-duration="2s"
+                                data-wow-delay="1.4s"
+                                to="/home/distribuidores"><button>Ver distribuidores</button></Link>
                         </div>
                     </div>
                     <div className="img-distributor_hm">
                         <div className="img-distributor"
-                           
+
                         >
                             <div className="square-distributor wow animate__animated animate__fadeIn"
-                                 data-wow-duration="2s"
-                                 data-wow-delay="1.4s"
+                                data-wow-duration="2s"
+                                data-wow-delay="1.4s"
                             ></div>
-                            <img 
-                             className="wow animate__animated animate__fadeInRight"
-                             data-wow-duration="2s"
-                             data-wow-delay="1.8s"
-                            src={require('../images/img/distributor.png')} />
+                            <img
+                                className="wow animate__animated animate__fadeInRight"
+                                data-wow-duration="2s"
+                                data-wow-delay="1.8s"
+                                src={require('../images/img/distributor.png')} />
                         </div>
                     </div>
                 </div>

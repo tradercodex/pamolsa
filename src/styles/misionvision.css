@@ -1,37 +1,37 @@
 .Mision-vision_pm {
     max-width: 1440px;
     margin: 0 auto;
-    background: #FFFFFF;
+    background: #f9f9f9;
 }
 
 .container-vision_mision_pm {
     width: 100%;
     display: grid;
-    grid-gap: 100px;
-    padding-top: 80px;
-    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 70px;
+    padding-top: 120px;
+    grid-template-columns: repeat(9, 1fr);
     padding-bottom: 80px;
 }
 
 .vision {
     position: relative;
     z-index: 2;
-    grid-column: 1/5;
+    grid-column: 4/7;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
-.container-vision {
+.container-vision, .container-mision , .container-promise-value {
     position: relative;
     width: 335px;
     height: 257.08px;
 }
 
-.info-vision, .info-mision {
+.info-vision, .info-mision, .info-promise_value {
     position: relative;
     z-index: 1024;
     width: 335px;
-    height: 264px;
+    height: 204px;
     background: #FFFFFF;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.07);
     border-radius: 30px;
@@ -39,7 +39,7 @@
     justify-content: center;
 }
 
-.vision h6, .mision h6 {
+.vision h6, .mision h6, .promise-value h6 {
     color: #005286;
     font-size: 20px;
     font-family: 'Amble';
@@ -48,7 +48,7 @@
     margin-top: 20px;
 }
 
-.vision h6::after, .mision h6::after {
+.vision h6::after, .mision h6::after, .promise-value h6::after {
     content: '';
     position: absolute;
     top: 40px;
@@ -59,42 +59,56 @@
     height: 1px;
 }
 
-.info-mision p , .info-vision p {
+.info-mision p , .info-vision p, .info-promise_value p {
     font-family: 'Amble-light';
     font-style: normal;
     font-weight: 300;
     font-size: 14px;
     line-height: 17px;
+    width: 216px;
+    height: 51px;
     color: #4D4D4C;
     margin-top: 60px;
-    width: 248px;
-    height: 119px;
+    text-align: center;
 }
 
+.info-promise_value p {
+    width: 272px;
+    height: 68px;
+}
+
+.info-mision strong {
+    font-family: 'Amble-bold';
+}
 
 .mision {
     position: relative;
-    grid-column: 5/9;
+    grid-column: 1/4;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.promise-value {
+    position: relative;
+    grid-column: 7/10;
     display: flex;
     justify-content: start;
 }
 
-.square-mision, .square-vision {
+.square-mision, .square-vision , .square-promise_value {
     position: absolute;
     z-index: 1;
     width: 335px;
-    height: 257.08px;
+    height: 198.26px;
     background: #D1EBFC;
     border-radius: 30px;
     transform: rotate(-3.38deg);
 }
 
-.square-vision {
+.square-mision ,.square-vision , .square-promise_value {
     left: -35px;
     top: 25px;
 }
 
-.square-mision {
-    left: -35px;
-    top: 25px;
-}
+
+

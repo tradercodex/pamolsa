@@ -1,19 +1,33 @@
 .Header-pm {
     width: 100%;
     background: #FFFFFF;
-    height: 88px;
+    height: 78px;
     z-index: 1024;
     box-shadow: 0px 4px 30px rgba(172, 172, 172, 0.15);
 }
 
 .Container-header_pm {
     position: relative;
-    top: 10px;
     max-width: 1440px;
     margin: 0 auto;
     display: grid;
-    align-items: flex-end;
+    align-items: center;
     grid-template-columns: repeat(15, 1fr);
+}
+
+.phones {
+    display: flex;
+    position: relative;
+    padding: 10px;
+    color: #4D4D4C;
+    grid-column: 5/15;
+    font-family: 'Amble';
+    font-size: 14px;
+    justify-content: flex-end;
+}
+
+.phones .icon {
+    margin-right: 10px;
 }
 
 .Container-header_pm .Logo-pm{
@@ -23,7 +37,9 @@
 }
 
 .Container-header_pm .Nav-pm {
-    grid-column: 3/11;
+    grid-column: 3/12;
+    position: relative;
+    top: 9px;
     display: flex;
     justify-content: flex-start;
 }
@@ -34,7 +50,7 @@
 }
 
 .Container-header_pm .Nav-pm ul li{
-    margin-left: 24px;
+    margin-left: 34px;
 }
 
 .Container-header_pm .Nav-pm ul li a{
@@ -44,11 +60,11 @@
 }
 
 .Container-header_pm .Options-pm_qe {
-    grid-column: 11/16;
+    grid-column: 12/16;
     display: flex;
     justify-content: center;
     position: relative;
-    top: 20px;
+    top: 5px;
 }
 
 .Container-header_pm .Options-pm_qe .Quote-btn {
@@ -65,6 +81,7 @@
     color: #fff;
     cursor: pointer;
     font-family: 'Amble';
+    font-size: 14px;
     font-weight: bold;
     padding: 10px 20px;
 }
@@ -84,7 +101,7 @@
 
 .Nav-pm ul li a.active {
     color: #8DB72E;
-    border-bottom: 4px solid #8DB72E;
+    border-bottom: 2px solid #8DB72E;
     font-family: 'Amble-bold';
     padding-bottom: 21px;
     transition: 2s

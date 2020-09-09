@@ -8,28 +8,61 @@
 }
 
 .container-footer {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    align-items: flex-start;
     padding: 50px 100px 20px 100px;
     margin-bottom: 40px;
 }
 
-.contact .title h6 {
+.logo {
+    display: flex;
+    grid-column: 1/4;
+}
+
+.declaration {
+    display: flex;
+    justify-content: flex-end;
+    grid-column: 4/6;
+}
+
+.information {
+    display: flex;
+    justify-content: flex-end;
+    grid-column: 6/8;
+}
+
+.contact {
+    display: flex;
+    justify-content: flex-end;
+    grid-column: 8/10;
+}
+
+.declaration .title {
+    width: 168px;
+    position: relative;
+    top: -15px;
+}
+
+.information .title {
+    width: 180px;
+}
+
+.contact .title h6 ,.declaration .title h6 , .information .title h6 {
     font-family: 'Raleway';
     font-size: 14px;
-    text-decoration: underline;
     color: #3d3d3d;
     font-weight: 700;
 }
 
-.contact .info-contact {
+.contact .info-contact ,.declaration .info-contact a, .information .info-contact a{
     font-family: 'Raleway';
     font-weight: 300;
     font-size: 14px;
     color: #767676;
 }
 
-.contact .info-contact div {
+.contact .info-contact div ,.declaration .info-contact div, .information .info-contact div{
     margin-top: 23px;
 }
 

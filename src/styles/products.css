@@ -53,16 +53,23 @@
 
 .categories-products {
     display: flex;
-    justify-content: center;
+}
+
+.menu-categories {
+    display: flex;
+    width: 100%;
 }
 
 .menu-categories ul {
     display: flex;
+    width: 100%;
+    justify-content: space-between;
     list-style: none;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 .menu-categories li {
-    margin-left: 33px;
     margin-bottom: 20px;
 }
 
@@ -91,6 +98,7 @@
 }
 
 .Products-Quote_1 {
+    overflow: hidden;
     position: relative;
     grid-column: 1/6;
     background-color: #F2E2D9;
@@ -135,7 +143,7 @@
 .Products-Quote_2 {
     position: relative;
     grid-column: 6/9;
-    background: #F9F8F8;
+    background: #EBF7FF;
     border-radius: 50px 0px 0px 50px;
 }
 
@@ -148,7 +156,7 @@
 }
 
 .info-product_bf_2 h4{
-    color: #4A7729;
+    color: #4D4D4C;
     font-size: 40px;
     font-family: 'Amble-Bold';
     font-weight: bold;
@@ -168,6 +176,7 @@
 }
 
 .Products-Quote_3 {
+    overflow: hidden;
     position: relative;
     z-index: 1;
     grid-column: 1/4;
@@ -280,14 +289,15 @@
     position: absolute;
     background-size: contain;
     background-repeat: no-repeat;
-    bottom: -60px;
+    bottom: -30px;
     right: 20px;
     width: 186px;
     height: 226px;
+    left: -50px;
     z-index: 1;
     background-image: url('../images/img/pen1.png');
     opacity: 1;
-    transform: rotate(7.08deg);
+    transform: rotate(121.08deg);
 }
 
 .pen_2 {
@@ -330,16 +340,16 @@
     border-radius: 0px 0px 50px 0px;
 }
 
-.img-bioform_product_3 {
+.filter-shadow.blue {
     position: absolute;
-    width: 446px;
-    height: 375px;
-    right: 10px;
-    top: 37px;
-    background-image: url('../images/img/bioformproduct3.png');
-    background-size: cover;
-    background-color: #F9F8F8;
-    background-blend-mode: darken;
+    z-index: 1;
+    width: 100%;
+    height: 200px;
+    bottom: 0;
+    background: rgba(190, 230, 255, 0.5);
+    background-blend-mode: multiply;
+    filter: blur(79px);
+    border-radius: 0px 0px 50px 0px;
 }
 
 .img-bioform_product_4 {
@@ -474,6 +484,16 @@
     justify-content: flex-start;
 }
 
+.categories-business.used {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap !important;
+}
+
+.categories-business.used div {
+    margin-top: 15px;
+}
+
 .business-choose {
     position: relative;
 }
@@ -512,3 +532,162 @@ h2.title-choose_business {
     margin-bottom: 20px;
     color: #4D4D4C;
 }   
+
+.img-bioform_product_2 img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.img-bioform_product_3 img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.Products-Quote {
+    grid-column: 3/12;
+    background: #fff;
+    height: auto;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.Filter_pm {
+    margin-top: 55px;
+}
+
+.container-filter_pm {
+    display: grid;
+    background: #009FE3;
+    box-shadow: 0px 4px 20px rgba(216, 216, 216, 0.3);
+    border-radius: 14px;
+    grid-template-columns: repeat(11,1fr);
+    color: #fff;
+    align-items: center;
+    padding: 0px 0px 0px 20px;
+    font-size: 14px;
+    font-family: 'Amble-light';
+}
+
+.Name-category {
+    grid-column: 1/4;
+    padding: 10px;
+}
+
+.Name-category p {
+    font-family: 'Amble';
+    font-size: 25px;
+}
+
+.Count-products {
+    grid-column: 4/7;
+    position: relative; 
+    padding: 20px;
+    height: 100%;
+}
+
+.Count-products::after {
+    content: '';
+    position: absolute;
+    border-right: 1px solid #fff;
+    height: 100%;
+    right: 0;
+    top: 0;
+}
+
+.Order-by {
+    display: flex;
+    grid-column: 7/10;
+    justify-content: flex-start;
+    margin-left: 20px;
+}
+
+.select-order {
+    margin-left: 20px;
+    font-family: 'Amble';
+}
+
+.View-options {
+    display: flex;
+    justify-content: flex-end;
+    grid-column: 10/11;
+    font-family: 'Amble';
+}
+
+.products-default {
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.products-default .square-products {
+    position: absolute;
+    width: 234px;
+    top: 30px;
+    height: 234px;
+    background: #D1EBFC;
+    z-index: 1;
+    border-radius: 58px;
+    transform: matrix(0.91, -0.42, -0.42, -0.91, 0, 0);
+}
+
+.products-default{
+    margin-top: 40px;
+    position: relative;
+}
+
+.products-default h5 {
+    position: absolute;
+    top: 25px;
+    color: #000;
+    width: 223px;
+    font-size: 20px;
+    font-family: 'Amble-bold';
+    left: 0px;
+    z-index: 1000;
+}
+
+.products-default .product {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.products-default .product .img-product {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 223px;
+}
+
+.img-product img {
+    max-width: 100%;
+    height: 100%;
+}
+
+.products-default  a{
+    position: absolute;
+    z-index: 3;
+    right: -70px;
+    top: 140px;
+    font-family: 'Amble';
+    text-decoration: none;
+    background: #005286;
+    cursor: pointer;
+    border: 1px solid #005286;
+    box-sizing: border-box;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    padding: 7px 25px;
+}
+
+.products-default img {
+    position: relative;
+    z-index: 3;
+}

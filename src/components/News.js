@@ -6,15 +6,16 @@ import '../styles/news.css'
 const News = ({ match }) => {
 
     let pathname = match.path
+    console.log(pathname)
 
     const settingsNews = {
         dots: true,
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        pauseOnHover: true,
+        // autoplay: true,
+        // autoplaySpeed: 2000,
+        // pauseOnHover: true,
         appendDots: dots => (
             <div
                 style={{
@@ -165,10 +166,10 @@ const News = ({ match }) => {
 
                                         <div className="info-new_slick">
                                             <div className="title-new">
-                                                <h4>Plantas del Perú</h4>
+                                                <h4>Plantas del producción</h4>
                                             </div>
-                                            <h6>Planta de Lima</h6>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                            <h6>Planta de Gambeta</h6>
+                                            <p>Contamos con las mejores instalaciones y plantas para asegurar la cantidad y un correcto proceso de fabricación en cada una de sus etapas.<br/><br/> La Planta de Gambeta cuenta con 16,000 M2 </p>
                                         </div>
                                         <div className="post-new_slick_us">
                                             <div className="square-slick">
@@ -227,7 +228,7 @@ const News = ({ match }) => {
                                     <div className="info-footer_news_us">
                                         <div>
                                             <h6>Sostenibilidad</h6>
-                                            <span>¡Dale vida a tus residuos con recicloplas!</span>
+                                            <div className="span">¡Dale vida a tus residuos con recicloplas!</div>
                                             <p>
                                                 Desde hace más de seis años, Recicloplas Perú, empresa perteneciente a la Corporación Carvajal, reafirma su compromiso con el medio ambiente y con la sociedad mediante la valorización de residuos de plástico posconsumo, generando un impacto positivo y sostenible.<br /><br /> ¡Comprometidos de verdad! <br /><br /> Reciclamos más de 260 toneladas mensuales de PET posconsumo, las cuales son procesadas por Recicloplas para producir materia prima reciclada de alta calidad y utilizadas por Pamolsa para su transformación en productos terminados. Con esto, no solo evitamos que sean depositados en nuestros ríos, mares y rellenos sanitarios, también reducimos los requerimientos de PET virgen, lo cual significa una menor emisión de gases de efecto invernadero y un menor consumo de energía y petróleo.<br /><br /> Actualmente nuestra operación genera ingresos a más de 700 familias recicladoras y muy pronto ampliaremos nuestra capacidad, con lo que proyectamos incluir a más de 1,000 nuevas familias dentro de la cadena de Recicloplas, al generar nuevos puestos de trabajo.<br /><br /> Así contribuimos a la sociedad y al medio ambiente.
                                 </p>
@@ -243,13 +244,15 @@ const News = ({ match }) => {
                                         <h6>Certificaciones</h6>
                                         <span>Calidad y compromiso con las personas</span>
                                         <p>
-                                            Nuestra responsabilidad ante los clientes, colaboradores y proveedores hace que nos volvamos exigentes en nuestras operaciones, ofreciendo garantías en la calidad de nuestros productos y servicios. El respaldo se ve reflejado en la obtención de dos certificados internacionales:<br /><br /> Además de ello, consideramos que nuestros colaboradores son parte medular para el logro de nuestros objetivos y en ese sentido trabajamos para que su ambiente de trabajo sea el mejor. Prueba de ello, es la obtención del premio como una de las Mejores Empresas para Trabajar en Perú.<br /><br /> Lo invitamos a conocer nuestra Política de Sistema Integrado de Gestión.
+                                        Comprometidos con nuestros clientes, colaboradores y proveedores buscamos trabajar dentro de estandares internacionales que garanticen la calidad de nuestros productos y servicios, así como la mejora continua en la seguridad y salud de nuestros colaboradores.<br/><br/> Nuestros colaboradores son nuestra mayor fortaleza por ello reconocemos sus logros y nos preocupamos por brindarles un buen ambiente de trabajo.
                                 </p>
                                     </div>
                                 </div>
                                 <div className="certifications-companies">
                                     <div>
+                                        <h6 className="companies-title">Nuestras certificaciones de calidad</h6>
                                         <div className="companies_us">
+                                            
                                             <div className="img-company-sgs">
                                             </div>
                                             <div className="img-company-sgs">
@@ -257,10 +260,15 @@ const News = ({ match }) => {
                                             <div className="img-company-brc">
                                             </div>
                                         </div>
-                                        <div className="companies-second_us">
+                                        <h6 className="companies-title_second">Nuestros logros de cultura organizacional</h6>
+                                        <div className="companies-second_us"> 
+                                            <div className="img-company-gpl">
+                                            </div>
                                             <div className="img-company-gp">
                                             </div>
-                                            <div className="img-company-gpl">
+                                            <div className="img-company-gp">
+                                            </div>
+                                            <div className="img-company-gpw">
                                             </div>
                                         </div>
                                     </div>

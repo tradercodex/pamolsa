@@ -14,6 +14,7 @@ import Clients from './views/Clients'
 import News from './views/News';
 import Contact from './views/Contact'
 import Postulation from './views/Postulation';
+import DetailProducts from './views/DetailProducts';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route exact path="/contacto" component={Contact} />
           <Route exact path="/home/distribuidores" component={Distributor} />
           <Route exact path="/productos/:name" component={Quotes} />
+          <Route exact path="/productos/:name/detail" component={DetailProducts} />
         </Switch>
       </Router>
     </>

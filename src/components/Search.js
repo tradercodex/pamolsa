@@ -78,7 +78,7 @@ const Search = ({ match }) => {
     return (
         <div>
             {
-                pathname === "/productos" || pathname === "/productos/:name" ?
+                pathname === "/productos" || pathname === "/productos/:name" || pathname === "/productos/:name/detail" ?
                     <div className="Search">
                         <div className="Search-container">
                             <SearchIcon />

@@ -10,7 +10,6 @@
 .Sidebar-Material_Quote {
     grid-column: 1/3;
     background: rgba(244, 243, 243, 0.57);
-    height: 100vh;
     padding: 20px;
 }
 

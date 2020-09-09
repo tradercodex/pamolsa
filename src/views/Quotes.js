@@ -5,6 +5,7 @@ import Materials from '../components/Materials'
 
 import '../styles/quotes.css'
 import Footer from '../components/Footer';
+import Products from '../components/Products';
 
 const Quotes = () => {
     return ( 
@@ -16,7 +17,7 @@ const Quotes = () => {
                     <Materials />
                 </div>
                 <div className="Products-Quote">
-
+                    <Products />
                 </div>
             </div>
             <Footer />

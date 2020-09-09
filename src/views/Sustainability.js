@@ -23,7 +23,7 @@ class Sustainability extends React.Component {
                                 data-wow-duration="2s"
                                 data-wow-delay="5s"
                             >Nuestro modelo de sostenibilidad</h2>
-                            <p>Se enfoca en la ejecución de diecinueve tácticas asosciadas a tres objetivos estratégicos</p>
+                            <p>En Pamolsa la sostenibilidad es parte de nuestro ADN. Por ello, trabajamos para aportar al bienestar de las comunidades donde operamos y ser amigables con el medio ambiente. La política de sostenibilidad de Pamolsa asume este proceso como el compromiso con la gestión adecuada de sus recursos y del entorno, buscando el bienestar de las comunidades donde operamos y la rentabilidad de nuestras operaciones.</p>
                         </div>
                         <div className="models-sb">
                             <div className="model_1">

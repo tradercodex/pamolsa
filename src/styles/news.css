@@ -3,7 +3,7 @@
     max-width: 1440px;
     margin: 0 auto;
     height: auto;
-    background: #FFFFFF;
+    background: #f9f9f9;
 }
 
 .News-pm_us {
@@ -18,12 +18,24 @@
 .square-new {
     position: absolute;
     overflow: hidden;
-    top: -150px;
+    top: 0px;
     z-index: 1;
-    width: 1708.8px;
-    height: 1889.8px;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
     background-image: url('../images/img/squarenews.png');
     background-repeat: no-repeat;
+}
+
+.square-us {
+    position: relative;
+    width: 1708.8px;
+    height: 1419.8px;
+    left: -350px;
+    top: 220px;
+    background: rgba(0, 82, 134, 0.2);
+    border-radius: 191px;
+    transform: rotate(-21.12deg);
 }
 
 .elipse-work {
@@ -41,17 +53,6 @@
     z-index: 1;
     right: 0;
     top: -300px;
-}
-
-.square-us {
-    position: absolute;
-    width: 1708.8px;
-    height: 1219.8px;
-    left: -350px;
-    top: 220px;
-    background: rgba(0, 82, 134, 0.2);
-    border-radius: 191px;
-    transform: rotate(-21.12deg);
 }
 
 .new-slick.work {
@@ -79,7 +80,7 @@
     position: relative;
     z-index: 1;
     align-items: center;
-    padding: 0px 0px 0px 200px;
+    padding: 120px 0px 0px 200px;
     grid-template-columns: repeat(7,1fr);
     margin-top: 140px;
 }
@@ -145,6 +146,16 @@
 
 .info-new_slick {
     grid-column: 1/2;
+}
+
+.info-new_slick h4{
+    color: #005286;
+    font-size: 50px;
+    font-family: 'Amble-bold';
+    margin-top: 20px;
+    line-height: 97.2%;
+    margin-bottom: 20px;
+    width: 262px;
 }
 
 .info-new_slick h6{
@@ -266,7 +277,7 @@
     position: relative;
     width: 100%;
     max-width: 1440px;
-    margin-top: 60px;
+    margin: 0 auto;
 }
 
 .squeare-footer_new {
@@ -418,20 +429,15 @@
 
 .img-footer_news_us {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-end;
-    grid-column: 1/4;
+    grid-column: 1/5;
 }
 
 .info-footer_news_us {
-    grid-column: 4/8;
+    grid-column: 5/8;
     display: flex;
     justify-content: end;
-}
-
-
-.info-footer_news_us {
-    width: 383px;
 }
 
 .info-footer_news_us h6 {
@@ -445,10 +451,10 @@
 }
 
 
-.info-footer_news_us span {
+.info-footer_news_us div.span {
     color: #8DB72E;
     font-size: 30px;
-    width: 383px;
+    width: 383px !important;
     font-family: 'Amble';
     margin-top: 40px;
     line-height: 97.2%;
@@ -468,7 +474,7 @@
 
 .Certifications {
     max-width: 1440px;
-    background: #fff;
+    background: #f9f9f9;
     position: relative;
     z-index: 99999;
     height: auto;
@@ -476,9 +482,9 @@
 }
 
 .info-certifications {
-    grid-column: 1/4;
+    grid-column: 1/3;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .info-certifications div {
@@ -488,19 +494,18 @@
 .info-certifications h6 {
     color: #32711E;;
     font-size: 50px;
-    font-family: 'Amble';
+    font-family: 'Amble-bold';
     margin-top: 20px;
     line-height: 97.2%;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
     width: 280px;
 }
 
 .info-certifications span {
     color: #8DB72E;
     font-size: 30px;
-    width: 383px;
-    font-family: 'Amble';
-    margin-top: 40px;
+    font-family: 'Amble-bold';
+    margin-top: 20px;
     line-height: 97.2%;
     margin-bottom: 20px;
 }
@@ -508,31 +513,30 @@
 .info-certifications p {
     font-family: 'Amble-light';
     font-style: normal;
-    width: 504px;
-    margin-top: 40px;
+    width: 431px;
+    margin-top: 30px;
     font-weight: 300;
     font-size: 14px;
-    line-height: 17px;
+    line-height: 20px;
     color: #4D4D4C;
 }
 
 .container-certifications {
-    padding: 50px 300px;
+    padding: 50px 200px;
 }
 
 .certifications-companies {
-    grid-column: 4/8;
+    grid-column: 3/8;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     position: relative;
-    top: -20px;
 }
 
 .companies_us {
-    margin-top: 60px;
+    margin-top: 40px;
     display: flex;
-    justify-content: start;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -546,6 +550,7 @@
     height: 67px;
     background-image: url('../images/img/sgs.png');
     background-size: cover;
+    left: 20px;    
 }
 
 .companies_us .img-company-brc {
@@ -554,6 +559,8 @@
     height: 58px;
     background-image: url('../images/img/brcpackaging.png');
     background-size: cover;
+    position: relative;
+    left: 20px;            
 }
 
 .companies-second_us .img-company-gp {
@@ -562,6 +569,8 @@
     height: 60px;
     background-image: url('../images/img/greatperu.png');
     background-size: cover;
+    position: relative;
+    left: 100px; 
 }
 
 .companies-second_us .img-company-gpl {
@@ -570,6 +579,18 @@
     height: 57px;
     background-image: url('../images/img/greatplace.png');
     background-size: cover;
+    position: relative;
+    left: 100px;
+}
+
+.companies-second_us .img-company-gpw {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-image: url('../images/img/grateplacework.png');
+    background-size: cover;
+    position: relative;
+    left: 100px;
 }
 
 .companies_us .img-company img {
@@ -667,4 +688,77 @@
     z-index: 2500 !important;
     padding: 0 !important;
     left: -420px !important;
+}
+
+.certifications-companies h6.companies-title, .certifications-companies h6.companies-title_second {
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Amble-bold';
+    color: #4c4c4c;
+    font-size: 20px;
+}
+
+.certifications-companies h6.companies-title {
+    margin-top: 50px;
+}
+
+.certifications-companies h6.companies-title_second {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.container-known_business {
+    background: #f9f9f9;
+    padding: 20px 100px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.container-known_business h6 {
+    font-family: 'Amble-bold';
+    color: #32711E;
+    font-size: 50px;
+    width: 403px;
+    margin-left: 110px;
+}
+
+.container-products_business {
+    display: flex;
+    justify-content: space-between;
+    max-width: 840px;
+    margin: 60px auto;
+}
+
+.container-products_business img{
+    border-radius: 50px;
+}
+
+.us-values_pm {
+    max-width: 1440px;
+    background: #fff;
+    margin: 0 auto;
+    padding: 50px 150px;
+}
+
+.title-values {
+    color: #009FE3;
+    width: 301px;
+    font-family: 'Amble';
+    font-size: 50px;
+}
+
+.img-values {
+    display: flex;
+    justify-content: space-between;
+    padding: 70px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.img-values p {
+    font-family: 'Amble-light';
+    font-size: 14px;
+    margin-top: 10px;
+    width: 112px;
+    color: #4d4d4d;
 }
