@@ -15,6 +15,7 @@ import News from './views/News';
 import Contact from './views/Contact'
 import Postulation from './views/Postulation';
 import DetailProducts from './views/DetailProducts';
+import DetailNew from './views/DetailNew';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route exact path="/home/distribuidores" component={Distributor} />
           <Route exact path="/productos/:name" component={Quotes} />
           <Route exact path="/productos/:name/detail" component={DetailProducts} />
+          <Route exact path="/noticias/:name" component={DetailNew} />
         </Switch>
       </Router>
     </>

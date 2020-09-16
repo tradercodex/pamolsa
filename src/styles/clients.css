@@ -171,3 +171,40 @@
     font-size: 50px;
     opacity: 1 !important;
 }
+
+.container-form_contact {
+    display: grid;
+    max-width: 1440px;
+    margin: 0 auto;
+    background: #fff;
+    grid-template-columns: repeat(9,1fr);
+}
+
+.form-contact {
+    grid-column: 1/4;
+}
+
+.input {
+    width: 100%;
+    display: block;
+    margin-top: 25px;
+}
+
+.input input, .input textarea {
+    padding: 12px 25px;
+    border-radius: 30px;
+    width: 100%;
+    border: 1px solid #C4C4C4;
+    font-family: 'Amble';
+    outline: none;
+    color: #4d4d4d;
+}
+
+textarea {
+    border-radius: 20px;
+    resize: none;
+}
+
+.input input::placeholder, .input textarea::placeholder {
+    font-family: 'Amble-light';
+}

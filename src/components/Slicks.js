@@ -183,9 +183,9 @@ class Slicks extends React.Component {
                                 <Slider {...settings}>
                                     <div>
                                         <div className="Rotate-slick_cnt">
-                                            <div className="info-slick_cnt">
-                                                <h2>Noticias</h2>
-                                                <p>Conoce nuetras ultimas noticias</p>
+                                            <div className="info-slick_news">
+                                                <h2>Contacto</h2>
+                                                <p>Dejanos tus datos para contactarte</p>
                                             </div>
                                         </div>
                                     </div>
