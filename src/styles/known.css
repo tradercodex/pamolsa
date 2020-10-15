@@ -4,8 +4,7 @@
 }
 
 .container-known, .container-distributor {
-    max-width: 1440px;
-    background: #f9f9f9;
+    background: #F9F9F9;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(7,1fr);
@@ -14,24 +13,23 @@
 }
 
 .container-known .info-known {
-    grid-column: 1/4;
+    grid-column: 2/4;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
 }
 
 .info-known h3 {
-    width: 400px;
-    font-family: 'Amble';
+    width: 498px;
+    font-family: 'Amble-bold';
     font-size: 50px;
+    line-height: 50px;
     color: #009FE3;
 }
 
 .info-known p {
     width: 350px;
     margin-top: 30px;
-    font-family: 'Amble-light';
-    font-size: 14px;
+    font-family: 'Amble';
+    font-size: 20px;
     color: #4D4D4D;
 }
 
@@ -69,7 +67,7 @@
     top: 0px;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 99.5%;
     background: rgba(0, 82, 134, 0.3);
     content: '';
     border-radius: 50px;
@@ -87,6 +85,15 @@
 .Known-video_pm {
     position: relative;
     z-index: 1;
+    padding-bottom: 50px;
+}
+
+.know-lines {
+    font-family: 'Amble';
+    text-align: center;
+    margin-top: 20px;
+    font-size: 25px;
+    color: #4D4D4D;
 }
 
 .container-known_video{
@@ -138,7 +145,7 @@
 .container-grid .play-known {
     position: relative;
     left: 40px;
-    grid-column: 5/8;
+    grid-column: 5/7;
     display: flex;
     justify-content: flex-start;
 }
@@ -198,7 +205,7 @@
 .container-grid .play-button_pm {
     position: absolute;
     z-index: 10;
-    right: 100px;
+    right: 40px;
     bottom: 90px;
     width: 142px;
     height: 142px;
@@ -243,10 +250,10 @@
 }
 
 .info-known_our h4 {
-    width: 329px;
+    width: 497px;
     color: #8DB72E;
     font-size: 50px;
-    font-family: 'Amble';
+    font-family: 'Amble-bold';
 }
 
 .info-known_our p {
@@ -258,15 +265,12 @@
 }
 
 .info-distributor_hm {
-    grid-column: 1/4;
+    grid-column: 2/4;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
 }
 
 .info-distributor_hm div{
     position: relative;
-    left: 100px;
     width: 400px;
 }
 
@@ -347,7 +351,6 @@
 /* Nosotros */
 
 .About-us_pm {
-    max-width: 1440px;
     background: #f9f9f9;
     margin: 0 auto;
 }
@@ -356,23 +359,21 @@
     padding-top: 100px;
     display: grid;
     grid-template-columns: repeat(7,1fr);
-    align-items: center;
 }
 
 .info-about {
-    grid-column: 1/5;
+    grid-column: 2/5;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 .info-about h3 {
     width: 328px;
     font-family: Amble;
     font-style: normal;
-    font-weight: bold;
-    font-size: 50px;
+    margin-top: 30px;
+    font-family: 'Amble-bold';
+    font-size: 30px;
     line-height: 104.2%;
     color: #009FE3;
 }
@@ -387,7 +388,6 @@
     color: #4D4D4C;
     margin-top: 30px;
 }
-
 
 .card-about {
     position: relative;
@@ -404,8 +404,8 @@
 
 .square.us {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 596px;
+    height: 472px;
     left: -100px;
     top: -50px;
     background: rgba(50, 113, 30, 0.2);
@@ -451,4 +451,10 @@
     cursor: pointer;
     font-family: 'Amble-bold';
     outline: none;
+}
+
+@media only screen and (max-width: 1440px) {
+    .container-grid .play-button_pm {
+        right: -100px;
+    }
 }

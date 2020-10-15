@@ -1,4 +1,10 @@
 import React, { Fragment } from 'react';
+import House from '../images/svg/home';
+import Hands from '../images/svg/hands';
+import ArrowUs from '../images/svg/arrowus';
+import World from '../images/svg/world';
+import Users from '../images/svg/users';
+import Chart from '../images/svg/chartus';
 import '../styles/misionvision.css'
 
 const MisionVision = () => {
@@ -6,6 +12,19 @@ const MisionVision = () => {
         <Fragment>
             <div className="Mision-vision_pm">
             <div className="container-vision_mision_pm">
+            <div className="propose">
+                <div className="container-propose">
+                    <div className="square-propose"></div>
+                    <div className="info-propose">
+                        <div>
+                            <h6>NUESTRO PROPOSITO</h6>
+                            <p>
+                            Cuidar lo esencial.
+                            </p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
                 <div className="mision">
                 <div className="container-mision">
                     <div className="square-mision"></div>
@@ -13,7 +32,7 @@ const MisionVision = () => {
                         <div>
                             <h6>MISIÓN</h6>
                             <p>
-                                Desarrollamos <strong>empaques confiables</strong> que hacen que la vida más <strong>práctica y segura</strong>
+                            Desarrollar soluciones de empaques confiables que hacen la vida más práctica y segura.
                             </p>
                         </div>
                     </div>
@@ -26,36 +45,59 @@ const MisionVision = () => {
                             <div>
                                 <h6>VISIÓN</h6>
                                 <p>
-                                    Ser la mejor opción en soluciones de empaques sostenibles
+                                Ser la mejor opción en soluciones de empaques sostenibles.
                         </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="promise-value">
-                <div className="container-promise_value">
-                    <div className="square-promise_value"></div>
-                    <div className="info-promise_value">
-                        <div>
-                            <h6>PROMESA DE VALOR</h6>
-                            <p>
-                            Somos aliados de nuestros clientes con empaques que evolucionan.<br/><br/> Cumplimos en cantidad y oportunidad
+                <div className="vision">
+                    <div className="container-vision">
+                        <div className="square-vision"></div>
+                        <div className="info-vision">
+                            <div>
+                                <h6>Propuesta de valor</h6>
+                                <p>
+                                Escuchamos al mundo para crear soluciones de empaques prácticos y confiables que evolucionan.
                         </p>
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        {/* <div className="values">
-            <div className="values-title">
-                <h2>Nuestros valores</h2>
-                <div className="values-container">
-
+        <div className="us-values_pm">
+                <div className="container-grid">
+                    <h6 className="title-values">Nuestros valores</h6>
+                </div>
+                <div className="img-values">
+                    <div>
+                        <House />
+                        <p>Integridad.</p>
+                    </div>
+                    <div>
+                        <Hands />
+                        <p>Respeto.</p>
+                    </div>
+                    <div>
+                        <ArrowUs />
+                        <p>Orientación al cliente y usuario.</p>
+                    </div>
+                    <div>
+                        <World />
+                        <p>Innovación.</p>
+                    </div>
+                    <div>
+                        <Users />
+                        <p>Compromiso social</p>
+                    </div>
+                    <div>
+                        <Chart />
+                        <p>Compromiso con los resultados.</p>
+                    </div>
                 </div>
             </div>
-        </div> */}
         </Fragment>
     );
 }

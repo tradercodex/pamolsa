@@ -1,14 +1,42 @@
 import React, { Fragment } from 'react';
 import Slider from "react-slick";
 import { withRouter, Link } from 'react-router-dom'
+import Play from '../images/svg/play'
 import '../styles/news.css'
+import PetOne from '../images/svg/petone';
+import PetTwo from '../images/svg/pettwo';
+import PetThree from '../images/svg/petthree';
+import PetFour from '../images/svg/petfour';
+import ChartSbl from '../images/svg/chartsbl';
+import BarBox from '../images/svg/barbox';
+import ElipseBlue from '../images/svg/elipseblue';
 
 const News = ({ match }) => {
 
     let pathname = match.path
-    console.log(pathname)
 
     const settingsNews = {
+        dots: true,
+        infinite: true,
+        slidesToShow: 1.5,
+        slidesToScroll: 1,
+        // autoplay: true,
+        // autoplaySpeed: 2000,
+        // pauseOnHover: true,
+        appendDots: dots => (
+            <div
+                style={{
+                    backgroundColor: "#ddd",
+                    borderRadius: "10px",
+                    padding: "10px"
+                }}
+            >
+                <ul style={{ margin: "0px" }}> {dots} </ul>
+            </div>
+        ),
+    };
+
+    const settingsHome = {
         dots: true,
         infinite: true,
         slidesToShow: 1,
@@ -29,13 +57,44 @@ const News = ({ match }) => {
         ),
     };
 
-
     const settingsWorks = {
         dots: true,
         infinite: true,
         slidesToShow: 1.5,
         slidesToScroll: 1,
-        autoplay: true,
+        // autoplay: true,
+        // autoplaySpeed: 2000,
+        // pauseOnHover: true,
+        responsive: [
+            {
+                breakpoint: 1440,
+                settings: {
+                    slidesToShow: 1.5,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            }
+        ],
+        appendDots: dots => (
+            <div
+                style={{
+                    backgroundColor: "#ddd",
+                    borderRadius: "10px",
+                    padding: "10px"
+                }}
+            >
+                <ul style={{ margin: "0px" }}> {dots} </ul>
+            </div>
+        ),
+    };
+
+    const settingsReciclopas = {
+        dots: true,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: false,
         autoplaySpeed: 2000,
         pauseOnHover: true,
         appendDots: dots => (
@@ -61,21 +120,21 @@ const News = ({ match }) => {
                             <img src={require('../images/img/newtree.png')} />
                         </div>
                         <div className="square-new"></div>
-                        <Slider {...settingsNews} className="new-slick">
+                        <Slider {...settingsHome} className="new-slick">
                             <div>
                                 <div className="container-news">
                                     <div className="info-new_slick">
                                         <div className="title-new">
                                             <h4>Noticias Pamolsa</h4>
                                         </div>
-                                        <h6>Nuestra línea 100% natural Bioform</h6>
-                                        <p>Bioformes la nueva tendencia eco-amigable de Pamolsa.Es una línea de productos elaborados con bagazo de caña de azucar y otros elementos naturales, con el cual buscamos contribuir al cuidado del medio ambiente y así promover nuestro compromiso con desarrollo sostenible.</p>
+                                        <h6>Inauguración de planta de reciclaje Recicloplas</h6>
+                                        <p>El evento de inauguración de su nueva planta de reciclaje “Recicloplas”, iniciativa que se encarga de la valorización de residuos de plástico posconsumo, generando un impacto positivo y sostenible en el medio ambiente y la sociedad.</p>
                                     </div>
                                     <div className="post-new_slick">
                                         <div className="square-slick">
                                         </div>
                                         <div className="img-new_slick">
-                                            <img src={require('../images/img/newslickone.png')} />
+                                            <img src={require('../images/img/newslick1.png')} />
                                         </div>
                                     </div>
                                 </div>
@@ -117,42 +176,7 @@ const News = ({ match }) => {
                                 </div>
                             </div>
                         </Slider>
-                        <div className="Footer-news">
-                            <div className="container-footer_news">
-                                <div className="img-footer_news">
-                                    <div className="squeare-footer_new">
-
-                                    </div>
-                                    <div className="img-footer_new">
-                                        <img src={require('../images/img/pruebanew.png')} />
-                                    </div>
-                                </div>
-                                <div className="info-footer_news">
-                                    <div>
-                                        <h6>Calidad y compromiso con las personas</h6>
-                                        <p>
-                                            El compromiso con nuestros clientes, proveedores y colaboradores hacen que nos dediquemos a ser mejores en nuestras operaciones, la calidad de nuestros productos y servicios, y el mejoramiento de nuestro ambiente de trabajo. Nuestra labor se ve reflejada en la obtención de los siguientes certificados internacionales
-                                </p>
-                                        <div className="companies">
-                                            <div className="img-company-sgs">
-                                            </div>
-                                            <div className="img-company-sgs">
-                                            </div>
-                                            <div className="img-company-brc">
-                                            </div>
-                                        </div>
-                                        <div className="companies-second">
-                                            <div className="img-company-gp">
-                                            </div>
-                                            <div className="img-company-gpl">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> :
-                    ''
+                    </div> : ''
             }
 
             {
@@ -160,7 +184,7 @@ const News = ({ match }) => {
                     <div className="News-pm_us">
                         <div className="square-us"></div>
                         <div className="square-new">
-                            <Slider {...settingsNews} className="new-slick">
+                            <Slider {...settingsHome} className="new-slick">
                                 <div>
                                     <div className="container-news">
 
@@ -169,7 +193,7 @@ const News = ({ match }) => {
                                                 <h4>Plantas del producción</h4>
                                             </div>
                                             <h6>Planta de Gambeta</h6>
-                                            <p>Contamos con las mejores instalaciones y plantas para asegurar la cantidad y un correcto proceso de fabricación en cada una de sus etapas.<br/><br/> La Planta de Gambeta cuenta con 16,000 M2 </p>
+                                            <p>Contamos con las mejores instalaciones y plantas para asegurar la cantidad y un correcto proceso de fabricación en cada una de sus etapas.<br /><br /> La Planta de Gambeta cuenta con 16,000 M2 </p>
                                         </div>
                                         <div className="post-new_slick_us">
                                             <div className="square-slick">
@@ -230,46 +254,224 @@ const News = ({ match }) => {
                                             <h6>Sostenibilidad</h6>
                                             <div className="span">¡Dale vida a tus residuos con recicloplas!</div>
                                             <p>
-                                                Desde hace más de seis años, Recicloplas Perú, empresa perteneciente a la Corporación Carvajal, reafirma su compromiso con el medio ambiente y con la sociedad mediante la valorización de residuos de plástico posconsumo, generando un impacto positivo y sostenible.<br /><br /> ¡Comprometidos de verdad! <br /><br /> Reciclamos más de 260 toneladas mensuales de PET posconsumo, las cuales son procesadas por Recicloplas para producir materia prima reciclada de alta calidad y utilizadas por Pamolsa para su transformación en productos terminados. Con esto, no solo evitamos que sean depositados en nuestros ríos, mares y rellenos sanitarios, también reducimos los requerimientos de PET virgen, lo cual significa una menor emisión de gases de efecto invernadero y un menor consumo de energía y petróleo.<br /><br /> Actualmente nuestra operación genera ingresos a más de 700 familias recicladoras y muy pronto ampliaremos nuestra capacidad, con lo que proyectamos incluir a más de 1,000 nuevas familias dentro de la cadena de Recicloplas, al generar nuevos puestos de trabajo.<br /><br /> Así contribuimos a la sociedad y al medio ambiente.
-                                </p>
+                                                En Recicloplas Perú, planta de reciclaje de Pamolsa , reciclamos PET posconsumo para luego  procesarlo y producir  materia prima de alta calidad que posteriormente es utilizada por Pamolsa para su transformación en productos terminados. Con esto, no solo evitamos que sean depositados en nuestros ríos, mares y rellenos sanitarios, también reducimos los requerimientos de PET virgen, lo cual significa una menor emisión de gases de efecto invernadero y un menor consumo de energía y petróleo.
+                                            <br /><br />
+                                            Actualmente Recicloplas  genera ingresos para más de 1,500 familias recicladoras.
+                                            De esta manera contribuimos con el medio ambiente y con la sociedad.
+                                            <br /><br />
+                                                <strong style={{ fontFamily: "Amble-bold", fontSize: "16px" }}>¡Comprometidos  de verdad!</strong>
+
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="Certifications">
-                            <div className="container-certifications">
-                                <div className="info-certifications">
+                    </div> : ''
+            }
+            {
+                pathname === "/sostenibilidad" ?
+                    <div className="News-pm_us" style={{ background: "#f9f9f9" }}>
+                        <div className="square-us" style={{ background: "#f9f9f9", height: "3920px" }}></div>
+                        <div className="square-stb">
+                            <div className="container-grid" style={{ paddingTop: "440px", alignItems: "center", paddingBottom: "100px" }}>
+                                <div className="info-pm">
                                     <div>
-                                        <h6>Certificaciones</h6>
-                                        <span>Calidad y compromiso con las personas</span>
-                                        <p>
-                                        Comprometidos con nuestros clientes, colaboradores y proveedores buscamos trabajar dentro de estandares internacionales que garanticen la calidad de nuestros productos y servicios, así como la mejora continua en la seguridad y salud de nuestros colaboradores.<br/><br/> Nuestros colaboradores son nuestra mayor fortaleza por ello reconocemos sus logros y nos preocupamos por brindarles un buen ambiente de trabajo.
-                                </p>
+                                        <img src={require('../images/img/recicoplas.png')} alt="" />
+                                        <h6 style={{ color: "#32711E", marginTop: "30px" }}>Ciclo de cierre de nuestro productos</h6>
+                                        <p style={{ marginTop: "30px", marginBottom: "30px" }}>Desde el 2013, nuestra operación de reciclaje “Recicloplas Perú” es una de los principales
+                                        actores del reciclaje en el Perú. De esta manera reafirmamos nuestros compromiso con
+                                        el medio ambiente y con la sociedad mediante la valorización de residuos de plástico
+                                        posconsumo, generando un impacto positivo y sostenible.
+                                        </p>
+                                        <span style={{ fontFamily: "Amble-bold", color: "#4D4D4C", fontSize: "16px" }}>¡COMPROMETIDOS DE VERDAD!</span>
                                     </div>
                                 </div>
-                                <div className="certifications-companies">
-                                    <div>
-                                        <h6 className="companies-title">Nuestras certificaciones de calidad</h6>
-                                        <div className="companies_us">
-                                            
-                                            <div className="img-company-sgs">
-                                            </div>
-                                            <div className="img-company-sgs">
-                                            </div>
-                                            <div className="img-company-brc">
+                                <div className="play-known">
+                                    <div className="square"></div>
+                                    <div className="img-video_known">
+                                        <div className="img">
+                                            <img src={require('../images/img/obrero.png')} />
+                                        </div>
+                                    </div>
+                                    <div className="play-button_pm">
+                                        <button><Play /></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div className="container-grid" style={{ paddingTop: "80px", paddingBottom: "80px" }}>
+                                    <div className="post-pet-sbl">
+                                        <div className="square-pet-sbl">
+                                        </div>
+                                        <div className="img-new_slick">
+                                            <img src={require('../images/img/handice.png')} />
+                                        </div>
+                                    </div>
+                                    <div className="info-pet-sbl">
+                                        <div className="info-sbl" style={{ right: "0px" }}>
+                                            <h4>Así cerramos el ciclo del PET en Perú</h4>
+                                            <div className="" style={{ display: "flex", justifyContent: "space-between", textAlign: "center", marginTop: "40px" }}>
+                                                <div className="">
+                                                    <div style={{ marginBottom: "80px" }}>
+                                                        <div className="bold">+180 millones</div>
+                                                        <div>de envases reciclados</div>
+                                                        <div>al año</div>
+                                                    </div>
+                                                    <PetOne />
+                                                </div>
+                                                <div>
+                                                    <div style={{ marginBottom: "80px" }}>
+                                                        <div className="bold">2 líneas</div>
+                                                        <div>de reciclaje</div>
+                                                        <div>el Callao</div>
+                                                    </div>
+                                                    <PetTwo />
+                                                </div>
+                                                <div>
+                                                    <div style={{ marginBottom: "80px" }}>
+                                                        <div className="bold">+1500</div>
+                                                        <div className="bold">recicladores</div>
+                                                        <div>en la cadena</div>
+                                                    </div>
+                                                    <PetThree />
+                                                </div>
+                                                <div>
+                                                    <div style={{ marginBottom: "80px" }}>
+                                                        <div className="bold">+40%</div>
+                                                        <div>rPET</div>
+                                                    </div>
+                                                    <PetFour />
+                                                </div>
                                             </div>
                                         </div>
-                                        <h6 className="companies-title_second">Nuestros logros de cultura organizacional</h6>
-                                        <div className="companies-second_us"> 
-                                            <div className="img-company-gpl">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div className="container-grid" style={{ marginTop: "80px", alignItems: "center" }}>
+                                    <div className="info-container">
+                                        <div className="title-green-container">
+                                            <h6>Toneladas de PET procesado</h6>
+                                        </div>
+                                        <p>Además de darle una nueva vida a los residuos posconsumo de PET trabajamos en el correcto aprovechamiento y disposición de los residuos post industriales resultantes de nuestro proceso productivo.</p>
+                                    </div>
+                                    <div className="img-container">
+                                        <ChartSbl />
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div className="container-grid" style={{ marginTop: "120px", alignItems: "center" }}>
+                                    <div className="info-container">
+                                        <div className="title-green-dark-container">
+                                            <h6>Acuerdo de Producción Limpia</h6>
+                                        </div>
+                                        <p>Somos la primera empresa de empaques del Perú en firmar un Acuerdo de Producción Limpia junto con el Ministerio del Ambiente y el Ministerio de la Producción. En este acuerdo nos comprometemos a desarrollar estrategias para incrementar el porcentaje de material reciclado post consumo en nuestros productos, minimizar y aprovechar nuestros residuos post industriales, ampliar nuestro portafolio de productos eco amigables y a desarrollar alianzas para la educación en cultura de reciclaje.</p>
+                                    </div>
+                                    <div className="post-img-card-rigth">
+                                        <div className="square-img-card">
+                                        </div>
+                                        <div className="img-card">
+                                            <img src={require('../images/img/postprod.png')} />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div className="container-grid" style={{ marginTop: "120px", alignItems: "center" }}>
+                                    <div className="info-container">
+                                        <div className="title-green-dark-container">
+                                            <h6>¡Comunidades sostenibles!</h6>
+                                        </div>
+                                        <p>Recicloplas Perú de la mano con sus clientes recolectan  material PET posconsumo  en sus locales con el cual luego se producen  envases de material reciclable.</p>
+
+                                        <span>Reduce, recicla, reúsa.</span>
+                                    </div>
+                                    <Slider {...settingsReciclopas} className="new-slick work sbl">
+                                        <div>
+                                            <div className="card-work">
+                                                <div className="header-work sbl">
+                                                    <img src={require('../images/img/pardos.png')} />
+                                                </div>
+                                                <div className="card-body">
+                                                    <h6>Pardos</h6>
+                                                    <p>Instalamos 27 estaciones de reciclaje en los locales de
+                                                    Lima y Callao, con el proposíto de recolectar 20 tonelaas de PET posconsumo en el año 2020.</p>
+                                                    <button>Ver más</button>
+                                                </div>
                                             </div>
-                                            <div className="img-company-gp">
+                                        </div>
+                                        <div>
+                                            <div className="card-work">
+                                                <div className="header-work sbl">
+                                                    <img src={require('../images/img/sinparar.png')} />
+                                                </div>
+                                                <div className="card-body">
+                                                    <h6>Recicla Sin Parar</h6>
+                                                    <p>Nuestro proyecto de desarrollo de PET microcelular para aplicaciones de empaques para alimentos
+                                                    nos hizo acreedores del reconocimiento.</p>
+                                                    <button>Ver más</button>
+                                                </div>
                                             </div>
-                                            <div className="img-company-gp">
+                                        </div>
+                                        <div>
+                                            <div className="card-work">
+                                                <div className="header-work sbl">
+                                                    <img src={require('../images/img/pardos.png')} />
+                                                </div>
+                                                <div className="card-body">
+                                                    <h6>Ayudantes de Producción</h6>
+                                                    <p>Apilar y embalar los productos que salen de la máquina.Abastecimiento de materia prima a la máquina.Revisión y limpieza de los productos.</p>
+                                                    <button>Ver más</button>
+                                                </div>
                                             </div>
-                                            <div className="img-company-gpw">
+                                        </div>
+                                    </Slider>
+                                </div>
+                            </div>
+                            <div>
+                                <div className="container-grid" style={{ alignItems: "flex-end", paddingBottom: "0px", paddingTop: "100px" }}>
+                                    <div className="elipse-work-videos"></div>
+                                    <div className="play-known" style={{ gridColumn: "2/4", left: "0px", zIndex: "1", top: "100px" }}>
+                                        <div className="square" style={{ background: "#5B8D4B" }}></div>
+                                        <div className="img-video_known">
+                                            <div className="img">
+                                                <img src={require('../images/img/workvideos.png')} />
                                             </div>
+                                        </div>
+                                        <div className="play-button_pm">
+                                            <button><Play /></button>
+                                        </div>
+                                    </div>
+                                    <div className="info-pm_work sbl"
+                                        style={{
+                                            position: "relative",
+                                            zIndex: "1",
+                                            top: "0px",
+                                            gridColumn: "4/8",
+                                            display: "flex",
+                                            marginLeft: "50px"
+                                        }}
+                                    >
+                                        <div>
+                                            <h6
+                                                style={{
+                                                    color: "#fff",
+                                                    width: "543px",
+                                                    fontSize: "50px",
+                                                    fontFamily: "Amble-bold"
+                                                }}
+                                            >Actividades Recicloplas</h6>
+                                            <p
+                                                style={{
+                                                    color: "#fff",
+                                                    width: "303px",
+                                                    marginTop: "20px",
+                                                    fontSize: "14px",
+                                                    fontFamily: "Amble-light"
+                                                }}
+                                            >Conoce  las actividades que realizamos  con nuestros proveedores.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -280,12 +482,8 @@ const News = ({ match }) => {
             {
                 pathname === "/trabaja-con-nosotros" ?
                     <div className="container" style={{ background: "#F9F9F9" }}>
-                        <div className="square-new" style={{ top: "0" }}></div>
-                        <div className="container-grid"
-                            style={{
-                                paddingTop: "280px"
-                            }}
-                        >
+                        <div className="square-new" style={{ top: "0", height: "1994px" }}></div>
+                        <div className="container-grid" style={{ paddingTop: "280px" }}>
                             <div className="info-new_slick"
                                 style={{
                                     gridColumn: "1/4",
@@ -297,8 +495,8 @@ const News = ({ match }) => {
                                 }}
                             >
                                 <div className="title-new">
-                                    <h4 style={{ color: "#009FE3" }}>¡Puestos disponibles Pamolsa!</h4>
-                                    <p>Todo lo que tenemos para ofrecerte</p>
+                                    <h4 style={{ color: "#009FE3" }}>¡Vacantes disponibles!</h4>
+                                    <p>Te estamos buscando</p>
                                 </div>
                             </div>
                             <Slider {...settingsWorks} className="new-slick work">
@@ -340,41 +538,14 @@ const News = ({ match }) => {
                                 </div>
                             </Slider>
                         </div>
-                        <div className="container-grid"
-                            style={{
-                                alignItems: "end",
-                                paddingBottom: "140px"
-                            }}
-                        >
-                            <div className="elipse-work"></div>
-                            <div className="img-pm"
-                                style={{
-                                    position: "relative",
-                                    zIndex: "1",
-                                    gridColumn: "1/4",
-                                    display: "flex",
-                                    justifyContent: "flex-end",
-                                    paddingTop: "180px"
-                                }}>
-                                
-                                <div 
-                                    style={{
-                                        position: "relative",
-                                    }}
-                                >
-                                    <div className="square"
-                                        style={{
-                                            zIndex: "-1",
-                                            background: "rgba(255, 255, 255, 0.12)",
-                                            top: "40px",
-                                            left: "-80px"
-                                        }}
-                                    ></div>
-                                    <img
-                                        style={{
-                                            borderRadius: "50px"
-                                        }}
-                                        src={require('../images/img/workpostula.png')} />
+                        <div className="container-grid" style={{ paddingBottom: "10px", paddingTop: "10px" }}>
+                            <ElipseBlue />
+                            <div className="play-known" style={{ gridColumn: "2/4", left: "0px", zIndex: "1", top: "0px" }}>
+                                <div className="square" style={{ background: "#1F6795" }}></div>
+                                <div className="img-video_known">
+                                    <div className="img">
+                                        <img src={require('../images/img/workpostula.png')} />
+                                    </div>
                                 </div>
                             </div>
                             <div className="info-pm_work"
@@ -382,20 +553,20 @@ const News = ({ match }) => {
                                     position: "relative",
                                     zIndex: "1",
                                     gridColumn: "4/8",
-                                    display: "flex",
-                                    justifyContent: "flex-start",
-                                    marginLeft: "50px"
+                                    marginLeft: "0px"
                                 }}
                             >
                                 <div>
                                     <h6
                                         style={{
                                             color: "#fff",
-                                            width: "543px",
+                                            width: "383px",
                                             fontSize: "50px",
-                                            fontFamily: "Amble-bold"
+                                            fontFamily: "Amble-bold",
+                                            marginTop: "150px"
                                         }}
-                                    >¡Postulamos para entrar en tu vida!</h6>
+                                    >¿No encontraste
+                                    una vancante de tu interés?</h6>
                                     <p
                                         style={{
                                             color: "#fff",
@@ -404,22 +575,47 @@ const News = ({ match }) => {
                                             fontSize: "14px",
                                             fontFamily: "Amble-light"
                                         }}
-                                    >Sé parte de este gran equipo de profesionales y ayúdanos a transformar planes en realidad.</p>
+                                    >Déjanos tu información y te contactaremos cuando se abra una vacante acorde a tu perfil profesional.</p>
                                     <Link to="/trabaja-con-nosotros/postúlate">
-                                    <button
-                                        style={{
-                                            color: "#fff",
-                                            marginTop: "20px",
-                                            fontSize: "14px",
-                                            fontFamily: "Amble-bold",
-                                            borderRadius: "30px",
-                                            background: "#009FE3",
-                                            border: "none",
-                                            padding: "10px 30px",
-                                            outline: "none",
-                                            cursor: "pointer"
-                                        }}
-                                    >Postulate aquí</button></Link>
+                                        <button
+                                            style={{
+                                                color: "#fff",
+                                                marginTop: "20px",
+                                                fontSize: "14px",
+                                                fontFamily: "Amble-bold",
+                                                borderRadius: "30px",
+                                                background: "#009FE3",
+                                                border: "none",
+                                                padding: "10px 30px",
+                                                outline: "none",
+                                                cursor: "pointer"
+                                            }}
+                                        >Postulate aquí</button></Link>
+                                </div>
+                            </div>
+                            <div className="info-container" style={{ zIndex: "1", marginTop: "50px" }}>
+                                <div className="title-white-container" style={{ position: "relative", width: "250px" }}>
+                                    <h6>Preguntas frecuentes</h6>
+                                </div>
+                            </div>
+                            <div className="box-container" style={{ zIndex: "1", gridColumn: "4/8", marginTop: "50px", display: "flex", justifyContent: "center" }}>
+                                <div>
+                                    <div className="box-informs">
+                                        <BarBox />
+                                        <p style={{ fontFamily: "Amble-bold", textDecoration: "none" }}>¿Cuánto tiempo tarda el proceso de selección?</p>
+                                    </div>
+                                    <div className="box-informs">
+                                        <BarBox />
+                                        <p style={{ fontFamily: "Amble-bold", textDecoration: "none" }}>¿Puedo enviar mi Currículum Vitae algún correo?</p>
+                                    </div>
+                                    <div className="box-informs">
+                                        <BarBox />
+                                        <p style={{ fontFamily: "Amble-bold", textDecoration: "none" }}>¿Puedo postular a más de una vacante?</p>
+                                    </div>
+                                    <div className="box-informs">
+                                        <BarBox />
+                                        <p style={{ fontFamily: "Amble-bold", textDecoration: "none" }}>¿Pamolsa paga todos los beneficios de acuerdo a ley? </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

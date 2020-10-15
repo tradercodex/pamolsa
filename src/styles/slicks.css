@@ -1,18 +1,150 @@
 .Slicks-pm {
     position: relative;
-    max-width: 1440px;
+    width: 100%;
     overflow: hidden;
     margin: 0 auto;
-    height: 100vh;
+    height: auto;
     background: #f9f9f9;
 }
 
-.Slicks-us_pm {
+.Slicks-pm.Us {
+    background: #fff;
+}
+
+.slick-slider {
+    width: 100%;
+    height: 100%;
+}
+
+.slick-list {
+    z-index: 2;
+    padding: 0 !important;
+}
+
+.Radius {
+    position: absolute;
+    width: 2200px;
+    height: 1206.42px;
+    left: -158px;
+    top: -360.45px;
+    background: rgba(152, 194, 29, 0.35);
+    border-radius: 191px;
+    transform: rotate(-16.85deg);
+}
+
+.Radius.Us {
+    position: absolute;
+    width: 2200px;
+    height: 1206.42px;
+    left: -158px;
+    top: -360.45px;
+    background: rgba(0, 82, 134, 0.16);
+    border-radius: 191px;
+    transform: rotate(-16.85deg);
+}
+
+.Rotate-slick {
+    overflow: hidden;
     position: relative;
-    max-width: 1440px;
+    width: 2200px;
+    height: 1206.42px;
+    top: -410px;
+    left: -153px;
+    border-radius: 191px;
+    transform: rotate(-21.34deg);
+}
+
+.Rotate-slick.Us::before {
+    background-color: rgba(0, 82, 134, 0.4);
+}
+
+.Rotate-slick::before {
+    position: absolute;
+    z-index: 1023;
+    content: '';
+    background-color: rgba(0, 82, 134, 0.2);
+    left: 0px;
+    top: 240px;
+    transform: rotate(21.34deg);
+    width: 100%;
+    height: 110%;
+}
+
+.Rotate-slick::after {
+    content: '';
+    z-index: 1022;
+    position: absolute;
+    background-image: url('../images/img/bannerpm.png');
+    background-blend-mode: soft-light;
+    background-color: rgba(156, 167, 8, 0.1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: -26px;
+    top: 346px;
+    transform: rotate(21.34deg);
+    min-width: 100%;
+    height: 100%;
+}
+
+.Rotate-slick.Us::after {
+    content: '';
+    z-index: 1022;
+    position: absolute;
+    background-image: url('../images/img/bannerus.png');
+    background-blend-mode: soft-light;
+    background-color: rgba(0, 82, 134, 0.2);
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: -26px;
+    top: 346px;
+    transform: rotate(21.34deg);
+    min-width: 100%;
+    height: 100%;
+}
+
+.Rotate-slick.Us::after {
+    background-image: url('../images/img/bannerus.png');
+}
+
+.Rotate-slick.Us.Sb::after {
+    background-image: url('../images/img/bannersostenibility.png');
+}
+
+.Rotate-slick.Us.Wu::after {
+    background-image: url('../images/img/workwithus.png') !important;
+}
+
+.Rotate-slick.Us.Cl::after {
+    background-image: url('../images/img/clients.png') !important;
+}
+
+.Rotate-slick.Us.New::after {
+    background-image: url('../images/img/bannernotice.png') !important;
+}
+
+.Rotate-slick.Us.Ctt::after {
+    background-image: url('../images/img/contacto.png') !important;
+}
+
+
+
+.Radius-us{
+    position: absolute;
+    width: 2200px;
+    height: 1206.42px;
+    left: -58px;
+    top: -49.45px;
+    background: rgba(0, 82, 134, 0.16);
+    border-radius: 191px;
+    transform: rotate(-16.85deg);
+}
+
+.Slicks-us_pm {
+    width: 100%;
+    position: relative;
     overflow: hidden;
     margin: 0 auto;
-    height: 75vh;
+    height: auto;
     background: #f9f9f9;
 }
 
@@ -32,37 +164,6 @@
     margin: 0 auto;
     height: 75vh;
     background: #FFFFFF;
-}
-
-.slick-slider {
-    width: 100%;
-    height: 100%;
-}
-
-.slick-list {
-    z-index: 2;
-}
-
-.Radius {
-    position: absolute;
-    width: 1767.76px;
-    height: 108vh;
-    left: -158px;
-    top: -300.45px;
-    background: rgba(152, 194, 29, 0.35);
-    border-radius: 191px;
-    transform: rotate(-16.85deg);
-}
-
-.Radius-us{
-    position: absolute;
-    width: 1767.76px;
-    height: 55vh;
-    left: -58px;
-    top: -49.45px;
-    background: rgba(0, 82, 134, 0.16);
-    border-radius: 191px;
-    transform: rotate(-16.85deg);
 }
 
 .Radius-sb, .Radius-wwu, .Radius-cnt {
@@ -87,16 +188,6 @@
     transform: rotate(-16.85deg);
 }
 
-.Rotate-slick {
-    overflow: hidden;
-    position: relative;
-    width: 1640px;
-    height: 120vh;
-    top: -410px;
-    left: -153px;
-    border-radius: 191px;
-    transform: rotate(-21.34deg);
-}
 
 .Rotate-slick_us {
     overflow: hidden;
@@ -120,18 +211,6 @@
     transform: rotate(-21.34deg);
 }
 
-.Rotate-slick::before {
-    position: absolute;
-    z-index: 1023;
-    content: '';
-    background-color: rgba(0, 82, 134, 0.2);
-    left: 0px;
-    top: 240px;
-    transform: rotate(21.34deg);
-    width: 100%;
-    height: 150vh;
-}
-
 .Rotate-slick_us::before ,
 .Rotate-slick_sb::before , 
 .Rotate-slick_wwu::before, 
@@ -147,22 +226,6 @@
     background-color: rgba(0, 82, 134, 0.3);
     border-radius: 191px;
     transform: rotate(-21.34deg);
-}
-
-.Rotate-slick::after {
-    content: '';
-    z-index: 1022;
-    position: absolute;
-    background-image: url('../images/img/bannerpm.png');
-    background-blend-mode: soft-light;
-    background-color: rgba(156, 167, 8, 0.1);
-    background-repeat: no-repeat;
-    background-size: unset;
-    left: -26px;
-    top: 346px;
-    transform: rotate(21.34deg);
-    width: 100%;
-    height: 150vh;
 }
 
 .Rotate-slick_us::after {
@@ -204,7 +267,7 @@
     content: '';
     z-index: 1022;
     position: absolute;
-    background-image: url('../images/img/sostenibilidad.png');
+    background-image: url('../images/img/bannersostenibility.png');
     background-blend-mode: soft-light;
     background-color: rgba(0, 82, 134, 0.2);
     background-repeat: no-repeat;
@@ -238,7 +301,7 @@
     content: '';
     z-index: 1022;
     position: absolute;
-    background-image: url('../images/img/news.png');
+    background-image: url('../images/img/bannernotice.png');
     background-blend-mode: soft-light;
     background-color: rgba(20, 20, 20, 0.2);
     background-repeat: no-repeat;
@@ -298,11 +361,11 @@
 
 .Slicks-pm ul.slick-dots {
     transform: rotate(90deg);
-    right: 480px;
-    top: -160px;
+    right: 620px;
+    top: -210px;
     z-index: 1000;
     height: 100%;
-    width: 140px;
+    width: 60px;
 }
 
 .slick-dots li button:before {
@@ -333,6 +396,18 @@
     top: 790px;
     z-index: 999999;
     transform: rotate(21.34deg);
+}
+
+.info-slick.Us {
+    position: relative;
+    left: 360px;
+    top: 700px;
+    z-index: 999999;
+    transform: rotate(21.34deg);
+}
+
+.info-slick.Us p {
+    width: 385px;
 }
 
 .info-slick_us,.info-slick_sb ,.info-slick_wwu, .info-slick_clts, .info-slick_news {
@@ -380,7 +455,6 @@
     position: relative;
     top: -280px;
     margin: 0 auto;
-    max-width: 1440px;
 }
 
 .footer-slick .tree-pm img {
@@ -389,30 +463,66 @@
 }
 
 @media only screen and (max-width: 1440px) {
-    .Slicks-pm {
-        height: 115vh;
+    .Rotate-slick::after{
+        background-size: contain;
     }
-    .Rotate-slick {
-        height: 125vh;
-        top: -410px;
-        left: -146px;
+    .Rotate-slick.Us::after {
+        background-size: contain;
     }
-    .Rotate-slick::after {
-        left: -27px;
-        top: 346px;
-        height: 150vh;
+    .info-slick.Us {
+        left: 250px;
+        top: 700px;
     }
-    .info-slick,.info-slick_sb ,.info-slick_wwu, .info-slick_clts, .info-slick_news {
-        left: 165px;
-        top: 770px;
+    .Rotate-slick::before {
+        height: 110%;
     }
-    .Radius {
-        height: 117vh;
-        left: -158px;
-        top: -300.45px;
+    .new-slick .slick-dots {
+        left: 200px !important;
     }
-    .Slicks-pm ul.slick-dots {
-        right: 550px;
-        top: -230px;
+    .tree-new {
+        top: -90px !important;
+    }
+    .Slicks-pm.Us {
+        max-width: 1440px;
+        height: 75vh !important;
+    }
+    .Radius.Us {
+        position: absolute;
+        width: 1767.76px;
+        height: 55vh;
+        left: -58px;
+        top: -49.45px;
+        background: rgba(0, 82, 134, 0.16);
+        border-radius: 191px;
+        transform: rotate(-16.85deg);
+    }
+    .Rotate-slick.Us {
+        width: 2700px;
+        height: 94vh;
+        top: -600px;
+        left: -102px;
+        border-radius: 191px;
+        transform: rotate(-21.34deg);
+    }
+    .Rotate-slick.Us::after {
+        background-color: rgba(0, 82, 134, 0.2);
+        background-repeat: no-repeat;
+        background-size: contain;
+        left: -55px;
+        top: 350px;
+        opacity: 1;
+        transform: rotate(21.34deg);
+        width: 1560px;
+        height: 110vh;
+    }
+    .Rotate-slick.Us::before {
+        height: 140vh;
+        left: -80px;
+        width: 100%;
+    }
+    .info-slick.Us {
+        top: 800px;
+        left: 100px;
     }
 }
+

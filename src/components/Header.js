@@ -12,7 +12,6 @@ const Header = ({ match }) => {
     let pathname = match.path
     let rut = match.params.name
     let url = match.url
-    console.log(url)
 
     return (
         <Fragment>

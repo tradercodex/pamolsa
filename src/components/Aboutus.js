@@ -1,28 +1,121 @@
 import React from 'react';
+import Planta from '../images/svg/planta';
+import Colaborator from '../images/svg/colaboradores';
+import Families from '../images/svg/families';
+import Machine from '../images/svg/machine';
+import Book from '../images/svg/book';
+import Chart from '../images/svg/chartus';
+import Logo from '../images/svg/logo';
 
 const AboutUs = () => {
     return (
-        <div className="About-us_pm">
-            <div className="container-about_us">
-                <div className="info-about">
+        <>
+            <div className="container-informations footer">
+                <div className="info-carbajal about">
                     <div>
-                        <h3>Quienes Somos</h3>
+                        <img src={require('../images/img/aboutcarbajal.png')} alt="imagen" />
                         <p>
-                            En 1994 iniciamos nuestra operación como una empresa dedicada al diseño, fabricación y comercialización de envases desechables. A través de los años hemos venido creciendo, incorporando nuevas líneas de producto al ritmo de las necesidades del mercado. Nuestros envases están fabricados en plástico (poliestireno, poliestireno expandido, polipropileno y pet), papel y aluminio.<br /><br /> Atendemos a diversos tipos de clientes de consumo masivo o food service, además de clientes industriales y agroindustriales, abarcando no sólo el mercado peruano sino también extendiendo nuestra cobertura a varios países de Sudamérica y Centroamérica.<br /><br /> Formamos parte de la organización Carvajal, grupo multinacional que tiene sede principal en Colombia y con presencia en 16 países en América Latina.
-                        </p>
+                            Somos parte de Carvajal Empaques, compañía de la Organización Carvajal especializada en el diseño, producción y distribución de soluciones personalizadas e innovadoras de empaques para alimentos.
+                            </p>
                     </div>
                 </div>
-                <div className="card-about">
-                    <div className="square us">
+                <div className="img-carbajal">
+                    <div className="wc">
+                        <div className="square-carbajal"></div>
+                        <img src={require('../images/img/carbajal.png')} />
                     </div>
-                    <div className="img-about_us">
-                        <div className="img">
-                            <img src={require('../images/img/aboutus.png')} />
+                </div>
+            </div>
+            <div className="Map_pm container">
+                <div className="container-grid_img">
+                    <div className="img-map_pm">
+                        <img src={require('../images/img/map.png')} />
+                    </div>
+                    <div className="info-map_pm">
+                        <div>
+                            <span>Presencia</span>
+                            <h6>Carvajal Empaques</h6>
+                            <span>en el mundo</span>
+                            <div className="text-map_pm">
+                                <div className="skills-gc">
+                                    <div className="pm-inf_sk">
+                                        <div>
+                                            <Planta />
+                                        </div>
+                                        <strong>12</strong>
+                                        <p>número de plantas</p>
+                                    </div>
+                                    <div className="pm-inf_sk">
+                                        <div>
+                                            <Colaborator />
+                                        </div>
+                                        <strong>6,200</strong>
+                                        <p>Colaboradores</p>
+                                    </div>
+                                    <div className="pm-inf_sk">
+                                        <div>
+                                            <Families />
+                                        </div>
+                                        <strong>2,700</strong>
+                                        <p>Clientes</p>
+                                    </div>
+                                </div>
+                                <div className="skills-gc">
+                                    <div className="pm-inf_sk">
+                                        <div>
+                                            <Machine />
+                                        </div>
+                                        <strong>1000</strong>
+                                        <p>número de máquinas</p>
+                                    </div>
+                                    <div className="pm-inf_sk">
+                                        <div>
+                                            <Book />
+                                        </div>
+                                        <strong>10000</strong>
+                                        <p>SKU’s</p>
+                                    </div>
+                                    <div className="pm-inf_sk">
+                                        <div>
+                                            <Chart />
+                                        </div>
+                                        <strong>USD$430mm</strong>
+                                        <p>Ventas</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="footer-dc text-map_pm">
+                            <div>Somos una empresa</div>
+                            <div className="bold">Multilatina</div> 
+                            <div>que contribuye con sus empaques</div><div>a que las personas vivas en un mundo mejor</div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <div className="About-us_pm">
+                <div className="container-about_us">
+                    <div className="info-about">
+                        <div>
+                            <Logo />
+                            <h3>Quiénes Somos</h3>
+                            <p>
+                            Somos una empresa peruana parte de Carvajal Empaques, con más de 28 años en el mercado, especializada en el diseño, producción y distribución de soluciones personalizadas e innovadoras de empaques, con un crecimiento constante desarrollando nuevas líneas de productos más amigables con el medio ambiente y siguiendo las tendencias del mercado.
+                        </p>
+                        </div>
+                    </div>
+                    <div className="card-about">
+                        <div className="square us">
+                        </div>
+                        <div className="img-about_us">
+                            <div className="img">
+                                <img src={require('../images/img/boyspamolsa.png')} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
     );
 }
 

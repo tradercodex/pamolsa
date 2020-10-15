@@ -88,14 +88,14 @@ class Slicks extends React.Component {
                 {
                     pathname === "/nosotros" ?
                         <div>
-                            <div className="Slicks-us_pm">
-                                <div className="Radius-us"></div>
+                            <div className="Slicks-pm Us">
+                                <div className="Radius Us"></div>
                                 <Slider {...settings}>
                                     <div>
-                                        <div className="Rotate-slick_us">
-                                            <div className="info-slick_us">
+                                        <div className="Rotate-slick Us">
+                                            <div className="info-slick Us">
                                                 <h2>Nosotros</h2>
-                                                <p>Experiencia y calidad a su servicio</p>
+                                                <p>Ofrecemos soluciones innovadoras y personalizadas de empaques sostenibles</p>
                                             </div>
                                         </div>
                                     </div>
@@ -106,12 +106,12 @@ class Slicks extends React.Component {
                 {
                     pathname === "/sostenibilidad" ?
                         <div>
-                            <div className="Slicks-sb_pm">
-                                <div className="Radius-us"></div>
+                            <div className="Slicks-pm Us">
+                                <div className="Radius Us"></div>
                                 <Slider {...settings}>
                                     <div>
-                                        <div className="Rotate-slick_sb">
-                                            <div className="info-slick_sb">
+                                        <div className="Rotate-slick Us Sb">
+                                            <div className="info-slick Us">
                                                 <h2>Sostenibilidad</h2>
                                                 <p>Nuestro compromiso con el entorno para ser rentables</p>
                                             </div>
@@ -124,14 +124,13 @@ class Slicks extends React.Component {
                 {
                     pathname === "/trabaja-con-nosotros" ?
                         <div>
-                            <div className="Slicks-wwu_pm">
-                                <div className="Radius-wwu"></div>
+                            <div className="Slicks-pm Us" style={{background: "#F9F9F9"}}>
+                                <div className="Radius Us"></div>
                                 <Slider {...settings}>
                                     <div>
-                                        <div className="Rotate-slick_wwu">
-                                            <div className="info-slick_wwu">
-                                                <h2>Trabaja con nosotros</h2>
-                                                <p>Experiencia y calidad a su servicio</p>
+                                        <div className="Rotate-slick Us Wu">
+                                            <div className="info-slick Us">
+                                                <h2>¡Trabaja con nosotros y se parte de nuestra familia!</h2>
                                             </div>
                                         </div>
                                     </div>
@@ -142,12 +141,12 @@ class Slicks extends React.Component {
                 {
                     pathname === "/clientes" ?
                         <div>
-                            <div className="Slicks-clts_pm">
-                                <div className="Radius-clts"></div>
+                            <div className="Slicks-pm Us">
+                                <div className="Radius Us"></div>
                                 <Slider {...settings}>
                                     <div>
-                                        <div className="Rotate-slick_clts">
-                                            <div className="info-slick_clts">
+                                        <div className="Rotate-slick Us Cl">
+                                            <div className="info-slick Us">
                                                 <h2>Clientes</h2>
                                                 <p>Experiencia y calidad a su servicio</p>
                                             </div>
@@ -160,14 +159,14 @@ class Slicks extends React.Component {
                 {
                     pathname === "/noticias" ?
                         <div>
-                            <div className="Slicks-news_pm">
-                                <div className="Radius-news"></div>
+                            <div className="Slicks-pm Us">
+                                <div className="Radius Us"></div>
                                 <Slider {...settings}>
                                     <div>
-                                        <div className="Rotate-slick_news">
-                                            <div className="info-slick_news">
+                                        <div className="Rotate-slick Us New">
+                                            <div className="info-slick Us">
                                                 <h2>Noticias</h2>
-                                                <p>Conoce nuetras ultimas noticias</p>
+                                                <p>Entérate de nuestras últimas novedades</p>
                                             </div>
                                         </div>
                                     </div>
@@ -178,12 +177,12 @@ class Slicks extends React.Component {
                 {
                     pathname === "/contacto" ?
                         <div>
-                            <div className="Slicks-cnt_pm">
-                                <div className="Radius-cnt"></div>
+                            <div className="Slicks-pm Us">
+                                <div className="Radius Us"></div>
                                 <Slider {...settings}>
                                     <div>
-                                        <div className="Rotate-slick_cnt">
-                                            <div className="info-slick_news">
+                                        <div className="Rotate-slick Us Ctt">
+                                            <div className="info-slick Us">
                                                 <h2>Contacto</h2>
                                                 <p>Dejanos tus datos para contactarte</p>
                                             </div>

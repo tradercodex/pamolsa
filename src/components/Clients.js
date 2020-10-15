@@ -6,7 +6,6 @@ import { withRouter } from 'react-router-dom';
 const Clients = ({match}) => {
 
     let pathname = match.path
-    console.log(pathname)
 
     const settingsNews = {
         dots: false,
@@ -16,7 +15,7 @@ const Clients = ({match}) => {
         centerMode: true,
         centerPadding: "60px",
         initialSlade: 0,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 4000,
         appendDots: dots => (
             <div

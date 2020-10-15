@@ -64,7 +64,7 @@ class OurClients extends React.Component {
                             data-wow-duration="2s"
                             data-wow-delay="1.8s">
                                 <div className="img">
-                                    <img src={require('../images/img/clientmain.png')} />
+                                    <img src={require('../images/img/weclient.png')} />
                                 </div>
                             </div>
                         </div>

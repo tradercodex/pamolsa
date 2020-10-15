@@ -3,8 +3,8 @@ import React from 'react';
 const House = () => {
     return (
         <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="26" cy="26" r="25.4348" stroke="#005286" stroke-width="1.13043" />
-            <g clip-path="url(#clip0)">
+            <circle cx="26" cy="26" r="25.4348" stroke="#005286" strokeWidth="1.13043" />
+            <g clipPath="url(#clip0)">
                 <path d="M23.7073 34.1923H21.2354V35.6993H23.7073V34.1923Z" fill="white" />
                 <path d="M17.1868 34.1923H14.7148V35.6993H17.1868V34.1923Z" fill="white" />
                 <path d="M30.4914 33.486H28.1289V39.6534H30.4914V33.486Z" fill="white" />

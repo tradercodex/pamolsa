@@ -20,16 +20,16 @@
 }
 
 body {
-    background: #E5E5E5;
+    background: #F9F9F9;
     position: relative;
 }
 
 .container {
     position: relative;
-    max-width: 1440px;
     overflow: hidden;
     margin: 0 auto;
     background: #FFFFFF;
+    padding-bottom: 80px;
 }
 
 .container-grid {

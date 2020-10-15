@@ -1,45 +1,35 @@
 .Mision-vision_pm {
-    max-width: 1440px;
     margin: 0 auto;
     background: #f9f9f9;
 }
 
 .container-vision_mision_pm {
-    width: 100%;
-    display: grid;
-    grid-gap: 70px;
+    max-width: 1440px;
+    display: flex;
     padding-top: 120px;
-    grid-template-columns: repeat(9, 1fr);
+    margin: 0 auto;
     padding-bottom: 80px;
 }
 
-.vision {
+.container-vision, .container-mision , .container-promise-value , .container-propose{
     position: relative;
-    z-index: 2;
-    grid-column: 4/7;
-    display: flex;
-    justify-content: center;
-}
-
-.container-vision, .container-mision , .container-promise-value {
-    position: relative;
-    width: 335px;
     height: 257.08px;
+    margin-left: 70px;
 }
 
-.info-vision, .info-mision, .info-promise_value {
+.info-vision, .info-mision, .info-promise_value, .info-propose {
     position: relative;
     z-index: 1024;
-    width: 335px;
+    width: 295px;
     height: 204px;
     background: #FFFFFF;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.07);
+    box-shadow: 0px 3.62686px 18.1343px rgba(0, 0, 0, 0.07);
     border-radius: 30px;
     display: flex;
     justify-content: center;
 }
 
-.vision h6, .mision h6, .promise-value h6 {
+.vision h6, .mision h6, .promise-value h6 , .propose h6 {
     color: #005286;
     font-size: 20px;
     font-family: 'Amble';
@@ -48,7 +38,7 @@
     margin-top: 20px;
 }
 
-.vision h6::after, .mision h6::after, .promise-value h6::after {
+.vision h6::after, .mision h6::after, .promise-value h6::after , .propose h6::after {
     content: '';
     position: absolute;
     top: 40px;
@@ -59,7 +49,7 @@
     height: 1px;
 }
 
-.info-mision p , .info-vision p, .info-promise_value p {
+.info-mision p , .info-vision p, .info-promise_value p, .info-propose p {
     font-family: 'Amble-light';
     font-style: normal;
     font-weight: 300;
@@ -81,34 +71,37 @@
     font-family: 'Amble-bold';
 }
 
-.mision {
-    position: relative;
-    grid-column: 1/4;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.promise-value {
-    position: relative;
-    grid-column: 7/10;
-    display: flex;
-    justify-content: start;
-}
-
-.square-mision, .square-vision , .square-promise_value {
+.square-mision, .square-vision , .square-promise_value, .square-propose {
     position: absolute;
     z-index: 1;
-    width: 335px;
+    width: 295px;
     height: 198.26px;
     background: #D1EBFC;
     border-radius: 30px;
     transform: rotate(-3.38deg);
 }
 
-.square-mision ,.square-vision , .square-promise_value {
-    left: -35px;
-    top: 25px;
+.square-mision ,.square-vision , .square-promise_value , .square-propose {
+    left: -20px;
+    top: 5px;
 }
 
-
-
+@media only screen and (max-width: 1440px) {
+    .info-about {
+        grid-column: 1/4;
+        justify-content: center;
+    }
+    .info-carbajal {
+        grid-column: 1/4 !important;
+        justify-content: center;
+    }
+    .info-vision, .info-mision, .info-promise_value, .info-propose {
+        width: 257px;
+    }
+    .container-vision, .container-mision , .container-promise-value , .container-propose{
+        margin-left: 80px;
+    }
+    .square-mision, .square-vision , .square-promise_value, .square-propose {
+        width: 257px;
+    }
+}

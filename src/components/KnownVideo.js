@@ -38,12 +38,45 @@ class KnownVideo extends React.Component {
                                 <h4
                                     className="wow animate__animated animate__fadeIn"
                                     data-wow-duration="2s"
-                                    data-wow-delay="0.3s">Conoce más de nosotros</h4>
-                                <p
-                                    className="wow animate__animated animate__fadeInDown"
-                                    data-wow-duration="2s"
-                                    data-wow-delay="0.3s"
-                                >Generamos valor con procesos sostenibles, Conoce nuestra iniciativa corporativa</p>
+                                    data-wow-delay="0.3s">Como hacemos nuestros empaques</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="Certifications">
+                    <div className="container-certifications">
+                        <div className="info-certifications">
+                            <div>
+                                <h6>Nuestras Certificaciones</h6>
+                                <span>Cumplimos con normas y reglamentos internacionales</span>
+                                <p>
+                                Comprometidos con nuestros clientes, colaboradores y proveedores buscamos trabajar dentro de estandares internacionales que garanticen la calidad de nuestros productos, procesos y sistemas, así como la mejora continua en la seguridad y salud de nuestros colaboradores.
+                                </p>
+                            </div>
+                        </div>
+                        <div className="certifications-companies">
+                            <div>
+                                <h6 className="companies-title">Certificaciones Internacionales</h6>
+                                <div className="companies_us">
+
+                                    <div className="img-company-sgs">
+                                    </div>
+                                    <div className="img-company-sgs">
+                                    </div>
+                                    <div className="img-company-brc">
+                                    </div>
+                                </div>
+                                <h6 className="companies-title_second">Certificaciones en Gestión Humana</h6>
+                                <div className="companies-second_us">
+                                <div className="img-company-gp">
+                                    </div>
+                                    <div className="img-company-gpl">
+                                    </div>
+                                    <div className="img-company-gpw">
+                                    </div>
+                                    <div className="img-company-gp">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

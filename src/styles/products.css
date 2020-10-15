@@ -1,6 +1,4 @@
 .Menu-Category_pm, .Distributor-search {
-    max-width: 1440px;
-    margin: 0 auto;
     padding-top: 10px;
     background: #005286;
 }
@@ -15,7 +13,7 @@
     justify-content: center;
     align-items: center;
     margin: 25px auto;
-    max-width: 1013px;
+    max-width: 1420px;
 }
 
 .Search-container button {
@@ -37,7 +35,7 @@
 }
 
 .Search-container input {
-    width: 1013px;
+    min-width: 1413px;
     background: #FFFFFF;
     box-shadow: 0px 4px 20px #02426A;
     border-radius: 40px;
@@ -45,6 +43,7 @@
     padding: 15px 15px 15px 50px;
     font-family: 'Amble-light';
     font-size: 14px;
+    outline: none;
 }
 
 .Search-container input::placeholder {
@@ -101,7 +100,7 @@
     overflow: hidden;
     position: relative;
     grid-column: 1/6;
-    background-color: #F2E2D9;
+    width: 100%;
     border-radius: 0px 50px 50px 0px;
     display: flex;
     justify-content: center;
@@ -111,18 +110,27 @@
 .img-bioform_product {
     position: relative;
     z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.img-bioform_product img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .info-product_bf {
-    width: 367px;
+    left: 30px;
     margin-top: 50px;
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    z-index: 3;
 }
 
 .info-product_bf h4{
     color: #4A7729;
     font-size: 40px;
+    width: 400px;
     font-family: 'Amble-Bold';
     font-weight: bold;
 }
@@ -135,7 +143,7 @@
     cursor: pointer;
     outline: none;
     border-radius: 50px;
-    background: transparent;
+    background: #fff;
     border: 1px solid #4D4D4C; 
     margin-top: 30px;
 }
@@ -143,20 +151,23 @@
 .Products-Quote_2 {
     position: relative;
     grid-column: 6/9;
-    background: #EBF7FF;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
     border-radius: 50px 0px 0px 50px;
 }
 
 .info-product_bf_2 {
-    width: 317px;
     margin-top: 50px;
     left: 40px;
     position: absolute;
-    z-index: 1;
+    z-index: 3;
 }
 
 .info-product_bf_2 h4{
     color: #4D4D4C;
+    width: 317px;
     font-size: 40px;
     font-family: 'Amble-Bold';
     font-weight: bold;
@@ -170,7 +181,7 @@
     cursor: pointer;
     outline: none;
     border-radius: 50px;
-    background: transparent;
+    background: #fff;
     border: 1px solid #4D4D4C; 
     margin-top: 30px;
 }
@@ -178,6 +189,8 @@
 .Products-Quote_3 {
     overflow: hidden;
     position: relative;
+    width: 100%;
+    height: 100%;
     z-index: 1;
     grid-column: 1/4;
     background: #F9F8F8;
@@ -189,7 +202,7 @@
     margin-top: 50px;
     left: 40px;
     position: absolute;
-    z-index: 1;
+    z-index: 3;
 }
 
 .info-product_bf_3 h4{
@@ -207,15 +220,15 @@
     cursor: pointer;
     outline: none;
     border-radius: 50px;
-    background: transparent;
+    background: #fff;
     border: 1px solid #4D4D4C; 
     margin-top: 30px;
 }
 
 .Products-Quote_4 {
+    overflow: hidden;
     position: relative;
     grid-column: 4/9;
-    background: #D1EBFC;
     border-radius: 50px 0px 0px 50px;
 }
 
@@ -225,7 +238,7 @@
     margin-top: 50px;
     left: 40px;
     position: absolute;
-    z-index: 1;
+    z-index: 3;
 }
 
 .info-product_bf_4 h4{
@@ -243,7 +256,7 @@
     cursor: pointer;
     outline: none;
     border-radius: 50px;
-    background: transparent;
+    background: #fff;
     border: 1px solid #4D4D4C; 
     margin-top: 30px;
 }
@@ -314,30 +327,25 @@
     transform: rotate(180deg);
 }
 
-.pen_3 {
-    position: absolute;
-    background-size: contain;
-    background-repeat: no-repeat;
-    top: 0px;
-    right: 20px;
-    width: 186px;
-    height: 226px;
-    z-index: 1;
-    background-image: url('../images/img/pen3.png');
-    opacity: 0.4;
-}
-
-
 .filter-shadow {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     width: 100%;
-    height: 200px;
-    bottom: 0;
-    background: rgba(250, 218, 201, 0.61);
-    background-blend-mode: multiply;
-    filter: blur(59px);
-    border-radius: 0px 0px 50px 0px;
+    height: 100%;
+    top: 0;
+    background: linear-gradient(180deg, #FFEEE4 -12.97%, rgba(242, 226, 217, 0) 100%);
+    border-radius: 0px 50px 50px 0px;
+}
+
+.filter-shadow-white {
+    position: absolute;
+    z-index: 2;
+    width: 120%;
+    height: 100%;
+    top: -40px;
+    left: -10px;
+    background: linear-gradient(180deg, #EBF7FF 0%, rgba(235, 247, 255, 0) 106.01%);
+    border-radius: 50px 0px 0px 50px;
 }
 
 .filter-shadow.blue {
@@ -355,6 +363,12 @@
 .img-bioform_product_4 {
     display: flex;
     justify-content: flex-end;
+}
+.img-bioform_product_4 img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
 }
 
 .Products-populate_pm {
@@ -531,17 +545,26 @@ h2.title-choose_business {
     line-height: 14px;
     margin-bottom: 20px;
     color: #4D4D4C;
-}   
+}  
+
+.img-bioform_product_2 {
+    position: relative;
+    background: transparent;
+}
 
 .img-bioform_product_2 img {
     position: absolute;
-    right: 0;
-    bottom: 0;
+    object-fit: cover;
+    z-index: 1;
+    width: 100%;
 }
 
 .img-bioform_product_3 img {
     position: absolute;
     right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     bottom: 0;
 }
 

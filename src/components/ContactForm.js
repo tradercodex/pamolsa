@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react'
 import ReactSelect from 'react-select'
+import ContactCall from '../images/svg/contactcall';
+import ContactMarker from '../images/svg/markercontact';
 
 const ContactForm = () => {
 
@@ -87,23 +89,53 @@ const ContactForm = () => {
 
                             </textarea>
                         </div>
+                        <div className="conditions">
+                            Acepto la política de protección de datos personales de este sitio
+                        </div>
+                        <div className="btn-send">
+                            <button>Enviar</button>
+                        </div>
                     </div>
                 </div>
-                <div className="prs-clients">
+                <div className="prs-clients" style={{gridColumn: "7/8"}}>
                     <div >
-                        <div className="square wow animate__animated animate__fadeIn"
-                            data-wow-duration="2s"
-                            data-wow-delay="1.4s">
-
+                        <div className="square" style={{ height: "640px"}}>
                         </div>
-                        <div className="img-video_known wow animate__animated animate__fadeInRight"
-                            data-wow-duration="2s"
-                            data-wow-delay="1.8s">
-                            <div className="img">
-                                <img src={require('../images/img/clientmain.png')} />
+                        <div className="img-video_known">
+                            <div className="img" style={{height:  "100%"}}>
+                                <img style={{ height: "640px"}} src={require('../images/img/contactform.png')} />
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className="footer-contact">
+                <div className="new-tree">
+                    <img src={require('../images/img/newtree.png')} alt=""/>
+                </div>
+                <div className="container-grid">
+                    <div className="marker-contact">
+                        <div className="flx">
+                            <ContactMarker />
+                            <div>
+                                <p>Dirección</p>
+                                <span>Av. Elmer Faucett 3486 Urb.Bocanegra, Callao</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div className="call-contact">
+                    <div className="flx">
+                            <ContactCall />
+                            <div>
+                                <p>Dirección</p>
+                                <div><span>Teléfonos Central: (511) 710-3020</span></div>
+                                <div><span>Ventas: 994644843 / 994647087</span><div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </Fragment>

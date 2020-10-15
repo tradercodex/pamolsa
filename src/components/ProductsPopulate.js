@@ -3,12 +3,10 @@ import Slider from "react-slick";
 import { withRouter } from 'react-router-dom'
 import '../styles/products.css'
 
-const ProductsPopulate = ({ title, match }) => {
-
-    console.log(match.path)
+const ProductsPopulate = ({ match }) => {
 
     let pathname = match.path
-    console.log(pathname)
+
     const settingsPopulate = {
         infinite: true,
         slidesToShow: 3,

@@ -8,7 +8,7 @@
 
 .Container-header_pm {
     position: relative;
-    max-width: 1440px;
+    max-width: 1840px;
     margin: 0 auto;
     display: grid;
     align-items: center;
@@ -169,5 +169,3 @@
   .select-sim .options .option input:checked + label span{
     margin-left: 10px;
   }
-  
-

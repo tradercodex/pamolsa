@@ -48,8 +48,34 @@
     border-bottom: 1px solid rgba(118, 118, 118, 0.45);
 }
 
-li a.active-category {
-    background: #009FE3;
-    padding: 8px ;
+li a.category {
+    background: #fff;
     border-radius: 30px;
+    position: relative;
+    color: #4D4D4C;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+li a.active-category {
+    background: #D1EBFC;
+    border-radius: 30px;
+    position: relative;
+    color: #4D4D4C;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+li a.category span, li a.active-category span {
+    margin-left: 20px !important;
+}
+
+li a.category img , li a.active-category img {
+    padding: 10px;
+    left: 0px;
+    position: absolute;
 }

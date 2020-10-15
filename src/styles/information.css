@@ -22,15 +22,12 @@
 .container-informations {
     position: relative;
     display: grid;
+    background: #fff;
     z-index: 1;
-    align-items: flex-start;
+    align-items: center;
     grid-template-columns: repeat(7,1fr);
     grid-gap: 60px;
-    margin-bottom: 170px;
-}
-
-.container-informations.footer {
-    margin-bottom: 100px;
+    padding-bottom: 80px;
 }
 
 .img-carbajal, .img-info_carbajal {
@@ -82,9 +79,8 @@
     top: 0px;
     width: 560.67px;
     height: 393.04px;
-    right: 180px;
     z-index: 1020;
-    background: rgba(255, 255, 255, 0.14);
+    background: #D1EBFC;
     border-radius: 50px;
     transform: rotate(9.05deg);
 }
@@ -92,14 +88,27 @@
 .img-carbajal img {
     position: relative;
     z-index: 1022;
+    left: 20px;
     border-radius: 30px;
+}
+
+.img-carbajal img::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 82, 134, 0.2);
+    z-index: 1023;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
 }
 
 .info-carbajal {
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    grid-column: 1/4;
+    grid-column: 2/4;
+}
+
+.info-carbajal.about p {
+    font-size: 14px;
+    color: #4D4D4C;
 }
 
 .info-carbajal div {
@@ -108,7 +117,6 @@
 
 .info-carbajal img {
     position: relative;
-    right: 20px;
 }
 
 .info-carbajal h6 {
@@ -203,21 +211,21 @@
 }
 
 .img-map_pm {
-    grid-column: 1/8;
+    grid-column: 2/8;
     display: flex;
-    padding: 50px 50px 100px 150px;
     justify-content: center;
 }
 
 .img-map_pm img {
-    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
 }
 
 .info-map_pm {
     grid-column: 8/11;
     position: relative;
     right: 150px;
-    padding-top: 85px;
+    padding-top: 20px;
 }
 
 .info-map_pm span {
@@ -238,21 +246,30 @@
 }
 
 .container-grid_img {
-    max-width: 1440px;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
 }
 
 .text-map_pm {
-    color: #4D4D4C;
+    text-align: center;
+    color: #005286;
     font-family: 'Amble-light';
-    width: 464px;
+    width: 456px;
     font-size: 14px;
     margin-top: 20px;
 }
 
+.text-map_pm .bold {
+    font-family: 'Amble-bold';
+}
+
+.footer-dc {
+    position: relative;
+    right: 40px;
+}
+
 .skills-gc {
-    margin-top: 60px;
+    margin-top: 40px;
     display: flex;
     align-items: center;
 }
@@ -299,4 +316,14 @@
     margin-top: 20px;
     outline: none;
     cursor: pointer;
+}
+
+.img-map_pm.information {
+    justify-content: flex-start;
+}
+
+@media only screen and (max-width: 1440px) {
+    .img-values {
+        max-width: 998px;
+    }
 }

@@ -4,39 +4,57 @@ import { Link } from 'react-router-dom'
 const galleries = [
     {
         "_id": 0,
-        "img": `${require('../images/img/new5.png')}`,
+        "img": `${require('../images/img/news1.png')}`,
         "date": "19/02/2020",
-        "title": "Pamolsa, Pardos Chicken y Recicla,Pe! promueven el reciclaje"
+        "title": "Pamolsa servicio delivery eleva demanda por empaques desechables y abre nuevos mercados"
     },
     {
         "_id": 1,
-        "img": `${require('../images/img/new1.png')}`,
+        "img": `${require('../images/img/news2.png')}`,
         "date": "30/01/2020",
-        "title": "Pamolsa se inagura nueva planta de recicloplas"
+        "title": "Ministra Kirla Echegaray: “Rol de las empresas de reciclaje contribuye a la reactivación económica”"
     },
     {
         "_id": 2,
-        "img": `${require('../images/img/new3.png')}`,
+        "img": `${require('../images/img/news3.png')}`,
         "date": "22/02/2020",
-        "title": "Recíclame y cumple con tu planeta"
+        "title": "Acopiadores fueron capacitados en planta Recicloplas"
     },
     {
         "_id": 3,
-        "img": `${require('../images/img/new6.png')}`,
+        "img": `${require('../images/img/news4.png')}`,
         "date": "19/02/2020",
-        "title": "Pamolsa, Pardos Chicken y Recicla,Pe! promueven el reciclaje"
+        "title": "Pamolsa implementa sistema delivery para llegar a los emprendedores, con estrategía de atención"
     },
     {
         "_id": 4,
-        "img": `${require('../images/img/new2.png')}`,
+        "img": `${require('../images/img/news5.png')}`,
+        "date": "19/02/2020",
+        "title": "Pamolsa considerada como una de las mejores industrias para trabajar"
+    },
+    {
+        "_id": 5,
+        "img": `${require('../images/img/news6.png')}`,
+        "date": "19/02/2020",
+        "title": "5 consejos para reducir, reutilizar y reciclar en tiempos de coronavirus"
+    },
+    {
+        "_id": 6,
+        "img": `${require('../images/img/news7.png')}`,
+        "date": "19/02/2020",
+        "title": "Pamolsa dona máscaras de protección contra el Covid-19 para personal de salud (MINSA)"
+    },
+    {
+        "_id": 7,
+        "img": `${require('../images/img/news8.png')}`,
         "date": "19/02/2020",
         "title": "Pamolsa, Pardos Chicken y Recicla,Pe! promueven el reciclaje"
     },
     {
-        "_id": 5,
-        "img": `${require('../images/img/new4.png')}`,
+        "_id": 8,
+        "img": `${require('../images/img/news9.png')}`,
         "date": "19/02/2020",
-        "title": "Pamolsa, Pardos Chicken y Recicla,Pe! promueven el reciclaje"
+        "title": "Pamolsa inagura nueva planta de Recicloplas"
     }
 ]
 
@@ -52,7 +70,6 @@ const GalleryNews = () => {
                             <img src={gl.img} alt="" />
                             <div className="gallery-info">
                                 <span className="gallery-date">{gl.date}</span>
-                                <p className="gallery-default">Productos y más</p>
                                 <p className="gallery-title">{gl.title}</p>
                                 <div className="btn-new">
                                     <Link to={`/noticias/${gl.title}`} className="">Ver más</Link>

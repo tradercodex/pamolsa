@@ -3,7 +3,7 @@ import React from 'react';
 const Planta = () => {
     return (
         <svg width="64" height="72" viewBox="0 0 64 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0)">
+            <g clipPath="">
                 <path opacity="0.23" d="M32.3001 71.6827C49.5314 71.6827 63.5001 57.714 63.5001 40.4827C63.5001 23.2514 49.5314 9.28271 32.3001 9.28271C15.0688 9.28271 1.1001 23.2514 1.1001 40.4827C1.1001 57.714 15.0688 71.6827 32.3001 71.6827Z" fill="#009FE3" />
                 <path d="M27.6001 49.583H22.6001V52.583H27.6001V49.583Z" fill="white" />
                 <path d="M14.5 49.583H9.5V52.583H14.5V49.583Z" fill="white" />
