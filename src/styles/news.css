@@ -124,7 +124,6 @@
 }
 
 .new-slick.work {
-    display: flex;
     grid-column: 4/8;
     position: relative;
     z-index: 1001;
@@ -153,7 +152,7 @@
 }
 
 .new-slick .slick-dots {
-    bottom: 60px !important;
+    bottom: 100px !important;
     background: transparent !important;
     text-align: left !important;
     z-index: 2500 !important;
@@ -241,12 +240,12 @@
 
 .info-new_slick h6{
     color: #009FE3;
-    font-size: 30px;
+    font-size: 28px;
     font-family: 'Amble-bold';
     margin-top: 20px;
     line-height: 97.2%;
     margin-bottom: 20px;
-    width: 280px;
+    width: 380px;
 }
 
 .info-new_slick p{
@@ -255,15 +254,25 @@
     font-family: 'Amble-light';
     font-size: 14px;
     color: #4D4D4D;
+    margin-bottom: 10px;
+}
+
+.info-new_slick a {
+    font-size: 14px;
+    color: #4D4D4D;
+    font-family: 'Amble-bold';
+    text-decoration: underline;
 }
 
 .post-new_slick {
     position: relative;
+    top: 70px;
     grid-column: 4/7;
-    padding-bottom: 160px;
+    padding-bottom: 200px;
     display: flex;
     justify-content: flex-start;
 }
+
 
 .post-new_slick_us {
     position: relative;
@@ -311,6 +320,9 @@
 
 .img-card img {
     border-radius: 50px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 .img-work_slick {
@@ -932,7 +944,7 @@
     grid-gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
-    margin-top: 80px;
+    margin-top: 40px;
     margin-bottom: 80px;
 }
 
@@ -1000,7 +1012,7 @@
 
 .gallery-title {
     font-family: 'Amble-bold';
-    font-size: 25px;
+    font-size: 23px;
     margin-top: 10px;
 }
 
@@ -1035,7 +1047,7 @@
 
 .info-view_journalists {
     grid-column: 1/3;
-    padding: 5px 0px 20px 20px;
+    padding: 5px 0px 30px 20px;
 }
 
 .info-view_journalists h2 {
@@ -1051,15 +1063,17 @@
     font-size: 14px;
     margin-top: 10px;
     color: #4d4d4d;
+    margin-bottom: 30px;
 }
 
-.info-view_journalists button {
+.info-view_journalists a {
     background: rgba(118, 118, 118, 0.06);
     color: #005286;
     border: 1px solid #005286;
     font-family: 'Amble-bold';
     padding: 12px 25px;
     border-radius: 30px;
+    text-decoration: none;
     margin-top: 10px;
     cursor: pointer;
     outline: none;
@@ -1093,12 +1107,22 @@
 
 .Detail-new_pm {
     position: relative;
-    background-image: url('../images/img/news5.png');
     height: 50vh;
     background-size: cover;
     width: 100%;
     margin: 0 auto;
     background-repeat: no-repeat;
+}
+
+.Detail-new_pm img {
+    width: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.Detail-new_pm.gallery-paper {
+    background-image: url('../images/img/galeriaperiodisticabanner.png') !important;
 }
 
 .Detail-new_pm::after {
@@ -1163,6 +1187,65 @@
     font-size: 14px;
     text-decoration: none;
     font-family: 'Amble-light';
+    padding: 10px 20px;
+}
+
+.newpaper-gallery {
+    border-radius: 0px 0px 30px 30px;
+    background: #fff;
+}
+
+.newpaper-header-gallery {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.newpaper-header-gallery::after {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 82, 134, 0.2);
+    content: '';
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    position: absolute;
+    top: 0;
+}
+
+.newpaper-header-gallery img {
+    width: 100%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.newpaper-body {
+    padding: 20px 20px 30px 20px;
+}
+
+.newpaper-body span {
+    font-family: 'Amble-light';
+    color: #005286;
+    font-size: 12px;
+}
+
+.newpaper-body p {
+    font-family: 'Amble-bold';
+    color: #005286;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.newpaper-body a {
+    font-family: 'Amble-bold';
+    border: 1px solid #005286;
+    background: #fff;
+    border-radius: 30px;
+    color: #005286;
+    text-decoration: none;
     padding: 10px 20px;
 }
 

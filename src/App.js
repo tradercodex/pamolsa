@@ -16,6 +16,8 @@ import Contact from './views/Contact'
 import Postulation from './views/Postulation';
 import DetailProducts from './views/DetailProducts';
 import DetailNew from './views/DetailNew';
+import Dashboard from './views/Dashboard'
+import GalleryNewPaper from './views/GalleryNewPaper';
 
 function App() {
   return (
@@ -34,7 +36,9 @@ function App() {
           <Route exact path="/home/distribuidores" component={Distributor} />
           <Route exact path="/productos/:name" component={Quotes} />
           <Route exact path="/productos/:name/detail" component={DetailProducts} />
-          <Route exact path="/noticias/:name" component={DetailNew} />
+          <Route exact path="/noticias/galeria-periodistica" component={GalleryNewPaper} />     
+          <Route exact path="/noticias/:name" component={DetailNew} />   
+          <Dashboard />
         </Switch>
       </Router>
     </>

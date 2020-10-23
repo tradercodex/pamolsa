@@ -203,6 +203,44 @@
     color: #4d4d4d;
 }
 
+.input label {
+    padding: 17px 25px;
+    border-radius: 30px;
+    width: 100%;
+    border: 1px solid #005286;
+    font-family: 'Amble';
+    outline: none;
+    color: #005286;
+    position: absolute;
+    right: 0;
+    font-size: 14px;
+    top: 0px;
+}
+
+.upload {
+    display: none;
+}
+
+.uploader {
+    padding: 12px 20px;
+    border-radius: 30px;
+    width: 100%;
+    border: 1px solid #C4C4C4;
+    font-family: 'Amble';
+    outline: none;
+    min-height: 53px;
+    font-size: 14px;
+    color: #A0A0A0;
+    display: flex;
+}
+
+.uploader .input-value{
+    width: 100%;
+    padding: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 textarea {
     border-radius: 20px;
     resize: none;
@@ -216,7 +254,17 @@ textarea {
     font-family: 'Amble-light';
     color: rgba(77, 77, 76, 0.6);
     font-size: 14px;
+    display: flex;
+    align-items: center;
     margin-top: 20px;
+}
+
+.conditions p {
+    margin-left: 10px;
+}
+
+.conditions input {
+    margin-left: 10px;
 }
 
 .btn-send {
@@ -230,6 +278,7 @@ textarea {
     padding: 10px 40px;
     color: #fff;
     border: none;
+    cursor: pointer;
     border-radius: 30px;
 }
 

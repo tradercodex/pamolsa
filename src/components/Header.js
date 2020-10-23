@@ -13,6 +13,8 @@ const Header = ({ match }) => {
     let rut = match.params.name
     let url = match.url
 
+    console.log(rut)
+
     return (
         <Fragment>
             <div className="Call-pm" style={{background: "#ECECEC"}}>
@@ -38,7 +40,7 @@ const Header = ({ match }) => {
                         <li><Link to="/sostenibilidad" className={pathname === "/sostenibilidad" ? "active" : ""}>Sostenibilidad</Link></li>
                         <li><Link to="/trabaja-con-nosotros" className={pathname === "/trabaja-con-nosotros" ? "active" : ""}>Trabaja con nosotros</Link></li>
                         <li><Link to="/clientes" className={pathname === "/clientes" ? "active" : ""}>Clientes</Link></li>
-                        <li><Link to="/noticias" className={pathname === "/noticias" ? "active" : ""}>Noticias</Link></li>
+                        <li><Link to="/noticias" className={pathname === "/noticias" || url === `/noticias/${rut}` ? "active" : ""}>Noticias</Link></li>
                         <li><Link to="/contacto" className={pathname === "/contacto" ? "active" : ""}>Contacto</Link></li>
                     </ul>
                 </nav>

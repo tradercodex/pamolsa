@@ -11,7 +11,7 @@ import ChartSbl from '../images/svg/chartsbl';
 import BarBox from '../images/svg/barbox';
 import ElipseBlue from '../images/svg/elipseblue';
 
-const News = ({ match }) => {
+const News = ({ match, vacants, news }) => {
 
     let pathname = match.path
 
@@ -121,60 +121,30 @@ const News = ({ match }) => {
                         </div>
                         <div className="square-new"></div>
                         <Slider {...settingsHome} className="new-slick">
-                            <div>
-                                <div className="container-news">
-                                    <div className="info-new_slick">
-                                        <div className="title-new">
-                                            <h4>Noticias Pamolsa</h4>
+                            {
+                                news && news.length > 0 ?
+                                    news.map(item => (
+                                        <div>
+                                            <div className="container-news">
+                                                <div className="info-new_slick">
+                                                    <div className="title-new">
+                                                        <h4>Noticias Pamolsa</h4>
+                                                    </div>
+                                                    <h6>{(item.title).substring(0,60) + '...'}</h6>
+                                                    <p>{(item.body).substring(0,150) + '...'}</p>
+                                                    <Link to={`/noticias/${item.id}`}>Ver más</Link>
+                                                </div>
+                                                <div className="post-new_slick">
+                                                    <div className="square-slick">
+                                                    </div>
+                                                    <div className="img-new_slick">
+                                                        <img src={`http://` + item.file.url} />
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <h6>Inauguración de planta de reciclaje Recicloplas</h6>
-                                        <p>El evento de inauguración de su nueva planta de reciclaje “Recicloplas”, iniciativa que se encarga de la valorización de residuos de plástico posconsumo, generando un impacto positivo y sostenible en el medio ambiente y la sociedad.</p>
-                                    </div>
-                                    <div className="post-new_slick">
-                                        <div className="square-slick">
-                                        </div>
-                                        <div className="img-new_slick">
-                                            <img src={require('../images/img/newslick1.png')} />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div className="container-news">
-                                    <div className="info-new_slick">
-                                        <div className="title-new">
-                                            <h4>Noticias Pamolsa</h4>
-                                        </div>
-                                        <h6>Nuestra línea 100% natural Bioform</h6>
-                                        <p>Bioformes la nueva tendencia eco-amigable de Pamolsa.Es una línea de productos elaborados con bagazo de caña de azucar y otros elementos naturales, con el cual buscamos contribuir al cuidado del medio ambiente y así promover nuestro compromiso con desarrollo sostenible.</p>
-                                    </div>
-                                    <div className="post-new_slick">
-                                        <div className="square-slick">
-                                        </div>
-                                        <div className="img-new_slick">
-                                            <img src={require('../images/img/pruebanew.png')} />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div className="container-news">
-                                    <div className="info-new_slick">
-                                        <div className="title-new">
-                                            <h4>Noticias Pamolsa</h4>
-                                        </div>
-                                        <h6>Nuestra línea 100% natural Bioform</h6>
-                                        <p>Bioformes la nueva tendencia eco-amigable de Pamolsa.Es una línea de productos elaborados con bagazo de caña de azucar y otros elementos naturales, con el cual buscamos contribuir al cuidado del medio ambiente y así promover nuestro compromiso con desarrollo sostenible.</p>
-                                    </div>
-                                    <div className="post-new_slick">
-                                        <div className="square-slick">
-                                        </div>
-                                        <div className="img-new_slick">
-                                            <img src={require('../images/img/food.jpg')} />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                    )) : ''
+                            }
                         </Slider>
                     </div> : ''
             }
@@ -500,42 +470,23 @@ const News = ({ match }) => {
                                 </div>
                             </div>
                             <Slider {...settingsWorks} className="new-slick work">
-                                <div>
-                                    <div className="card-work">
-                                        <div className="header-work">
-                                            <img src={require('../images/img/work.png')} />
-                                        </div>
-                                        <div className="card-body">
-                                            <h6>Ayudantes de Producción</h6>
-                                            <p>Apilar y embalar los productos que salen de la máquina.Abastecimiento de materia prima a la máquina.Revisión y limpieza de los productos.</p>
-                                            <button>Ver más</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className="card-work">
-                                        <div className="header-work">
-                                            <img src={require('../images/img/work.png')} />
-                                        </div>
-                                        <div className="card-body">
-                                            <h6>Ayudantes de Producción</h6>
-                                            <p>Apilar y embalar los productos que salen de la máquina.Abastecimiento de materia prima a la máquina.Revisión y limpieza de los productos.</p>
-                                            <button>Ver más</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className="card-work">
-                                        <div className="header-work">
-                                            <img src={require('../images/img/work.png')} />
-                                        </div>
-                                        <div className="card-body">
-                                            <h6>Ayudantes de Producción</h6>
-                                            <p>Apilar y embalar los productos que salen de la máquina.Abastecimiento de materia prima a la máquina.Revisión y limpieza de los productos.</p>
-                                            <button>Ver más</button>
-                                        </div>
-                                    </div>
-                                </div>
+                                {
+                                    vacants && vacants.length ?
+                                        vacants.map(item => (
+                                            <div key={item.id}>
+                                                <div className="card-work">
+                                                    <div className="header-work">
+                                                        <img src={require('../images/img/work.png')} />
+                                                    </div>
+                                                    <div className="card-body">
+                                                        <h6>{item.title}</h6>
+                                                        <p>{item.description}</p>
+                                                        <button>Ver más</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )) : ''
+                                }
                             </Slider>
                         </div>
                         <div className="container-grid" style={{ paddingBottom: "10px", paddingTop: "10px" }}>

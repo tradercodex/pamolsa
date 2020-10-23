@@ -24,6 +24,19 @@ const Distributor = () => {
             <div className="Distributor-search">
                 <Search />
             </div>
+            <div className="container-grid">
+                <div className="info-container">
+                    <div className="title-blue-container">
+                        <h3>Puntos de ventas más cercano</h3>
+                    </div>
+                </div>
+            </div>
+            <div className="container-grid">
+                <div className="info-container">
+
+                </div>
+                
+            </div>
         </Fragment>
     );
 }

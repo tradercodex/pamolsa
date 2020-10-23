@@ -36,3 +36,28 @@ body {
     display: grid;
     grid-template-columns: repeat(7,1fr);
 }
+
+.MuiFormControl-root {
+    width: 100%;
+}
+
+.MuiInput-underline:before , .MuiInput-underline:after{
+    border: none !important;
+}
+
+.MuiFormControl-marginNormal {
+    margin: 0 !important;
+}
+
+.MuiInputAdornment-root {
+    position: absolute;
+    right: 0;
+}
+
+.MuiInputBase-input {
+    height: auto !important;
+}
+
+.css-26l3qy-menu {
+    z-index: 999999 !important;
+}
