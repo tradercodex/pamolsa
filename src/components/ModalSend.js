@@ -10,7 +10,7 @@ const ModalSend = ({closeModal, title}) => {
                 <div className="info-content">
                     <CheckSend />
                     <h4>{title}</h4>
-                    <p>Muy pronto nos comunicaremos en contacto con usted</p>
+                    <p>Muy pronto nos pondremos en contacto con usted</p>
                 </div>
             </div>
         </div>
