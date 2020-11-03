@@ -31,6 +31,12 @@ const Sidebar = () => {
                             </Link>
                         </li>
                         <li>
+                            <Link to="/administrador/productos">
+                                <i className="fas fa-box"></i>
+                                <span>productos</span>
+                            </Link>
+                        </li>
+                        <li>
                             <Link to="/administrador/banners">
                                 <i className="far fa-image"></i>
                                 <span>Banners</span>
@@ -43,9 +49,9 @@ const Sidebar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/dashboard/clientes">
+                            <Link to="/administrador/vacantes">
                                 <i className="fas fa-users"></i>
-                                <span>Clientes</span>
+                                <span>Vacantes</span>
                             </Link>
                         </li>
                         <li>

@@ -1,4 +1,4 @@
-import { SEND_BANNER, SEND_BANNER_ERROR, GET_BANNER, GET_BANNER_ERROR } from './types'
+import { SEND_BANNER, SEND_BANNER_ERROR, GET_BANNER, GET_BANNER_ERROR, DELETE_BANNER, DELETE_BANNER_ERROR } from './types'
 import axios from 'axios'
 
 const root = 'http://3.120.185.254:8090/api'
@@ -6,6 +6,7 @@ const root = 'http://3.120.185.254:8090/api'
 export const sendBanner = (data) => async dispatch => {
     try {
         const res = await axios.post(`${root}/home/saveImage`, data);
+        console.log(res.data)
         dispatch({
             type: SEND_BANNER,
             payload: res.data
@@ -17,9 +18,9 @@ export const sendBanner = (data) => async dispatch => {
     }
 }
 
-export const getBanners = () => async dispatch => {
+export const getBanners = (size,page) => async dispatch => {
     try {
-        const res = await axios.get(`${root}/home/listImage`);
+        const res = await axios.get(`${root}/home/listImage?size=${size}&page=${page}`);
         console.log(res.data)
         dispatch({
             type: GET_BANNER,
@@ -28,6 +29,21 @@ export const getBanners = () => async dispatch => {
     } catch (error) {
         dispatch({
             type: GET_BANNER_ERROR
+        })
+    }
+}
+
+export const deleteBanner = (id) => async dispatch => {
+    try {
+        const res = await axios.put(`${root}/home/deleteImage`, id);
+        console.log(res.data)
+        dispatch({
+            type: DELETE_BANNER,
+            payload: Number(res.data.data.home_id)
+        })
+    } catch (error) {
+        dispatch({
+            type: DELETE_BANNER_ERROR
         })
     }
 }

@@ -110,6 +110,10 @@ nav {
     align-items: center;
 }
 
+.Navbar__Options p {
+    color: #fff;
+}
+
 .Navbar__Options .Photo {
     width: 30px;
     height: 30px;
@@ -307,12 +311,61 @@ nav {
 }
 
 /* layouts */
+.content-grid-cards {
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: repeat(4,1fr);
+}
 
 .content-ds-fluid {
     background: #282B49;
     border-radius: 5px;
     height: auto;
-    padding: 30px 40px 40px 40px;
+    padding: 30px 20px 30px 20px;
+}
+
+.card-ds {
+    background: #282B49;
+    border-radius: 5px;
+    color: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.MuiPaper-root, .MuiTableCell-stickyHeader, .MuiTableCell-root {
+    background-color: transparent !important;
+    font-family: 'Amble-bold' !important;
+}
+
+.body-card .img{
+    display: flex;
+    justify-content: space-between;
+}
+
+.body-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.body-card .img {
+    position: relative;
+}
+
+.body-card .img::after {
+    content: '';
+    height: 1px;
+    position: absolute;
+    z-index: 1024;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+}
+
+.body-card p {
+    margin-top: 15px;
 }
 
 .title-content-ds {
@@ -401,7 +454,7 @@ nav {
     margin-bottom: 20px;
     background: transparent;
     border: 1px solid rgb(128, 116, 116);
-    padding: 10px;
+    padding: 14px;
     border-radius: 5px;
     outline: none;
     width: 100%;
@@ -447,6 +500,87 @@ nav {
     color: #fff;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.grid-container-ds .card-work {
+    margin-left: 0;
+    width: 100% !important;
+    height: 540px;
+}
+
+.grid-container-ds .card-work img {
+    width: 100%;
+    height: 470px;
+    object-fit: cover;
+}
+
+.grid-container-ds .card-work .card-body {
+    padding: 20px 25px 0px 35px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.gallery-items .delete {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border: none;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer !important;
+    padding: 8px 10px;
+    z-index: 999999;
+    outline: none;
+}
+
+.gallery-items .delete svg {
+    fill: #F65252;
+}
+
+.success-alert {
+    background: #55F09D;
+    color: #fff;
+    position: absolute;
+    padding: 10px;
+    border-radius: 5px;
+    top: 30px;
+    right: 30px;
+}
+
+.ql-editor {
+    font-family: 'Amble-bold';
+}
+
+.ql-toolbar.ql-snow svg {
+    fill: #fff !important;
+}
+
+.ql-snow .ql-stroke {
+    stroke: #fff !important;
+}
+
+.ql-toolbar.ql-snow .ql-picker-label {
+    color: #fff;
+}
+
+.card-button {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-button .delete {
+    border: 1px solid #FD6D86;
+    color: #FD6D86;
+}
+
+.input-ds .css-1uccc91-singleValue {
+    color: #fff;
+}
+
+.container-grid-ds-forms {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
 }
 
 @media only screen and (max-width: 1200px) {

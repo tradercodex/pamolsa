@@ -34,8 +34,8 @@ function App() {
           <Route exact path="/noticias" component={News} />
           <Route exact path="/contacto" component={Contact} />
           <Route exact path="/home/distribuidores" component={Distributor} />
-          <Route exact path="/productos/:name" component={Quotes} />
-          <Route exact path="/productos/:name/detail" component={DetailProducts} />
+          <Route exact path="/productos/:name/:id" component={Quotes} />
+          <Route exact path="/productos/detalle/:id" component={DetailProducts} />
           <Route exact path="/noticias/galeria-periodistica" component={GalleryNewPaper} />     
           <Route exact path="/noticias/:name" component={DetailNew} />   
           <Dashboard />

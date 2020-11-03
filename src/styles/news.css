@@ -775,7 +775,8 @@
     margin-top: 20px;
 }
 
-.card-body button {
+.card-body a , .card-body button{
+    text-decoration: none;
     font-family: 'Amble-bold';
     color: #009FE3;
     font-size: 14px;

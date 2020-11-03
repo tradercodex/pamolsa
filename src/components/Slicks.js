@@ -16,7 +16,7 @@ const Slicks = ({ match }) => {
 
     useEffect(() => {
         new WOW.WOW().init();
-        dispatch(getBanners());
+        dispatch(getBanners(4,1));
     }, [])
 
     const settings = {
@@ -29,8 +29,6 @@ const Slicks = ({ match }) => {
         autoplaySpeed: 10000,
         pauseOnHover: true
     };
-
-    console.log(banners.file)
 
     return (
         <Fragment>

@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/known.css'
-import OurClients from '../components/OurClients'
 import FoodServices from '../images/svg/foodservice'
 import Industrial from '../images/svg/industrial'
 import Agroindustrial from '../images/svg/agroindustrial'
@@ -68,7 +67,7 @@ class Known extends React.Component {
                 </div>
                 <div className="Known-pm">
                     <div className="container-title-new">
-                    <h6 className="wow animate__animated animate__fadeInLeft"
+                        <h6 className="wow animate__animated animate__fadeInLeft"
                             data-wow-duration="2s"
                             data-wow-delay="0.4">Negocios a los que atendemos</h6>
                     </div>

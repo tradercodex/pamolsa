@@ -2,12 +2,15 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
 import $ from 'jquery'
+import { useHistory } from 'react-router-dom'
 import '../styles/dashboard.css'
-import { sendBanner } from '../redux/actions/banner'
+import { getBanners, sendBanner } from '../redux/actions/banner'
+import { setAlert } from '../redux/actions/alert'
 
 const DashbaordAddNew = () => {
 
     const { errors, handleSubmit, register } = useForm()
+    const history = useHistory();
 
     const dispatch = useDispatch();
 
@@ -43,8 +46,17 @@ const DashbaordAddNew = () => {
 
         const formData = new FormData();
         formData.append('file', data.file[0])
+        formData.append('name', data.name)
+        formData.append('subname', data.subname)
 
-        dispatch(sendBanner(formData))
+        if (formData) {
+            dispatch(sendBanner(formData))
+            setTimeout(() => {
+                history.push('/administrador/banners');
+                // dispatch(setAlert('Banner agregado correctamente', 'danger', 5000))
+                dispatch(getBanners(100,1));
+            }, 4000);
+        }
         e.target.reset();
     }
 
@@ -59,8 +71,48 @@ const DashbaordAddNew = () => {
                         <div className="form-grid">
                             <div>
                                 <div className="input-ds">
+                                    <div>
+                                        <label>Título</label>
+                                    </div>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        ref={
+                                            register({
+                                                required: {
+                                                    value: true,
+                                                    message: 'Ingrese el titulo del banner'
+                                                }
+                                            })
+                                        }
+                                    />
+                                    <div className="error-ds">
+                                        {errors.title && errors.title.message}
+                                    </div>
+                                </div>
+                                <div className="input-ds">
+                                    <div>
+                                        <label>Subtítulo</label>
+                                    </div>
+                                    <input
+                                        type="text"
+                                        name="subname"
+                                        ref={
+                                            register({
+                                                required: {
+                                                    value: true,
+                                                    message: 'Ingrese el subtitulo del banner'
+                                                }
+                                            })
+                                        }
+                                    />
+                                    <div className="error-ds">
+                                        {errors.subname && errors.subname.message}
+                                    </div>
+                                </div>
+                                <div className="input-ds">
                                     <div><label>Imagen del banner</label></div>
-                                    <div className="img-input-ds">   
+                                    <div className="img-input-ds">
                                         <img style={{ width: "100%" }} id="imgPerfil" src={require('../images/img/uploadimage.jpg')} alt="img" />
                                         <input
                                             type="file"
@@ -76,7 +128,7 @@ const DashbaordAddNew = () => {
                                                 })
                                             }
                                         />
-                                         <div className="error-ds">
+                                        <div className="error-ds">
                                             {errors.file && errors.file.message}
                                         </div>
                                     </div>

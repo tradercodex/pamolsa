@@ -10,10 +10,23 @@ import DashboardAddNew from '../layouts/DashboardAddNew'
 import DashboardBanner from '../layouts/DashboardBanner'
 import DashboardAddBanner from '../layouts/DashboardAddBanner'
 import DashbaordAddNewspaper from '../layouts/DashboardAddNewspaper'
+import DashboardVacant from '../layouts/DashboardVacant'
+import DashbaordAddVacant from '../layouts/DashboardAddVacant'
+import Alert from '../components/Alert'
+import AOS from 'aos'
+import DashboardEditVacant from '../layouts/DashboardEditVacant'
+import DashboardProduct from '../layouts/DashboardProduct'
+import DashboardAddProduct from '../layouts/DashboardAddProduct'
+import DashboardEditProduct from '../layouts/DashboardEditProduct'
 
 const Dashboard = () => {
 
     useEffect(() => {
+
+        AOS.init({
+            duration: 2000,
+        });
+
         const boton = document.getElementById('boton-sidebar')
         const html = document.getElementById('html')
         const botonSidebarLeft = document.getElementById('boton-sidebar_left')
@@ -60,11 +73,18 @@ const Dashboard = () => {
                 <div className="Main-panel">
                     <HeaderDashboard />
                     <div className="Content" id="main">
+                        <Alert />
+                        <Route exact path="/administrador/productos" component={DashboardProduct} />
+                        <Route exact path="/administrador/productos/nuevo" component={DashboardAddProduct} />
+                        <Route exact path="/administrador/productos/editar/:id" component={DashboardEditProduct} />
                         <Route exact path="/administrador/noticias" component={DashboardNew} />
                         <Route exact path="/administrador/noticias/nuevo" component={DashboardAddNew} />
                         <Route exact path="/administrador/banners" component={DashboardBanner} />
                         <Route exact path="/administrador/banners/nuevo" component={DashboardAddBanner} />
                         <Route exact path="/administrador/noticias/nuevo-periodico" component={DashbaordAddNewspaper} />
+                        <Route exact path="/administrador/vacantes" component={DashboardVacant} />
+                        <Route exact path="/administrador/vacantes/nueva-vacante" component={DashbaordAddVacant} />
+                        <Route exact path="/administrador/vacantes/editar/:id" component={DashboardEditVacant} />
                     </div>
                 </div>
             </div>
