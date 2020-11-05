@@ -457,12 +457,15 @@
     z-index: 1;
 }
 
-@media only screen and (max-height: 800px) {
+@media only screen and (max-height: 660px) {
     .Rotate-slick.Us {
-        height: 110vh !important;
+        height: 120vh !important;
     }
     .Radius.Us {
-        height: 65vh !important;
+        height: 66vh !important;
+    }
+    .Rotate-slick.Us::before {
+        height: 151vh !important;
     }
 }
 
@@ -472,7 +475,7 @@
     }
     .Rotate-slick.Us::after {
         background-size: contain;
-        height: 119vh !important;
+        height: 130vh !important;
     }
     .info-slick.Us {
         left: 250px;
