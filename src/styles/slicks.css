@@ -457,12 +457,22 @@
     z-index: 1;
 }
 
+@media only screen and (max-height: 800px) {
+    .Rotate-slick.Us {
+        height: 110vh !important;
+    }
+    .Radius.Us {
+        height: 65vh !important;
+    }
+}
+
 @media only screen and (max-width: 1440px) {
     .Rotate-slick::after{
         background-size: contain !important;
     }
     .Rotate-slick.Us::after {
         background-size: contain;
+        height: 119vh !important;
     }
     .info-slick.Us {
         left: 250px;
@@ -479,7 +489,6 @@
     }
     .Slicks-pm.Us {
         max-width: 1440px;
-        height: 75vh !important;
     }
     .Radius.Us {
         position: absolute;
@@ -495,7 +504,7 @@
         width: 2700px;
         height: 94vh;
         top: -600px;
-        left: -102px;
+        left: -118px;
         border-radius: 191px;
         transform: rotate(-21.34deg);
     }

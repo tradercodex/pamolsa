@@ -29,7 +29,7 @@ const AboutUs = () => {
             <div className="Map_pm container">
                 <div className="container-grid_img">
                     <div className="img-map_pm">
-                        <img src={require('../images/img/map.png')} />
+                        <img src={require('../images/img/mapcarbajal.png')} />
                     </div>
                     <div className="info-map_pm">
                         <div>

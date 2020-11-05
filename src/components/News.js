@@ -10,6 +10,7 @@ import PetFour from '../images/svg/petfour';
 import ChartSbl from '../images/svg/chartsbl';
 import BarBox from '../images/svg/barbox';
 import ElipseBlue from '../images/svg/elipseblue';
+import StbNews from '../images/svg/sostenibilitynews';
 
 const News = ({ match, vacants, news }) => {
 
@@ -116,8 +117,8 @@ const News = ({ match, vacants, news }) => {
             {
                 pathname === "/" ?
                     <div className="News-pm">
-                        <div className="tree-new">
-                            <img src={require('../images/img/newtree.png')} />
+                        <div className="tree-new news">
+                            <img src={require('../images/img/tree.gif')} />
                         </div>
                         <div className="square-new"></div>
                         <Slider {...settingsHome} className="new-slick">
@@ -216,7 +217,7 @@ const News = ({ match, vacants, news }) => {
                                 <div className="container-footer_news_us">
                                     <div className="img-footer_news_us">
                                         <div className="img-footer_new_us">
-                                            <img src={require('../images/img/sostenibility.png')} />
+                                            <StbNews />
                                         </div>
                                     </div>
                                     <div className="info-footer_news_us">
@@ -229,7 +230,7 @@ const News = ({ match, vacants, news }) => {
                                             Actualmente Recicloplas  genera ingresos para más de 1,500 familias recicladoras.
                                             De esta manera contribuimos con el medio ambiente y con la sociedad.
                                             <br /><br />
-                                                <strong style={{ fontFamily: "Amble-bold", fontSize: "16px" }}>¡Comprometidos  de verdad!</strong>
+                                                <strong style={{ fontFamily: "Amble-bold", fontSize: "18px" }}>¡Comprometidos  de verdad!</strong>
 
                                             </p>
                                         </div>
@@ -244,7 +245,7 @@ const News = ({ match, vacants, news }) => {
                     <div className="News-pm_us" style={{ background: "#f9f9f9" }}>
                         <div className="square-us" style={{ background: "#f9f9f9", height: "3920px" }}></div>
                         <div className="square-stb">
-                            <div className="container-grid" style={{ paddingTop: "440px", alignItems: "center", paddingBottom: "100px" }}>
+                            <div className="container-grid" style={{ paddingTop: "290px", alignItems: "center", paddingBottom: "100px" }}>
                                 <div className="info-pm">
                                     <div>
                                         <img src={require('../images/img/recicoplas.png')} alt="" />
@@ -282,7 +283,7 @@ const News = ({ match, vacants, news }) => {
                                         <div className="info-sbl" style={{ right: "0px" }}>
                                             <h4>Así cerramos el ciclo del PET en Perú</h4>
                                             <div className="" style={{ display: "flex", justifyContent: "space-between", textAlign: "center", marginTop: "40px" }}>
-                                                <div className="">
+                                                <div>
                                                     <div style={{ marginBottom: "80px" }}>
                                                         <div className="bold">+180 millones</div>
                                                         <div>de envases reciclados</div>
@@ -290,7 +291,7 @@ const News = ({ match, vacants, news }) => {
                                                     </div>
                                                     <PetOne />
                                                 </div>
-                                                <div>
+                                                <div style={{marginLeft: "50px"}}>
                                                     <div style={{ marginBottom: "80px" }}>
                                                         <div className="bold">2 líneas</div>
                                                         <div>de reciclaje</div>
@@ -298,7 +299,7 @@ const News = ({ match, vacants, news }) => {
                                                     </div>
                                                     <PetTwo />
                                                 </div>
-                                                <div>
+                                                <div style={{marginLeft: "50px"}}>
                                                     <div style={{ marginBottom: "80px" }}>
                                                         <div className="bold">+1500</div>
                                                         <div className="bold">recicladores</div>
@@ -306,7 +307,7 @@ const News = ({ match, vacants, news }) => {
                                                     </div>
                                                     <PetThree />
                                                 </div>
-                                                <div>
+                                                <div style={{marginLeft: "50px"}}>
                                                     <div style={{ marginBottom: "80px" }}>
                                                         <div className="bold">+40%</div>
                                                         <div>rPET</div>

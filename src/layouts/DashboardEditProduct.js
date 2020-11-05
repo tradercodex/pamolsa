@@ -19,7 +19,7 @@ import {
 
 const DashboardEditProduct = ({match}) => {
 
-    const { errors, handleSubmit, register, control } = useForm()
+    const { errors, handleSubmit, register, control, setValue } = useForm()
 
     const id = match.params.id
 
@@ -46,9 +46,8 @@ const DashboardEditProduct = ({match}) => {
         ue_intern: '',
         ue_master: '',
         uee: '',
-        line: {
-            
-        }
+        line: '',
+        business_types: []
     })
 
     const getVacant = async () => {
@@ -65,11 +64,15 @@ const DashboardEditProduct = ({match}) => {
             ue_intern: res.data.data.ue_intern,
             ue_master: res.data.data.ue_master,
             uee: res.data.data.uee,
-            line: {label: res.data.data.product_line.name, value: res.data.data.product_line.name }
+            line: {label: res.data.data.product_line.name, value: res.data.data.product_line.id},
+            business_types: res.data.data.business_types?.map(item => ({ label: item.name, value: item.id }))
         })
+        setValue("line",{label: res.data.data.product_line.name, value: res.data.data.product_line.id})
+        setValue("business", res.data.data.business_types?.map(item => ({ name: item.name, id: item.id })))
     }
 
-    console.log(product.line)
+    console.log(product.business_types)
+    const linesSelect = lines?.map(item => ({ label: item.name, value: item.id }))
 
     useEffect(() => {
         $('#profile-image').change(function (e) {
@@ -374,8 +377,8 @@ const DashboardEditProduct = ({match}) => {
                                         as={
                                             <ReactSelect
                                                 styles={selectStyles}
-                                                defaultValue={{label: product.line.label, value:  product.line.label}}
-                                                // options={lines}
+                                                
+                                                options={linesSelect}
                                                 // getOptionLabel={lines => lines.name}
                                                 // getOptionValue={lines => lines.id}
                                             />}

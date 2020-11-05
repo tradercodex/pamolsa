@@ -76,7 +76,7 @@ const Slicks = ({ match }) => {
                                                         @media (max-width: 1440px) {
                                                             .Rotate-slick::after{
                                                                 min-width: 110%;
-                                                                height: 105%;
+                                                                min-height: 105%;
                                                                 background-size: contain !important;
                                                             }
                                                         }
@@ -114,8 +114,8 @@ const Slicks = ({ match }) => {
                             </Slider>
                         </div>
                         <div className="footer-slick">
-                            <div className="tree-pm">
-                                <img src={require('../images/img/caña.png')} />
+                            <div className="tree-pm banner">
+                                <img src={require('../images/img/tree.gif')} />
                             </div>
                         </div>
                     </div> : ''

@@ -11,7 +11,6 @@
 .Container-sb_pm h2 {
     font-family: 'Amble-bold';
     font-size: 50px;
-    padding-top: 60px;
     color: #005286;
     width: 403px;
     margin: 0 auto;
@@ -243,7 +242,8 @@
     color: #32711E;
     font-size: 50px;
     margin-bottom: 20px;
-    width: 600px;
+    width: 620px;
+    position: relative;
     font-family: 'Amble-bold';
 }
 
@@ -351,5 +351,8 @@
     }
     .square-img-card {
         right: -60px;
+    }
+    .Slicks-pm.Us .slick-initialized .slick-slide {
+        height: 100vh;
     }
 }

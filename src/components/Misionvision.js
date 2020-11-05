@@ -17,7 +17,7 @@ const MisionVision = () => {
                     <div className="square-propose"></div>
                     <div className="info-propose">
                         <div>
-                            <h6>NUESTRO PROPOSITO</h6>
+                            <h6>NUESTRO PROPÓSITO</h6>
                             <p>
                             Cuidar lo esencial.
                             </p>

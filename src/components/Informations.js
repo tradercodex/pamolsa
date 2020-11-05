@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import Logo from '../images/svg/logo';
+import LogoUs from '../images/svg/logous';
 import '../styles/information.css'
 
 const Informations = () => {
@@ -12,11 +12,11 @@ const Informations = () => {
                     </div>
                     <div className="info-map_pm">
                         <div className="footer-dc text-map_pm" style={{fontSize:"24px"}}>
-                            <Logo />
-                            <div>en el mundo</div>
-                            <div>nuestro crecimiento nos ha llevado a</div>
-                            <div className="bold" style={{fontSize: "28px"}}>internacionalizar</div> 
-                            <div>nuestros productos</div>
+                            <LogoUs />
+                            <div style={{letterSpacing: "2px"}}>en el mundo</div>
+                            <div style={{letterSpacing: "2px"}}>nuestro crecimiento nos ha llevado a</div>
+                            <div style={{letterSpacing: "2px"}} className="bold" style={{fontSize: "28px"}}>internacionalizar</div> 
+                            <div style={{letterSpacing: "2px"}}>nuestros productos</div>
                         </div>
                     </div>
                 </div>

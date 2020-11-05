@@ -67,7 +67,7 @@
     top: 0px;
     left: 0;
     width: 100%;
-    height: 99.5%;
+    height: 100%;
     background: rgba(0, 82, 134, 0.3);
     content: '';
     border-radius: 50px;
@@ -104,7 +104,7 @@
     display: grid;
     position: relative;
     z-index: 1;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(8, 1fr);
 }
 
 .container-distributor {
@@ -115,7 +115,7 @@
 .container-known_video .play-known {
     position: relative;
     left: 40px;
-    grid-column: 1/3;
+    grid-column: 1/4;
     display: flex;
     justify-content: center;
 }
@@ -243,7 +243,7 @@
     position: relative;
     top: -40px;
     left: 40px;
-    grid-column: 3/5;
+    grid-column: 5/8;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -275,6 +275,7 @@
 }
 
 .info-distributor_hm h3 {
+    width: 400px;
     font-family: 'Amble-bold';
     font-style: normal;
     font-weight: bold;
@@ -318,18 +319,20 @@
 }
 
 .square-distributor {
-    background: rgba(255, 255, 255, 0.2);
+    background: #33759E;
     border-radius: 50px;
     transform: rotate(-9.08deg);
-    width: 437.39px;
-    height: 471.87px;
-    top: 30px;
+    width: 411.23px;
+    height: 443.65px;
+    top: 20px;
     right: 60px;
     position: absolute;
 }
 
 .img-distributor {
     position: relative;
+    width: 411.23px;
+    height: 443.65px;
 }
 
 .img-distributor::after {
@@ -402,11 +405,12 @@
     height: 471.87px;
 }
 
+
 .square.us {
     position: absolute;
-    width: 596px;
-    height: 472px;
-    left: -100px;
+    width: 564px;
+    height: 420px;
+    left: -90px;
     top: -50px;
     background: rgba(50, 113, 30, 0.2);
     border-radius: 50px;
@@ -414,8 +418,8 @@
 }
 
 .card-about .img-about_us{
-    width: 596px;
-    height: 472px;
+    width: 530px;
+    height: 420px;
     position: relative;
     z-index: 1;
     top: -45px;
@@ -456,5 +460,8 @@
 @media only screen and (max-width: 1440px) {
     .container-grid .play-button_pm {
         right: -100px;
+    }
+    .img-distributor_hm {
+        grid-column: 5/8;
     }
 }

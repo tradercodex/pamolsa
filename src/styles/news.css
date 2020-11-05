@@ -123,6 +123,22 @@
     top: 10px;
 }
 
+.tree-new.news img {
+    width: 240px;
+    opacity: 0.5;
+    position: relative;
+    top: 150px;
+    transform: rotate(138.73deg);
+}
+
+.tree-pm.banner img {
+    width: 240px;
+    opacity: 0.5;
+    position: relative;
+    top: 100px;
+    transform: rotate(-128.73deg);
+}
+
 .new-slick.work {
     grid-column: 4/8;
     position: relative;
@@ -147,7 +163,7 @@
     z-index: 1;
     align-items: center;
     grid-template-columns: repeat(7,1fr);
-    margin-top: 340px;
+    margin-top: 200px;
     margin-bottom: 50px;
 }
 
@@ -267,10 +283,10 @@
 .post-new_slick {
     position: relative;
     top: 70px;
-    grid-column: 4/7;
+    grid-column: 4/8;
     padding-bottom: 200px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 
@@ -285,9 +301,9 @@
 .square-slick {
     position: absolute;
     top: 40px;
-    width: 489.67px;
+    width: 578.45px;
     height: 393.04px;
-    left: 0;
+    right: 46% !important;
     z-index: 0;
     background: rgba(0, 82, 134, 0.2);
     border-radius: 50px;
@@ -298,8 +314,8 @@
     position: relative;
     top: 40px;
     left: 40px;
-    width: 602px;
-    height: 384px;
+    width: 579px;
+    height: 385px;
 }
 
 .img-card {
@@ -311,8 +327,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 99%;
+    width: 102%;
+    height: 100%;
     background: rgba(0, 82, 134, 0.2);
     content: '';
     border-radius: 50px;
@@ -321,7 +337,6 @@
 .img-card img {
     border-radius: 50px;
     object-fit: cover;
-    width: 100%;
     height: 100%;
 }
 
@@ -593,7 +608,7 @@
     position: relative;
     z-index: 99999;
     height: auto;
-    padding-bottom: 130px;
+    padding-bottom: 40px;
 }
 
 .info-certifications {
@@ -604,7 +619,6 @@
 .certifications-companies {
     grid-column: 5/8;
     display: flex;
-    justify-content: center;
 }
 
 .info-certifications div {
@@ -648,30 +662,31 @@
 }
 
 .companies_us div, .companies-second_us div {
-    margin-right: 40px;
+    margin-right: 70px;
 }
 
 .companies_us .img-company-sgs {
     position: relative;
-    width: 68px;
-    height: 67px;
+    width: 103px;
+    height: 101px;
     background-image: url('../images/img/sgs.png');
     background-size: cover;    
 }
 
 .companies_us .img-company-brc {
     position: relative;
-    width: 67px;
-    height: 58px;
+    width: 121px;
+    height: 101px;
     background-image: url('../images/img/brcpackaging.png');
-    background-size: cover;
-    position: relative;            
+    background-size: contain;
+    position: relative;   
+    background-repeat: no-repeat;         
 }
 
 .companies-second_us .img-company-gp {
     position: relative;
-    width: 60px;
-    height: 60px;
+    width: 109px;
+    height: 109px;
     background-image: url('../images/img/greatperu.png');
     background-size: cover;
     position: relative; 
@@ -679,8 +694,8 @@
 
 .companies-second_us .img-company-gpl {
     position: relative;
-    width: 60px;
-    height: 60px;
+    width: 109px;
+    height: 109px;
     background-image: url('../images/img/greatplaces.png');
     background-size: cover;
     position: relative;
@@ -688,8 +703,8 @@
 
 .companies-second_us .img-company-gpw {
     position: relative;
-    width: 60px;
-    height: 60px;
+    width: 109px;
+    height: 109px;
     background-image: url('../images/img/grateplacework.png');
     background-size: cover;
     position: relative;
@@ -704,6 +719,10 @@
     margin-top: 20px;
     display: flex;
     align-items: center;
+}
+
+.companies-second_us div {
+    margin-right: 30px;
 }
 
 .companies-second_us .img-company img.large {
@@ -808,7 +827,7 @@
 .certifications-companies h6.companies-title, .certifications-companies h6.companies-title_second {
     font-family: 'Amble-bold';
     color: #4c4c4c;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .certifications-companies h6.companies-title {
@@ -1250,11 +1269,20 @@
     padding: 10px 20px;
 }
 
+@media only screen and (min-width: 1440px) {
+    .container-news {
+        margin-top: 300px;
+    }
+}
+
 @media only screen and (max-width: 1440px) {
     .info-certifications {
         grid-column: 1/5;
         display: flex;
         justify-content: center;
+    }
+    .container-news .square-slick {
+        right: 26% !important;
     }
     .square-us {
         top: 180px;
@@ -1281,5 +1309,11 @@
     }
     .square-img-card.right-up {
         right: -40px;
+    }
+    .title-values {
+        grid-column: 1/4;
+        margin-left: 100px;
+        color: #009FE3;
+        width: 301px;
     }
 }
