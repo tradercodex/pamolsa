@@ -113,7 +113,7 @@ const InformationSostenibility = () => {
                                 </div>
                                 <div className="info-sl-sbl">
                                     <div className="info-sbl">
-                                        <h4>Innovación que genera valor</h4>
+                                        <h4 style={{width: "520px"}}>Innovación que genera valor</h4>
                                         <img src={require('../images/img/bioform.png')} alt="bioform" />
                                         <h6>PRIMERA LÍNEA DE EMPAQUES BIODEGRADABLES</h6>
                                         <p>Fabricada en el país con cartón de bagazo de caña de azúcar, amplió su portafolio el 2019 con el lanzamiento de nuevas referencias en platos, contenedores, bandejas y vasos para el mercado de Foodservice.</p>

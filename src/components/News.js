@@ -16,27 +16,6 @@ const News = ({ match, vacants, news }) => {
 
     let pathname = match.path
 
-    const settingsNews = {
-        dots: true,
-        infinite: true,
-        slidesToShow: 1.5,
-        slidesToScroll: 1,
-        // autoplay: true,
-        // autoplaySpeed: 2000,
-        // pauseOnHover: true,
-        appendDots: dots => (
-            <div
-                style={{
-                    backgroundColor: "#ddd",
-                    borderRadius: "10px",
-                    padding: "10px"
-                }}
-            >
-                <ul style={{ margin: "0px" }}> {dots} </ul>
-            </div>
-        ),
-    };
-
     const settingsHome = {
         dots: true,
         infinite: true,
@@ -93,7 +72,7 @@ const News = ({ match, vacants, news }) => {
     const settingsReciclopas = {
         dots: true,
         infinite: true,
-        slidesToShow: 1,
+        slidesToShow: 1.3,
         slidesToScroll: 1,
         autoplay: false,
         autoplaySpeed: 2000,
@@ -110,7 +89,6 @@ const News = ({ match, vacants, news }) => {
             </div>
         ),
     };
-
 
     return (
         <Fragment>
@@ -131,8 +109,8 @@ const News = ({ match, vacants, news }) => {
                                                     <div className="title-new">
                                                         <h4>Noticias Pamolsa</h4>
                                                     </div>
-                                                    <h6>{(item.title).substring(0,60) + '...'}</h6>
-                                                    <p>{(item.body).substring(0,150) + '...'}</p>
+                                                    <h6>{(item.title).substring(0, 60) + '...'}</h6>
+                                                    <p>{(item.body).substring(0, 150) + '...'}</p>
                                                     <Link to={`/noticias/${item.id}`}>Ver más</Link>
                                                 </div>
                                                 <div className="post-new_slick">
@@ -291,7 +269,7 @@ const News = ({ match, vacants, news }) => {
                                                     </div>
                                                     <PetOne />
                                                 </div>
-                                                <div style={{marginLeft: "50px"}}>
+                                                <div style={{ marginLeft: "50px" }}>
                                                     <div style={{ marginBottom: "80px" }}>
                                                         <div className="bold">2 líneas</div>
                                                         <div>de reciclaje</div>
@@ -299,7 +277,7 @@ const News = ({ match, vacants, news }) => {
                                                     </div>
                                                     <PetTwo />
                                                 </div>
-                                                <div style={{marginLeft: "50px"}}>
+                                                <div style={{ marginLeft: "50px" }}>
                                                     <div style={{ marginBottom: "80px" }}>
                                                         <div className="bold">+1500</div>
                                                         <div className="bold">recicladores</div>
@@ -307,7 +285,7 @@ const News = ({ match, vacants, news }) => {
                                                     </div>
                                                     <PetThree />
                                                 </div>
-                                                <div style={{marginLeft: "50px"}}>
+                                                <div style={{ marginLeft: "50px" }}>
                                                     <div style={{ marginBottom: "80px" }}>
                                                         <div className="bold">+40%</div>
                                                         <div>rPET</div>
@@ -454,7 +432,7 @@ const News = ({ match, vacants, news }) => {
                 pathname === "/trabaja-con-nosotros" ?
                     <div className="container" style={{ background: "#F9F9F9" }}>
                         <div className="square-new" style={{ top: "0", height: "1994px" }}></div>
-                        <div className="container-grid" style={{ paddingTop: "280px" }}>
+                        <div className="container-grid work" style={{ paddingTop: "260px" }}>
                             <div className="info-new_slick"
                                 style={{
                                     gridColumn: "1/4",
@@ -545,29 +523,57 @@ const News = ({ match, vacants, news }) => {
                                         >Postulate aquí</button></Link>
                                 </div>
                             </div>
-                            <div className="info-container" style={{ zIndex: "1", marginTop: "50px" }}>
+                            <div className="info-container" style={{ zIndex: "1", marginTop: "80px" }}>
                                 <div className="title-white-container" style={{ position: "relative", width: "250px" }}>
                                     <h6>Preguntas frecuentes</h6>
                                 </div>
                             </div>
-                            <div className="box-container" style={{ zIndex: "1", gridColumn: "4/8", marginTop: "50px", display: "flex", justifyContent: "center" }}>
-                                <div>
-                                    <div className="box-informs">
-                                        <BarBox />
-                                        <p style={{ fontFamily: "Amble-bold", textDecoration: "none" }}>¿Cuánto tiempo tarda el proceso de selección?</p>
-                                    </div>
-                                    <div className="box-informs">
-                                        <BarBox />
-                                        <p style={{ fontFamily: "Amble-bold", textDecoration: "none" }}>¿Puedo enviar mi Currículum Vitae algún correo?</p>
-                                    </div>
-                                    <div className="box-informs">
-                                        <BarBox />
-                                        <p style={{ fontFamily: "Amble-bold", textDecoration: "none" }}>¿Puedo postular a más de una vacante?</p>
-                                    </div>
-                                    <div className="box-informs">
-                                        <BarBox />
-                                        <p style={{ fontFamily: "Amble-bold", textDecoration: "none" }}>¿Pamolsa paga todos los beneficios de acuerdo a ley? </p>
-                                    </div>
+                            <div className="box-container" style={{ zIndex: "1", gridColumn: "4/8", marginTop: "80px", display: "flex", justifyContent: "center" }}>
+                                <div className="accordion">
+                                    <li className="box">
+                                        <div className="box-header">
+                                            <BarBox />
+                                            <p style={{ fontFamily: "Amble-bold", textDecoration: "none" }}>¿Cuánto tiempo tarda el proceso de selección?</p>
+                                        </div>
+                                        <div className="box-informs">
+                                            <div style={{ padding: "10px 10px 0px 10px", fontFamily: "Amble-light", fontSize: "14px", color: "4d4d4d" }}>
+                                                <span>El tiempo varía de acuerdo a cada proceso; pero en promedio es entre 7 y 15 días.</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className="box">
+                                        <div className="box-header">
+                                            <BarBox />
+                                            <p style={{ fontFamily: "Amble-bold", textDecoration: "none" }}>¿Puedo enviar mi Currículum Vitae algún correo?</p>
+                                        </div>
+                                        <div className="box-informs">
+                                            <div style={{ padding: "10px 10px 0px 10px", fontFamily: "Amble-light", fontSize: "14px", color: "4d4d4d" }}>
+                                                <span>El tiempo varía de acuerdo a cada proceso; pero en promedio es entre 7 y 15 días.</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className="box">
+                                        <div className="box-header">
+                                            <BarBox />
+                                            <p style={{ fontFamily: "Amble-bold", textDecoration: "none" }}>¿Puedo postular a más de una vacante?</p>
+                                        </div>
+                                        <div className="box-informs">
+                                            <div style={{ padding: "10px 10px 0px 10px", fontFamily: "Amble-light", fontSize: "14px", color: "4d4d4d"}}>
+                                                <span>El tiempo varía de acuerdo a cada proceso; pero en promedio es entre 7 y 15 días.</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className="box">
+                                        <div className="box-header">
+                                            <BarBox />
+                                            <p style={{ fontFamily: "Amble-bold", textDecoration: "none" }}>¿Pamolsa paga todos los beneficios de acuerdo a ley? </p>
+                                        </div>
+                                        <div className="box-informs">
+                                            <div style={{ padding: "10px 10px 0px 10px", fontFamily: "Amble-light", fontSize: "14px", color: "4d4d4d" }}>
+                                                <span>El tiempo varía de acuerdo a cada proceso; pero en promedio es entre 7 y 15 días.</span>
+                                            </div>
+                                        </div>
+                                    </li>
                                 </div>
                             </div>
                         </div>

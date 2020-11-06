@@ -35,20 +35,22 @@ const InformationWork = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="certifications-companies" style={{gridColumn: "4/8",display: "flex", justifyContent: "center"}}>
-                        <div className="info-container">
-                            <div className="title-green-dark-container">
-                                <h6>Somos un gran lugar para trabajar</h6>
-                            </div>
-                            <p style={{width: "447px"}}>Fuimos reconocidos por Great Place to Work como una de las mejores industrias para trabajar en Perú en el  2020, posicionándonos entre las industrias más destacadas por segundo año consecutivo, gracias al excelente clima laboral y las buenas prácticas de gestión del talento que nos representa; fruto del esfuerzo y el espíritu colaborativo de nuestra organización. ​</p>
-                            <div className="companies-second_us">
-                                <div className="img-company-gp">
+                    <div className="certifications-companies" style={{ gridColumn: "4/8", display: "flex", justifyContent: "flex-end" }}>
+                        <div className="info-container" style={{position: "relative", right: "50px"}}>
+                            <div>
+                                <div className="title-green-dark-container">
+                                    <h6>Somos un gran lugar para trabajar</h6>
                                 </div>
-                                <div className="img-company-gpl">
-                                </div>
-                                <div className="img-company-gpw">
-                                </div>
-                                <div className="img-company-gp">
+                                <p style={{ width: "447px" }}>Fuimos reconocidos por Great Place to Work como una de las mejores industrias para trabajar en Perú en el  2020, posicionándonos entre las industrias más destacadas por segundo año consecutivo, gracias al excelente clima laboral y las buenas prácticas de gestión del talento que nos representa; fruto del esfuerzo y el espíritu colaborativo de nuestra organización. ​</p>
+                                <div className="companies-second_us">
+                                    <div className="img-company-gp">
+                                    </div>
+                                    <div className="img-company-gpl">
+                                    </div>
+                                    <div className="img-company-gpw">
+                                    </div>
+                                    <div className="img-company-gp">
+                                    </div>
                                 </div>
                             </div>
                         </div>

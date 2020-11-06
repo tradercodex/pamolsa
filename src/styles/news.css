@@ -64,7 +64,7 @@
     top: 0px;
     width: 667.49px;
     height: 453.04px;
-    right: -30px;
+    right: -115px;
     z-index: 0;
     background: rgba(141, 183, 46, 0.15);
     border-radius: 50px;
@@ -303,7 +303,6 @@
     top: 40px;
     width: 578.45px;
     height: 393.04px;
-    right: 46% !important;
     z-index: 0;
     background: rgba(0, 82, 134, 0.2);
     border-radius: 50px;
@@ -327,7 +326,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 102%;
+    width: 100%;
     height: 100%;
     background: rgba(0, 82, 134, 0.2);
     content: '';
@@ -817,11 +816,12 @@
 }
 
 .new-slick.work.sbl .slick-dots {
-    bottom: 0px !important;
+    bottom: 100px !important;
     background: transparent !important;
     z-index: 2500 !important;
     padding: 0 !important;
-    left: 400px !important;
+    left: -550px !important;
+    position: absolute !important;
 }
 
 .certifications-companies h6.companies-title, .certifications-companies h6.companies-title_second {
@@ -1269,6 +1269,24 @@
     padding: 10px 20px;
 }
 
+.tree-new.contact {
+    position: absolute;
+    right: -115px;
+    z-index: 1;
+}
+
+.tree-new.contact img {
+    width: 300px;
+    opacity: 0.5;
+    position: relative;
+    top: 500px;
+    transform: rotate(138.73deg);
+}
+
+.mrbox svg circle {
+    fill: #005286 !important;
+}
+
 @media only screen and (min-width: 1440px) {
     .container-news {
         margin-top: 300px;
@@ -1281,8 +1299,19 @@
         display: flex;
         justify-content: center;
     }
+    .tree-new.contact {
+        right: -115px;
+    }
+    
+    .tree-new.contact img {
+        width: 240px;
+        opacity: 0.5;
+        position: relative;
+        top: 240px;
+        transform: rotate(138.73deg);
+    }
     .container-news .square-slick {
-        right: 26% !important;
+        right: 15% !important;
     }
     .square-us {
         top: 180px;
@@ -1293,7 +1322,7 @@
     }
     .new-slick.work .slick-dots {
         bottom: 255px !important;
-        left: -420px !important;
+        left: -400px !important;
     }
     .card-work {
         margin-left: 280px;
@@ -1302,7 +1331,7 @@
         margin-left: 100px !important;
     }
     .elipse-work {
-        bottom: -660px;
+        bottom: -570px;
     }    
     .post-img-card-rigth.etic {
         left: 0 !important;
@@ -1315,5 +1344,11 @@
         margin-left: 100px;
         color: #009FE3;
         width: 301px;
+    }
+}
+
+@media only screen and  (max-width: 1366px) {
+    .new-slick.work.sbl .slick-dots {
+        left: -400px !important;
     }
 }

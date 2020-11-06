@@ -34,7 +34,7 @@ const Slicks = ({ match }) => {
         <Fragment>
             {
                 pathname === "/" ?
-                    <div>
+                    <div className="content-slick-home">
                         <div className="Slicks-pm">
                             <div className="Radius"></div>
                             <Slider {...settings}>
@@ -194,9 +194,9 @@ const Slicks = ({ match }) => {
             }
             {
                 pathname === "/noticias" ?
-                    <div>
+                    <div className="content-slick-new">
                         <div className="Slicks-pm Us">
-                            <div className="Radius Us"></div>
+                            <div className="Radius Us" style={{background: "#D6E3D2"}}></div>
                             <Slider {...settings}>
                                 <div>
                                     <div className="Rotate-slick Us New">
@@ -225,6 +225,9 @@ const Slicks = ({ match }) => {
                                     </div>
                                 </div>
                             </Slider>
+                            <div className="tree-new contact">
+                            <img src={require('../images/img/tree.gif')} />
+                        </div>
                         </div>
                     </div> : ''
             }

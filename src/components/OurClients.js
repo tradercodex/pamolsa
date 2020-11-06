@@ -20,26 +20,17 @@ class OurClients extends React.Component {
                             >
                                 Nuestros Clientes
                     </h2>
-                            <span
-                                className="wow animate__animated animate__fadeInLeft"
-                                data-wow-duration="2s"
-                                data-wow-delay="1s"
-                            >Canal tradicional</span>
                             <p 
                                 className="wow animate__animated animate__fadeInUp"
                                 data-wow-duration="2s"
                                 data-wow-delay="1.4s"
                                 >
-                                Son canales de comercialización de empaques desechables. Atienden en sus locales a diferentes tipos de usuarios, pueden vender al por menor o ser grandes mayoristas.</p>
+                                Ofrecemos a nuestros clientes soluciones de empaques  de acuerdo  a las tendencias del mercado, personalizadas e innovadoras, más amigables con el medio ambiente y siguiendo las tendencias del mercado.</p>
                             <div className="footer-client_main">
-                                <h6 
+                                <h6 style={{color:"#005286"}}
                                 className="wow animate__animated animate__fadeInLeft"
                                 data-wow-duration="2s"
-                                data-wow-delay="1.8s">TIPOS DE CLIENTES</h6>
-                                <span 
-                                className="wow animate__animated animate__fadeInLeft"
-                                data-wow-duration="2s"
-                                data-wow-delay="2.2s">Canal tradicional</span>
+                                data-wow-delay="1.8s">Conoce nuestros tipos de clientes:</h6>
                                 <div className="types-clients wow animate__animated animate__fadeInUp"
                                 data-wow-duration="2s"
                                 data-wow-delay="2.6s" >

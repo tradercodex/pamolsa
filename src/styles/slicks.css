@@ -38,13 +38,14 @@
     height: 1206.42px;
     left: -158px;
     top: -360.45px;
-    background: rgba(0, 82, 134, 0.16);
+    z-index: 2;
+    background: #CBDCE7 !important;
     border-radius: 191px;
     transform: rotate(-16.85deg);
 }
 
 .Rotate-slick.Us::before {
-    background-color: rgba(0, 82, 134, 0.4);
+    background-color: rgba(0, 82, 134, 0.2);
 }
 
 .Rotate-slick::before {
@@ -457,6 +458,14 @@
     z-index: 1;
 }
 
+.content-slick-home {
+    height: 120vh;
+}
+
+.content-slick-new {
+    height: 126vh !important;
+}
+
 @media only screen and (max-height: 660px) {
     .Rotate-slick.Us {
         height: 120vh !important;
@@ -467,11 +476,20 @@
     .Rotate-slick.Us::before {
         height: 151vh !important;
     }
+    .content-slick-home {
+        height: 170vh !important;
+    }
+    .content-slick-new {
+        height: 94vh !important;
+    }
 }
 
 @media only screen and (max-width: 1440px) {
     .Rotate-slick::after{
         background-size: contain !important;
+    }
+    .content-slick-home {
+        height: 120vh;
     }
     .Rotate-slick.Us::after {
         background-size: contain;

@@ -109,7 +109,7 @@
 .types-clients svg {
     position: relative;
     z-index: 1;
-    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .client-slick .slick-track .img-clients {

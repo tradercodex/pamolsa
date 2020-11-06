@@ -13,9 +13,9 @@ import axios from 'axios'
 const root = 'http://3.120.185.254:8090/api'
 
 
-export const getVacants = () => async dispatch => {
+export const getVacants = (size,page) => async dispatch => {
     try {
-        const res = await axios.get(`${root}/vacant/listVacant`);
+        const res = await axios.get(`${root}/vacant/listVacant?size=${size}&page=${page}`);
         console.log(res.data)
         dispatch({
             type: GET_VACANT,

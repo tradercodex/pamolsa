@@ -112,6 +112,7 @@ const ContactForm = () => {
                                     <ReactSelect 
                                         styles={selectStyles} 
                                         options={optionsContact} 
+                                        placeholder="¿Cuál es tu requerimiento?"
                                     />}
                                     name="request"
                                     isClearable
@@ -183,7 +184,13 @@ const ContactForm = () => {
                             </span>
                             <div className="input">
                                 <Controller
-                                    as={<ReactSelect styles={selectStyles} options={optionsCountry} />}
+                                    as={
+                                        <ReactSelect 
+                                        styles={selectStyles} 
+                                        options={optionsCountry} 
+                                        placeholder="País"
+                                        />
+                                    }
                                     name="country"
                                     isClearable
                                     control={control}
@@ -207,7 +214,7 @@ const ContactForm = () => {
                                         register({
                                             required: {
                                                 value: true,
-                                                message: 'Ingrese su país'
+                                                message: 'Ingrese su teléfono'
                                             }
                                         })
                                     }
