@@ -279,8 +279,8 @@ const ContactForm = () => {
                 </div>
             </div>
             <div className="footer-contact">
-                <div className="new-tree">
-                    <img src={require('../images/img/newtree.png')} alt="" />
+                <div className="tree-new contact-info">
+                    <img src={require('../images/img/tree.gif')} alt="" />
                 </div>
                 <div className="container-grid">
                     <div className="marker-contact">

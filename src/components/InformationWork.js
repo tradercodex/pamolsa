@@ -35,7 +35,7 @@ const InformationWork = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="certifications-companies" style={{ gridColumn: "4/8", display: "flex", justifyContent: "flex-end" }}>
+                    <div className="certifications-companies info" style={{ gridColumn: "4/8", display: "flex", justifyContent: "center" }}>
                         <div className="info-container" style={{position: "relative", right: "50px"}}>
                             <div>
                                 <div className="title-green-dark-container">

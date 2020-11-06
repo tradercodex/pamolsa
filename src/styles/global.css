@@ -1,16 +1,16 @@
 @font-face {
     font-family: 'Amble';
-    src: url('../fonts/Amble-Regular.ttf');
+    src: url('../fonts/Amble-Regular.otf');
 }
 
 @font-face {
     font-family: 'Amble-Light';
-    src: url('../fonts/Amble-Light.ttf');
+    src: url('../fonts/Amble-Light.otf');
 }
 
 @font-face {
     font-family: 'Amble-Bold';
-    src: url('../fonts/Amble-Bold.ttf');
+    src: url('../fonts/Amble-Bold.otf');
 }
 
 * {

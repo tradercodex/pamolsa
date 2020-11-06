@@ -334,4 +334,7 @@
     .img-values {
         max-width: 998px;
     }
+    .certifications-companies.info {
+        justify-content: flex-end !important;
+    }
 }

@@ -139,6 +139,19 @@
     transform: rotate(-128.73deg);
 }
 
+.tree-new.contact-info {
+    position: absolute;
+    left: 0px !important;
+}
+
+.tree-new.contact-info img {
+    width: 240px;
+    opacity: 0.5;
+    top: -140px !important;
+    position: relative;
+    transform: rotate(148.73deg);
+}
+
 .new-slick.work {
     grid-column: 4/8;
     position: relative;
@@ -165,6 +178,10 @@
     grid-template-columns: repeat(7,1fr);
     margin-top: 200px;
     margin-bottom: 50px;
+}
+
+.slick-dots {
+    width: 70% !important;
 }
 
 .new-slick .slick-dots {
@@ -1344,6 +1361,13 @@
         margin-left: 100px;
         color: #009FE3;
         width: 301px;
+    }
+    .tree-new.contact-info img {
+        width: 240px;
+        opacity: 0.5;
+        top: 0px !important;
+        position: relative;
+        transform: rotate(148.73deg);
     }
 }
 

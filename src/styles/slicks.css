@@ -357,11 +357,10 @@
 
 .Slicks-pm ul.slick-dots {
     transform: rotate(90deg);
-    right: 550px;
+    right: 0px;
     top: -210px;
     z-index: 1000;
     height: 100%;
-    width: 200px;
 }
 
 .slick-dots li button:before {
@@ -468,7 +467,11 @@
 
 @media only screen and (max-height: 660px) {
     .Rotate-slick.Us {
-        height: 120vh !important;
+        background-size: cover !important;
+        width: 1560px !important;
+        height: 130vh !important;
+        top: -450px !important;
+        left: -78px !important;
     }
     .Radius.Us {
         height: 66vh !important;
@@ -546,7 +549,7 @@
         width: 100%;
     }
     .info-slick.Us {
-        top: 800px;
+        top: 700px;
         left: 100px;
     }
 }

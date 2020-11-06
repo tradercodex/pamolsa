@@ -220,7 +220,7 @@ const Slicks = ({ match }) => {
                                     <div className="Rotate-slick Us Ctt">
                                         <div className="info-slick Us">
                                             <h2>Contacto</h2>
-                                            <p>Dejanos tus datos para contactarte</p>
+                                            <p>Queremos conocerte</p>
                                         </div>
                                     </div>
                                 </div>
