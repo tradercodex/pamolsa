@@ -91,7 +91,6 @@
     content: '';
     z-index: 1022;
     position: absolute;
-    background-image: url('../images/img/bannerus.png');
     background-blend-mode: soft-light;
     background-color: rgba(0, 82, 134, 0.2);
     background-repeat: no-repeat;
@@ -104,27 +103,27 @@
 }
 
 .Rotate-slick.Us::after {
-    background-image: url('../images/img/bannerus.png');
+    background-image: url('../images/img/bannerus.webp');
 }
 
 .Rotate-slick.Us.Sb::after {
-    background-image: url('../images/img/bannersostenibility.png');
+    background-image: url('../images/img/bannersostenibility.webp');
 }
 
 .Rotate-slick.Us.Wu::after {
-    background-image: url('../images/img/workwithus.png') !important;
+    background-image: url('../images/img/workwithus.webp') !important;
 }
 
 .Rotate-slick.Us.Cl::after {
-    background-image: url('../images/img/clients.png') !important;
+    background-image: url('../images/img/clients.webp') !important;
 }
 
 .Rotate-slick.Us.New::after {
-    background-image: url('../images/img/bannernotice.png') !important;
+    background-image: url('../images/img/bannernotice.webp') !important;
 }
 
 .Rotate-slick.Us.Ctt::after {
-    background-image: url('../images/img/contacto.png') !important;
+    background-image: url('../images/img/contacto.webp') !important;
 }
 
 
@@ -233,7 +232,6 @@
     content: '';
     z-index: 1022;
     position: absolute;
-    background-image: url('../images/img/us.png');
     background-blend-mode: soft-light;
     background-color: rgba(0, 82, 134, 0.2);
     background-repeat: no-repeat;
@@ -250,7 +248,6 @@
     content: '';
     z-index: 1022;
     position: absolute;
-    background-image: url('../images/img/workwithus.png');
     background-blend-mode: soft-light;
     background-color: rgba(0, 82, 134, 0.2);
     background-repeat: no-repeat;
@@ -268,7 +265,6 @@
     content: '';
     z-index: 1022;
     position: absolute;
-    background-image: url('../images/img/bannersostenibility.png');
     background-blend-mode: soft-light;
     background-color: rgba(0, 82, 134, 0.2);
     background-repeat: no-repeat;
@@ -285,7 +281,6 @@
     content: '';
     z-index: 1022;
     position: absolute;
-    background-image: url('../images/img/clients.png');
     background-blend-mode: soft-light;
     background-color: rgba(0, 82, 134, 0.2);
     background-repeat: no-repeat;
@@ -302,7 +297,6 @@
     content: '';
     z-index: 1022;
     position: absolute;
-    background-image: url('../images/img/bannernotice.png');
     background-blend-mode: soft-light;
     background-color: rgba(20, 20, 20, 0.2);
     background-repeat: no-repeat;
@@ -320,7 +314,6 @@
     content: '';
     z-index: 1022;
     position: absolute;
-    background-image: url('../images/img/contacto.png');
     background-blend-mode: soft-light;
     background-color: rgba(0, 82, 134, 0.2);
     background-repeat: no-repeat;
