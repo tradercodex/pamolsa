@@ -40,10 +40,25 @@
     box-shadow: 0px 4px 20px #02426A;
     border-radius: 40px;
     border: none;
-    padding: 15px 15px 15px 50px;
+    padding: 15px 5px 15px 20px;
     font-family: 'Amble-light';
     font-size: 14px;
     outline: none;
+}
+
+.Search-container.lines {
+    margin-bottom: 0;
+}
+
+.Search-container.lines input {
+    padding: 15px 5px 15px 50px;
+    margin-bottom: 30px;
+}
+
+.Search-container.lines svg.search {
+    position: absolute;
+    left: 20px;
+    top: 15px;
 }
 
 .Search-container input::placeholder {
@@ -130,11 +145,13 @@
     color: #4A7729;
     font-size: 40px;
     width: 400px;
+    margin-bottom: 50px;
     font-family: 'Amble-Bold';
     font-weight: bold;
 }
 
-.info-product_bf button{
+.info-product_bf a{
+    text-decoration: none;
     color: #4D4D4C;
     font-size: 14px;
     font-family: 'Amble';
@@ -144,7 +161,6 @@
     border-radius: 50px;
     background: #fff;
     border: 1px solid #4D4D4C; 
-    margin-top: 30px;
 }
 
 .Products-Quote_2 {
@@ -167,22 +183,23 @@
 .info-product_bf_2 h4{
     color: #4D4D4C;
     width: 317px;
+    margin-bottom: 50px;
     font-size: 40px;
     font-family: 'Amble-Bold';
     font-weight: bold;
 }
 
-.info-product_bf_2 button{
+.info-product_bf_2 a{
     color: #4D4D4C;
     font-size: 14px;
     font-family: 'Amble';
+    text-decoration: none;
     padding: 10px 40px;
     cursor: pointer;
     outline: none;
     border-radius: 50px;
     background: #fff;
     border: 1px solid #4D4D4C; 
-    margin-top: 30px;
 }
 
 .Products-Quote_3 {
@@ -209,9 +226,10 @@
     font-size: 40px;
     font-family: 'Amble-Bold';
     font-weight: bold;
+    margin-bottom: 50px;
 }
 
-.info-product_bf_3 button{
+.info-product_bf_3 a{
     color: #4D4D4C;
     font-size: 14px;
     font-family: 'Amble';
@@ -220,8 +238,8 @@
     outline: none;
     border-radius: 50px;
     background: #fff;
+    text-decoration: none;
     border: 1px solid #4D4D4C; 
-    margin-top: 30px;
 }
 
 .Products-Quote_4 {
@@ -245,19 +263,20 @@
     font-size: 40px;
     font-family: 'Amble-Bold';
     font-weight: bold;
+    margin-bottom: 50px;
 }
 
-.info-product_bf_4 button{
+.info-product_bf_4 a{
     color: #4D4D4C;
     font-size: 14px;
     font-family: 'Amble';
     padding: 10px 40px;
     cursor: pointer;
     outline: none;
+    text-decoration: none;
     border-radius: 50px;
     background: #fff;
     border: 1px solid #4D4D4C; 
-    margin-top: 30px;
 }
 
 .tree-left {

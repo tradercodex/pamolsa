@@ -111,6 +111,25 @@
     grid-column: 2/4;
 }
 
+.box-informs-pdf {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    width: 70%;
+    padding: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 20px rgba(216, 216, 216, 0.3);
+    border-radius: 31.5px;
+}
+
+.box-informs-pdf p {
+    text-decoration: underline;
+    margin-left: 15px;
+    font-family: 'Amble';
+    color: #4D4D4C;
+    font-size: 14px;
+}
+
 .info-informs h2 {
     font-size: 50px;
     font-family: 'Amble-bold';
@@ -288,6 +307,7 @@
     background: transparent !important;
     z-index: 2500 !important;
     padding: 0 !important;
+    right: 0px !important;
 }
 
 .stb-slick .slick-arrow {
@@ -350,6 +370,9 @@
     }
     .info-sl-sbl {
         grid-column: 5/8;
+    }
+    .stb-slick .slick-dots {
+        right: -24px !important;
     }
     .objetives {
         max-width: 1240px;

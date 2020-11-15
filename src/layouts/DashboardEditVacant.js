@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { updateVacant } from '../redux/actions/vacant'
+import { getVacants, updateVacant } from '../redux/actions/vacant'
 import { useForm, Controller } from 'react-hook-form'
 import axios from 'axios'
 import '../styles/dashboard.css'
 import ReactQuill from 'react-quill'
 import { useHistory } from 'react-router-dom'
+import { setAlert } from '../redux/actions/alert'
 
 const DashboardEditVacant = ({match}) => {
 
@@ -27,7 +28,6 @@ const DashboardEditVacant = ({match}) => {
             description: res.data.data.description
         })
     }
-
     useEffect(()=>{
         getVacant();
     },[])
@@ -40,8 +40,14 @@ const DashboardEditVacant = ({match}) => {
         formData.append('title', data.title);
         formData.append('description',data.description)
 
-        dispatch(updateVacant(formData))
-        history.push('/administrador/vacantes')
+        if (formData) {
+            dispatch(updateVacant(formData))
+            setTimeout(() => {
+                history.push('/administrador/vacantes')
+                dispatch(setAlert("Noticia editada correctamente","", 4000))
+                dispatch(getVacants(100,1));
+            }, 2000);
+        }
         e.target.reset();
     }
 

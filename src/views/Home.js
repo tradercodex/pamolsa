@@ -7,15 +7,15 @@ import News from '../components/News';
 import Clients from '../components/Clients';
 import Footer from '../components/Footer'
 import { useDispatch, useSelector } from 'react-redux'
-import { getNews } from '../redux/actions/new'
+import { getNewsHome } from '../redux/actions/new'
 
 const Home = () => {
 
-    const news = useSelector(state => state.news.news)
+    const news = useSelector(state => state.news.newsHome)
     const dispatch = useDispatch();
 
     useEffect(()=> {
-        dispatch(getNews());
+        dispatch(getNewsHome());
     },[])
 
     return (

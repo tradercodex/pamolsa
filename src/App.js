@@ -18,6 +18,8 @@ import DetailProducts from './views/DetailProducts';
 import DetailNew from './views/DetailNew';
 import Dashboard from './views/Dashboard'
 import GalleryNewPaper from './views/GalleryNewPaper';
+import Login from './views/Login'
+import ProductByLine from './views/ProductsByLine';
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/nosotros" component={Us} />
           <Route exact path="/productos" component={Products} />
+          <Route exact path="/productos/line/:id" component={ProductByLine} />
           <Route exact path="/sostenibilidad" component={Sustainability} />
           <Route exact path="/trabaja-con-nosotros" component={WorkWithUs} />
           <Route exact path="/trabaja-con-nosotros/postúlate" component={Postulation} />
@@ -38,6 +41,7 @@ function App() {
           <Route exact path="/productos/detalle/:id" component={DetailProducts} />
           <Route exact path="/noticias/galeria-periodistica" component={GalleryNewPaper} />     
           <Route exact path="/noticias/:name" component={DetailNew} />   
+          <Route exact path="/login" component={Login} />
           <Dashboard />
         </Switch>
       </Router>

@@ -525,16 +525,33 @@ nav {
     right: 10px;
     top: 10px;
     border: none;
-    background: #fff;
+    background: #1B203A;
     border-radius: 50%;
     cursor: pointer !important;
     padding: 8px 10px;
-    z-index: 999999;
+    z-index: 3000;
+    outline: none;
+}
+
+.gallery-items .edit {
+    position: absolute;
+    right: 60px;
+    top: 10px;
+    border: none;
+    background: #1B203A;
+    border-radius: 50%;
+    cursor: pointer !important;
+    padding: 8px 10px;
+    z-index: 3000;
     outline: none;
 }
 
 .gallery-items .delete svg {
     fill: #F65252;
+}
+
+.gallery-items .edit svg {
+    fill: #55F09D;
 }
 
 .success-alert {
@@ -581,6 +598,16 @@ nav {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 20px;
+}
+
+.grid-container-ds .gallery-items p {
+    width: 72%;
+}
+
+@media only screen and (max-width: 1440px) {
+    .grid-container-ds {
+        grid-template-columns: repeat(2,1fr);
+    }
 }
 
 @media only screen and (max-width: 1200px) {

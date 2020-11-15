@@ -8,7 +8,8 @@
 }
 
 .content-modal {
-    position: absolute;
+    position: fixed;
+    background: rgba(77, 77, 76, 0.35);
     z-index: 999999;
     top: 15%;
     width: 100%;
@@ -17,12 +18,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(77, 77, 76, 0.35);
 }
 
 .modal-send {
     position: relative;
     max-width: 416px;
+    z-index: 999999 !important;
     padding: 40px 90px 0px 90px;
     height: 253px;
     background: #fff;

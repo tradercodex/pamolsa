@@ -55,6 +55,18 @@ const Sidebar = () => {
                             </Link>
                         </li>
                         <li>
+                            <Link to="/administrador/actividades">
+                                <i className="fas fa-bahai"></i>
+                                <span>Actividades</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/administrador/comunidad">
+                                <i className="fas fa-fist-raised"></i>
+                                <span>Comunidad</span>
+                            </Link>
+                        </li>
+                        <li>
                             <Link onClick={logout} to="#">
                                 <i className="fas fa-sign-out-alt"></i>
                                 <span>Cerra Sesión</span>

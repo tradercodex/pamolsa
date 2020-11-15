@@ -65,7 +65,7 @@ const DashboardProduct = () => {
                                 <img src={require('../images/img/lineproducts.png')} alt="" />
                                 <Link>Agregar</Link>
                             </div>
-                            <p>Tipo de negocios</p>
+                            <p>Tipo de productos</p>
                         </div>
                     </div>
                 </div>

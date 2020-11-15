@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import Arrow from '../images/svg/arrowback';
 import { Link, useHistory } from 'react-router-dom'
+import ReactHtmlParser from 'react-html-parser'
 
 const DetailNew = ({title,body,source,created,place,file,author}) => {
 
@@ -27,9 +28,8 @@ const DetailNew = ({title,body,source,created,place,file,author}) => {
                      <span>{place} / {created}</span>
                      <div className="Font text">
                             <div>Author : {author}</div>
-                            
                     </div>
-                        <p className="text">{body}</p>
+                        <p className="text">{ReactHtmlParser(body)}</p>
                         <div className="Font text">
                             <div>Fuente</div>
                             <Link to="#">{source}</Link>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import ReactSelect from 'react-select'
+import CreatableSelect from 'react-select/creatable'
 import { useForm, Controller } from 'react-hook-form'
 import makeAnimated from 'react-select/animated';
 import $ from 'jquery'
@@ -349,14 +350,19 @@ const DashboardAddProduct = () => {
                                     </div>
                                     <Controller
                                         as={
-                                            <ReactSelect
+                                            <CreatableSelect
                                                 styles={selectStyles}
                                                 options={types}
                                                 getOptionLabel={types => types.name}
                                                 getOptionValue={types => types.id}
+                                                getNewOptionData = { ( inputValue , optionLabel ) => ({
+                                                    id :  optionLabel ,
+                                                    name :  inputValue ,
+                                                    __isNew__ :  true 
+                                                })} 
                                             />}
-                                        name="type"
                                         isClearable
+                                        name="type" 
                                         control={control}
                                         rules={{
                                             required: {
@@ -375,11 +381,16 @@ const DashboardAddProduct = () => {
                                     </div>
                                     <Controller
                                         as={
-                                            <ReactSelect
+                                            <CreatableSelect
                                                 styles={selectStyles}
                                                 options={subTypes}
                                                 getOptionLabel={subTypes => subTypes.name}
                                                 getOptionValue={subTypes => subTypes.id}
+                                                getNewOptionData = { ( inputValue , optionLabel ) => ({
+                                                    id :  optionLabel ,
+                                                    name :  inputValue ,
+                                                    __isNew__ :  true 
+                                                })} 
                                             />}
                                         name="subtype"
                                         isClearable
@@ -401,11 +412,16 @@ const DashboardAddProduct = () => {
                                     </div>
                                     <Controller
                                         as={
-                                            <ReactSelect
+                                            <CreatableSelect
                                                 styles={selectStyles}
                                                 options={addSubTypes}
                                                 getOptionLabel={addSubTypes => addSubTypes.name}
                                                 getOptionValue={addSubTypes => addSubTypes.id}
+                                                getNewOptionData = { ( inputValue , optionLabel ) => ({
+                                                    id :  optionLabel ,
+                                                    name :  inputValue ,
+                                                    __isNew__ :  true 
+                                                })} 
                                             />}
                                         name="add_subtype"
                                         isClearable
@@ -425,11 +441,16 @@ const DashboardAddProduct = () => {
                                     <div><label>Material de producto</label></div>
                                     <Controller
                                         as={
-                                            <ReactSelect
+                                            <CreatableSelect
                                                 styles={selectStyles}
                                                 options={materials}
                                                 getOptionLabel={materials => materials.name}
                                                 getOptionValue={materials => materials.id}
+                                                getNewOptionData = { ( inputValue , optionLabel ) => ({
+                                                    id :  optionLabel ,
+                                                    name :  inputValue ,
+                                                    __isNew__ :  true 
+                                                })} 
                                             />}
                                         name="material_name"
                                         isClearable

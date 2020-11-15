@@ -44,7 +44,6 @@ const SidebarProducts = ({ match,linesProducts,typesBusiness, materials, getMate
                             </div>
                         ))
                     }
-
                 </div>
             </div>
         </div>

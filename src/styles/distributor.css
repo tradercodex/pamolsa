@@ -95,3 +95,12 @@
     font-size: 50px;
     width: 400px;
 }
+
+.Search-container.distributor , .Search-container.lines {
+    max-width: 71%;
+}
+
+.Search-container.distributor svg {
+    position: absolute;
+    right: 20px;
+}

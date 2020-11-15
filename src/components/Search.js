@@ -12,6 +12,7 @@ import Fish from '../images/svg/fish'
 
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
+import MarkerSearch from '../images/svg/markersearch';
 
 function getModalStyle() {
     const top = 20
@@ -93,16 +94,34 @@ const Search = ({ match }) => {
                                 {body}
                             </Modal>
                         </div>
-
                     </div> : ''
             }
 
-{
+            {
                 pathname === "/home/distribuidores" ?
                     <div className="Search">
-                        <div className="Search-container">
+                        <div className="Search-container distributor">
+                            <MarkerSearch />
+                            <input type="text" placeholder="Ingresa tu dirección" />
+                        </div>
+                    </div> : ''
+            }
+
+            {
+                pathname === "/productos/line/:id" ?
+                    <div className="Search">
+                        <div className="Search-container lines">
                             <SearchIcon />
                             <input type="text" placeholder="¿Qué producto necesitas?" />
+                            <button type="button" onClick={handleOpen}><FilterIcon /></button>
+                            <Modal
+                                open={open}
+                                onClose={handleClose}
+                                aria-labelledby="simple-modal-title"
+                                aria-describedby="simple-modal-description"
+                            >
+                                {body}
+                            </Modal>
                         </div>
                     </div> : ''
             }

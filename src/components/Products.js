@@ -2,11 +2,11 @@ import React, { Fragment } from 'react'
 import Filter from './Filter'
 import ProductsFilter from './ProductsFilter'
 
-const Products = ({productsFilter, productsByType}) => {
+const Products = ({products}) => {
     return ( 
         <Fragment>
             <Filter />
-            <ProductsFilter productsFilter={productsFilter} productsByType={productsByType} />
+            <ProductsFilter products={products} />
         </Fragment>
      );
 }

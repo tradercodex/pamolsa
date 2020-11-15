@@ -84,15 +84,15 @@ const InformationSostenibility = () => {
                         <p>Impulsamos distintas iniciativas con las que buscamos la sostenibilidad de nuestras operaciones y el cuidado de los recursos naturales. Estas iniciativas están recopiladas en nuestros Informes de sostenibilidad.</p>
                     </div>
                     <div className="informs-pdfs">
-                        <div className="box-informs">
+                        <div className="box-informs-pdf">
                             <InformDownload />
                             <p>Sostenibilidad 2019</p>
                         </div>
-                        <div className="box-informs">
+                        <div className="box-informs-pdf">
                             <InformDownload />
                             <p>Sostenibilidad 2019</p>
                         </div>
-                        <div className="box-informs">
+                        <div className="box-informs-pdf">
                             <InformDownload />
                             <p>Sostenibilidad 2019</p>
                         </div>

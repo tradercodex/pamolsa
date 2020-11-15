@@ -1,15 +1,20 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { sendNew } from '../redux/actions/new'
-import { useForm } from 'react-hook-form'
+import { getNews, sendNew } from '../redux/actions/new'
+import { useForm, Controller } from 'react-hook-form'
+import ReactQuill from 'react-quill'
 import $ from 'jquery'
 import '../styles/dashboard.css'
+import {setAlert} from '../redux/actions/alert'
+import { useHistory } from 'react-router-dom'
 
 const DashbaordAddNew = () => {
 
-    const { errors, handleSubmit, register } = useForm()
+    const { errors, handleSubmit, register,control } = useForm()
 
     const dispatch = useDispatch();
+
+    const history = useHistory()
 
     useEffect(() => {
         $('#profile-image').change(function (e) {
@@ -52,9 +57,16 @@ const DashbaordAddNew = () => {
         formData.append('source', data.source);
         formData.append('file', data.file[0])
 
-        dispatch(sendNew(formData))
+        if (formData) {
+            dispatch(sendNew(formData))
+            setTimeout(() => {
+                history.push('/administrador/noticias');
+                dispatch(setAlert("Noticia guardado correctamente","", 4000))
+                dispatch(getNews(100, 1));
+            }, 2000);
+        }
+
         e.target.reset();
-        window.location.replace('/administrador/noticias');
     }
 
     return (
@@ -168,17 +180,25 @@ const DashbaordAddNew = () => {
                                 </div>
                                 <div className="input-ds">
                                     <div><label>Descripción</label></div>
-                                    <textarea
-                                        type="text"
+                                    <Controller
+                                        control={control}
                                         name="body"
-                                        ref={
-                                            register({
-                                                required: {
-                                                    value: true,
-                                                    message: 'Ingrese la descripción de la noticia'
-                                                }
-                                            })
-                                        }
+                                        rules={{
+                                            validate: "Enter at least 10 words in the description",
+                                            required: {
+                                                value: true,
+                                                message: "Escriba la descripción"
+                                            }
+                                        }}
+                                        error={errors.description}
+                                        render={({ onChange, value }) => (
+                                            <ReactQuill
+                                                style={{height: "450px", color: "#fff", marginBottom: "60px"}}
+                                                theme="snow"
+                                                onChange={(description) => onChange(description)}
+                                                value={value || ''}
+                                            />
+                                        )}
                                     />
                                     <div className="error-ds">
                                         {errors.body && errors.body.message}
@@ -205,7 +225,7 @@ const DashbaordAddNew = () => {
                             </div>
                             <div>
                                 <div className="input-ds">
-                                    <div><label>Imagen de la noticia</label></div>
+                                    <div><label>Imagen de la noticia (tamaño recomendable - 1920x 1080)</label></div>
                                     <div className="img-input-ds">   
                                         <img style={{ width: "100%" }} id="imgPerfil" src={require('../images/img/uploadimage.jpg')} alt="img" />
                                         <input

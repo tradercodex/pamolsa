@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import Slider from "react-slick";
 import { withRouter, Link } from 'react-router-dom'
 import Play from '../images/svg/play'
@@ -11,19 +11,25 @@ import ChartSbl from '../images/svg/chartsbl';
 import BarBox from '../images/svg/barbox';
 import ElipseBlue from '../images/svg/elipseblue';
 import StbNews from '../images/svg/sostenibilitynews';
+import ReactHtmlParser from 'react-html-parser'
+import ReactPlayer from 'react-player/lazy'
 
-const News = ({ match, vacants, news }) => {
-
+const News = ({ match, vacants, news, communities, activities, closeVideoModal, handleShowVideoModal, showVideoModal }) => {
+    let modalRef = null;
     let pathname = match.path
+
+    const handleClose = (e) => {
+        console.log('Hola perros')
+        if (modalRef && !modalRef.contains(e.target)) {
+            closeVideoModal();
+        }
+    }
 
     const settingsHome = {
         dots: true,
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        // autoplay: true,
-        // autoplaySpeed: 2000,
-        // pauseOnHover: true,
         appendDots: dots => (
             <div
                 style={{
@@ -42,9 +48,6 @@ const News = ({ match, vacants, news }) => {
         infinite: true,
         slidesToShow: 1.5,
         slidesToScroll: 1,
-        // autoplay: true,
-        // autoplaySpeed: 2000,
-        // pauseOnHover: true,
         responsive: [
             {
                 breakpoint: 1440,
@@ -90,6 +93,34 @@ const News = ({ match, vacants, news }) => {
         ),
     };
 
+    const settingsActivities = {
+        dots: true,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: false,
+        autoplaySpeed: 2000,
+        pauseOnHover: true,
+        appendDots: dots => (
+            <div
+                style={{
+                    backgroundColor: "#ddd",
+                    borderRadius: "10px",
+                    padding: "10px"
+                }}
+            >
+                <ul style={{ margin: "0px" }}> {dots} </ul>
+            </div>
+        ),
+    };
+
+    useEffect(()=>{
+        document.addEventListener('click', handleClose);
+        return () => {
+            document.removeEventListener('click', handleClose)
+        }
+    },[])
+
     return (
         <Fragment>
             {
@@ -110,7 +141,7 @@ const News = ({ match, vacants, news }) => {
                                                         <h4>Noticias Pamolsa</h4>
                                                     </div>
                                                     <h6>{(item.title).substring(0, 60) + '...'}</h6>
-                                                    <p>{(item.body).substring(0, 150) + '...'}</p>
+                                                    <p>{ReactHtmlParser((item.body).substring(0, 150) + '...')}</p>
                                                     <Link to={`/noticias/${item.id}`}>Ver más</Link>
                                                 </div>
                                                 <div className="post-new_slick">
@@ -136,7 +167,6 @@ const News = ({ match, vacants, news }) => {
                             <Slider {...settingsHome} className="new-slick">
                                 <div>
                                     <div className="container-news">
-
                                         <div className="info-new_slick">
                                             <div className="title-new">
                                                 <h4>Plantas del producción</h4>
@@ -338,91 +368,56 @@ const News = ({ match, vacants, news }) => {
                                         <span>Reduce, recicla, reúsa.</span>
                                     </div>
                                     <Slider {...settingsReciclopas} className="new-slick work sbl">
-                                        <div>
-                                            <div className="card-work">
-                                                <div className="header-work sbl">
-                                                    <img src={require('../images/img/pardos.png')} />
-                                                </div>
-                                                <div className="card-body">
-                                                    <h6>Pardos</h6>
-                                                    <p>Instalamos 27 estaciones de reciclaje en los locales de
-                                                    Lima y Callao, con el proposíto de recolectar 20 tonelaas de PET posconsumo en el año 2020.</p>
-                                                    <button>Ver más</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div className="card-work">
-                                                <div className="header-work sbl">
-                                                    <img src={require('../images/img/sinparar.png')} />
-                                                </div>
-                                                <div className="card-body">
-                                                    <h6>Recicla Sin Parar</h6>
-                                                    <p>Nuestro proyecto de desarrollo de PET microcelular para aplicaciones de empaques para alimentos
-                                                    nos hizo acreedores del reconocimiento.</p>
-                                                    <button>Ver más</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div className="card-work">
-                                                <div className="header-work sbl">
-                                                    <img src={require('../images/img/pardos.png')} />
-                                                </div>
-                                                <div className="card-body">
-                                                    <h6>Ayudantes de Producción</h6>
-                                                    <p>Apilar y embalar los productos que salen de la máquina.Abastecimiento de materia prima a la máquina.Revisión y limpieza de los productos.</p>
-                                                    <button>Ver más</button>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        {
+                                            communities && communities.length ?
+                                                communities.map(item => (
+                                                    <div key={item.id}>
+                                                        <div className="card-work">
+                                                            <div className="header-work">
+                                                                <img src={`http://` + item.file.url} />
+                                                            </div>
+                                                            <div className="card-body">
+                                                                <h6>{item.title}</h6>
+                                                                <p>{ReactHtmlParser((item.description).substring(0, 110) + '...')}</p>
+                                                                <button>Ver más</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                )) : ''
+                                        }
                                     </Slider>
                                 </div>
                             </div>
                             <div>
-                                <div className="container-grid" style={{ alignItems: "flex-end", paddingBottom: "0px", paddingTop: "100px" }}>
-                                    <div className="elipse-work-videos"></div>
-                                    <div className="play-known" style={{ gridColumn: "2/4", left: "0px", zIndex: "1", top: "100px" }}>
-                                        <div className="square" style={{ background: "#5B8D4B" }}></div>
-                                        <div className="img-video_known">
-                                            <div className="img">
-                                                <img src={require('../images/img/workvideos.png')} />
-                                            </div>
-                                        </div>
-                                        <div className="play-button_pm">
-                                            <button><Play /></button>
-                                        </div>
-                                    </div>
-                                    <div className="info-pm_work sbl"
-                                        style={{
-                                            position: "relative",
-                                            zIndex: "1",
-                                            top: "0px",
-                                            gridColumn: "4/8",
-                                            display: "flex",
-                                            marginLeft: "50px"
-                                        }}
-                                    >
-                                        <div>
-                                            <h6
-                                                style={{
-                                                    color: "#fff",
-                                                    width: "543px",
-                                                    fontSize: "50px",
-                                                    fontFamily: "Amble-bold"
-                                                }}
-                                            >Actividades Recicloplas</h6>
-                                            <p
-                                                style={{
-                                                    color: "#fff",
-                                                    width: "303px",
-                                                    marginTop: "20px",
-                                                    fontSize: "14px",
-                                                    fontFamily: "Amble-light"
-                                                }}
-                                            >Conoce  las actividades que realizamos  con nuestros proveedores.</p>
-                                        </div>
-                                    </div>
+                                <div className="container-grid" style={{ alignItems: "flex-end", paddingBottom: "0px", paddingTop: "100px" }} onClick={handleClose}>
+                                    <div className="elipse-work-videos" onClick={handleClose}></div>
+                                    <Slider {...settingsActivities} className="new-slick work activity">
+                                        {
+                                            activities && activities.length ?
+                                                activities.map(item => (
+                                                    <div className="" key={item.id}>
+                                                        <div className="post-pet-sbl activity">
+                                                            <div className="square-pet-sbl activity"></div>
+                                                            <div className="img-new_slick activity">
+                                                                <img src={`http://` + item.file.url} />
+                                                            </div>
+                                                            <div className="play-button_pm activity">
+                                                                <button onClick={handleShowVideoModal}><Play /></button>
+                                                            </div>
+                                                        </div>
+                                                        { showVideoModal && 
+                                                        <div className="player-wrapper" ref={(node) => { modalRef = node }}>
+                                                            <ReactPlayer className='react-player' playing={false} width="100%" height="100%" volume={0.1} url={item.uri_video} />
+                                                        </div>
+                                                        }
+                                                        <div className="info-post-activity">
+                                                            <p>{item.title}</p>
+                                                            <span>{item.subtitle}</span>
+                                                        </div>
+                                                    </div>
+                                                )) : ''
+                                        }
+                                    </Slider>
                                 </div>
                             </div>
                         </div>
@@ -459,7 +454,7 @@ const News = ({ match, vacants, news }) => {
                                                     </div>
                                                     <div className="card-body">
                                                         <h6>{item.title}</h6>
-                                                        <p>{item.description}</p>
+                                                        <p>{ReactHtmlParser((item.description).substring(0, 110) + '...')}</p>
                                                         <button>Ver más</button>
                                                     </div>
                                                 </div>
@@ -558,7 +553,7 @@ const News = ({ match, vacants, news }) => {
                                             <p style={{ fontFamily: "Amble-bold", textDecoration: "none" }}>¿Puedo postular a más de una vacante?</p>
                                         </div>
                                         <div className="box-informs">
-                                            <div style={{ padding: "10px 10px 0px 10px", fontFamily: "Amble-light", fontSize: "14px", color: "4d4d4d"}}>
+                                            <div style={{ padding: "10px 10px 0px 10px", fontFamily: "Amble-light", fontSize: "14px", color: "4d4d4d" }}>
                                                 <span>El tiempo varía de acuerdo a cada proceso; pero en promedio es entre 7 y 15 días.</span>
                                             </div>
                                         </div>
@@ -579,7 +574,7 @@ const News = ({ match, vacants, news }) => {
                         </div>
                     </div> : ''
             }
-        </Fragment>
+        </Fragment >
     );
 }
 

@@ -33,9 +33,8 @@ const Distributor = () => {
             </div>
             <div className="container-grid">
                 <div className="info-container">
-
-                </div>
-                
+                    
+                </div>     
             </div>
         </Fragment>
     );

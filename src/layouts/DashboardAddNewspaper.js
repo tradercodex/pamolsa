@@ -3,13 +3,16 @@ import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
 import $ from 'jquery'
 import '../styles/dashboard.css'
-import { sendNewspaper } from '../redux/actions/newpaper'
-
+import { sendNewspaper, getNewsPaper } from '../redux/actions/newpaper'
+import { setAlert } from '../redux/actions/alert'
+import { useHistory } from 'react-router-dom'
+ 
 const DashbaordAddNewspaper = () => {
 
     const { errors, handleSubmit, register } = useForm()
 
     const dispatch = useDispatch();
+    const history = useHistory();
 
     useEffect(() => {
         $('#profile-image').change(function (e) {
@@ -46,7 +49,14 @@ const DashbaordAddNewspaper = () => {
         formData.append('created', data.created)
         formData.append('file', data.file[0]);
 
-        dispatch(sendNewspaper(formData))
+        if (formData) {
+            dispatch(sendNewspaper(formData))
+            setTimeout(() => {
+                history.push('/administrador/noticias');
+                dispatch(setAlert("Galería guardada correctamente","", 4000))
+                dispatch(getNewsPaper());
+            }, 2000);
+        }
         e.target.reset();
     }
 

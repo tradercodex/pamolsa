@@ -1,7 +1,9 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import Sidebar from '../components/Sidebar'
 import HeaderDashboard from '../components/HeaderDashboard'
 import { withRouter, Switch, Route } from 'react-router-dom'
+import Alert from '../components/Alert'
+import AOS from 'aos'
 import '../styles/dashboard.css'
 
 // Layouts
@@ -12,12 +14,18 @@ import DashboardAddBanner from '../layouts/DashboardAddBanner'
 import DashbaordAddNewspaper from '../layouts/DashboardAddNewspaper'
 import DashboardVacant from '../layouts/DashboardVacant'
 import DashbaordAddVacant from '../layouts/DashboardAddVacant'
-import Alert from '../components/Alert'
-import AOS from 'aos'
 import DashboardEditVacant from '../layouts/DashboardEditVacant'
 import DashboardProduct from '../layouts/DashboardProduct'
 import DashboardAddProduct from '../layouts/DashboardAddProduct'
 import DashboardEditProduct from '../layouts/DashboardEditProduct'
+import DashboardEditNew from '../layouts/DashboardEditNew'
+import DashboardEditNewPaper from '../layouts/DashboardEditNewPaper'
+import DashboardActivity from '../layouts/DashboardActivity'
+import DashboardAddActivity from '../layouts/DashboardAddActivity'
+import DashboardEditActivity from '../layouts/DashboardEditActivity'
+import DashboardCommunity from '../layouts/DashboardCommunity'
+import DashboardAddCommunity from '../layouts/DashboardAddCommunity'
+import DashboardEditCommunity from '../layouts/DashboardEditCommunity'
 
 const Dashboard = () => {
 
@@ -79,12 +87,20 @@ const Dashboard = () => {
                         <Route exact path="/administrador/productos/editar/:id" component={DashboardEditProduct} />
                         <Route exact path="/administrador/noticias" component={DashboardNew} />
                         <Route exact path="/administrador/noticias/nuevo" component={DashboardAddNew} />
+                        <Route exact path="/administrador/noticias/editar/:id" component={DashboardEditNew} />
+                        <Route exact path="/administrador/noticias/galeria/editar/:id" component={DashboardEditNewPaper} />
                         <Route exact path="/administrador/banners" component={DashboardBanner} />
-                        <Route exact path="/administrador/banners/nuevo" component={DashboardAddBanner} />
+                        <Route exact path="/administrador/banners/nuevo" component={DashboardAddBanner}/>
                         <Route exact path="/administrador/noticias/nuevo-periodico" component={DashbaordAddNewspaper} />
                         <Route exact path="/administrador/vacantes" component={DashboardVacant} />
                         <Route exact path="/administrador/vacantes/nueva-vacante" component={DashbaordAddVacant} />
                         <Route exact path="/administrador/vacantes/editar/:id" component={DashboardEditVacant} />
+                        <Route exact path="/administrador/actividades" component={DashboardActivity} />
+                        <Route exact path="/administrador/actividades/nuevo" component={DashboardAddActivity} />
+                        <Route exact path="/administrador/actividades/editar/:id" component={DashboardEditActivity} />
+                        <Route exact path="/administrador/comunidad" component={DashboardCommunity} />
+                        <Route exact path="/administrador/comunidad/nuevo" component={DashboardAddCommunity} />
+                        <Route exact path="/administrador/comunidad/editar/:id" component={DashboardEditCommunity} />
                     </div>
                 </div>
             </div>

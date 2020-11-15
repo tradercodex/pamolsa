@@ -1,15 +1,18 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { sendVacant } from '../redux/actions/vacant'
+import { getVacants, sendVacant } from '../redux/actions/vacant'
 import { useForm, Controller } from 'react-hook-form'
 import '../styles/dashboard.css'
 import ReactQuill from 'react-quill'
+import { useHistory } from 'react-router-dom'
+import { setAlert } from '../redux/actions/alert'
 
 const DashbaordAddVacant = () => {
 
     const { errors, handleSubmit, register, control } = useForm()
 
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const sendSubmit = (data, e) => {
         console.log(data)
@@ -18,7 +21,14 @@ const DashbaordAddVacant = () => {
         formData.append('title', data.title);
         formData.append('description',data.description)
 
-        dispatch(sendVacant(formData))
+        if (formData) {
+            dispatch(sendVacant(formData))
+            setTimeout(() => {
+                history.push('/administrador/vacantes');
+                dispatch(setAlert("Vacante guardado correctamente","", 4000))
+                dispatch(getVacants(100, 1));
+            }, 2000);
+        }
         e.target.reset();
     }
 

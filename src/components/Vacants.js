@@ -1,22 +1,19 @@
 import React, { Fragment } from 'react'
 import ReactHtmlParser from 'react-html-parser'
 import { Link } from 'react-router-dom'
+import Delete from '@material-ui/icons/Delete'
+import Edit from '@material-ui/icons/Edit'
 
-const Vacants = ({ title, description, id, deletingVacant }) => {
+const Vacants = ({ title, id, deletingVacant }) => {
 
     return (
         <Fragment>
-            <div className="card-work">
-                <div className="header-work">
-                    <img src={require('../images/img/work.png')} />
-                </div>
-                <div className="card-body">
-                    <h6>{title}</h6>
-                    <div><p>{ReactHtmlParser((description).substring(0,150) + '...')}</p></div>
-                    <div className="card-button">
-                        <Link to={`/administrador/vacantes/editar/${id}`}>Editar</Link>
-                        <button onClick={()=> deletingVacant(id)} className="delete">Eliminar</button>
-                    </div>
+             <div className="gallery-items">
+                <div>
+                    <p style={{top: "20px", position: "absolute", zIndex: "999999"}}>{title}</p>
+                    <img src={require('../images/img/work.png')} width="300px" height="300px" alt={title} />
+                    <Link to={`/administrador/vacantes/editar/${id}`} className="edit"><Edit /></Link>
+                    <button onClick={()=> deletingVacant(id)}  className="delete"><Delete /></button>
                 </div>
             </div>
         </Fragment>
