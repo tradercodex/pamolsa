@@ -5,16 +5,12 @@ import Industrial from '../images/svg/industrial'
 import Agroindustrial from '../images/svg/agroindustrial'
 import { Link } from 'react-router-dom';
 import ModalFoodService from './ModalFoodService';
-import ModalAgroindustrial from './ModalAgroindustrial';
-import ModalIndustrial from './ModalIndustrial'
+import industrial from '../pdf/catalogoindustrial.pdf'
+import agroindustrial from '../pdf/catalogoagroindustrial.pdf'
 
 const Known = ({
-    showPdfIndustrial,
-    handleShowIndustrial,
     closePdfModal,showPdfModal,
     handleShowPdfModal,
-    handleShowAgro,
-    showPdfAgro
 }) => {
     return (
         <div className="Known-pm">
@@ -100,9 +96,10 @@ const Known = ({
                             </div>
                             <p className="know-lines">Industrial</p>
                             <div className="button-cat">
-                                <button onClick={handleShowIndustrial} className="wow animate__animated animate__fadeInUp"
+                                <a href={industrial} target="_blank"
+                                className="wow animate__animated animate__fadeInUp"
                                     data-wow-duration="4s"
-                                    data-wow-delay="2.4">Ver cátalogo</button>
+                                    data-wow-delay="2.4">Ver cátalogo</a>
                             </div>
                         </div>
                         <div>
@@ -114,15 +111,14 @@ const Known = ({
                             </div>
                             <p className="know-lines">Agroindustrial</p>
                             <div className="button-cat">
-                                <button onClick={handleShowAgro} className="wow animate__animated animate__fadeInUp"
+                                <a href={agroindustrial} target="_blank"
+                                    className="wow animate__animated animate__fadeInUp"
                                     data-wow-duration="4s"
-                                    data-wow-delay="2.4">Ver cátalogo</button>
+                                    data-wow-delay="2.4">Ver cátalogo</a>
                             </div>
                         </div>
                     </div>
                     { showPdfModal && <ModalFoodService closeModal={closePdfModal} title="Nuestros catálogos Food Service" /> }
-                    { showPdfAgro && <ModalAgroindustrial closeModal={closePdfModal} title="Nuestros catálogos Agroindustrial" /> }
-                    { showPdfIndustrial && <ModalIndustrial closeModal={closePdfModal} title="Nuestros catálogos Industrial" /> }
                 </div>
             </div>
             <div className="container-distributor">

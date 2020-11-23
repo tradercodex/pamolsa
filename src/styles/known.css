@@ -486,7 +486,7 @@ body.date-20201112 {
     border-radius: 50px;
 }
 
-.button-cat button{
+.button-cat button, .button-cat a {
     display: block;
     width: 100%;
     margin-top: 20px;
@@ -494,15 +494,27 @@ body.date-20201112 {
     border: 1px solid #32711E;
     border-radius: 30px;
     background: transparent;
+    text-decoration: none;
+    font-size: 13px;
+    text-align: center;
     padding: 10px;
     cursor: pointer;
     font-family: 'Amble-bold';
     outline: none;
 }
 
-@media screen and (min-height: 750px) and (min-height: 600px) {
+@media screen and (max-height: 750px) and (max-width: 1440px) {
     .Known-pm {
         margin-top: 200px;
+    }
+    .Known-pm .Known-pm {
+        margin-top: 0px !important;
+    }
+}
+
+@media screen and (max-height: 660px) and (max-width: 1360px) {
+    .Known-pm {
+        margin-top: 0px;
     }
     .Known-pm .Known-pm {
         margin-top: 0px !important;
