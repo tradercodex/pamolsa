@@ -498,14 +498,14 @@
 
 @media only screen and (max-width: 1440px) {
     .Rotate-slick::after{
-        background-size: contain !important;
+        background-size: unset !important;
     }
     .content-slick-home {
         height: 120vh;
     }
     .Rotate-slick.Us::after {
         background-size: contain;
-        height: 130vh !important;
+        min-height: 141vh !important;
     }
     .info-slick.Us {
         left: 250px;
@@ -520,40 +520,40 @@
     .tree-new {
         top: -90px !important;
     }
-    .Slicks-pm.Us {
-        max-width: 1440px;
-    }
     .Radius.Us {
         position: absolute;
         width: 1767.76px;
-        height: 55vh;
+        height: 60vh;
         left: -58px;
-        top: -49.45px;
+        top: -60.45px;
         background: rgba(0, 82, 134, 0.16);
         border-radius: 191px;
-        transform: rotate(-16.85deg);
+        transform: rotate(-20.85deg);
+    }
+    .info-slick.Us {
+        transform: rotate(26.85deg);
+        top: 1000px !important;
     }
     .Rotate-slick.Us {
         width: 2700px;
-        height: 94vh;
-        top: -600px;
-        left: -118px;
+        height: 120vh;
+        top: -750px;
+        left: -156px;
         border-radius: 191px;
-        transform: rotate(-21.34deg);
+        transform: rotate(-26.34deg);
     }
     .Rotate-slick.Us::after {
         background-color: rgba(0, 82, 134, 0.2);
         background-repeat: no-repeat;
-        background-size: contain;
-        left: -55px;
-        top: 350px;
+        left: -260px;
+        top: 700px;
         opacity: 1;
-        transform: rotate(21.34deg);
+        transform: rotate(26.34deg);
         width: 1560px;
-        height: 110vh;
+        min-height: 100vh;
     }
     .Rotate-slick.Us::before {
-        height: 140vh;
+        min-height: 142vh;
         left: -80px;
         width: 100%;
     }
@@ -563,3 +563,69 @@
     }
 }
 
+@media screen and (max-height: 660px) and (max-width: 1360px) {
+    .Rotate-slick::after{
+        background-size: unset !important;
+    }
+    .content-slick-home {
+        height: 120vh;
+    }
+    .Rotate-slick.Us::after {
+        background-size: contain;
+        min-height: 141vh !important;
+    }
+    .info-slick.Us {
+        left: 250px;
+        top: 700px;
+    }
+    .Rotate-slick::before {
+        height: 110%;
+    }
+    .new-slick .slick-dots {
+        left: 200px !important;
+    }
+    .tree-new {
+        top: -90px !important;
+    }
+    .Radius.Us {
+        position: absolute;
+        width: 1767.76px;
+        height: 60vh;
+        left: -58px;
+        top: -60.45px;
+        background: rgba(0, 82, 134, 0.16);
+        border-radius: 191px;
+        transform: rotate(-20.85deg);
+    }
+    .info-slick.Us {
+        transform: rotate(26.85deg);
+        top: 650px !important;
+    }
+    .Rotate-slick.Us {
+        width: 2700px;
+        height: 120vh;
+        top: -750px;
+        left: -156px;
+        border-radius: 191px;
+        transform: rotate(-26.34deg);
+    }
+    .Rotate-slick.Us::after {
+        background-color: rgba(0, 82, 134, 0.2);
+        background-repeat: no-repeat;
+        left: -260px;
+        top: 300px;
+        opacity: 1;
+        transform: rotate(26.34deg);
+        width: 1560px;
+        min-height: 100vh;
+    }
+    .Rotate-slick.Us::before {
+        min-height: 142vh;
+        left: -80px;
+        width: 100%;
+    }
+    .info-slick.Us {
+        top: 700px;
+        left: 100px;
+    }
+}

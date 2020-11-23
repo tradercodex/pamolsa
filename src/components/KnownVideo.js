@@ -45,7 +45,7 @@ const KnownVideo = ({closeVideoModal, handleShowVideoModal, showVideoModal}) => 
                             <h4
                                 className="wow animate__animated animate__fadeIn"
                                 data-wow-duration="2s"
-                                data-wow-delay="0.3s">Como hacemos nuestros empaques</h4>
+                                data-wow-delay="0.3s">¿Cómo hacemos nuestros empaques?</h4>
                         </div>
                     </div>
                     {showVideoModal &&

@@ -510,6 +510,9 @@ body.date-20201112 {
     .Known-pm .Known-pm {
         margin-top: 0px !important;
     }
+    .container-news {
+        margin-top: 200px;
+    }
 }
 
 @media screen and (max-height: 660px) and (max-width: 1360px) {
