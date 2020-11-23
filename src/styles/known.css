@@ -500,6 +500,15 @@ body.date-20201112 {
     outline: none;
 }
 
+@media screen and (min-height: 750px) and (min-height: 600px) {
+    .Known-pm {
+        margin-top: 200px;
+    }
+    .Known-pm .Known-pm {
+        margin-top: 0px !important;
+    }
+}
+
 @media only screen and (max-width: 1440px) {
     .container-grid .play-button_pm {
         right: -100px;
