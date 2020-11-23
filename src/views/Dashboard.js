@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from 'react'
 import Sidebar from '../components/Sidebar'
 import HeaderDashboard from '../components/HeaderDashboard'
-import { withRouter, Redirect } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import Alert from '../components/Alert'
 import AOS from 'aos'
 import '../styles/dashboard.css'
@@ -27,7 +27,8 @@ import DashboardCommunity from '../layouts/DashboardCommunity'
 import DashboardAddCommunity from '../layouts/DashboardAddCommunity'
 import DashboardEditCommunity from '../layouts/DashboardEditCommunity'
 import ProtectedRoute from '../ProtectedRoute'
-import NotFound from '../components/404'
+
+const token = localStorage.getItem('token')
 
 const Dashboard = () => {
 
@@ -72,7 +73,6 @@ const Dashboard = () => {
             }
         }
 
-
         window.addEventListener('scroll', mostrarBotonFixed);
     }, [])
 
@@ -103,10 +103,6 @@ const Dashboard = () => {
                         <ProtectedRoute exact path="/administrador/comunidad" component={DashboardCommunity} />
                         <ProtectedRoute exact path="/administrador/comunidad/nuevo" component={DashboardAddCommunity} />
                         <ProtectedRoute exact path="/administrador/comunidad/editar/:id" component={DashboardEditCommunity} />
-                        <Redirect
-                                from="*"
-								to="/"
-							/>
                     </div>
                 </div>
             </div>

@@ -5,7 +5,9 @@ import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
 import { signin } from '../redux/actions/auth'
 import '../styles/login.css'
-import { useHistory } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
+
+const token = localStorage.getItem('token');
 
 const Login = () => {
 
@@ -45,10 +47,14 @@ const Login = () => {
         if (formData) {
             dispatch(signin(formData))
             setTimeout(() => {
-                history.push('/administrador');
+                history.push('/administrador/banners');
             }, 2000);
         }
         e.target.reset();
+    }
+
+    if(token) {
+        return <Redirect to="/administrador/banners" />
     }
 
     return (

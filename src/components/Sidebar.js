@@ -25,12 +25,6 @@ const Sidebar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/dashboard">
-                                <i className="fas fa-tachometer-alt"></i>
-                                <span>Administrador</span>
-                            </Link>
-                        </li>
-                        <li>
                             <Link to="/administrador/productos">
                                 <i className="fas fa-box"></i>
                                 <span>productos</span>

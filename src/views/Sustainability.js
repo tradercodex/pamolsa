@@ -51,11 +51,13 @@ const Sustainability= () => {
 
     return (
         <Fragment>
-            <Header number={number} />
-            <Slicks />
-            <InformationSostinibility sostenibilidad2018={sostenibilidad2018} sostenibilidad2017={sostenibilidad2017} sostenibilidad2019={sostenibilidad2019} />
-            <News handleShowVideoModalSostenibility={handleShowVideoModalSostenibility} closeVideoModal={closeVideoModal} showVideoModal={showVideoModal} handleShowVideoModal={handleShowVideoModal} communities={communities} activities={activities} />
-            <Footer />
+            <div style={{overflow: "hidden"}}>
+                <Header number={number} />
+                <Slicks />
+                <InformationSostinibility sostenibilidad2018={sostenibilidad2018} sostenibilidad2017={sostenibilidad2017} sostenibilidad2019={sostenibilidad2019} />
+                <News handleShowVideoModalSostenibility={handleShowVideoModalSostenibility} closeVideoModal={closeVideoModal} showVideoModal={showVideoModal} handleShowVideoModal={handleShowVideoModal} communities={communities} activities={activities} />
+                <Footer />
+            </div>
         </Fragment>
     );
 }

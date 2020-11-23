@@ -24,6 +24,9 @@ import Quote from './views/Quote';
 import { useDispatch } from 'react-redux'
 import { updateCard } from './redux/actions/cart';
 import DetailCommunity from './views/DetailCommunity';
+import NotFound from './components/NotFound'
+
+const token = localStorage.getItem('token')
 
 function App() {
 
@@ -67,11 +70,10 @@ function App() {
           <Route exact path="/noticias/:name" component={DetailNew} />
           <Route exact path="/sostenibilidad/comunidad/:name" component={DetailCommunity} />
           <Route exact path="/login" component={Login} />
-          <Route exact patch="/admin" component={Dashboard} />
-          <Redirect
-                from="*"
-								to="/"
-							/>
+          <NotFound />
+          {
+            token ? <Route exact patch="/admin" component={Dashboard} /> : 'No se encontro la pagina'
+          }
         </Switch>
       </Router>
     </Suspense>
