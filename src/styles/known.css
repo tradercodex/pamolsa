@@ -396,7 +396,6 @@
 
 .info-about {
     grid-column: 2/5;
-    display: flex;
     margin-top: 0px;
 }
 

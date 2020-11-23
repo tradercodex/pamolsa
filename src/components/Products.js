@@ -1,12 +1,38 @@
 import React, { Fragment } from 'react'
 import Filter from './Filter'
-import ProductsFilter from './ProductsFilter'
+import ProductsFilterByLine from './ProductsFilterByLine'
 
-const Products = ({products}) => {
+const Products = ({  
+    products,
+    countProduct, 
+    lineBioform, 
+    lineFoodService,
+    lineIndustrial,
+    lineAgroIndustrial,
+    productsByFilter, 
+    toggleTypesProductsRadio,
+    countProductsByFilter,
+    nameTypeProduct,
+    nameTypeBusiness
+}) => {
     return ( 
         <Fragment>
-            <Filter />
-            <ProductsFilter products={products} />
+            <Filter 
+                nameTypeBusiness = {nameTypeBusiness}
+                nameTypeProduct={nameTypeProduct}
+                lineBioform={lineBioform} 
+                lineFoodService={lineFoodService} 
+                lineIndustrial={lineIndustrial} 
+                lineAgroIndustrial={lineAgroIndustrial}
+                countProduct = {countProduct}
+                countProductsByFilter={countProductsByFilter}
+            />
+            <ProductsFilterByLine 
+                lineBioform={lineBioform} 
+                products={products} 
+                toggleTypesProductsRadio={toggleTypesProductsRadio}
+                productsByFilter={productsByFilter}
+            />
         </Fragment>
      );
 }

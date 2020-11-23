@@ -5,78 +5,119 @@ import Bakery from '../images/svg/bakery'
 import Coffe from '../images/svg/coffe'
 import Delivery from '../images/svg/delivery'
 import Fish from '../images/svg/fish'
+import { useForm } from 'react-hook-form'
 import ProductsPopulate from '../components/ProductsPopulate'
+import { addToCart } from '../redux/actions/cart'
+import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
-const DetailProduct = () => {
+const DetailProduct = ({ product }) => {
+
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const { register, handleSubmit, errors } = useForm();
+
+    const onSubmit = (data, e) => {
+        const { id,name,code } = product
+        const body = {
+            product_id: id,
+            name: name,
+            quantity: data.units,
+            image: product.image[0].url,
+            code: code,
+            units: "unidades"
+        }
+        console.log(body)
+        dispatch(addToCart(body))
+        history.push('/cotizador');
+        e.target.reset();
+    }
+
+    const back = () => {
+        history.goBack();
+    }
+
+    console.log(product)
+
     return (
         <Fragment>
             <div className="Detail-Product_pm">
                 <div className="container-detail">
                     <div className="guide-detail_product">
-                        <p>Lina de producto / Envases rectangulares / <span>Bioform_carton</span></p>
+                        <p>{`PRODUCTO /` + product.name}</p><button onClick={back}><span>Volver</span></button>
                     </div>
                     <div className="container-detail_product">
                         <div className="img-detail_product">
                             <div className="product">
                                 <div className="square-products"></div>
                                 <div className="img-product">
-                                    <img src={require('../images/img/cartondetail.png')} />
+                                    <img src={`http://` + product.image[0].url} />
                                 </div>
                             </div>
                         </div>
                         <div className="detail-info">
-                            <div className="title-detail_product">
-                                <h4>Plato bandeja 2D2 Bioform Carton P15</h4>
-                            </div>
-                            <div className="list-detailt_product">
-                                <ul>
-                                    <li>
-                                        <div>Material</div><p>Cartón de Bagazo de caña</p>
-                                    </li>
-                                    <li className="gray">
-                                        <div>Largo (cm)</div><p>16.14</p>
-                                    </li>
-                                    <li>
-                                        <div>Ancho(cm)</div><p>14.12</p>
-                                    </li>
-                                    <li className="gray">
-                                        <div>Altura(cm)</div><p>3.75</p>
-                                    </li>
-                                    <li>
-                                        <div>Diametro(mm)</div><p>0</p>
-                                    </li>
-                                    <li className="gray">
-                                        <div>Peso(gr)</div><p>9.9</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="whant-need">
-                                <label>Cuantas unidades necesitas</label>
-                                <input type="text" placeholder="1000 unidades" />
-                            </div>
-                            <div className="used whant-need">
-                                <label>Usos frecuentes</label>
-                                <div className="categories-business used">
-                                    <div className="business-choose">
-                                        <button><Restaurant />Restaurante</button>
-                                    </div>
-                                    <div className="business-choose">
-                                        <button><Bakery />Panaderia</button>
-                                    </div>
-                                    <div className="business-choose">
-                                        <button><Coffe />Cafeteria</button>
-                                    </div>
-                                    <div className="business-choose">
-                                        <button><Delivery />Delivery</button>
-                                    </div>
-                                    <div className="business-choose">
-                                        <button><Fish />Chifa</button>
+                            <form onSubmit={handleSubmit(onSubmit)}>
+                                <div className="title-detail_product">
+                                    <h4>{product.name}</h4>
+                                </div>
+                                <div className="list-detailt_product">
+                                    <ul>
+                                        <li>
+                                            <div>Material</div><p>{product.material.name}</p>
+                                        </li>
+                                        <li className="gray">
+                                            <div>Largo (cm)</div><p>{product.long}</p>
+                                        </li>
+                                        <li>
+                                            <div>Ancho(cm)</div><p>{product.width}</p>
+                                        </li>
+                                        <li className="gray">
+                                            <div>Altura(cm)</div><p>{product.height}</p>
+                                        </li>
+                                        <li>
+                                            <div>Diametro(mm)</div><p>{product.diameter}</p>
+                                        </li>
+                                        <li className="gray">
+                                            <div>Peso(gr)</div><p>{product.weight}</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div className="whant-need">
+                                    <label>Cuantas unidades necesitas</label>
+                                    <input 
+                                        type="text" 
+                                        name="units" 
+                                        placeholder="1000 unidades" 
+                                        ref={
+                                            register({
+                                                required: {
+                                                    value: true,
+                                                    message: 'Ingrese cuantas unidades desea'
+                                                }
+                                            })
+                                        }
+                                    />
+                                    <span className="complete-form">
+                                        {errors.units && errors.units.message}
+                                    </span>
+                                </div>
+                                <div className="used whant-need">
+                                    <label>Usos frecuentes</label>
+                                    <div className="categories-business used">
+                                        {
+                                            product.business && product.business.length > 0 ?
+                                            product.business.map(item => (
+                                                <div className="business-choose">
+                                                    <button type="button"><img className="detail-product" src={`http://` + item.url} alt=""/>{item.name}</button>
+                                                </div>
+                                            )) : ''
+                                        }
                                     </div>
                                 </div>
-                            </div>
-                            <div className="btn-cotize">
-                                <button>Agregar al cotizador</button>
-                            </div>
+                                <div className="btn-cotize">
+                                    <button type="submit">Agregar al cotizador</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

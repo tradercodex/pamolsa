@@ -19,6 +19,7 @@ const DashbaordAddVacant = () => {
         const formData = new FormData();
 
         formData.append('title', data.title);
+        formData.append('job_functions',data.job_functions)
         formData.append('description',data.description)
 
         if (formData) {
@@ -60,6 +61,26 @@ const DashbaordAddVacant = () => {
                                     />
                                     <div className="error-ds">
                                         {errors.title && errors.title.message}
+                                    </div>
+                                </div>
+                                <div className="input-ds">
+                                    <div>
+                                        <label>Link de la vacante en compu trabajo</label>
+                                    </div>
+                                    <input
+                                        type="text"
+                                        name="job_functions"
+                                        ref={
+                                            register({
+                                                required: {
+                                                    value: true,
+                                                    message: 'Ingrese el link de la vacante'
+                                                }
+                                            })
+                                        }
+                                    />
+                                    <div className="error-ds">
+                                        {errors.job_functions && errors.job_functions.message}
                                     </div>
                                 </div>
                                 <div className="input-ds">

@@ -14,12 +14,11 @@ import StbNews from '../images/svg/sostenibilitynews';
 import ReactHtmlParser from 'react-html-parser'
 import ReactPlayer from 'react-player/lazy'
 
-const News = ({ match, vacants, news, communities, activities, closeVideoModal, handleShowVideoModal, showVideoModal }) => {
+const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communities, activities, closeVideoModal, handleShowVideoModal, showVideoModal }) => {
     let modalRef = null;
     let pathname = match.path
 
     const handleClose = (e) => {
-        console.log('Hola perros')
         if (modalRef && !modalRef.contains(e.target)) {
             closeVideoModal();
         }
@@ -114,12 +113,12 @@ const News = ({ match, vacants, news, communities, activities, closeVideoModal, 
         ),
     };
 
-    useEffect(()=>{
+    useEffect(() => {
         document.addEventListener('click', handleClose);
         return () => {
             document.removeEventListener('click', handleClose)
         }
-    },[])
+    }, [])
 
     return (
         <Fragment>
@@ -169,10 +168,10 @@ const News = ({ match, vacants, news, communities, activities, closeVideoModal, 
                                     <div className="container-news">
                                         <div className="info-new_slick">
                                             <div className="title-new">
-                                                <h4>Plantas del producción</h4>
+                                                <h4>Plantas en Perú</h4>
                                             </div>
-                                            <h6>Planta de Gambeta</h6>
-                                            <p>Contamos con las mejores instalaciones y plantas para asegurar la cantidad y un correcto proceso de fabricación en cada una de sus etapas.<br /><br /> La Planta de Gambeta cuenta con 16,000 M2 </p>
+                                            <h6>Siempre adelante</h6>
+                                            <p>En Perú contamos con dos de producción y una planta de reciclaje, en las cuales aseguramos la calidad  en cada uno de los procesos de fabricación de empaques.</p>
                                         </div>
                                         <div className="post-new_slick_us">
                                             <div className="square-slick">
@@ -188,16 +187,16 @@ const News = ({ match, vacants, news, communities, activities, closeVideoModal, 
 
                                         <div className="info-new_slick">
                                             <div className="title-new">
-                                                <h4>Plantas del Perú</h4>
+                                                <h4>Planta Faucett</h4>
                                             </div>
-                                            <h6>Nuestra línea 100% natural Bioform</h6>
-                                            <p>Bioformes la nueva tendencia eco-amigable de Pamolsa.Es una línea de productos elaborados con bagazo de caña de azucar y otros elementos naturales, con el cual buscamos contribuir al cuidado del medio ambiente y así promover nuestro compromiso con desarrollo sostenible.</p>
+                                            <h6>Lima</h6>
+                                            <p>Planta de producción se encuentra ubicada en el  Callao en un área de  19,000 m2 .</p>
                                         </div>
                                         <div className="post-new_slick_us">
                                             <div className="square-slick">
                                             </div>
                                             <div className="img-new_slick">
-                                                <img src={require('../images/img/pruebanew.png')} />
+                                                <img src={require('../images/img/plantafaucet.jpg')} />
                                             </div>
                                         </div>
                                     </div>
@@ -206,16 +205,35 @@ const News = ({ match, vacants, news, communities, activities, closeVideoModal, 
                                     <div className="container-news">
                                         <div className="info-new_slick">
                                             <div className="title-new">
-                                                <h4>Plantas del Perú</h4>
+                                                <h4>Planta Gambetta</h4>
                                             </div>
-                                            <h6>Nuestra línea 100% natural Bioform</h6>
-                                            <p>Bioformes la nueva tendencia eco-amigable de Pamolsa.Es una línea de productos elaborados con bagazo de caña de azucar y otros elementos naturales, con el cual buscamos contribuir al cuidado del medio ambiente y así promover nuestro compromiso con desarrollo sostenible.</p>
+                                            <h6>Lima</h6>
+                                            <p>Planta de producción inaugurada el 2018 se encuentra ubicada en el  Callao en un área de  16,000 m2 .</p>
                                         </div>
                                         <div className="post-new_slick_us">
                                             <div className="square-slick">
                                             </div>
                                             <div className="img-new_slick">
-                                                <img src={require('../images/img/food.jpg')} />
+                                                <img src={require('../images/img/plantagambeta.jpg')} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className="container-news">
+                                        <div className="info-new_slick">
+                                            <div className="title-new">
+                                                <h4>Planta de reciclaje Recicloplas</h4>
+                                            </div>
+                                            <h6>Lima</h6>
+                                            <p>Inaugurada el 2020,  nuestra planta de reciclaje Recicloplas tiene una capacidad de producción de 8,000 toneladas de PET posconsumo al año,
+                                                se encuentra ubicada en el Callao en un área de 2,350 m2. </p>
+                                        </div>
+                                        <div className="post-new_slick_us">
+                                            <div className="square-slick">
+                                            </div>
+                                            <div className="img-new_slick">
+                                                <img src={require('../images/img/plantarecicloplas.jpg')} />
                                             </div>
                                         </div>
                                     </div>
@@ -250,10 +268,10 @@ const News = ({ match, vacants, news, communities, activities, closeVideoModal, 
             }
             {
                 pathname === "/sostenibilidad" ?
-                    <div className="News-pm_us" style={{ background: "#f9f9f9" }}>
-                        <div className="square-us" style={{ background: "#f9f9f9", height: "3920px" }}></div>
+                    <div className="News-pm_us" onClick={handleClose} style={{ background: "#fff" }}>
+                        <div className="square-us" style={{ background: "#fff", height: "3920px" }}></div>
                         <div className="square-stb">
-                            <div className="container-grid" style={{ paddingTop: "290px", alignItems: "center", paddingBottom: "100px" }}>
+                            <div className="container-grid sbl" style={{ paddingTop: "290px", alignItems: "center", paddingBottom: "100px" }}>
                                 <div className="info-pm">
                                     <div>
                                         <img src={require('../images/img/recicoplas.png')} alt="" />
@@ -266,6 +284,7 @@ const News = ({ match, vacants, news, communities, activities, closeVideoModal, 
                                         <span style={{ fontFamily: "Amble-bold", color: "#4D4D4C", fontSize: "16px" }}>¡COMPROMETIDOS DE VERDAD!</span>
                                     </div>
                                 </div>
+                                
                                 <div className="play-known">
                                     <div className="square"></div>
                                     <div className="img-video_known">
@@ -274,9 +293,14 @@ const News = ({ match, vacants, news, communities, activities, closeVideoModal, 
                                         </div>
                                     </div>
                                     <div className="play-button_pm">
-                                        <button><Play /></button>
+                                        <button onClick={handleShowVideoModalSostenibility}><Play /></button>
                                     </div>
                                 </div>
+                                {showVideoModal &&
+                                    <div className="player-wrapper" ref={(node) => { modalRef = node }}>
+                                        <ReactPlayer className='react-player' playing={false} width="100%" height="100%" volume={0.1} url="https://youtu.be/Ti8lG7xB4lo" />
+                                    </div>
+                                }
                             </div>
                             <div>
                                 <div className="container-grid" style={{ paddingTop: "80px", paddingBottom: "80px" }}>
@@ -379,7 +403,7 @@ const News = ({ match, vacants, news, communities, activities, closeVideoModal, 
                                                             <div className="card-body">
                                                                 <h6>{item.title}</h6>
                                                                 <p>{ReactHtmlParser((item.description).substring(0, 110) + '...')}</p>
-                                                                <button>Ver más</button>
+                                                                <Link to={`/sostenibilidad/comunidad/${item.id}`} style={{marginTop:"0px"}}>Ver más</Link>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -405,10 +429,10 @@ const News = ({ match, vacants, news, communities, activities, closeVideoModal, 
                                                                 <button onClick={handleShowVideoModal}><Play /></button>
                                                             </div>
                                                         </div>
-                                                        { showVideoModal && 
-                                                        <div className="player-wrapper" ref={(node) => { modalRef = node }}>
-                                                            <ReactPlayer className='react-player' playing={false} width="100%" height="100%" volume={0.1} url={item.uri_video} />
-                                                        </div>
+                                                        { showVideoModal &&
+                                                            <div className="player-wrapper" ref={(node) => { modalRef = node }}>
+                                                                <ReactPlayer className='react-player' playing={false} width="100%" height="100%" volume={0.1} url={item.uri_video} />
+                                                            </div>
                                                         }
                                                         <div className="info-post-activity">
                                                             <p>{item.title}</p>
@@ -454,8 +478,8 @@ const News = ({ match, vacants, news, communities, activities, closeVideoModal, 
                                                     </div>
                                                     <div className="card-body">
                                                         <h6>{item.title}</h6>
-                                                        <p>{ReactHtmlParser((item.description).substring(0, 110) + '...')}</p>
-                                                        <button>Ver más</button>
+                                                        <p className="text">{ReactHtmlParser((item.description).substring(0, 110) + '...')}</p>
+                                                        <a href={item.job_functions} target="_blank" >Ver más</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -501,7 +525,7 @@ const News = ({ match, vacants, news, communities, activities, closeVideoModal, 
                                             fontFamily: "Amble-light"
                                         }}
                                     >Déjanos tu información y te contactaremos cuando se abra una vacante acorde a tu perfil profesional.</p>
-                                    <Link to="/trabaja-con-nosotros/postúlate">
+                                    <a href="/trabaja-con-nosotros/postúlate">
                                         <button
                                             style={{
                                                 color: "#fff",
@@ -515,7 +539,7 @@ const News = ({ match, vacants, news, communities, activities, closeVideoModal, 
                                                 outline: "none",
                                                 cursor: "pointer"
                                             }}
-                                        >Postulate aquí</button></Link>
+                                        >Postulate aquí</button></a>
                                 </div>
                             </div>
                             <div className="info-container" style={{ zIndex: "1", marginTop: "80px" }}>
@@ -525,50 +549,26 @@ const News = ({ match, vacants, news, communities, activities, closeVideoModal, 
                             </div>
                             <div className="box-container" style={{ zIndex: "1", gridColumn: "4/8", marginTop: "80px", display: "flex", justifyContent: "center" }}>
                                 <div className="accordion">
-                                    <li className="box">
-                                        <div className="box-header">
-                                            <BarBox />
-                                            <p style={{ fontFamily: "Amble-bold", textDecoration: "none" }}>¿Cuánto tiempo tarda el proceso de selección?</p>
-                                        </div>
-                                        <div className="box-informs">
-                                            <div style={{ padding: "10px 10px 0px 10px", fontFamily: "Amble-light", fontSize: "14px", color: "4d4d4d" }}>
-                                                <span>El tiempo varía de acuerdo a cada proceso; pero en promedio es entre 7 y 15 días.</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li className="box">
-                                        <div className="box-header">
-                                            <BarBox />
-                                            <p style={{ fontFamily: "Amble-bold", textDecoration: "none" }}>¿Puedo enviar mi Currículum Vitae algún correo?</p>
-                                        </div>
-                                        <div className="box-informs">
-                                            <div style={{ padding: "10px 10px 0px 10px", fontFamily: "Amble-light", fontSize: "14px", color: "4d4d4d" }}>
-                                                <span>El tiempo varía de acuerdo a cada proceso; pero en promedio es entre 7 y 15 días.</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li className="box">
-                                        <div className="box-header">
-                                            <BarBox />
-                                            <p style={{ fontFamily: "Amble-bold", textDecoration: "none" }}>¿Puedo postular a más de una vacante?</p>
-                                        </div>
-                                        <div className="box-informs">
-                                            <div style={{ padding: "10px 10px 0px 10px", fontFamily: "Amble-light", fontSize: "14px", color: "4d4d4d" }}>
-                                                <span>El tiempo varía de acuerdo a cada proceso; pero en promedio es entre 7 y 15 días.</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li className="box">
-                                        <div className="box-header">
-                                            <BarBox />
-                                            <p style={{ fontFamily: "Amble-bold", textDecoration: "none" }}>¿Pamolsa paga todos los beneficios de acuerdo a ley? </p>
-                                        </div>
-                                        <div className="box-informs">
-                                            <div style={{ padding: "10px 10px 0px 10px", fontFamily: "Amble-light", fontSize: "14px", color: "4d4d4d" }}>
-                                                <span>El tiempo varía de acuerdo a cada proceso; pero en promedio es entre 7 y 15 días.</span>
-                                            </div>
-                                        </div>
-                                    </li>
+
+                                    <div class="container-accordion">
+                                        <details class="default square-accordion">
+                                            <summary><BarBox /><span>¿Cuánto tiempo tarda el proceso de selección?</span></summary>
+                                            <p>El tiempo varía de acuerdo a cada proceso; pero en promedio es entre 7 y 15 días.</p>
+                                        </details>
+                                        <details class="primary square-accordion">
+                                            <summary><BarBox /><span>¿Puedo enviar mi Currículum Vitae algún correo?</span></summary>
+                                            <p>Sí, enviarlo a desarrollo.organizacional@carvajal.com indicando en asunto del correo el nombre del puesto al que postulas. Ejemplo: “Asistente de Endomarketing”.</p>
+                                        </details>
+                                        <details class="primary square-accordion">
+                                            <summary><BarBox /><span>¿Puedo postular a más de una vacante?</span></summary>
+                                            <p>Lo importante es que analices si tu experiencia, conocimientos y formación se ajusten a lo que se solicita en la vacante. Si cumples con ello puedes postular.</p>
+                                        </details>
+                                        <details class="primary square-accordion">
+                                            <summary><BarBox /><span>¿Pamolsa paga todos los beneficios de acuerdo a ley?</span> </summary>
+                                            <p>Sí, somos una empresa formal y cumplimos con pagar todos los beneficios que la ley exige; adicional a beneficios corporativos que la empresa otorga.</p>
+                                        </details>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>

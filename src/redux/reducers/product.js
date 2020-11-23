@@ -8,7 +8,8 @@ import {
     GET_PRODUCTS_BY_FILTER,
     GET_ALL_PRODUCTS,
     DELETE_PRODUCT,
-    GET_PRODUCTS_BY_TYPE
+    GET_PRODUCTS_BY_TYPE,
+    GET_PRODUCT
 } from '../actions/types'
 
 const initialState = {
@@ -21,12 +22,27 @@ const initialState = {
     addSubTypesProducts: [],
     materials: [],
     productsByFilter: [],
+    getProduct: {
+        material: {
+            name: ''
+        },
+        image: [
+            {
+                url: ''
+            }
+        ]
+    }
 }
 
 export default function (state = initialState, action) {
 
     const { type, payload } = action
     switch (type) {
+        case GET_PRODUCT:
+            return {
+                ...state,
+                getProduct: payload
+            }
         case GET_LINES_PRODUCTS:
             return {
                 ...state,

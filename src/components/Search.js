@@ -1,33 +1,21 @@
 import React from 'react';
 
 import { withRouter } from 'react-router-dom'
-
 import SearchIcon from '../images/svg/search'
 import FilterIcon from '../images/svg/filter'
-import Restaurant from '../images/svg/restaurant'
-import Bakery from '../images/svg/bakery'
-import Coffe from '../images/svg/coffe'
-import Delivery from '../images/svg/delivery'
-import Fish from '../images/svg/fish'
-
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import MarkerSearch from '../images/svg/markersearch';
 
 function getModalStyle() {
-    const top = 20
-    const left = 24
-
-    return {
-        top: `${top}%`,
-        left: `${left}%`,
-    };
 }
 
 const useStyles = makeStyles((theme) => ({
     paper: {
-        position: 'absolute',
+        position: 'relative',
         maxWidth: 1200,
+        top: 200,
+        margin: "0 auto",
         backgroundColor: theme.palette.background.paper,
         padding: theme.spacing(2, 4, 3),
         outline: 'none',
@@ -36,9 +24,10 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const Search = ({ match }) => {
+const Search = ({ match,typesBusiness }) => {
 
     const pathname = match.path
+    const url = match.url
 
     const classes = useStyles();
     // getModalStyle is not a pure function, we roll the style only on the first render
@@ -57,21 +46,14 @@ const Search = ({ match }) => {
         <div style={modalStyle} className={classes.paper}>
             <h2 id="simple-modal-title" className="title-choose_business">Selecciona el tipo negocio que tienes</h2>
             <div className="categories-business">
-                <div className="business-choose">
-                    <button><Restaurant />Restaurante</button>
-                </div>
-                <div className="business-choose">
-                    <button><Bakery />Panaderia</button>
-                </div>
-                <div className="business-choose">
-                    <button><Coffe />Cafeteria</button>
-                </div>
-                <div className="business-choose">
-                    <button><Delivery />Delivery</button>
-                </div>
-                <div className="business-choose">
-                    <button><Fish />Chifa</button>
-                </div>
+                {
+                    typesBusiness && typesBusiness.length > 0 ?
+                    typesBusiness.map(item => (
+                            <div className="business-choose" key={item.id}>
+                                <a className={url === `/productos/negocio/${item.name}/${item.id}` ? "active-category" : 'category'} href={`/productos/negocio/${item.name}/${item.id}`}><img src={`http://` + item.url} alt=""/>{item.name}</a>
+                            </div>
+                    )) : ''
+                }
             </div>
         </div>
     );
@@ -83,7 +65,7 @@ const Search = ({ match }) => {
                     <div className="Search">
                         <div className="Search-container">
                             <SearchIcon />
-                            <input type="text" placeholder="¿Qué producto necesitas?" />
+                            <input style={{padding: "15px 5px 15px 50px"}} type="text" placeholder="¿Qué producto necesitas?" />
                             <button type="button" onClick={handleOpen}><FilterIcon /></button>
                             <Modal
                                 open={open}
@@ -108,7 +90,7 @@ const Search = ({ match }) => {
             }
 
             {
-                pathname === "/productos/line/:id" ?
+                pathname === "/productos/linea/:id" || pathname === "/productos/negocio/:name/:id" || pathname === "/producto/detalle/:id" ?
                     <div className="Search">
                         <div className="Search-container lines">
                             <SearchIcon />

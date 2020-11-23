@@ -61,3 +61,23 @@ body {
 .css-26l3qy-menu {
     z-index: 999999 !important;
 }
+
+.Map{
+    display: block;
+}
+
+button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
+    display: none;
+}
+
+.gmnoprint div {
+    background: transparent !important;
+}
+
+.info-container > div > div > div > div > div  {
+    border-radius: 50px
+}
+
+.content-login {
+    flex-direction: column;  
+}

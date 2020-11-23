@@ -24,9 +24,9 @@
 }
 
 .Materials-sidebar_pm span {
-    font-size: 10px;
-    color: #009FE3;
-    font-family: 'Amble';
+    font-size: 11px;
+    color: #4d4d4d;
+    font-family: 'Amble-light';
 }
 
 .Materials-sidebar_pm h5 {
@@ -34,6 +34,7 @@
     margin-top: 20px;
     color: #4c4c4c;
     font-family: 'Amble';
+    margin-bottom: 10px;
 }
 
 .Materials-sidebar_pm .material {
@@ -42,8 +43,9 @@
     margin-top: 0px;
     color: #4c4c4c;
     font-family: 'Amble-light';
-    padding: 5px 5px 10px 10px;
+    padding: 0px 5px 0px 10px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -71,11 +73,125 @@ li a.active-category {
 }
 
 li a.category span, li a.active-category span {
-    margin-left: 20px !important;
+    margin-left: 15px !important;
 }
 
 li a.category img , li a.active-category img {
-    padding: 10px;
-    left: 0px;
+    left: 10px;
     position: absolute;
+}
+
+ul li:nth-child(2) img {
+    width: 28px;
+}
+
+ul li:nth-child(6) img {
+    width: 14px;
+}
+
+ul li:nth-child(7) img {
+    width: 16px;
+}
+
+ul li:nth-child(3) img {
+    width: 25px;
+}
+
+ul li:nth-child(4) img {
+    width: 25px;
+}
+
+ul li:nth-child(5) img {
+    width: 25px;
+}
+
+div.checkRadioContainer > label > input {
+    visibility: hidden;
+}
+
+div.checkRadioContainer {
+    max-width: 10em;
+}
+div.checkRadioContainer > label {
+    display: block;
+    border: 2px solid grey;
+    margin-bottom: -2px;
+    cursor: pointer;
+}
+
+div.checkRadioContainer > label > span {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 2em;
+}
+
+div.checkRadioContainer > label > input + i {
+    visibility: hidden;
+    color: green;
+    margin-left: -0.5em;
+    margin-right: 0.2em;
+}
+
+div.checkRadioContainer > label > input:checked + i {
+    visibility: visible;
+}
+
+.con1 {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.con1 input {
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  z-index: 999999;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  border: 1px solid #807f7f;
+  background: #eeeeee;
+  border-radius: 3px;
+}
+
+.no-quote {
+    text-align: center;
+}
+
+.no-quote p {
+    color: #4D4D4C;
+    font-family: 'Amble-bold';
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+.content-modal.quote {
+    top: 0;
+}
+
+/* When the radio button is checked, add a blue background */
+.con1 input:checked ~ .checkmark {
+    background-image: url('../images/img/checkproduct.png');
+    background-size: cover;
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
 }

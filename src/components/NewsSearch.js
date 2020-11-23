@@ -9,8 +9,14 @@ const NewsSearch = ({ news }) => {
   const [ newDate , setNewDate ] = useState(); 
   const [ selectDate, setSelectDate ] = useState({
     month: '',
-    year: ''
+    year: '',
+    order: ''
   })
+
+  const order = [
+    { value: '1', label: 'DESC' },
+    { value: '2', label: 'ASC' },
+  ]
 
   const months = [
     { value: '1', label: 'Enero' },
@@ -86,9 +92,9 @@ const NewsSearch = ({ news }) => {
 
   const getNewDate = async () => {
 
-    const { month, year } = selectDate
+    const { month, year, order } = selectDate
     console.log(month)
-    const res = await Axios.get(`http://3.120.185.254:8090/api/news/listByDate?page=1&year=${year}&month=${month}`);
+    const res = await Axios.get(`http://3.120.185.254:8090/api/news/listByDate?page=1&year=${year}&month=${month}&order=${order}`);
     setNewDate(res.data.data)
   }
 
@@ -96,7 +102,6 @@ const NewsSearch = ({ news }) => {
     getNewDate();
   },[selectDate])
 
-  console.log(newDate)
 
   const handleChangeMonth = (selectedOption) => {
     setSelectDate({
@@ -109,6 +114,13 @@ const NewsSearch = ({ news }) => {
     setSelectDate({
       ...selectDate,
       year: selectedOption.label
+    })
+  }
+
+  const handleChangeOrder = (selectedOption) => {
+    setSelectDate({
+      ...selectDate,
+      order: selectedOption.label
     })
   }
 
@@ -141,6 +153,8 @@ const NewsSearch = ({ news }) => {
             <ReactSelect
               placeholder="Ordenar por"
               styles={selectStyles}
+              options={order}
+              onChange={handleChangeOrder}
             />
           </div>
         </div>

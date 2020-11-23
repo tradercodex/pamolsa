@@ -418,12 +418,28 @@
     font-size: 19px;
     margin-top: 20px;
     font-family: 'Amble-light';
+    margin-bottom: 40px;
 }
 
 .info-slick .more-btn button{
     color: #fff;
     font-size: 15px;
     margin-top: 20px;
+    background: #32711E;
+    font-family: 'Amble-bold';
+    border: none;
+    border-radius: 30px;
+    padding: 10px 45px;
+    cursor: pointer;
+    transition: 0.6s;
+    outline: none;
+}
+
+.info-slick a {
+    color: #fff;
+    font-size: 15px;
+    margin-top: 20px;
+    text-decoration: none;
     background: #32711E;
     font-family: 'Amble-bold';
     border: none;
@@ -455,7 +471,7 @@
 }
 
 .content-slick-new {
-    height: 126vh !important;
+    height: 128vh !important;
 }
 
 @media only screen and (max-height: 660px) {

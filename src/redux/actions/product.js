@@ -20,7 +20,9 @@ import {
     DELETE_PRODUCT,
     DELETE_PRODUCT_ERROR,
     GET_PRODUCTS_BY_TYPE,
-    GET_PRODUCTS_BY_TYPE_ERROR
+    GET_PRODUCTS_BY_TYPE_ERROR,
+    GET_PRODUCT,
+    GET_PRODUCT_ERROR
  } from './types'
 import axios from 'axios'
 
@@ -55,7 +57,6 @@ export const getLineProducts = () => async dispatch => {
         })
     }
 }
-
 
 export const getTypesProducts = (size,page) => async dispatch => {
     try {
@@ -132,20 +133,133 @@ export const getMaterials = () => async dispatch => {
     }
 }
 
-export const getProductByFilter = (type_id, material_id, business, line_id) => async dispatch => {
+export const getProductByFilter = (line_id,type_id,material_id,business) => async dispatch => {
+
+    var url;
+    var params;
 
     console.log(business)
-    var url = new URL(root + '/product/list?')
-    var params = 
-        [['line_id', line_id || 1],['type_id', type_id], ['material_id', material_id || 1], ['business', business || 1]]
 
-    url.search = new URLSearchParams(params).toString()
+    if(line_id) {
+        params = [['line_id', line_id]]  
+        url = new URL(root + '/product/list?')
+        url.search = new URLSearchParams(params).toString()
+    } 
+
+    if(line_id && material_id) {
+        params = [['line_id', line_id],['material_id', material_id]]  
+        url = new URL(root + '/product/list?')
+        url.search = new URLSearchParams(params).toString()
+    } 
+
+    if(line_id && type_id) {
+        params = [['line_id', line_id],['type_id', type_id]]  
+        url = new URL(root + '/product/list?')
+        url.search = new URLSearchParams(params).toString()
+    }
+
+    if(line_id && material_id && business[0]) {
+        params = [['line_id', line_id],['material_id', material_id],['business',business[0]]]
+        url = new URL(root + '/product/list?')
+        url.search = new URLSearchParams(params).toString()
+    }
+
+    if(line_id && type_id && business[0]) {
+        params = [['line_id', line_id],['type_id', type_id],['business',business[0]]]
+        url = new URL(root + '/product/list?')
+        url.search = new URLSearchParams(params).toString()
+    }
+
+    if(line_id && type_id && business[0] && business[1]) {
+        params = [['line_id', line_id],['type_id', type_id],['business',business[0]],['business',business[1]]]
+        url = new URL(root + '/product/list?')
+        url.search = new URLSearchParams(params).toString()
+    }
+
+    if(line_id && material_id && business[0] && business[1]) {
+        params = [['line_id', line_id],['material_id', material_id],['business',business[0]],['business',business[1]]]
+        url = new URL(root + '/product/list?')
+        url.search = new URLSearchParams(params).toString()
+    }
+
+    if(line_id && material_id && business[0] && business[1] && business[2]){
+        params = [['line_id', line_id],['material_id', material_id],['business',business[0]],['business',business[1]],['business',business[2]]]
+        url = new URL(root + '/product/list?')
+        url.search = new URLSearchParams(params).toString()
+    }
+
+    if(line_id && type_id && business[0] && business[1] && business[2]){
+        params = [['line_id', line_id],['type_id', type_id],['business',business[0]],['business',business[1]],['business',business[2]]]
+        url = new URL(root + '/product/list?')
+        url.search = new URLSearchParams(params).toString()
+    }
+
+    // if(line_id && material_id) {
+    //     params = [['line_id', line_id],['material_id',material_id]]
+    //     url = new URL(root + '/product/list?')
+    //     url.search = new URLSearchParams(params).toString()
+    // }
+
+    // if(line_id && business[0]) {
+    //     params = [['line_id', line_id],['business',business[0]]]
+    //     url = new URL(root + '/product/list?')
+    //     url.search = new URLSearchParams(params).toString()
+    // }
+
+
+    // if(line_id && business[0] && business[1]) {
+    //     params = [['line_id', line_id],['business',business[0]],['business',business[1]]]
+    //     url = new URL(root + '/product/list?')
+    //     url.search = new URLSearchParams(params).toString()
+    // }
+
+    // if(type_id && material_id) {
+    //     params = [['type_id', type_id],['material_id',material_id]]
+    //     url = new URL(root + '/product/list?')
+    //     url.search = new URLSearchParams(params).toString()
+    // }
+
+    // if(type_id && business[0]) {
+    //     params = [['type_id', type_id],['business',business[0]]]
+    //     url = new URL(root + '/product/list?')
+    //     url.search = new URLSearchParams(params).toString()
+    // }
+
+    // if(type_id && business[0] && business[1]) {
+    //     params = [['type_id', type_id],['business',business[0]],['business',business[1]]]
+    //     url = new URL(root + '/product/list?')
+    //     url.search = new URLSearchParams(params).toString()
+    // }
+
+    // if(line_id && type_id && material_id) {
+    //     params = [['line_id', line_id],['type_id', type_id],['material_id',material_id]]
+    //     url = new URL(root + '/product/list?')
+    //     url.search = new URLSearchParams(params).toString()
+    // }
+
+    // if(line_id && type_id && material_id && business[0]) {
+    //     params = [['line_id', line_id],['type_id', type_id],['material_id',material_id],['business',business[0]]]
+    //     url = new URL(root + '/product/list?')
+    //     url.search = new URLSearchParams(params).toString()
+    // }
+
+    // if(line_id && material_id && business[0]) {
+    //     params = [['line_id', line_id],['material_id',material_id],['business',business[0]]]
+    //     url = new URL(root + '/product/list?')
+    //     url.search = new URLSearchParams(params).toString()
+    // }
+
+    // if(line_id && type_id && material_id && business[0] && business[1]) {
+    //     params = [['line_id', line_id],['type_id', type_id],['material_id',material_id],['business',business[0]],['business',business[1]]]
+    //     url = new URL(root + '/product/list?')
+    //     url.search = new URLSearchParams(params).toString()
+    // }
 
     console.log(url)
 
     try {
+        console.log(url)
         const res = await axios.get(url);
-        console.log(res.data)
         dispatch({
             type: GET_PRODUCTS_BY_FILTER,
             payload: res.data.data
@@ -201,3 +315,20 @@ export const deleteProduct = (data) => async dispatch => {
         })
     }
 }
+
+export const getProduct = id => async dispatch => {
+    try {
+        const res = await axios.get(`${root}/product/find?product_id=${id}`)
+        console.log(res.data)
+        dispatch({
+            type: GET_PRODUCT,
+            payload: res.data.data
+        })
+    } catch (error) {
+        dispatch({
+            type: GET_PRODUCT_ERROR
+        })
+    }
+}
+
+

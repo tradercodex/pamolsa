@@ -1,23 +1,13 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment } from 'react';
 import { withRouter } from 'react-router-dom'
 import Slider from "react-slick";
-import WOW from 'wowjs'
 import '../styles/slicks.css'
-import { useDispatch, useSelector } from 'react-redux'
-import { getBanners } from '../redux/actions/banner'
 import Style from 'style-it'
+import { Link } from 'react-router-dom'
 
-const Slicks = ({ match }) => {
+const Slicks = ({ match, banners }) => {
 
     let pathname = match.path
-
-    const banners = useSelector(state => state.banners.banners)
-    const dispatch = useDispatch()
-
-    useEffect(() => {
-        new WOW.WOW().init();
-        dispatch(getBanners(4,1));
-    }, [])
 
     const settings = {
         dots: true,
@@ -103,20 +93,20 @@ const Slicks = ({ match }) => {
                                                                 data-wow-duration="2s"
                                                                 data-wow-delay="1.3s"
                                                             >
-                                                                <button>Conocer más</button>
+                                                                <Link to="/productos/linea/2">Conocer más</Link>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </Style>
+                                                <div className="footer-slick">
+                                                    <div className="tree-pm banner">
+                                                        <img src={require('../images/img/tree.gif')} />
+                                                    </div>
+                                                </div>
                                             </div>
                                         )) : ''
                                 }
                             </Slider>
-                        </div>
-                        <div className="footer-slick">
-                            <div className="tree-pm banner">
-                                <img src={require('../images/img/tree.gif')} />
-                            </div>
                         </div>
                     </div> : ''
             }
@@ -196,7 +186,7 @@ const Slicks = ({ match }) => {
                 pathname === "/noticias" ?
                     <div className="content-slick-new">
                         <div className="Slicks-pm Us">
-                            <div className="Radius Us" style={{background: "#D6E3D2"}}></div>
+                            <div className="Radius Us" style={{ background: "#D6E3D2" }}></div>
                             <Slider {...settings}>
                                 <div>
                                     <div className="Rotate-slick Us New">
@@ -226,8 +216,8 @@ const Slicks = ({ match }) => {
                                 </div>
                             </Slider>
                             <div className="tree-new contact">
-                            <img src={require('../images/img/tree.gif')} />
-                        </div>
+                                <img src={require('../images/img/tree.gif')} />
+                            </div>
                         </div>
                     </div> : ''
             }

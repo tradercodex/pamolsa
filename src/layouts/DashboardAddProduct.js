@@ -131,7 +131,7 @@ const DashboardAddProduct = () => {
         formData.append('name', data.name);
         formData.append('code', data.code);
         formData.append('long', data.long);
-        formData.append('width\n', data.width);
+        formData.append('width', data.width);
         formData.append('diameter', data.diameter);
         formData.append('height', data.height)
         formData.append('weight', data.weight);
@@ -493,13 +493,18 @@ const DashboardAddProduct = () => {
                                     </div>
                                     <Controller
                                         as={
-                                            <ReactSelect
+                                            <CreatableSelect
                                                 isMulti
                                                 styles={selectStyles}
                                                 options={business}
                                                 getOptionLabel={business => business.name}
                                                 getOptionValue={business => business.id}
                                                 components={makeAnimated}
+                                                getNewOptionData = { ( inputValue , optionLabel ) => ({
+                                                    id :  optionLabel ,
+                                                    name :  inputValue ,
+                                                    __isNew__ :  true 
+                                                })}
                                             />}
                                         name="business"
                                         isClearable

@@ -16,16 +16,19 @@ const DashboardEditVacant = ({match}) => {
 
     const [vacant, setVacant] = useState({
         title: '',
-        description: ''
+        description: '',
+        job_functions: ''
     });
     const dispatch = useDispatch();
     const history = useHistory();
 
     const getVacant = async () => {
         const res = await axios.get(`http://3.120.185.254:8090/api/vacant/find/${id}`)
+        console.log(res.data)
         setVacant({
             title: res.data.data.title,
-            description: res.data.data.description
+            description: res.data.data.description,
+            job_functions: res.data.data.job_functions
         })
     }
     useEffect(()=>{
@@ -33,11 +36,10 @@ const DashboardEditVacant = ({match}) => {
     },[])
 
     const sendSubmit = (data, e) => {
-        console.log(data)
         const formData = new FormData();
-
         formData.append('vacant_id',id)
         formData.append('title', data.title);
+        formData.append('job_functions',data.job_functions)
         formData.append('description',data.description)
 
         if (formData) {
@@ -80,6 +82,27 @@ const DashboardEditVacant = ({match}) => {
                                     />
                                     <div className="error-ds">
                                         {errors.title && errors.title.message}
+                                    </div>
+                                </div>
+                                <div className="input-ds">
+                                    <div>
+                                        <label>Link de la vacante en compu trabajo</label>
+                                    </div>
+                                    <input
+                                        type="text"
+                                        name="job_functions"
+                                        defaultValue={vacant.job_functions}
+                                        ref={
+                                            register({
+                                                required: {
+                                                    value: true,
+                                                    message: 'Ingrese el link de la vacante'
+                                                }
+                                            })
+                                        }
+                                    />
+                                    <div className="error-ds">
+                                        {errors.job_functions && errors.job_functions.message}
                                     </div>
                                 </div>
                                 <div className="input-ds">

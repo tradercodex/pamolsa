@@ -1,18 +1,63 @@
 import Axios from 'axios';
-import React,{ useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../components/Header';
 import SearchProductsByLine from '../components/SearchProductsByLine';
 import SidebarProductsByLine from '../components/SidebarProductsByLine'
 import Products from '../components/Products'
+import { useDispatch, useSelector } from "react-redux";
+import { getProductByFilter,getTypesBusiness } from '../redux/actions/product'
+import Pagination from '../components/Pagination';
 
-const ProductByLine = ({match}) => {
+const ProductByLine = ({ match }) => {
 
     let line = match.params.id
+    let lineFoodService = line == 1 ? "Food Service" : ''
+    let lineBioform = line == 2 ? "Ecoamigable Bioform" : ''
+    let lineIndustrial = line == 3 ? "Industrial" : ''
+    let lineAgroIndustrial = line == 4 ? "Agroindustrial" : ''
 
+    const productsByFilter = useSelector(state => state.products.productsByFilter)
+    const typesBusiness = useSelector(state => state.products.typesBusiness)
+    const cart = useSelector(state => state.cart)
+
+    const dispatch = useDispatch();
+
+    const [cartItems, setCartItems] = useState(cart.cartItems)
+    const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(false)
+    const [currentPage, setCurrentPage] = useState(1)
+    const [postsPerPage] = useState(12)
     const [business, setBusiness] = useState();
     const [types, setTypes] = useState();
     const [materials, setMaterial] = useState();
-    const [products, setProducts] = useState();
+    const [countProduct, setCountProduct] = useState();
+    const [typeId, setTypeId] = useState();
+    const [materialId, setMaterialId] = useState();
+    const [businessId, setBussinesId] = useState({
+        ids: []
+    });
+
+    const toggleChangeCheckbox = (e, item) => {
+        const { ids } = businessId;
+        let newArr = [];
+
+        if (!ids.includes(item)) {
+            newArr = [...ids, item];
+        } else {
+            newArr = ids.filter(a => a !== item);
+        }
+        setBussinesId({
+            ids: newArr
+        })
+    }
+
+    const toggleTypesProductsRadio = (e) => {
+        setTypeId(e.target.value)
+    }
+
+    const toggleMaterialsProductsRadio = (e) => {
+        setMaterialId(e.target.value)
+    }
 
     const apiGetTypes = async () => {
         const response = await Axios.get(`http://3.120.185.254:8090/api/product/types/list?line_id=${line}`);
@@ -32,27 +77,65 @@ const ProductByLine = ({match}) => {
     const apiGetProductsByLine = async () => {
         const response = await Axios.get(`http://3.120.185.254:8090/api/product/list?line_id=${line}`);
         setProducts(response.data.data)
+        setCountProduct(response.data.extra.total)
     }
 
+    let countProductsByFilter = productsByFilter.length
+
     useEffect(()=> {
+        apiGetProductsByLine();
         apiGetBusiness();
         apiGetTypes();
         apiGetMaterial();
-        apiGetProductsByLine();
+        dispatch(getTypesBusiness());
     },[])
 
-    console.log(products)
+    useEffect(() => {
+        setCartItems(cart.cartItems)
+        dispatch(getProductByFilter(line, typeId, materialId, businessId.ids))
+    }, [line, typeId, materialId, businessId.ids,cart.cartItems])
+
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = products.slice(indexOfFirstPost, indexOfLastPost) 
+    const currentPostsByFilter = productsByFilter.slice(indexOfFirstPost,indexOfLastPost)
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber)
+
+    let number = Object.keys(cartItems).length
 
     return (
         <>
-            <Header />
-            <SearchProductsByLine />
+            <Header number={number} />
+            <SearchProductsByLine typesBusiness={typesBusiness} />
             <div className="Quotes-pm">
                 <div className="Sidebar-Material_Quote">
-                    <SidebarProductsByLine business={business} types={types} materials={materials} />
+                    <SidebarProductsByLine
+                        business={business}
+                        types={types}
+                        materials={materials}
+                        toggleTypesProductsRadio={toggleTypesProductsRadio}
+                        toggleMaterialsProductsRadio={toggleMaterialsProductsRadio}
+                        toggleChangeCheckbox={toggleChangeCheckbox}
+                    />
                 </div>
                 <div className="Products-Quote">
-                    <Products products={products} />
+                    <Products
+                        lineBioform={lineBioform}
+                        lineFoodService={lineFoodService}
+                        lineIndustrial={lineIndustrial}
+                        lineAgroIndustrial={lineAgroIndustrial}
+                        products={currentPosts}
+                        countProduct={countProduct}
+                        productsByFilter={currentPostsByFilter}
+                        countProductsByFilter={countProductsByFilter}
+                    />
+                    <Pagination
+                        postsPerPage={postsPerPage}
+                        totalPosts={products.length}
+                        totalPostsFilter={productsByFilter.length}
+                        paginate={paginate}
+                    />
                 </div>
             </div>
         </>

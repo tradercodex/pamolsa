@@ -8,7 +8,7 @@ import PlantSbl from '../images/svg/plantasbl'
 import InformDownload from '../images/svg/informdownload'
 import Slider from "react-slick";
 
-const InformationSostenibility = () => {
+const InformationSostenibility = ({sostenibilidad2019,sostenibilidad2018,sostenibilidad2017}) => {
 
     const settingsNews = {
         dots: true,
@@ -85,21 +85,21 @@ const InformationSostenibility = () => {
                     </div>
                     <div className="informs-pdfs">
                         <div className="box-informs-pdf">
-                            <InformDownload />
+                            <a href={sostenibilidad2019} target="_blank"><InformDownload /></a>
                             <p>Sostenibilidad 2019</p>
                         </div>
                         <div className="box-informs-pdf">
-                            <InformDownload />
-                            <p>Sostenibilidad 2019</p>
+                        <a href={sostenibilidad2018} target="_blank"><InformDownload /></a>
+                            <p>Sostenibilidad 2018</p>
                         </div>
                         <div className="box-informs-pdf">
-                            <InformDownload />
-                            <p>Sostenibilidad 2019</p>
+                        <a href={sostenibilidad2017} target="_blank"><InformDownload /></a>
+                            <p>Sostenibilidad 2017</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div>
+            <div style={{background: "#fff"}}>
                 <div className="">
                     <Slider {...settingsNews} className="stb-slick">
                         <div>
@@ -127,34 +127,15 @@ const InformationSostenibility = () => {
                                     <div className="square-sl-sbl">
                                     </div>
                                     <div className="img-new_slick">
-                                        <img src={require('../images/img/stbslider1.png')} />
+                                        <img src={require('../images/img/petpluslider.png')} />
                                     </div>
                                 </div>
                                 <div className="info-sl-sbl">
                                     <div className="info-sbl">
-                                        <h4>Innovación que genera valor</h4>
-                                        <img src={require('../images/img/bioform.png')} alt="bioform" />
+                                        <h4 style={{width: "520px"}}>Innovación que genera valor</h4>
+                                        <img src={require('../images/img/petplus.png')} alt="bioform" />
                                         <h6>PRIMERA LÍNEA DE EMPAQUES BIODEGRADABLES</h6>
-                                        <p>Fabricada en el país con cartón de bagazo de caña de azúcar, amplió su portafolio el 2019 con el lanzamiento de nuevas referencias en platos, contenedores, bandejas y vasos para el mercado de Foodservice.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="container-grid" style={{ paddingTop: "80px", paddingBottom: "80px" }}>
-                                <div className="post-sl-sbl">
-                                    <div className="square-sl-sbl">
-                                    </div>
-                                    <div className="img-new_slick">
-                                        <img src={require('../images/img/stbslider1.png')} />
-                                    </div>
-                                </div>
-                                <div className="info-sl-sbl">
-                                    <div className="info-sbl">
-                                        <h4>Innovación que genera valor</h4>
-                                        <img src={require('../images/img/bioform.png')} alt="bioform" />
-                                        <h6>PRIMERA LÍNEA DE EMPAQUES BIODEGRADABLES</h6>
-                                        <p>Fabricada en el país con cartón de bagazo de caña de azúcar, amplió su portafolio el 2019 con el lanzamiento de nuevas referencias en platos, contenedores, bandejas y vasos para el mercado de Foodservice.</p>
+                                        <p>Desarrollamos PET+, una tecnología que permite obtener productos con una funcionalidad superior a la de un empaque de PET tradicional utilizando hasta 50% menos de material. Adicionalmente mejora las propiedades de aislamiento térmico y la apariencia del producto.</p>
                                     </div>
                                 </div>
                             </div>

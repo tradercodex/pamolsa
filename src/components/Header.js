@@ -7,13 +7,12 @@ import Quote from '../images/svg/quote';
 import '../styles/header.css'
 import Phone from '../images/svg/phone';
 
-const Header = ({ match }) => {
+const Header = ({ match, number }) => {
 
     let pathname = match.path
     let rut = match.params.name
+    let id = match.params.id
     let url = match.url
-
-    console.log(rut)
 
     return (
         <Fragment>
@@ -30,23 +29,35 @@ const Header = ({ match }) => {
             <div className="Header-pm">
             <div className="Container-header_pm" style={{top: "10px"}}>
                 <div className="Logo-pm">
-                    <Logo />
+                    <Link to="/"><Logo /></Link>
                 </div>
                 <nav className="Nav-pm">
                     <ul>
                         <li><Link to="/" className={pathname === "/" || pathname === "/home/distribuidores" ? "active" : ""}>Home</Link></li>
                         <li><Link to="/nosotros" className={pathname === "/nosotros" ? "active" : ""}>Nosotros</Link></li>
-                        <li><Link to="/productos" className={pathname === "/productos" || url === `/productos/${rut}` ? "active" : ""}>Productos</Link></li>
-                        <li><Link to="/sostenibilidad" className={pathname === "/sostenibilidad" ? "active" : ""}>Sostenibilidad</Link></li>
+                        <li><Link to="/productos" 
+                        className={
+                            pathname === "/productos" || 
+                            url === `/productos/${rut}` || 
+                            url === "/cotizador" || 
+                            url === `/productos/linea/${id}` ||
+                            url === `/productos/${rut}/${id}` || 
+                            url === `/productos/negocio/${rut}/${id}` || 
+                            url === `/producto/detalle/${id}`
+                            ? "active" : ""}>Productos</Link></li>
+                        <li><Link to="/sostenibilidad" className={pathname === "/sostenibilidad" || pathname==="/sostenibilidad/comunidad/:name" ? "active" : ""}>Sostenibilidad</Link></li>
                         <li><Link to="/trabaja-con-nosotros" className={pathname === "/trabaja-con-nosotros" ? "active" : ""}>Trabaja con nosotros</Link></li>
                         <li><Link to="/clientes" className={pathname === "/clientes" ? "active" : ""}>Clientes</Link></li>
-                        <li><Link to="/noticias" className={pathname === "/noticias" || url === `/noticias/${rut}` ? "active" : ""}>Noticias</Link></li>
+                        <li><Link to="/noticias" className={
+                            pathname === "/noticias" || 
+                            url === `/noticias/${rut}` || pathname === "/noticias/galeria-periodistica" 
+                            ? "active" : ""}>Noticias</Link></li>
                         <li><Link to="/contacto" className={pathname === "/contacto" ? "active" : ""}>Contacto</Link></li>
                     </ul>
                 </nav>
                 <div className="Options-pm_qe">
                     <div className="Quote-btn">
-                        <Quote />
+                        <Link to="/cotizador"><Quote number={number} /></Link>
                     </div>
                     <div className="Ecommerce-btn">
                         <button><Cart />Ir a ecommerce</button>

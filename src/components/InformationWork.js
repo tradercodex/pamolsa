@@ -26,16 +26,16 @@ const InformationWork = () => {
                 </div>
             </div>
             <div>
-                <div className="container-grid">
-                    <div className="play-known" style={{ gridColumn: "2/4", paddingBottom: "50px" }}>
-                        <div className="square"></div>
+                <div className="container-grid information">
+                    <div className="play-known" style={{ gridColumn: "1/4",display:"flex",justifyContent: "center",paddingBottom: "50px" }}>
+                        <div className="square" style={{left: "120px"}}></div>
                         <div className="img-video_known">
                             <div className="img">
                                 <img src={require('../images/img/work.png')} />
                             </div>
                         </div>
                     </div>
-                    <div className="certifications-companies info" style={{ gridColumn: "4/8", display: "flex", justifyContent: "center" }}>
+                    <div className="certifications-companies info" style={{ gridColumn: "5/8", display: "flex", justifyContent: "center" }}>
                         <div className="info-container" style={{position: "relative", right: "50px"}}>
                             <div>
                                 <div className="title-green-dark-container">
@@ -50,6 +50,8 @@ const InformationWork = () => {
                                     <div className="img-company-gpw">
                                     </div>
                                     <div className="img-company-gp">
+                                    </div>
+                                    <div className="img-company-abe">
                                     </div>
                                 </div>
                             </div>

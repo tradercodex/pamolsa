@@ -1,0 +1,20 @@
+.pagination {
+    margin: 15px auto;
+    padding: 70px 0;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    outline: none;
+  }
+  .pagination > li > a{
+    border-radius: 50%;
+    font-family: 'Amble';
+    outline: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    outline: none ;
+    border-radius: 50% !important;
+    color: #fff;
+    background: #009FE3;
+    margin-left: 10px;
+  }

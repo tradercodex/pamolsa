@@ -1,27 +1,26 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Search from '../components/Search'
 import '../styles/products.css'
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
-const MenuCategory = ({match,typesProducts}) => {
+const MenuCategory = ({match,typesProducts,typesBusiness,resetCheckbox}) => {
 
     let url = match.url
-
-    console.log(typesProducts)
 
     return ( 
         <div className="Menu-Category_pm">
             <div>
-                <Search />
+                <Search url={url} typesBusiness={typesBusiness} />
                 <div className="categories-products">
                     <div className="menu-categories">
                         <ul>
                             {
                                 typesProducts.map(tp => (
                                     <li key={tp.id}>
-                                        <Link className={ url === `/productos/${tp.name}/${tp.id}` ? "active-category" : 'category' } to={`/productos/${tp.name}/${tp.id}`}>{tp.name}</Link>
+                                        <a onClick={resetCheckbox} href={`/productos/${tp.name}/${tp.id}`} className={ url === `/productos/${tp.name}/${tp.id}` ? "active-category" : 'category' }><img width="20px" src={`http://` + tp.url} /><span>{tp.name}</span></a>
                                     </li>
-                                ))
+                                )) 
                             }
                         </ul>
                     </div>  

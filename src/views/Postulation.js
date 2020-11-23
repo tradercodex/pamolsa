@@ -189,7 +189,7 @@ const Postulation = () => {
                 >¡Envia tu postulación!</h4>
 
                 <form onSubmit={handleSubmit(sendSubmit)}>
-                    <div className="form-container" style={{ maxWidth: "1440px", marginTop: "40px" }}>
+                    <div className="form-container" style={{padding: "0px", maxWidth: "1440px", marginTop: "40px" }}>
                         <div className="grid-form_doble">
                             <div>
                                 <input
@@ -391,7 +391,7 @@ const Postulation = () => {
                                 </span>
                             </div>
                         </div>
-                        <div className="grid-form_doble_right inputval input">
+                        <div className="grid-form_doble_right inputval input" style={{display: "grid"}}>
                             <div className="uploader"
                                 style={{
                                     gridColumn: "1/4"

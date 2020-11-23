@@ -6,6 +6,7 @@ import { useHistory, Link } from 'react-router-dom'
 import { getNewsPaper } from '../redux/actions/newpaper'
 import Arrow from '../images/svg/arrowback'
 import Slider from 'react-slick'
+import ModalView from '../components/ModalView'
 
 const GalleryNewPaper = () => {
 
@@ -14,6 +15,16 @@ const GalleryNewPaper = () => {
     const newspaper = useSelector(state => state.newspaper.newspaper)
 
     const [ loadingNewspaper, setLoadingNewspaper] = useState(true)
+    const [showModal, setShowModal] = useState(false);
+    const [img, setImg] = useState('')
+
+    const handleShowModal = () => {
+        setShowModal(true)
+    }
+
+    const closeModal = () => {
+        setShowModal(false)
+    }
 
     const dispatch = useDispatch()
 
@@ -37,6 +48,11 @@ const GalleryNewPaper = () => {
         slidesToShow: 2.5,
         slidesToScroll: 1,
     };
+
+    const zoomGallery = (img) => {
+        setImg(img)
+        handleShowModal();
+    }
 
     if(loadingNewspaper) {
         return 'Loading'
@@ -73,7 +89,7 @@ const GalleryNewPaper = () => {
                                         <div className="newpaper-body">
                                             <span>{item.created}</span>
                                             <p>{item.name_newspaper}</p>
-                                            <Link to={`/noticias/galeria-periodistica/${item.id}`}>Visualizar</Link>
+                                            <Link onClick={()=> zoomGallery(item.file.url)} >Visualizar</Link>
                                         </div>
                                     </div>
                                 </div>
@@ -81,6 +97,7 @@ const GalleryNewPaper = () => {
                         }
                     </Slider>
                 </div>
+                { showModal && <ModalView closeModal={closeModal} img={img} /> }
             </div>
             <Footer />
         </Fragment>

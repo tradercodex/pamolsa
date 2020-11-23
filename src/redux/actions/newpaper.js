@@ -12,9 +12,17 @@ import axios from 'axios'
 
 const root = 'http://3.120.185.254:8090/api'
 
+const token = localStorage.getItem('token')
+
+let config = {
+    headers: {
+        'x-access-token': token
+    }
+}
+
 export const sendNewspaper = (data) => async dispatch => {
     try {
-        const res = await axios.post(`${root}/news/saveGallery`, data);
+        const res = await axios.post(`${root}/news/saveGallery`, data,config);
         console.log(res.data)
         dispatch({
             type: SEND_NEWSPAPER,
@@ -44,8 +52,7 @@ export const getNewsPaper = () => async dispatch => {
 
 export const updateNewPaper= (data) => async dispatch => {
     try {
-        const res = await axios.put(`${root}/news/updateGallery`,data);
-        console.log(res.data)
+        const res = await axios.put(`${root}/news/updateGallery`,data,config);
         dispatch({
             type: UPDATE_NEWPAPER,
             payload: res.data
@@ -59,8 +66,7 @@ export const updateNewPaper= (data) => async dispatch => {
 
 export const deleteNewPaper = (id) => async dispatch => {
     try {
-        const res = await axios.put(`${root}/news/deleteGallery`, id);
-        console.log(res.data)
+        const res = await axios.put(`${root}/news/deleteGallery`, id,config);
         dispatch({
             type: DELETE_NEWPAPER,
             payload: Number(res.data.data.gallery_id)

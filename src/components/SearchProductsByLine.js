@@ -1,11 +1,11 @@
 import React from 'react'
 import Search from '../components/Search'
 
-const SearchProductsByLine = () => {
+const SearchProductsByLine = ({typesBusiness}) => {
     return (
         <div className="Menu-Category_pm">
             <div>
-                <Search />
+                <Search typesBusiness={typesBusiness} />
             </div>
         </div>
     );

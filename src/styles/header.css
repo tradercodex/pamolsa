@@ -156,6 +156,10 @@
     margin-left: 10px;
   }
 
+  .Quote-btn {
+      position: relative;
+  }
+
 @media only screen and (max-width: 1440px) {
     .Container-header_pm .Nav-pm ul li {
         margin-left: 15px;

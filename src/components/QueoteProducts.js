@@ -12,14 +12,14 @@ const QuoteProducts = () => {
                     </div>
                     <div className="info-product_bf">
                         <h4>Línea Ecoamigable Bioform</h4>
-                        <Link to={`productos/line/${2}`}>Ver más</Link>
+                        <Link to="productos/linea/2">Ver más</Link>
                     </div>
                 </div>
                 <div className="Products-Quote_2">
                 <div className="filter-shadow-white"></div>
                     <div className="info-product_bf_2">
                         <h4>Línea Food Service</h4>
-                        <Link to={`productos/line/${1}`}>Ver más</Link>
+                        <Link to="productos/linea/1">Ver más</Link>
                     </div>
                     <div className="img-bioform_product_2">
                         <img src={require('../images/img/bioformproducts2.png')} />
@@ -29,7 +29,7 @@ const QuoteProducts = () => {
                 <div className="filter-shadow-white"></div>
                     <div className="info-product_bf_3">
                         <h4>Línea Industrial Consumo</h4>
-                        <Link to={`productos/line/${3}`}>Ver más</Link>
+                        <Link to="productos/linea/3">Ver más</Link>
                     </div>
                     <div className="img-bioform_product_3">
                     <img src={require('../images/img/bioformproducts3.png')} />
@@ -39,7 +39,7 @@ const QuoteProducts = () => {
                 <div className="filter-shadow-white"></div>
                     <div className="info-product_bf_4">
                         <h4>Línea Agroinsdustrial</h4>
-                        <Link to={`productos/line/${4}`}>Ver más</Link>
+                        <Link to="productos/linea/4">Ver más</Link>
                     </div>
                     <div className="img-bioform_product_4">
                         <img src={require('../images/img/bioformproducts4.png')} />

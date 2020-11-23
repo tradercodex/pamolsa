@@ -9,6 +9,15 @@
     padding-bottom: 80px;
 }
 
+.loading-products p {
+    font-family: 'Amble-bold';
+    color: #4D4D4C;
+}
+
+.slick-slide .img-client_slick img {
+    width: 100px !important;
+}
+
 .bg-gray {
     position: relative;
     z-index: 99999999;
@@ -62,8 +71,8 @@
     font-family: Amble;
     font-style: normal;
     font-weight: bold;
-    font-size: 50px;
-    line-height: 59px;
+    font-size: 30px;
+    font-family: 'Amble-bold';
     color: #005286;
 }
 
@@ -195,6 +204,16 @@
 
 .input input, .input textarea {
     padding: 12px 25px;
+    border-radius: 30px;
+    width: 100%;
+    border: 1px solid #C4C4C4;
+    font-family: 'Amble';
+    outline: none;
+    color: #4d4d4d;
+}
+
+.wizard-fieldset .input input,.wizard-fieldset .input textarea {
+    padding: 15px 25px;
     border-radius: 30px;
     width: 100%;
     border: 1px solid #C4C4C4;

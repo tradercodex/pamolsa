@@ -1,9 +1,14 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
 
-const SidebarProducts = ({ match,linesProducts,typesBusiness, materials, getMaterialId, toggleChange, toggleChangeCheckbox, toggleLineProductsRadio }) => {
-
-    console.log(linesProducts)
+const SidebarProducts = ({ 
+    lines,
+    business, 
+    materials, 
+    toggleChange, 
+    toggleChangeCheckbox, 
+    toggleLineProductsRadio 
+}) => {
 
     return (
         <div className="Materials-sidebar_pm">
@@ -12,37 +17,48 @@ const SidebarProducts = ({ match,linesProducts,typesBusiness, materials, getMate
                     <h5 style={{ color: "#4D4D4C", fontSize: "12px", fontFamily: "Amble-bold" }}>Tipo de línea</h5>
                 </div>
                 <div>
-                    {
-                        linesProducts.map(line => (
-                            <div key={line.id} className="material">
-                                <div style={{ display: "flex", justifyContent: "center" }}><input className="only-one" name="line" value={line.id} onClick={(e) => toggleLineProductsRadio(e, line.id)} style={{ marginRight: "10px" }} type="radio" />{line.name}</div>
-                            </div>
-                        ))
+                {
+                        lines && lines.length > 0 ?
+                            lines.map(item => (
+                                <div key={item.id} className="material">
+                                    <div style={{ display: "flex", justifyContent: "center" }}>
+                                        <label className="con1" htmlFor=""><span>{item.name}</span>
+                                            <input id="radio" className="only-one" name="business" value={item.id} onClick={(e) => toggleLineProductsRadio(e, item.id)} style={{ marginRight: "10px" }} type="radio" />
+                                            <span className="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            )) : ''
                     }
                 </div>
                 <div style={{ padding: "0px 10px 10px 10px" }}>
                     <h5 style={{ color: "#4D4D4C", fontSize: "12px", fontFamily: "Amble-bold" }}>Tipo de negocio</h5>
                 </div>
                 <div>
-                    {
-                        typesBusiness.map(business => (
-                            <div key={business.id} className="material">
-                                <div style={{ display: "flex", justifyContent: "center" }}><input onClick={(e) => toggleChangeCheckbox(e, business.id)} style={{ marginRight: "10px" }} type="checkbox" />{business.name}</div>
-                            </div>
-                        ))
+                {
+                        business && business.length > 0 ?
+                            business.map(item => (
+                                <div key={item.id} className="material">
+                                    <label className="con1" htmlFor=""><span>{item.name}</span>
+                                        <input name="business" style={{ marginRight: "10px" }} onClick={(e) => toggleChangeCheckbox(e, item.id)} type="checkbox" />
+                                        <span className="checkmark"></span>
+                                    </label>
+                                </div>
+                            )) : ''
                     }
                     <div style={{ padding: "0px 10px 10px 10px" }}>
                         <h5 style={{ color: "#4D4D4C", fontSize: "12px", fontFamily: "Amble-bold" }}>Material</h5>
                     </div>
                     {
-                        materials.map(material => (
-                            <div key={material.id} className="material" onClick={(e) => toggleChange(e)}>
-                                <div style={{ display: "flex", justifyContent: "center" }}>
-                                    <input className="only-one" name="id" value={material.id} style={{ marginRight: "10px" }} type="radio" />
-                                    {material.name}
+                        materials && materials ?
+                            materials.map(material => (
+                                <div key={material.id} className="material">
+                                    <label className="con1" htmlFor=""><span>{material.name}</span>
+                                        <input className="only-one" name="line" value={material.id} onClick={(e) => toggleChange(e, material.id)} style={{ marginRight: "10px" }} type="radio" />
+                                        <span className="checkmark"></span>
+                                    </label>
                                 </div>
-                            </div>
-                        ))
+                            )) : ''
                     }
                 </div>
             </div>

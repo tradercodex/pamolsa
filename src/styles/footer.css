@@ -25,7 +25,7 @@
     grid-column: 4/6;
 }
 
-.information {
+.container-footer .information {
     display: flex;
     justify-content: flex-end;
     grid-column: 6/8;

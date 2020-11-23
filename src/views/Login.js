@@ -44,9 +44,9 @@ const Login = () => {
 
         if (formData) {
             dispatch(signin(formData))
-            // setTimeout(() => {
-            //     history.push('/administrador');
-            // }, 2000);
+            setTimeout(() => {
+                history.push('/administrador');
+            }, 2000);
         }
         e.target.reset();
     }

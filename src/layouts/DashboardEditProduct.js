@@ -376,11 +376,8 @@ const DashboardEditProduct = ({match}) => {
                                     <Controller
                                         as={
                                             <ReactSelect
-                                                styles={selectStyles}
-                                                
+                                                styles={selectStyles}                                               
                                                 options={linesSelect}
-                                                // getOptionLabel={lines => lines.name}
-                                                // getOptionValue={lines => lines.id}
                                             />}
                                         name="line"
                                         isClearable

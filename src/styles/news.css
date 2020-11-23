@@ -564,6 +564,18 @@
     background-blend-mode: darken;
 }
 
+.companies_us .img-company-abe, .companies-second_us .img-company-abe {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    right: 12px;
+    background-color: #F9F9F9;
+    background-image: url('../images/img/selloemprendedor.png');
+    background-size: cover;
+    background-blend-mode: darken;
+}
+
+
 .companies-second .img-company-gp {
     position: relative;
     width: 60px;
@@ -703,6 +715,7 @@
 .companies_us {
     margin-top: 20px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 }
 
@@ -731,6 +744,7 @@
 .companies-second_us .img-company-gp {
     position: relative;
     width: 109px;
+    margin-bottom: 30px;
     height: 109px;
     background-image: url('../images/img/greatperu.png');
     background-size: cover;
@@ -741,6 +755,7 @@
     position: relative;
     width: 109px;
     height: 109px;
+    margin-bottom: 30px;
     background-image: url('../images/img/greatplaces.png');
     background-size: cover;
     position: relative;
@@ -750,6 +765,7 @@
     position: relative;
     width: 109px;
     height: 109px;
+    margin-bottom: 30px;
     background-image: url('../images/img/grateplacework.png');
     background-size: cover;
     position: relative;
@@ -763,6 +779,7 @@
 .companies-second_us {
     margin-top: 20px;
     display: flex;
+    flex-wrap: wrap !important;
     align-items: center;
 }
 
@@ -835,6 +852,11 @@
     color: #4c4c4c;
     font-size: 14px;
     margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card-body .text {
+    margin-bottom: 40px;
 }
 
 .card-body a , .card-body button{
@@ -864,6 +886,22 @@
     background: transparent !important;
     z-index: 2500 !important;
     padding: 0 !important;
+}
+
+.container-known_video .player-wrapper {
+    position: absolute;
+    width: 100%;
+    right: 0%;
+    height: 65vh;
+    top: 3%;
+}
+
+.container-grid.sbl .player-wrapper {
+    position: absolute;
+    width: 80%;
+    right: 10%;
+    height: 74vh;
+    top: 3%;
 }
 
 .new-slick.work.activity .slick-dots ul li {
@@ -1382,6 +1420,20 @@
 }
 
 @media only screen and (max-width: 1440px) {
+    .container-known_video .player-wrapper {
+        position: absolute;
+        width: 80%;
+        right: 10%;
+        height: 80vh;
+        top: 5%;
+    }
+    .container-grid.sbl .player-wrapper {
+        position: absolute;
+        width: 90%;
+        right: 4.4%;
+        height: 83vh;
+        top: 6%;
+    }    
     .new-slick .slick-dots {
         left: 180px !important;
     }
@@ -1459,5 +1511,8 @@
     }
     .new-slick.work.activity {
         grid-column: 2/7 !important;
+    }
+    .container-grid.information .square {
+        left: 0px !important;
     }
 }

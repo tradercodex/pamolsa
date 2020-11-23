@@ -1,7 +1,7 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import Sidebar from '../components/Sidebar'
 import HeaderDashboard from '../components/HeaderDashboard'
-import { withRouter, Switch, Route } from 'react-router-dom'
+import { withRouter, Redirect } from 'react-router-dom'
 import Alert from '../components/Alert'
 import AOS from 'aos'
 import '../styles/dashboard.css'
@@ -26,6 +26,8 @@ import DashboardEditActivity from '../layouts/DashboardEditActivity'
 import DashboardCommunity from '../layouts/DashboardCommunity'
 import DashboardAddCommunity from '../layouts/DashboardAddCommunity'
 import DashboardEditCommunity from '../layouts/DashboardEditCommunity'
+import ProtectedRoute from '../ProtectedRoute'
+import NotFound from '../components/404'
 
 const Dashboard = () => {
 
@@ -82,25 +84,29 @@ const Dashboard = () => {
                     <HeaderDashboard />
                     <div className="Content" id="main">
                         <Alert />
-                        <Route exact path="/administrador/productos" component={DashboardProduct} />
-                        <Route exact path="/administrador/productos/nuevo" component={DashboardAddProduct} />
-                        <Route exact path="/administrador/productos/editar/:id" component={DashboardEditProduct} />
-                        <Route exact path="/administrador/noticias" component={DashboardNew} />
-                        <Route exact path="/administrador/noticias/nuevo" component={DashboardAddNew} />
-                        <Route exact path="/administrador/noticias/editar/:id" component={DashboardEditNew} />
-                        <Route exact path="/administrador/noticias/galeria/editar/:id" component={DashboardEditNewPaper} />
-                        <Route exact path="/administrador/banners" component={DashboardBanner} />
-                        <Route exact path="/administrador/banners/nuevo" component={DashboardAddBanner}/>
-                        <Route exact path="/administrador/noticias/nuevo-periodico" component={DashbaordAddNewspaper} />
-                        <Route exact path="/administrador/vacantes" component={DashboardVacant} />
-                        <Route exact path="/administrador/vacantes/nueva-vacante" component={DashbaordAddVacant} />
-                        <Route exact path="/administrador/vacantes/editar/:id" component={DashboardEditVacant} />
-                        <Route exact path="/administrador/actividades" component={DashboardActivity} />
-                        <Route exact path="/administrador/actividades/nuevo" component={DashboardAddActivity} />
-                        <Route exact path="/administrador/actividades/editar/:id" component={DashboardEditActivity} />
-                        <Route exact path="/administrador/comunidad" component={DashboardCommunity} />
-                        <Route exact path="/administrador/comunidad/nuevo" component={DashboardAddCommunity} />
-                        <Route exact path="/administrador/comunidad/editar/:id" component={DashboardEditCommunity} />
+                        <ProtectedRoute exact path="/administrador/productos" component={DashboardProduct} />
+                        <ProtectedRoute exact path="/administrador/productos/nuevo" component={DashboardAddProduct} />
+                        <ProtectedRoute exact path="/administrador/productos/editar/:id" component={DashboardEditProduct} />
+                        <ProtectedRoute exact path="/administrador/noticias" component={DashboardNew} />
+                        <ProtectedRoute exact path="/administrador/noticias/nuevo" component={DashboardAddNew} />
+                        <ProtectedRoute exact path="/administrador/noticias/editar/:id" component={DashboardEditNew} />
+                        <ProtectedRoute exact path="/administrador/noticias/galeria/editar/:id" component={DashboardEditNewPaper} />
+                        <ProtectedRoute exact path="/administrador/banners" component={DashboardBanner} />
+                        <ProtectedRoute exact path="/administrador/banners/nuevo" component={DashboardAddBanner}/>
+                        <ProtectedRoute exact path="/administrador/noticias/nuevo-periodico" component={DashbaordAddNewspaper} />
+                        <ProtectedRoute exact path="/administrador/vacantes" component={DashboardVacant} />
+                        <ProtectedRoute exact path="/administrador/vacantes/nueva-vacante" component={DashbaordAddVacant} />
+                        <ProtectedRoute exact path="/administrador/vacantes/editar/:id" component={DashboardEditVacant} />
+                        <ProtectedRoute exact path="/administrador/actividades" component={DashboardActivity} />
+                        <ProtectedRoute exact path="/administrador/actividades/nuevo" component={DashboardAddActivity} />
+                        <ProtectedRoute exact path="/administrador/actividades/editar/:id" component={DashboardEditActivity} />
+                        <ProtectedRoute exact path="/administrador/comunidad" component={DashboardCommunity} />
+                        <ProtectedRoute exact path="/administrador/comunidad/nuevo" component={DashboardAddCommunity} />
+                        <ProtectedRoute exact path="/administrador/comunidad/editar/:id" component={DashboardEditCommunity} />
+                        <Redirect
+                                from="*"
+								to="/"
+							/>
                     </div>
                 </div>
             </div>

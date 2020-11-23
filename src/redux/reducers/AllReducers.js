@@ -8,6 +8,7 @@ import products from './product'
 import vacants from './vacant'
 import activities from './activity'
 import communities from './community'
+import cart from './cart'
 import auth from './auth'
 
 export default combineReducers({
@@ -20,5 +21,6 @@ export default combineReducers({
     products,
     activities,
     communities,
+    cart,
     auth
 });
