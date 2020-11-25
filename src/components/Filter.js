@@ -38,7 +38,7 @@ const Filter = ({
                         {
                             countProductsByFilter ? <p>{'' || countProductsByFilter + ` productos`}</p>
                                 :
-                                <p>{'' || countProduct + ` productos`}</p>
+                                <p>{'' || 0 + ` productos`}</p>
                         }
                     </div>
                 </div>

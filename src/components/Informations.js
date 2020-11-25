@@ -14,7 +14,7 @@ const Informations = () => {
                         <div className="footer-dc text-map_pm" style={{fontSize:"24px"}}>
                             <LogoUs />
                             <div style={{letterSpacing: "2px"}}>en el mundo</div>
-                            <div style={{letterSpacing: "2px"}}>nuestro crecimiento nos ha llevado a</div>
+                            <div style={{letterSpacing: "2px"}}>Nuestra visión de crecimiento nos ha llevado a</div>
                             <div style={{letterSpacing: "2px"}} className="bold" style={{fontSize: "28px"}}>internacionalizar</div> 
                             <div style={{letterSpacing: "2px"}}>nuestros productos</div>
                         </div>

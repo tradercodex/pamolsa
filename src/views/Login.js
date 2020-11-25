@@ -47,7 +47,7 @@ const Login = () => {
         if (formData) {
             dispatch(signin(formData))
             setTimeout(() => {
-                history.push('/administrador/banners');
+                window.location.reload('/administrador/banners');
             }, 2000);
         }
         e.target.reset();

@@ -10,6 +10,7 @@ import "animate.css/animate.css"
 import 'aos/dist/aos.css'
 import 'aos/dist/aos.js'
 import 'react-quill/dist/quill.snow.css';
+import 'medium-zoom/dist/medium-zoom.min.js'
 
 ReactDOM.render(
   <React.StrictMode>

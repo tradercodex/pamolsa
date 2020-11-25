@@ -11,8 +11,9 @@ import { getBanners } from '../redux/actions/banner'
 import { getNewsHome } from '../redux/actions/new'
 import WOW from 'wowjs'
 
-const Home = () => {
+const Home = ({history}) => {
 
+    console.log(history)
     const dispatch = useDispatch();
     const news = useSelector(state => state.news.newsHome)
     const cart = useSelector(state => state.cart)
@@ -64,6 +65,7 @@ const Home = () => {
             <Header number={number} />
             <Slicks banners={banners} />
             <Known 
+                history={history}
                 closePdfModal={closePdfModal} 
                 showPdfModal={showPdfModal} 
                 handleShowPdfModal={handleShowPdfModal}

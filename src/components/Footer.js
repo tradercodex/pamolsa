@@ -39,8 +39,9 @@ const Footer = () => {
                     <div className="title">
                         <h6>Contacto</h6>
                         <div className="info-contact">
-                            <div className="center">Central: (01) 719- 2100</div>
-                            <div className="cell">Ventas: 994 644 843/ 994 647 087</div>
+                            <div className="center">Central: (511) 710 3020</div>
+                            <div className="cell">Central de ventas: (01) 641 9595 WhatsApp: 934
+440 291</div>
                         </div>
                     </div>
                 </div>

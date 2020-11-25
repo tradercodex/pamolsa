@@ -22,7 +22,8 @@ const Header = ({ match, number }) => {
                         <div className="icon">
                             <Phone />
                         </div>
-                        <span>Llámanos: Central: (511) 710-3020 | Ventas: 994644843 / 994647087</span>
+                        <span>Llámanos: Central: (511) 710 3020 | Central de ventas: (01) 641 9595 WhatsApp: 934
+440 291</span>
                     </div>
                 </div>
             </div>

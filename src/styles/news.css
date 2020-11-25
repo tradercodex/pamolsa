@@ -212,7 +212,7 @@
     z-index: 2500 !important;
     padding: 0 !important;
     width: 100px !important;
-    left: 260px;
+    left: 265px;
 }
 
 .new-slick .slick-dots li {
@@ -631,7 +631,7 @@
 .info-footer_news_us h6 {
     color: #32711E;;
     font-size: 50px;
-    font-family: 'Amble';
+    font-family: 'Amble-bold';
     margin-top: 20px;
     line-height: 97.2%;
     margin-bottom: 50px;
@@ -643,7 +643,7 @@
     color: #8DB72E;
     font-size: 30px;
     width: 383px !important;
-    font-family: 'Amble';
+    font-family: 'Amble-bold';
     margin-top: 40px;
     line-height: 97.2%;
     margin-bottom: 20px;
@@ -658,6 +658,7 @@
     font-size: 14px;
     line-height: 17px;
     color: #4D4D4C;
+    opacity: 0.8;
 }
 
 .Certifications {
@@ -921,7 +922,7 @@
     background: transparent !important;
     z-index: 2500 !important;
     padding: 0 !important;
-    left: -560px !important;
+    left: -580px;
     position: absolute !important;
 }
 
@@ -1427,6 +1428,9 @@
         height: 80vh;
         top: 5%;
     }
+    .img-new_slick_us,.img-new_slick {
+        left: 160px;
+    }
     .container-grid.sbl .player-wrapper {
         position: absolute;
         width: 90%;
@@ -1435,7 +1439,7 @@
         top: 6%;
     }    
     .new-slick .slick-dots {
-        left: 180px !important;
+        left: 194px !important;
     }
     .container-detail_new .slick-dots {
         width: 70% !important;
@@ -1473,7 +1477,7 @@
     }
     .new-slick.work .slick-dots {
         bottom: 255px !important;
-        left: -400px !important;
+        left: -420px !important;
     }
     .card-work {
         margin-left: 280px;
@@ -1502,6 +1506,19 @@
         top: 0px !important;
         position: relative;
         transform: rotate(148.73deg);
+    }
+}
+
+.new-slick.work.sbl.community .slick-dots {
+    left: -555px !important;
+}
+
+@media only screen and (max-width: 1440px) {
+    .new-slick.work.sbl.community .slick-dots {
+        left: -420px !important;
+    }
+    .new-slick.work.activity {
+        grid-column: 2/7 !important;
     }
 }
 

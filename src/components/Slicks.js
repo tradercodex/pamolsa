@@ -168,7 +168,7 @@ const Slicks = ({ match, banners }) => {
                 pathname === "/clientes" ?
                     <div>
                         <div className="Slicks-pm Us">
-                            <div className="Radius Us"></div>
+                            <div className="Radius Us Clients"></div>
                             <Slider {...settings}>
                                 <div>
                                     <div className="Rotate-slick Us Cl">
@@ -186,7 +186,7 @@ const Slicks = ({ match, banners }) => {
                 pathname === "/noticias" ?
                     <div className="content-slick-new">
                         <div className="Slicks-pm Us">
-                            <div className="Radius Us" style={{ background: "#D6E3D2" }}></div>
+                            <div className="Radius Us News"></div>
                             <Slider {...settings}>
                                 <div>
                                     <div className="Rotate-slick Us New">

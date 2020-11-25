@@ -21,7 +21,7 @@ const SidebarProductsByLine = ({
                             types.map(item => (
                                 <div key={item.id} className="material">
                                     <label className="con1" htmlFor=""><span>{item.name}</span>
-                                        <input id="checkbox" className="only-one" name="type" value={item.id} onClick={(e) => toggleTypesProductsRadio(e, item.id)} style={{ marginRight: "10px" }} type="radio" />
+                                        <input id="checkbox" className="only-one" name="type" value={item.id} onClick={(e) => toggleTypesProductsRadio(e, item.id)} style={{ marginRight: "10px" }} type="checkbox" />
                                         <span className="checkmark"></span>
                                     </label>
                                 </div>
@@ -51,7 +51,7 @@ const SidebarProductsByLine = ({
                             materials.map(material => (
                                 <div key={material.id} className="material">
                                     <label className="con1" htmlFor=""><span>{material.name}</span>
-                                        <input id="checkbox" className="only-one" name="material" value={material.id} onClick={(e) => toggleMaterialsProductsRadio(e, material.id)} style={{ marginRight: "10px" }} type="radio" />
+                                        <input id="checkbox" className="only-one" name="material" value={material.id} onClick={(e) => toggleMaterialsProductsRadio(e, material.id)} style={{ marginRight: "10px" }} type="checkbox" />
                                         <span className="checkmark"></span>
                                     </label>
                                 </div>

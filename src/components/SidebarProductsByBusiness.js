@@ -22,7 +22,7 @@ const SidebarProductsByLine = ({
                                 <div key={item.id} className="material">
                                     <div style={{ display: "flex", justifyContent: "center" }}>
                                         <label className="con1" htmlFor=""><span>{item.name}</span>
-                                            <input id="radio" className="only-one" name="business" value={item.id} onClick={(e) => toggleLinesProductsRadio(e, item.id)} style={{ marginRight: "10px" }} type="radio" />
+                                            <input id="radio" className="only-one" name="business" value={item.id} onClick={(e) => toggleLinesProductsRadio(e, item.id)} style={{ marginRight: "10px" }} type="checkbox" />
                                             <span className="checkmark"></span>
                                         </label>
                                     </div>
@@ -39,7 +39,7 @@ const SidebarProductsByLine = ({
                             types.map(item => (
                                 <div key={item.id} className="material">
                                      <label className="con1" htmlFor=""><span>{item.name}</span>
-                                        <input className="only-one" name="line" value={item.id} onClick={(e) => toggleTypesProductsRadio(e, item.id)} style={{ marginRight: "10px" }} type="radio" />
+                                        <input className="only-one" name="line" value={item.id} onClick={(e) => toggleTypesProductsRadio(e, item.id)} style={{ marginRight: "10px" }} type="checkbox" />
                                         <span className="checkmark"></span>
                                     </label>
                                 </div>
@@ -55,7 +55,7 @@ const SidebarProductsByLine = ({
                             materials.map(material => (
                                 <div key={material.id} className="material">
                                     <label className="con1" htmlFor=""><span>{material.name}</span>
-                                        <input className="only-one" name="id" value={material.id} style={{ marginRight: "10px" }} type="radio" onClick={(e) => toggleMaterialsProductsRadio(e, material.id)} />
+                                        <input className="only-one" name="id" value={material.id} style={{ marginRight: "10px" }} type="checkbox" onClick={(e) => toggleMaterialsProductsRadio(e, material.id)} />
                                         <span className="checkmark"></span>
                                     </label>
                                 </div>

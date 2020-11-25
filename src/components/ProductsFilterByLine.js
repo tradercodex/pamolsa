@@ -31,29 +31,9 @@ const ProductsFilterByLine = ({
                             </div>
                         )) :
                         <Fragment>
-                            {
-                                products && products.length > 0 ?
-                                    products.map(product => (
-                                        <div key={product.id}>
-                                            <div className="product">
-                                                <div className={`square-products ` + lineBioform}></div>
-                                                <h5>{product.name}</h5>
-                                                {
-
-                                                    product.image.map((thumb, index) =>
-                                                        <div className="img-product" key={index}>
-                                                            <img src={`http://` + thumb.url} alt="" />
-                                                        </div>
-                                                    )
-                                                }
-                                                <Link to={`/producto/detalle/${product.id}`}>Ver más</Link>
-                                            </div>
-                                        </div>
-                                    )) :
-                                    <div className="loading-products">
-                                        <p>No se encontraron productos</p>
-                                    </div>
-                            }
+                            <div className="loading-products">
+                                <p>No se encontraron productos</p>
+                            </div>
                         </Fragment>
                 }
             </div>

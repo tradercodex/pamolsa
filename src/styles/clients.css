@@ -38,10 +38,15 @@
     display: flex;
 }
 
+.clients-page {
+    max-width: 1440px;
+    margin: auto;
+    position: relative;
+}
+
 .info-clients {
     grid-column: 1/5;
     display: flex;
-    justify-content: center;
 }
 
 .info-clients h2 {
@@ -58,12 +63,45 @@
     color : #8DB72E;
 }
 
-.info-clients p {
+.info-clients p,.info-client-footer p {
     font-family: 'Amble-light';
     font-size: 14px;
     color : #4D4D4C;
     margin-top: 30px;
     width: 301px;
+}
+
+.info-client-footer {
+    max-width: 1200px;
+}
+
+.client-info {
+    grid-column: 5/8;
+}
+
+.hide {
+    display: none;
+}
+
+.info-client-footer {
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+}
+
+a.active svg circle {
+    fill: #D9F0FF;
+}
+
+.info-client-footer h6 {
+    margin-top: 20px;
+    font-family: 'Amble-bold';
+    font-size: 14px;
+}
+
+.info-client-footer p {
+    width: 50%;
+    margin-top: 12px !important;
 }
 
 .title-client h4 {
@@ -346,4 +384,26 @@ textarea {
 
 .new-tree img {
     width: 200px;
+}
+
+@media only screen and (max-width: 1440px) {
+    .info-clients {
+        grid-column: 2/5;
+    }
+    .info-client-footer {
+        margin-left: 210px;
+        width: 1000px;
+        bottom: -50px;
+    }
+}
+
+@media only screen and (max-width: 1360px) {
+    .info-clients {
+        grid-column: 2/5;
+    }
+    .info-client-footer {
+        margin-left: 198px;
+        width: 1000px;
+        bottom: -50px;
+    }
 }

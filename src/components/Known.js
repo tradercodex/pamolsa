@@ -3,15 +3,34 @@ import '../styles/known.css'
 import FoodServices from '../images/svg/foodservice'
 import Industrial from '../images/svg/industrial'
 import Agroindustrial from '../images/svg/agroindustrial'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import ModalFoodService from './ModalFoodService';
 import industrial from '../pdf/catalogoindustrial.pdf'
 import agroindustrial from '../pdf/catalogoagroindustrial.pdf'
 
 const Known = ({
-    closePdfModal,showPdfModal,
+    closePdfModal, showPdfModal,
     handleShowPdfModal,
 }) => {
+
+    const history = useHistory()
+
+    const goLineTwo = () => {
+        history.replace('/productos/linea/2')
+    }
+
+    const goLineOne = () => {
+        history.replace('/productos/linea/1')
+    }
+
+    const goLineThree = () => {
+        history.replace('/productos/linea/3')
+    }
+
+    const goLineFour = () => {
+        history.replace('/productos/linea/4')
+    }
+
     return (
         <div className="Known-pm">
             <div className="container-known">
@@ -37,29 +56,37 @@ const Known = ({
                             data-wow-duration="2s"
                             data-wow-delay="0.4"
                         >
-                            <img src={require('../images/img/lineproducts.png')} />
-                            <p>Línea Ecoamigable Bioform</p>
+                            <Link onClick={goLineTwo}>
+                                <img src={require('../images/img/lineproducts.png')} />
+                                <p>Línea Ecoamigable Bioform</p>
+                            </Link>
                         </div>
                         <div className="line-products_pm top wow animate__animated animate__fadeInDown"
                             data-wow-duration="2s"
                             data-wow-delay="0.4"
                         >
-                            <img src={require('../images/img/foodservices.png')} />
-                            <p>Línea Food Service</p>
+                            <Link onClick={goLineOne}>
+                                <img src={require('../images/img/foodservices.png')} />
+                                <p>Línea Food Service</p>
+                            </Link>
                         </div>
                         <div className="use-app_pm wow animate__animated animate__fadeInUp"
                             data-wow-duration="2s"
                             data-wow-delay="2.4"
                         >
-                            <img src={require('../images/img/useapplication.png')} />
-                            <p>Línea Industrial Consumo</p>
+                            <Link onClick={goLineThree}>
+                                <img src={require('../images/img/useapplication.png')} />
+                                <p>Línea Industrial Consumo</p>
+                            </Link>
                         </div>
                         <div className="material-pm top wow animate__animated animate__fadeInRight"
                             data-wow-duration="2s"
                             data-wow-delay="2.4"
                         >
-                            <img src={require('../images/img/lineagro.png')} />
-                            <p>Línea Agroindustrial</p>
+                            <Link onClick={goLineFour}>
+                                <img src={require('../images/img/lineagro.png')} />
+                                <p>Línea Agroindustrial</p>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -97,7 +124,7 @@ const Known = ({
                             <p className="know-lines">Industrial</p>
                             <div className="button-cat">
                                 <a href={industrial} target="_blank"
-                                className="wow animate__animated animate__fadeInUp"
+                                    className="wow animate__animated animate__fadeInUp"
                                     data-wow-duration="4s"
                                     data-wow-delay="2.4">Ver cátalogo</a>
                             </div>
@@ -118,7 +145,7 @@ const Known = ({
                             </div>
                         </div>
                     </div>
-                    { showPdfModal && <ModalFoodService closeModal={closePdfModal} title="Nuestros catálogos Food Service" /> }
+                    {showPdfModal && <ModalFoodService closeModal={closePdfModal} title="Nuestros catálogos Food Service" />}
                 </div>
             </div>
             <div className="container-distributor">

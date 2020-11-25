@@ -57,6 +57,7 @@
 .bioform-pm ,.line-products_pm, .material-pm, .use-app_pm {
     position: relative;
     display: flex;
+    z-index: 999999;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -73,10 +74,15 @@
     border-radius: 50px;
 }
 
+.bioform-pm::after, .line-products_pm::after, .material-pm::after,.use-app_pm::after {
+    height: 98%;
+}
+
 .bioform-pm p,.line-products_pm p, .material-pm p, .use-app_pm p {
     position: absolute;
     color: #fff;
     z-index: 1;
+    top: 60px;
     font-size: 29px;
     font-family: 'Amble';
     text-shadow: 0px 2.91257px 2.91257px rgba(0, 0, 0, 0.06);
@@ -238,6 +244,7 @@
 }
 
 .info-post-activity p {
+    z-index: 999999;
     color: #fff;
     font-size: 50px;
     font-family: 'Amble-bold';
@@ -535,7 +542,7 @@ body.date-20201112 {
         right: 0 !important;
     }
     .info-post-activity {
-        left: 10px !important;
+        z-index: 99999;
     }
     .new-slick.work.activity .slick-dots {
         left: 580px !important;

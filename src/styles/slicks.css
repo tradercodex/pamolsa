@@ -44,6 +44,10 @@
     transform: rotate(-16.85deg);
 }
 
+.Radius.Us.Clients, .Radius.Us.News {
+    background: #D6E3D2 !important;
+}
+
 .Rotate-slick.Us::before {
     background-color: rgba(0, 82, 134, 0.2);
 }
@@ -125,8 +129,6 @@
 .Rotate-slick.Us.Ctt::after {
     background-image: url('../images/img/contacto.webp') !important;
 }
-
-
 
 .Radius-us{
     position: absolute;
@@ -458,7 +460,6 @@
 .footer-slick {
     position: relative;
     top: -280px;
-    margin: 0 auto;
 }
 
 .footer-slick .tree-pm img {
@@ -514,9 +515,6 @@
     .Rotate-slick::before {
         height: 110%;
     }
-    .new-slick .slick-dots {
-        left: 200px !important;
-    }
     .tree-new {
         top: -90px !important;
     }
@@ -560,6 +558,22 @@
     .info-slick.Us {
         top: 700px;
         left: 100px;
+    }
+}
+
+@media screen and (max-width: 1440px) and (max-height: 660px) {
+    .content-slick-new {
+        height: 98vh !important;
+    }
+    .Rotate-slick.Us::after {
+        top: 350px;
+        left: -105px;
+    }
+    .info-slick.Us {
+        top: 700px !important;
+    }
+    .Known-pm {
+        margin-top: 0px !important;
     }
 }
 
@@ -627,5 +641,32 @@
     .info-slick.Us {
         top: 700px;
         left: 100px;
+    }
+}
+
+@media only screen and (max-width: 1360px) {
+    .img-new_slick_us, .img-new_slick {
+        left: 120px !important;
+    }
+    .img-new_slick {
+        left: 30px !important;
+    }
+    .new-slick.work.sbl.community.table .slick-dots {
+        left: -395px !important;
+    }
+    .new-slick.plant .slick-dots {
+        left: 185px !important;
+    }
+    .stb-slick.tablet .slick-dots {
+        left: 435px !important;
+    }
+    .new-slick.work.activity.tablet {
+        grid-column: 2/8 !important;
+    }
+    .new-slick.work.activity.tablet .slick-dots {
+        left: 710px !important;
+    }
+    .new-slick.work.tablet .slick-dots {
+        left: -400px !important;
     }
 }

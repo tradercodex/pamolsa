@@ -120,7 +120,7 @@ const DashboardAddProduct = () => {
 
     const deleteImage = i => () => {
         setProductsImages({
-            images: productsImages.images.filter((image,index) => i !== index)
+            images: productsImages.images.filter((image, index) => i !== index)
         })
     }
 
@@ -129,6 +129,7 @@ const DashboardAddProduct = () => {
         const formData = new FormData;
 
         formData.append('name', data.name);
+        formData.append('tradename', data.tradename);
         formData.append('code', data.code);
         formData.append('long', data.long);
         formData.append('width', data.width);
@@ -138,6 +139,12 @@ const DashboardAddProduct = () => {
         formData.append('ue_intern', data.ue_intern)
         formData.append('ue_master', data.ue_master);
         formData.append('uee', data.uee);
+        formData.append('unit', data.unit)
+        formData.append('min_quantity', data.min_quantity);
+        formData.append('shape', data.shape)
+        formData.append('colour', data.colour);
+        formData.append('temperature', data.temperature);
+        formData.append('brand', data.brand);
         formData.append('line', data.line.name);
         formData.append('type', data.type.name)
         formData.append('subtype', data.subtype.name);
@@ -147,10 +154,11 @@ const DashboardAddProduct = () => {
         for (var i = 0; i < data.business.length; i++) {
             formData.append('business', data.business[i].name);
         }
-        for(let pic of productsImages.images){
-            formData.append('file',pic)
+        for (let pic of productsImages.images) {
+            formData.append('file', pic)
         }
         dispatch(sendProduct(formData))
+        console.log(data)
         e.target.reset();
     }
 
@@ -180,6 +188,24 @@ const DashboardAddProduct = () => {
                                     />
                                     <div className="error-ds">
                                         {errors.name && errors.name.message}
+                                    </div>
+                                </div>
+                                <div className="input-ds">
+                                    <div><label>Nombre comercial del producto</label></div>
+                                    <input
+                                        type="text"
+                                        name="tradename"
+                                        ref={
+                                            register({
+                                                required: {
+                                                    value: true,
+                                                    message: 'Ingrese el nombre comercial del producto'
+                                                }
+                                            })
+                                        }
+                                    />
+                                    <div className="error-ds">
+                                        {errors.tradename && errors.tradename.message}
                                     </div>
                                 </div>
                                 <div className="container-grid-ds-forms">
@@ -317,6 +343,96 @@ const DashboardAddProduct = () => {
                                         />
                                     </div>
                                 </div>
+                                <div className="container-grid-ds-forms doble">
+                                    <div className="input-ds">
+                                        <div><label>Unidades</label></div>
+                                        <input
+                                            type="text"
+                                            name="unit"
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false,
+                                                    }
+                                                })
+                                            }
+                                        />
+                                    </div>
+                                    <div className="input-ds">
+                                        <div><label>Minima cantidad</label></div>
+                                        <input
+                                            type="text"
+                                            name="min_quantity"
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                    </div>
+                                </div>
+                                <div className="container-grid-ds-forms doble">
+                                    <div className="input-ds">
+                                        <div><label>Forma</label></div>
+                                        <input
+                                            type="text"
+                                            name="shape"
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false,
+                                                    }
+                                                })
+                                            }
+                                        />
+                                    </div>
+                                    <div className="input-ds">
+                                        <div><label>Color</label></div>
+                                        <input
+                                            type="text"
+                                            name="colour"
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                    </div>
+                                </div>
+                                <div className="container-grid-ds-forms doble">
+                                    <div className="input-ds">
+                                        <div><label>Marca</label></div>
+                                        <input
+                                            type="text"
+                                            name="brand"
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false,
+                                                    }
+                                                })
+                                            }
+                                        />
+                                    </div>
+                                    <div className="input-ds">
+                                        <div><label>Temperatura</label></div>
+                                        <input
+                                            type="text"
+                                            name="temperature"
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                    </div>
+                                </div>
                                 <div className="input-ds">
                                     <div>
                                         <label>Linea de producto</label>
@@ -355,14 +471,14 @@ const DashboardAddProduct = () => {
                                                 options={types}
                                                 getOptionLabel={types => types.name}
                                                 getOptionValue={types => types.id}
-                                                getNewOptionData = { ( inputValue , optionLabel ) => ({
-                                                    id :  optionLabel ,
-                                                    name :  inputValue ,
-                                                    __isNew__ :  true 
-                                                })} 
+                                                getNewOptionData={(inputValue, optionLabel) => ({
+                                                    id: optionLabel,
+                                                    name: inputValue,
+                                                    __isNew__: true
+                                                })}
                                             />}
                                         isClearable
-                                        name="type" 
+                                        name="type"
                                         control={control}
                                         rules={{
                                             required: {
@@ -406,7 +522,9 @@ const DashboardAddProduct = () => {
                                         {errors.subtype && errors.subtype.message}
                                     </div>
                                 </div>
-                                <div className="input-ds" style={{ marginTop: "20px" }}>
+                            </div>
+                            <div>
+                                <div className="input-ds">
                                     <div>
                                         <label>Agrega un subtipo del producto</label>
                                     </div>
@@ -417,11 +535,11 @@ const DashboardAddProduct = () => {
                                                 options={addSubTypes}
                                                 getOptionLabel={addSubTypes => addSubTypes.name}
                                                 getOptionValue={addSubTypes => addSubTypes.id}
-                                                getNewOptionData = { ( inputValue , optionLabel ) => ({
-                                                    id :  optionLabel ,
-                                                    name :  inputValue ,
-                                                    __isNew__ :  true 
-                                                })} 
+                                                getNewOptionData={(inputValue, optionLabel) => ({
+                                                    id: optionLabel,
+                                                    name: inputValue,
+                                                    __isNew__: true
+                                                })}
                                             />}
                                         name="add_subtype"
                                         isClearable
@@ -484,9 +602,6 @@ const DashboardAddProduct = () => {
                                         {errors.material_short_name && errors.material_short_name.message}
                                     </div>
                                 </div>
-
-                            </div>
-                            <div>
                                 <div className="input-ds">
                                     <div>
                                         <label>Agregue los tipos de nogocio</label>
@@ -500,10 +615,10 @@ const DashboardAddProduct = () => {
                                                 getOptionLabel={business => business.name}
                                                 getOptionValue={business => business.id}
                                                 components={makeAnimated}
-                                                getNewOptionData = { ( inputValue , optionLabel ) => ({
-                                                    id :  optionLabel ,
-                                                    name :  inputValue ,
-                                                    __isNew__ :  true 
+                                                getNewOptionData={(inputValue, optionLabel) => ({
+                                                    id: optionLabel,
+                                                    name: inputValue,
+                                                    __isNew__: true
                                                 })}
                                             />}
                                         name="business"
@@ -543,13 +658,13 @@ const DashboardAddProduct = () => {
                                             {errors.file && errors.file.message}
                                         </div>
                                         {
-                                            productsImages.images.length > 0 ? 
-                                            productsImages.images.map((item, index) => 
-                                            <div key={index}>
-                                                {item.name}
-                                                <button type="button" onClick={deleteImage(index)} className="">x</button>
-                                            </div>) 
-                                            : null
+                                            productsImages.images.length > 0 ?
+                                                productsImages.images.map((item, index) =>
+                                                    <div key={index}>
+                                                        {item.name}
+                                                        <button type="button" onClick={deleteImage(index)} className="">x</button>
+                                                    </div>)
+                                                : null
                                         }
                                     </div>
                                 </div>

@@ -10,7 +10,7 @@ import Axios from 'axios'
 import Pagination from '../components/Pagination'
 
 import {
-    getProductByFilter,
+    getProductByFilterType,
     getTypesProducts,
     getTypesBusiness
 } from '../redux/actions/product'
@@ -36,15 +36,29 @@ const ProductsByType = ({ match }) => {
     const [business, setBusiness] = useState();
     const [material, setMaterial] = useState();
     const [products, setProducts] = useState([]);
-    const [materialId, setMatarialId] = useState()
+    const [materialId, setMaterialId] = useState({
+        ids: []
+    })
     const [countProduct, setCountProduct] = useState();
-    const [lineId, setLineId] = useState();
+    const [lineId, setLineId] = useState({
+        ids: []
+    });
     const [businessId, setBussinesId] = useState({
         ids: []
     });
 
-    const toggleChange = (e) => {
-        setMatarialId(e.target.value)
+    const toggleLineProductsRadio = (e, item) => {
+        const { ids } = lineId;
+        let newArr = [];
+
+        if (!ids.includes(item)) {
+            newArr = [...ids, item];
+        } else {
+            newArr = ids.filter(a => a !== item);
+        }
+        setLineId({
+            ids: newArr
+        })
     }
 
     const toggleChangeCheckbox = (e, item) => {
@@ -56,14 +70,23 @@ const ProductsByType = ({ match }) => {
         } else {
             newArr = ids.filter(a => a !== item);
         }
-
         setBussinesId({
             ids: newArr
         })
     }
 
-    const toggleLineProductsRadio = (e) => {
-        setLineId(e.target.value)
+    const toggleMaterialsProductsRadio = (e,item) => {
+        const { ids } = materialId;
+        let newArr = [];
+
+        if (!ids.includes(item)) {
+            newArr = [...ids, item];
+        } else {
+            newArr = ids.filter(a => a !== item);
+        }
+        setMaterialId({
+            ids: newArr
+        })
     }
 
     const apiGetLines = async () => {
@@ -81,12 +104,6 @@ const ProductsByType = ({ match }) => {
         setMaterial(response.data.data)
     }
 
-    const apiGetProductsByTypes = async () => {
-        const response = await Axios.get(`http://3.120.185.254:8090/api/product/list?type_id=${type_id}`);
-        setProducts(response.data.data)
-        setCountProduct(response.data.extra.total)
-    }
-
     let countProductsByFilter = productsByFilter.length
 
     useEffect(()=> {
@@ -94,15 +111,14 @@ const ProductsByType = ({ match }) => {
         apiGetLines();
         apiGetBusiness();
         apiGetMaterial();
-        apiGetProductsByTypes();
         dispatch(getTypesBusiness(9,1));
         dispatch(getTypesProducts(8, 1));
     },[])
 
     useEffect(() => {
         setCartItems(cart.cartItems)
-        dispatch(getProductByFilter(lineId, type_id, materialId, businessId.ids));
-    }, [lineId, type_id, materialId, businessId.ids,cart.cartItems])
+        dispatch(getProductByFilterType(type_id,lineId.ids, materialId.ids, businessId.ids));
+    }, [type_id,lineId.ids, materialId.ids, businessId.ids,cart.cartItems])
 
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -125,13 +141,12 @@ const ProductsByType = ({ match }) => {
                         lines={lines}
                         toggleChangeCheckbox={toggleChangeCheckbox}
                         toggleLineProductsRadio={toggleLineProductsRadio}
-                        toggleChange={toggleChange}
+                        toggleMaterialsProductsRadio={toggleMaterialsProductsRadio}
                     />
                 </div>
                 <div className="Products-Quote">
                     <Products
                         nameTypeProduct={nameTypeProduct}
-                        products={currentPosts}
                         productsByFilter={currentPostsByFilter}
                         countProduct={countProduct}
                         countProductsByFilter={countProductsByFilter}

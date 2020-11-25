@@ -3,7 +3,7 @@ import Header from '../components/Header'
 import SearchProductsByLine from '../components/SearchProductsByLine'
 import { useSelector,useDispatch } from 'react-redux'
 import Axios from 'axios'
-import { getTypesBusiness, getProductByFilter } from '../redux/actions/product'
+import { getTypesBusiness, getProductByFilterBusiness } from '../redux/actions/product'
 import SidebarProductsByBusiness from '../components/SidebarProductsByBusiness'
 import Products from '../components/Products'
 import Pagination from '../components/Pagination'
@@ -25,22 +25,57 @@ const ProductsByBusiness = ({match}) => {
     const [lines, setLines] = useState();
     const [types, setTypes] = useState();
     const [materials, setMaterials] = useState();
-    const [products, setProducts] = useState([]);
-    const [materialId, setMatarialId] = useState()
+    const [materialId, setMaterialId] = useState({
+        ids: ''
+    })
     const [countProduct, setCountProduct] = useState();
-    const [lineId, setLineId] = useState();
-    const [typeId, setTypeId] = useState();
+    const [lineId, setLineId] = useState({
+        ids: ''
+    });
+    const [typeId, setTypeId] = useState({
+        ids: ''
+    });
 
-    const toggleMaterialsProductsRadio = (e) => {
-        setMatarialId(e.target.value)
+    const toggleLineProductsRadio = (e, item) => {
+        const { ids } = lineId;
+        let newArr = [];
+
+        if (!ids.includes(item)) {
+            newArr = [...ids, item];
+        } else {
+            newArr = ids.filter(a => a !== item);
+        }
+        setLineId({
+            ids: newArr
+        })
     }
 
-    const toggleLinesProductsRadio = (e) => {
-        setLineId(e.target.value)
+    const toggleTypesProductsRadio = (e, item) => {
+        const { ids } = typeId;
+        let newArr = [];
+
+        if (!ids.includes(item)) {
+            newArr = [...ids, item];
+        } else {
+            newArr = ids.filter(a => a !== item);
+        }
+        setTypeId({
+            ids: newArr
+        })
     }
 
-    const toggleTypesProductsRadio = (e) => {
-        setTypeId(e.target.value)
+    const toggleMaterialsProductsRadio = (e,item) => {
+        const { ids } = materialId;
+        let newArr = [];
+
+        if (!ids.includes(item)) {
+            newArr = [...ids, item];
+        } else {
+            newArr = ids.filter(a => a !== item);
+        }
+        setMaterialId({
+            ids: newArr
+        })
     }
 
     const apiGetLines = async () => {
@@ -58,12 +93,6 @@ const ProductsByBusiness = ({match}) => {
         setMaterials(response.data.data)
     }
 
-    const apiGetProductsByBusiness = async () => {
-        const response = await Axios.get(`http://3.120.185.254:8090/api/product/list?business=${business_id}`);
-        setProducts(response.data.data)
-        setCountProduct(response.data.extra.total)
-    }
-
     let countProductsByFilter = productsByFilter.length
 
     useEffect(()=>{
@@ -72,17 +101,15 @@ const ProductsByBusiness = ({match}) => {
         apiGetMaterial();
         apiGetLines();
         dispatch(getTypesBusiness(8, 1));
-        apiGetProductsByBusiness();
     },[])
 
     useEffect(() => {
         setCartItems(cart.cartItems)
-        dispatch(getProductByFilter(lineId, typeId, materialId, business_id));
-    }, [lineId, typeId, materialId,business_id,cart.cartItems])
+        dispatch(getProductByFilterBusiness(business_id,lineId.ids, typeId.ids, materialId.ids));
+    }, [business_id,lineId.ids, typeId.ids, materialId.ids,cart.cartItems])
 
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    const currentPosts = products.slice(indexOfFirstPost, indexOfLastPost)
     const currentPostsByFilter = productsByFilter.slice(indexOfFirstPost, indexOfLastPost)
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber)
@@ -101,12 +128,11 @@ const ProductsByBusiness = ({match}) => {
                     materials={materials}
                     toggleTypesProductsRadio={toggleTypesProductsRadio}
                     toggleMaterialsProductsRadio={toggleMaterialsProductsRadio}
-                    toggleLinesProductsRadio={toggleLinesProductsRadio}
+                    toggleLinesProductsRadio={toggleLineProductsRadio}
                 />
             </div>
             <div className="Products-Quote">
                 <Products
-                    products={currentPosts}
                     nameTypeBusiness={nameTypeBusiness}
                     countProduct={countProduct}
                     productsByFilter={currentPostsByFilter}
@@ -114,7 +140,6 @@ const ProductsByBusiness = ({match}) => {
                 />
                 <Pagination
                     postsPerPage={postsPerPage}
-                    totalPosts={products.length}
                     totalPostsFilter={productsByFilter.length}
                     paginate={paginate}
                 />

@@ -38,7 +38,7 @@ const GalleryNewPaper = () => {
     }, [])
 
     const back = () => {
-        history.goBack();
+        history.replace('/noticias');
     }
 
     const settingsNewsPaper = {
@@ -69,7 +69,7 @@ const GalleryNewPaper = () => {
             <div className="container-detail_new news-search" style={{background: "#f9f9f9"}}>
                 <h2>Galería periodística</h2>
                 <p className="text">Visita nuestra galería de artículos impresos, conoce más de nosotros y de nuestro compromiso con la sociedad y le medioambiente</p>
-                
+                { showModal && <ModalView closeModal={closeModal} img={img} /> }
                 <div className="" style={{
                         position: "relative",
                         width: "100%",
@@ -97,7 +97,6 @@ const GalleryNewPaper = () => {
                         }
                     </Slider>
                 </div>
-                { showModal && <ModalView closeModal={closeModal} img={img} /> }
             </div>
             <Footer />
         </Fragment>

@@ -23,6 +23,7 @@
     "date-fns": "^2.16.1",
     "google-maps-react": "^2.0.6",
     "jquery": "^3.5.1",
+    "medium-zoom": "^1.0.6",
     "moment": "^2.29.1",
     "popper.js": "^1.16.1",
     "qs": "^6.9.4",

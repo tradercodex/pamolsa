@@ -163,7 +163,7 @@ const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communit
                     <div className="News-pm_us">
                         <div className="square-us"></div>
                         <div className="square-new">
-                            <Slider {...settingsHome} className="new-slick">
+                            <Slider {...settingsHome} className="new-slick plant">
                                 <div>
                                     <div className="container-news">
                                         <div className="info-new_slick">
@@ -249,16 +249,18 @@ const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communit
                                     <div className="info-footer_news_us">
                                         <div>
                                             <h6>Sostenibilidad</h6>
-                                            <div className="span">¡Dale vida a tus residuos con recicloplas!</div>
+                                            <div className="span">¡Dale Vida a tus residuos con Recicloplas!</div>
                                             <p>
                                                 En Recicloplas Perú, planta de reciclaje de Pamolsa , reciclamos PET posconsumo para luego  procesarlo y producir  materia prima de alta calidad que posteriormente es utilizada por Pamolsa para su transformación en productos terminados. Con esto, no solo evitamos que sean depositados en nuestros ríos, mares y rellenos sanitarios, también reducimos los requerimientos de PET virgen, lo cual significa una menor emisión de gases de efecto invernadero y un menor consumo de energía y petróleo.
                                             <br /><br />
                                             Actualmente Recicloplas  genera ingresos para más de 1,500 familias recicladoras.
+                                            <br/>
                                             De esta manera contribuimos con el medio ambiente y con la sociedad.
                                             <br /><br />
-                                                <strong style={{ fontFamily: "Amble-bold", fontSize: "18px" }}>¡Comprometidos  de verdad!</strong>
+                                                
 
                                             </p>
+                                            <strong style={{color: "#4D4D4C" ,fontFamily: "Amble-bold", fontSize: "18px" }}>¡Comprometidos  de verdad!</strong>
                                         </div>
                                     </div>
                                 </div>
@@ -382,7 +384,7 @@ const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communit
                                 </div>
                             </div>
                             <div>
-                                <div className="container-grid" style={{ marginTop: "120px", alignItems: "center" }}>
+                                <div className="container-grid community" style={{ marginTop: "120px", alignItems: "center" }}>
                                     <div className="info-container">
                                         <div className="title-green-dark-container">
                                             <h6>¡Comunidades sostenibles!</h6>
@@ -391,7 +393,7 @@ const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communit
 
                                         <span>Reduce, recicla, reúsa.</span>
                                     </div>
-                                    <Slider {...settingsReciclopas} className="new-slick work sbl">
+                                    <Slider {...settingsReciclopas} className="new-slick work sbl community table">
                                         {
                                             communities && communities.length ?
                                                 communities.map(item => (
@@ -415,7 +417,7 @@ const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communit
                             <div>
                                 <div className="container-grid" style={{ alignItems: "flex-end", paddingBottom: "0px", paddingTop: "100px" }} onClick={handleClose}>
                                     <div className="elipse-work-videos" onClick={handleClose}></div>
-                                    <Slider {...settingsActivities} className="new-slick work activity">
+                                    <Slider {...settingsActivities} className="new-slick work activity tablet">
                                         {
                                             activities && activities.length ?
                                                 activities.map(item => (
@@ -467,7 +469,7 @@ const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communit
                                     <p>Te estamos buscando</p>
                                 </div>
                             </div>
-                            <Slider {...settingsWorks} className="new-slick work">
+                            <Slider {...settingsWorks} className="new-slick work tablet">
                                 {
                                     vacants && vacants.length ?
                                         vacants.map(item => (
@@ -542,12 +544,12 @@ const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communit
                                         >Postulate aquí</button></a>
                                 </div>
                             </div>
-                            <div className="info-container" style={{ zIndex: "1", marginTop: "80px" }}>
+                            <div className="info-container" style={{ zIndex: "1", marginTop: "100px" }}>
                                 <div className="title-white-container" style={{ position: "relative", width: "250px" }}>
                                     <h6>Preguntas frecuentes</h6>
                                 </div>
                             </div>
-                            <div className="box-container" style={{ zIndex: "1", gridColumn: "4/8", marginTop: "80px", display: "flex", justifyContent: "center" }}>
+                            <div className="box-container" style={{ overflow: "scroll",zIndex: "1", gridColumn: "4/8", marginTop: "100px", display: "flex", justifyContent: "center" }}>
                                 <div className="accordion">
 
                                     <div class="container-accordion">

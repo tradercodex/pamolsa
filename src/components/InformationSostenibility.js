@@ -69,7 +69,7 @@ const InformationSostenibility = ({sostenibilidad2019,sostenibilidad2018,sosteni
                     </div>
                     <div className="objectives-sosten">
                         <Hoja />
-                        <p>Desarrollar <span>nuevas alternativas de producto que reduzcan el impacto al medio ambiente.</span></p>
+                        <p>Desarrollar <span>nuevas alternativas de producto</span> que reduzcan el impacto al medio ambiente.</p>
                     </div>
                     <div className="objectives-sosten">
                         <UsersSbl />
@@ -101,7 +101,7 @@ const InformationSostenibility = ({sostenibilidad2019,sostenibilidad2018,sosteni
             </div>
             <div style={{background: "#fff"}}>
                 <div className="">
-                    <Slider {...settingsNews} className="stb-slick">
+                    <Slider {...settingsNews} className="stb-slick tablet">
                         <div>
                             <div className="container-grid" style={{ paddingTop: "80px", paddingBottom: "80px" }}>
                                 <div className="post-sl-sbl">
@@ -134,7 +134,6 @@ const InformationSostenibility = ({sostenibilidad2019,sostenibilidad2018,sosteni
                                     <div className="info-sbl">
                                         <h4 style={{width: "520px"}}>Innovación que genera valor</h4>
                                         <img src={require('../images/img/petplus.png')} alt="bioform" />
-                                        <h6>PRIMERA LÍNEA DE EMPAQUES BIODEGRADABLES</h6>
                                         <p>Desarrollamos PET+, una tecnología que permite obtener productos con una funcionalidad superior a la de un empaque de PET tradicional utilizando hasta 50% menos de material. Adicionalmente mejora las propiedades de aislamiento térmico y la apariencia del producto.</p>
                                     </div>
                                 </div>

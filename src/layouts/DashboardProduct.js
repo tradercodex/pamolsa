@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -13,6 +13,7 @@ import { getAllProducts, deleteProduct } from '../redux/actions/product'
 import { useDispatch, useSelector } from 'react-redux';
 import EditIcon from '@material-ui/icons/Edit'
 import DeleteIcon from '@material-ui/icons/Delete'
+import Pagination from '../components/Pagination'
 
 const useStyles = makeStyles({
     root: {
@@ -30,9 +31,18 @@ const DashboardProduct = () => {
 
     const classes = useStyles();
 
+    const [currentPage, setCurrentPage] = useState(1)
+    const [postsPerPage] = useState(8)
+
     useEffect(() => {
         dispatch(getAllProducts(1));
     }, [])
+
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPostsByFilter = products.slice(indexOfFirstPost, indexOfLastPost)
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
     const deletingProduct = (id) => {
 
@@ -44,54 +54,10 @@ const DashboardProduct = () => {
         }
     }
 
+    console.log(products)
+
     return (
         <Fragment>
-            <div className="content-grid-cards">
-                <div className="card-ds">
-                    <div className="body-card">
-                        <div style={{ width: "100%" }}>
-                            <div className="img title-content-ds">
-                                <img src={require('../images/img/lineproducts.png')} alt="" />
-                                <Link>Agregar</Link>
-                            </div>
-                            <p>Tipo de línea</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="card-ds">
-                    <div className="body-card">
-                        <div style={{ width: "100%" }}>
-                            <div className="img title-content-ds">
-                                <img src={require('../images/img/lineproducts.png')} alt="" />
-                                <Link>Agregar</Link>
-                            </div>
-                            <p>Tipo de productos</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="card-ds">
-                    <div className="body-card">
-                        <div style={{ width: "100%" }}>
-                            <div className="img title-content-ds">
-                                <img src={require('../images/img/lineproducts.png')} alt="" />
-                                <Link>Agregar</Link>
-                            </div>
-                            <p>Materiales</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="card-ds">
-                    <div className="body-card">
-                        <div style={{ width: "100%" }}>
-                            <div className="img title-content-ds">
-                                <img src={require('../images/img/lineproducts.png')} alt="" />
-                                <Link>Agregar</Link>
-                            </div>
-                            <p>Tipo de línea</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div className="content-ds-fluid">
                 <div className="title-content-ds">
                     <h6>Tus productos actualmente</h6>
@@ -104,23 +70,23 @@ const DashboardProduct = () => {
                                 <Table stickyHeader aria-label="sticky table">
                                     <TableHead>
                                         <TableRow>
-                                            <TableCell style={{color: "#fff"}}>Producto</TableCell>
-                                            <TableCell style={{color: "#fff"}}>Material</TableCell>
-                                            <TableCell style={{color: "#fff"}}>Abr.Material</TableCell>
-                                            <TableCell style={{color: "#fff"}}>Editar</TableCell>
-                                            <TableCell style={{color: "#fff"}}>Eliminar</TableCell>
+                                            <TableCell style={{ color: "#fff" }}>Imagen</TableCell>
+                                            <TableCell style={{ color: "#fff" }}>Producto</TableCell>
+                                            <TableCell style={{ color: "#fff" }}>Nombre comercial</TableCell>
+                                            <TableCell style={{ color: "#fff" }}>Editar</TableCell>
+                                            <TableCell style={{ color: "#fff" }}>Eliminar</TableCell>
                                         </TableRow>
                                     </TableHead>
                                     <TableBody>
                                         {
-                                            products.map(item => {
+                                            currentPostsByFilter.map(item => {
                                                 return (
                                                     <TableRow key={item.id}>
-                                                        <TableCell style={{color: "#fff"}}>{item.name}</TableCell>
-                                                        <TableCell style={{color: "#fff"}}>{item.material.name}</TableCell>
-                                                        <TableCell style={{color: "#fff"}}>{item.material.short_name}</TableCell>
-                                                        <TableCell><Link style={{color: "#55F09D"}} to={`/administrador/productos/editar/${item.id}`}><EditIcon /></Link></TableCell>
-                                                        <TableCell><Link style={{color: "#F34F6B"}} onClick={() => deletingProduct(item.id)} to="#"><DeleteIcon /></Link></TableCell>
+                                                        <TableCell style={{ color: "#fff" }}><img width="50px" src={`http://`+item.image[0].url}/></TableCell>
+                                                        <TableCell style={{ color: "#fff" }}>{item.name}</TableCell>
+                                                        <TableCell style={{ color: "#fff" }}>{item.tradename}</TableCell>
+                                                        <TableCell><Link style={{ color: "#55F09D" }} to={`/administrador/productos/editar/${item.id}`}><EditIcon /></Link></TableCell>
+                                                        <TableCell><Link style={{ color: "#F34F6B" }} onClick={() => deletingProduct(item.id)} to="#"><DeleteIcon /></Link></TableCell>
                                                     </TableRow>
                                                 )
                                             })
@@ -131,6 +97,11 @@ const DashboardProduct = () => {
                         </Paper>
                     </div>
                 </div>
+                <Pagination
+                    postsPerPage={postsPerPage}
+                    totalPostsFilter={products.length}
+                    paginate={paginate}
+                />
             </div>
         </Fragment>
     );
