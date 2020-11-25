@@ -24,6 +24,12 @@ body {
     position: relative;
 }
 
+.container-header {
+    position: fixed;
+    z-index: 9999999;
+    width: 100%;
+}
+
 .container {
     position: relative;
     overflow: hidden;

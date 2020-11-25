@@ -54,10 +54,9 @@ const Footer = () => {
                 <div className="copy-right">
                     <div className="span">Nuestras redes</div>
                     <div className="socials">
-                        <a><img src={require('../images/img/facebook.png')} /></a>
-                        <a><img src={require('../images/img/in.png')} /></a>
-                        <a><img src={require('../images/img/twitter.png')} /></a>
-                        <a><img src={require('../images/img/instagram.png')} /></a>
+                        <a href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} /></a>
+                        <a href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} /></a>
+                        <a href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} /></a>
                     </div>
                 </div>
             </div>
