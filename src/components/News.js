@@ -214,7 +214,7 @@ const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communit
                                             <div className="square-slick">
                                             </div>
                                             <div className="img-new_slick">
-                                                <img src={require('../images/img/plantagambeta.jpg')} />
+                                                <img src={require('../images/img/plantagambeta.webp')} />
                                             </div>
                                         </div>
                                     </div>
@@ -233,7 +233,7 @@ const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communit
                                             <div className="square-slick">
                                             </div>
                                             <div className="img-new_slick">
-                                                <img src={require('../images/img/plantarecicloplas.jpg')} />
+                                                <img src={require('../images/img/plantarecicloplas.webp')} />
                                             </div>
                                         </div>
                                     </div>

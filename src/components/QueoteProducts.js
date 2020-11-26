@@ -42,7 +42,7 @@ const QuoteProducts = () => {
                         <Link to="productos/linea/4">Ver más</Link>
                     </div>
                     <div className="img-bioform_product_4">
-                        <img src={require('../images/img/bioformproducts4.png')} />
+                        <img src={require('../images/img/bioformproducts4.webp')} />
                     </div>
                 </div>
             </div>

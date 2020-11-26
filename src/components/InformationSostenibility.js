@@ -127,7 +127,7 @@ const InformationSostenibility = ({sostenibilidad2019,sostenibilidad2018,sosteni
                                     <div className="square-sl-sbl">
                                     </div>
                                     <div className="img-new_slick">
-                                        <img src={require('../images/img/petpluslider.png')} />
+                                        <img src={require('../images/img/petpluslider.webp')} />
                                     </div>
                                 </div>
                                 <div className="info-sl-sbl">
