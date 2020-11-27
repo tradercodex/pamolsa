@@ -736,7 +736,7 @@ export const getProductByFilterBusiness = (business,line_id,type_id,material_id)
     var params;
     // LINEA DE PRODUCTO
 
-    console.log(type_id)
+    console.log(business)
 
     if(business) {
         params = [['business', business]]  

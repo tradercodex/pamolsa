@@ -34,6 +34,7 @@ const ProductsByType = ({ match }) => {
     const [postsPerPage] = useState(12)
     const [lines, setLines] = useState();
     const [business, setBusiness] = useState();
+    const [search, setSearch] = useState('')
     const [material, setMaterial] = useState();
     const [products, setProducts] = useState([]);
     const [materialId, setMaterialId] = useState({
@@ -129,10 +130,16 @@ const ProductsByType = ({ match }) => {
 
     let number = Object.keys(cartItems).length
 
+    const searchPress = (e) => {
+        if(e.keyCode === 13) {
+             window.location.replace(`/productos/${e.target.value}`)
+        }
+   }
+
     return (
         <Fragment>
             <Header number={number} />
-            <MenuCategory typesBusiness={typesBusiness} typesProducts={typesProducts} />
+            <MenuCategory typesBusiness={typesBusiness} setSearch={setSearch} searchPress={searchPress} typesProducts={typesProducts} />
             <div className="Quotes-pm">
                 <div className="Sidebar-Material_Quote">
                     <SidebarProducts
@@ -153,7 +160,6 @@ const ProductsByType = ({ match }) => {
                     />
                     <Pagination
                         postsPerPage={postsPerPage}
-                        totalPosts={products.length}
                         totalPostsFilter={productsByFilter.length}
                         paginate={paginate}
                     />

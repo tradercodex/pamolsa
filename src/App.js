@@ -25,6 +25,7 @@ import { useDispatch } from 'react-redux'
 import { updateCard } from './redux/actions/cart';
 import DetailCommunity from './views/DetailCommunity';
 import NotFound from './components/NotFound'
+import ProductosBySearch from './views/ProductosBySearch'
 
 const token = localStorage.getItem('token')
 
@@ -57,6 +58,7 @@ function App() {
           <Route exact path="/productos/linea/:id" component={ProductsByLine} />
           <Route exact path="/cotizador" component={Quote} />
           <Route exact path="/productos/negocio/:name/:id" component={ProductsByBusiness} />
+          <Route exact path="/productos/:name" component={ProductosBySearch} />
           <Route exact path="/sostenibilidad" component={Sustainability} />
           <Route exact path="/trabaja-con-nosotros" component={WorkWithUs} />
           <Route exact path="/trabaja-con-nosotros/postúlate" component={Postulation} />

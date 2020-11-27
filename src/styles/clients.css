@@ -278,6 +278,10 @@ a.active svg circle {
     display: none;
 }
 
+.box-container {
+    overflow-x: hidden;
+}
+
 .uploader {
     padding: 12px 20px;
     border-radius: 30px;

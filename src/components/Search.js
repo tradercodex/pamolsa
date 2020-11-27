@@ -6,6 +6,7 @@ import FilterIcon from '../images/svg/filter'
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import MarkerSearch from '../images/svg/markersearch';
+import { useHistory } from 'react-router-dom'
 
 function getModalStyle() {
 }
@@ -24,10 +25,11 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const Search = ({ match,typesBusiness }) => {
+const Search = ({ match,typesBusiness,setSearch,searchPress }) => {
 
     const pathname = match.path
     const url = match.url
+    const history = useHistory();
 
     const classes = useStyles();
     // getModalStyle is not a pure function, we roll the style only on the first render
@@ -58,14 +60,19 @@ const Search = ({ match,typesBusiness }) => {
         </div>
     );
 
+
     return (
         <div>
             {
-                pathname === "/productos" || pathname === "/productos/:name/:id" || pathname === "/productos/:name/detail" ?
+                pathname === "/productos" || 
+                pathname === "/productos/:name/:id" || 
+                pathname === "/productos/:name/detail" || 
+                pathname === "/productos/:name"
+                ?
                     <div className="Search">
                         <div className="Search-container">
                             <SearchIcon />
-                            <input style={{padding: "15px 5px 15px 50px"}} type="text" placeholder="¿Qué producto necesitas?" />
+                            <input onKeyUp={searchPress} onChange={e => setSearch(e.target.value)} style={{padding: "15px 5px 15px 50px"}} type="text" placeholder="¿Qué producto necesitas?" />
                             <button type="button" onClick={handleOpen}><FilterIcon /></button>
                             <Modal
                                 open={open}
@@ -94,7 +101,7 @@ const Search = ({ match,typesBusiness }) => {
                     <div className="Search">
                         <div className="Search-container lines">
                             <SearchIcon />
-                            <input type="text" placeholder="¿Qué producto necesitas?" />
+                            <input name="query" type="text" onKeyUp={searchPress} onChange={e => setSearch(e.target.value)} placeholder="¿Qué producto necesitas?" />
                             <button type="button" onClick={handleOpen}><FilterIcon /></button>
                             <Modal
                                 open={open}

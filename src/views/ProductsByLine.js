@@ -25,8 +25,10 @@ const ProductByLine = ({ match }) => {
     const [cartItems, setCartItems] = useState(cart.cartItems)
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
+    const [search, setSearch] = useState('')
     const [postsPerPage] = useState(12)
     const [business, setBusiness] = useState();
+
     const [types, setTypes] = useState();
     const [materials, setMaterial] = useState();
     const [typeId, setTypeId] = useState({
@@ -67,7 +69,7 @@ const ProductByLine = ({ match }) => {
         })
     }
 
-    const toggleMaterialsProductsRadio = (e,item) => {
+    const toggleMaterialsProductsRadio = (e, item) => {
         const { ids } = materialId;
         let newArr = [];
 
@@ -112,16 +114,26 @@ const ProductByLine = ({ match }) => {
 
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    const currentPostsByFilter = productsByFilter.slice(indexOfFirstPost, indexOfLastPost)
+    const currentPostsByFilter = productsByFilter.slice(indexOfFirstPost, indexOfLastPost) 
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
     let number = Object.keys(cartItems).length
 
+    const filter = currentPostsByFilter.filter(product => {
+        return product.name.includes(search)
+    })
+
+    const searchPress = (e) => {
+        if(e.keyCode === 13) {
+             window.location.replace(`/productos/${e.target.value}`)
+        }
+   }
+
     return (
         <>
             <Header number={number} />
-            <SearchProductsByLine typesBusiness={typesBusiness} />
+            <SearchProductsByLine setSearch={setSearch} searchPress={searchPress} typesBusiness={typesBusiness} />
             <div className="Quotes-pm">
                 <div className="Sidebar-Material_Quote">
                     <SidebarProductsByLine
@@ -139,12 +151,13 @@ const ProductByLine = ({ match }) => {
                         lineFoodService={lineFoodService}
                         lineIndustrial={lineIndustrial}
                         lineAgroIndustrial={lineAgroIndustrial}
-                        productsByFilter={currentPostsByFilter}
+                        productsByFilter={filter}
                         countProductsByFilter={countProductsByFilter}
                     />
                     <Pagination
                         postsPerPage={postsPerPage}
                         totalPostsFilter={productsByFilter.length}
+                        totalFilter={filter.length}
                         paginate={paginate}
                     />
                 </div>

@@ -16,6 +16,7 @@ const Header = ({ match, number }) => {
 
     return (
         <Fragment>
+            <div style={{height: "118px", width: "100%"}}>
             <div className="container-header">
                 <div className="Call-pm" style={{ background: "#ECECEC" }}>
                     <div className="Container-header_pm">
@@ -66,6 +67,7 @@ const Header = ({ match, number }) => {
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </Fragment>
     );

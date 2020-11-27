@@ -10,6 +10,7 @@ const Products = ({
     lineIndustrial,
     lineAgroIndustrial,
     productsByFilter, 
+    nameFilter,
     toggleTypesProductsRadio,
     countProductsByFilter,
     nameTypeProduct,
@@ -26,6 +27,7 @@ const Products = ({
                 lineAgroIndustrial={lineAgroIndustrial}
                 countProduct = {countProduct}
                 countProductsByFilter={countProductsByFilter}
+                nameFilter={nameFilter}
             />
             <ProductsFilterByLine 
                 lineBioform={lineBioform} 

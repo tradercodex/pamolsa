@@ -549,7 +549,7 @@ const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communit
                                     <h6>Preguntas frecuentes</h6>
                                 </div>
                             </div>
-                            <div className="box-container" style={{ overflow: "scroll",zIndex: "1", gridColumn: "4/8", marginTop: "100px", display: "flex", justifyContent: "center" }}>
+                            <div className="box-container" style={{zIndex: "1", gridColumn: "4/8", marginTop: "100px", display: "flex", justifyContent: "center" }}>
                                 <div className="accordion">
 
                                     <div class="container-accordion">

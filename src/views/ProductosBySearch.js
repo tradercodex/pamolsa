@@ -3,15 +3,17 @@ import Header from '../components/Header'
 import SearchProductsByLine from '../components/SearchProductsByLine'
 import { useSelector,useDispatch } from 'react-redux'
 import Axios from 'axios'
-import { getTypesBusiness, getProductByFilterBusiness } from '../redux/actions/product'
+import { getTypesBusiness  } from '../redux/actions/product'
 import SidebarProductsByBusiness from '../components/SidebarProductsByBusiness'
 import Products from '../components/Products'
 import Pagination from '../components/Pagination'
+import ProductsPopulate from '../components/ProductsPopulate'
+import Footer from '../components/Footer'
 
-const ProductsByBusiness = ({match}) => {
+const ProductsBySearch = ({match}) => {
 
     const business_id = match.params.id
-    const nameTypeBusiness = match.params.name
+    const nameFilter = match.params.name
 
     const typesBusiness = useSelector(state => state.products.typesBusiness)
     const productsByFilter = useSelector(state => state.products.productsByFilter)
@@ -24,6 +26,7 @@ const ProductsByBusiness = ({match}) => {
     const [postsPerPage] = useState(12)
     const [lines, setLines] = useState();
     const [types, setTypes] = useState();
+    const [productsFilter, setProductsFilter] = useState([])
     const [materials, setMaterials] = useState();
     const [search, setSearch] = useState('')
     const [materialId, setMaterialId] = useState({
@@ -49,6 +52,8 @@ const ProductsByBusiness = ({match}) => {
             ids: newArr
         })
     }
+
+    console.log(lineId)
 
     const toggleTypesProductsRadio = (e, item) => {
         const { ids } = typeId;
@@ -78,6 +83,12 @@ const ProductsByBusiness = ({match}) => {
         })
     }
 
+    const apiGetSearch = async () => {
+        const response = await Axios.get(`http://3.120.185.254:8090/api/product/find/query?query=${nameFilter}`);
+        setProductsFilter(response.data.data)
+        console.log(response.data.data)
+    }
+
     const apiGetLines = async () => {
         const response = await Axios.get(`http://3.120.185.254:8090/api/product/line/list?business=${business_id}`);
         setLines(response.data.data)
@@ -98,13 +109,15 @@ const ProductsByBusiness = ({match}) => {
         apiGetTypes();
         apiGetMaterial();
         apiGetLines();
+        apiGetSearch();
         dispatch(getTypesBusiness(8, 1));
     },[])
 
+    console.log(productsFilter)
+
     useEffect(() => {
         setCartItems(cart.cartItems)
-        dispatch(getProductByFilterBusiness(business_id,lineId.ids, typeId.ids, materialId.ids));
-    }, [business_id,lineId.ids, typeId.ids, materialId.ids,cart.cartItems])
+    }, [cart.cartItems])
 
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -114,7 +127,7 @@ const ProductsByBusiness = ({match}) => {
 
     let number = Object.keys(cartItems).length
 
-    const countProductsByFilter = productsByFilter.length
+    const countProductsByFilter = productsFilter.length
 
     const searchPress = (e) => {
         if(e.keyCode === 13) {
@@ -125,9 +138,9 @@ const ProductsByBusiness = ({match}) => {
     return ( 
         <>
         <Header number={number} />
-        <SearchProductsByLine typesBusiness={typesBusiness} searchPress={searchPress} setSearch={setSearch} />
+        <SearchProductsByLine setSearch={setSearch} searchPress={searchPress} typesBusiness={typesBusiness} />
         <div className="Quotes-pm">
-            <div className="Sidebar-Material_Quote">
+            {/* <div className="Sidebar-Material_Quote">
                 <SidebarProductsByBusiness
                     lines={lines}
                     types={types}
@@ -136,11 +149,11 @@ const ProductsByBusiness = ({match}) => {
                     toggleMaterialsProductsRadio={toggleMaterialsProductsRadio}
                     toggleLinesProductsRadio={toggleLineProductsRadio}
                 />
-            </div>
-            <div className="Products-Quote">
+            </div> */}
+            <div className="Products-Quote" style={{gridColumn: "1/12"}}>
                 <Products
-                    nameTypeBusiness={nameTypeBusiness}     
-                    productsByFilter={ currentPostsByFilter}
+                    nameFilter={nameFilter}     
+                    productsByFilter={productsFilter || currentPostsByFilter}
                     countProductsByFilter={countProductsByFilter}
                 />
                 <Pagination
@@ -150,8 +163,10 @@ const ProductsByBusiness = ({match}) => {
                 />
             </div>
         </div>
+        <ProductsPopulate />   
+        <Footer />
         </>
      );
 }
  
-export default ProductsByBusiness;
+export default ProductsBySearch;

@@ -4,14 +4,14 @@ import '../styles/products.css'
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 
-const MenuCategory = ({match,typesProducts,typesBusiness,resetCheckbox}) => {
+const MenuCategory = ({searchPress,match,typesProducts,typesBusiness,resetCheckbox,setProductsQuery,setSearch}) => {
 
     let url = match.url
 
     return ( 
         <div className="Menu-Category_pm">
             <div>
-                <Search url={url} typesBusiness={typesBusiness} />
+                <Search searchPress={searchPress} url={url} setSearch={setSearch} setProductsQuery={setProductsQuery} typesBusiness={typesBusiness} />
                 <div className="categories-products">
                     <div className="menu-categories">
                         <ul>

@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react'
 
-const Pagination = ({ postsPerPage, totalPosts, paginate, totalPostsFilter }) => {
+const Pagination = ({ postsPerPage, paginate, totalPostsFilter, totalFilter }) => {
 
     const pageNumbers = [];
     const pageNumbersByFilter = [];
 
-    for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
+    for (let i = 1; i <= Math.ceil(totalFilter / postsPerPage); i++) {
         pageNumbers.push(i);
     }
 
@@ -13,29 +13,19 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, totalPostsFilter }) =>
         pageNumbersByFilter.push(i);
     }
 
+    console.log(totalFilter)
+
     return (
         <div>
             <ul className="pagination">
                 {
-                    pageNumbersByFilter && pageNumbersByFilter.length > 0 ?
-                        pageNumbersByFilter.map(number => (
+                    pageNumbersByFilter.map(number => (
                             <li key={number} className="page-item">
                                 <a id="paginate" onClick={() => paginate(number)} className="page-link">
                                     {number}
                                 </a>
                             </li>
-                        )) :
-                        <Fragment>
-                            {
-                                pageNumbers.map(number => (
-                                    <li key={number} className="page-item">
-                                        <a id="paginate" onClick={() => paginate(number)} className="page-link">
-                                            {number}
-                                        </a>
-                                    </li>
-                                ))
-                            }
-                        </Fragment>
+                    ))
                 }
             </ul>
         </div>

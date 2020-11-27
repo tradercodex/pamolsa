@@ -60,7 +60,7 @@ const ProductsPopulate = ({ match }) => {
                     </div> : ''
             }
             {
-                pathname === "/productos" ?
+                pathname === "/productos" || pathname === "/productos/:name" ?
                     <div className="Products-populate_pm">
                         <h4>Los más populares</h4>
                         <p>Estos son nuestros productos más vendidos</p>
