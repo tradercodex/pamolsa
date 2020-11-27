@@ -7,6 +7,7 @@ import { getTypesBusiness, getProductByFilterBusiness } from '../redux/actions/p
 import SidebarProductsByBusiness from '../components/SidebarProductsByBusiness'
 import Products from '../components/Products'
 import Pagination from '../components/Pagination'
+import Footer from '../components/Footer'
 
 const ProductsByBusiness = ({match}) => {
 
@@ -150,6 +151,7 @@ const ProductsByBusiness = ({match}) => {
                 />
             </div>
         </div>
+        <Footer />
         </>
      );
 }

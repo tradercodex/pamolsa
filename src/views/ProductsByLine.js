@@ -7,6 +7,7 @@ import Products from '../components/Products'
 import { useDispatch, useSelector } from "react-redux";
 import { getProductByFilter, getTypesBusiness } from '../redux/actions/product'
 import Pagination from '../components/Pagination';
+import Footer from '../components/Footer';
 
 const ProductByLine = ({ match }) => {
 
@@ -162,6 +163,7 @@ const ProductByLine = ({ match }) => {
                     />
                 </div>
             </div>
+            <Footer />
         </>
     );
 }

@@ -55,6 +55,5 @@ const LoadingContainer = () => {
 export default GoogleApiWrapper({
     apiKey: 'AIzaSyBLuh-I2aUKLTjf7L7ZGLuTlxCvPs0T3Bk',
     LoadingContainer: LoadingContainer
-
 })(View);
 

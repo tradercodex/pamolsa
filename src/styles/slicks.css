@@ -577,7 +577,7 @@
     }
 }
 
-@media screen and (max-height: 660px) and (max-width: 1360px) {
+@media screen and (max-height: 660px) and (max-width: 1370px) {
     .Rotate-slick::after{
         background-size: unset !important;
     }
@@ -644,7 +644,7 @@
     }
 }
 
-@media only screen and (max-width: 1360px) {
+@media only screen and (max-width: 1370px) {
     .img-new_slick_us, .img-new_slick {
         left: 120px !important;
     }

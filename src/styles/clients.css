@@ -390,18 +390,23 @@ textarea {
     width: 200px;
 }
 
+.ubications {
+    height: 600px;
+    overflow-x: scroll;
+}
+
 @media only screen and (max-width: 1440px) {
     .info-clients {
         grid-column: 2/5;
     }
     .info-client-footer {
-        margin-left: 210px;
+        margin-left: 205px;
         width: 1000px;
         bottom: -50px;
     }
 }
 
-@media only screen and (max-width: 1360px) {
+@media only screen and (max-width: 1370px) {
     .info-clients {
         grid-column: 2/5;
     }

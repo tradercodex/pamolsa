@@ -24,8 +24,6 @@ const Distributor = () => {
         history.goBack();
     }
 
-    console.log(ubications)
-
     useEffect(() => {
         getMarkertsApi();
     }, [])
@@ -38,9 +36,9 @@ const Distributor = () => {
                     <button onClick={back}><Arrow />Volver</button>
                 </div>
             </div>
-            {/* <div className="Distributor-search">
+            <div className="Distributor-search">
                 <Search />
-            </div> */}
+            </div>
             <div className="container-grid">
                 <div className="info-container">
                     <div className="title-blue-container" style={{ marginBottom: "40px" }}>
@@ -68,7 +66,9 @@ const Distributor = () => {
                                         item.phones && item.phones.length > 0 ? 
                                         item.phones.map(item => (
                                             <div className="call-ubication">
-                                                <Call /><p>{item.phone}</p>
+                                                {
+                                                    item.phone ? <><Call /><p>{item.phone}</p></> : ''
+                                                }
                                             </div>
                                         )) : ''
                                     }
