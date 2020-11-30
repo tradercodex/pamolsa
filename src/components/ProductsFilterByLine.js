@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
-import { Link, withRouter } from 'react-router-dom'
+import { Link as LinkRouter, withRouter } from 'react-router-dom'
+import { Link } from 'react-scroll'
 import '../styles/pagination.css'
 
 const ProductsFilterByLine = ({
     lineBioform,
-    products,
     productsByFilter
 }) => {
 
@@ -26,7 +26,7 @@ const ProductsFilterByLine = ({
                                             </div>
                                         )
                                     }
-                                    <Link to={`/producto/detalle/${product.id}`}>Ver más</Link>
+                                    <Link to="header" smooth={true} duration={1000} offset={-2000}><LinkRouter to={`/producto/detalle/${product.id}`}>Ver más</LinkRouter></Link>
                                 </div>
                             </div>
                         )) :
