@@ -13,8 +13,39 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 25px auto;
     max-width: 90%;
+}
+
+.Search {
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    align-items: center;
+    grid-gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.Search button.btn-back {
+    grid-column: 2/3;
+}
+
+.Search .Search-container {
+    grid-column: 3/10;
+}
+
+.Search button.btn-back {
+    background: #009FE3;
+    border-radius: 30px;
+    border: none;
+    justify-content: space-between;
+    align-items: center;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Amble';
+    font-size: 14px;
+    font-weight: bold;
+    padding: 14px 20px;
 }
 
 .Search-container button {
@@ -721,7 +752,7 @@ h2.title-choose_business {
     top: 25px;
     color: #000;
     width: 223px;
-    font-size: 20px;
+    font-size: 15px;
     font-family: 'Amble-bold';
     left: 0px;
     z-index: 1000;
@@ -747,10 +778,11 @@ h2.title-choose_business {
     max-width: 100%;
 }
 
-.products-default  a{
+.product > a {
     position: absolute;
     z-index: 3;
     right: -70px;
+    color: #fff;
     top: 140px;
     font-family: 'Amble';
     text-decoration: none;
@@ -759,10 +791,14 @@ h2.title-choose_business {
     border: 1px solid #005286;
     box-sizing: border-box;
     border-radius: 30px;
-    color: #fff;
     font-size: 15px;
     outline: none;
     padding: 7px 25px;
+}
+
+.product > a > a {
+    color: #fff;
+    text-decoration: none;
 }
 
 .products-default img {

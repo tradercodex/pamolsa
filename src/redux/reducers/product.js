@@ -9,7 +9,8 @@ import {
     GET_ALL_PRODUCTS,
     DELETE_PRODUCT,
     GET_PRODUCTS_BY_TYPE,
-    GET_PRODUCT
+    GET_PRODUCT,
+    UPDATE_PRODUCT
 } from '../actions/types'
 
 const initialState = {

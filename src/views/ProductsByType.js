@@ -113,7 +113,7 @@ const ProductsByType = ({ match }) => {
         apiGetBusiness();
         apiGetMaterial();
         dispatch(getTypesBusiness(9,1));
-        dispatch(getTypesProducts(8, 1));
+        dispatch(getTypesProducts(9, 1));
     },[])
 
     useEffect(() => {

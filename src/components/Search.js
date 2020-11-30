@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const Search = ({ match,typesBusiness,setSearch,searchPress }) => {
+const Search = ({ match,typesBusiness,setSearch,searchPress,onChangeUbication,searchPressUbication}) => {
 
     const pathname = match.path
     const url = match.url
@@ -43,6 +43,10 @@ const Search = ({ match,typesBusiness,setSearch,searchPress }) => {
     const handleClose = () => {
         setOpen(false);
     };
+
+    const goBack = () => {
+        history.goBack();
+    }
 
     const body = (
         <div style={modalStyle} className={classes.paper}>
@@ -70,6 +74,7 @@ const Search = ({ match,typesBusiness,setSearch,searchPress }) => {
                 pathname === "/productos/:name"
                 ?
                     <div className="Search">
+                        <button onClick={goBack} className="btn-back">Volver</button>
                         <div className="Search-container">
                             <SearchIcon />
                             <input onKeyUp={searchPress} onChange={e => setSearch(e.target.value)} style={{padding: "15px 5px 15px 50px"}} type="text" placeholder="¿Qué producto necesitas?" />
@@ -91,7 +96,7 @@ const Search = ({ match,typesBusiness,setSearch,searchPress }) => {
                     <div className="Search">
                         <div className="Search-container distributor">
                             <MarkerSearch />
-                            <input type="text" placeholder="Ingresa tu dirección" />
+                            <input onKeyUp={searchPressUbication}  type="text" name="ubication" onChange={onChangeUbication} placeholder="Ingresa tu distrito o departamento - Ejemplo (Callao)" />
                         </div>
                     </div> : ''
             }
@@ -99,9 +104,10 @@ const Search = ({ match,typesBusiness,setSearch,searchPress }) => {
             {
                 pathname === "/productos/linea/:id" || pathname === "/productos/negocio/:name/:id" || pathname === "/producto/detalle/:id" ?
                     <div className="Search">
+                         <button onClick={goBack} className="btn-back">Volver</button>
                         <div className="Search-container lines">
                             <SearchIcon />
-                            <input name="query" type="text" onKeyUp={searchPress} onChange={e => setSearch(e.target.value)} placeholder="¿Qué producto necesitas?" />
+                            <input style={{marginBottom: "0"}} name="query" type="text" onKeyUp={searchPress} onChange={e => setSearch(e.target.value)} placeholder="¿Qué producto necesitas?" />
                             <button type="button" onClick={handleOpen}><FilterIcon /></button>
                             <Modal
                                 open={open}

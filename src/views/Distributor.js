@@ -14,19 +14,43 @@ const Distributor = () => {
     const history = useHistory();
 
     const [ubications, setUbications] = useState([]);
+    const [ubication, setUbication] = useState([])
+    const [place, setPlace] = useState('')
+    const [longitude, setLongitude] = useState('')
+    const [latitude, setLatitude] = useState('')
 
     const getMarkertsApi = async () => {
         const res = await axios.get('http://3.120.185.254:8090/api/distributor/list');
         setUbications(res.data.data);
     }
 
+    const getApiGeode = async () => {
+        if (latitude && longitude) {
+            const res = await axios.get(`http://3.120.185.254:8090/api/distributor/find/point/close?longitude=${longitude}&latitude=${latitude}`)
+            setUbication(res.data.data)
+        }
+    }
+
     const back = () => {
         history.goBack();
     }
 
+    const onChangeUbication = (e) => {
+        setPlace(e.target.value)
+    }
+
+    const searchPressUbication = async (e) => {
+        if (e.keyCode === 13) {
+            const res = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${place}&key=AIzaSyCvcH0wnL1CUPM7DpB67vilxA_5wY1DWc0`)
+            setLatitude(res.data.results[0].geometry.location.lat || '');
+            setLongitude(res.data.results[0].geometry.location.lng || '')
+        }
+    }
+
     useEffect(() => {
         getMarkertsApi();
-    }, [])
+        getApiGeode();
+    }, [longitude, latitude])
 
     return (
         <Fragment>
@@ -37,44 +61,66 @@ const Distributor = () => {
                 </div>
             </div>
             <div className="Distributor-search">
-                <Search />
+                <Search onChangeUbication={onChangeUbication} searchPressUbication={searchPressUbication} />
             </div>
             <div className="container-grid">
                 <div className="info-container">
                     <div className="title-blue-container" style={{ marginBottom: "40px" }}>
-                        <h3>Puntos de ventas más cercano</h3>
+                        { ubication.latitude ? <h3 style={{width: "700px"}}>Se encontro un punto de venta cercano</h3> : <h3>Puntos de ventas más cercano</h3> }
                     </div>
                 </div>
             </div>
             <div className="container-grid" style={{ paddingBottom: "50px" }}>
                 <div className="info-container" style={{ gridColumn: "2/5" }}>
-                    <MapDistributor ubications={ubications} />
+                    <MapDistributor ubications={ubications} ubication={ubication} />
                 </div>
                 <div className="ubications">
                     <div>
-                    {
-                        ubications && ubications.length > 0 ?
-                            ubications.map(item => (
+                        {
+                            ubication.latitude ?
                                 <Fragment>
                                     <div className="title-ubication">
-                                        <h6>{item.name}</h6>
+                                        <h6>{ubication.name}</h6>
                                     </div>
                                     <div className="address-ubication">
-                                        <Marker /><p>{item.address}</p>
+                                        <Marker /><p>{ubication.address}</p>
                                     </div>
                                     {
-                                        item.phones && item.phones.length > 0 ? 
-                                        item.phones.map(item => (
-                                            <div className="call-ubication">
-                                                {
-                                                    item.phone ? <><Call /><p>{item.phone}</p></> : ''
-                                                }
-                                            </div>
-                                        )) : ''
+                                        ubication.phones && ubication.phones.length > 0 ?
+                                        ubication.phones.map(item => (
+                                                <div className="call-ubication">
+                                                    {
+                                                        item.phone ? <><Call /><p>{item.phone}</p></> : ''
+                                                    }
+                                                </div>
+                                            )) : ''
                                     }
+                                </Fragment> :
+                                <Fragment>
+                                {
+                                    ubications.map(item => (
+                                        <Fragment>
+                                            <div className="title-ubication">
+                                                <h6>{item.name}</h6>
+                                            </div>
+                                            <div className="address-ubication">
+                                                <Marker /><p>{item.address}</p>
+                                            </div>
+                                            {
+                                                item.phones && item.phones.length > 0 ?
+                                                    item.phones.map(item => (
+                                                        <div className="call-ubication">
+                                                            {
+                                                                item.phone ? <><Call /><p>{item.phone}</p></> : ''
+                                                            }
+                                                        </div>
+                                                    )) : ''
+                                            }
+                                        </Fragment>
+                                    ))
+                                }
                                 </Fragment>
-                            )) : ''
-                    }
+                        }
                     </div>
                 </div>
             </div>

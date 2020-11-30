@@ -13,19 +13,16 @@ import {
     getAddSubtypes,
     getMaterials,
     getTypesBusiness,
-    sendProduct
+    updateProduct
 }
     from '../redux/actions/product'
 
 const DashboardEditProduct = ({match}) => {
 
-    const { errors, handleSubmit, register, control, setValue } = useForm()
-
     const id = match.params.id
 
     const lines = useSelector(state => state.products.lineProducts)
     const types = useSelector(state => state.products.typesProducts)
-    const subTypes = useSelector(state => state.products.subTypesProducts)
     const addSubTypes = useSelector(state => state.products.addSubTypesProducts)
     const materials = useSelector(state => state.products.materials)
     const business = useSelector(state => state.products.typesBusiness)
@@ -47,10 +44,24 @@ const DashboardEditProduct = ({match}) => {
         ue_master: '',
         uee: '',
         line: '',
-        business_types: []
+        business_types: [],
+        product_type: '',
+        file: '',
+        min_quantity: '',
+        unit: '',
+        brand: '',
+        shape: '',
+        colour: '',
+        temperature: ''
     })
 
-    const getVacant = async () => {
+    const { errors, handleSubmit, register, control, setValue } = useForm({
+        defaultValues: {
+            file: product.file
+        }
+    })
+
+    const getProduct = async () => {
         const res = await axios.get(`http://3.120.185.254:8090/api/product/find?product_id=${id}`)
         console.log(res.data)
         setProduct({
@@ -64,15 +75,30 @@ const DashboardEditProduct = ({match}) => {
             ue_intern: res.data.data.ue_intern,
             ue_master: res.data.data.ue_master,
             uee: res.data.data.uee,
+            file: res.data.data.image[0].url,
+            unit: res.data.data.unit,
+            brand: res.data.data.brand,
+            colour: res.data.data.colour,
+            shape: res.data.data.shape,
+            temperature: res.data.data.temperature,
+            min_quantity: res.data.data.min_quantity,
             line: {label: res.data.data.product_line.name, value: res.data.data.product_line.id},
-            business_types: res.data.data.business_types?.map(item => ({ label: item.name, value: item.id }))
+            product_type: {label: res.data.data.product_type.name, value: res.data.data.product_type.id},
+            business_types: res.data.data.business?.map(item => ({ label: item.name, value: item.id }))
         })
         setValue("line",{label: res.data.data.product_line.name, value: res.data.data.product_line.id})
-        setValue("business", res.data.data.business_types?.map(item => ({ name: item.name, id: item.id })))
+        setValue("product_type",{label: res.data.data.product_type.name, value: res.data.data.product_type.id})
+        setValue("product_addtl_subtype",{label: res.data.data.product_addtl_subtype.name, value: res.data.data.product_addtl_subtype.id})
+        setValue("material",{label: res.data.data.material.name, value: res.data.data.material.id})
+        setValue("business", res.data.data.business?.map(item => ({ name: item.name, id: item.id })))
     }
 
-    console.log(product.business_types)
     const linesSelect = lines?.map(item => ({ label: item.name, value: item.id }))
+    const productTypeSelect = types?.map(item => ({ label: item.name, value: item.id }))
+    const addSubTypesSelect = addSubTypes?.map(item => ({ label: item.name, value: item.id }))
+    const materialSelect =  materials?.map(item => ({ label: item.name, value: item.id }))
+
+    console.log('PRODUCT FILE', product.file)
 
     useEffect(() => {
         $('#profile-image').change(function (e) {
@@ -102,12 +128,12 @@ const DashboardEditProduct = ({match}) => {
         }
 
         dispatch(getLineProducts());
-        dispatch(getTypesProducts(100, 1));
+        dispatch(getTypesProducts(9, 1));
         dispatch(getSubtypes());
         dispatch(getAddSubtypes());
         dispatch(getMaterials());
         dispatch(getTypesBusiness());
-        getVacant();
+        getProduct();
     }, [])
 
     const selectStyles = {
@@ -170,36 +196,40 @@ const DashboardEditProduct = ({match}) => {
         console.log(data)
         const formData = new FormData;
 
+        formData.append('product_id', id)
         formData.append('name', data.name);
         formData.append('code', data.code);
         formData.append('long', data.long);
-        formData.append('width\n', data.width);
+        formData.append('width', data.width);
         formData.append('diameter', data.diameter);
         formData.append('height', data.height)
         formData.append('weight', data.weight);
         formData.append('ue_intern', data.ue_intern)
         formData.append('ue_master', data.ue_master);
         formData.append('uee', data.uee);
-        formData.append('line', data.line.name);
-        formData.append('type', data.type.name)
-        formData.append('subtype', data.subtype.name);
-        formData.append('add_subtype', data.add_subtype.name)
-        formData.append('material_name', data.material_name.name)
+        formData.append('unit', data.unit)
+        formData.append('min_quantity', data.min_quantity);
+        formData.append('shape', data.shape)
+        formData.append('colour', data.colour);
+        formData.append('temperature', data.temperature);
+        formData.append('brand', data.brand);
+        formData.append('line', data.line.label);
+        formData.append('type', data.product_type.label)
+        formData.append('add_subtype', data.product_addtl_subtype.label)
+        formData.append('material_name', data.material.label)
         formData.append('material_short_name', data.material_short_name);
+        formData.append('file', data.file[0]);
         for (var i = 0; i < data.business.length; i++) {
             formData.append('business', data.business[i].name);
         }
-        for(let pic of productsImages.images){
-            formData.append('file',pic)
-        }
-        // dispatch(sendProduct(formData))
+        dispatch(updateProduct(formData))
         e.target.reset();
     }
 
     return (
         <div className="content-ds-fluid">
             <div className="title-content-ds">
-                <h6>Agregar una nueva noticia</h6>
+                <h6>Edite su producto</h6>
             </div>
             <div className="content-form">
                 <div className="">
@@ -369,6 +399,102 @@ const DashboardEditProduct = ({match}) => {
                                         />
                                     </div>
                                 </div>
+                                <div className="container-grid-ds-forms doble">
+                                    <div className="input-ds">
+                                        <div><label>Unidades</label></div>
+                                        <input
+                                            type="text"
+                                            name="unit"
+                                            defaultValue={product.unit}
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false,
+                                                    }
+                                                })
+                                            }
+                                        />
+                                    </div>
+                                    <div className="input-ds">
+                                        <div><label>Minima cantidad</label></div>
+                                        <input
+                                            type="text"
+                                            name="min_quantity"
+                                            defaultValue={product.min_quantity}
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                    </div>
+                                </div>
+                                <div className="container-grid-ds-forms doble">
+                                    <div className="input-ds">
+                                        <div><label>Forma</label></div>
+                                        <input
+                                            type="text"
+                                            name="shape"
+                                            defaultValue={product.shape}
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false,
+                                                    }
+                                                })
+                                            }
+                                        />
+                                    </div>
+                                    <div className="input-ds">
+                                        <div><label>Color</label></div>
+                                        <input
+                                            type="text"
+                                            name="colour"
+                                            defaultValue={product.colour}
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                    </div>
+                                </div>
+                                <div className="container-grid-ds-forms doble">
+                                    <div className="input-ds">
+                                        <div><label>Marca</label></div>
+                                        <input
+                                            type="text"
+                                            name="brand"
+                                            defaultValue={product.brand}
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false,
+                                                    }
+                                                })
+                                            }
+                                        />
+                                    </div>
+                                    <div className="input-ds">
+                                        <div><label>Temperatura</label></div>
+                                        <input
+                                            type="text"
+                                            name="temperature"
+                                            defaultValue={product.temperature}
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                    </div>
+                                </div>
                                 <div className="input-ds">
                                     <div>
                                         <label>Linea de producto</label>
@@ -402,11 +528,9 @@ const DashboardEditProduct = ({match}) => {
                                         as={
                                             <ReactSelect
                                                 styles={selectStyles}
-                                                options={types}
-                                                getOptionLabel={types => types.name}
-                                                getOptionValue={types => types.id}
+                                                options={productTypeSelect}
                                             />}
-                                        name="type"
+                                        name="product_type"
                                         isClearable
                                         control={control}
                                         rules={{
@@ -422,43 +546,15 @@ const DashboardEditProduct = ({match}) => {
                                 </div>
                                 <div className="input-ds" style={{ marginTop: "20px" }}>
                                     <div>
-                                        <label>Subtipo del producto</label>
-                                    </div>
-                                    <Controller
-                                        as={
-                                            <ReactSelect
-                                                styles={selectStyles}
-                                                options={subTypes}
-                                                getOptionLabel={subTypes => subTypes.name}
-                                                getOptionValue={subTypes => subTypes.id}
-                                            />}
-                                        name="subtype"
-                                        isClearable
-                                        control={control}
-                                        rules={{
-                                            required: {
-                                                value: true,
-                                                message: "Ingrese el subtipo del producto"
-                                            }
-                                        }}
-                                    />
-                                    <div className="error-ds">
-                                        {errors.subtype && errors.subtype.message}
-                                    </div>
-                                </div>
-                                <div className="input-ds" style={{ marginTop: "20px" }}>
-                                    <div>
                                         <label>Agrega un subtipo del producto</label>
                                     </div>
                                     <Controller
                                         as={
                                             <ReactSelect
                                                 styles={selectStyles}
-                                                options={addSubTypes}
-                                                getOptionLabel={addSubTypes => addSubTypes.name}
-                                                getOptionValue={addSubTypes => addSubTypes.id}
+                                                options={addSubTypesSelect}
                                             />}
-                                        name="add_subtype"
+                                        name="product_addtl_subtype"
                                         isClearable
                                         control={control}
                                         rules={{
@@ -478,11 +574,9 @@ const DashboardEditProduct = ({match}) => {
                                         as={
                                             <ReactSelect
                                                 styles={selectStyles}
-                                                options={materials}
-                                                getOptionLabel={materials => materials.name}
-                                                getOptionValue={materials => materials.id}
+                                                options={materialSelect}
                                             />}
-                                        name="material_name"
+                                        name="material"
                                         isClearable
                                         control={control}
                                         rules={{
@@ -548,26 +642,19 @@ const DashboardEditProduct = ({match}) => {
                                 <div className="input-ds" style={{ marginTop: "20px" }}>
                                     <div><label>Imagen de la noticia</label></div>
                                     <div className="img-input-ds">
-                                        <img style={{ width: "100%" }} id="imgPerfil" src={require('../images/img/uploadimage.jpg')} alt="img" />
+                                        <img style={{ width: "100%" }} id="imgPerfil" src={`http://` + product.file || require('../images/img/uploadimage.jpg')} alt="img" />
                                         <input
                                             type="file"
                                             name="file"
-                                            onChange={handleProductsImages}
+                                            // onChange={handleProductsImages}
                                             id="profile-image"
                                             accept="image/*"
-                                            ref={
-                                                register({
-                                                    required: {
-                                                        value: true,
-                                                        message: 'Ingrese la imagen de la noticia'
-                                                    }
-                                                })
-                                            }
+                                            ref={register}
                                         />
                                         <div className="error-ds">
                                             {errors.file && errors.file.message}
                                         </div>
-                                        {
+                                        {/* {
                                             productsImages.images.length > 0 ? 
                                             productsImages.images.map((item, index) => 
                                             <div key={index}>
@@ -575,7 +662,7 @@ const DashboardEditProduct = ({match}) => {
                                                 <button type="button" onClick={deleteImage(index)} className="">x</button>
                                             </div>) 
                                             : null
-                                        }
+                                        } */}
                                     </div>
                                 </div>
                             </div>

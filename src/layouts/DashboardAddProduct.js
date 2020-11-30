@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import ReactSelect from 'react-select'
 import CreatableSelect from 'react-select/creatable'
+import { useHistory } from 'react-router-dom'
 import { useForm, Controller } from 'react-hook-form'
+import {setAlert} from '../redux/actions/alert'
 import makeAnimated from 'react-select/animated';
 import $ from 'jquery'
 import '../styles/dashboard.css'
@@ -13,7 +15,8 @@ import {
     getAddSubtypes,
     getMaterials,
     getTypesBusiness,
-    sendProduct
+    sendProduct,
+    getProduct
 }
     from '../redux/actions/product'
 
@@ -21,17 +24,17 @@ const DashboardAddProduct = () => {
 
     const { errors, handleSubmit, register, control } = useForm()
 
+    const history = useHistory();
     const lines = useSelector(state => state.products.lineProducts)
     const types = useSelector(state => state.products.typesProducts)
-    const subTypes = useSelector(state => state.products.subTypesProducts)
     const addSubTypes = useSelector(state => state.products.addSubTypesProducts)
     const materials = useSelector(state => state.products.materials)
     const business = useSelector(state => state.products.typesBusiness)
     const dispatch = useDispatch();
 
-    const [productsImages, setProductsImages] = useState({
-        images: []
-    })
+    // const [productsImages, setProductsImages] = useState({
+    //     images: []
+    // })
 
     useEffect(() => {
         $('#profile-image').change(function (e) {
@@ -110,19 +113,17 @@ const DashboardAddProduct = () => {
         })
     };
 
-    const handleProductsImages = (e) => {
-        setProductsImages({
-            images: productsImages.images.concat([e.target.files[0]])
-        })
-    }
+    // const handleProductsImages = (e) => {
+    //     setProductsImages({
+    //         images: productsImages.images.concat([e.target.files[0]])
+    //     })
+    // }
 
-    console.log(productsImages)
-
-    const deleteImage = i => () => {
-        setProductsImages({
-            images: productsImages.images.filter((image, index) => i !== index)
-        })
-    }
+    // const deleteImage = i => () => {
+    //     setProductsImages({
+    //         images: productsImages.images.filter((image, index) => i !== index)
+    //     })
+    // }
 
     const sendSubmit = (data, e) => {
         console.log(data)
@@ -141,23 +142,31 @@ const DashboardAddProduct = () => {
         formData.append('uee', data.uee);
         formData.append('unit', data.unit)
         formData.append('min_quantity', data.min_quantity);
-        formData.append('shape', data.shape)
+        formData.append('shape', data.shape)    
         formData.append('colour', data.colour);
         formData.append('temperature', data.temperature);
         formData.append('brand', data.brand);
         formData.append('line', data.line.name);
-        formData.append('type', data.type.name)
-        formData.append('subtype', data.subtype.name);
+        formData.append('type', data.type.name);
         formData.append('add_subtype', data.add_subtype.name)
         formData.append('material_name', data.material_name.name)
         formData.append('material_short_name', data.material_short_name);
+        formData.append('file',data.file[0])
         for (var i = 0; i < data.business.length; i++) {
             formData.append('business', data.business[i].name);
         }
-        for (let pic of productsImages.images) {
-            formData.append('file', pic)
+        // for (let pic of productsImages.images) {
+        //     formData.append('file', pic)
+        // }
+
+        if (formData) {
+            dispatch(sendProduct(formData))
+            setTimeout(() => {
+                history.push('/administrador/productos');
+                dispatch(setAlert("Producto guardado correctamente","", 4000))
+                dispatch(getProduct(100, 1));
+            }, 2000);
         }
-        dispatch(sendProduct(formData))
         console.log(data)
         e.target.reset();
     }
@@ -165,7 +174,7 @@ const DashboardAddProduct = () => {
     return (
         <div className="content-ds-fluid">
             <div className="title-content-ds">
-                <h6>Agregar una nueva noticia</h6>
+                <h6>Agrega un nuevo producto</h6>
             </div>
             <div className="content-form">
                 <div className="">
@@ -491,37 +500,6 @@ const DashboardAddProduct = () => {
                                         {errors.type && errors.type.message}
                                     </div>
                                 </div>
-                                <div className="input-ds" style={{ marginTop: "20px" }}>
-                                    <div>
-                                        <label>Subtipo del producto</label>
-                                    </div>
-                                    <Controller
-                                        as={
-                                            <CreatableSelect
-                                                styles={selectStyles}
-                                                options={subTypes}
-                                                getOptionLabel={subTypes => subTypes.name}
-                                                getOptionValue={subTypes => subTypes.id}
-                                                getNewOptionData = { ( inputValue , optionLabel ) => ({
-                                                    id :  optionLabel ,
-                                                    name :  inputValue ,
-                                                    __isNew__ :  true 
-                                                })} 
-                                            />}
-                                        name="subtype"
-                                        isClearable
-                                        control={control}
-                                        rules={{
-                                            required: {
-                                                value: true,
-                                                message: "Ingrese el subtipo del producto"
-                                            }
-                                        }}
-                                    />
-                                    <div className="error-ds">
-                                        {errors.subtype && errors.subtype.message}
-                                    </div>
-                                </div>
                             </div>
                             <div>
                                 <div className="input-ds">
@@ -642,7 +620,7 @@ const DashboardAddProduct = () => {
                                         <input
                                             type="file"
                                             name="file"
-                                            onChange={handleProductsImages}
+                                            // onChange={handleProductsImages}
                                             id="profile-image"
                                             accept="image/*"
                                             ref={
@@ -657,15 +635,15 @@ const DashboardAddProduct = () => {
                                         <div className="error-ds">
                                             {errors.file && errors.file.message}
                                         </div>
-                                        {
+                                        {/* {
                                             productsImages.images.length > 0 ?
                                                 productsImages.images.map((item, index) =>
                                                     <div key={index}>
-                                                        {item.name}
+                                                        {item.name ? item.name : ''}
                                                         <button type="button" onClick={deleteImage(index)} className="">x</button>
                                                     </div>)
                                                 : null
-                                        }
+                                        } */}
                                     </div>
                                 </div>
                             </div>

@@ -1,12 +1,15 @@
 
 import React from 'react';
-import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react'
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react'
 import googleMapStyles from "./style";
 
 function View({
     google,
-    ubications
+    ubications,
+    ubication
 }) {
+
+    console.log(ubication)
 
     const mapStyles = {
         googleMapStyles
@@ -18,24 +21,39 @@ function View({
 
     return (
         <div>
-            <div className="Map" id="map" style={{height: "600px"}}>
-                <Map
-                    google={google}
-                    // onClick={onMapClicked}
-                    style={mapContent}
-                    styles={mapStyles.googleMapStyles.mapStyles}
-                    zoom={11}
-                    initialCenter={{ lat: -11.939772, lng: -77.069215 }}
-                >
-                    {
-                        ubications.map(item => (
+            {
+                ubication.longitude ?
+                    <div className="Map" id="map" style={{ height: "600px" }}>
+                        <Map
+                            google={google}
+                            style={mapContent}
+                            styles={mapStyles.googleMapStyles.mapStyles}
+                            zoom={6}
+                            initialCenter={{ lat: -10.939772, lng: -73.069215 }}
+                        >
                             <Marker
-                                key={item.id}
-                                position={{ lat: item.latitude, lng: item.longitude }} />
-                        ))
-                    }
-                </Map>
-            </div>
+                                key={ubication.id}
+                                position={{ lat: Number(ubication.latitude), lng: Number(ubication.longitude) }} />
+                        </Map>
+                    </div> :
+                    <div className="Map" id="map" style={{ height: "600px" }}>
+                        <Map
+                            google={google}
+                            style={mapContent}
+                            styles={mapStyles.googleMapStyles.mapStyles}
+                            zoom={6}
+                            initialCenter={{ lat: -10.939772, lng: -73.069215 }}
+                        >
+                            {
+                                ubications.map(item => (
+                                    <Marker
+                                        key={item.id}
+                                        position={{ lat: item.latitude, lng: item.longitude }} />
+                                ))
+                            }
+                        </Map>
+                    </div>
+            }
         </div>
     );
 }
@@ -53,7 +71,7 @@ const LoadingContainer = () => {
 }
 
 export default GoogleApiWrapper({
-    apiKey: 'AIzaSyBLuh-I2aUKLTjf7L7ZGLuTlxCvPs0T3Bk',
+    apiKey: 'AIzaSyCvcH0wnL1CUPM7DpB67vilxA_5wY1DWc0',
     LoadingContainer: LoadingContainer
 })(View);
 

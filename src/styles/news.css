@@ -1308,6 +1308,7 @@
     font-family: 'Amble-light';
     font-size: 14px;
     margin-top: 10px;
+    text-align: justify;
     color: #4d4d4d;
     line-height: 20px;
     padding: 20px 50px 0px 50px;
@@ -1380,7 +1381,7 @@
     font-size: 22px;
 }
 
-.newpaper-body a {
+.newpaper-body > a > a {
     font-family: 'Amble-bold';
     border: 1px solid #005286;
     background: #fff;

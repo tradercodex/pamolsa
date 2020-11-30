@@ -1,12 +1,6 @@
 import React, { Fragment } from 'react'
 import '../styles/detail.css'
-import Restaurant from '../images/svg/restaurant'
-import Bakery from '../images/svg/bakery'
-import Coffe from '../images/svg/coffe'
-import Delivery from '../images/svg/delivery'
-import Fish from '../images/svg/fish'
 import { useForm } from 'react-hook-form'
-import ProductsPopulate from '../components/ProductsPopulate'
 import { addToCart } from '../redux/actions/cart'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
@@ -122,7 +116,6 @@ const DetailProduct = ({ product }) => {
                     </div>
                 </div>
             </div>
-            <ProductsPopulate title="Productos relacionados" />
         </Fragment>
     );
 }

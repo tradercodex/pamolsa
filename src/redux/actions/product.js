@@ -19,6 +19,8 @@ import {
     GET_ALL_PRODUCTS_ERROR,
     DELETE_PRODUCT,
     DELETE_PRODUCT_ERROR,
+    UPDATE_PRODUCT,
+    UPDATE_PRODUCT_ERROR,
     GET_PRODUCTS_BY_TYPE,
     GET_PRODUCTS_BY_TYPE_ERROR,
     GET_PRODUCT,
@@ -47,6 +49,21 @@ export const sendProduct = (data) => async dispatch => {
     } catch (error) {
         dispatch({
             type: SEND_PRODUCT_ERROR
+        })
+    }
+}
+
+export const updateProduct= (data) => async dispatch => {
+    try {
+        const res = await axios.put(`${root}/product/update`,data, config);
+        console.log(res.data)
+        dispatch({
+            type: UPDATE_PRODUCT,
+            payload: res.data.data
+        })
+    } catch (error) {
+        dispatch({
+            type: UPDATE_PRODUCT_ERROR
         })
     }
 }

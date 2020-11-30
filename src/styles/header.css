@@ -160,9 +160,45 @@
       position: relative;
   }
 
+  .header-rs {
+      display: none;
+  }
+
 @media only screen and (max-width: 1440px) {
     .Container-header_pm .Nav-pm ul li {
         margin-left: 15px;
         margin-right: 15px;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .container-header, .container-header-height {
+        display: none;
+    }
+    .header-rs {
+        display: block;
+        position: fixed;
+        z-index: 9999999;
+        width: 100%;
+        background: #FFFFFF;
+    }
+    .container-header-rs {
+        position: relative;
+        max-width: 1840px;
+        margin: 0 auto;
+        display: grid;
+        align-items: center;
+        padding: 15px;
+        grid-template-columns: repeat(15, 1fr);
+    }
+    .container-header-rs .Logo-pm {
+        display: flex;
+        justify-content: center;
+        grid-column: 1/3;
+    }
+    .options-pm-rs {
+        grid-column: 13/16;
+        display: flex;
+        align-items: center;
     }
 }

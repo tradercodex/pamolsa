@@ -2,7 +2,8 @@ import React, { Fragment, useState, useEffect } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { useSelector, useDispatch } from 'react-redux'
-import { useHistory, Link } from 'react-router-dom'
+import { useHistory, Link as LinkRouter } from 'react-router-dom'
+import { Link, animateScroll as scroll } from 'react-scroll'
 import { getNewsPaper } from '../redux/actions/newpaper'
 import Arrow from '../images/svg/arrowback'
 import Slider from 'react-slick'
@@ -13,7 +14,9 @@ const GalleryNewPaper = () => {
     const history = useHistory();
 
     const newspaper = useSelector(state => state.newspaper.newspaper)
+    const cart = useSelector(state => state.cart)
 
+    const [cartItems, setCartItems] = useState(cart.cartItems)
     const [ loadingNewspaper, setLoadingNewspaper] = useState(true)
     const [showModal, setShowModal] = useState(false);
     const [img, setImg] = useState('')
@@ -33,9 +36,10 @@ const GalleryNewPaper = () => {
         setLoadingNewspaper(false)
     }
 
-    useEffect(() => {
+    useEffect(()=> {
         apiNewsPaper();
-    }, [])
+        setCartItems(cart.cartItems)
+    },[cart.cartItems])
 
     const back = () => {
         history.replace('/noticias');
@@ -58,9 +62,11 @@ const GalleryNewPaper = () => {
         return 'Loading'
     }
 
+    let number = Object.keys(cartItems).length
+
     return (
         <Fragment>
-            <Header />
+            <Header number={number}/>
             <div className="Detail-new_pm gallery-paper">
                 <div className="back">
                     <button onClick={back}><Arrow />Volver</button>
@@ -89,7 +95,7 @@ const GalleryNewPaper = () => {
                                         <div className="newpaper-body">
                                             <span>{item.created}</span>
                                             <p>{item.name_newspaper}</p>
-                                            <Link onClick={()=> zoomGallery(item.file.url)} >Visualizar</Link>
+                                            <Link to="newpaper" smooth={true} duration={1000} offset={-100}><LinkRouter onClick={()=> zoomGallery(item.file.url)} >Visualizar</LinkRouter></Link>
                                         </div>
                                     </div>
                                 </div>

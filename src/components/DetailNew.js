@@ -28,8 +28,7 @@ const DetailNew = ({title,body,source,created,place,file,author}) => {
                      <span>Lima - {created}</span>
                         <p className="text">{ReactHtmlParser(body)}</p>
                         <div className="Font text">
-                            <div>Fuente</div>
-                                <a href={source} target="_blank">{source}</a>
+                            <a href={source} target="_blank">{source}</a>
                         </div>
                     </div>
                 </div>

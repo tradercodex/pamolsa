@@ -13,13 +13,6 @@ export default function (state = initialState, action) {
             return {
                 vacants: payload
             }
-        // case UPDATE_VACANT:
-        //     return {
-        //         ...state,
-        //         vacants: state.vacants.map(vacant =>
-        //             vacant.id === payload ? (vacant = payload) : vacant 
-        //         )
-        //     }
         case DELETE_VACANT:
             return {
                 ...state,

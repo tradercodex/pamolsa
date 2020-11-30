@@ -22,7 +22,7 @@ const Products = () => {
 
      useEffect(() => {
           setCartItems(cart.cartItems)
-          dispatch(getTypesProducts(8, 1));
+          dispatch(getTypesProducts(9, 1));
           dispatch(getTypesBusiness());
      }, [cart.cartItems])
 

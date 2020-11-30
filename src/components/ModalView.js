@@ -11,7 +11,9 @@ const ModalView = ({closeModal,img}) => {
     },[])
 
     return (
-                <img style={{width: "100%"}} className="zoom" src={`http://` + img} alt=""/>
+                <div id="newpaper">
+                    <img style={{width: "100%"}} className="zoom" src={`http://` + img} alt=""/>
+                </div>
     );
 }
 
