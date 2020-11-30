@@ -20,6 +20,8 @@ const Slicks = ({ match, banners }) => {
         pauseOnHover: true
     };
 
+    console.log(banners)
+
     return (
         <Fragment>
             {
@@ -44,25 +46,8 @@ const Slicks = ({ match, banners }) => {
                                                             left: -153px;
                                                             border-radius: 191px;
                                                             transform: rotate(-21.34deg);
-
                                                         }
                                                         
-                                                        .Rotate-slick::after {
-                                                            content: '';
-                                                            z-index: 1022;
-                                                            position: absolute;
-                                                            background-blend-mode: soft-light;
-                                                            background-color: rgba(156, 167, 8, 0.1);
-                                                            background-repeat: no-repeat;
-                                                            background-size: cover;
-                                                            left: -26px;
-                                                            top: 346px;
-                                                            transform: rotate(21.34deg);
-                                                            min-width: 100%;
-                                                            height: 100%;
-                                                            background-image: url("http://${item.file.url}")
-                                                        }
-
                                                         @media (max-width: 1440px) {
                                                             .Rotate-slick::after{
                                                                 min-width: 110%;
@@ -74,25 +59,13 @@ const Slicks = ({ match, banners }) => {
 
                                                     }
                                                     <div className="Rotate-slick">
-                                                        <div className="Elipse wow animate__animated animate__fadeInLeft">
+                                                        <div className="Elipse">
                                                             {/* <img src={item.circle.url === null} alt=""/> */}
                                                         </div>
                                                         <div className="info-slick">
-                                                            <h2
-                                                                className="wow animate__animated animate__fadeInUp"
-                                                                data-wow-duration="2s"
-                                                                data-wow-delay="0.1s"
-                                                            >{item.name}</h2>
-                                                            <p
-                                                                className="wow animate__animated animate__fadeInDown"
-                                                                data-wow-duration="2s"
-                                                                data-wow-delay="0.7s"
-                                                            >{item.subname}</p>
-                                                            <div
-                                                                className="more-btn wow animate__animated animate__fadeInDown"
-                                                                data-wow-duration="2s"
-                                                                data-wow-delay="1.3s"
-                                                            >
+                                                            <h2>{item.name}</h2>
+                                                            <p>{item.subname}</p>
+                                                            <div className="more-btn">
                                                                 <Link to="/productos/linea/2">Conocer más</Link>
                                                             </div>
                                                         </div>

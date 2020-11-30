@@ -86,6 +86,7 @@
     background-size: cover;
     left: -26px;
     top: 346px;
+    background-image: url("../images/img/bannerhome.jpg");
     transform: rotate(21.34deg);
     min-width: 100%;
     height: 100%;
@@ -384,7 +385,7 @@
     position: relative;
     left: 160px;
     top: 790px;
-    z-index: 999999;
+    z-index: 99999999;
     transform: rotate(21.34deg);
 }
 
