@@ -3,7 +3,6 @@ import Sidebar from '../components/Sidebar'
 import HeaderDashboard from '../components/HeaderDashboard'
 import { withRouter } from 'react-router-dom'
 import Alert from '../components/Alert'
-import AOS from 'aos'
 import '../styles/dashboard.css'
 
 // Layouts
@@ -33,10 +32,6 @@ const token = localStorage.getItem('token')
 const Dashboard = () => {
 
     useEffect(() => {
-
-        AOS.init({
-            duration: 2000,
-        });
 
         const boton = document.getElementById('boton-sidebar')
         const html = document.getElementById('html')

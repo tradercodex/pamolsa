@@ -7,8 +7,6 @@ import { Provider } from 'react-redux'
 import store from './redux/store'
 import "slick-carousel/slick/slick-theme.css";
 import "animate.css/animate.css"
-import 'aos/dist/aos.css'
-import 'aos/dist/aos.js'
 import 'react-quill/dist/quill.snow.css';
 import 'medium-zoom/dist/medium-zoom.min.js'
 
