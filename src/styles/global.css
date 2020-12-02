@@ -88,11 +88,18 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     flex-direction: column;  
 }
 
-@media screen and (max-height: 812px) and (max-width: 414px) {
+@media screen and (max-height: 572px) and (max-width: 480px) {
     .home .container-known .info-known {
         grid-column: 1/8 !important;
         justify-content: flex-start;
         margin-left: 35px !important;
+    }
+    .Home .content-slick-home {
+        height: 95vh !important;
+    }
+    .Known-pm.home .products-known {
+        grid-column: 1/8 !important;
+        justify-content: flex-start;
     }
     .home .container-known .info-known h3 {
         width: 232px !important;
@@ -124,8 +131,8 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         margin-top: 30px;
     }
     .home .container-products_pm {
-        margin-left: 55px !important;
-        grid-gap: 20px !important;
+        margin-left: 35px !important;
+        grid-gap: 30px !important;
     }
     .home .container-title-new h6 {
         grid-column: 1/7 !important;
@@ -170,7 +177,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         grid-column: 1/8 !important;
     }
     .info-slick {
-        top: 550px !important;
+        top: 480px !important;
         left: 10px !important;
         transform: rotate(19deg) !important;
     }
@@ -187,7 +194,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         min-width: 90% !important;
     }
     .Rotate-slick::before {
-        height: 138vh !important;
+        height: 146vh !important;
         background-color: rgba(0, 82, 134, 0.3) !important;
         transform: rotate(19deg) !important;
     }
