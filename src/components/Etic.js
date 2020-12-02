@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Etic = () => {
     return (
-        <div style={{ background: "#005286", paddingTop: "100px", paddingBottom: "100px" }}>
+        <div className="etic-pro" style={{ background: "#005286", paddingTop: "100px", paddingBottom: "100px" }}>
             <div className="container-grid">
                 <div className="info-container">
                     <div className="title-white-container">

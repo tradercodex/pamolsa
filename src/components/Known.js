@@ -32,7 +32,7 @@ const Known = ({
     }
 
     return (
-        <div className="Known-pm">
+        <div className="Known-pm home">
             <div className="container-known">
                 <div className="info-known">
                     <div>

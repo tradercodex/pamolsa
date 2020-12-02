@@ -54,10 +54,11 @@ li a.category {
     border-radius: 30px;
     position: relative;
     color: #4D4D4C;
-    padding: 15px 25px;
+    padding: 15px 25px 15px 25px;
+    min-width: 170px;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
 }
 
 li a.active-category {
@@ -66,10 +67,11 @@ li a.active-category {
     position: relative;
     color: #005286;
     font-family: 'Amble-bold';
-    padding: 15px 25px;
+    padding: 15px 25px 15px 25px;
+    width: 170px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 li a.category span, li a.active-category span {

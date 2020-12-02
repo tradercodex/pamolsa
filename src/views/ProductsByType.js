@@ -108,6 +108,19 @@ const ProductsByType = ({ match }) => {
     let countProductsByFilter = productsByFilter.length
 
     useEffect(()=> {
+
+        const movilOpen = document.getElementById('movil');
+        const header = document.getElementById('header')
+        const movilClose = document.getElementById('close-movil')
+    
+        movilOpen.addEventListener('click',function(){
+            header.classList.add('movile-active')
+        })
+    
+        movilClose.addEventListener('click',function(){
+            header.classList.remove('movile-active')
+        })
+
         apiGetMaterial();
         apiGetLines();
         apiGetBusiness();

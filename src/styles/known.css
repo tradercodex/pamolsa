@@ -28,7 +28,7 @@
 .info-known p {
     width: 350px;
     margin-top: 30px;
-    font-family: 'Amble';
+    font-family: 'Amble-bold' !important;
     font-size: 20px;
     color: #4D4D4D;
 }
@@ -522,6 +522,78 @@ body.date-20201112 {
     }
 }
 
+@media screen and (max-height: 1366px) and (max-width: 1024px) {
+    .content-slick-new.new {
+        height: 55vh !important;
+    }
+    .container-gallery ,.container-view_journalists{
+        max-width: 980px;
+    }
+    .form-contact {
+        grid-column: 2/9 !important;
+        max-width: 980px;
+    }
+    .container-form_contact {
+        padding-top: 0px !important;
+    }
+    .container-form_contact .prs-clients {
+        display: none;
+    }
+    .tree-new.contact img {
+        top: 480px !important;
+    }
+    .tree-new.contact-info img {
+        width: 200px;
+        top: 100px !important;
+        left: -30px;
+    }
+    .footer-contact {
+        padding: 40px 0px !important;
+    }
+    .container-grid .market-contact , .container-grid .call-contact {
+        justify-content: flex-start !important;
+    }
+    .container-grid .call-contact {
+        grid-column: 5/8;
+    }
+    .Distributor-pm {
+        height: 20vh !important;
+    }
+    .ubications {
+        grid-column: 1/8 !important;
+        margin-top: 60px;
+        margin-left: 160px !important;
+    }
+    .container-detail_product {
+        padding-top: 40px !important;
+    }
+    .container-detail_product .img-detail_product {
+        grid-column: 1/5 !important;
+        padding-top: 40px !important;
+        justify-content: center !important;
+    }
+    .container-detail_product .detail-info {
+        grid-column: 1/5 !important;
+        padding-top: 100px;
+        margin-left: 85px;
+    }
+    .detail-info .title-detail_product h4 ,.list-detailt_product {
+        max-width: 90% !important;
+    }
+    .products-default {
+        grid-gap: 0px !important;
+    }
+    .form-wizard .wizard-fieldset.show {
+        max-width: 868px !important;
+    }
+    .container-dates , .container-quotes-products{
+        grid-column: 1/3 !important;
+    }
+    .form-wizard .form-wizard-steps li {
+        width: 45% !important;
+    }
+}
+
 @media screen and (max-height: 660px) and (max-width: 1370px) {
     .Known-pm {
         margin-top: 0px;
@@ -529,7 +601,29 @@ body.date-20201112 {
     .Known-pm .Known-pm {
         margin-top: 0px !important;
     }
+    .Slicks-pm.Us .slick-initialized .slick-slide {
+        height: 100vh !important;
+    }
 }
+
+@media screen and (min-height: 1360px) and (max-width: 1024px) {
+    .Known-pm {
+        padding-top: 100px;
+    }
+    .Known-pm .Known-pm {
+        padding-top: 0px;
+    }
+    .Rotate-slick::before {
+        height: 130%;
+    }
+    .News-pm .tree-new {
+        right: 0 !important;
+    }
+    .News-pm .tree-new.news img {
+        right: 0 !important;
+    }
+}
+
 
 @media only screen and (max-width: 1440px) {
     .container-grid .play-button_pm {

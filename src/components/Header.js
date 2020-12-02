@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom'
 import Logo from '../images/svg/logo'
 import Cart from '../images/svg/cart'
@@ -6,6 +6,8 @@ import Quote from '../images/svg/quote';
 
 import '../styles/header.css'
 import Phone from '../images/svg/phone';
+import BarMovile from '../images/svg/barmovile';
+import CloseModal from '../images/svg/closemodal';
 
 const Header = ({ match, number }) => {
 
@@ -14,21 +16,66 @@ const Header = ({ match, number }) => {
     let id = match.params.id
     let url = match.url
 
+
+    useEffect(() => {
+        const movilOpen = document.getElementById('movil');
+        const header = document.getElementById('header')
+        const movilClose = document.getElementById('close-movil')
+    
+        movilOpen.addEventListener('click',function(){
+            header.classList.add('movile-active')
+        })
+    
+        movilClose.addEventListener('click',function(){
+            header.classList.remove('movile-active')
+        })
+    }, [])
+
     return (
         <Fragment>
-            <div className="header-rs">
+            <div id="header" className="header-rs"  style={{position: "relative", height: "70px", width: "100%" }}>
                 <div className="container-header-rs">
                     <div className="Logo-pm">
                         <Link to="/"><Logo /></Link>
+                        <div className="Ecommerce-btn">
+                            <button><Cart />Ir a ecommerce</button>
+                        </div>
                     </div>
                     <div className="options-pm-rs">
                         <div className="Quote-btn">
                             <Link to="/cotizador"><Quote number={number} /></Link>
                         </div>
-                        <div className="bars">
-                            
+                        <div className="bars" id="movil">
+                            <BarMovile />
+                        </div>
+                        <div className="close-movil" id="close-movil">
+                            <CloseModal />
                         </div>
                     </div>
+                    <nav className="Nav-pm">
+                        <ul>
+                            <li><Link to="/" className={pathname === "/" || pathname === "/home/distribuidores" ? "active-mv" : ""}>Home</Link></li>
+                            <li><Link to="/nosotros" className={pathname === "/nosotros" ? "active-mv" : ""}>Nosotros</Link></li>
+                            <li><Link to="/productos"
+                                className={
+                                    pathname === "/productos" ||
+                                        url === `/productos/${rut}` ||
+                                        url === "/cotizador" ||
+                                        url === `/productos/linea/${id}` ||
+                                        url === `/productos/${rut}/${id}` ||
+                                        url === `/productos/negocio/${rut}/${id}` ||
+                                        url === `/producto/detalle/${id}`
+                                        ? "active-mv" : ""}>Productos</Link></li>
+                            <li><Link to="/sostenibilidad" className={pathname === "/sostenibilidad" || pathname === "/sostenibilidad/comunidad/:name" ? "active-mv" : ""}>Sostenibilidad</Link></li>
+                            <li><Link to="/trabaja-con-nosotros" className={pathname === "/trabaja-con-nosotros" ? "active-mv" : ""}>Trabaja con nosotros</Link></li>
+                            <li><Link to="/clientes" className={pathname === "/clientes" ? "active-mv" : ""}>Clientes</Link></li>
+                            <li><Link to="/noticias" className={
+                                pathname === "/noticias" ||
+                                    url === `/noticias/${rut}` || pathname === "/noticias/galeria-periodistica"
+                                    ? "active-mv" : ""}>Noticias</Link></li>
+                            <li><Link to="/contacto" className={pathname === "/contacto" ? "active-mv" : ""}>Contacto</Link></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
 

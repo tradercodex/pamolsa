@@ -5,7 +5,7 @@ const InformationWork = () => {
     return (
         <Fragment>
             <div className="container" style={{ background: "#F9F9F9" }}>
-                <div className="container-grid" style={{ paddingTop: "40px", alignItems: "center", paddingBottom: "100px" }}>
+                <div className="container-grid why" style={{ paddingTop: "40px", alignItems: "center", paddingBottom: "100px" }}>
                     <div className="info-pm">
                         <div>
                             <h6 style={{ color: "#8DB72E" }}>¿Por qué Pamolsa?</h6>

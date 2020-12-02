@@ -36,11 +36,6 @@ const GalleryNewPaper = () => {
         setLoadingNewspaper(false)
     }
 
-    useEffect(()=> {
-        apiNewsPaper();
-        setCartItems(cart.cartItems)
-    },[cart.cartItems])
-
     const back = () => {
         history.replace('/noticias');
     }
@@ -57,6 +52,11 @@ const GalleryNewPaper = () => {
         setImg(img)
         handleShowModal();
     }
+
+    useEffect(()=> {
+        apiNewsPaper();
+        setCartItems(cart.cartItems)
+    },[cart.cartItems])
 
     if(loadingNewspaper) {
         return 'Loading'

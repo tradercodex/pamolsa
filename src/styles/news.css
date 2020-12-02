@@ -198,7 +198,7 @@
     align-items: center;
     grid-template-columns: repeat(7,1fr);
     margin-top: 200px;
-    margin-bottom: 50px;
+    padding-bottom: 50px;
 }
 
 .slick-dots {
@@ -1532,5 +1532,14 @@
     }
     .container-grid.information .square {
         left: 0px !important;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .Map_pm {
+        padding-top: 0 !important;
+    }
+    .container-grid_img {
+        margin-top: 100px;
     }
 }

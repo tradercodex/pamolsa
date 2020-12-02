@@ -108,15 +108,15 @@
 
 .menu-categories ul {
     display: flex;
+    overflow-x: scroll;
     width: 100%;
-    justify-content: space-between;
     list-style: none;
-    margin-left: 40px;
-    margin-right: 40px;
 }
 
 .menu-categories li {
     margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .menu-categories li a {
@@ -816,5 +816,47 @@ h2.title-choose_business {
     }
     .Container-header_pm .Options-pm_qe {
         grid-column: 13/16;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .square-products ,.products-default .square-products{
+        max-width: 200px;
+        height: 200px;
+    }
+    .products-populate img {
+        max-width: 200px;
+    }
+    .products-populate {
+        margin-bottom: 80px;
+    }
+    .populate-slick .slick-next ,.populate-slick .slick-prev {
+        top: 150px;
+    }
+    .product > a {
+        right: -20px;
+    }
+    .square-sl-sbl {
+        width: 487px;
+        height: 343px;
+        left: 190px !important;
+    }
+    .info-sl-sbl p {
+        margin-top: 10px !important;
+    }
+    .square-img-card {
+        right: -120px !important;
+    }
+    .square-pet-sbl {
+        left: 60px;
+    }
+    .new-slick.work.sbl.community.table .slick-dots {
+        left: -370px !important;
+    }
+    .square-pet-sbl.activity {
+        left: 170px !important;
+    }
+    .new-slick.work.activity.tablet .slick-dots {
+        left: 630px !important;
     }
 }

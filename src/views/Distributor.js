@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom'
 import Header from '../components/Header';
+import { useSelector } from 'react-redux'
 import Search from '../components/Search'
 import '../styles/distributor.css'
 import Arrow from '../images/svg/arrowback';
@@ -12,12 +13,14 @@ import Call from '../images/svg/call';
 const Distributor = () => {
 
     const history = useHistory();
+    const cart = useSelector(state => state.cart)
 
     const [ubications, setUbications] = useState([]);
     const [ubication, setUbication] = useState([])
     const [place, setPlace] = useState('')
     const [longitude, setLongitude] = useState('')
     const [latitude, setLatitude] = useState('')
+    const [cartItems, setCartItems] = useState(cart.cartItems)
 
     const getMarkertsApi = async () => {
         const res = await axios.get('http://3.120.185.254:8090/api/distributor/list');
@@ -48,13 +51,29 @@ const Distributor = () => {
     }
 
     useEffect(() => {
+
+        const movilOpen = document.getElementById('movil');
+        const header = document.getElementById('header')
+        const movilClose = document.getElementById('close-movil')
+    
+        movilOpen.addEventListener('click',function(){
+            header.classList.add('movile-active')
+        })
+    
+        movilClose.addEventListener('click',function(){
+            header.classList.remove('movile-active')
+        })
+
         getMarkertsApi();
         getApiGeode();
-    }, [longitude, latitude])
+        setCartItems(cart.cartItems)
+    }, [longitude, latitude,cart.cartItems])
+
+    let number = Object.keys(cartItems).length
 
     return (
         <Fragment>
-            <Header />
+            <Header number={number}/>
             <div className="Distributor-pm">
                 <div className="back">
                     <button onClick={back}><Arrow />Volver</button>

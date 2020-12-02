@@ -14,7 +14,7 @@ import StbNews from '../images/svg/sostenibilitynews';
 import ReactHtmlParser from 'react-html-parser'
 import ReactPlayer from 'react-player/lazy'
 
-const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communities, activities, closeVideoModal, handleShowVideoModal, showVideoModal }) => {
+const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communities, activities, closeVideoModal, handleShowVideoModal, showVideoModal }) => {
     let modalRef = null;
     let pathname = match.path
 
@@ -49,12 +49,27 @@ const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communit
         slidesToScroll: 1,
         responsive: [
             {
-                breakpoint: 1440,
+                breakpoint: 1024,
                 settings: {
-                    slidesToShow: 1.5,
+                    slidesToShow: 1,
                     slidesToScroll: 1,
                     infinite: true,
                     dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
                 }
             }
         ],
@@ -79,6 +94,7 @@ const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communit
         autoplay: false,
         autoplaySpeed: 2000,
         pauseOnHover: true,
+
         appendDots: dots => (
             <div
                 style={{
@@ -90,6 +106,32 @@ const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communit
                 <ul style={{ margin: "0px" }}> {dots} </ul>
             </div>
         ),
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
     };
 
     const settingsActivities = {
@@ -129,7 +171,7 @@ const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communit
                             <img src={require('../images/img/tree.gif')} />
                         </div>
                         <div className="square-new"></div>
-                        <Slider {...settingsHome} className="new-slick">
+                        <Slider {...settingsHome} className="new-slick tablet">
                             {
                                 news && news.length > 0 ?
                                     news.map(item => (
@@ -163,7 +205,7 @@ const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communit
                     <div className="News-pm_us">
                         <div className="square-us"></div>
                         <div className="square-new">
-                            <Slider {...settingsHome} className="new-slick plant">
+                            <Slider {...settingsHome} className="new-slick plant tablet">
                                 <div>
                                     <div className="container-news">
                                         <div className="info-new_slick">
@@ -254,13 +296,13 @@ const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communit
                                                 En Recicloplas Perú, planta de reciclaje de Pamolsa , reciclamos PET posconsumo para luego  procesarlo y producir  materia prima de alta calidad que posteriormente es utilizada por Pamolsa para su transformación en productos terminados. Con esto, no solo evitamos que sean depositados en nuestros ríos, mares y rellenos sanitarios, también reducimos los requerimientos de PET virgen, lo cual significa una menor emisión de gases de efecto invernadero y un menor consumo de energía y petróleo.
                                             <br /><br />
                                             Actualmente Recicloplas  genera ingresos para más de 1,500 familias recicladoras.
-                                            <br/>
+                                            <br />
                                             De esta manera contribuimos con el medio ambiente y con la sociedad.
                                             <br /><br />
-                                                
+
 
                                             </p>
-                                            <strong style={{color: "#4D4D4C" ,fontFamily: "Amble-bold", fontSize: "18px" }}>¡Comprometidos  de verdad!</strong>
+                                            <strong style={{ color: "#4D4D4C", fontFamily: "Amble-bold", fontSize: "18px" }}>¡Comprometidos  de verdad!</strong>
                                         </div>
                                     </div>
                                 </div>
@@ -286,7 +328,7 @@ const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communit
                                         <span style={{ fontFamily: "Amble-bold", color: "#4D4D4C", fontSize: "16px" }}>¡COMPROMETIDOS DE VERDAD!</span>
                                     </div>
                                 </div>
-                                
+
                                 <div className="play-known">
                                     <div className="square"></div>
                                     <div className="img-video_known">
@@ -305,7 +347,7 @@ const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communit
                                 }
                             </div>
                             <div>
-                                <div className="container-grid" style={{ paddingTop: "80px", paddingBottom: "80px" }}>
+                                <div className="container-grid pet" style={{ paddingTop: "80px", paddingBottom: "80px" }}>
                                     <div className="post-pet-sbl">
                                         <div className="square-pet-sbl">
                                         </div>
@@ -354,7 +396,7 @@ const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communit
                                 </div>
                             </div>
                             <div>
-                                <div className="container-grid" style={{ marginTop: "80px", alignItems: "center" }}>
+                                <div className="container-grid tonel" style={{ marginTop: "80px", alignItems: "center" }}>
                                     <div className="info-container">
                                         <div className="title-green-container">
                                             <h6>Toneladas de PET procesado</h6>
@@ -367,7 +409,7 @@ const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communit
                                 </div>
                             </div>
                             <div>
-                                <div className="container-grid" style={{ marginTop: "120px", alignItems: "center" }}>
+                                <div className="container-grid first" style={{ marginTop: "120px", alignItems: "center" }}>
                                     <div className="info-container">
                                         <div className="title-green-dark-container">
                                             <h6>Acuerdo de Producción Limpia</h6>
@@ -405,7 +447,7 @@ const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communit
                                                             <div className="card-body">
                                                                 <h6>{item.title}</h6>
                                                                 <p>{ReactHtmlParser((item.description).substring(0, 110) + '...')}</p>
-                                                                <Link to={`/sostenibilidad/comunidad/${item.id}`} style={{marginTop:"0px"}}>Ver más</Link>
+                                                                <Link to={`/sostenibilidad/comunidad/${item.id}`} style={{ marginTop: "0px" }}>Ver más</Link>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -415,7 +457,7 @@ const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communit
                                 </div>
                             </div>
                             <div>
-                                <div className="container-grid" style={{ alignItems: "flex-end", paddingBottom: "0px", paddingTop: "100px" }} onClick={handleClose}>
+                                <div className="container-grid videos" style={{ alignItems: "flex-end", paddingBottom: "0px", paddingTop: "100px" }} onClick={handleClose}>
                                     <div className="elipse-work-videos" onClick={handleClose}></div>
                                     <Slider {...settingsActivities} className="new-slick work activity tablet">
                                         {
@@ -451,8 +493,8 @@ const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communit
             }
             {
                 pathname === "/trabaja-con-nosotros" ?
-                    <div className="container" style={{ background: "#F9F9F9" }}>
-                        <div className="square-new" style={{ top: "0", height: "1994px" }}></div>
+                    <div className="container workwithme" style={{ background: "#F9F9F9" }}>
+                        <div className="square-new workwithme" style={{ top: "0", height: "1994px" }}></div>
                         <div className="container-grid work" style={{ paddingTop: "260px" }}>
                             <div className="info-new_slick"
                                 style={{
@@ -489,7 +531,7 @@ const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communit
                                 }
                             </Slider>
                         </div>
-                        <div className="container-grid" style={{ paddingBottom: "10px", paddingTop: "10px" }}>
+                        <div className="container-grid elipse" style={{ paddingBottom: "10px", paddingTop: "10px" }}>
                             <ElipseBlue />
                             <div className="play-known" style={{ gridColumn: "2/4", left: "0px", zIndex: "1", top: "0px" }}>
                                 <div className="square" style={{ background: "#1F6795" }}></div>
@@ -549,7 +591,7 @@ const News = ({ handleShowVideoModalSostenibility,match, vacants, news, communit
                                     <h6>Preguntas frecuentes</h6>
                                 </div>
                             </div>
-                            <div className="box-container" style={{zIndex: "1", gridColumn: "4/8", marginTop: "100px", display: "flex", justifyContent: "center" }}>
+                            <div className="box-container" style={{ zIndex: "1", gridColumn: "4/8", marginTop: "100px", display: "flex", justifyContent: "center" }}>
                                 <div className="accordion">
 
                                     <div class="container-accordion">

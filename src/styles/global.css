@@ -87,3 +87,141 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
 .content-login {
     flex-direction: column;  
 }
+
+@media screen and (max-height: 812px) and (max-width: 414px) {
+    .home .container-known .info-known {
+        grid-column: 1/8 !important;
+        justify-content: flex-start;
+        margin-left: 35px !important;
+    }
+    .home .container-known .info-known h3 {
+        width: 232px !important;
+        line-height: 25px !important;
+    }
+    .home .container-known .info-known p ,.bioform-pm p, .line-products_pm p, .material-pm p, .use-app_pm p {
+        font-size: 14px !important;
+    }
+    .bioform-pm p, .line-products_pm p, .material-pm p, .use-app_pm p {
+        top: 40px !important;
+    }
+    .bioform-pm::after, .line-products_pm::after, .material-pm::after, .use-app_pm::after {
+        height: 97% !important;
+    }
+    .Known-pm.home .container-products_pm img {
+        width: 144px !important;
+        height: 104px !important;
+        border-radius: 20px !important;
+    }
+    .line-products_pm::after {
+        height: 97% !important;
+        top: 2px !important;
+    }
+    .material-pm::after {
+        height: 97% !important;
+        top: 2px !important;
+    }
+    .home .products-known {
+        margin-top: 30px;
+    }
+    .home .container-products_pm {
+        margin-left: 55px !important;
+        grid-gap: 20px !important;
+    }
+    .home .container-title-new h6 {
+        grid-column: 1/7 !important;
+    }
+    .home .container-known {
+        padding-bottom: 40px !important;
+    }
+    .container-products_business svg {
+        width: 79px !important;
+        height: 79px !important;
+        margin: 0 !important;
+    }
+    .container-products_business p {
+        font-size: 13px !important;
+    }
+    .Known-pm.home .container-products_business div {
+        margin-left: 8px !important;
+        text-align: center;
+    }
+    .Known-pm.home .container-products_business {
+        margin-left: 15px !important;
+        width: 100% !important;
+        grid-column: 1/8 !important;
+        margin-top: 30px !important;
+    }
+    .bioform-pm::after, .line-products_pm::after, .material-pm::after, .use-app_pm::after {
+        border-radius: 20px !important;
+    }
+    .container-title-new h6 {
+        grid-column: 1/8 !important;
+        font-size: 22px !important;
+        width: 204px !important;
+    }
+    .info-known h3 {
+        font-size: 22px !important;
+    }
+    .options-pm-rs {
+        grid-column: 10/16 !important;
+        justify-content: flex-end !important;
+    }
+    .container-header-rs .Logo-pm {
+        grid-column: 1/8 !important;
+    }
+    .info-slick {
+        top: 550px !important;
+        left: 10px !important;
+        transform: rotate(19deg) !important;
+    }
+    .info-slick h2 {
+        font-size: 30px !important;
+        width: 223px !important;
+    }
+    .info-slick p {
+        font-size: 14px !important;
+    }
+    .Rotate-slick.s-1784208310::after, .s-1784208310 .Rotate-slick::after {
+        min-height: 15% !important;
+        background-size: unset !important;
+        min-width: 90% !important;
+    }
+    .Rotate-slick::before {
+        height: 138vh !important;
+        background-color: rgba(0, 82, 134, 0.3) !important;
+        transform: rotate(19deg) !important;
+    }
+    .Rotate-slick.s-1784208310, .s-1784208310 .Rotate-slick {
+        height: 87vh !important;
+        left: -80px !important;
+        top: -380px !important;
+        transform: rotate(-19deg) !important;
+        border-radius: 60px !important;
+    }
+    .Rotate-slick::after {
+        height: 85vh !important;
+        left: -40px !important;
+        background-size: unset !important;
+        transform: rotate(19deg) !important;
+    }
+    .Radius {
+        height: 80vh !important;
+        left: -110px !important;
+        transform: rotate(-19deg) !important;
+        border-radius: 60px !important;
+    }
+    .tree-pm.banner img {
+        top: 140px !important;
+        left: -50px !important;
+        width: 150px !important;
+    }
+    .content-slick-home {
+        height: 85vh !important;
+    }
+    .container-distributor .info-distributor_hm, .container-distributor .img-distributor_hm {
+        grid-column: 1/8 !important;
+    }
+    .container-distributor .info-distributor_hm h3 {
+        font-size: 22px !important;
+    }
+}
