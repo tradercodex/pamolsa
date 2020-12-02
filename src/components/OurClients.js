@@ -138,7 +138,7 @@ const OurClients = () => {
                                 data-wow-duration="2s"
                                 data-wow-delay="1.8s">
                                 <div className="img">
-                                    <img src={require('../images/img/client3.jpg')} />
+                                    <img src={require('../images/img/client3.webp')} />
                                 </div>
                             </div>
                         </div>
@@ -182,7 +182,7 @@ const OurClients = () => {
                                 data-wow-duration="2s"
                                 data-wow-delay="1.8s">
                                 <div className="img">
-                                    <img src={require('../images/img/client2.jpg')} />
+                                    <img src={require('../images/img/client2.webp')} />
                                 </div>
                             </div>
                         </div>
