@@ -88,7 +88,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     flex-direction: column;  
 }
 
-@media screen and (max-height: 572px) and (max-width: 480px) {
+@media screen and (max-height: 572px) and (max-width: 510px) {
     .home .container-known .info-known {
         grid-column: 1/8 !important;
         justify-content: flex-start;

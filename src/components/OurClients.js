@@ -116,7 +116,7 @@ const OurClients = () => {
                                 data-wow-duration="2s"
                                 data-wow-delay="1.8s">
                                 <div className="img">
-                                    <img src={require('../images/img/client4.jpg')} />
+                                    <img src={require('../images/img/client4.webp')} />
                                 </div>
                             </div>
                         </div>
