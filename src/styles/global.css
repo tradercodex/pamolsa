@@ -101,6 +101,27 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .Home .content-slick-home {
         height: 95vh !important;
     }
+    .container-grid.clients-page .info-clients  {
+        margin-left: 35px !important;
+        padding-bottom: 128px !important;
+        grid-column: 1/8 !important;
+    }
+    .container-clients .title-client {
+        grid-column: 1/8 !important;
+        margin-left: 35px !important;
+    }
+    .container-grid.clients-page .info-clients h2 {
+        font-size: 22px !important;
+    }
+    .container-grid.clients-page .info-clients p {
+        max-width: 400px !important;
+    }
+    .container .container-grid.clients-page .info-client-footer {
+        margin-left: 35px !important;
+    }
+    .container .container-grid.clients-page .info-client-footer p {
+        max-width: 400px !important;
+    }
     .Known-pm.home .products-known {
         grid-column: 1/8 !important;
         justify-content: flex-start;
@@ -642,7 +663,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         top: -680px !important;
         left: -100px !important;
         transform: rotate(-19deg) !important;
-        height: 99vh !important;
+        height: 102vh !important;
     }
     .Rotate-slick.Us::after {
         transform: rotate(19deg) !important;

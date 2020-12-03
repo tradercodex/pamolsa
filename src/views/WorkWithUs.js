@@ -39,11 +39,13 @@ const WorkWithUs = () => {
 
     return (
         <Fragment>
+            <div className="page-new">
             <Header number={number} />
             <Slicks />
             <InformationWork />
             <News vacants={vacants} />
             <Footer />
+            </div>
         </Fragment>
     );
 }
