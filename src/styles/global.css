@@ -92,7 +92,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     display: none;
 }
 
-@media screen and (max-height: 1064px) and (max-width: 720px) {
+@media screen and (max-height: 1064px) and (max-width: 491px) {
     .home .container-known .info-known {
         grid-column: 1/8 !important;
         justify-content: flex-start;
@@ -115,11 +115,34 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .bioform-pm p, .line-products_pm p, .material-pm p, .use-app_pm p {
         top: 80px !important;
     }
-    .square-distributor ,.container-known_video .play-known .square ,.tablet .container-news .square-slick , .wc .square-carbajal 
-    ,.card-about .square.us{
+    .square-sl-sbl,.square-distributor ,.container-known_video .play-known .square ,.tablet .container-news .square-slick , .wc .square-carbajal 
+    ,.card-about .square.us ,.container-grid .play-known .square{
         max-width: 380px;
         max-height: 280px;
+        border-radius: 30px !important;
         left: -20px !important;
+    }
+    .img-video_known .img img ,.img-video_known .img::after {
+        border-radius: 30px !important;
+    }
+    .post-sl-sbl .square-sl-sbl {
+        left: 20px !important;
+        top: 60px;
+    }
+    .container .container-grid.why .play-button_pm {
+        top: 250px !important;
+        right: 40px !important;
+    }
+    .container-grid.first .square-img-card {
+        max-width: 380px !important;
+        max-height: 280px;
+        left: 20px !important;
+    }
+    .container-grid .play-known .square {
+        left: 20px !important;
+    }
+    .container-grid.pet .info-pet-sbl {
+        margin-left: 35px !important;
     }
     .wc .square-carbajal  {
         transform: rotate(-9.08deg) !important;
@@ -130,6 +153,102 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         width: 300px !important;
         border-radius: 30px !important;
         left: -20px !important;
+    }
+    .flex-pet-sbl {
+        flex-wrap: wrap;
+        text-align: left !important;
+    }
+    .info-pet-sbl {
+        right: 0px !important;
+    }
+    .flex-pet-sbl > div {
+        padding: 10px;
+        margin-left: 0px !important;
+    }
+    .container .container-grid.work .info-new_slick {
+        margin-left: 35px !important;
+    }
+    .container-grid.why .play-known .square {
+        left: 20px !important;
+    }
+    .container-grid.tonel .info-container , .container-grid.first .info-container ,
+    .container-grid.community .info-container,.container-grid.information .certifications-companies {
+        grid-column: 1/8 !important;
+        margin-left: 35px !important;
+    }
+    .container-grid.information .certifications-companies .info-container {
+        right: 0 !important;
+    }
+    .container-grid.information .certifications-companies .info-container p {
+        font-size: 14px !important;
+        max-width: 400px !important;
+    }
+    .container-grid.work .card-work {
+        max-width: 400px !important;
+    }
+    .container-grid.work .slick-slide img {
+        width: 100%;
+    }
+    .container-grid.elipse h6 {
+        margin-top: 30px !important;
+        font-size: 22px !important ;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .container-grid.elipse p {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .container-grid.elipse .play-known.elipse .square {
+        left: 25px !important;
+    }
+    .container-grid.information .play-known.info .square {
+        left: 20px !important;
+    }
+    .container-grid.information .certifications-companies {
+        justify-content: flex-start !important;
+    }
+    .container-grid.elipse .info-container.question ,.container-grid.elipse .box-container.question {
+        grid-column: 1/8 !important;
+        margin-left: 35px !important;
+        justify-content: flex-start !important;
+    }
+    .container-grid.elipse .box-container.question {
+        max-width: 380px !important;
+    }
+    .card-work {
+        margin-left: 0px !important;
+        max-width: 400px !important;
+    }
+    .post-pet-sbl.activity .img-new_slick.activity {
+        max-width: 300px !important ;
+        max-height: 400px !important;
+        left: 0px !important;
+    }
+    .post-pet-sbl.activity .square-pet-sbl.activity {
+        max-width: 300px !important ;
+        max-height: 400px !important;
+    }
+    .container-grid.videos .slick-list .square-pet-sbl.activity {
+        top: 50px !important;
+        left: 40px !important;
+    }
+    .flex-pet-sbl > div > div {
+        margin-bottom: 30px !important;
+    }
+    .container-grid.videos  {
+        padding-top: 0px !important;
+    }
+    .container-grid.videos .new-slick.work.activity .info-post-activity {
+        grid-row: 1/2 !important;
+    }
+    .container-grid.videos .new-slick.work.activity .slick-slide > div > div { 
+        display: block !important;
+        margin-left: 0px !important;
+    }
+    .container-grid.videos .play-button_pm.activity {
+        left: 250px !important;
+        top: 300px !important;
     }
     .img-about_us .img img ,.img-about_us .img::after{
         border-radius: 30px !important;
@@ -224,6 +343,9 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         grid-column: 1/8 !important;
         margin-left: 35px !important;
     }
+    .container-grid.sbl .info-pm {
+        margin-left: 35px !important;
+    }
     .etic-pro .info-container p {
         font-size: 12px !important;
     }
@@ -233,12 +355,16 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .Footer-news_us .info-footer_news_us p {
         max-width: 400px !important;
     }
-    .Footer-news_us .info-footer_news_us{
+    .Footer-news_us .info-footer_news_us ,.container-grid.why .info-pm{ 
         grid-column: 1/8 !important;
         margin-left: 35px;
     }
-    .About-us_pm .info-about p {
+    .About-us_pm .info-about p ,.container-grid.why .info-pm p {
         max-width: 400px !important;
+    }
+    .container-grid.why .square {
+        left: 20px !important;
+        border-radius: 30px !important;
     }
     .img-carbajal.about {
         margin-left: 50px !important;
@@ -255,7 +381,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         height: 100% !important;
         top: 2px !important;
     }
-    .info-known_our h4 {
+    .info-known_our h4 ,.info-pm h6 ,.info-post-activity p{
         font-size: 22px !important;
     }
     .material-pm::after {
@@ -317,7 +443,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         font-size: 18px !important;
         line-height: 20px !important;
     }
-    .container-informations .info-map_pm.title h6 {
+    .container-informations .info-map_pm.title h6 ,.info-container .title-green-dark-container h6 {
         font-size: 22px !important;
     }
     .bioform-pm::after, .line-products_pm::after, .material-pm::after, .use-app_pm::after {
@@ -437,7 +563,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         position: fixed !important;
     }
     /* Titulos */
-    .info-certifications h6 ,.info-new_slick h4,.title-client h4 ,.info-footer_news_us h6 {
+    .info-certifications h6 ,.info-new_slick h4,.title-client h4 ,.info-footer_news_us h6,.Container-sb_pm h2 {
         font-size: 22px !important;
     }
     .info-certifications span ,.info-new_slick h6, .certifications-companies h6.companies-title, .certifications-companies h6.companies-title_second,
@@ -459,8 +585,53 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .Slicks-pm .info-slick.Us {
         top: 850px !important;
     }
-    .img-footer_new_us svg {
+    .img-footer_new_us svg ,.Container-sb_pm .header-title p {
         max-width: 400px !important;
+    }
+    .Container-sb_pm {
+        padding-top: 20px !important;
+    }
+    .container-grid .title-container {
+        grid-column: 1/8 !important;
+        margin-left: 35px !important;
+        font-size: 22px !important;
+    }
+    .container-grid .info-informs ,.informs-pdfs {
+        grid-column: 1/8 !important;
+        margin-left: 35px !important;
+    }
+    .informs-pdfs {
+        margin-top: 40px !important;
+    }
+    .info-informs h2 ,.info-sbl h4{
+        font-size: 22px !important;
+    }
+    .info-informs p {
+        max-width: 400px !important;
+    }
+    .container-grid .info-sl-sbl {
+        padding: 0px !important;
+        margin-left: 30px !important;
+        justify-content: flex-start;
+    }
+    .info-sl-sbl p {
+        max-width: 400px !important;
+    }
+    .box-informs-pdf {
+        width: 90% !important;
+    }
+    .objetives {
+        justify-content: center !important;
+    }
+    .objectives-sosten {
+        margin: 30px 10px !important;
+    }
+    .models-sb {
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+    .Container-sb_pm .header-title p {
+        text-align: left !important;
     }
     .info-slick p, .info-slick_us p, .info-slick_sb p, .info-slick_wwu p, .info-slick_clts p, .info-slick_news p {
         font-family: 'Amble-Bold' !important;

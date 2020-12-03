@@ -27,7 +27,7 @@ const InformationWork = () => {
             </div>
             <div>
                 <div className="container-grid information">
-                    <div className="play-known" style={{ gridColumn: "1/4",display:"flex",justifyContent: "center",paddingBottom: "50px" }}>
+                    <div className="play-known info" style={{ gridColumn: "1/4",display:"flex",justifyContent: "center",paddingBottom: "50px" }}>
                         <div className="square" style={{left: "120px"}}></div>
                         <div className="img-video_known">
                             <div className="img">

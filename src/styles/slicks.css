@@ -1161,11 +1161,24 @@
         margin-left: 30px !important;
         margin-top: 60px;
     }
-    .container-grid.videos .post-pet-sbl.activity {
+    .container-grid.videos .post-pet-sbl.activity , .container-grid.videos .new-slick.work.activity.tablet {
         display: block;
+        width: 100% !important;
         grid-column: 1/8 !important;
         padding-top: 0px !important;
         padding-bottom: 180px !important;
+    }
+    .container-grid.videos .slick-initialized .slick-slide > div {
+        width: 100% !important;
+    }
+    .container-grid.videos .new-slick.work.activity {
+        right: 0px !important;
+    }
+    .container-grid.videos .new-slick.work.activity.tablet .slick-dots {
+        left: 0px !important;
+    }
+    .container-grid.videos .new-slick.work.activity.tablet {
+        padding-bottom: 10px !important;
     }
     .new-slick.work.activity .slick-slide > div > div {
         display: block !important;

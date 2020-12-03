@@ -121,7 +121,32 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
         autoplay: false,
         autoplaySpeed: 2000,
         pauseOnHover: true,
-
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ],
         appendDots: dots => (
             <div
                 style={{
@@ -385,7 +410,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                     <div className="info-pet-sbl">
                                         <div className="info-sbl" style={{ right: "0px" }}>
                                             <h4>Así cerramos el ciclo del PET en Perú</h4>
-                                            <div className="" style={{ display: "flex", justifyContent: "space-between", textAlign: "center", marginTop: "40px" }}>
+                                            <div className="flex-pet-sbl" style={{ display: "flex", justifyContent: "space-between", textAlign: "center", marginTop: "40px" }}>
                                                 <div>
                                                     <div style={{ marginBottom: "80px" }}>
                                                         <div className="bold">+180 millones</div>
@@ -560,7 +585,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                         </div>
                         <div className="container-grid elipse" style={{ paddingBottom: "10px", paddingTop: "10px" }}>
                             <ElipseBlue />
-                            <div className="play-known" style={{ gridColumn: "2/4", left: "0px", zIndex: "1", top: "0px" }}>
+                            <div className="play-known elipse" style={{ gridColumn: "2/4", left: "0px", zIndex: "1", top: "0px" }}>
                                 <div className="square" style={{ background: "#1F6795" }}></div>
                                 <div className="img-video_known">
                                     <div className="img">
@@ -613,12 +638,12 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                         >Postulate aquí</button></a>
                                 </div>
                             </div>
-                            <div className="info-container" style={{ zIndex: "1", marginTop: "100px" }}>
+                            <div className="info-container question" style={{ zIndex: "1", marginTop: "100px" }}>
                                 <div className="title-white-container" style={{ position: "relative", width: "250px" }}>
                                     <h6>Preguntas frecuentes</h6>
                                 </div>
                             </div>
-                            <div className="box-container" style={{ zIndex: "1", gridColumn: "4/8", marginTop: "100px", display: "flex", justifyContent: "center" }}>
+                            <div className="box-container question" style={{ zIndex: "1", gridColumn: "4/8", marginTop: "100px", display: "flex", justifyContent: "center" }}>
                                 <div className="accordion">
 
                                     <div class="container-accordion">
