@@ -92,7 +92,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     display: none;
 }
 
-@media screen and (max-height: 926px) and (max-width: 491px) {
+@media screen and (max-height: 1064px) and (max-width: 491px) {
     .home .container-known .info-known {
         grid-column: 1/8 !important;
         justify-content: flex-start;
@@ -338,7 +338,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         grid-column: 1/8 !important;
     }
     .info-slick {
-        top: 600px !important;
+        top: 700px !important;
         left: 20px !important;
         transform: rotate(19deg) !important;
     }
@@ -355,7 +355,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         min-width: 90% !important;
     }
     .Rotate-slick::before {
-        left: -20px !important;
+        left: -23px !important;
         height: 146vh !important;
         background-color: rgba(0, 82, 134, 0.3) !important;
         transform: rotate(19deg) !important;
@@ -369,7 +369,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
     .Rotate-slick::after {
         height: 85vh !important;
-        left: -40px !important;
+        left: -42px !important;
         background-size: unset !important;
         transform: rotate(19deg) !important;
     }
@@ -419,6 +419,10 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .client-slick .slick-slide .img-client_slick img {
         width: 45px !important;
     }
+    /* Header */
+    .header-rs {
+        position: fixed !important;
+    }
     /* Titulos */
     .info-certifications h6 ,.info-new_slick h4,.title-client h4 ,.info-footer_news_us h6 {
         font-size: 22px !important;
@@ -440,7 +444,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         transform: rotate(-15deg) !important;
     }
     .Slicks-pm .info-slick.Us {
-        top: 800px !important;
+        top: 850px !important;
     }
     .info-slick p, .info-slick_us p, .info-slick_sb p, .info-slick_wwu p, .info-slick_clts p, .info-slick_news p {
         font-family: 'Amble-Bold' !important;
@@ -451,7 +455,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         top: -680px !important;
         left: -100px !important;
         transform: rotate(-19deg) !important;
-        height: 100vh !important;
+        height: 92vh !important;
     }
     .Rotate-slick.Us::after {
         transform: rotate(19deg) !important;
