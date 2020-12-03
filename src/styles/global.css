@@ -204,6 +204,12 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .page-new {
         overflow: hidden;
     }
+    .Map_pm .img-map_pm {
+        grid-column: 1/11 !important;
+    }
+    .Map_pm .img-map_pm img {
+        max-width: 90% !important;
+    }
     .title-white-container h6 {
         font-size: 22px !important;
     }
