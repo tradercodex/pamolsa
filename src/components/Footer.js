@@ -3,7 +3,7 @@ import Logo from '../images/svg/logo';
 import '../styles/footer.css'
 
 const Footer = () => {
-    return ( 
+    return (
         <div className="Footer-pm">
             <div className="container-footer">
                 <div className="logo">
@@ -46,8 +46,8 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <hr/>
-            <div className="copy-socials">
+            <hr />
+            <div className="copy-socials desktop">
                 <div className="copy">
                     <p>© Photo, Inc. 2019. We love our users!</p>
                 </div>
@@ -60,8 +60,22 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
+            <div className="copy-socials movil">
+                <div className="copy-right">
+                    <div className="span">Nuestras redes</div>
+                    <div className="socials">
+                        <a href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} /></a>
+                        <a href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} /></a>
+                        <a href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} /></a>
+                    </div>
+                </div>
+                <div className="copy">
+                    <p>© Photo, Inc. 2019. We love our users!</p>
+                </div>
+
+            </div>
         </div>
-     );
+    );
 }
- 
+
 export default Footer;

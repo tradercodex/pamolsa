@@ -88,6 +88,10 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     flex-direction: column;  
 }
 
+.copy-socials.movil {
+    display: none;
+}
+
 @media screen and (max-height: 1024px) and (max-width: 491px) {
     .home .container-known .info-known {
         grid-column: 1/8 !important;
@@ -124,7 +128,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         right: -50px !important;
     }
     .bioform-pm::after, .line-products_pm::after, .material-pm::after, .use-app_pm::after {
-        height: 97% !important;
+        height: 100% !important;
     }
     .bioform-pm a, .line-products_pm a, .material-pm a, .use-app_pm a {
         display: flex;
@@ -138,12 +142,12 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         max-height: 280px !important;
     }
     .Known-pm.home .container-products_pm img  {
-        max-width: 204px !important;
-        max-height: 164px !important;
+        max-width: 184px !important;
+        max-height: 144px !important;
         border-radius: 20px !important;
     }
     .line-products_pm::after {
-        height: 97% !important;
+        height: 100% !important;
         top: 2px !important;
     }
     .info-known_our h4 {
@@ -278,6 +282,9 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         width: 98px !important;
         height: 98px !important;
     }
+    .Home {
+        overflow:  hidden !important;
+    }
     .Clients-pm {
         overflow-y:  hidden !important;
     }
@@ -293,5 +300,54 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
     .info-certifications p ,.info-new_slick p{
         font-size: 12px !important;
+    }
+    /* Footer */
+    .container-footer, .copy-socials {
+        padding: 0px !important;
+        margin-bottom: 0px !important;
+    }
+    .copy-socials {
+        flex-direction: row-reverse;
+    }
+    .copy-socials .copy-right div.span {
+        display: none;
+    }
+    .Footer-pm .logo {
+        margin-bottom: 40px;
+        padding: 20px 10px !important;
+        border-bottom: 1px solid #a8a8a8;
+    }
+    .Footer-pm .declaration , .Footer-pm .information ,.Footer-pm .contact{
+        margin-bottom: 23px !important;
+        border-bottom: 1px solid #a8a8a8;
+        padding: 10px 10px;
+    }
+    .Footer-pm hr {
+        display: none;
+    }
+    .container-footer .title ,.container-footer h6 {
+        width: 100% !important;
+    }
+    .contact .info-contact div, .declaration .info-contact div, .information .info-contact div {
+        margin-top: 10px !important;
+    }
+    .Footer-pm .logo , .Footer-pm .declaration , .Footer-pm .information , .Footer-pm .contact{
+        grid-column: 1/10 !important;
+        justify-content: flex-start !important;
+    }
+    .copy-socials.movil {
+        display: block;
+        text-align: center;
+    }
+    .copy-socials.desktop {
+        display: none;
+    }
+    .copy-socials.movil .copy-right {
+        justify-content: center !important;
+        padding: 0px 0px 10px 0px;
+        border-bottom: 1px solid #a8a8a8;
+    }
+    .copy-socials.movil .copy {
+        padding: 20px;
     }
 }
