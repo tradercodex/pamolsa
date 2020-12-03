@@ -36,10 +36,12 @@ const News = () => {
 
     return ( 
         <Fragment>
-            <Header number={number} />
-            <Slicks />
-            <NewsSearch news={news} />
-            <Footer />
+            <div className="page-new">
+                <Header number={number} />
+                <Slicks />
+                <NewsSearch news={news} />
+                <Footer />
+            </div>
         </Fragment>
      );
 }

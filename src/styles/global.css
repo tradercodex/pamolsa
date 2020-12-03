@@ -115,10 +115,67 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .bioform-pm p, .line-products_pm p, .material-pm p, .use-app_pm p {
         top: 80px !important;
     }
-    .square-distributor ,.container-known_video .play-known .square ,.tablet .container-news .square-slick {
+    .square-distributor ,.container-known_video .play-known .square ,.tablet .container-news .square-slick , .wc .square-carbajal 
+    ,.card-about .square.us{
         max-width: 380px;
         max-height: 280px;
         left: -20px !important;
+    }
+    .wc .square-carbajal  {
+        transform: rotate(-9.08deg) !important;
+        top: 30px;
+    }
+    .About-us_pm .card-about .square.us {
+        top: -38px;
+        width: 300px !important;
+        border-radius: 30px !important;
+        left: -20px !important;
+    }
+    .img-about_us .img img ,.img-about_us .img::after{
+        border-radius: 30px !important;
+    }
+    .About-us_pm .img-about_us .img::after {
+        max-width: 380px;
+        height: 100% !important;
+    }
+    .info-about h3 {
+        font-size: 16px !important;
+        font-family: 'Amble-Bold';
+    }
+    .Certifications .info-certifications , .Certifications .certifications-companies ,.container-news .info-new_slick {
+        grid-column: 1/8 !important;
+        margin-left: 35px !important;
+    }
+    .Certifications .certifications-companies .companies_us {
+        margin-bottom: 0px !important
+    }
+    .container-news .info-new_slick h6, .container-news .info-new_slick p {
+        margin-top: 8px !important;
+        margin-bottom: 0px !important;
+        max-width: 400px !important;
+    }
+    .img-values {
+        padding: 25px !important;
+    }
+    .img-values div{
+        margin-top: 20px !important;
+        margin-bottom: 20px !important;
+    }
+    h6.title-values {
+        font-size: 22px !important;
+        font-family: 'Amble-Bold';
+        margin-left: 35px;
+        justify-content: flex-start;
+    }
+    .Mision-vision_pm .info-vision, .Mision-vision_pm .info-mision, .Mision-vision_pm .info-promise_value,
+    .Mision-vision_pm .info-propose, .Mision-vision_pm .square-mision, .Mision-vision_pm .square-vision, .Mision-vision_pm .square-promise_value,.Mision-vision_pm .square-propose {
+        width: 340px !important;
+    }
+    .card-about .img-about_us {
+        left: 0px !important;
+    }
+    .container-informations {
+        padding-bottom: 50px !important;
     }
     .container-known_video .play-known .square {
         left: -35px !important;
@@ -134,9 +191,44 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         display: flex;
         justify-content: center;
     }
-    .img-distributor  ,.img-video_known .img ,.tablet .img-new_slick{
-        max-width: 380px;
-        max-height: 280px;
+    .img-card, .square-img-card.right-up,.News-pm_us .img-new_slick_us,.News-pm_us .img-new_slick,.img-distributor  ,.img-video_known .img ,.tablet .img-new_slick ,.img-carbajal.about ,.card-about .img-about_us {
+        max-width: 380px !important;
+        max-height: 280px !important;
+    }
+    .News-pm_us .new-slick.plant.tablet .img-new_slick {
+        left: -30px !important;
+    }
+    .img-card img ,.etic .square-img-card.right-up {
+        border-radius: 30px !important;
+    }
+    .page-new {
+        overflow: hidden;
+    }
+    .title-white-container h6 {
+        font-size: 22px !important;
+    }
+    .etic-pro .info-container {
+        grid-column: 1/8 !important;
+        margin-left: 35px !important;
+    }
+    .etic-pro .info-container p {
+        font-size: 12px !important;
+    }
+    .container-grid .etic .square-img-card.right-up {
+        right: 17% !important;
+    }
+    .Footer-news_us .info-footer_news_us p {
+        max-width: 400px !important;
+    }
+    .Footer-news_us .info-footer_news_us{
+        grid-column: 1/8 !important;
+        margin-left: 35px;
+    }
+    .About-us_pm .info-about p {
+        max-width: 400px !important;
+    }
+    .img-carbajal.about {
+        margin-left: 50px !important;
     }
     .img-distributor img, .img-video_known .img img {
         max-height: 280px !important;
@@ -185,11 +277,35 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .Known-pm div .know-lines {
         margin-left: 20px !important;
     }
-    .Known-pm.home .container-products_business {
+    .Known-pm.home .container-products_business  {
         margin-left: 15px !important;
         width: 100% !important;
         grid-column: 1/8 !important;
         margin-top: 30px !important;
+    }
+    .container-informations .info-carbajal.about ,.container-informations .info-map_pm.title, .About-us_pm .info-about{
+        margin-left: 35px;
+        width: 100% !important;
+        grid-column: 1/8 !important;
+    }
+    .Certifications .container-news .img-new_slick {
+        left: 0px !important;
+    }
+    .info-carbajal.about p {
+        max-width: 400px !important;
+    }
+    .container-informations.present {
+        padding-bottom: 0px !important;
+    }
+    .container-grid_img {
+        margin-top: 20px !important;
+    }
+    .container-informations .info-map_pm.title span {
+        font-size: 18px !important;
+        line-height: 20px !important;
+    }
+    .container-informations .info-map_pm.title h6 {
+        font-size: 22px !important;
     }
     .bioform-pm::after, .line-products_pm::after, .material-pm::after, .use-app_pm::after {
         border-radius: 20px !important;
@@ -206,7 +322,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         grid-column: 10/16 !important;
         justify-content: flex-end !important;
     }
-    .container-header-rs .Logo-pm {
+    .container-header-rs .Logo-pm ,.img-carbajal.about{
         grid-column: 1/8 !important;
     }
     .info-slick {
@@ -292,14 +408,42 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         width: 45px !important;
     }
     /* Titulos */
-    .info-certifications h6 ,.info-new_slick h4,.title-client h4 {
+    .info-certifications h6 ,.info-new_slick h4,.title-client h4 ,.info-footer_news_us h6 {
         font-size: 22px !important;
     }
-    .info-certifications span ,.info-new_slick h6, .certifications-companies h6.companies-title, .certifications-companies h6.companies-title_second{
+    .info-certifications span ,.info-new_slick h6, .certifications-companies h6.companies-title, .certifications-companies h6.companies-title_second,
+    .info-footer_news_us div.span {
         font-size: 16px !important;
     }
     .info-certifications p ,.info-new_slick p{
         font-size: 12px !important;
+    }
+    /* Banners */ 
+    .Slicks-pm.Us .Radius.Us {
+        height: 40vh !important;
+        border-radius: 60px !important;
+        background: #D1EBFC !important;
+        left: -40px !important;
+        top: -240px !important;
+        transform: rotate(-15deg) !important;
+    }
+    .Slicks-pm .info-slick.Us {
+        top: 800px !important;
+    }
+    .info-slick p, .info-slick_us p, .info-slick_sb p, .info-slick_wwu p, .info-slick_clts p, .info-slick_news p {
+        font-family: 'Amble-Bold' !important;
+        width: 267px !important;
+    }
+    .Rotate-slick.Us {
+        border-radius: 60px !important;
+        top: -680px !important;
+        left: -100px !important;
+        transform: rotate(-19deg) !important;
+    }
+    .Rotate-slick.Us::after {
+        transform: rotate(19deg) !important;
+        left: -450px !important;
+        top: 440px !important
     }
     /* Footer */
     .container-footer, .copy-socials {

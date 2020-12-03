@@ -38,6 +38,7 @@ const Us = () => {
 
     return (
         <Fragment>
+            <div className="page-new">
             <Header number={number} />
             <Slicks />
             <AboutUs />
@@ -46,6 +47,7 @@ const Us = () => {
             <News />
             <Etic />
             <Footer />
+            </div>
         </Fragment>
     );
 }

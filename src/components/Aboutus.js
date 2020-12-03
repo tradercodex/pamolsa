@@ -26,7 +26,7 @@ const AboutUs = () => {
                     </div>
                 </div>
             </div>
-            <div className="container-informations" style={{background: "#fff",marginTop: "0"}}>
+            <div className="container-informations present" style={{background: "#fff",marginTop: "0"}}>
                 <div className="info-map_pm title">
                     <div>
                         <span>Presencia</span>
