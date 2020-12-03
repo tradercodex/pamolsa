@@ -560,7 +560,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .container-clients {
         padding-top: 50px !important;
     }
-    .Clients-pm .slick-track .img-clients .img-client_slick {
+    .Clients-pm .slick-track .img-clients .img-client_slick ,.client-slick .slick-track .img-clients .img-client_slick {
         width: 98px !important;
         height: 98px !important;
     }
@@ -663,7 +663,55 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         top: -680px !important;
         left: -100px !important;
         transform: rotate(-19deg) !important;
-        height: 102vh !important;
+        height: 98vh !important;
+    }
+    .news-search h2 {
+        text-align: left !important;
+        margin-left: 35px;
+        font-size: 22px !important;
+    }
+    .gallery-title {
+        font-size: 12px !important;
+    }
+    .news-search .text {
+        display: none !important;
+    }
+    .search-date ,.container-view_journalists {
+        max-width: 440px !important;
+    }
+    .container-view_journalists {
+        grid-template-columns: repeat(1,1fr) !important;
+    }
+    .info-view_journalists ,.img-view_journalists {
+        grid-column: 1/2 !important;
+        width: 100% !important;
+        height: 180px;
+    }
+    .img-view_journalists img , .img-view_journalists::after{
+        border-top-left-radius: 30px !important;
+        border-bottom-left-radius: 30px !important;
+    }
+    .container-gallery {
+        grid-template-columns: repeat(2,1fr) !important;
+        max-width: 440px !important;
+        grid-gap: 20px !important;
+    }
+    .tree-new.contact-info img , .tree-new.contact img{
+        display: none;
+    }
+    .footer-contact .container-grid {
+        grid-gap: 20px !important;
+    }
+    .form-contact h2 {
+        font-size: 22px !important;
+    }
+    .marker-contact , .call-contact{
+        grid-column: 1/8 !important;
+        margin-left: 35px !important;
+        justify-content: flex-start !important;
+    }
+    .info-view_journalists h2 {
+        margin-left: 0px !important;
     }
     .Rotate-slick.Us::after {
         transform: rotate(19deg) !important;
