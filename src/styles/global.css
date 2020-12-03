@@ -92,7 +92,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     display: none;
 }
 
-@media screen and (max-height: 1024px) and (max-width: 491px) {
+@media screen and (max-height: 926px) and (max-width: 491px) {
     .home .container-known .info-known {
         grid-column: 1/8 !important;
         justify-content: flex-start;
@@ -327,6 +327,12 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .options-pm-rs {
         grid-column: 10/16 !important;
         justify-content: flex-end !important;
+        margin-right: 15px !important;
+    }
+    .close-movil {
+        position: relative;
+        top: -6px;
+        left: 2px;
     }
     .container-header-rs .Logo-pm ,.img-carbajal.about{
         grid-column: 1/8 !important;
@@ -445,6 +451,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         top: -680px !important;
         left: -100px !important;
         transform: rotate(-19deg) !important;
+        height: 100vh !important;
     }
     .Rotate-slick.Us::after {
         transform: rotate(19deg) !important;
