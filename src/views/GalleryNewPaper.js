@@ -46,6 +46,32 @@ const GalleryNewPaper = () => {
         speed: 500,
         slidesToShow: 2.5,
         slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ],
     };
 
     const zoomGallery = (img) => {
@@ -66,7 +92,9 @@ const GalleryNewPaper = () => {
 
     return (
         <Fragment>
-            <Header number={number}/>
+            <div style={{position: "relative", height: "70px", width: "100%" }}>
+                <Header number={number}/>
+            </div>
             <div className="Detail-new_pm gallery-paper">
                 <div className="back">
                     <button onClick={back}><Arrow />Volver</button>

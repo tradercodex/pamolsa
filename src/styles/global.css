@@ -155,7 +155,18 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         border-radius: 30px !important;
         left: -20px !important;
     }
-    .img-video_known .img img ,.img-video_known .img::after {
+    .form-wizard .form-wizard.movil .form-wizard-steps li {
+        width: 100% !important;
+    }
+    .form-wizard {
+        margin-top: 40px !important;
+    }
+    .tablet .container-news .square-slick {
+        max-width: 300px !important;
+        top: 60px !important;
+        border-radius: 30px !important;
+    }
+    .img-video_known .img img ,.img-video_known .img::after ,.img-new_slick img ,.img-distributor::after,.img-distributor_hm img,.img-new_slick::after {
         border-radius: 30px !important;
     }
     .post-sl-sbl .square-sl-sbl {
@@ -596,8 +607,25 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         position: fixed !important;
     }
     /* Titulos */
-    .info-certifications h6 ,.info-new_slick h4,.title-client h4 ,.info-footer_news_us h6,.Container-sb_pm h2 {
+    .container-detail_new h2,.info-certifications h6 ,.info-new_slick h4,.title-client h4 ,.info-footer_news_us h6,.Container-sb_pm h2 {
         font-size: 22px !important;
+    }
+    .container-detail_new h2 {
+        max-width: 85% !important;
+    }
+    .info-detail .text {
+        padding: 20px 0px !important;
+    }
+    .Detail-new_pm {
+        height: 35vh !important;
+    }
+    .container-detail_new.news-search .slick-dots {
+        width: 40% !important;
+    }
+    .newpaper-gallery {
+        margin-left: 0px !important;
+        max-width: 90%;
+        margin: 0 auto !important;
     }
     .info-certifications span ,.info-new_slick h6, .certifications-companies h6.companies-title, .certifications-companies h6.companies-title_second,
     .info-footer_news_us div.span {
@@ -910,9 +938,6 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
     .form-wizard .form-group {
         text-align: center !important;
-    }
-    .form-wizard .form-wizard-steps li {
-        width: 100% !important;
     }
     .form-wizard {
         overflow: hidden !important;

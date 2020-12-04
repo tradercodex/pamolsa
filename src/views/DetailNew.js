@@ -10,28 +10,37 @@ const DetailNew = ({ match }) => {
 
     const id = match.params.name;
     const newId = useSelector(state => state.news.new)
+    const cart = useSelector(state => state.cart)
+
     const dispatch = useDispatch();
+
+    const [cartItems, setCartItems] = useState(cart.cartItems)
 
     useEffect(() => {
 
         const movilOpen = document.getElementById('movil');
         const header = document.getElementById('header')
         const movilClose = document.getElementById('close-movil')
-    
-        movilOpen.addEventListener('click',function(){
+
+        movilOpen.addEventListener('click', function () {
             header.classList.add('movile-active')
         })
-    
-        movilClose.addEventListener('click',function(){
+
+        movilClose.addEventListener('click', function () {
             header.classList.remove('movile-active')
         })
 
         dispatch(getNewId(id))
-    }, [id])
+        setCartItems(cart.cartItems)
+    }, [cart.cartItems])
+
+    let number = Object.keys(cartItems).length
 
     return (
         <Fragment>
-            <Header />
+            <div style={{ position: "relative", height: "70px", width: "100%" }}>
+                <Header number={number} />
+            </div>
             {
                 newId ?
                     <DetailNewId

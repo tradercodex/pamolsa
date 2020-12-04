@@ -64,7 +64,7 @@ const StepsQuote = ({
                 <div class="row no-gutters">
                     <div class="col-lg-6 col-md-6">
                         <div class="form-wizard">
-                            <div class="form-wizard-header">
+                            <div class="form-wizard-header movil">
                                 <ul class="list-unstyled form-wizard-steps clearfix">
                                     <li class="active"><span className="quote"></span></li>
                                     <li className=""><span className="quote-aditional"></span></li>
