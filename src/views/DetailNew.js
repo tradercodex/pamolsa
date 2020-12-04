@@ -38,9 +38,7 @@ const DetailNew = ({ match }) => {
 
     return (
         <Fragment>
-            <div style={{ position: "relative", height: "70px", width: "100%" }}>
                 <Header number={number} />
-            </div>
             {
                 newId ?
                     <DetailNewId

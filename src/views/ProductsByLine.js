@@ -147,9 +147,7 @@ const ProductByLine = ({ match, location }) => {
 
     return (
         <>
-            <div style={{ position: "relative", height: "70px", width: "100%" }}>
-                <Header number={number} />
-            </div>
+            <Header number={number} />
             <SearchProductsByLine setSearch={setSearch} searchPress={searchPress} typesBusiness={typesBusiness} />
             <div className="Quotes-pm">
                 <div className="Sidebar-Material_Quote">

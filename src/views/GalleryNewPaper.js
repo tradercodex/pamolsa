@@ -92,9 +92,7 @@ const GalleryNewPaper = () => {
 
     return (
         <Fragment>
-            <div style={{position: "relative", height: "70px", width: "100%" }}>
-                <Header number={number}/>
-            </div>
+            <Header number={number}/>
             <div className="Detail-new_pm gallery-paper">
                 <div className="back">
                     <button onClick={back}><Arrow />Volver</button>

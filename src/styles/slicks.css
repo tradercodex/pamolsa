@@ -794,8 +794,9 @@
         margin-left: 75px !important;
     }
     .info-distributor_hm div ,.info-distributor_hm p{
-        width: 100% !important;
+        width: 90% !important;
         text-align: center;
+        margin: 0 auto;
     }
     .info-distributor_hm ,.img-distributor_hm{
         grid-column: 2/7 !important;
@@ -901,7 +902,8 @@
         padding-bottom: 260px !important;
     }
     .info-distributor_hm h3 {
-        width: 100% !important;
+        width: 90% !important;
+        margin: 0 auto;
     }
     .Rotate-slick.Us {
         height: 94vh;

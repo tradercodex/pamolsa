@@ -154,9 +154,7 @@ const ProductsByType = ({ match }) => {
 
     return (
         <Fragment>
-            <div style={{ position: "relative", height: "70px", width: "100%" }}>
-                <Header number={number} />
-            </div>
+            <Header number={number} />
             <MenuCategory typesBusiness={typesBusiness} setSearch={setSearch} searchPress={searchPress} typesProducts={typesProducts} />
             <div className="Quotes-pm">
                 <div className="Sidebar-Material_Quote">

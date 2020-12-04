@@ -49,9 +49,7 @@ const Products = () => {
 
      return (
           <Fragment>
-               <div style={{position: "relative", height: "70px", width: "100%" }}>
-                    <Header number={number} />
-               </div>
+               <Header number={number} />
                <MenuCategory searchPress={searchPress} setSearch={setSearch} setProductsQuery={setProductsQuery} typesBusiness={typesBusiness} typesProducts={typesProducts} />
                <QuoteProducts />
                <ProductsPopulate />

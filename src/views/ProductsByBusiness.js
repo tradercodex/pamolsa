@@ -138,9 +138,8 @@ const ProductsByBusiness = ({ match }) => {
 
     return (
         <>
-            <div style={{ position: "relative", height: "70px", width: "100%" }}>
-                <Header number={number} />
-            </div>
+            <div className="">
+            <Header number={number} />
             <SearchProductsByLine typesBusiness={typesBusiness} searchPress={searchPress} setSearch={setSearch} />
 
             <div className="Quotes-pm">
@@ -174,6 +173,7 @@ const ProductsByBusiness = ({ match }) => {
                 </div>
             </div>
             <Footer />
+            </div>
         </>
     );
 }

@@ -104,7 +104,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     display: none;
 }
 
-@media screen and (max-height: 1064px) and (max-width: 491px) {
+@media screen and (max-height: 1064px) and (max-width: 768px) {
     .home .container-known .info-known {
         grid-column: 1/8 !important;
         justify-content: flex-start;
@@ -427,6 +427,11 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
     .info-known_our h4 ,.info-pm h6 ,.info-post-activity p{
         font-size: 22px !important;
+        width: 90% !important;
+        margin: 0 auto;
+    }
+    .filter-shadow {
+        border-radius: 20px !important;
     }
     .material-pm::after {
         height: 97% !important;
