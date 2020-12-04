@@ -35,7 +35,7 @@ const DetailProduct = ({ product }) => {
 
     return (
         <Fragment>
-            <div className="Detail-Product_pm">
+            <div className="Detail-Product_pm movil">
                 <div className="container-detail">
                     <div className="guide-detail_product">
                         <p>{`PRODUCTO /` + product.name}</p><button onClick={back}><span>Volver</span></button>

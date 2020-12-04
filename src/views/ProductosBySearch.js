@@ -163,7 +163,7 @@ const ProductsBySearch = ({match}) => {
                     toggleLinesProductsRadio={toggleLineProductsRadio}
                 />
             </div> */}
-            <div className="Products-Quote" style={{gridColumn: "1/12"}}>
+            <div className="Products-Quote Search-Products" style={{gridColumn: "1/12"}}>
                 <Products
                     nameFilter={nameFilter}     
                     productsByFilter={productsFilter || currentPostsByFilter}

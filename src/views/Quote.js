@@ -154,17 +154,9 @@ const Quote = () => {
         dispatch(removeCart(product))
     }
 
-    if(number === 0) {
-        return setTimeout(() => {
-            history.push('/productos')
-        }, 100);
-    }
-
     return (
         <Fragment>
-            <div style={{ position: "relative", height: "70px", width: "100%" }}>
             <Header number={number} />
-            </div>
             <StepsQuote 
                 handleShowModal={handleShowModal}
                 number={number}

@@ -113,6 +113,12 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .Home .content-slick-home {
         height: 95vh !important;
     }
+    .makeStyles-paper-1 {
+        width: 90% !important;
+    }
+    .Products-Quote.Search-Products .filter-button , .Products-Quote.Search-Products .pagination {
+        display: none;
+    }
     .container-grid.clients-page .info-clients  {
         margin-left: 35px !important;
         padding-bottom: 128px !important;
@@ -722,7 +728,46 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         display: none !important;
     }
     .search-date ,.container-view_journalists {
-        max-width: 440px !important;
+        max-width: 90% !important;
+    }
+    .container-detail {
+        padding: 0px !important;
+    }
+    .container-detail_product .detail-info {
+        margin-left: 35px !important;
+    }
+    .Detail-Product_pm.movil .img-detail_product {
+        justify-content: flex-start !important;
+        right: 160px !important;
+    }
+    .container-detail_product .detail-info {
+        padding-top: 20px !important;
+    }
+    .Detail-Product_pm.movil .container-detail_product .img-product {
+        left: 180px !important;
+        top: 40px !important;
+        max-width: 340px !important;
+        max-height: 340px !important;
+    }
+    .container-detail_product  {
+        padding-bottom: 20px !important;
+    }
+    .guide-detail_product {
+        padding: 30px !important;
+    }
+    .products-default > div {
+        margin-bottom: 0px !important;
+    }
+    .products-default h5 {
+        width: 100% !important;
+        left: -20px !important;
+    }
+    .pagination {
+        padding: 10px 0 !important;
+    }
+    .Detail-Product_pm.movil .square-products {
+        min-width: 300px !important;
+        min-height: 300px !important;
     }
     .container-view_journalists {
         grid-template-columns: repeat(1,1fr) !important;
@@ -738,7 +783,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
     .container-gallery {
         grid-template-columns: repeat(2,1fr) !important;
-        max-width: 440px !important;
+        max-width: 90% !important;
         grid-gap: 20px !important;
     }
     .tree-new.contact-info img , .tree-new.contact img{
