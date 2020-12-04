@@ -43,6 +43,10 @@ body {
     grid-template-columns: repeat(7,1fr);
 }
 
+.filter-button {
+    display: none;
+}
+
 .MuiFormControl-root {
     width: 100%;
 }
@@ -70,6 +74,14 @@ body {
 
 .Map{
     display: block;
+}
+
+.Name-category.movil {
+    display: none;
+}
+
+.Products-Quote .movil svg {
+    display: none;
 }
 
 button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
@@ -699,6 +711,95 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .tree-new.contact-info img , .tree-new.contact img{
         display: none;
     }
+    .Distributor-search  {
+        padding-bottom: 8px !important;
+    }
+    .Distributor-search .Search  .Search-container.distributor{
+        grid-column: 2/11;
+        max-width: 95% !important;
+        padding-bottom: 0px !important;
+    }
+    .container-grid.distributor .info-container ,.container-grid .ubications {
+        grid-column: 1/8 !important;
+        margin-left: 35px !important;
+        max-width: 400px !important;
+    }
+    .Menu-Category_pm .Search.product button.btn-back {
+        display: none !important;
+    }
+    .Container-Products_Quote_pm {
+        grid-template-rows: repeat(4,330px) !important;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    .Products-populate_pm h4 {
+        font-size: 22px !important;
+    }
+    .Products-Quote_1 , .Products-Quote_2 ,.Products-Quote_3 ,.Products-Quote_4{
+        grid-column: 1/9 !important;
+        border-radius: 20px !important;
+    }
+    .makeStyles-paper-1 {
+        max-width: 90% !important;
+    }
+    .Sidebar-Material_Quote {
+        display: none;
+    }
+    .Products-Quote {
+        grid-column: 1/12 !important;
+    }
+    .square-products, .products-default .square-products {
+        max-width: 120px !important;
+        max-height: 120px !important;
+        border-radius: 26.8997px !important;
+    }
+    .products-default {
+        margin-left: 35px !important;
+    }
+    .products-default .product {
+        justify-content: flex-start !important;
+        max-width: 200px !important;
+        max-height: 200px !important;
+    }
+    .products-default .product .img-product {
+        max-width: 116px !important;
+        max-height: 116px !important;
+    }
+    .container-filter_pm {
+        border-radius:  0px !important;
+    }
+    .products-default h5 {
+        width: 100%;
+    }
+    .Name-category {
+        display: none;
+    }
+    .Count-products {
+        grid-column: 1/7 !important;
+    }
+    .Count-products::after {
+        display: none;
+    }
+    .product > a {
+        top: 90px !important;
+        font-size: 9px !important;
+        right: 20px !important;
+    }
+    .Products-Quote {
+        padding: 20px 0px !important;
+    }
+    .Search .Search-container {
+        grid-column: 2/11 !important;
+    }
+    .info-container > div > div > div > div > div {
+        border-radius: 0 !important;
+    }
+    .container-grid .info-container.map-distributor {
+        grid-column: 1/8 !important;
+    }
+    .container-grid.distributor .title-blue-container h3{
+        font-size: 22px !important;
+    }
     .footer-contact .container-grid {
         grid-gap: 20px !important;
     }
@@ -717,6 +818,113 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         transform: rotate(19deg) !important;
         left: -450px !important;
         top: 440px !important
+    }
+    .filter-button {
+        display: block;
+        max-width: 70%;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+    .filter-button button {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        border: 1px solid #4D4D4C;
+        box-sizing: border-box;
+        border-radius: 20px;
+        padding: 13px;
+        background: #fff;
+    }
+    .products-populate img {
+        position: relative;
+        top: -30px !important;
+        left: 5px !important;
+    }
+    .products-populate h5 {
+        position: relative;
+        top: -0px !important
+    }
+    .makeStyles-paper-2 {
+        max-width: 90% !important;
+    }
+    .makeStyles-paper-2 .Materials-sidebar_pm {
+        margin-top: 0px !important;
+    }
+    div[role="presentation"] {
+        overflow: auto;
+    }
+    .makeStyles-paper-2 .close-modal-filter {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .makeStyles-paper-2 .line {
+        border-bottom: 1px solid rgba(118, 118, 118, 0.55);
+    }
+    .Products-Quote .movil {
+        display: flex;
+    }
+    .Products-Quote .movil svg {
+        margin-left: 34px;
+        display: block;
+    }
+    .Products-Quote p.path {
+        margin-bottom: 0px !important;
+        margin-left: 10px;
+    }
+    .Name-category.movil {
+        display: block;
+    }
+    .Name-category.movil p {
+        color: rgb(0, 159, 227);
+        font-size: 16px;
+        margin-left: 24px;
+        margin-bottom: 10px !important;
+    }
+    .info-box-quote {
+        grid-column: 1/8 !important;
+    }
+    .info-box-quote .info h3 {
+        font-size: 14px !important;
+    }
+    .info-box-quote .img-quote {
+        margin-left: 0px !important;
+        max-width: 130px !important;
+    }
+    .delete-quote {
+        grid-column: 8/9 !important;
+    }
+    .container-dates .container-dates-title ,.container-form-dates{
+        background: transparent;
+        box-shadow: none;
+        border-radius: 0px !important;
+    }
+    .form-wizard .form-wizard-previous-btn , .container-quotes-products.step-final {
+        display: none;
+    }
+    button.send-cart {
+        background: #32711E !important;
+    }
+    form.form-quote {
+        margin-top: 0;
+    }
+    .form-wizard .form-group {
+        text-align: center !important;
+    }
+    .form-wizard .form-wizard-steps li {
+        width: 100% !important;
+    }
+    .form-wizard {
+        overflow: hidden !important;
+    }
+    .form-wizard .form-wizard-steps {
+        margin-top: 50px !important;
+    }
+    .delete-quote button span {
+        display: none !important;
+    }
+    .quote-count ,.box-quote {
+        border-radius: 0px !important;
     }
     /* Footer */
     .container-footer, .copy-socials {

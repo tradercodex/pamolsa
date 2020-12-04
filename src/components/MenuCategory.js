@@ -4,7 +4,7 @@ import '../styles/products.css'
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 
-const MenuCategory = ({searchPress,match,typesProducts,typesBusiness,resetCheckbox,setProductsQuery,setSearch}) => {
+const MenuCategory = ({searchPress,match,typesProducts,typesBusiness,setProductsQuery,setSearch}) => {
 
     let url = match.url
 
@@ -18,7 +18,7 @@ const MenuCategory = ({searchPress,match,typesProducts,typesBusiness,resetCheckb
                             {
                                 typesProducts.map(tp => (
                                     <li key={tp.id}>
-                                        <a onClick={resetCheckbox} href={`/productos/${tp.name}/${tp.id}`} className={ url === `/productos/${tp.name}/${tp.id}` ? "active-category" : 'category' }><img width="20px" src={`http://` + tp.url} /><span>{tp.name}</span></a>
+                                        <Link to={`/productos/${tp.name}/${tp.id}`} className={ url === `/productos/${tp.name}/${tp.id}` ? "active-category" : 'category' }><img width="20px" src={`http://` + tp.url} /><span>{tp.name}</span></Link>
                                     </li>
                                 )) 
                             }

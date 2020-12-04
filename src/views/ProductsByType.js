@@ -21,6 +21,9 @@ const ProductsByType = ({ match }) => {
     const type_id = match.params.id
     const nameTypeProduct = match.params.name
 
+    console.log(type_id)
+    console.log(nameTypeProduct)
+
     const typesBusiness = useSelector(state => state.products.typesBusiness)
     const typesProducts = useSelector(state => state.products.typesProducts)
     const productsByFilter = useSelector(state => state.products.productsByFilter)
@@ -76,7 +79,7 @@ const ProductsByType = ({ match }) => {
         })
     }
 
-    const toggleMaterialsProductsRadio = (e,item) => {
+    const toggleMaterialsProductsRadio = (e, item) => {
         const { ids } = materialId;
         let newArr = [];
 
@@ -107,17 +110,17 @@ const ProductsByType = ({ match }) => {
 
     let countProductsByFilter = productsByFilter.length
 
-    useEffect(()=> {
+    useEffect(() => {
 
         const movilOpen = document.getElementById('movil');
         const header = document.getElementById('header')
         const movilClose = document.getElementById('close-movil')
-    
-        movilOpen.addEventListener('click',function(){
+
+        movilOpen.addEventListener('click', function () {
             header.classList.add('movile-active')
         })
-    
-        movilClose.addEventListener('click',function(){
+
+        movilClose.addEventListener('click', function () {
             header.classList.remove('movile-active')
         })
 
@@ -125,14 +128,14 @@ const ProductsByType = ({ match }) => {
         apiGetLines();
         apiGetBusiness();
         apiGetMaterial();
-        dispatch(getTypesBusiness(9,1));
+        dispatch(getTypesBusiness(9, 1));
         dispatch(getTypesProducts(9, 1));
-    },[])
+    }, [])
 
     useEffect(() => {
         setCartItems(cart.cartItems)
-        dispatch(getProductByFilterType(type_id,lineId.ids, materialId.ids, businessId.ids));
-    }, [type_id,lineId.ids, materialId.ids, businessId.ids,cart.cartItems])
+        dispatch(getProductByFilterType(type_id, lineId.ids, materialId.ids, businessId.ids));
+    }, [type_id, lineId.ids, materialId.ids, businessId.ids, cart.cartItems])
 
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -144,14 +147,16 @@ const ProductsByType = ({ match }) => {
     let number = Object.keys(cartItems).length
 
     const searchPress = (e) => {
-        if(e.keyCode === 13) {
-             window.location.replace(`/productos/${e.target.value}`)
+        if (e.keyCode === 13) {
+            window.location.replace(`/productos/${e.target.value}`)
         }
-   }
+    }
 
     return (
         <Fragment>
-            <Header number={number} />
+            <div style={{ position: "relative", height: "70px", width: "100%" }}>
+                <Header number={number} />
+            </div>
             <MenuCategory typesBusiness={typesBusiness} setSearch={setSearch} searchPress={searchPress} typesProducts={typesProducts} />
             <div className="Quotes-pm">
                 <div className="Sidebar-Material_Quote">
@@ -166,6 +171,14 @@ const ProductsByType = ({ match }) => {
                 </div>
                 <div className="Products-Quote">
                     <Products
+                        type_id={type_id}
+                        nameTypeProduct={nameTypeProduct}
+                        materials={material}
+                        business={business}
+                        lines={lines}
+                        toggleChangeCheckbox={toggleChangeCheckbox}
+                        toggleLineProductsRadio={toggleLineProductsRadio}
+                        toggleMaterialsProductsRadio={toggleMaterialsProductsRadio}
                         nameTypeProduct={nameTypeProduct}
                         productsByFilter={currentPostsByFilter}
                         countProduct={countProduct}

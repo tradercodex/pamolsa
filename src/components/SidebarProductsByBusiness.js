@@ -15,7 +15,7 @@ const SidebarProductsByLine = ({
                 <div style={{ padding: "0px 10px 10px 10px" }}>
                     <h5 style={{ color: "#4D4D4C", fontSize: "12px", fontFamily: "Amble-bold" }}>Lineas de producto</h5>
                 </div>
-                <div>
+                <div className="line">
                     {
                         lines && lines.length > 0 ?
                             lines.map(item => (
@@ -33,7 +33,7 @@ const SidebarProductsByLine = ({
                 <div style={{ padding: "0px 10px 10px 10px" }}>
                     <h5 style={{ color: "#4D4D4C", fontSize: "12px", fontFamily: "Amble-bold" }}>Tipos de productos</h5>
                 </div>
-                <div>
+                <div className="line">
                     {
                         types && types.length > 0 ?
                             types.map(item => (

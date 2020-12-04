@@ -9,8 +9,9 @@ import { getProductByFilter, getTypesBusiness } from '../redux/actions/product'
 import Pagination from '../components/Pagination';
 import Footer from '../components/Footer';
 
-const ProductByLine = ({ match }) => {
+const ProductByLine = ({ match, location }) => {
 
+    let pathname = location.pathname
     let line = match.params.id
     let lineFoodService = line == 1 ? "Food Service" : ''
     let lineBioform = line == 2 ? "Ecoamigable Bioform" : ''
@@ -106,12 +107,12 @@ const ProductByLine = ({ match }) => {
         const movilOpen = document.getElementById('movil');
         const header = document.getElementById('header')
         const movilClose = document.getElementById('close-movil')
-    
-        movilOpen.addEventListener('click',function(){
+
+        movilOpen.addEventListener('click', function () {
             header.classList.add('movile-active')
         })
-    
-        movilClose.addEventListener('click',function(){
+
+        movilClose.addEventListener('click', function () {
             header.classList.remove('movile-active')
         })
 
@@ -128,7 +129,7 @@ const ProductByLine = ({ match }) => {
 
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    const currentPostsByFilter = productsByFilter.slice(indexOfFirstPost, indexOfLastPost) 
+    const currentPostsByFilter = productsByFilter.slice(indexOfFirstPost, indexOfLastPost)
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
@@ -139,14 +140,16 @@ const ProductByLine = ({ match }) => {
     })
 
     const searchPress = (e) => {
-        if(e.keyCode === 13) {
-             window.location.replace(`/productos/${e.target.value}`)
+        if (e.keyCode === 13) {
+            window.location.replace(`/productos/${e.target.value}`)
         }
-   }
+    }
 
     return (
         <>
-            <Header number={number} />
+            <div style={{ position: "relative", height: "70px", width: "100%" }}>
+                <Header number={number} />
+            </div>
             <SearchProductsByLine setSearch={setSearch} searchPress={searchPress} typesBusiness={typesBusiness} />
             <div className="Quotes-pm">
                 <div className="Sidebar-Material_Quote">
@@ -161,6 +164,14 @@ const ProductByLine = ({ match }) => {
                 </div>
                 <div className="Products-Quote">
                     <Products
+                        line={line}
+                        pathname ={pathname}
+                        business={business}
+                        types={types}
+                        materials={materials}
+                        toggleTypesProductsRadio={toggleTypesProductsRadio}
+                        toggleMaterialsProductsRadio={toggleMaterialsProductsRadio}
+                        toggleChangeCheckbox={toggleChangeCheckbox}
                         lineBioform={lineBioform}
                         lineFoodService={lineFoodService}
                         lineIndustrial={lineIndustrial}

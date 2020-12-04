@@ -1,19 +1,24 @@
 import React, { Fragment } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, useHistory } from 'react-router-dom'
+import ArrowBackProduct from '../images/svg/arrowbackproducts'
 
-const Filter = ({ 
+const Filter = ({
     nameTypeBusiness,
-    nameTypeProduct, 
-    countProduct, 
-    lineBioform, 
-    lineFoodService, 
-    lineIndustrial, 
-    lineAgroIndustrial, 
-    countProductsByFilter ,
+    nameTypeProduct,
+    countProduct,
+    lineBioform,
+    lineFoodService,
+    lineIndustrial,
+    lineAgroIndustrial,
+    countProductsByFilter,
     nameFilter
 }) => {
 
-    console.log(nameFilter)
+    const history = useHistory();
+
+    const goBackProduct = () => {
+        history.replace('/productos');
+    }
 
     return (
 
@@ -22,20 +27,30 @@ const Filter = ({
                 {
                     nameTypeProduct || nameTypeBusiness || nameFilter ?
                         <>
-                            <p style={{ fontFamily: "Amble-bold", color: "#4D4D4C", fontSize: "10px", marginBottom: "20px" }}>{nameTypeBusiness ? "Tipo de negocio" :  <>{nameFilter ? "Busqueda de producto" : 'Tipo de producto'}</>} / <span style={{ color: "#009FE3" }}>
-                                {nameFilter || nameTypeProduct || nameTypeBusiness }
-                            </span>
-                            </p>
-                        </> : <p style={{ fontFamily: "Amble-bold", color: "#4D4D4C", fontSize: "10px", marginBottom: "20px" }}>Linea de producto / <span style={{ color: "#009FE3" }}>
+                            <div className="movil desktop">
+                                <ArrowBackProduct /><p onClick={goBackProduct} className="path" style={{ fontFamily: "Amble-bold", color: "#4D4D4C", fontSize: "10px", marginBottom: "20px" }}>{nameTypeBusiness ? "Tipo de negocio" : <>{nameFilter ? "Busqueda de producto" : 'Tipo de producto'}</>} / <span style={{ color: "#009FE3" }}>
+                                    {nameFilter || nameTypeProduct || nameTypeBusiness}
+                                </span></p>
+                            </div>
+
+                        </> : 
+                         <div className="movil desktop">
+                            <ArrowBackProduct /><p onClick={goBackProduct} className="path" style={{ fontFamily: "Amble-bold", color: "#4D4D4C", fontSize: "10px", marginBottom: "20px" }}>Linea de producto / <span style={{ color: "#009FE3" }}>
                             {`${lineBioform || lineFoodService || lineIndustrial || lineAgroIndustrial || nameTypeProduct}`}
                         </span>
                         </p>
+                        </div>
                 }
+                <div className="Name-category movil">
+                    {nameTypeProduct || nameTypeBusiness ? <p>{nameTypeProduct || nameTypeBusiness || nameFilter}</p> :
+                        <p>{lineBioform || lineFoodService || lineIndustrial || lineAgroIndustrial || nameFilter}</p>
+                    }
+                </div>
                 <div className="container-filter_pm">
                     <div className="Name-category">
-                            { nameTypeProduct || nameTypeBusiness ? <p>{nameTypeProduct || nameTypeBusiness || nameFilter}</p> : 
-                                <p>{lineBioform || lineFoodService || lineIndustrial || lineAgroIndustrial || nameFilter}</p>
-                            }
+                        {nameTypeProduct || nameTypeBusiness ? <p>{nameTypeProduct || nameTypeBusiness || nameFilter}</p> :
+                            <p>{lineBioform || lineFoodService || lineIndustrial || lineAgroIndustrial || nameFilter}</p>
+                        }
                     </div>
                     <div className="Count-products">
                         {

@@ -2,7 +2,7 @@
 
 .Clients-pm {
     position: relative;
-    z-index: 99999999;
+    z-index: 999998;
     background: #fff;
     height: auto;
     margin: 0 auto;
@@ -20,7 +20,7 @@
 
 .bg-gray {
     position: relative;
-    z-index: 99999999;
+    z-index: 999998;
     background: #F9F9F9;
     height: auto;
     margin: 0 auto;

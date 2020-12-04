@@ -1,7 +1,8 @@
-import React ,{ useState, useEffect } from  'react'
+import React, { useState, useEffect } from 'react'
 import Header from '../components/Header'
+import { withRouter } from 'react-router-dom'
 import SearchProductsByLine from '../components/SearchProductsByLine'
-import { useSelector,useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import Axios from 'axios'
 import { getTypesBusiness, getProductByFilterBusiness } from '../redux/actions/product'
 import SidebarProductsByBusiness from '../components/SidebarProductsByBusiness'
@@ -9,11 +10,10 @@ import Products from '../components/Products'
 import Pagination from '../components/Pagination'
 import Footer from '../components/Footer'
 
-const ProductsByBusiness = ({match}) => {
+const ProductsByBusiness = ({ match }) => {
 
     const business_id = match.params.id
     const nameTypeBusiness = match.params.name
-
     const typesBusiness = useSelector(state => state.products.typesBusiness)
     const productsByFilter = useSelector(state => state.products.productsByFilter)
     const cart = useSelector(state => state.cart)
@@ -65,7 +65,7 @@ const ProductsByBusiness = ({match}) => {
         })
     }
 
-    const toggleMaterialsProductsRadio = (e,item) => {
+    const toggleMaterialsProductsRadio = (e, item) => {
         const { ids } = materialId;
         let newArr = [];
 
@@ -94,17 +94,17 @@ const ProductsByBusiness = ({match}) => {
         setMaterials(response.data.data)
     }
 
-    useEffect(()=>{
+    useEffect(() => {
 
         const movilOpen = document.getElementById('movil');
         const header = document.getElementById('header')
         const movilClose = document.getElementById('close-movil')
-    
-        movilOpen.addEventListener('click',function(){
+
+        movilOpen.addEventListener('click', function () {
             header.classList.add('movile-active')
         })
-    
-        movilClose.addEventListener('click',function(){
+
+        movilClose.addEventListener('click', function () {
             header.classList.remove('movile-active')
         })
 
@@ -113,12 +113,12 @@ const ProductsByBusiness = ({match}) => {
         apiGetMaterial();
         apiGetLines();
         dispatch(getTypesBusiness(8, 1));
-    },[])
+    }, [])
 
     useEffect(() => {
         setCartItems(cart.cartItems)
-        dispatch(getProductByFilterBusiness(business_id,lineId.ids, typeId.ids, materialId.ids));
-    }, [business_id,lineId.ids, typeId.ids, materialId.ids,cart.cartItems])
+        dispatch(getProductByFilterBusiness(business_id, lineId.ids, typeId.ids, materialId.ids));
+    }, [business_id, lineId.ids, typeId.ids, materialId.ids, cart.cartItems])
 
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -131,42 +131,51 @@ const ProductsByBusiness = ({match}) => {
     const countProductsByFilter = productsByFilter.length
 
     const searchPress = (e) => {
-        if(e.keyCode === 13) {
-             window.location.replace(`/productos/${e.target.value}`)
+        if (e.keyCode === 13) {
+            window.location.replace(`/productos/${e.target.value}`)
         }
-   }
+    }
 
-    return ( 
+    return (
         <>
-        <Header number={number} />
-        <SearchProductsByLine typesBusiness={typesBusiness} searchPress={searchPress} setSearch={setSearch} />
-        <div className="Quotes-pm">
-            <div className="Sidebar-Material_Quote">
-                <SidebarProductsByBusiness
-                    lines={lines}
-                    types={types}
-                    materials={materials}
-                    toggleTypesProductsRadio={toggleTypesProductsRadio}
-                    toggleMaterialsProductsRadio={toggleMaterialsProductsRadio}
-                    toggleLinesProductsRadio={toggleLineProductsRadio}
-                />
+            <div style={{ position: "relative", height: "70px", width: "100%" }}>
+                <Header number={number} />
             </div>
-            <div className="Products-Quote">
-                <Products
-                    nameTypeBusiness={nameTypeBusiness}     
-                    productsByFilter={ currentPostsByFilter}
-                    countProductsByFilter={countProductsByFilter}
-                />
-                <Pagination
-                    postsPerPage={postsPerPage}
-                    totalPostsFilter={productsByFilter.length}
-                    paginate={paginate}
-                />
+            <SearchProductsByLine typesBusiness={typesBusiness} searchPress={searchPress} setSearch={setSearch} />
+
+            <div className="Quotes-pm">
+                <div className="Sidebar-Material_Quote">
+                    <SidebarProductsByBusiness
+                        lines={lines}
+                        types={types}
+                        materials={materials}
+                        toggleTypesProductsRadio={toggleTypesProductsRadio}
+                        toggleMaterialsProductsRadio={toggleMaterialsProductsRadio}
+                        toggleLinesProductsRadio={toggleLineProductsRadio}
+                    />
+                </div>
+                <div className="Products-Quote">
+                    <Products
+                        lines={lines}
+                        types={types}
+                        materials={materials}
+                        toggleTypesProductsRadio={toggleTypesProductsRadio}
+                        toggleMaterialsProductsRadio={toggleMaterialsProductsRadio}
+                        toggleLinesProductsRadio={toggleLineProductsRadio}
+                        nameTypeBusiness={nameTypeBusiness}
+                        productsByFilter={currentPostsByFilter}
+                        countProductsByFilter={countProductsByFilter}
+                    />
+                    <Pagination
+                        postsPerPage={postsPerPage}
+                        totalPostsFilter={productsByFilter.length}
+                        paginate={paginate}
+                    />
+                </div>
             </div>
-        </div>
-        <Footer />
+            <Footer />
         </>
-     );
+    );
 }
- 
-export default ProductsByBusiness;
+
+export default withRouter(ProductsByBusiness);

@@ -73,7 +73,9 @@ const Distributor = () => {
 
     return (
         <Fragment>
-            <Header number={number}/>
+            <div style={{position: "relative", height: "70px", width: "100%" }}>
+                <Header number={number}/>
+            </div>
             <div className="Distributor-pm">
                 <div className="back">
                     <button onClick={back}><Arrow />Volver</button>
@@ -82,7 +84,7 @@ const Distributor = () => {
             <div className="Distributor-search">
                 <Search onChangeUbication={onChangeUbication} searchPressUbication={searchPressUbication} />
             </div>
-            <div className="container-grid">
+            <div className="container-grid distributor">
                 <div className="info-container">
                     <div className="title-blue-container" style={{ marginBottom: "40px" }}>
                         { ubication.latitude ? <h3 style={{width: "700px"}}>Se encontro un punto de venta cercano</h3> : <h3>Puntos de ventas más cercano</h3> }
@@ -90,7 +92,7 @@ const Distributor = () => {
                 </div>
             </div>
             <div className="container-grid" style={{ paddingBottom: "50px" }}>
-                <div className="info-container" style={{ gridColumn: "2/5" }}>
+                <div className="info-container map-distributor" style={{ gridColumn: "2/5" }}>
                     <MapDistributor ubications={ubications} ubication={ubication} />
                 </div>
                 <div className="ubications">

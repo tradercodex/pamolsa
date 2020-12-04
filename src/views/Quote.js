@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import StepsQuote from '../components/StepsQuote'
 import axios from 'axios'
 import { removeCart } from '../redux/actions/cart';
+import Footer from '../components/Footer'
 
 const Quote = () => {
 
@@ -161,7 +162,9 @@ const Quote = () => {
 
     return (
         <Fragment>
+            <div style={{ position: "relative", height: "70px", width: "100%" }}>
             <Header number={number} />
+            </div>
             <StepsQuote 
                 handleShowModal={handleShowModal}
                 number={number}
@@ -174,6 +177,7 @@ const Quote = () => {
                 cartItems={cartItems}
                 closeModal={closeModal}
             />
+            <Footer/>
         </Fragment>
     );
 }

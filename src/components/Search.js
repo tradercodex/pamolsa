@@ -73,7 +73,7 @@ const Search = ({ match,typesBusiness,setSearch,searchPress,onChangeUbication,se
                 pathname === "/productos/:name/detail" || 
                 pathname === "/productos/:name"
                 ?
-                    <div className="Search">
+                    <div className="Search product">
                         <button onClick={goBack} className="btn-back">Volver</button>
                         <div className="Search-container">
                             <SearchIcon />
@@ -103,7 +103,7 @@ const Search = ({ match,typesBusiness,setSearch,searchPress,onChangeUbication,se
 
             {
                 pathname === "/productos/linea/:id" || pathname === "/productos/negocio/:name/:id" || pathname === "/producto/detalle/:id" ?
-                    <div className="Search">
+                    <div className="Search product">
                          <button onClick={goBack} className="btn-back">Volver</button>
                         <div className="Search-container lines">
                             <SearchIcon />
