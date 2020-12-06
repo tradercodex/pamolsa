@@ -203,7 +203,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
     .About-us_pm .card-about .square.us {
         top: -38px;
-        width: 300px !important;
+        width: 270px !important;
         border-radius: 30px !important;
         left: -20px !important;
     }
@@ -427,7 +427,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         margin-left: 50px !important;
     }
     .img-distributor img, .img-video_known .img img {
-        max-height: 280px !important;
+        max-height: 100% !important;
     }
     .Known-pm.home .container-products_pm img  {
         max-width: 184px !important;
@@ -578,6 +578,27 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         background-size: unset !important;
         transform: rotate(19deg) !important;
     }
+    .info-sbl h4 {
+        max-width: 90% !important;
+    }
+    .Container-sb_pm h2 {
+        max-width: 90% !important;
+    }
+    .models-sb {
+        padding: 30px !important;
+    }
+    .container-grid.first {
+        margin-top: 60px !important;
+    }
+    .container-grid .info-informs p , .container-grid .info-informs, .informs-pdfs ,.info-informs h2{
+        max-width: 90% !important;
+    }
+    .info-container .title-green-container h6 {
+        font-size: 22px !important;
+    }
+    .container-grid.community {
+        margin-top: 60px !important;
+    }
     summary {
         font-size: 10px !important;
     }
@@ -668,6 +689,17 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
     .info-certifications p ,.info-new_slick p{
         font-size: 12px !important;
+        max-width: 90% !important;
+    }
+    .title-blue-container h3 {
+        width: 90% !important;
+    }
+    .info-product_bf h4 ,.info-product_bf_2 h4,.info-product_bf_3 h4 ,.info-product_bf_4 h4 {
+        font-size: 22px !important;
+        max-width: 60% !important;
+    }
+    .populate-slick .slick-next::before, .populate-slick .slick-prev::before {
+        display: none;
     }
     /* Banners */ 
     .Slicks-pm.Us .Radius.Us {
@@ -1181,7 +1213,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         max-height: 300px !important;
     }
     .container-grid.videos .play-button_pm.activity {
-        top: 190px !important;
+        top: 250px !important;
         left: 150px !important;
     }
     .container .container-grid.why .play-button_pm {
@@ -1191,11 +1223,18 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .container .container-grid.clients-page .info-client-footer {
         max-width: 100% !important;
     }
+    .Known-pm.home .container-products_business div {
+        max-width: 90% !important;
+    }
 }
 
 @media screen and (max-height: 851px) and (max-width: 430px) {
     .Products-populate_pm .products-default {
         grid-template-columns: repeat(1, 1fr) !important;
+    }
+    .play-button_pm {
+        width: 100px !important;
+        height: 100px !important;
     }
 }
 
@@ -1217,5 +1256,96 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .Detail-Product_pm.movil .container-detail_product .img-product {
         max-height: 250px !important;
     }
+    .Known-pm.home .container-products_business  div p.know-lines {
+        margin-left: 10px !important;
+    }
 }
 
+@media screen and (max-height: 851px) and (max-width: 380px) {
+    .Detail-Product_pm.movil .square-products {
+        min-width: 210px !important;
+        min-height: 210px !important;
+    }
+    .img-detail_product {
+        height: 250px !important;
+    }
+    .container-detail_product .square-products {
+        right: 0px !important;
+    }
+    .Detail-Product_pm.movil .container-detail_product .img-product {
+        max-width: 280px !important;
+    }
+    .Detail-Product_pm.movil .container-detail_product .img-product {
+        max-height: 250px !important;
+    }
+    .Known-pm.home .container-products_business  div p.know-lines {
+        margin-left: 0px !important;
+    }
+}
+
+
+@media screen and (max-height: 1000px) and (max-width: 375px) {
+    .Known-pm.home .container-products_pm img {
+        max-width: 126px !important;
+    }
+    .container-products_business {
+        display: block !important;
+        grid-column: none !important;
+    }
+    .button-cat button, .button-cat a {
+        max-width: 60% !important;
+        margin: 0 auto !important;
+    }
+    .Known-pm .container-known_business p.know-lines.movil {
+        margin-left: 0px !important;
+        margin-bottom: 10px !important;
+    }
+    .Known-pm .container-known_business div {
+        margin-top: 20px !important;
+    }
+    .img-about_us .img img,.square-img-card.right-up, .img-card, .square-img-card.right-up, .News-pm_us .img-new_slick_us, .News-pm_us .img-new_slick, .img-distributor, .img-video_known .img, .tablet .img-new_slick, .img-carbajal.about, .card-about .img-about_us {
+        max-width: 260px !important;
+        max-height: 160px !important;
+    }
+    .container-grid.first .square-img-card, .square-sl-sbl, .square-distributor, .container-known_video .play-known .square, .tablet .container-news .square-slick, .wc .square-carbajal, .card-about .square.us, .container-grid .play-known .square{
+        max-width: 260px !important;
+        max-height: 160px !important;
+        top: 55px !important;
+    }
+    .container-known_video .play-known .square {
+        top: -10px !important;
+    }
+    .play-button_pm {
+        top: 40px !important;
+        right: -30px !important;
+    }
+    .wc .square-carbajal  {
+        top: 20px !important;
+    }
+    .card-about .square.us {
+        top: -20px !important;
+    }
+    .container-vision, .container-mision, .container-promise-value, .container-propose {
+        margin-left: 56px !important;
+    }
+    .container-grid .play-known .square {
+        top: 80px !important
+    }
+    .container-grid.sbl .play-known .play-button_pm {
+        top: 140px !important;
+    }
+    .card-work, .container-grid.work .card-work {
+        max-width: 280px !important;
+        max-height: 360px !important;
+    }
+    .container {
+        padding-bottom: 0px !important;
+    }
+    .container .container-grid.why .play-button_pm {
+        top: 150px !important
+    }
+    .info-post-activity p {
+        max-width: 60% !important;
+        margin-left: 10px !important;
+    }
+}

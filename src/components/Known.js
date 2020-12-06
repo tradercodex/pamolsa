@@ -106,7 +106,7 @@ const Known = ({
                             >
                                 <FoodServices />
                             </div>
-                            <p className="know-lines">Food Service</p>
+                            <p className="know-lines movil">Food Service</p>
                             <div className="button-cat">
                                 <button onClick={handleShowPdfModal} className="wow animate__animated animate__fadeInUp"
                                     data-wow-duration="4s"
@@ -121,7 +121,7 @@ const Known = ({
                             >
                                 <Industrial />
                             </div>
-                            <p className="know-lines">Industrial</p>
+                            <p className="know-lines movil">Industrial</p>
                             <div className="button-cat">
                                 <a href={industrial} target="_blank"
                                     className="wow animate__animated animate__fadeInUp"
@@ -136,7 +136,7 @@ const Known = ({
                             >
                                 <Agroindustrial />
                             </div>
-                            <p className="know-lines">Agroindustrial</p>
+                            <p className="know-lines movil">Agroindustrial</p>
                             <div className="button-cat">
                                 <a href={agroindustrial} target="_blank"
                                     className="wow animate__animated animate__fadeInUp"
