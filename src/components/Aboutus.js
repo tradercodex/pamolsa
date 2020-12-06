@@ -50,21 +50,21 @@ const AboutUs = () => {
                                 </div>
                                 <div className="text-map_pm">
                                     <div className="skills-gc">
-                                        <div className="pm-inf_sk">
+                                        <div className="pm-inf_sk ma">
                                             <div>
                                                 <Planta />
                                             </div>
                                             <strong>12</strong>
                                             <p>número de plantas</p>
                                         </div>
-                                        <div className="pm-inf_sk">
+                                        <div className="pm-inf_sk ma">
                                             <div>
                                                 <Colaborator />
                                             </div>
                                             <strong>6,200</strong>
                                             <p>Colaboradores</p>
                                         </div>
-                                        <div className="pm-inf_sk">
+                                        <div className="pm-inf_sk ma">
                                             <div>
                                                 <Families />
                                             </div>
@@ -73,21 +73,21 @@ const AboutUs = () => {
                                         </div>
                                     </div>
                                     <div className="skills-gc">
-                                        <div className="pm-inf_sk">
+                                        <div className="pm-inf_sk ma">
                                             <div>
                                                 <Machine />
                                             </div>
                                             <strong>1000</strong>
                                             <p>número de máquinas</p>
                                         </div>
-                                        <div className="pm-inf_sk">
+                                        <div className="pm-inf_sk ma">
                                             <div>
                                                 <Book />
                                             </div>
                                             <strong>10000</strong>
                                             <p>SKU’s</p>
                                         </div>
-                                        <div className="pm-inf_sk">
+                                        <div className="pm-inf_sk ma">
                                             <div>
                                                 <Chart />
                                             </div>

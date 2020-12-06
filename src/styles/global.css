@@ -110,6 +110,12 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         justify-content: flex-start;
         margin-left: 35px !important;
     }
+    .img-new_slick_us img ,.img-new_slick_us::after{
+        border-radius: 30px !important;
+    }
+    .Container-sb_pm .sb_pm .header-title p {
+        margin-top: 40px !important;
+    }
     .Home .content-slick-home {
         height: 95vh !important;
     }
@@ -121,7 +127,6 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
     .container-grid.clients-page .info-clients  {
         margin-left: 35px !important;
-        padding-bottom: 128px !important;
         grid-column: 1/8 !important;
     }
     .container-clients .title-client {
@@ -136,9 +141,10 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
     .container .container-grid.clients-page .info-client-footer {
         margin-left: 35px !important;
+        max-width: 90% !important;
     }
-    .container .container-grid.clients-page .info-client-footer p {
-        max-width: 400px !important;
+    .container .container-grid.clients-page .info-client-footer p ,.info-client-footer p {
+        max-width: 100% !important;
     }
     .Known-pm.home .products-known {
         grid-column: 1/8 !important;
@@ -150,9 +156,6 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
     .home .container-known .info-known p ,.bioform-pm p, .line-products_pm p, .material-pm p, .use-app_pm p {
         font-size: 14px !important;
-    }
-    .bioform-pm p, .line-products_pm p, .material-pm p, .use-app_pm p {
-        top: 80px !important;
     }
     .square-sl-sbl,.square-distributor ,.container-known_video .play-known .square ,.tablet .container-news .square-slick , .wc .square-carbajal 
     ,.card-about .square.us ,.container-grid .play-known .square{
@@ -229,9 +232,9 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .container-grid.information .certifications-companies .info-container {
         right: 0 !important;
     }
-    .container-grid.information .certifications-companies .info-container p {
+    .container-grid.information .certifications-companies .info-container p ,.info-container .title-green-dark-container h6 {
         font-size: 14px !important;
-        max-width: 400px !important;
+        width: 90% !important;
     }
     .container-grid.work .card-work {
         max-width: 400px !important;
@@ -264,6 +267,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         justify-content: flex-start !important;
     }
     .container-grid.elipse .box-container.question {
+        margin-top: 50px !important;
         max-width: 380px !important;
     }
     .card-work {
@@ -285,6 +289,9 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
     .flex-pet-sbl > div > div {
         margin-bottom: 30px !important;
+    }
+    .container-grid.clients-page {
+        display: block !important;
     }
     .container-grid.videos  {
         padding-top: 0px !important;
@@ -403,14 +410,14 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         right: 17% !important;
     }
     .Footer-news_us .info-footer_news_us p {
-        max-width: 400px !important;
+        max-width: 90% !important;
     }
     .Footer-news_us .info-footer_news_us ,.container-grid.why .info-pm{ 
         grid-column: 1/8 !important;
         margin-left: 35px;
     }
     .About-us_pm .info-about p ,.container-grid.why .info-pm p {
-        max-width: 400px !important;
+        max-width: 85% !important;
     }
     .container-grid.why .square {
         left: 20px !important;
@@ -431,10 +438,20 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         height: 100% !important;
         top: 2px !important;
     }
-    .info-known_our h4 ,.info-pm h6 ,.info-post-activity p{
+    .info-known_our h4 ,.info-post-activity p{
         font-size: 22px !important;
         width: 90% !important;
         margin: 0 auto;
+    }
+    .info-pm h6 {
+        font-size: 22px !important;
+        width: 90% !important;
+    }
+    .client-info {
+        grid-column: 1/8 !important;
+    }
+    .info-client-footer {
+        position: relative !important;
     }
     .filter-shadow {
         border-radius: 20px !important;
@@ -486,7 +503,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         left: 0px !important;
     }
     .info-carbajal.about p {
-        max-width: 400px !important;
+        max-width: 85% !important;
     }
     .container-informations.present {
         padding-bottom: 0px !important;
@@ -560,6 +577,13 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         left: -42px !important;
         background-size: unset !important;
         transform: rotate(19deg) !important;
+    }
+    summary {
+        font-size: 10px !important;
+    }
+    summary svg {
+        width: 30px !important;
+        padding: 6px !important;
     }
     .Radius {
         height: 80vh !important;
@@ -658,7 +682,14 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         top: 850px !important;
     }
     .img-footer_new_us svg ,.Container-sb_pm .header-title p {
-        max-width: 400px !important;
+        max-width: 90% !important;
+        margin: 0 auto !important;
+    }
+    .img-footer_new_us {
+        display: flex;
+    }
+    .etic-pro p {
+        width: 90% !important;
     }
     .Container-sb_pm {
         padding-top: 20px !important;
@@ -1050,4 +1081,141 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .copy-socials.movil .copy {
         padding: 20px;
     }
+    .title-detail_product h4 {
+        font-size: 22px !important;
+    }
 }
+
+@media screen and (max-height: 851px) and (max-width: 450px) {
+    .info-slick {
+        top: 570px !important;
+    }
+    .Home .content-slick-home {
+        height: 87vh !important;
+    }
+    .container-known_video {
+        padding-bottom: 50px;
+    }
+    .Known-pm.home .container-products_pm img {
+        max-width: 144px !important;
+        max-height: 104px !important;
+    }
+    .bioform-pm p, .line-products_pm p, .material-pm p, .use-app_pm p {
+        top: 40px !important;
+    }
+    .container-products_business svg {
+        width: 59px !important;
+        height: 59px !important;
+    }
+    .Known-pm.home .container-products_business div {
+        margin-left: 9px !important;
+    }
+    .square-img-card.right-up,.img-card, .square-img-card.right-up, .News-pm_us .img-new_slick_us, .News-pm_us .img-new_slick, .img-distributor, .img-video_known .img, .tablet .img-new_slick, .img-carbajal.about, .card-about .img-about_us {
+        max-width: 320px !important;
+        max-height: 220px !important;
+    }
+    .container-grid.first .square-img-card,.square-sl-sbl, .square-distributor, .container-known_video .play-known .square, .tablet .container-news .square-slick, .wc .square-carbajal, .card-about .square.us, .container-grid .play-known .square {
+        max-width: 320px !important;
+        max-height: 220px !important;
+    }
+    .tablet .container-news .square-slick {
+        max-width: 280px !important;
+    }
+    .info-new_slick ,.title-container {
+        max-width: 90% !important;
+    }
+    .Rotate-slick.Us {
+        height: 110vh !important;
+    }
+    .marker-contact, .call-contact {
+        margin-left: 10px !important;
+    }
+    .Slicks-pm .info-slick.Us {
+        top: 800px !important;
+    }
+    .pm-inf_sk.ma svg {
+        width: 50px !important;
+        height: 58px !important;
+    }
+    .img-values svg {
+        width: 50px !important;
+        height: 58px !important;
+    }
+    .footer-dc > div {
+        margin-top: 10px;
+        font-size: 14px !important;
+    }
+    .Mision-vision_pm .info-vision, .Mision-vision_pm .info-mision, .Mision-vision_pm .info-promise_value, .Mision-vision_pm .info-propose, .Mision-vision_pm .square-mision, .Mision-vision_pm .square-vision, .Mision-vision_pm .square-promise_value, .Mision-vision_pm .square-propose {
+        max-width: 260px !important;
+        max-height: 180px !important;
+    }
+    .Products-Quote .products-default {
+        grid-template-columns: repeat(1,1fr) !important;
+        text-align: -webkit-center !important;
+    }
+    .objectives-sosten svg {
+        width: 50px !important;
+        height: 58px !important;
+    }
+    .info-sl-sbl p {
+        max-width: 300px !important;
+    }
+    .play-known .img-distributor img,  .play-known .img-video_known .img img {
+        height: 100% !important;
+    }
+    .card-work ,.container-grid.work .card-work{
+        max-width: 320px !important;
+        max-height: 400px !important;
+    }
+    .container-grid.elipse .box-container .container-accordion {
+        max-width: 80% !important;
+    }
+    .card-body {
+        padding: 20px 10px 20px 10px !important;
+    }
+    .new-slick.work.sbl img {
+        height: 400px !important;
+    }
+    .post-pet-sbl.activity .img-new_slick.activity ,.post-pet-sbl.activity .square-pet-sbl.activity {
+        max-width: 200px !important;
+        max-height: 300px !important;
+    }
+    .container-grid.videos .play-button_pm.activity {
+        top: 190px !important;
+        left: 150px !important;
+    }
+    .container .container-grid.why .play-button_pm {
+        top: 200px !important;
+        right: 10px !important;
+    }
+    .container .container-grid.clients-page .info-client-footer {
+        max-width: 100% !important;
+    }
+}
+
+@media screen and (max-height: 851px) and (max-width: 430px) {
+    .Products-populate_pm .products-default {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+}
+
+
+@media screen and (max-height: 851px) and (max-width: 400px) {
+    .Detail-Product_pm.movil .square-products {
+        min-width: 210px !important;
+        min-height: 210px !important;
+    }
+    .img-detail_product {
+        height: 250px !important;
+    }
+    .container-detail_product .square-products {
+        right: 0px !important;
+    }
+    .Detail-Product_pm.movil .container-detail_product .img-product {
+        max-width: 280px !important;
+    }
+    .Detail-Product_pm.movil .container-detail_product .img-product {
+        max-height: 250px !important;
+    }
+}
+
