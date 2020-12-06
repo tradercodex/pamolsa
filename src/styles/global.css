@@ -371,12 +371,18 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         max-width: 380px !important;
         max-height: 280px !important;
     }
+    .info-sbl {
+        max-width: 90% !important;
+    }
+    .square-img-card {
+        border-radius:  30px !important;
+    }
     .News-pm_us .new-slick.plant.tablet .img-new_slick ,.container-news .img-new_slick_us {
         left: -10px !important;
     }
     .new-slick.plant.tablet .square-slick {
         top: 60px !important;
-        left: -40px !important;
+        left: -30px !important;
     }
     .container-news .post-new_slick_us {
         margin-top: 0px !important;
@@ -496,7 +502,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
     .container-informations .info-carbajal.about ,.container-informations .info-map_pm.title, .About-us_pm .info-about{
         margin-left: 35px;
-        width: 100% !important;
+        max-width: 90% !important;
         grid-column: 1/8 !important;
     }
     .Certifications .container-news .img-new_slick {
@@ -686,6 +692,9 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .info-certifications span ,.info-new_slick h6, .certifications-companies h6.companies-title, .certifications-companies h6.companies-title_second,
     .info-footer_news_us div.span {
         font-size: 16px !important;
+    }
+    .info-footer_news_us div.span {
+        max-width: 90% !important;
     }
     .info-certifications p ,.info-new_slick p{
         font-size: 12px !important;
@@ -905,6 +914,9 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .products-default .product .img-product {
         max-width: 116px !important;
         max-height: 116px !important;
+    }
+    .img-card::after  ,.img-card{
+        border-radius: 30px !important;
     }
     .container-filter_pm {
         border-radius:  0px !important;
@@ -1244,6 +1256,12 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         min-width: 210px !important;
         min-height: 210px !important;
     }
+    .container-gallery {
+        grid-template-columns: repeat(1,1fr) !important;
+    }
+    .gallery-item {
+        grid-column: 1/2 !important;
+    }
     .img-detail_product {
         height: 250px !important;
     }
@@ -1303,6 +1321,9 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .Known-pm .container-known_business div {
         margin-top: 20px !important;
     }
+    .info-carbajal img {
+        max-width: 80% !important;
+    }
     .img-about_us .img img,.square-img-card.right-up, .img-card, .square-img-card.right-up, .News-pm_us .img-new_slick_us, .News-pm_us .img-new_slick, .img-distributor, .img-video_known .img, .tablet .img-new_slick, .img-carbajal.about, .card-about .img-about_us {
         max-width: 260px !important;
         max-height: 160px !important;
@@ -1347,5 +1368,79 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .info-post-activity p {
         max-width: 60% !important;
         margin-left: 10px !important;
+    }
+}
+
+@media screen and (max-height: 736px) and (max-width: 414px) {
+    .Rotate-slick.Us {
+        height: 115vh !important;
+    }
+}
+
+@media screen and (max-height: 800px) and (max-width: 600px) {
+    .Rotate-slick.Us {
+        height: 115vh !important;
+    }
+}
+
+@media screen and (max-height: 667px) and (max-width: 375px) {
+    .slick-list .Rotate-slick.Us {
+        top: -600px !important;
+    }
+    .Rotate-slick.Us::before {
+        min-height: 164vh !important;
+    }
+    .Slicks-pm.Us .slick-slider.slick-initialized .slick-slide {
+        height: 70vh !important;
+    }
+    .Slicks-pm .Rotate-slick.Us .info-slick.Us {
+        top: 700px !important;
+    }
+    .Slicks-pm .Rotate-slick.Us::after {
+        background-position: top !important;
+    }
+}
+
+@media screen and (max-height: 568px) and (max-width: 320px) {
+    .Slicks-pm .Rotate-slick.Us .info-slick.Us {
+        top: 550px !important;
+        max-width: 40% !important;
+    }
+    .info-slick {
+        top: 500px !important;
+        left: -10px !important;
+    }
+    .img-carbajal.about ,.container-grid.first .square-img-card, .square-sl-sbl, .square-distributor, .container-known_video .play-known .square, .tablet .container-news .square-slick, .wc .square-carbajal, .card-about .square.us, .container-grid .play-known .square {
+        max-width: 220px !important;
+        top: -20px !important;
+    }
+    .container-vision, .container-mision, .container-promise-value, .container-propose {
+        margin-left: 40px !important;
+    }
+    .Mision-vision_pm .info-vision, .Mision-vision_pm .info-mision, .Mision-vision_pm .info-promise_value, .Mision-vision_pm .info-propose, .Mision-vision_pm .square-mision, .Mision-vision_pm .square-vision, .Mision-vision_pm .square-promise_value, .Mision-vision_pm .square-propose {
+        width: 245px !important;
+    }
+    .wc .square-carbajal {
+        top: 20px !important;
+    }
+    .post-sl-sbl .square-sl-sbl {
+        top: 50px !important
+    }
+    .container-grid .play-known .square {
+        top: 90px !important;
+    }
+    .footer-dc {
+        padding-top: 0px !important;
+        padding-bottom: 50px !important;
+    }
+    .container-header-rs .Logo-pm {
+        grid-column: 1/10 !important;
+    }
+    .container-grid.first .square-img-card {
+        top: 50px !important;
+        border-radius: 30px !important;
+    }
+    .Known-pm.home .container-products_pm img {
+        max-width: 116px !important;
     }
 }
