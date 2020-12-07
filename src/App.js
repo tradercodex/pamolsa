@@ -72,9 +72,8 @@ function App() {
           <Route exact path="/noticias/:name" component={DetailNew} />
           <Route exact path="/sostenibilidad/comunidad/:name" component={DetailCommunity} />
           <Route exact path="/login" component={Login} />
-          <NotFound />
           {
-            token ? <Route exact patch="/admin" component={Dashboard} /> : 'No se encontro la pagina'
+            token ? <Route exact patch="/admin" component={Dashboard} /> : <NotFound />
           }
         </Switch>
       </Router>
