@@ -2,9 +2,7 @@ import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 
 const GalleryNews = ({ newDate }) => {
-
-    console.log(newDate)
-
+    
     return (
         <Fragment>
             <div className="container-gallery">

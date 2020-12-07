@@ -38,8 +38,6 @@ const DashboardEditActivity = ({match}) => {
         })
     }
 
-    console.log(community)
-
     useEffect(() => {
         $('#profile-image').change(function (e) {
             addImage(e);

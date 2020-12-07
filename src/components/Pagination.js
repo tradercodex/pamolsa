@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 const Pagination = ({ postsPerPage, paginate, totalPostsFilter, totalFilter }) => {
 
@@ -12,8 +12,6 @@ const Pagination = ({ postsPerPage, paginate, totalPostsFilter, totalFilter }) =
     for (let i = 1; i <= Math.ceil(totalPostsFilter / postsPerPage); i++) {
         pageNumbersByFilter.push(i);
     }
-
-    console.log(totalFilter)
 
     return (
         <div>

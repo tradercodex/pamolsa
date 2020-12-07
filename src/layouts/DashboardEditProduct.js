@@ -3,7 +3,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import ReactSelect from 'react-select'
 import { useForm, Controller } from 'react-hook-form'
 import makeAnimated from 'react-select/animated';
+import { useHistory } from 'react-router-dom'
+import Delete from '@material-ui/icons/Delete'
+import { setAlert } from '../redux/actions/alert'
 import axios from 'axios'
+import { deleteImageProduct } from '../redux/actions/product'
 import $ from 'jquery'
 import '../styles/dashboard.css'
 import {
@@ -13,11 +17,12 @@ import {
     getAddSubtypes,
     getMaterials,
     getTypesBusiness,
-    updateProduct
+    updateProduct,
+    getProduct as getProducts
 }
     from '../redux/actions/product'
 
-const DashboardEditProduct = ({match}) => {
+const DashboardEditProduct = ({ match }) => {
 
     const id = match.params.id
 
@@ -27,6 +32,7 @@ const DashboardEditProduct = ({match}) => {
     const materials = useSelector(state => state.products.materials)
     const business = useSelector(state => state.products.typesBusiness)
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const [productsImages, setProductsImages] = useState({
         images: []
@@ -41,6 +47,7 @@ const DashboardEditProduct = ({match}) => {
         weight: '',
         width: '',
         ue_intern: '',
+        popular: '',
         ue_master: '',
         uee: '',
         line: '',
@@ -63,7 +70,6 @@ const DashboardEditProduct = ({match}) => {
 
     const getProduct = async () => {
         const res = await axios.get(`http://3.120.185.254:8090/api/product/find?product_id=${id}`)
-        console.log(res.data)
         setProduct({
             name: res.data.data.name,
             code: res.data.data.code,
@@ -74,31 +80,30 @@ const DashboardEditProduct = ({match}) => {
             width: res.data.data.width,
             ue_intern: res.data.data.ue_intern,
             ue_master: res.data.data.ue_master,
+            popular: res.data.data.popular,
             uee: res.data.data.uee,
-            file: res.data.data.image[0].url,
+            file: res.data.data.image,
             unit: res.data.data.unit,
             brand: res.data.data.brand,
             colour: res.data.data.colour,
             shape: res.data.data.shape,
             temperature: res.data.data.temperature,
             min_quantity: res.data.data.min_quantity,
-            line: {label: res.data.data.product_line.name, value: res.data.data.product_line.id},
-            product_type: {label: res.data.data.product_type.name, value: res.data.data.product_type.id},
+            line: { label: res.data.data.product_line.name, value: res.data.data.product_line.id },
+            product_type: { label: res.data.data.product_type.name, value: res.data.data.product_type.id },
             business_types: res.data.data.business?.map(item => ({ label: item.name, value: item.id }))
         })
-        setValue("line",{label: res.data.data.product_line.name, value: res.data.data.product_line.id})
-        setValue("product_type",{label: res.data.data.product_type.name, value: res.data.data.product_type.id})
-        setValue("product_addtl_subtype",{label: res.data.data.product_addtl_subtype.name, value: res.data.data.product_addtl_subtype.id})
-        setValue("material",{label: res.data.data.material.name, value: res.data.data.material.id})
+        setValue("line", { label: res.data.data.product_line.name, value: res.data.data.product_line.id })
+        setValue("product_type", { label: res.data.data.product_type.name, value: res.data.data.product_type.id })
+        setValue("product_addtl_subtype", { label: res.data.data.product_addtl_subtype.name, value: res.data.data.product_addtl_subtype.id })
+        setValue("material", { label: res.data.data.material.name, value: res.data.data.material.id })
         setValue("business", res.data.data.business?.map(item => ({ name: item.name, id: item.id })))
     }
 
     const linesSelect = lines?.map(item => ({ label: item.name, value: item.id }))
     const productTypeSelect = types?.map(item => ({ label: item.name, value: item.id }))
     const addSubTypesSelect = addSubTypes?.map(item => ({ label: item.name, value: item.id }))
-    const materialSelect =  materials?.map(item => ({ label: item.name, value: item.id }))
-
-    console.log('PRODUCT FILE', product.file)
+    const materialSelect = materials?.map(item => ({ label: item.name, value: item.id }))
 
     useEffect(() => {
         $('#profile-image').change(function (e) {
@@ -184,16 +189,20 @@ const DashboardEditProduct = ({match}) => {
         })
     }
 
-    console.log(productsImages)
-
     const deleteImage = i => () => {
         setProductsImages({
-            images: productsImages.images.filter((image,index) => i !== index)
+            images: productsImages.images.filter((image, index) => i !== index)
+        })
+    }
+
+    const popularChange = (e) => {
+        setProduct({
+            ...product,
+            popular: e.target.value
         })
     }
 
     const sendSubmit = (data, e) => {
-        console.log(data)
         const formData = new FormData;
 
         formData.append('product_id', id)
@@ -208,6 +217,7 @@ const DashboardEditProduct = ({match}) => {
         formData.append('ue_master', data.ue_master);
         formData.append('uee', data.uee);
         formData.append('unit', data.unit)
+        formData.append('popular', product.popular)
         formData.append('min_quantity', data.min_quantity);
         formData.append('shape', data.shape)
         formData.append('colour', data.colour);
@@ -218,12 +228,33 @@ const DashboardEditProduct = ({match}) => {
         formData.append('add_subtype', data.product_addtl_subtype.label)
         formData.append('material_name', data.material.label)
         formData.append('material_short_name', data.material_short_name);
-        formData.append('file', data.file[0]);
         for (var i = 0; i < data.business.length; i++) {
             formData.append('business', data.business[i].name);
         }
-        dispatch(updateProduct(formData))
+        for (let pic of productsImages.images) {
+            formData.append('file', pic)
+        }
+
+        if (formData) {
+            dispatch(updateProduct(formData))
+            setTimeout(() => {
+                history.push('/administrador/productos');
+                dispatch(setAlert("Producto editado correctamente", "", 4000))
+                dispatch(getProducts(100, 1));
+            }, 2000);
+        }
         e.target.reset();
+    }
+
+
+    const deletingProductImage = (imageId) => {
+        if (imageId) {
+            dispatch(deleteImageProduct(imageId))
+            setTimeout(() => {
+                window.location.replace(`/administrador/productos/editar/${id}`);
+                dispatch(setAlert("Se elimino la imagen  del producto", "", 4000))
+            }, 2000);
+        }
     }
 
     return (
@@ -265,13 +296,14 @@ const DashboardEditProduct = ({match}) => {
                                             ref={
                                                 register({
                                                     required: {
-                                                        value: false,
+                                                        value: true,
+                                                        message: "El producto debe tener un código"
                                                     }
                                                 })
                                             }
                                         />
                                         <div className="error-ds">
-                                            {errors.material_short_name && errors.material_short_name.message}
+                                            {errors.code && errors.code.message}
                                         </div>
                                     </div>
                                     <div className="input-ds">
@@ -283,11 +315,15 @@ const DashboardEditProduct = ({match}) => {
                                             ref={
                                                 register({
                                                     required: {
-                                                        value: false,
+                                                        value: true,
+                                                        message: "El producto debe tener un largo"
                                                     }
                                                 })
                                             }
                                         />
+                                        <div className="error-ds">
+                                            {errors.long && errors.long.message}
+                                        </div>
                                     </div>
                                     <div className="input-ds">
                                         <div><label>Ancho del producto</label></div>
@@ -298,11 +334,15 @@ const DashboardEditProduct = ({match}) => {
                                             ref={
                                                 register({
                                                     required: {
-                                                        value: false
+                                                        value: true,
+                                                        message: "El producto debe tener un ancho"
                                                     }
                                                 })
                                             }
                                         />
+                                        <div className="error-ds">
+                                            {errors.width && errors.width.message}
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="container-grid-ds-forms">
@@ -315,11 +355,15 @@ const DashboardEditProduct = ({match}) => {
                                             ref={
                                                 register({
                                                     required: {
-                                                        value: false
+                                                        value: true,
+                                                        message: "El producto debe tener un diámetro"
                                                     }
                                                 })
                                             }
                                         />
+                                         <div className="error-ds">
+                                            {errors.diameter && errors.diameter.message}
+                                        </div>
                                     </div>
                                     <div className="input-ds">
                                         <div><label>Altura del producto</label></div>
@@ -330,11 +374,15 @@ const DashboardEditProduct = ({match}) => {
                                             ref={
                                                 register({
                                                     required: {
-                                                        value: false,
+                                                        value: true,
+                                                        message: "El producto debe tener una altura"
                                                     }
                                                 })
                                             }
                                         />
+                                          <div className="error-ds">
+                                            {errors.height && errors.height.message}
+                                        </div>
                                     </div>
                                     <div className="input-ds">
                                         <div><label>Peso del producto</label></div>
@@ -345,11 +393,15 @@ const DashboardEditProduct = ({match}) => {
                                             ref={
                                                 register({
                                                     required: {
-                                                        value: false,
+                                                        value: true,
+                                                        message: "El producto debe tener un peso"
                                                     }
                                                 })
                                             }
                                         />
+                                         <div className="error-ds">
+                                            {errors.weight && errors.weight.message}
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="container-grid-ds-forms">
@@ -502,7 +554,7 @@ const DashboardEditProduct = ({match}) => {
                                     <Controller
                                         as={
                                             <ReactSelect
-                                                styles={selectStyles}                                               
+                                                styles={selectStyles}
                                                 options={linesSelect}
                                             />}
                                         name="line"
@@ -640,31 +692,80 @@ const DashboardEditProduct = ({match}) => {
                                     </div>
                                 </div>
                                 <div className="input-ds" style={{ marginTop: "20px" }}>
-                                    <div><label>Imagen de la noticia</label></div>
-                                    <div className="img-input-ds">
-                                        <img style={{ width: "100%" }} id="imgPerfil" src={`http://` + product.file || require('../images/img/uploadimage.jpg')} alt="img" />
+                                    <div><label>Quieres que este producto sea popular ?</label></div>
+                                    <div className="flex-popular">
                                         <input
-                                            type="file"
-                                            name="file"
-                                            // onChange={handleProductsImages}
-                                            id="profile-image"
-                                            accept="image/*"
-                                            ref={register}
+                                            type="text"
+                                            name="popular"
+                                            min="0"
+                                            defaultValue={product.popular}
+                                            onChange={popularChange}
+                                            max="1"
                                         />
-                                        <div className="error-ds">
-                                            {errors.file && errors.file.message}
+                                    </div>
+                                    <div className="input-ds" style={{ marginTop: "20px" }}>
+                                        <div><label>Imagen de la noticia</label></div>
+                                        {
+                                            product.file && product.file.length > 0 ?
+                                                <div className="success-image">
+                                                    <p>Lista de imagenes del Producto</p>
+                                                </div> : ''
+                                        }
+                                        <div className="img-input-ds edit">
+                                            {
+                                                product.file && product.file.length > 0 ?
+                                                    product.file.map(item => (
+                                                        <div>
+                                                            <img style={{ width: "100%" }} id="imgPerfil" src={`http://` + item.url || require('../images/img/uploadimage.jpg')} alt="img" />
+                                                            <button onClick={() => deletingProductImage(item.id)} className="delete"><Delete /></button>
+                                                        </div>
+                                                    )) :
+
+                                                    <div>
+                                                        <img style={{ width: "100%" }} id="imgPerfil" src={require('../images/img/uploadimage.jpg')} alt="img" />
+                                                    </div>
+                                            }
+                                            <input
+                                                type="file"
+                                                name="file"
+                                                onChange={handleProductsImages}
+                                                id="profile-image"
+                                                accept="image/*"
+                                                ref={
+                                                    register({
+                                                        required: {
+                                                            value: false,
+                                                            message: 'Ingrese la imagen del producto'
+                                                        }
+                                                    })
+                                                }
+                                            />
+                                            <div className="error-ds">
+                                                {errors.file && errors.file.message}
+                                            </div>
                                         </div>
-                                        {/* {
-                                            productsImages.images.length > 0 ? 
-                                            productsImages.images.map((item, index) => 
-                                            <div key={index}>
-                                                {item.name}
-                                                <button type="button" onClick={deleteImage(index)} className="">x</button>
-                                            </div>) 
-                                            : null
-                                        } */}
+
                                     </div>
                                 </div>
+                                {
+                                    productsImages.images.length > 0 ?
+                                        <div className="success-image" style={{ marginTop: "30px" }}>
+                                            <p>Lista de imagenes de productos agregados recientemente</p>
+                                        </div>
+                                        :
+                                        <div className="error-image" style={{ marginTop: "30px" }}>
+                                            <p>No hay productos nuevos agregados</p>
+                                        </div>
+                                }
+                                {
+                                    productsImages.images.length > 0 ?
+                                        productsImages.images.map((item, index) =>
+                                            <div key={index} className="images-adds">
+                                                {item === undefined ? '' : item.name}
+                                                <button type="button" onClick={deleteImage(index)} className="">x</button>
+                                            </div>)
+                                        : null
+                                }
                             </div>
                             <button style={{ marginTop: "20px" }} type="submit">Guardar</button>
                         </div>

@@ -7,8 +7,6 @@ const initialState = {
 export default function (state = initialState, action) {
 
     const { type, payload } = action
-    console.log(payload)
-    console.log(state)
     switch (type) {
         case GET_COMMUNITIES:
             return {

@@ -17,10 +17,7 @@ const DashboardEditNew = ({match}) => {
     const history = useHistory();
 
     const [ newId , setNewId] = useState({
-        author: '',
-        body: '',
         created: '',
-        place: '',
         source: '',
         title: '',
         file: '',
@@ -36,14 +33,10 @@ const DashboardEditNew = ({match}) => {
 
     const dispatch = useDispatch();
 
-    console.log(id)
     const getNewApi = async () => {
         const response = await Axios.get(`http://3.120.185.254:8090/api/news/findById/${id}`)
-        console.log(response.data)
         setNewId({
-            author: response.data.data.author,
             title: response.data.data.title,
-            place: response.data.data.place,
             description: response.data.data.body,
             source: response.data.data.source,
             created: response.data.data.created,
@@ -88,10 +81,7 @@ const DashboardEditNew = ({match}) => {
 
         formData.append('news_id', id)
         formData.append('title', data.title);
-        formData.append('author', data.author);
-        formData.append('place', data.place);
         formData.append('created', data.created);
-        formData.append('department', data.department);
         formData.append('body', data.body)
         formData.append('source', data.source);
         formData.append('file', data.file[0])
@@ -136,49 +126,6 @@ const DashboardEditNew = ({match}) => {
                                     />
                                     <div className="error-ds">
                                         {errors.title && errors.title.message}
-                                    </div>
-                                </div>
-
-                                <div className="input-ds">
-                                    <div>
-                                        <label>Autor</label>
-                                    </div>
-                                    <input
-                                        type="text"
-                                        name="author"
-                                        defaultValue={newId.author}
-                                        ref={
-                                            register({
-                                                required: {
-                                                    value: true,
-                                                    message: 'Ingrese el autor de esta noticia'
-                                                }
-                                            })
-                                        }
-                                    />
-                                    <div className="error-ds">
-                                        {errors.author && errors.author.message}
-                                    </div>
-                                </div>
-                                <div className="input-ds">
-                                    <div>
-                                        <label>Lugar</label>
-                                    </div>
-                                    <input
-                                        type="text"
-                                        name="place"
-                                        defaultValue={newId.place}
-                                        ref={
-                                            register({
-                                                required: {
-                                                    value: true,
-                                                    message: 'Ingrese el lugar de la noticia'
-                                                }
-                                            })
-                                        }
-                                    />
-                                    <div className="error-ds">
-                                        {errors.place && errors.place.message}
                                     </div>
                                 </div>
                                 <div className="input-ds">

@@ -11,7 +11,6 @@ import Footer from '../components/Footer'
 
 const Quote = () => {
 
-    const history = useHistory();
     const dispatch = useDispatch()
     const cart = useSelector(state => state.cart)
 
@@ -117,7 +116,7 @@ const Quote = () => {
                 parentFieldset.find('.wizard-required').each(function () {
                     var thisValue = $(this).val();
 
-                    if (thisValue == "") {
+                    if (thisValue === "") {
                         $(this).siblings(".wizard-form-error").slideDown();
                         nextWizardStep = false;
                     }
@@ -133,7 +132,7 @@ const Quote = () => {
                         if ($(this).hasClass('show')) {
                             var formAtrr = $(this).attr('data-tab-content');
                             $(document).find('.form-wizard-steps .form-wizard-step-item').each(function () {
-                                if ($(this).attr('data-attr') == formAtrr) {
+                                if ($(this).attr('data-attr') === formAtrr) {
                                     $(this).addClass('active');
                                     var innerWidth = $(this).innerWidth();
                                     var position = $(this).position();

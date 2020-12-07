@@ -24,7 +24,6 @@ const DashboardEditVacant = ({match}) => {
 
     const getVacant = async () => {
         const res = await axios.get(`http://3.120.185.254:8090/api/vacant/find/${id}`)
-        console.log(res.data)
         setVacant({
             title: res.data.data.title,
             description: res.data.data.description,

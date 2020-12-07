@@ -3,10 +3,17 @@ import axios from 'axios'
 
 const root = 'http://3.120.185.254:8090/api'
 
+const token = localStorage.getItem('token')
+
+let config = {
+    headers: {
+        'x-access-token': token
+    }
+}
+
 export const sendBanner = (data) => async dispatch => {
     try {
         const res = await axios.post(`${root}/home/saveImage`, data);
-        console.log(res.data)
         dispatch({
             type: SEND_BANNER,
             payload: res.data
@@ -21,7 +28,6 @@ export const sendBanner = (data) => async dispatch => {
 export const getBanners = (size,page) => async dispatch => {
     try {
         const res = await axios.get(`${root}/home/listImage?size=${size}&page=${page}`);
-        console.log(res.data)
         dispatch({
             type: GET_BANNER,
             payload: res.data.data
@@ -35,8 +41,7 @@ export const getBanners = (size,page) => async dispatch => {
 
 export const deleteBanner = (id) => async dispatch => {
     try {
-        const res = await axios.put(`${root}/home/deleteImage`, id);
-        console.log(res.data)
+        const res = await axios.put(`${root}/home/deleteImage`, id, config);
         dispatch({
             type: DELETE_BANNER,
             payload: Number(res.data.data.home_id)

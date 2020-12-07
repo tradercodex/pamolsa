@@ -11,8 +11,6 @@ const DetailNew = ({title,body,source,created,place,file,author}) => {
         history.goBack();
     }
 
-    console.log(file)
-
     return (
         <Fragment>
             <div className="Detail-new_pm">

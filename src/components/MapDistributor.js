@@ -9,8 +9,6 @@ function View({
     ubication
 }) {
 
-    console.log(ubication)
-
     const mapStyles = {
         googleMapStyles
     };

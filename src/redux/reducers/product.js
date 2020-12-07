@@ -10,7 +10,6 @@ import {
     DELETE_PRODUCT,
     GET_PRODUCTS_BY_TYPE,
     GET_PRODUCT,
-    UPDATE_PRODUCT
 } from '../actions/types'
 
 const initialState = {

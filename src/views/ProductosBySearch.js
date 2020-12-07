@@ -4,8 +4,9 @@ import SearchProductsByLine from '../components/SearchProductsByLine'
 import { useSelector,useDispatch } from 'react-redux'
 import Axios from 'axios'
 import { getTypesBusiness  } from '../redux/actions/product'
-import SidebarProductsByBusiness from '../components/SidebarProductsByBusiness'
+// import SidebarProductsByBusiness from '../components/SidebarProductsByBusiness'
 import Products from '../components/Products'
+import axios from 'axios'
 import Pagination from '../components/Pagination'
 import ProductsPopulate from '../components/ProductsPopulate'
 import Footer from '../components/Footer'
@@ -21,6 +22,7 @@ const ProductsBySearch = ({match}) => {
 
     const dispatch = useDispatch();
 
+    const [productsPopulate, setProductsPopulate] = useState([])
     const [cartItems, setCartItems] = useState(cart.cartItems)
     const [currentPage, setCurrentPage] = useState(1)
     const [postsPerPage] = useState(12)
@@ -39,49 +41,47 @@ const ProductsBySearch = ({match}) => {
         ids: ''
     });
 
-    const toggleLineProductsRadio = (e, item) => {
-        const { ids } = lineId;
-        let newArr = [];
+    // const toggleLineProductsRadio = (e, item) => {
+    //     const { ids } = lineId;
+    //     let newArr = [];
 
-        if (!ids.includes(item)) {
-            newArr = [...ids, item];
-        } else {
-            newArr = ids.filter(a => a !== item);
-        }
-        setLineId({
-            ids: newArr
-        })
-    }
+    //     if (!ids.includes(item)) {
+    //         newArr = [...ids, item];
+    //     } else {
+    //         newArr = ids.filter(a => a !== item);
+    //     }
+    //     setLineId({
+    //         ids: newArr
+    //     })
+    // }
 
-    console.log(lineId)
+    // const toggleTypesProductsRadio = (e, item) => {
+    //     const { ids } = typeId;
+    //     let newArr = [];
 
-    const toggleTypesProductsRadio = (e, item) => {
-        const { ids } = typeId;
-        let newArr = [];
+    //     if (!ids.includes(item)) {
+    //         newArr = [...ids, item];
+    //     } else {
+    //         newArr = ids.filter(a => a !== item);
+    //     }
+    //     setTypeId({
+    //         ids: newArr
+    //     })
+    // }
 
-        if (!ids.includes(item)) {
-            newArr = [...ids, item];
-        } else {
-            newArr = ids.filter(a => a !== item);
-        }
-        setTypeId({
-            ids: newArr
-        })
-    }
+    // const toggleMaterialsProductsRadio = (e,item) => {
+    //     const { ids } = materialId;
+    //     let newArr = [];
 
-    const toggleMaterialsProductsRadio = (e,item) => {
-        const { ids } = materialId;
-        let newArr = [];
-
-        if (!ids.includes(item)) {
-            newArr = [...ids, item];
-        } else {
-            newArr = ids.filter(a => a !== item);
-        }
-        setMaterialId({
-            ids: newArr
-        })
-    }
+    //     if (!ids.includes(item)) {
+    //         newArr = [...ids, item];
+    //     } else {
+    //         newArr = ids.filter(a => a !== item);
+    //     }
+    //     setMaterialId({
+    //         ids: newArr
+    //     })
+    // }
 
     const apiGetSearch = async () => {
         const response = await Axios.get(`http://3.120.185.254:8090/api/product/find/query?query=${nameFilter}`);
@@ -104,6 +104,11 @@ const ProductsBySearch = ({match}) => {
         setMaterials(response.data.data)
     }
 
+    const apiProductsPopulate = async ( ) => {
+        const res = await axios.get('http://3.120.185.254:8090/api/product/find/popular')
+        setProductsPopulate(res.data.data)
+   }
+
     useEffect(()=>{
 
         const movilOpen = document.getElementById('movil');
@@ -123,10 +128,9 @@ const ProductsBySearch = ({match}) => {
         apiGetMaterial();
         apiGetLines();
         apiGetSearch();
+        apiProductsPopulate();
         dispatch(getTypesBusiness(8, 1));
     },[])
-
-    console.log(productsFilter)
 
     useEffect(() => {
         setCartItems(cart.cartItems)
@@ -176,7 +180,7 @@ const ProductsBySearch = ({match}) => {
                 />
             </div>
         </div>
-        <ProductsPopulate />   
+        <ProductsPopulate productsPopulate={productsPopulate}/>   
         <Footer />
         </>
      );

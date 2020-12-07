@@ -65,8 +65,6 @@ const Products = ({
         setOpen(false);
     };
 
-    console.log(type_id, nameTypeProduct)
-
     const body = (
         <div>
             {

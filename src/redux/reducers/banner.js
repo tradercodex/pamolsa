@@ -13,11 +13,6 @@ export default function (state = initialState, action) {
                 ...state,
                 banners: payload
             }
-        // case SEND_BANNER: 
-        //     return {
-        //         ...state,
-        //         banners: [...state.banners, payload]
-        //     }
         case DELETE_BANNER: 
             return {
                 ...state,

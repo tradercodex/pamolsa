@@ -19,6 +19,12 @@
     box-sizing: border-box;
 }
 
+.slick-slide div {
+    color: #4d4d4d;
+    font-family: 'Amble-Light';
+    font-size: 14px;
+}
+
 body {
     background: #F9F9F9;
     position: relative;
@@ -104,7 +110,31 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     display: none;
 }
 
+.no-quote {
+    padding: 20px 20px;
+    padding-bottom: 80px ;
+}
+
+@media only screen and (max-width: 1280px) {
+    .form-grid {
+        grid-template-columns: repeat(1,1fr) !important;
+    }
+}
+
 @media screen and (max-height: 1064px) and (max-width: 768px) {
+    .Footer-pm {
+        display: none;
+    }
+    .container-grid-ds-forms ,.img-input-ds.edit  {
+        grid-template-columns: repeat(1,1fr) !important;
+        grid-gap: 0px !important;
+    }
+    .grid-container-ds {
+        grid-template-columns: repeat(1,1fr) !important;
+    }
+    .Footer-pm.movil {
+        display: block !important;
+    }
     .home .container-known .info-known {
         grid-column: 1/8 !important;
         justify-content: flex-start;
@@ -1089,13 +1119,13 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
     .Footer-pm .logo {
         margin-bottom: 40px;
-        padding: 20px 10px !important;
+        padding: 20px 20px !important;
         border-bottom: 1px solid #a8a8a8;
     }
     .Footer-pm .declaration , .Footer-pm .information ,.Footer-pm .contact{
         margin-bottom: 23px !important;
         border-bottom: 1px solid #a8a8a8;
-        padding: 10px 10px;
+        padding: 10px 20px;
     }
     .Footer-pm hr {
         display: none;

@@ -49,10 +49,7 @@ const DashbaordAddNew = () => {
         const formData = new FormData();
 
         formData.append('title', data.title);
-        formData.append('author', data.author);
-        formData.append('place', data.place);
         formData.append('created', data.created);
-        formData.append('department', data.department);
         formData.append('body', data.body)
         formData.append('source', data.source);
         formData.append('file', data.file[0])
@@ -99,47 +96,6 @@ const DashbaordAddNew = () => {
                                         {errors.title && errors.title.message}
                                     </div>
                                 </div>
-
-                                <div className="input-ds">
-                                    <div>
-                                        <label>Autor</label>
-                                    </div>
-                                    <input
-                                        type="text"
-                                        name="author"
-                                        ref={
-                                            register({
-                                                required: {
-                                                    value: true,
-                                                    message: 'Ingrese el autor de esta noticia'
-                                                }
-                                            })
-                                        }
-                                    />
-                                    <div className="error-ds">
-                                        {errors.author && errors.author.message}
-                                    </div>
-                                </div>
-                                <div className="input-ds">
-                                    <div>
-                                        <label>Lugar</label>
-                                    </div>
-                                    <input
-                                        type="text"
-                                        name="place"
-                                        ref={
-                                            register({
-                                                required: {
-                                                    value: true,
-                                                    message: 'Ingrese el lugar de la noticia'
-                                                }
-                                            })
-                                        }
-                                    />
-                                    <div className="error-ds">
-                                        {errors.place && errors.place.message}
-                                    </div>
-                                </div>
                                 <div className="input-ds">
                                     <div>
                                         <label>Fecha</label>
@@ -158,24 +114,6 @@ const DashbaordAddNew = () => {
                                     />
                                     <div className="error-ds">
                                         {errors.created && errors.created.message}
-                                    </div>
-                                </div>
-                                <div className="input-ds">
-                                    <div><label>Departamento</label></div>
-                                    <input
-                                        type="text"
-                                        name="department"
-                                        ref={
-                                            register({
-                                                required: {
-                                                    value: true,
-                                                    message: 'Ingrese el departamento de la noticia'
-                                                }
-                                            })
-                                        }
-                                    />
-                                    <div className="error-ds">
-                                        {errors.department && errors.department.message}
                                     </div>
                                 </div>
                                 <div className="input-ds">

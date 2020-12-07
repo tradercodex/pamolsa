@@ -35,6 +35,16 @@
     transition-timing-function: linear,linear,ease;
 }
 
+.img-input-ds.edit {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
+}
+
+.img-input-ds.edit img {
+    height: 150px !important;
+}
+
 .Sidebar::after {
     content: "";
     position: absolute;
@@ -550,6 +560,34 @@ nav {
     fill: #F65252;
 }
 
+.success-image p {
+    color: #55F09D;
+    font-size: 12px !important;
+}
+
+.error-image p {
+    color: #F34F6B;
+    font-size: 12px !important;
+}
+
+.input-ds .flex-popular input {
+    margin-bottom: 0px !important;
+}
+
+.flex-popular {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.images-adds {
+    margin-top: 30px;
+    align-items: center;
+    display: flex;
+    color: #fff;
+    justify-content: space-between;
+}
+
 .gallery-items .edit svg {
     fill: #55F09D;
 }
@@ -637,7 +675,7 @@ nav {
     .Content {
         padding: 80px 30px 30px 30px;
         transition: 0.5;
-        background: #F0EEFF;
+        background: #1B203A;
     }
     .Sidebar.Toggle {
         transition: 0.5;

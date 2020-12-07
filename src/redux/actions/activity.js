@@ -13,7 +13,6 @@ import axios from 'axios'
 const root = 'http://3.120.185.254:8090/api'
 
 const token = localStorage.getItem('token')
-console.log(token)
 
 let config = {
     headers: {
@@ -24,7 +23,6 @@ let config = {
 export const sendActivity = (data) => async dispatch => {
     try {
         const res = await axios.post(`${root}/activity/save`, data, config);
-        console.log(res.data)
         dispatch({
             type: SEND_ACTIVITY,
             payload: res.data
@@ -39,7 +37,6 @@ export const sendActivity = (data) => async dispatch => {
 export const getActivities = () => async dispatch => {
     try {
         const res = await axios.get(`${root}/activity/list`);
-        console.log(res.data)
         dispatch({
             type: GET_ACTIVITIES,
             payload: res.data.data
@@ -54,7 +51,6 @@ export const getActivities = () => async dispatch => {
 export const updateActivity = (data) => async dispatch => {
     try {
         const res = await axios.put(`${root}/activity/update`,data);
-        console.log(res.data)
         dispatch({
             type: UPDATE_ACTIVITY,
             payload: res.data
@@ -69,7 +65,6 @@ export const updateActivity = (data) => async dispatch => {
 export const deleteActivity = (id) => async dispatch => {
     try {
         const res = await axios.put(`${root}/activity/delete`, id ,config);
-        console.log(res.data)
         dispatch({
             type: DELETE_ACTIVITY,
             payload: Number(res.data.data.activity_id)

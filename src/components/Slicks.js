@@ -20,8 +20,6 @@ const Slicks = ({ match, banners }) => {
         pauseOnHover: true
     };
 
-    console.log(banners)
-
     return (
         <Fragment>
             {

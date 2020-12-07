@@ -9,7 +9,7 @@ import { sendActivity, getActivities } from '../redux/actions/activity'
 
 const DashboardAddActivity = () => {
 
-    const { errors, handleSubmit, register,control } = useForm()
+    const { errors, handleSubmit, register } = useForm()
     const history = useHistory();
 
     const dispatch = useDispatch();

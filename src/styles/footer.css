@@ -6,12 +6,30 @@
     background: #ECECEC;
 }
 
+.accordion-footer {
+    width: 100% !important;
+    grid-column: 1/10;
+}
+
+.sp-title {
+    display: flex;
+    align-items: center;
+}
+
+.sp-title svg {
+    margin-right: 20px;
+}
+
 .container-footer {
     display: grid;
     grid-template-columns: repeat(9,1fr);
     align-items: flex-start;
     padding: 50px 100px 20px 100px;
     margin-bottom: 40px;
+}
+
+.Footer-pm.movil {
+    display: none;
 }
 
 .logo {
@@ -30,6 +48,13 @@
     justify-content: flex-end;
     grid-column: 6/8;
 }
+
+.accordion-panel{
+    padding: 1em;
+    background:#444;
+    color:#f4f4f4;
+    display: none;
+  }
 
 .contact {
     display: flex;

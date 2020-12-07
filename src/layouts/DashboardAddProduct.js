@@ -4,7 +4,7 @@ import ReactSelect from 'react-select'
 import CreatableSelect from 'react-select/creatable'
 import { useHistory } from 'react-router-dom'
 import { useForm, Controller } from 'react-hook-form'
-import {setAlert} from '../redux/actions/alert'
+import { setAlert } from '../redux/actions/alert'
 import makeAnimated from 'react-select/animated';
 import $ from 'jquery'
 import '../styles/dashboard.css'
@@ -32,9 +32,9 @@ const DashboardAddProduct = () => {
     const business = useSelector(state => state.products.typesBusiness)
     const dispatch = useDispatch();
 
-    // const [productsImages, setProductsImages] = useState({
-    //     images: []
-    // })
+    const [productsImages, setProductsImages] = useState({
+        images: []
+    })
 
     useEffect(() => {
         $('#profile-image').change(function (e) {
@@ -113,17 +113,18 @@ const DashboardAddProduct = () => {
         })
     };
 
-    // const handleProductsImages = (e) => {
-    //     setProductsImages({
-    //         images: productsImages.images.concat([e.target.files[0]])
-    //     })
-    // }
+    const handleProductsImages = (e) => {
+        setProductsImages({
+            images: productsImages.images.concat([e.target.files[0]])
+        })
+    }
 
-    // const deleteImage = i => () => {
-    //     setProductsImages({
-    //         images: productsImages.images.filter((image, index) => i !== index)
-    //     })
-    // }
+    const deleteImage = i => () => {
+        setProductsImages({
+            images: productsImages.images.filter((image, index) => i !== index)
+        })
+    }
+
 
     const sendSubmit = (data, e) => {
         console.log(data)
@@ -140,9 +141,10 @@ const DashboardAddProduct = () => {
         formData.append('ue_intern', data.ue_intern)
         formData.append('ue_master', data.ue_master);
         formData.append('uee', data.uee);
+        formData.append('popular',data.popular)
         formData.append('unit', data.unit)
         formData.append('min_quantity', data.min_quantity);
-        formData.append('shape', data.shape)    
+        formData.append('shape', data.shape)
         formData.append('colour', data.colour);
         formData.append('temperature', data.temperature);
         formData.append('brand', data.brand);
@@ -151,19 +153,18 @@ const DashboardAddProduct = () => {
         formData.append('add_subtype', data.add_subtype.name)
         formData.append('material_name', data.material_name.name)
         formData.append('material_short_name', data.material_short_name);
-        formData.append('file',data.file[0])
         for (var i = 0; i < data.business.length; i++) {
             formData.append('business', data.business[i].name);
         }
-        // for (let pic of productsImages.images) {
-        //     formData.append('file', pic)
-        // }
+        for (let pic of productsImages.images) {
+            formData.append('file', pic)
+        }
 
         if (formData) {
             dispatch(sendProduct(formData))
             setTimeout(() => {
                 history.push('/administrador/productos');
-                dispatch(setAlert("Producto guardado correctamente","", 4000))
+                dispatch(setAlert("Producto guardado correctamente", "", 4000))
                 dispatch(getProduct(100, 1));
             }, 2000);
         }
@@ -226,13 +227,14 @@ const DashboardAddProduct = () => {
                                             ref={
                                                 register({
                                                     required: {
-                                                        value: false,
+                                                        value: true,
+                                                        message: "El producto debe tener un código"
                                                     }
                                                 })
                                             }
                                         />
                                         <div className="error-ds">
-                                            {errors.material_short_name && errors.material_short_name.message}
+                                            {errors.code && errors.code.message}
                                         </div>
                                     </div>
                                     <div className="input-ds">
@@ -243,11 +245,15 @@ const DashboardAddProduct = () => {
                                             ref={
                                                 register({
                                                     required: {
-                                                        value: false,
+                                                        value: true,
+                                                        message: "El producto debe tener un largo"
                                                     }
                                                 })
                                             }
                                         />
+                                        <div className="error-ds">
+                                            {errors.long && errors.long.message}
+                                        </div>
                                     </div>
                                     <div className="input-ds">
                                         <div><label>Ancho del producto</label></div>
@@ -257,11 +263,15 @@ const DashboardAddProduct = () => {
                                             ref={
                                                 register({
                                                     required: {
-                                                        value: false
+                                                        value: true,
+                                                        message: "El producto debe tener un ancho"
                                                     }
                                                 })
                                             }
                                         />
+                                        <div className="error-ds">
+                                            {errors.width && errors.width.message}
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="container-grid-ds-forms">
@@ -273,11 +283,15 @@ const DashboardAddProduct = () => {
                                             ref={
                                                 register({
                                                     required: {
-                                                        value: false
+                                                        value: true,
+                                                        message: "El producto debe tener un diámetro"
                                                     }
                                                 })
                                             }
                                         />
+                                         <div className="error-ds">
+                                            {errors.diameter && errors.diameter.message}
+                                        </div>
                                     </div>
                                     <div className="input-ds">
                                         <div><label>Altura del producto</label></div>
@@ -287,11 +301,15 @@ const DashboardAddProduct = () => {
                                             ref={
                                                 register({
                                                     required: {
-                                                        value: false,
+                                                        value: true,
+                                                        message: "El producto debe tener una altura"
                                                     }
                                                 })
                                             }
                                         />
+                                          <div className="error-ds">
+                                            {errors.height && errors.height.message}
+                                        </div>
                                     </div>
                                     <div className="input-ds">
                                         <div><label>Peso del producto</label></div>
@@ -301,11 +319,15 @@ const DashboardAddProduct = () => {
                                             ref={
                                                 register({
                                                     required: {
-                                                        value: false,
+                                                        value: true,
+                                                        message: "El producto debe tener un peso"
                                                     }
                                                 })
                                             }
                                         />
+                                         <div className="error-ds">
+                                            {errors.weight && errors.weight.message}
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="container-grid-ds-forms">
@@ -500,6 +522,22 @@ const DashboardAddProduct = () => {
                                         {errors.type && errors.type.message}
                                     </div>
                                 </div>
+                                <div className="input-ds" style={{ marginTop: "20px" }}>
+                                    <div><label>Quieres que este producto sea popular ?</label></div>
+                                    <div className="flex-popular">
+                                        <input
+                                            type="text"
+                                            name="popular"
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                    </div>
+                                </div>
                             </div>
                             <div>
                                 <div className="input-ds">
@@ -542,11 +580,11 @@ const DashboardAddProduct = () => {
                                                 options={materials}
                                                 getOptionLabel={materials => materials.name}
                                                 getOptionValue={materials => materials.id}
-                                                getNewOptionData = { ( inputValue , optionLabel ) => ({
-                                                    id :  optionLabel ,
-                                                    name :  inputValue ,
-                                                    __isNew__ :  true 
-                                                })} 
+                                                getNewOptionData={(inputValue, optionLabel) => ({
+                                                    id: optionLabel,
+                                                    name: inputValue,
+                                                    __isNew__: true
+                                                })}
                                             />}
                                         name="material_name"
                                         isClearable
@@ -620,7 +658,7 @@ const DashboardAddProduct = () => {
                                         <input
                                             type="file"
                                             name="file"
-                                            // onChange={handleProductsImages}
+                                            onChange={handleProductsImages}
                                             id="profile-image"
                                             accept="image/*"
                                             ref={
@@ -635,7 +673,7 @@ const DashboardAddProduct = () => {
                                         <div className="error-ds">
                                             {errors.file && errors.file.message}
                                         </div>
-                                        {/* {
+                                        {
                                             productsImages.images.length > 0 ?
                                                 productsImages.images.map((item, index) =>
                                                     <div key={index}>
@@ -643,7 +681,7 @@ const DashboardAddProduct = () => {
                                                         <button type="button" onClick={deleteImage(index)} className="">x</button>
                                                     </div>)
                                                 : null
-                                        } */}
+                                        }
                                     </div>
                                 </div>
                             </div>

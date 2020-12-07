@@ -5,20 +5,23 @@ import QuoteProducts from '../components/QueoteProducts';
 import ProductsPopulate from '../components/ProductsPopulate'
 import Footer from '../components/Footer'
 import { useHistory } from 'react-router-dom'
-
+import axios from 'axios'
 import { getTypesProducts, getTypesBusiness } from '../redux/actions/product'
 import { useDispatch, useSelector } from 'react-redux'
 
 const Products = () => {
 
-     const history = useHistory();
      const cart = useSelector(state => state.cart)
      const [cartItems, setCartItems] = useState(cart.cartItems)
-     const [productsQuery, setProductsQuery] = useState([])
+     const [productsPopulate, setProductsPopulate] = useState([])
      const typesBusiness = useSelector(state => state.products.typesBusiness)
      const typesProducts = useSelector(state => state.products.typesProducts)
-     const [search, setSearch] = useState('')
      const dispatch = useDispatch();
+
+     const apiProductsPopulate = async ( ) => {
+          const res = await axios.get('http://3.120.185.254:8090/api/product/find/popular')
+          setProductsPopulate(res.data.data)
+     }
 
      useEffect(() => {
 
@@ -35,6 +38,7 @@ const Products = () => {
           })
 
           setCartItems(cart.cartItems)
+          apiProductsPopulate();
           dispatch(getTypesProducts(9, 1));
           dispatch(getTypesBusiness());
      }, [cart.cartItems])
@@ -50,9 +54,9 @@ const Products = () => {
      return (
           <Fragment>
                <Header number={number} />
-               <MenuCategory searchPress={searchPress} setSearch={setSearch} setProductsQuery={setProductsQuery} typesBusiness={typesBusiness} typesProducts={typesProducts} />
+               <MenuCategory searchPress={searchPress} typesBusiness={typesBusiness} typesProducts={typesProducts} />
                <QuoteProducts />
-               <ProductsPopulate />
+               <ProductsPopulate productsPopulate={productsPopulate}/>
                <Footer />
           </Fragment>
      );

@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form'
 import { addToCart } from '../redux/actions/cart'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
+import Slider from "react-slick";
 
 const DetailProduct = ({ product }) => {
 
@@ -21,7 +22,6 @@ const DetailProduct = ({ product }) => {
             code: code,
             units: "unidades"
         }
-        console.log(body)
         dispatch(addToCart(body))
         history.push('/cotizador');
         e.target.reset();
@@ -31,7 +31,14 @@ const DetailProduct = ({ product }) => {
         history.goBack();
     }
 
-    console.log(product)
+    const settingsProducts = {
+        dots: true,
+        infinite: true,
+        fade: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        pauseOnHover: true
+    };
 
     return (
         <Fragment>
@@ -45,7 +52,14 @@ const DetailProduct = ({ product }) => {
                             <div className="product">
                                 <div className="square-products"></div>
                                 <div className="img-product">
-                                    <img src={`http://` + product.image[0].url} />
+                                <Slider {...settingsProducts}>
+                                    {
+                                        product.image && product.image.length > 0 ? 
+                                        product.image.map(item => (
+                                            <img src={`http://` + item.url} />
+                                        )) : ''
+                                    }
+                                </Slider>
                                 </div>
                             </div>
                         </div>

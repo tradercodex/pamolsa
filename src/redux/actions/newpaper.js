@@ -23,7 +23,6 @@ let config = {
 export const sendNewspaper = (data) => async dispatch => {
     try {
         const res = await axios.post(`${root}/news/saveGallery`, data,config);
-        console.log(res.data)
         dispatch({
             type: SEND_NEWSPAPER,
             payload: res.data
@@ -38,7 +37,6 @@ export const sendNewspaper = (data) => async dispatch => {
 export const getNewsPaper = () => async dispatch => {
     try {
         const res = await axios.get(`${root}/news/listGallery`);
-        console.log(res.data)
         dispatch({
             type: GET_NEWSPAPER,
             payload: res.data.data

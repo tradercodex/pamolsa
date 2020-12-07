@@ -8,6 +8,9 @@ import '../styles/header.css'
 import Phone from '../images/svg/phone';
 import BarMovile from '../images/svg/barmovile';
 import CloseModal from '../images/svg/closemodal';
+import User from '@material-ui/icons/SupervisedUserCircle'
+
+const token = localStorage.getItem('token')
 
 const Header = ({ match, number }) => {
 
@@ -15,7 +18,6 @@ const Header = ({ match, number }) => {
     let rut = match.params.name
     let id = match.params.id
     let url = match.url
-
 
     useEffect(() => {
         const movilOpen = document.getElementById('movil');
@@ -53,8 +55,11 @@ const Header = ({ match, number }) => {
                                 <CloseModal />
                             </div>
                         </div>
-                        <nav className="Nav-pm">
+                        {
+                            token ? 
+                            <nav className="Nav-pm">
                             <ul>
+                                <li><Link to="/administrador/banners">Admin</Link></li>
                                 <li><Link to="/" className={pathname === "/" || pathname === "/home/distribuidores" ? "active-mv" : ""}>Home</Link></li>
                                 <li><Link to="/nosotros" className={pathname === "/nosotros" ? "active-mv" : ""}>Nosotros</Link></li>
                                 <li><Link to="/productos"
@@ -76,7 +81,32 @@ const Header = ({ match, number }) => {
                                         ? "active-mv" : ""}>Noticias</Link></li>
                                 <li><Link to="/contacto" className={pathname === "/contacto" ? "active-mv" : ""}>Contacto</Link></li>
                             </ul>
-                        </nav>
+                        </nav> :
+                        <nav className="Nav-pm">
+                        <ul>
+                            <li><Link to="/" className={pathname === "/" || pathname === "/home/distribuidores" ? "active-mv" : ""}>Home</Link></li>
+                            <li><Link to="/nosotros" className={pathname === "/nosotros" ? "active-mv" : ""}>Nosotros</Link></li>
+                            <li><Link to="/productos"
+                                className={
+                                    pathname === "/productos" ||
+                                        url === `/productos/${rut}` ||
+                                        url === "/cotizador" ||
+                                        url === `/productos/linea/${id}` ||
+                                        url === `/productos/${rut}/${id}` ||
+                                        url === `/productos/negocio/${rut}/${id}` ||
+                                        url === `/producto/detalle/${id}`
+                                        ? "active-mv" : ""}>Productos</Link></li>
+                            <li><Link to="/sostenibilidad" className={pathname === "/sostenibilidad" || pathname === "/sostenibilidad/comunidad/:name" ? "active-mv" : ""}>Sostenibilidad</Link></li>
+                            <li><Link to="/trabaja-con-nosotros" className={pathname === "/trabaja-con-nosotros" ? "active-mv" : ""}>Trabaja con nosotros</Link></li>
+                            <li><Link to="/clientes" className={pathname === "/clientes" ? "active-mv" : ""}>Clientes</Link></li>
+                            <li><Link to="/noticias" className={
+                                pathname === "/noticias" ||
+                                    url === `/noticias/${rut}` || pathname === "/noticias/galeria-periodistica"
+                                    ? "active-mv" : ""}>Noticias</Link></li>
+                            <li><Link to="/contacto" className={pathname === "/contacto" ? "active-mv" : ""}>Contacto</Link></li>
+                        </ul>
+                    </nav>
+                        }
                     </div>
                 </div>
             </div>
@@ -85,6 +115,10 @@ const Header = ({ match, number }) => {
                 <div className="container-header">
                     <div className="Call-pm" style={{ background: "#ECECEC" }}>
                         <div className="Container-header_pm">
+                            {
+                                token ? 
+                                <li style={{listStyle: "none", marginLeft: "50px"}}><Link style={{color: "#4d4d4d"}} to="/administrador/banners"><User /></Link></li> : ''
+                            }
                             <div className="phones">
                                 <div className="icon">
                                     <Phone />
@@ -98,7 +132,7 @@ const Header = ({ match, number }) => {
                             <div className="Logo-pm">
                                 <Link to="/"><Logo /></Link>
                             </div>
-                            <nav className="Nav-pm">
+                                <nav className="Nav-pm">
                                 <ul>
                                     <li><Link to="/" className={pathname === "/" || pathname === "/home/distribuidores" ? "active" : ""}>Home</Link></li>
                                     <li><Link to="/nosotros" className={pathname === "/nosotros" ? "active" : ""}>Nosotros</Link></li>

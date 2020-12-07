@@ -15,9 +15,9 @@ const InformationSostenibility = ({sostenibilidad2019,sostenibilidad2018,sosteni
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        // autoplay: true,
-        // autoplaySpeed: 2000,
-        // pauseOnHover: true,
+        autoplay: true,
+        autoplaySpeed: 6000,
+        pauseOnHover: true,
         appendDots: dots => (
             <div
                 style={{

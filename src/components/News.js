@@ -121,32 +121,6 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
         autoplay: false,
         autoplaySpeed: 2000,
         pauseOnHover: true,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    initialSlide: 1
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ],
         appendDots: dots => (
             <div
                 style={{
@@ -227,21 +201,21 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                             {
                                 news && news.length > 0 ?
                                     news.map(item => (
-                                        <div>
+                                        <div key={item.id}>
                                             <div className="container-news">
                                                 <div className="info-new_slick">
                                                     <div className="title-new">
                                                         <h4>Noticias Pamolsa</h4>
                                                     </div>
                                                     <h6>{(item.title).substring(0, 60) + '...'}</h6>
-                                                    <p>{ReactHtmlParser((item.body).substring(0, 150) + '...')}</p>
+                                                    <div>{ReactHtmlParser((item.body).substring(0, 150) + '...')}</div>
                                                     <Link to={`/noticias/${item.id}`}>Ver más</Link>
                                                 </div>
                                                 <div className="post-new_slick">
                                                     <div className="square-slick">
                                                     </div>
                                                     <div className="img-new_slick">
-                                                        <img src={`http://` + item.file.url} />
+                                                        <img src={`http://` + item.file.url} alt="imagen" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -308,7 +282,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                             <div className="square-slick">
                                             </div>
                                             <div className="img-new_slick">
-                                                <img src={require('../images/img/plantagambeta.webp')} />
+                                                <img src={require('../images/img/plantagambeta.webp')} alt="imagen"/>
                                             </div>
                                         </div>
                                     </div>
@@ -327,7 +301,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                             <div className="square-slick">
                                             </div>
                                             <div className="img-new_slick">
-                                                <img src={require('../images/img/plantarecicloplas.webp')} />
+                                                <img src={require('../images/img/plantarecicloplas.webp')} alt="imagen" />
                                             </div>
                                         </div>
                                     </div>
@@ -370,7 +344,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                             <div className="container-grid sbl" style={{ paddingTop: "290px", alignItems: "center", paddingBottom: "100px" }}>
                                 <div className="info-pm">
                                     <div>
-                                        <img src={require('../images/img/recicoplas.png')} alt="" />
+                                        <img src={require('../images/img/recicoplas.png')} alt="imagen" />
                                         <h6 style={{ color: "#32711E", marginTop: "30px" }}>Ciclo de cierre de nuestro productos</h6>
                                         <p style={{ marginTop: "30px", marginBottom: "30px" }}>Desde el 2013, nuestra operación de reciclaje “Recicloplas Perú” es una de los principales
                                         actores del reciclaje en el Perú. De esta manera reafirmamos nuestros compromiso con
@@ -385,7 +359,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                     <div className="square"></div>
                                     <div className="img-video_known">
                                         <div className="img">
-                                            <img src={require('../images/img/obrero.png')} />
+                                            <img src={require('../images/img/obrero.png')} alt="imagen" />
                                         </div>
                                     </div>
                                     <div className="play-button_pm">
@@ -404,7 +378,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                         <div className="square-pet-sbl">
                                         </div>
                                         <div className="img-new_slick">
-                                            <img src={require('../images/img/handice.png')} />
+                                            <img src={require('../images/img/handice.png')} alt="imagen" />
                                         </div>
                                     </div>
                                     <div className="info-pet-sbl">
@@ -472,7 +446,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                         <div className="square-img-card">
                                         </div>
                                         <div className="img-card">
-                                            <img src={require('../images/img/postprod.png')} />
+                                            <img src={require('../images/img/postprod.png')} alt="imagen" />
                                         </div>
                                     </div>
                                 </div>
@@ -494,7 +468,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                                     <div key={item.id}>
                                                         <div className="card-work">
                                                             <div className="header-work">
-                                                                <img src={`http://` + item.file.url} />
+                                                                <img src={`http://` + item.file.url} alt="imagen" />
                                                             </div>
                                                             <div className="card-body">
                                                                 <h6>{item.title}</h6>
@@ -519,7 +493,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                                         <div className="post-pet-sbl activity">
                                                             <div className="square-pet-sbl activity"></div>
                                                             <div className="img-new_slick activity">
-                                                                <img src={`http://` + item.file.url} />
+                                                                <img src={`http://` + item.file.url} alt="imagen" />
                                                             </div>
                                                             <div className="play-button_pm activity">
                                                                 <button onClick={handleShowVideoModal}><Play /></button>

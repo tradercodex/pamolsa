@@ -2,8 +2,6 @@ import React, { Fragment } from 'react';
 
 const Quote = ({number}) => {
 
-    console.log(number)
-
     return (
         <Fragment>
             {number === 0 ? <p style={{

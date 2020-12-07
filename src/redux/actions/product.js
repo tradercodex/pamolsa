@@ -19,6 +19,8 @@ import {
     GET_ALL_PRODUCTS_ERROR,
     DELETE_PRODUCT,
     DELETE_PRODUCT_ERROR,
+    DELETE_IMAGE_PRODUCT,
+    DELETE_IMAGE_PRODUCT_ERROR,
     UPDATE_PRODUCT,
     UPDATE_PRODUCT_ERROR,
     GET_PRODUCTS_BY_TYPE,
@@ -41,7 +43,6 @@ let config = {
 export const sendProduct = (data) => async dispatch => {
     try {
         const res = await axios.post(`${root}/product/save`,data,config);
-        console.log(res.data)
         dispatch({
             type: SEND_PRODUCT,
             payload: res.data.data
@@ -53,10 +54,23 @@ export const sendProduct = (data) => async dispatch => {
     }
 }
 
+export const deleteImageProduct = (id) => async dispatch => {
+    try {
+        const res = await axios.put(`${root}/product/deleteImage?image_id=${id}`,null,config);
+        dispatch({
+            type: DELETE_IMAGE_PRODUCT,
+            payload: res.data.data
+        })
+    } catch (error) {
+        dispatch({
+            type: DELETE_IMAGE_PRODUCT_ERROR
+        })
+    }
+}
+
 export const updateProduct= (data) => async dispatch => {
     try {
         const res = await axios.put(`${root}/product/update`,data, config);
-        console.log(res.data)
         dispatch({
             type: UPDATE_PRODUCT,
             payload: res.data.data
@@ -71,7 +85,6 @@ export const updateProduct= (data) => async dispatch => {
 export const getLineProducts = () => async dispatch => {
     try {
         const res = await axios.get(`${root}/product/line/list`);
-        console.log(res.data)
         dispatch({
             type: GET_LINES_PRODUCTS,
             payload: res.data.data
@@ -86,7 +99,6 @@ export const getLineProducts = () => async dispatch => {
 export const getTypesProducts = (size,page) => async dispatch => {
     try {
         const res = await axios.get(`${root}/product/types/list?size=${size}&page=${page}`);
-        console.log(res.data)
         dispatch({
             type: GET_TYPES_PRODUCTS,
             payload: res.data.data
@@ -101,7 +113,6 @@ export const getTypesProducts = (size,page) => async dispatch => {
 export const getTypesBusiness = () => async dispatch => {
     try {
         const res = await axios.get(`${root}/product/business/list`);
-        console.log(res.data)
         dispatch({
             type: GET_TYPES_BUSINESS,
             payload: res.data.data
@@ -116,7 +127,6 @@ export const getTypesBusiness = () => async dispatch => {
 export const getSubtypes = () => async dispatch => {
     try {
         const res = await axios.get(`${root}/product/subtypes/list`);
-        console.log(res.data)
         dispatch({
             type: GET_SUBTYPES_PRODUCTS,
             payload: res.data.data
@@ -131,7 +141,6 @@ export const getSubtypes = () => async dispatch => {
 export const getAddSubtypes = () => async dispatch => {
     try {
         const res = await axios.get(`${root}/product/additional/subtypes/list`);
-        console.log(res.data)
         dispatch({
             type: GET_ADD_SUBTYPES_PRODUCTS,
             payload: res.data.data
@@ -146,7 +155,6 @@ export const getAddSubtypes = () => async dispatch => {
 export const getMaterials = () => async dispatch => {
     try {
         const res = await axios.get(`${root}/product/material/list`);
-        console.log(res.data)
         dispatch({
             type: GET_MATERIALS,
             payload: res.data.data
@@ -412,7 +420,6 @@ export const getProductByFilter = (line_id,type_id,material_id,business) => asyn
     } 
 
     try {
-        console.log(url)
         const res = await axios.get(url);
         dispatch({
             type: GET_PRODUCTS_BY_FILTER,
@@ -428,7 +435,6 @@ export const getProductByFilter = (line_id,type_id,material_id,business) => asyn
 export const getAllProducts = (page) => async dispatch => {
     try {
         const res = await axios.get(`${root}/product/list?page=${page}`);
-        console.log(res.data)
         dispatch({
             type: GET_ALL_PRODUCTS,
             payload: res.data.data
@@ -443,7 +449,6 @@ export const getAllProducts = (page) => async dispatch => {
 export const getProductsByType = (type_id) => async dispatch => {
     try {
         const res = await axios.get(`${root}/product/list?type_id=${type_id}`);
-        console.log(res.data)
         dispatch({
             type: GET_PRODUCTS_BY_TYPE,
             payload: res.data.data
@@ -458,7 +463,6 @@ export const getProductsByType = (type_id) => async dispatch => {
 export const deleteProduct = (data) => async dispatch => {
     try {
         const res = await axios.put(`${root}/product/delete`,data,config);
-        console.log(res.data)
         dispatch({
             type: DELETE_PRODUCT,
             payload: Number(res.data.data.product_id)
@@ -473,7 +477,6 @@ export const deleteProduct = (data) => async dispatch => {
 export const getProduct = id => async dispatch => {
     try {
         const res = await axios.get(`${root}/product/find?product_id=${id}`)
-        console.log(res.data)
         dispatch({
             type: GET_PRODUCT,
             payload: res.data.data
@@ -734,7 +737,6 @@ export const getProductByFilterType = (type_id,line_id,material_id,business) => 
     } 
 
     try {
-        console.log(url)
         const res = await axios.get(url);
         dispatch({
             type: GET_PRODUCTS_BY_FILTER,
@@ -752,8 +754,6 @@ export const getProductByFilterBusiness = (business,line_id,type_id,material_id)
     var url;
     var params;
     // LINEA DE PRODUCTO
-
-    console.log(business)
 
     if(business) {
         params = [['business', business]]  
@@ -949,7 +949,6 @@ export const getProductByFilterBusiness = (business,line_id,type_id,material_id)
     } 
 
     try {
-        console.log(url)
         const res = await axios.get(url);
         dispatch({
             type: GET_PRODUCTS_BY_FILTER,

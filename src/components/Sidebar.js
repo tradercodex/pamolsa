@@ -19,10 +19,10 @@ const Sidebar = () => {
                 <div className="Nav">
                     <ul>
                         <li>
-                            <Link to="/">
+                            <a href="/">
                                 <i className="fas fa-laptop-house"></i>
                                 <span>Pagina Inicio</span>
-                            </Link>
+                            </a>
                         </li>
                         <li>
                             <Link to="/administrador/productos">

@@ -66,6 +66,11 @@
     right: 10px;
 }
 
+
+.Quotes-pm .Products-Quote.Search-Product .products-default .pagination {
+    display: none !important;
+}
+
 .Search-container input {
     width: 100%;
     background: #FFFFFF;
@@ -108,7 +113,7 @@
 
 .menu-categories ul {
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
     width: 100%;
     list-style: none;
 }
@@ -427,6 +432,12 @@
     padding-top: 80px;
 }
 
+.Container-products_populate .slick-slide > div > div {
+    display: flex !important;
+    padding-bottom: 80px !important;
+    justify-content: center !important;
+}
+
 .Products-populate_pm  h4 {
     color: #005286;
     text-align: center;
@@ -718,6 +729,30 @@ h2.title-choose_business {
     font-family: 'Amble';
 }
 
+.img-product .slick-prev:before, .slick-next:before {
+    display: none;
+}
+
+.img-product .slick-dots {
+    transform: rotate(90deg);
+    bottom: 100px;
+    left: -200px !important;
+}
+
+.img-product .slick-dots li.slick-active button:before {
+    background: #005286 !important;
+}
+
+.img-product  .slick-dots li button:before, .img-product  .slick-dots li.slick-active button:before {
+    border: 2px solid #005286;
+    border-radius: 50%;
+}
+
+.img-product .slick-dots li button:before {
+    width: 5px !important;
+    height: 5px !important;
+}
+
 .View-options {
     display: flex;
     justify-content: flex-end;
@@ -793,12 +828,15 @@ h2.title-choose_business {
     border-radius: 30px;
     font-size: 15px;
     outline: none;
-    padding: 7px 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .product > a > a {
     color: #fff;
     text-decoration: none;
+    width: 100%;
+    padding: 10px 25px;
 }
 
 .products-default img {

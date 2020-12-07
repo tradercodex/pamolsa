@@ -29,7 +29,6 @@ const DashboardEditNewPaper = ({match}) => {
 
     const getNewPaperApi = async () => {
         const response = await Axios.get(`http://3.120.185.254:8090/api/news/findByIdGallery/${id}`)
-        console.log(response.data)
         setNewpaperId({
             name_newspaper: response.data.data.name_newspaper,
             created: response.data.data.created,

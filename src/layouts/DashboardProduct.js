@@ -7,7 +7,6 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
-import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import { getAllProducts, deleteProduct } from '../redux/actions/product'
 import { useDispatch, useSelector } from 'react-redux';
@@ -28,8 +27,6 @@ const DashboardProduct = () => {
 
     const products = useSelector(state => state.products.products)
     const dispatch = useDispatch();
-
-    const classes = useStyles();
 
     const [currentPage, setCurrentPage] = useState(1)
     const [postsPerPage] = useState(8)
@@ -54,8 +51,6 @@ const DashboardProduct = () => {
         }
     }
 
-    console.log(products)
-
     return (
         <Fragment>
             <div className="content-ds-fluid">
@@ -70,7 +65,6 @@ const DashboardProduct = () => {
                                 <Table stickyHeader aria-label="sticky table">
                                     <TableHead>
                                         <TableRow>
-                                            <TableCell style={{ color: "#fff" }}>Imagen</TableCell>
                                             <TableCell style={{ color: "#fff" }}>Producto</TableCell>
                                             <TableCell style={{ color: "#fff" }}>Nombre comercial</TableCell>
                                             <TableCell style={{ color: "#fff" }}>Editar</TableCell>
@@ -82,7 +76,6 @@ const DashboardProduct = () => {
                                             currentPostsByFilter.map(item => {
                                                 return (
                                                     <TableRow key={item.id}>
-                                                        <TableCell style={{ color: "#fff" }}><img width="50px" src={`http://`+item.image[0].url}/></TableCell>
                                                         <TableCell style={{ color: "#fff" }}>{item.name}</TableCell>
                                                         <TableCell style={{ color: "#fff" }}>{item.tradename}</TableCell>
                                                         <TableCell><Link style={{ color: "#55F09D" }} to={`/administrador/productos/editar/${item.id}`}><EditIcon /></Link></TableCell>

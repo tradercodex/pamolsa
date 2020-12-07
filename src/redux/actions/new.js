@@ -17,10 +17,17 @@ import axios from 'axios'
 
 const root = 'http://3.120.185.254:8090/api'
 
+let token = localStorage.getItem('token')
+
+let config = {
+    headers: {
+        'x-access-token': token
+    }
+}
+
 export const sendNew = (data) => async dispatch => {
     try {
-        const res = await axios.post(`${root}/news/save`, data);
-        console.log(res.data)
+        const res = await axios.post(`${root}/news/save`, data, config);
         dispatch({
             type: SEND_NEW,
             payload: res.data
@@ -35,7 +42,6 @@ export const sendNew = (data) => async dispatch => {
 export const getNews = () => async dispatch => {
     try {
         const res = await axios.get(`${root}/news/listByDate`);
-        console.log(res.data)
         dispatch({
             type: GET_NEW,
             payload: res.data.data
@@ -50,7 +56,6 @@ export const getNews = () => async dispatch => {
 export const getNewsHome = () => async dispatch => {
     try {
         const res = await axios.get(`${root}/news/list`);
-        console.log(res.data)
         dispatch({
             type: GET_NEW_HOME,
             payload: res.data.data
@@ -65,7 +70,6 @@ export const getNewsHome = () => async dispatch => {
 export const getNewId = id => async dispatch => {
     try {
         const res = await axios.get(`${root}/news/findById/${id}`)
-        console.log(res.data)
         dispatch({
             type: GET_NEW_ID,
             payload: res.data.data
@@ -79,8 +83,7 @@ export const getNewId = id => async dispatch => {
 
 export const updateNew= (data) => async dispatch => {
     try {
-        const res = await axios.put(`${root}/news/update`,data);
-        console.log(res.data)
+        const res = await axios.put(`${root}/news/update`,data, config);
         dispatch({
             type: UPDATE_NEW,
             payload: res.data
@@ -94,8 +97,7 @@ export const updateNew= (data) => async dispatch => {
 
 export const deleteNew = (id) => async dispatch => {
     try {
-        const res = await axios.put(`${root}/news/delete`, id);
-        console.log(res.data)
+        const res = await axios.put(`${root}/news/delete`, id, config);
         dispatch({
             type: DELETE_NEW,
             payload: Number(res.data.data.news_id)

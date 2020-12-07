@@ -13,7 +13,6 @@ import WOW from 'wowjs'
 
 const Home = ({history}) => {
 
-    console.log(history)
     const dispatch = useDispatch();
     const news = useSelector(state => state.news.newsHome)
     const cart = useSelector(state => state.cart)

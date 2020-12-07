@@ -12,11 +12,17 @@ import axios from 'axios'
 
 const root = 'http://3.120.185.254:8090/api'
 
+const token = localStorage.getItem('token')
+
+let config = {
+    headers: {
+        'x-access-token': token
+    }
+}
 
 export const getVacants = (size,page) => async dispatch => {
     try {
         const res = await axios.get(`${root}/vacant/listVacant?size=${size}&page=${page}`);
-        console.log(res.data)
         dispatch({
             type: GET_VACANT,
             payload: res.data.data
@@ -31,7 +37,6 @@ export const getVacants = (size,page) => async dispatch => {
 export const sendVacant = (data) => async dispatch => {
     try {
         const res = await axios.post(`${root}/vacant/save`, data);
-        console.log(res.data)
         dispatch({
             type: SEND_VACANT,
             payload: res.data
@@ -45,8 +50,7 @@ export const sendVacant = (data) => async dispatch => {
 
 export const deleteVacant = (id) => async dispatch => {
     try {
-        const res = await axios.put(`${root}/vacant/delete`, id);
-        console.log(res.data)
+        const res = await axios.put(`${root}/vacant/delete`, id, config);
         dispatch({
             type: DELETE_VACANT,
             payload: Number(res.data.data.vacant_id)
@@ -60,8 +64,7 @@ export const deleteVacant = (id) => async dispatch => {
 
 export const updateVacant = (data) => async dispatch => {
     try {
-        const res = await axios.put(`${root}/vacant/update`,data);
-        console.log(res.data)
+        const res = await axios.put(`${root}/vacant/update`,data, config);
         dispatch({
             type: UPDATE_VACANT,
             payload: res.data
