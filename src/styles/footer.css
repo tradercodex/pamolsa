@@ -11,9 +11,22 @@
     grid-column: 1/10;
 }
 
+.collapse-footer .content {
+    max-height: 0em;
+    transition: 0.3s linear 0s;
+    overflow: hidden;
+  }
+
+  .collapse-footer:target .content {
+    max-height: 15em;
+    margin-bottom: 0px;
+  }
+
 .sp-title {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
 }
 
 .sp-title svg {
@@ -72,10 +85,11 @@
     width: 180px;
 }
 
-.contact .title h6 ,.declaration .title h6 , .information .title h6 {
+.contact .title a ,.declaration .title a , .information .title a {
     font-family: 'Raleway';
     font-size: 14px;
     color: #3d3d3d;
+    text-decoration: none;
     font-weight: 700;
 }
 

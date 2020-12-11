@@ -570,6 +570,9 @@
 }
 
 @media screen and (max-width: 1440px) and (max-height: 660px) {
+    .img-new_slick_us, .img-new_slick {
+        left: 0px !important;
+    }
     .content-slick-new {
         height: 98vh !important;
     }
@@ -958,6 +961,7 @@
     }
     .text-map_pm.tablet {
         display: block;
+        padding-bottom: 50px !important;
     }
     .map-footer-none {
         display: none;

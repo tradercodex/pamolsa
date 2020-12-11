@@ -53,11 +53,13 @@ const Products = () => {
 
      return (
           <Fragment>
+               <div className="page-new">
                <Header number={number} />
                <MenuCategory searchPress={searchPress} typesBusiness={typesBusiness} typesProducts={typesProducts} />
                <QuoteProducts />
                <ProductsPopulate productsPopulate={productsPopulate}/>
                <Footer />
+               </div>
           </Fragment>
      );
 }

@@ -36,7 +36,7 @@ export const getVacants = (size,page) => async dispatch => {
 
 export const sendVacant = (data) => async dispatch => {
     try {
-        const res = await axios.post(`${root}/vacant/save`, data);
+        const res = await axios.post(`${root}/vacant/save`, data, config);
         dispatch({
             type: SEND_VACANT,
             payload: res.data

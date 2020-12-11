@@ -19,7 +19,7 @@ const Footer = () => {
                             <h6>Declaración de beneficiario final</h6>
                             <div className="info-contact">
                                 <div className="center">
-                                    <a href="">Peruana de Modelos SAC</a>
+                                <a target="_blank" href="https://pamolsa.com.pe/web/frontend/files/DECLARACION_BENEFICIARIO_FINAL.pdf">Peruana de Modelos SAC</a>
                                 </div>
                             </div>
                         </div>
@@ -29,7 +29,7 @@ const Footer = () => {
                             <h6>Documento informativo</h6>
                             <div className="info-contact">
                                 <div className="center">
-                                    <a href="">Politica de privacidad</a>
+                                    <a target="_blank" href="https://pamolsa.com.pe/web/frontend/files/POLITICA_DE_PROTECCION_DE_DATOS2020.pdf">Politica de privacidad</a>
                                 </div>
                                 <div className="cell">
                                     <a href="">Documento 1</a>
@@ -85,45 +85,44 @@ const Footer = () => {
                         <Logo />
                     </div>
                     <div className="accordion-footer">
-
-                        <div className="declaration accordion-header">
+                        <div className="declaration collapse-footer" id="declaration">
                             <div className="title">
                                 <div className="sp-title">
-                                    <h6 className="">Declaración de beneficiario final</h6><ArrowFooter />
+                                    <a href="#declaration" className="">Declaración de beneficiario final</a><ArrowFooter />
                                 </div>
-                                <div className="info-contact accordion-panel">
+                                <div className="info-contact content">
                                     <div className="center">
-                                        <a href="">Peruana de Modelos SAC</a>
+                                        <a target="_blank" href="https://pamolsa.com.pe/web/frontend/files/DECLARACION_BENEFICIARIO_FINAL.pdf">Peruana de Modelos SAC</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="information accordion-header">
+                        <div className="information collapse-footer" id="information">
                             <div className="title">
                                 <div className="sp-title">
-                                    <h6 className="">Documento informativo</h6><ArrowFooter />
+                                    <a href="#information" className="">Documento informativo</a><ArrowFooter />
                                 </div>
-                                <div className="info-contact accordion-panel">
+                                <div className="info-contact content">
                                     <div className="center">
-                                        <a href="">Politica de privacidad</a>
+                                        <a target="_blank" href="https://pamolsa.com.pe/web/frontend/files/POLITICA_DE_PROTECCION_DE_DATOS2020.pdf">Politica de privacidad</a>
                                     </div>
                                     <div className="cell">
-                                        <a href="">Documento 1</a>
+                                        <a target="_blank" href="">Documento 1</a>
                                     </div>
                                     <div className="cell">
-                                        <a href="">Documento 2</a>
+                                        <a target="_blank" href="">Documento 2</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="contact accordion-header">
+                        <div className="contact collapse-footer" id="contact">
                             <div className="title">
                                 <div className="sp-title">
-                                    <h6 className="">Contacto</h6><ArrowFooter />
+                                    <a href="#contact" className="">Contacto</a><ArrowFooter />
                                 </div>
-                                <div className="info-contact accordion-panel">
+                                <div className="info-contact content">
                                     <div className="center">Central: (511) 710 3020</div>
                                     <div className="cell">Central de ventas: (01) 641 9595 WhatsApp: 934 440 291</div>
                                 </div>

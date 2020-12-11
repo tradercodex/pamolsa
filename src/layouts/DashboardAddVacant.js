@@ -6,6 +6,7 @@ import '../styles/dashboard.css'
 import ReactQuill from 'react-quill'
 import { useHistory } from 'react-router-dom'
 import { setAlert } from '../redux/actions/alert'
+import $ from 'jquery'
 
 const DashbaordAddVacant = () => {
 
@@ -14,19 +15,48 @@ const DashbaordAddVacant = () => {
     const dispatch = useDispatch();
     const history = useHistory();
 
+    useEffect(() => {
+        $('#profile-image').change(function (e) {
+            addImage(e);
+        });
+        function addImage(e) {
+            try {
+                var file = e.target.files[0],
+                    imageType = /image.*/;
+                if (file) {
+                    if (!file.type.match(imageType))
+                        return;
+                }
+
+                var reader = new FileReader();
+                reader.onload = fileOnload;
+                reader.readAsDataURL(file);
+
+            } catch (error) {
+                console.log("Error recuperar imagen");
+            }
+
+            function fileOnload(e) {
+                var result = e.target.result;
+                $('#imgPerfil').attr("src", result);
+            }
+        }
+    }, [])
+
     const sendSubmit = (data, e) => {
         console.log(data)
         const formData = new FormData();
 
         formData.append('title', data.title);
-        formData.append('job_functions',data.job_functions)
-        formData.append('description',data.description)
+        formData.append('job_functions', data.job_functions)
+        formData.append('description', data.description)
+        formData.append('file', data.file[0])
 
         if (formData) {
             dispatch(sendVacant(formData))
             setTimeout(() => {
                 history.push('/administrador/vacantes');
-                dispatch(setAlert("Vacante guardado correctamente","", 4000))
+                dispatch(setAlert("Vacante guardado correctamente", "", 4000))
                 dispatch(getVacants(100, 1));
             }, 2000);
         }
@@ -50,6 +80,7 @@ const DashbaordAddVacant = () => {
                                     <input
                                         type="text"
                                         name="title"
+                                        maxLength="40"
                                         ref={
                                             register({
                                                 required: {
@@ -99,7 +130,7 @@ const DashbaordAddVacant = () => {
                                         error={errors.description}
                                         render={({ onChange, value }) => (
                                             <ReactQuill
-                                                style={{height: "450px", color: "#fff"}}
+                                                style={{ height: "450px", color: "#fff" }}
                                                 theme="snow"
                                                 onChange={(description) => onChange(description)}
                                                 value={value || ''}
@@ -110,8 +141,34 @@ const DashbaordAddVacant = () => {
                                         {errors.description && errors.description.message}
                                     </div>
                                 </div>
-                                <button style={{ marginTop: "10px" }} type="submit">Guardar</button>
+                             
                             </div>
+                            <div className="input-ds">
+                                <div><label>Imagen del banner (tamaño recomendable - 1920x 1080)</label></div>
+                                <div className="img-input-ds">
+                                    <img style={{ width: "100%" }} id="imgPerfil" src={require('../images/img/uploadimage.jpg')} alt="img" />
+                                    <input
+                                        type="file"
+                                        name="file"
+                                        id="profile-image"
+                                        accept="image/*"
+                                        ref={
+                                            register({
+                                                required: {
+                                                    value: true,
+                                                    message: 'Ingrese la imagen de la banner'
+                                                }
+                                            })
+                                        }
+                                    />
+                                    <div className="error-ds">
+                                        {errors.file && errors.file.message}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="form-grid">
+                        <button style={{ marginTop: "10px" }} type="submit">Guardar</button>
                         </div>
                     </form>
                 </div>

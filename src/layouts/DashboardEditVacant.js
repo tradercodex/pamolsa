@@ -7,6 +7,7 @@ import '../styles/dashboard.css'
 import ReactQuill from 'react-quill'
 import { useHistory } from 'react-router-dom'
 import { setAlert } from '../redux/actions/alert'
+import $ from 'jquery'
 
 const DashboardEditVacant = ({match}) => {
 
@@ -17,7 +18,8 @@ const DashboardEditVacant = ({match}) => {
     const [vacant, setVacant] = useState({
         title: '',
         description: '',
-        job_functions: ''
+        job_functions: '',
+        file: ''
     });
     const dispatch = useDispatch();
     const history = useHistory();
@@ -27,10 +29,38 @@ const DashboardEditVacant = ({match}) => {
         setVacant({
             title: res.data.data.title,
             description: res.data.data.description,
-            job_functions: res.data.data.job_functions
+            job_functions: res.data.data.job_functions,
+            file: res.data.data.file.url
         })
     }
     useEffect(()=>{
+
+        $('#profile-image').change(function (e) {
+            addImage(e);
+        });
+        function addImage(e) {
+            try {
+                var file = e.target.files[0],
+                    imageType = /image.*/;
+                if (file) {
+                    if (!file.type.match(imageType))
+                        return;
+                }
+
+                var reader = new FileReader();
+                reader.onload = fileOnload;
+                reader.readAsDataURL(file);
+
+            } catch (error) {
+                console.log("Error recuperar imagen");
+            }
+
+            function fileOnload(e) {
+                var result = e.target.result;
+                $('#imgPerfil').attr("src", result);
+            }
+        }
+
         getVacant();
     },[])
 
@@ -40,9 +70,10 @@ const DashboardEditVacant = ({match}) => {
         formData.append('title', data.title);
         formData.append('job_functions',data.job_functions)
         formData.append('description',data.description)
+        formData.append('file', data.file[0])
 
         if (formData) {
-            dispatch(updateVacant(formData))
+            dispatch(updateVacant(formData));
             setTimeout(() => {
                 history.push('/administrador/vacantes')
                 dispatch(setAlert("Noticia editada correctamente","", 4000))
@@ -131,8 +162,27 @@ const DashboardEditVacant = ({match}) => {
                                         {errors.description && errors.description.message}
                                     </div>
                                 </div>
-                                <button style={{ marginTop: "10px" }} type="submit">Guardar</button>
+                               
                             </div>
+                            <div className="input-ds">
+                                    <div><label>Imagen de la galería periodística</label></div>
+                                    <div className="img-input-ds">
+                                        <img style={{ width: "100%" }} id="imgPerfil" src={`http://` + vacant.file ||  + require('../images/img/uploadimage.jpg')} alt="img" />
+                                        <input
+                                            type="file"
+                                            name="file"
+                                            id="profile-image"
+                                            accept="image/*"
+                                            ref={register}
+                                        />
+                                        <div className="error-ds">
+                                            {errors.file && errors.file.message}
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div className="form-grid">
+                            <button style={{ marginTop: "10px" }} type="submit">Guardar</button>
                         </div>
                     </form>
                 </div>

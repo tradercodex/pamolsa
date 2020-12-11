@@ -15,6 +15,8 @@ const DashboardVacant = () => {
         dispatch(getVacants(100, 1))
     }, [])
 
+    console.log(vacants)
+
     const deletingVacant = (id) => {
         const formData = new FormData();
         formData.append('vacant_id', id)
@@ -45,6 +47,7 @@ const DashboardVacant = () => {
                                 title={item.title}
                                 description={item.description}
                                 deletingVacant={deletingVacant}
+                                file = {item.file.url}
                             />
                         ))
                         : ''

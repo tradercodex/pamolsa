@@ -94,6 +94,11 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     display: none;
 }
 
+.title h6 {
+    font-family: 'Raleway';
+    font-size: 13px;
+}
+
 .gmnoprint div {
     background: transparent !important;
 }
@@ -122,6 +127,9 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
 }
 
 @media screen and (max-height: 1064px) and (max-width: 768px) {
+    .client-slick .slick-next::before, .client-slick .slick-prev::before {
+        display: none;
+    }
     .Footer-pm {
         display: none;
     }
@@ -281,6 +289,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .container-grid.elipse p {
         max-width: 400px;
         margin: 0 auto;
+        font-size: 10px !important;
     }
     .container-grid.elipse .play-known.elipse .square {
         left: 25px !important;
@@ -342,7 +351,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
     .About-us_pm .img-about_us .img::after {
         max-width: 380px;
-        height: 100% !important;
+        height: 105% !important;
     }
     .info-about h3 {
         font-size: 16px !important;
@@ -359,6 +368,9 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         margin-top: 8px !important;
         margin-bottom: 0px !important;
         max-width: 400px !important;
+    }
+    .container-news .info-new_slick h6 {
+        margin-bottom: 20px !important;
     }
     .img-values {
         padding: 25px !important;
@@ -1125,7 +1137,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .Footer-pm .declaration , .Footer-pm .information ,.Footer-pm .contact{
         margin-bottom: 23px !important;
         border-bottom: 1px solid #a8a8a8;
-        padding: 10px 20px;
+        padding: 0px 20px 10px 20px;
     }
     .Footer-pm hr {
         display: none;
@@ -1160,7 +1172,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
 }
 
-@media screen and (max-height: 851px) and (max-width: 450px) {
+@media screen and (max-height: 896px) and (max-width: 450px) {
     .info-slick {
         top: 570px !important;
     }
@@ -1270,7 +1282,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
 }
 
-@media screen and (max-height: 851px) and (max-width: 430px) {
+@media screen and (max-height: 896px) and (max-width: 430px) {
     .Products-populate_pm .products-default {
         grid-template-columns: repeat(1, 1fr) !important;
     }
@@ -1281,7 +1293,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
 }
 
 
-@media screen and (max-height: 851px) and (max-width: 400px) {
+@media screen and (max-height: 896px) and (max-width: 414px) {
     .Detail-Product_pm.movil .square-products {
         min-width: 210px !important;
         min-height: 210px !important;

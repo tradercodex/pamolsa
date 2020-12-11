@@ -188,6 +188,8 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
         }
     }, [])
 
+    console.log(vacants)
+
     return (
         <Fragment>
             {
@@ -544,7 +546,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                             <div key={item.id}>
                                                 <div className="card-work">
                                                     <div className="header-work">
-                                                        <img src={require('../images/img/work.png')} />
+                                                        <img src={`http://` + item.file.url || require('../images/img/work.png')} />
                                                     </div>
                                                     <div className="card-body">
                                                         <h6>{item.title}</h6>
