@@ -761,7 +761,6 @@ h2.title-choose_business {
 .products-default {
     display: grid;
     grid-gap: 50px;
-    grid-template-columns: repeat(3,1fr);
 }
 
 .products-default .square-products {
