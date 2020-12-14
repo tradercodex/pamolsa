@@ -29,16 +29,7 @@ const DashbaordEditCommunity = ({match}) => {
 
     const dispatch = useDispatch();
 
-    const getCommunity = async () => {
-        const res = await axios.get(`http://3.120.185.254:8090/api/community/find/${id}`)
-        setCommunity({
-            title: res.data.data.title,
-            description: res.data.data.description,
-            file: res.data.data.file.url
-        })
-    }
-
-    useEffect(() => {
+    useEffect( async () => {
         $('#profile-image').change(function (e) {
             addImage(e);
         });
@@ -64,7 +55,14 @@ const DashbaordEditCommunity = ({match}) => {
                 $('#imgPerfil').attr("src", result);
             }
         }
-        getCommunity();
+        
+        const res = await axios.get(`http://3.120.185.254:8090/api/community/find/${id}`)
+        setCommunity({
+            title: res.data.data.title,
+            description: res.data.data.description,
+            file: res.data.data.file.url
+        })
+
     }, [])
 
     const sendSubmit = (data, e) => {

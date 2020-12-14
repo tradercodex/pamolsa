@@ -6,7 +6,6 @@ import Footer from '../components/Footer';
 import InformationWork from '../components/InformationWork';
 import { getVacants } from '../redux/actions/vacant'
 import { useDispatch, useSelector } from 'react-redux'
-import $ from 'jquery'
 
 const WorkWithUs = () => {
 

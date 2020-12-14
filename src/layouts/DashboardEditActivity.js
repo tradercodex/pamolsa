@@ -21,7 +21,7 @@ const DashboardEditActivity = ({match}) => {
         file: ''
     });
 
-    const { errors, handleSubmit, register,control,setValue } = useForm({
+    const { errors, handleSubmit, register,control } = useForm({
         defaultValues: {
             file: community.file
         }

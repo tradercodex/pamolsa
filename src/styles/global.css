@@ -22,7 +22,6 @@
 .slick-slide div {
     color: #4d4d4d;
     font-family: 'Amble-Light';
-    font-size: 14px;
 }
 
 body {
@@ -133,6 +132,9 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .Footer-pm {
         display: none;
     }
+    .container-grid.first .info-container p {
+        font-size: 12px !important;
+    }
     .container-grid-ds-forms ,.img-input-ds.edit  {
         grid-template-columns: repeat(1,1fr) !important;
         grid-gap: 0px !important;
@@ -214,11 +216,23 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         border-radius: 30px !important;
     }
     .img-video_known .img img ,.img-video_known .img::after ,.img-new_slick img ,.img-distributor::after,.img-distributor_hm img,.img-new_slick::after {
-        border-radius: 30px !important;
+        border-radius: 20px !important;
+    }
+    .footer-client_main h6 {
+        font-size: 12px !important;
+    }
+    .types-clients svg {
+        width: 35px !important;
+    }
+    .container-grid.clients-page div#industrial, .container-grid.clients-page div#foodservices {
+        padding-top: 0px !important;
     }
     .post-sl-sbl .square-sl-sbl {
         left: 20px !important;
         top: 60px;
+    }
+    .info-clients p, .info-client-footer p {
+        font-size: 12px !important;
     }
     .container .container-grid.why .play-button_pm {
         top: 250px !important;
@@ -253,8 +267,16 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         right: 0px !important;
     }
     .flex-pet-sbl > div {
-        padding: 10px;
+        padding: 0px;
         margin-left: 0px !important;
+        font-size: 12px !important;
+        text-align: center !important;
+    }
+    .flex-pet-sbl > div svg {
+        width: 100px !important;
+    }
+    .card-body p {
+        font-size: 9px !important;
     }
     .container .container-grid.work .info-new_slick {
         margin-left: 35px !important;
@@ -351,7 +373,10 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
     .About-us_pm .img-about_us .img::after {
         max-width: 380px;
-        height: 105% !important;
+        height: 100% !important;
+    }
+    .info-carbajal.about p {
+        font-size: 12px !important;
     }
     .info-about h3 {
         font-size: 16px !important;
@@ -474,6 +499,9 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .img-carbajal.about {
         margin-left: 50px !important;
     }
+    .info-footer_news_us p {
+        font-size: 12px !important;
+    }
     .img-distributor img, .img-video_known .img img {
         max-height: 100% !important;
     }
@@ -537,8 +565,9 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         margin-left: 20px !important;
     }
     .Known-pm.home .container-products_business  {
-        margin-left: 15px !important;
         width: 100% !important;
+        margin-left: 0 !important;
+        justify-content: center !important;
         grid-column: 1/8 !important;
         margin-top: 30px !important;
     }
@@ -649,6 +678,13 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
     summary {
         font-size: 10px !important;
+    }
+    .text-new {
+        font-size: 12px !important;
+        margin-bottom: 10px;
+    }
+    .info-about p {
+        font-size: 12px !important;
     }
     summary svg {
         width: 30px !important;
@@ -801,6 +837,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         justify-content: flex-start;
     }
     .info-sl-sbl p {
+        font-size: 12px !important;
         max-width: 400px !important;
     }
     .box-informs-pdf {
@@ -1059,6 +1096,9 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .Products-Quote .movil {
         display: flex;
     }
+    .card-body h6 {
+        font-size: 12px !important;
+    }
     .Products-Quote .movil svg {
         margin-left: 34px;
         display: block;
@@ -1130,7 +1170,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         display: none;
     }
     .Footer-pm .logo {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
         padding: 20px 20px !important;
         border-bottom: 1px solid #a8a8a8;
     }
@@ -1192,9 +1232,6 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .container-products_business svg {
         width: 59px !important;
         height: 59px !important;
-    }
-    .Known-pm.home .container-products_business div {
-        margin-left: 9px !important;
     }
     .square-img-card.right-up,.img-card, .square-img-card.right-up, .News-pm_us .img-new_slick_us, .News-pm_us .img-new_slick, .img-distributor, .img-video_known .img, .tablet .img-new_slick, .img-carbajal.about, .card-about .img-about_us {
         max-width: 320px !important;
@@ -1260,7 +1297,25 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         padding: 20px 10px 20px 10px !important;
     }
     .new-slick.work.sbl img {
-        height: 400px !important;
+        height: 390px !important;
+    }
+    .Container-sb_pm .sb_pm .header-title p {
+        font-size: 12px !important;
+    }
+    .card-body {
+        top: -130px !important;
+    }
+    .info-informs p {
+        font-size: 12px !important;
+    }
+    .box-informs-pdf {
+        padding: 0px 10px !important;
+    }
+    .box-informs-pdf p {
+        font-size: 10px !important;
+    }
+    .box-informs-pdf svg {
+        width: 30px !important;
     }
     .post-pet-sbl.activity .img-new_slick.activity ,.post-pet-sbl.activity .square-pet-sbl.activity {
         max-width: 200px !important;
@@ -1402,7 +1457,14 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         max-height: 360px !important;
     }
     .container {
-        padding-bottom: 0px !important;
+        padding-bottom: 70px !important;
+    }
+    .container-grid.clients-page div#exportation,  .container-grid.clients-page div#agroindustrial{
+        padding-top: 0px !important;
+    }
+    .client-info {
+        position: relative;
+        top: -40px !important;
     }
     .container .container-grid.why .play-button_pm {
         top: 150px !important

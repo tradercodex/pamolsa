@@ -21,9 +21,6 @@ const ProductsByType = ({ match }) => {
     const type_id = match.params.id
     const nameTypeProduct = match.params.name
 
-    console.log(type_id)
-    console.log(nameTypeProduct)
-
     const typesBusiness = useSelector(state => state.products.typesBusiness)
     const typesProducts = useSelector(state => state.products.typesProducts)
     const productsByFilter = useSelector(state => state.products.productsByFilter)
@@ -32,18 +29,17 @@ const ProductsByType = ({ match }) => {
     const dispatch = useDispatch();
 
     const [cartItems, setCartItems] = useState(cart.cartItems)
-    const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
     const [postsPerPage] = useState(12)
     const [lines, setLines] = useState();
     const [business, setBusiness] = useState();
-    const [search, setSearch] = useState('')
+    const [setSearch] = useState('')
     const [material, setMaterial] = useState();
-    const [products, setProducts] = useState([]);
+    const [products] = useState([]);
     const [materialId, setMaterialId] = useState({
         ids: []
     })
-    const [countProduct, setCountProduct] = useState();
+    const [countProduct] = useState();
     const [lineId, setLineId] = useState({
         ids: []
     });
@@ -139,7 +135,6 @@ const ProductsByType = ({ match }) => {
 
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    const currentPosts = products.slice(indexOfFirstPost, indexOfLastPost)
     const currentPostsByFilter = productsByFilter.slice(indexOfFirstPost, indexOfLastPost)
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber)
@@ -177,7 +172,6 @@ const ProductsByType = ({ match }) => {
                         toggleChangeCheckbox={toggleChangeCheckbox}
                         toggleLineProductsRadio={toggleLineProductsRadio}
                         toggleMaterialsProductsRadio={toggleMaterialsProductsRadio}
-                        nameTypeProduct={nameTypeProduct}
                         productsByFilter={currentPostsByFilter}
                         countProduct={countProduct}
                         countProductsByFilter={countProductsByFilter}

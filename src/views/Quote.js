@@ -2,7 +2,6 @@ import React, { Fragment, useState,useEffect } from 'react'
 import '../styles/steps.css'
 import $ from 'jquery'
 import Header from '../components/Header';
-import { useHistory } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import StepsQuote from '../components/StepsQuote'
 import axios from 'axios'

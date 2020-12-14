@@ -432,7 +432,7 @@
     position: relative;
     grid-column: 5/8;
     display: flex;
-    justify-content: start  ;
+    justify-content: flex-start;
 }
 
 .container-square_us {

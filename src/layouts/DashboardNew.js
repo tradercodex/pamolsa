@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getNews, deleteNew } from '../redux/actions/new'
 import { getNewsPaper, deleteNewPaper } from '../redux/actions/newpaper'
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { setAlert } from '../redux/actions/alert'
 import New from '../components/New'
 import NewsPaper from '../components/NewsPaper'

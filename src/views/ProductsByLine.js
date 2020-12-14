@@ -13,10 +13,10 @@ const ProductByLine = ({ match, location }) => {
 
     let pathname = location.pathname
     let line = match.params.id
-    let lineFoodService = line === 1 ? "Food Service" : ''
-    let lineBioform = line === 2 ? "Ecoamigable Bioform" : ''
-    let lineIndustrial = line === 3 ? "Industrial" : ''
-    let lineAgroIndustrial = line === 4 ? "Agroindustrial" : ''
+    let lineFoodService = line == 1 ? "Food Service" : ''
+    let lineBioform = line == 2 ? "Ecoamigable Bioform" : ''
+    let lineIndustrial = line == 3 ? "Industrial" : ''
+    let lineAgroIndustrial = line == 4 ? "Agroindustrial" : ''
 
     const productsByFilter = useSelector(state => state.products.productsByFilter)
     const typesBusiness = useSelector(state => state.products.typesBusiness)

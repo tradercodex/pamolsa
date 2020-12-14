@@ -536,7 +536,7 @@
 .companies {
     margin-top: 60px;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -604,7 +604,7 @@
 .companies-second {
     margin-top: 20px;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -621,7 +621,7 @@
 .info-footer_news_us {
     grid-column: 5/8;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .container-footer_news_us {
@@ -801,15 +801,15 @@
 
 .card-work {
     background: #fff;
-    border-top-right-radius: 50px;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    border-top-right-radius: 26px;
+    border-top-left-radius: 26px;
+    border-bottom-left-radius: 26px;
+    border-bottom-right-radius: 26px;
 }
 
 .card-work img {
-    border-top-right-radius: 50px;
-    border-top-left-radius: 50px;
+    border-top-right-radius: 26px;
+    border-top-left-radius: 26px;
 }
 
 .header-work {
@@ -829,7 +829,7 @@
     height: 100%;
     background: rgba(0, 82, 134, 0.2);
     content: '';
-    border-radius: 50px;
+    border-radius: 26px;
 }
 
 .card-body {
@@ -838,13 +838,13 @@
     z-index: 1;
     padding: 35px 35px 10px 35px;
     background: #fff;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 26px;
+    border-bottom-right-radius: 26px;
 }
 
 .card-body h6 {
     font-family: 'Amble-bold';
-    color: #009FE3;
+    color: #005286;
     font-size: 18px;
 }
 
@@ -863,13 +863,13 @@
 .card-body a , .card-body button{
     text-decoration: none;
     font-family: 'Amble-bold';
-    color: #009FE3;
+    color: #005286;
     font-size: 14px;
     margin-top: 20px;
     padding: 10px 30px;
     background: transparent;
-    border: 1px solid #009FE3;
-    border-radius: 50px;
+    border: 1px solid #005286;
+    border-radius: 26px;
     cursor: pointer;
     outline: none;
 }
@@ -1412,7 +1412,7 @@
 .new-slick.work.sbl img {
     width: 100%;
     height: 500px;
-    border-radius: 50px;
+    border-radius: 26px;
 }
 
 @media only screen and (min-width: 1440px) {

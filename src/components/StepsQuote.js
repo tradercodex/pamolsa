@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import ReactSelect from 'react-select'
 import DeleteCart from '../images/svg/deletecart';
-import { sendCart, addToCart, updateCard } from '../redux/actions/cart'
+import { sendCart, updateCard } from '../redux/actions/cart'
 import ModalSendCart from './ModalSendCart';
 
 const StepsQuote = ({

@@ -24,8 +24,8 @@ const Sustainability= () => {
 
     const dispatch = useDispatch()
 
-    const [showVideoModal, setShowVideoModal] = useState(false);
     const [cartItems, setCartItems] = useState(cart.cartItems)
+    const [showVideoModal, setShowVideoModal] = useState(false);
 
     const handleShowVideoModal = () => {
         setShowVideoModal(true)

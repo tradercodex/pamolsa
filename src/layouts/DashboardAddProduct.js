@@ -464,7 +464,7 @@ const DashboardAddProduct = () => {
                                         />
                                     </div>
                                 </div>
-                                <div className="input-ds">
+                                <div className="input-ds rt">
                                     <div>
                                         <label>Linea de producto</label>
                                     </div>
@@ -491,7 +491,7 @@ const DashboardAddProduct = () => {
                                     </div>
                                 </div>
 
-                                <div className="input-ds" style={{ marginTop: "20px" }}>
+                                <div className="input-ds rt" style={{ marginTop: "20px" }}>
                                     <div>
                                         <label>Tipo de producto</label>
                                     </div>
@@ -523,11 +523,12 @@ const DashboardAddProduct = () => {
                                     </div>
                                 </div>
                                 <div className="input-ds" style={{ marginTop: "20px" }}>
-                                    <div><label>Quieres que este producto sea popular ?</label></div>
+                                    <div><label>¿Quieres que este producto sea popular ? (Colocar 0 = No ó colocar 1 = Si)</label></div>
                                     <div className="flex-popular">
                                         <input
                                             type="text"
                                             name="popular"
+                                            defaultValue="0"
                                             ref={
                                                 register({
                                                     required: {
@@ -540,7 +541,7 @@ const DashboardAddProduct = () => {
                                 </div>
                             </div>
                             <div>
-                                <div className="input-ds">
+                                <div className="input-ds rt">
                                     <div>
                                         <label>Agrega un subtipo del producto</label>
                                     </div>
@@ -571,7 +572,7 @@ const DashboardAddProduct = () => {
                                         {errors.add_subtype && errors.add_subtype.message}
                                     </div>
                                 </div>
-                                <div className="input-ds" style={{ marginTop: "20px" }}>
+                                <div className="input-ds rt" style={{ marginTop: "20px" }}>
                                     <div><label>Material de producto</label></div>
                                     <Controller
                                         as={
@@ -601,7 +602,7 @@ const DashboardAddProduct = () => {
                                     </div>
                                 </div>
                                 <div className="input-ds" style={{ marginTop: "20px" }}>
-                                    <div><label>Nombre corto del material del producto</label></div>
+                                    <div><label>Nombre corto del material del producto (solo si se agrega un nuevo material de producto)</label></div>
                                     <input
                                         type="text"
                                         name="material_short_name"
@@ -618,7 +619,7 @@ const DashboardAddProduct = () => {
                                         {errors.material_short_name && errors.material_short_name.message}
                                     </div>
                                 </div>
-                                <div className="input-ds">
+                                <div className="input-ds rt">
                                     <div>
                                         <label>Agregue los tipos de nogocio</label>
                                     </div>

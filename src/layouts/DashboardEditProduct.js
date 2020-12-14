@@ -547,7 +547,7 @@ const DashboardEditProduct = ({ match }) => {
                                         />
                                     </div>
                                 </div>
-                                <div className="input-ds">
+                                <div className="input-ds rt">
                                     <div>
                                         <label>Linea de producto</label>
                                     </div>
@@ -572,7 +572,7 @@ const DashboardEditProduct = ({ match }) => {
                                     </div>
                                 </div>
 
-                                <div className="input-ds" style={{ marginTop: "20px" }}>
+                                <div className="input-ds rt" style={{ marginTop: "20px" }}>
                                     <div>
                                         <label>Tipo de producto</label>
                                     </div>
@@ -596,7 +596,7 @@ const DashboardEditProduct = ({ match }) => {
                                         {errors.type && errors.type.message}
                                     </div>
                                 </div>
-                                <div className="input-ds" style={{ marginTop: "20px" }}>
+                                <div className="input-ds rt" style={{ marginTop: "20px" }}>
                                     <div>
                                         <label>Agrega un subtipo del producto</label>
                                     </div>
@@ -620,7 +620,7 @@ const DashboardEditProduct = ({ match }) => {
                                         {errors.add_subtype && errors.add_subtype.message}
                                     </div>
                                 </div>
-                                <div className="input-ds" style={{ marginTop: "20px" }}>
+                                <div className="input-ds rt" style={{ marginTop: "20px" }}>
                                     <div><label>Material de producto</label></div>
                                     <Controller
                                         as={
@@ -643,7 +643,7 @@ const DashboardEditProduct = ({ match }) => {
                                     </div>
                                 </div>
                                 <div className="input-ds" style={{ marginTop: "20px" }}>
-                                    <div><label>Nombre corto del material del producto</label></div>
+                                    <div><label>Nombre corto del material del producto (solo si se agrega un nuevo material de producto)</label></div>
                                     <input
                                         type="text"
                                         name="material_short_name"
@@ -663,7 +663,7 @@ const DashboardEditProduct = ({ match }) => {
 
                             </div>
                             <div>
-                                <div className="input-ds">
+                                <div className="input-ds rt">
                                     <div>
                                         <label>Agregue los tipos de nogocio</label>
                                     </div>
@@ -692,7 +692,7 @@ const DashboardEditProduct = ({ match }) => {
                                     </div>
                                 </div>
                                 <div className="input-ds" style={{ marginTop: "20px" }}>
-                                    <div><label>Quieres que este producto sea popular ?</label></div>
+                                    <div><label>¿Quieres que este producto sea popular ? (Colocar 0 = No ó colocar 1 = Si)</label></div>
                                     <div className="flex-popular">
                                         <input
                                             type="text"

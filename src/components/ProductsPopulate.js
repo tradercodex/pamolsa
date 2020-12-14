@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import { withRouter } from 'react-router-dom'
 import { Link as LinkRouter } from 'react-router-dom'
 import '../styles/products.css'
-import { Link, animateScroll as scroll } from 'react-scroll'
+import { Link } from 'react-scroll'
 
 const ProductsPopulate = ({ match, relacionates, productsPopulate }) => {
 

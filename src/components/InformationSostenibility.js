@@ -8,7 +8,7 @@ import PlantSbl from '../images/svg/plantasbl'
 import InformDownload from '../images/svg/informdownload'
 import Slider from "react-slick";
 
-const InformationSostenibility = ({sostenibilidad2019,sostenibilidad2018,sostenibilidad2017}) => {
+const InformationSostenibility = ({ sostenibilidad2019, sostenibilidad2018, sostenibilidad2017 }) => {
 
     const settingsNews = {
         dots: true,
@@ -77,7 +77,7 @@ const InformationSostenibility = ({sostenibilidad2019,sostenibilidad2018,sosteni
                     </div>
                 </div>
             </div>
-            <div style={{ background: "rgba(0, 82, 134, 0.2)", paddingTop: "70px",  paddingBottom: "70px" }}>
+            <div style={{ background: "rgba(0, 82, 134, 0.2)", paddingTop: "70px", paddingBottom: "70px" }}>
                 <div className="container-grid">
                     <div className="info-informs">
                         <h2>Informes de sostenibilidad</h2>
@@ -85,21 +85,21 @@ const InformationSostenibility = ({sostenibilidad2019,sostenibilidad2018,sosteni
                     </div>
                     <div className="informs-pdfs">
                         <div className="box-informs-pdf">
-                            <a href={sostenibilidad2019} target="_blank"><InformDownload /></a>
+                            <a rel="noopener noreferrer" href={sostenibilidad2019} target="_blank"><InformDownload /></a>
                             <p>Sostenibilidad 2019</p>
                         </div>
                         <div className="box-informs-pdf">
-                        <a href={sostenibilidad2018} target="_blank"><InformDownload /></a>
+                            <a rel="noopener noreferrer" href={sostenibilidad2018} target="_blank"><InformDownload /></a>
                             <p>Sostenibilidad 2018</p>
                         </div>
                         <div className="box-informs-pdf">
-                        <a href={sostenibilidad2017} target="_blank"><InformDownload /></a>
+                            <a rel="noopener noreferrer" href={sostenibilidad2017} target="_blank"><InformDownload /></a>
                             <p>Sostenibilidad 2017</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div style={{background: "#fff"}}>
+            <div style={{ background: "#fff" }}>
                 <div className="">
                     <Slider {...settingsNews} className="stb-slick tablet">
                         <div>
@@ -108,12 +108,12 @@ const InformationSostenibility = ({sostenibilidad2019,sostenibilidad2018,sosteni
                                     <div className="square-sl-sbl">
                                     </div>
                                     <div className="img-new_slick">
-                                        <img src={require('../images/img/stbslider1.png')} />
+                                        <img src={require('../images/img/stbslider1.png')} alt="imagen" />
                                     </div>
                                 </div>
                                 <div className="info-sl-sbl">
                                     <div className="info-sbl">
-                                        <h4 style={{width: "520px"}}>Innovación que genera valor</h4>
+                                        <h4 style={{ width: "520px" }}>Innovación que genera valor</h4>
                                         <img src={require('../images/img/bioform.png')} alt="bioform" />
                                         <h6>PRIMERA LÍNEA DE EMPAQUES BIODEGRADABLES</h6>
                                         <p>Fabricada en el país con cartón de bagazo de caña de azúcar, amplió su portafolio el 2019 con el lanzamiento de nuevas referencias en platos, contenedores, bandejas y vasos para el mercado de Foodservice.</p>
@@ -127,12 +127,12 @@ const InformationSostenibility = ({sostenibilidad2019,sostenibilidad2018,sosteni
                                     <div className="square-sl-sbl">
                                     </div>
                                     <div className="img-new_slick">
-                                        <img src={require('../images/img/petpluslider.webp')} />
+                                        <img src={require('../images/img/petpluslider.webp')} alt="imagen" />
                                     </div>
                                 </div>
                                 <div className="info-sl-sbl">
                                     <div className="info-sbl">
-                                        <h4 style={{width: "520px"}}>Innovación que genera valor</h4>
+                                        <h4 style={{ width: "520px" }}>Innovación que genera valor</h4>
                                         <img src={require('../images/img/petplus.png')} alt="bioform" />
                                         <p>Desarrollamos PET+, una tecnología que permite obtener productos con una funcionalidad superior a la de un empaque de PET tradicional utilizando hasta 50% menos de material. Adicionalmente mejora las propiedades de aislamiento térmico y la apariencia del producto.</p>
                                     </div>

@@ -12,12 +12,10 @@ const Slicks = ({ match, banners }) => {
     const settings = {
         dots: true,
         infinite: true,
-        fade: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 10000,
-        pauseOnHover: true
     };
 
     return (
@@ -71,7 +69,7 @@ const Slicks = ({ match, banners }) => {
                                                 </Style>
                                                 <div className="footer-slick">
                                                     <div className="tree-pm banner">
-                                                        <img src={require('../images/img/tree.gif')} />
+                                                        <img src={require('../images/img/tree.gif')} alt="imagen" />
                                                     </div>
                                                 </div>
                                             </div>

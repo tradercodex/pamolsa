@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 const Etic = () => {
     return (
@@ -18,7 +17,7 @@ const Etic = () => {
                     <div className="square-img-card right-up">
                     </div>
                     <div className="img-card">
-                        <img src={require('../images/img/carbajalempresa.png')} />
+                        <img src={require('../images/img/carbajalempresa.png')} alt="imagen"/>
                     </div>
                 </div>
             </div>

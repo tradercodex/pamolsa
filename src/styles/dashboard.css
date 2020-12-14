@@ -461,15 +461,14 @@ nav {
 }
 
 .input-ds input {
-    margin-bottom: 20px;
     background: transparent;
     border: 1px solid rgb(128, 116, 116);
-    padding: 14px;
+    padding: 10px 12px;
     border-radius: 5px;
     outline: none;
     width: 100%;
     font-family: 'Amble-bold';
-    color: #fff;
+    color: #fff !important;
 }
 
 .input-ds textarea {

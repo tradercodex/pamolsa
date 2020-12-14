@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react'
 import Arrow from '../images/svg/arrowback';
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import ReactHtmlParser from 'react-html-parser'
 
-const DetailNew = ({title,body,source,created,place,file,author}) => {
+const DetailNew = ({title,body,source,created,file}) => {
 
     const history = useHistory();
 

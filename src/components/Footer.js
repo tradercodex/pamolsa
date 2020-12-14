@@ -19,7 +19,7 @@ const Footer = () => {
                             <h6>Declaración de beneficiario final</h6>
                             <div className="info-contact">
                                 <div className="center">
-                                <a target="_blank" href="https://pamolsa.com.pe/web/frontend/files/DECLARACION_BENEFICIARIO_FINAL.pdf">Peruana de Modelos SAC</a>
+                                <a rel="noopener noreferrer" target="_blank" href="https://pamolsa.com.pe/web/frontend/files/DECLARACION_BENEFICIARIO_FINAL.pdf">Peruana de Modelos SAC</a>
                                 </div>
                             </div>
                         </div>
@@ -29,7 +29,7 @@ const Footer = () => {
                             <h6>Documento informativo</h6>
                             <div className="info-contact">
                                 <div className="center">
-                                    <a target="_blank" href="https://pamolsa.com.pe/web/frontend/files/POLITICA_DE_PROTECCION_DE_DATOS2020.pdf">Politica de privacidad</a>
+                                    <a rel="noopener noreferrer" target="_blank" href="https://pamolsa.com.pe/web/frontend/files/POLITICA_DE_PROTECCION_DE_DATOS2020.pdf">Politica de privacidad</a>
                                 </div>
                                 <div className="cell">
                                     <a href="">Documento 1</a>
@@ -58,9 +58,9 @@ const Footer = () => {
                     <div className="copy-right">
                         <div className="span">Nuestras redes</div>
                         <div className="socials">
-                            <a href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} /></a>
-                            <a href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} /></a>
-                            <a href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} /></a>
+                            <a rel="noopener noreferrer" href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} /></a>
+                            <a rel="noopener noreferrer" href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} /></a>
+                            <a rel="noopener noreferrer" href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} /></a>
                         </div>
                     </div>
                 </div>
@@ -68,9 +68,9 @@ const Footer = () => {
                     <div className="copy-right">
                         <div className="span">Nuestras redes</div>
                         <div className="socials">
-                            <a href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} /></a>
-                            <a href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} /></a>
-                            <a href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} /></a>
+                            <a rel="noopener noreferrer" href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} /></a>
+                            <a rel="noopener noreferrer" href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} /></a>
+                            <a rel="noopener noreferrer" href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} /></a>
                         </div>
                     </div>
                     <div className="copy">
@@ -88,11 +88,11 @@ const Footer = () => {
                         <div className="declaration collapse-footer" id="declaration">
                             <div className="title">
                                 <div className="sp-title">
-                                    <a href="#declaration" className="">Declaración de beneficiario final</a><ArrowFooter />
+                                    <a rel="noopener noreferrer" href="#declaration" className="">Declaración de beneficiario final</a><ArrowFooter />
                                 </div>
                                 <div className="info-contact content">
                                     <div className="center">
-                                        <a target="_blank" href="https://pamolsa.com.pe/web/frontend/files/DECLARACION_BENEFICIARIO_FINAL.pdf">Peruana de Modelos SAC</a>
+                                        <a rel="noopener noreferrer" target="_blank" href="https://pamolsa.com.pe/web/frontend/files/DECLARACION_BENEFICIARIO_FINAL.pdf">Peruana de Modelos SAC</a>
                                     </div>
                                 </div>
                             </div>
@@ -105,13 +105,13 @@ const Footer = () => {
                                 </div>
                                 <div className="info-contact content">
                                     <div className="center">
-                                        <a target="_blank" href="https://pamolsa.com.pe/web/frontend/files/POLITICA_DE_PROTECCION_DE_DATOS2020.pdf">Politica de privacidad</a>
+                                        <a rel="noopener noreferrer" target="_blank" href="https://pamolsa.com.pe/web/frontend/files/POLITICA_DE_PROTECCION_DE_DATOS2020.pdf">Politica de privacidad</a>
                                     </div>
                                     <div className="cell">
-                                        <a target="_blank" href="">Documento 1</a>
+                                        <a rel="noopener noreferrer" target="_blank" href="">Documento 1</a>
                                     </div>
                                     <div className="cell">
-                                        <a target="_blank" href="">Documento 2</a>
+                                        <a rel="noopener noreferrer" target="_blank" href="">Documento 2</a>
                                     </div>
                                 </div>
                             </div>
@@ -120,7 +120,7 @@ const Footer = () => {
                         <div className="contact collapse-footer" id="contact">
                             <div className="title">
                                 <div className="sp-title">
-                                    <a href="#contact" className="">Contacto</a><ArrowFooter />
+                                    <a rel="noopener noreferrer" href="#contact" className="">Contacto</a><ArrowFooter />
                                 </div>
                                 <div className="info-contact content">
                                     <div className="center">Central: (511) 710 3020</div>
@@ -139,9 +139,9 @@ const Footer = () => {
                     <div className="copy-right">
                         <div className="span">Nuestras redes</div>
                         <div className="socials">
-                            <a href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} /></a>
-                            <a href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} /></a>
-                            <a href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} /></a>
+                            <a rel="noopener noreferrer" href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} /></a>
+                            <a rel="noopener noreferrer" href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} /></a>
+                            <a rel="noopener noreferrer" href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} /></a>
                         </div>
                     </div>
                 </div>
@@ -149,9 +149,9 @@ const Footer = () => {
                     <div className="copy-right">
                         <div className="span">Nuestras redes</div>
                         <div className="socials">
-                            <a href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} /></a>
-                            <a href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} /></a>
-                            <a href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} /></a>
+                            <a rel="noopener noreferrer" href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} /></a>
+                            <a rel="noopener noreferrer" href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} /></a>
+                            <a rel="noopener noreferrer" href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} /></a>
                         </div>
                     </div>
                     <div className="copy">

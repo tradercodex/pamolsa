@@ -196,7 +196,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                 pathname === "/" ?
                     <div className="News-pm">
                         <div className="tree-new news">
-                            <img src={require('../images/img/tree.gif')} />
+                            <img src={require('../images/img/tree.gif')} alt="imagen" />
                         </div>
                         <div className="square-new"></div>
                         <Slider {...settingsHome} className="new-slick tablet">
@@ -210,7 +210,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                                         <h4>Noticias Pamolsa</h4>
                                                     </div>
                                                     <h6>{(item.title).substring(0, 60) + '...'}</h6>
-                                                    <div>{ReactHtmlParser((item.body).substring(0, 150) + '...')}</div>
+                                                    <div className="text-new">{ReactHtmlParser((item.body).substring(0, 150) + '...')}</div>
                                                     <Link to={`/noticias/${item.id}`}>Ver más</Link>
                                                 </div>
                                                 <div className="post-new_slick">
@@ -247,14 +247,13 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                             <div className="square-slick">
                                             </div>
                                             <div className="img-new_slick_us">
-                                                <img src={require('../images/img/us1.png')} />
+                                                <img src={require('../images/img/us1.png')} alt="imagen" />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
                                     <div className="container-news">
-
                                         <div className="info-new_slick">
                                             <div className="title-new">
                                                 <h4>Planta Faucett</h4>
@@ -266,7 +265,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                             <div className="square-slick">
                                             </div>
                                             <div className="img-new_slick">
-                                                <img src={require('../images/img/plantafaucet.jpg')} />
+                                                <img src={require('../images/img/plantafaucet.jpg')} alt="imagen" />
                                             </div>
                                         </div>
                                     </div>
@@ -474,7 +473,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                                             </div>
                                                             <div className="card-body">
                                                                 <h6>{item.title}</h6>
-                                                                <p>{ReactHtmlParser((item.description).substring(0, 110) + '...')}</p>
+                                                                <p>{ReactHtmlParser((item.description).substring(0, 100) + '...')}</p>
                                                                 <Link to={`/sostenibilidad/comunidad/${item.id}`} style={{ marginTop: "0px" }}>Ver más</Link>
                                                             </div>
                                                         </div>
@@ -546,7 +545,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                             <div key={item.id}>
                                                 <div className="card-work">
                                                     <div className="header-work">
-                                                        <img src={`http://` + item.file.url || require('../images/img/work.png')} />
+                                                        <img src={`http://` + item.file.url || require('../images/img/work.png')} alt="imagen" />
                                                     </div>
                                                     <div className="card-body">
                                                         <h6>{item.title}</h6>
@@ -565,7 +564,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                 <div className="square" style={{ background: "#1F6795" }}></div>
                                 <div className="img-video_known">
                                     <div className="img">
-                                        <img src={require('../images/img/workpostula.png')} />
+                                        <img src={require('../images/img/workpostula.png')} alt="imagen" />
                                     </div>
                                 </div>
                             </div>

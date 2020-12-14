@@ -11,11 +11,11 @@ export default (state = initialState, action) => {
                 ...state,
                 cartItems: action.payload.cartItems
             }
-        case DELETE_CART: 
+        case DELETE_CART:
             state = {
                 cartItems: action.payload.cartItems
             }
-            break;
+        default:
+            return state;
     }
-    return state;
 }

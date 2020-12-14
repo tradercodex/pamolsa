@@ -935,7 +935,7 @@
     }
     .img-carbajal.about {
         grid-column: 2/8;
-        margin-top: 50px;
+        margin-top: 10px;
     }
     .img-map_pm {
         grid-column: 2/10 !important;
@@ -1054,12 +1054,16 @@
     }
     .post-img-card-rigth {
         padding-top: 40px;
-        padding-bottom: 20px;
+        padding-bottom: 0px;
         grid-column: 1/8 !important;
         display: flex !important;
-        margin-top: 40px !important;
+        margin-top: 0px !important;
         margin-bottom: 40px !important;
         justify-content: center !important;
+    }
+    .card-body a, .card-body button {
+        padding: 8px 15px !important;
+        font-size: 9px !important;
     }
     .post-img-card-rigth {
         left: auto !important;
@@ -1123,6 +1127,7 @@
     }
     .container-grid.sbl .info-pm p {
         width: 90% !important;
+        font-size: 12px !important;
     }
     .container-grid.sbl .play-known {
         padding-top: 100px;
@@ -1152,7 +1157,7 @@
         margin-left: 80px;
     }
     .container-grid.tonel .info-container p ,.container-grid.first .info-container p ,.container-grid.community .info-container p{
-        font-size: 14px !important;
+        font-size: 12px !important;
     }
     .container-grid.tonel .img-container ,.new-slick.work {
         grid-column: 1/8 !important;

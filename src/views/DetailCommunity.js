@@ -4,8 +4,13 @@ import '../styles/distributor.css'
 import Footer from '../components/Footer';
 import DetailSostenibilityId from '../components/DetailCommunity'
 import axios from 'axios'
+import { useSelector } from 'react-redux'
 
 const DetailCommunity = ({ match }) => {
+
+    const cart = useSelector(state => state.cart)
+
+    const [cartItems, setCartItems] = useState(cart.cartItems)
 
     const id = match.params.name;
     const [community, setCommunity] = useState({
@@ -38,11 +43,14 @@ const DetailCommunity = ({ match }) => {
         })
 
         getCommunity();
-    }, [id])
+        setCartItems(cart.cartItems)
+    }, [id,cart.cartItems])
+
+    let number = Object.keys(cartItems).length
 
     return (
         <Fragment>
-            <Header />
+            <Header number={number} />
             {
                 id ?
                     <DetailSostenibilityId

@@ -66,7 +66,6 @@
 
 .new-slick.work.tablet .slick-slide img {
     max-width: 100%;
-    min-height: 450px;
 }
 
 .info-clients p,.info-client-footer p {
@@ -294,6 +293,15 @@ a.active svg circle {
     right: 0;
     font-size: 14px;
     top: 0px;
+}
+
+.input-ds {
+    margin-bottom: 15px;
+}
+
+.input-ds.rt .error-ds , .input-ds .error-ds {
+    position: relative;
+    top: 12px;
 }
 
 .upload {

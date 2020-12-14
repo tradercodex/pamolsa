@@ -4,7 +4,6 @@ import MenuCategory from '../components/MenuCategory'
 import QuoteProducts from '../components/QueoteProducts';
 import ProductsPopulate from '../components/ProductsPopulate'
 import Footer from '../components/Footer'
-import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 import { getTypesProducts, getTypesBusiness } from '../redux/actions/product'
 import { useDispatch, useSelector } from 'react-redux'

@@ -57,7 +57,7 @@ const Known = ({
                             data-wow-delay="0.4"
                         >
                             <Link to="#" onClick={goLineTwo}>
-                                <img src={require('../images/img/lineproducts.png')} />
+                                <img src={require('../images/img/lineproducts.png')} alt="imagen" />
                                 <p>Línea Ecoamigable Bioform</p>
                             </Link>
                         </div>
@@ -66,7 +66,7 @@ const Known = ({
                             data-wow-delay="0.4"
                         >
                             <Link to="#" onClick={goLineOne}>
-                                <img src={require('../images/img/foodservices.png')} />
+                                <img src={require('../images/img/foodservices.png')} alt="imagen" />
                                 <p>Línea Food Service</p>
                             </Link>
                         </div>
@@ -75,7 +75,7 @@ const Known = ({
                             data-wow-delay="2.4"
                         >
                             <Link to="#" onClick={goLineThree}>
-                                <img src={require('../images/img/useapplication.png')} />
+                                <img src={require('../images/img/useapplication.png')} alt="imagen" />
                                 <p>Línea Industrial Consumo</p>
                             </Link>
                         </div>
@@ -84,7 +84,7 @@ const Known = ({
                             data-wow-delay="2.4"
                         >
                             <Link to="#" onClick={goLineFour}>
-                                <img src={require('../images/img/lineagro.png')} />
+                                <img src={require('../images/img/lineagro.png')} alt="imagen" />
                                 <p>Línea Agroindustrial</p>
                             </Link>
                         </div>
@@ -179,7 +179,7 @@ const Known = ({
                             className="wow animate__animated animate__fadeInRight"
                             data-wow-duration="2s"
                             data-wow-delay="1.8s"
-                            src={require('../images/img/distributor.png')} />
+                            src={require('../images/img/distributor.png')} alt="imagen" />
                     </div>
                 </div>
             </div>
