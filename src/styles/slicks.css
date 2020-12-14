@@ -40,7 +40,7 @@
     top: -360.45px;
     z-index: 2;
     background: #CBDCE7 !important;
-    border-radius: 191px;
+    border-radius: 140px !important;
     transform: rotate(-16.85deg);
 }
 
@@ -506,6 +506,12 @@
     }
 }
 
+@media only screen and (max-width: 1440px) and (max-height: 750px) {
+    .content-slick-new {
+        height: 80vh !important;
+    }
+}
+ 
 @media only screen and (max-width: 1440px) {
     .Rotate-slick::after{
         background-size: unset !important;
@@ -543,10 +549,10 @@
     }
     .Rotate-slick.Us {
         width: 2700px;
-        height: 104vh;
+        height: 111vh;
         top: -750px;
         left: -176px;
-        border-radius: 191px;
+        border-radius: 120px;
         transform: rotate(-26.34deg);
     }
     .Rotate-slick.Us::after {
@@ -576,9 +582,12 @@
     .content-slick-new {
         height: 98vh !important;
     }
+    .Slicks-pm.Us .slick-initialized .slick-slide {
+        height: 110vh !important;
+    }
     .Rotate-slick.Us::after {
         top: 350px;
-        left: -105px;
+        left: -125px;
     }
     .info-slick.Us {
         top: 700px !important;
@@ -588,7 +597,7 @@
     }
 }
 
-@media screen and (max-height: 660px) and (max-width: 1370px) {
+@media screen and (max-width: 1370px) and (max-height: 660px)  {
     .Rotate-slick::after{
         background-size: unset !important;
     }

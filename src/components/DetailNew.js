@@ -14,7 +14,7 @@ const DetailNew = ({title,body,source,created,file}) => {
     return (
         <Fragment>
             <div className="Detail-new_pm">
-                <img src={`http://`+ file} />
+                <img src={require('../images/img/bannerus.webp')} />
                 <div className="back">
                     <button onClick={back}><Arrow />Volver</button>
                 </div>

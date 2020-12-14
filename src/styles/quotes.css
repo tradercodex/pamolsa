@@ -55,8 +55,8 @@ li a.category {
     position: relative;
     color: #4D4D4C;
     padding: 15px 25px 15px 25px;
-    min-width: 170px;
     display: flex;
+    font-size: 13px;
     justify-content: center;
     align-items: center;
 }
@@ -66,9 +66,9 @@ li a.active-category {
     border-radius: 30px;
     position: relative;
     color: #005286;
+    font-size: 13px;
     font-family: 'Amble-bold';
     padding: 15px 25px 15px 25px;
-    width: 170px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,7 +84,7 @@ li a.category img , li a.active-category img {
 }
 
 ul li:nth-child(2) img {
-    width: 28px;
+    width: 23px;
 }
 
 ul li:nth-child(6) img {
@@ -96,7 +96,7 @@ ul li:nth-child(7) img {
 }
 
 ul li:nth-child(3) img {
-    width: 25px;
+    width: 20px;
 }
 
 ul li:nth-child(4) img {
