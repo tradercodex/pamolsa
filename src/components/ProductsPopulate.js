@@ -54,7 +54,7 @@ const ProductsPopulate = ({ match, relacionates, productsPopulate }) => {
                     >
                         <h4>Productos relacionados</h4>
                         <p>Pensamos que te pueden interesar estos productos</p>
-                        <div className="products-default" style={{ maxWidth: "1640px", margin: "0 auto" }}>
+                        <div className="products-default populate" style={{ maxWidth: "1640px", margin: "0 auto" }}>
                             {
                                 relacionates && relacionates.length > 0 ?
                                     relacionates.map(product => (
