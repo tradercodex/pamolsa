@@ -21,7 +21,6 @@ const DashboardEditNew = ({match}) => {
         source: '',
         title: '',
         file: '',
-        source: '',
         description: ''
     })
 
@@ -73,8 +72,6 @@ const DashboardEditNew = ({match}) => {
         getNewApi();
     }, [])
 
-    console.log(newId.file)
-
     const sendSubmit = (data, e) => {
 
         const formData = new FormData();
@@ -94,7 +91,6 @@ const DashboardEditNew = ({match}) => {
                 dispatch(getNews());
             }, 2000);
         }
-        e.target.reset();
     }
 
     return (
@@ -184,7 +180,7 @@ const DashboardEditNew = ({match}) => {
                                         ref={
                                             register({
                                                 required: {
-                                                    value: true,
+                                                    value: false,
                                                     message: 'Ingrese el link de la noticia'
                                                 }
                                             })
