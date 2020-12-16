@@ -69,7 +69,7 @@ const DashboardEditProduct = ({ match }) => {
     })
 
     const getProduct = async () => {
-        const res = await axios.get(`http://3.120.185.254:8090/api/product/find?product_id=${id}`)
+        const res = await axios.get(`https://wspamolsa.com.pe/api/product/find?product_id=${id}`)
         setProduct({
             name: res.data.data.name,
             code: res.data.data.code,

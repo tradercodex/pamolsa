@@ -18,7 +18,7 @@ const Products = () => {
      const dispatch = useDispatch();
 
      const apiProductsPopulate = async ( ) => {
-          const res = await axios.get('http://3.120.185.254:8090/api/product/find/popular')
+          const res = await axios.get('https://wspamolsa.com.pe/api/product/find/popular')
           setProductsPopulate(res.data.data)
      }
 

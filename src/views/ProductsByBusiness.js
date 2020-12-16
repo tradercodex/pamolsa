@@ -80,17 +80,17 @@ const ProductsByBusiness = ({ match }) => {
     }
 
     const apiGetLines = async () => {
-        const response = await Axios.get(`http://3.120.185.254:8090/api/product/line/list?business=${business_id}`);
+        const response = await Axios.get(`https://wspamolsa.com.pe/api/product/line/list?business=${business_id}`);
         setLines(response.data.data)
     }
 
     const apiGetTypes = async () => {
-        const response = await Axios.get(`http://3.120.185.254:8090/api/product/types/list?business=${business_id}`);
+        const response = await Axios.get(`https://wspamolsa.com.pe/api/product/types/list?business=${business_id}`);
         setTypes(response.data.data)
     }
 
     const apiGetMaterial = async () => {
-        const response = await Axios.get(`http://3.120.185.254:8090/api/product/material/list?business=${business_id}`);
+        const response = await Axios.get(`https://wspamolsa.com.pe/api/product/material/list?business=${business_id}`);
         setMaterials(response.data.data)
     }
 

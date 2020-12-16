@@ -2,7 +2,7 @@ import { SIGNIN_SUCCESS, SIGNIN_ERROR, AUTH_SUCCESS, AUTH_ERROR } from './types'
 // import { setAlert } from './alert'
 import axios from 'axios'
 
-const root = 'http://3.120.185.254:8090/api'
+const root = 'https://wspamolsa.com.pe/api'
  
 export const signin = (data) => async dispatch => {
     try {

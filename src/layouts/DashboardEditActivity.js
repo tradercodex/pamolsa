@@ -30,7 +30,7 @@ const DashboardEditActivity = ({match}) => {
     const dispatch = useDispatch();
 
     const getCommunity = async () => {
-        const res = await axios.get(`http://3.120.185.254:8090/api/community/find/${id}`)
+        const res = await axios.get(`https://wspamolsa.com.pe/api/community/find/${id}`)
         setCommunity({
             title: res.data.data.title,
             description: res.data.data.description,

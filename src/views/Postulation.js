@@ -40,17 +40,17 @@ const Postulation = () => {
     }
 
     const apiDepartments = async () => {
-        const response = await axios.get('http://3.120.185.254:8090/api/department/list');
+        const response = await axios.get('https://wspamolsa.com.pe/api/department/list');
         setDepartments(response.data.data)
     }
 
     const apiProvinces = async () => {
-        const response = await axios.get('http://3.120.185.254:8090/api/province/list');
+        const response = await axios.get('https://wspamolsa.com.pe/api/province/list');
         setProvinces(response.data.data)
     }
 
     const apiDistricts = async () => {
-        const response = await axios.get('http://3.120.185.254:8090/api/district/list');
+        const response = await axios.get('https://wspamolsa.com.pe/api/district/list');
         setDistricts(response.data.data)
     }
 

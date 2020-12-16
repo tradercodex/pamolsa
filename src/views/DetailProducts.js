@@ -23,7 +23,7 @@ const DetailProducts = ({match}) => {
     const [ relacionates, setRelacionates ] = useState([])
 
     const getRelacionate = async () => {
-        const response = await Axios.get(`http://3.120.185.254:8090/api/product/find/related?product_id=${id}`)
+        const response = await Axios.get(`https://wspamolsa.com.pe/api/product/find/related?product_id=${id}`)
         setRelacionates(response.data.data)
     }
 
