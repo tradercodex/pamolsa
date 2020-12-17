@@ -188,8 +188,6 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
         }
     }, [])
 
-    console.log(vacants)
-
     return (
         <Fragment>
             {

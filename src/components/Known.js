@@ -123,7 +123,7 @@ const Known = ({
                             </div>
                             <p className="know-lines movil">Industrial</p>
                             <div className="button-cat">
-                                <a href={industrial} target="_blank"
+                                <a rel="noopener noreferrer" href={industrial} target="_blank"
                                     className="wow animate__animated animate__fadeInUp"
                                     data-wow-duration="4s"
                                     data-wow-delay="2.4">Ver cátalogo</a>
@@ -138,7 +138,7 @@ const Known = ({
                             </div>
                             <p className="know-lines movil">Agroindustrial</p>
                             <div className="button-cat">
-                                <a href={agroindustrial} target="_blank"
+                                <a rel="noopener noreferrer" href={agroindustrial} target="_blank"
                                     className="wow animate__animated animate__fadeInUp"
                                     data-wow-duration="4s"
                                     data-wow-delay="2.4">Ver cátalogo</a>

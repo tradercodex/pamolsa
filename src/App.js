@@ -37,8 +37,7 @@ function App() {
     dispatch(updateCard());
   }, [])
 
-  const Home = React.lazy(async () => {
-    await new Promise(resolve => setTimeout(resolve,100))
+  const Home = React.lazy(() => {
     return import('./views/Home');
   })
 

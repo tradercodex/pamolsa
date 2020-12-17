@@ -506,6 +506,12 @@
     }
 }
 
+@media only screen and (max-width: 1440px) and (max-height: 900px) {
+    .Rotate-slick.Us {
+        height: 105vh !important;
+    }
+}
+
 @media only screen and (max-width: 1440px) and (max-height: 750px) {
     .content-slick-new {
         height: 80vh !important;
