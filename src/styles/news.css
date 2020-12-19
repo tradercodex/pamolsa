@@ -799,6 +799,18 @@
     margin-left: 400px;
 }
 
+.container-grid.work .new-slick.work.tablet .card-work{
+    height: 420px;
+}
+
+.container-grid.work .new-slick.work.tablet .header-work{
+    height: 100% !important;
+}
+
+.container-grid.work .new-slick.work.tablet .card-body {
+    padding: 35px 35px 35px 35px;
+}
+
 .card-work {
     background: #fff;
     border-top-right-radius: 26px;
@@ -875,7 +887,7 @@
 }
 
 .new-slick.work .slick-dots {
-    bottom: 255px !important;
+    bottom: 205px !important;
     background: transparent !important;
     z-index: 2500 !important;
     padding: 0 !important;
@@ -1477,7 +1489,7 @@
         left: 100px;
     }
     .new-slick.work .slick-dots {
-        bottom: 255px !important;
+        bottom: 205px !important;
         left: -420px !important;
     }
     .card-work {

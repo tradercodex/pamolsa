@@ -10,7 +10,7 @@ const Etic = () => {
                     </div>
                     <p style={{ color: "#fff", marginBottom: "60px" }}>Carvajal ha puesto a su disposición este sitio web para que colaboradores, clientes y proveedores puedan informar de manera segura y confidencial, sobre comportamientos no éticos y violaciones a los principios, valores y políticas de la Organización Carvajal.</p>
                     <div className="btn-access" >
-                        <a target="_blank" href="https://carvajal.alertline.com/gcs/welcome?custom=coke&next=eu&locale=es">Ingrese aquí</a>
+                        <a rel="noopener noreferrer" target="_blank" href="https://carvajal.alertline.com/gcs/welcome?custom=coke&next=eu&locale=es">Ingrese aquí</a>
                     </div>
                 </div>
                 <div className="post-img-card-rigth etic">

@@ -132,6 +132,9 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .Footer-pm {
         display: none;
     }
+    .container-grid.work .new-slick.work.tablet .card-work {
+        height: 400px !important;
+    }
     .container-grid.first .info-container p {
         font-size: 12px !important;
     }
