@@ -49,7 +49,7 @@ const InformationWork = () => {
                                     </div>
                                     <div className="img-company-gpw">
                                     </div>
-                                    <div className="img-company-gp">
+                                    <div className="img-company-gp2">
                                     </div>
                                     <div className="img-company-abe">
                                     </div>
