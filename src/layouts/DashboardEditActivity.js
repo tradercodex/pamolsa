@@ -6,7 +6,7 @@ import ReactQuill from 'react-quill'
 import { useHistory } from 'react-router-dom'
 import '../styles/dashboard.css'
 import { setAlert } from '../redux/actions/alert'
-import { getCommunities, updateCommunity } from '../redux/actions/community'
+import { getActivities, updateActivity } from '../redux/actions/activity'
 import axios from 'axios'
 
 const DashboardEditActivity = ({match}) => {
@@ -14,8 +14,9 @@ const DashboardEditActivity = ({match}) => {
     const history = useHistory();
 
     const id = match.params.id
+    console.log(id)
 
-    const [community, setCommunity] = useState({
+    const [activity, setActivity] = useState({
         title: '',
         description: '',
         file: ''
@@ -23,19 +24,20 @@ const DashboardEditActivity = ({match}) => {
 
     const { errors, handleSubmit, register,control } = useForm({
         defaultValues: {
-            file: community.file
+            file: activity.file
         }
     })
 
     const dispatch = useDispatch();
 
-    const getCommunity = async () => {
-        const res = await axios.get(`http://3.120.185.254:8090/api/community/find/${id}`)
-        setCommunity({
-            title: res.data.data.title,
-            description: res.data.data.description,
-            file: res.data.data.file.url
-        })
+    const getActivity = async () => {
+        const res = await axios.get(`https://wspamolsa.com.pe/api/activity/find/${id}`)
+        console.log(res.data)
+        // setActivity({
+        //     title: res.data.data.title,
+        //     description: res.data.data.description,
+        //     file: res.data.data.file.url
+        // })
     }
 
     useEffect(() => {
@@ -64,23 +66,23 @@ const DashboardEditActivity = ({match}) => {
                 $('#imgPerfil').attr("src", result);
             }
         }
-        getCommunity();
+        getActivity();
     }, [])
 
     const sendSubmit = (data, e) => {
 
         const formData = new FormData();
-        formData.append('community_id',id)
+        formData.append('activity_id',id)
         formData.append('file', data.file[0])
         formData.append('title', data.title)
         formData.append('description', data.description)
 
         if (formData) {
-            dispatch(updateCommunity(formData));
+            dispatch(updateActivity(formData));
             setTimeout(() => {
-                history.push('/administrador/comunidad');
-                dispatch(setAlert("Comunidad editado correctamente", "", 4000))
-                dispatch(getCommunities());
+                history.push('/administrador/actividades');
+                dispatch(setAlert("Actividad editado correctamente", "", 4000))
+                dispatch(getActivities());
             }, 2000);
         }
     }
@@ -89,7 +91,7 @@ const DashboardEditActivity = ({match}) => {
         <>
             <div className="content-ds-fluid">
                 <div className="title-content-ds">
-                    <h6>Editar la comunidad</h6>
+                    <h6>Editar la actividad</h6>
                 </div>
                 <div className="content-form">
                     <div className="">
@@ -103,7 +105,7 @@ const DashboardEditActivity = ({match}) => {
                                         <input
                                             type="text"
                                             name="title"
-                                            defaultValue={community.title}
+                                            defaultValue={activity.title}
                                             ref={
                                                 register({
                                                     required: {
@@ -135,7 +137,7 @@ const DashboardEditActivity = ({match}) => {
                                                     style={{ height: "450px", color: "#fff", marginBottom: "60px" }}
                                                     theme="snow"
                                                     onChange={(description) => onChange(description)}
-                                                    value={value || community.description}
+                                                    value={value || activity.description}
                                                 />
                                             )}
                                         />
@@ -150,7 +152,7 @@ const DashboardEditActivity = ({match}) => {
                                 <div className="input-ds">
                                         <div><label>Imagen del banner (tamaño recomendable - 1920x 1080)</label></div>
                                         <div className="img-input-ds">
-                                            <img style={{ width: "100%" }} id="imgPerfil" src={`http://` + community.file || require('../images/img/uploadimage.jpg')} alt="img" />
+                                            <img style={{ width: "100%" }} id="imgPerfil" src={`http://` + activity.file || require('../images/img/uploadimage.jpg')} alt="img" />
                                             <input
                                                 type="file"
                                                 name="file"

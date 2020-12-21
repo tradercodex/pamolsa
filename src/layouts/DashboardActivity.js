@@ -11,7 +11,7 @@ const DashboardActivity = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(getActivities())
+        dispatch(getActivities(3,1))
     }, [])
 
     const deletingActivity = (id) => {

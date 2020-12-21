@@ -12,6 +12,7 @@ const Products = () => {
 
      const cart = useSelector(state => state.cart)
      const [cartItems, setCartItems] = useState(cart.cartItems)
+     const [search, setSearch] = useState('')
      const [productsPopulate, setProductsPopulate] = useState([])
      const typesBusiness = useSelector(state => state.products.typesBusiness)
      const typesProducts = useSelector(state => state.products.typesProducts)
@@ -54,7 +55,7 @@ const Products = () => {
           <Fragment>
                <div className="page-new">
                <Header number={number} />
-               <MenuCategory searchPress={searchPress} typesBusiness={typesBusiness} typesProducts={typesProducts} />
+               <MenuCategory setSearch={setSearch} searchPress={searchPress} typesBusiness={typesBusiness} typesProducts={typesProducts} />
                <QuoteProducts />
                <ProductsPopulate productsPopulate={productsPopulate}/>
                <Footer />

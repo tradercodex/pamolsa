@@ -153,6 +153,17 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         width: 240px !important;
         height: 240px !important;
     }
+
+    .biof {
+        top: 150px !important;
+        left: 180px !important;
+    }
+
+    .biof img {
+        width: 100px !important;
+        height: 70px !important;
+    }
+
     .client-slick .slick-next::before, .client-slick .slick-prev::before {
         display: none;
     }
@@ -650,8 +661,8 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         grid-column: 1/8 !important;
     }
     .info-slick {
-        top: 600px !important;
-        left: 20px !important;
+        top: 650px !important;
+        left: 50px !important;
         transform: rotate(19deg) !important;
     }
     .info-slick h2 {
@@ -1381,6 +1392,15 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
 
 
 @media screen and (max-height: 896px) and (max-width: 414px) {
+    .biof {
+        top: 130px !important;
+        left: 150px !important;
+    }
+
+    .biof img {
+        width: 100px !important;
+        height: 70px !important;
+    }
     .Home .content-slick-home {
         height: 64vh !important;
     }
@@ -1437,11 +1457,21 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         background-image: url("../images/img/bannermovil.png") !important;
     }
     .Elipse.movil {
-        left: 70px !important;
+        top: 0px !important;
+        left: 60px !important;
     }
     .Elipse.movil img {
         width: 180px !important;
         height: 180px !important;
+    }
+    .biof {
+        top: 90px !important;
+        left: 110px !important;
+    }
+
+    .biof img {
+        width: 90px !important;
+        height: 60px !important;
     }
     .Rotate-slick.Us.movil {
         height: 130vh !important;
@@ -1475,6 +1505,22 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
 
 
 @media screen and (max-height: 1000px) and (max-width: 375px) {
+    .Elipse.movil {
+        top: 10px !important;
+        left: 75px !important;
+    }
+    .Elipse.movil img {
+        width: 180px !important;
+        height: 180px !important;
+    }
+    .biof {
+        top: 100px !important;
+        left: 120px !important;
+    }
+    .biof img {
+        width: 90px !important;
+        height: 60px !important;
+    }
     .Known-pm.home .container-products_pm img {
         max-width: 126px !important;
     }

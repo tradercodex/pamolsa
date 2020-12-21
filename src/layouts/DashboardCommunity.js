@@ -38,6 +38,7 @@ const DashboardCommunity = () => {
                     communities && communities.length > 0 ?
                     communities.map(item => (
                             <Communities 
+                                key={item.id}
                                 id={item.id}
                                 title={item.title}
                                 description={item.description}
