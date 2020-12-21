@@ -56,7 +56,7 @@
     position: absolute;
     z-index: 1023;
     content: '';
-    background-color: rgba(0, 82, 134, 0.2);
+    background-color: rgba(0, 82, 134, 0.4);
     left: 0px;
     top: 240px;
     transform: rotate(21.34deg);
