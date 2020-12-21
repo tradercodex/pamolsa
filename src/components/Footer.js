@@ -53,7 +53,7 @@ const Footer = () => {
                 <hr />
                 <div className="copy-socials desktop">
                     <div className="copy">
-                        <p>© Photo, Inc. 2019. We love our users!</p>
+                        <a style={{ textDecoration: "none" }} target="_blank" href="http://www.arquimarkets.com/"><p>© Todos los derechos reservados 2020 - Make by Arquimarkets</p></a>
                     </div>
                     <div className="copy-right">
                         <div className="span">Nuestras redes</div>
