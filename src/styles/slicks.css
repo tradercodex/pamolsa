@@ -347,12 +347,15 @@
 .Elipse {
     position: absolute;
     z-index: 999999;
-    width: 500px;
-    height: 500px;
-    top: 30px;
-    left: 300px;
-    transform: rotate(41.34deg);
+    top: 50px;
+    left: 230px;
+    transform: rotate(21.34deg);
     background-repeat: no-repeat;
+}
+
+.Elipse img {
+    width: 380px;
+    height: 380px;
 }
 
 .Slicks-pm ul.slick-dots {

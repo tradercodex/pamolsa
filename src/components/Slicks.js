@@ -18,6 +18,8 @@ const Slicks = ({ match, banners }) => {
         autoplaySpeed: 10000,
     };
 
+    console.log(banners)
+
     return (
         <Fragment>
             {
@@ -31,8 +33,8 @@ const Slicks = ({ match, banners }) => {
                                         banners.map(item => (
                                             <div key={item.id}>
                                                     <div className="Rotate-slick">
-                                                        <div className="Elipse">
-                                                            {/* <img src={item.circle.url === null} alt=""/> */}
+                                                        <div className="Elipse movil">
+                                                            <img src={require('../images/img/circlebanner.png')} alt=""/>
                                                         </div>
                                                         <div className="info-slick">
                                                             <h2>{item.name}</h2>

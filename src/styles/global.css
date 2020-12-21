@@ -139,6 +139,17 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
 }
 
 @media screen and (max-height: 1064px) and (max-width: 768px) {
+    .Elipse {
+        top: 30px !important;
+        left: 90px !important;
+        transform: rotate(19.34deg) !important;
+        background-repeat: no-repeat;
+    }
+    
+    .Elipse img {
+        width: 240px !important;
+        height: 240px !important;
+    }
     .client-slick .slick-next::before, .client-slick .slick-prev::before {
         display: none;
     }
@@ -1231,7 +1242,8 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
 
 @media screen and (max-height: 896px) and (max-width: 450px) {
     .info-slick {
-        top: 570px !important;
+        top: 640px !important;
+        left: 0px !important;
     }
     .Home .content-slick-home {
         height: 87vh !important;
@@ -1404,6 +1416,13 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         top: 580px !important;
         left: 0px !important;
     }
+    .Elipse.movil {
+        left: 70px !important;
+    }
+    .Elipse.movil img {
+        width: 200px !important;
+        height: 200px !important;
+    }
 }
 
 @media screen and (max-height: 568px) and (max-width: 320px) {
@@ -1413,6 +1432,13 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .Rotate-slick::after {
         top: 300px !important;
         background-image: url("../images/img/bannermovil.png") !important;
+    }
+    .Elipse.movil {
+        left: 70px !important;
+    }
+    .Elipse.movil img {
+        width: 180px !important;
+        height: 180px !important;
     }
 }
 
@@ -1522,6 +1548,9 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .Rotate-slick.Us {
         height: 115vh !important;
     }
+    .Elipse {
+        left: 85px !important;
+    }
 }
 
 @media screen and (max-height: 800px) and (max-width: 600px) {
@@ -1554,8 +1583,14 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         max-width: 40% !important;
     }
     .info-slick {
-        top: 500px !important;
+        top: 550px !important;
         left: -10px !important;
+    }
+    .Rotate-slick::before {
+        height: 145vh !important;
+    }
+    .Rotate-slick::after {
+        height: 86vh !important;
     }
     .img-carbajal.about ,.container-grid.first .square-img-card, .square-sl-sbl, .square-distributor, .container-known_video .play-known .square, .tablet .container-news .square-slick, .wc .square-carbajal, .card-about .square.us, .container-grid .play-known .square {
         max-width: 220px !important;
