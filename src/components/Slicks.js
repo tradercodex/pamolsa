@@ -22,7 +22,7 @@ const Slicks = ({ match, banners }) => {
         <Fragment>
             {
                 pathname === "/" ?
-                    <div className="content-slick-home">
+                    <div className="content-slick-home movil">
                         <div className="Slicks-pm">
                             <div className="Radius"></div>
                             <Slider {...settings}>
@@ -30,30 +30,6 @@ const Slicks = ({ match, banners }) => {
                                     banners && banners.length > 0 ?
                                         banners.map(item => (
                                             <div key={item.id}>
-                                                <Style>
-                                                    {
-                                                        `.Rotate-slick {
-                                                            overflow: hidden;
-                                                            position: relative;
-                                                            width: 2200px;
-                                                            height: 1206.42px;
-                                                            top: -410px;
-                                                            z-index: 3000;
-                                                            left: -153px;
-                                                            border-radius: 191px;
-                                                            transform: rotate(-21.34deg);
-                                                        }
-                                                        
-                                                        @media (max-width: 1440px) {
-                                                            .Rotate-slick::after{
-                                                                min-width: 110%;
-                                                                min-height: 105%;
-                                                                background-size: contain !important;
-                                                            }
-                                                        }
-                                                        `
-
-                                                    }
                                                     <div className="Rotate-slick">
                                                         <div className="Elipse">
                                                             {/* <img src={item.circle.url === null} alt=""/> */}
@@ -66,7 +42,6 @@ const Slicks = ({ match, banners }) => {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </Style>
                                                 <div className="footer-slick">
                                                     <div className="tree-pm banner">
                                                         <img src={require('../images/img/tree.gif')} alt="imagen" />

@@ -120,6 +120,19 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
 }
 
 @media only screen and (max-width: 1280px) {
+    .menu-categories ul {
+        display: inline-flex !important;
+        overflow-x: scroll !important;
+        justify-content: start !important;
+    }
+    li a.category {
+        width: 170px !important;
+        margin-left: 40px;
+    }
+    li a.active-category {
+        width: 170px !important;
+        margin-left: 40px;
+    }
     .form-grid {
         grid-template-columns: repeat(1,1fr) !important;
     }
@@ -623,7 +636,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         grid-column: 1/8 !important;
     }
     .info-slick {
-        top: 700px !important;
+        top: 600px !important;
         left: 20px !important;
         transform: rotate(19deg) !important;
     }
@@ -634,18 +647,18 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .info-slick p {
         font-size: 14px !important;
     }
-    .Rotate-slick.s-1784208310::after, .s-1784208310 .Rotate-slick::after {
+    .Rotate-slick::after, .Rotate-slick::after {
         min-height: 15% !important;
         background-size: unset !important;
         min-width: 90% !important;
     }
     .Rotate-slick::before {
         left: -23px !important;
-        height: 146vh !important;
-        background-color: rgba(0, 82, 134, 0.3) !important;
+        height: 144vh !important;
+        background-color: rgba(0, 82, 134, 0.4) !important;
         transform: rotate(19deg) !important;
     }
-    .Rotate-slick.s-1784208310, .s-1784208310 .Rotate-slick {
+    .Rotate-slick {
         height: 87vh !important;
         left: -80px !important;
         top: -380px !important;
@@ -1215,6 +1228,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
 }
 
+
 @media screen and (max-height: 896px) and (max-width: 450px) {
     .info-slick {
         top: 570px !important;
@@ -1352,6 +1366,9 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
 
 
 @media screen and (max-height: 896px) and (max-width: 414px) {
+    .Home .content-slick-home {
+        height: 64vh !important;
+    }
     .Detail-Product_pm.movil .square-products {
         min-width: 210px !important;
         min-height: 210px !important;
@@ -1379,7 +1396,30 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
 }
 
+@media screen and (max-height: 667px) and (max-width: 375px) {
+    .Home .content-slick-home.movil {
+        height: 60vh !important;
+    }
+    .info-slick {
+        top: 580px !important;
+        left: 0px !important;
+    }
+}
+
+@media screen and (max-height: 568px) and (max-width: 320px) {
+    .Home .content-slick-home.movil {
+        height: 90vh !important;
+    }
+    .Rotate-slick::after {
+        top: 300px !important;
+        background-image: url("../images/img/bannermovil.png") !important;
+    }
+}
+
 @media screen and (max-height: 851px) and (max-width: 380px) {
+    .Home .content-slick-home {
+        height: 89vh !important;
+    }
     .Detail-Product_pm.movil .square-products {
         min-width: 210px !important;
         min-height: 210px !important;

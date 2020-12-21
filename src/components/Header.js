@@ -40,9 +40,9 @@ const Header = ({ match, number }) => {
                     <div className="container-header-rs">
                         <div className="Logo-pm">
                             <Link to="/"><Logo /></Link>
-                            <div className="Ecommerce-btn">
+                            {/* <div className="Ecommerce-btn">
                                 <button><Cart />Ir a ecommerce</button>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="options-pm-rs">
                             <div className="Quote-btn">
@@ -160,9 +160,9 @@ const Header = ({ match, number }) => {
                                 <div className="Quote-btn">
                                     <Link to="/cotizador"><Quote number={number} /></Link>
                                 </div>
-                                <div className="Ecommerce-btn">
+                                {/* <div className="Ecommerce-btn">
                                     <button><Cart />Ir a ecommerce</button>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
