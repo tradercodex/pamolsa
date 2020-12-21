@@ -740,7 +740,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .container-distributor .info-distributor_hm h3 {
         font-size: 22px !important;
     }
-    .companies_us .img-company-sgs ,.companies-second_us .img-company-gp ,.companies-second_us .img-company-gpl ,.companies-second_us .img-company-gpw ,.companies_us .img-company-abe, .companies-second_us .img-company-abe {
+    .companies_us .img-company-sgs .img-company-sgs-iso ,.companies-second_us .img-company-gp ,.companies-second_us .img-company-gpl ,.companies-second_us .img-company-gpw ,.companies_us .img-company-abe, .companies-second_us .img-company-abe {
         width: 57px !important;
         height: 56px !important;
         margin-right: 20px !important;

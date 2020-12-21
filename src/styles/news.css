@@ -554,6 +554,16 @@
     background-blend-mode: darken;
 }
 
+.companies .img-company-sgs-iso {
+    position: relative;
+    width: 68px;
+    height: 67px;
+    background-image: url('../images/img/sgs_iso.png');
+    background-size: cover;
+    background-color: #D1EBFC;
+    background-blend-mode: darken;
+}
+
 .companies .img-company-brc {
     position: relative;
     width: 67px;
@@ -729,6 +739,14 @@
     width: 103px;
     height: 101px;
     background-image: url('../images/img/sgs.png');
+    background-size: cover;    
+}
+
+.companies_us .img-company-sgs-iso {
+    position: relative;
+    width: 103px;
+    height: 101px;
+    background-image: url('../images/img/sgs_iso.png');
     background-size: cover;    
 }
 

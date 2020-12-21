@@ -53,7 +53,7 @@ const Footer = () => {
                 <hr />
                 <div className="copy-socials desktop">
                     <div className="copy">
-                        <p>© Photo, Inc. 2019. We love our users!</p>
+                        <p>by arquimarkets</p>
                     </div>
                     <div className="copy-right">
                         <div className="span">Nuestras redes</div>
@@ -74,7 +74,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="copy">
-                        <p>© Photo, Inc. 2019. We love our users!</p>
+                        <p>by arquimarkets</p>
                     </div>
 
                 </div>
@@ -134,7 +134,7 @@ const Footer = () => {
                 <hr />
                 <div className="copy-socials desktop">
                     <div className="copy">
-                        <p>© Photo, Inc. 2019. We love our users!</p>
+                        <p>by arquimarkets</p>
                     </div>
                     <div className="copy-right">
                         <div className="span">Nuestras redes</div>
@@ -155,7 +155,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="copy">
-                        <p>© Photo, Inc. 2019. We love our users!</p>
+                        <p>by arquimarkets</p>
                     </div>
 
                 </div>
