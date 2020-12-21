@@ -139,6 +139,9 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
 }
 
 @media screen and (max-height: 1064px) and (max-width: 768px) {
+    .Rotate-slick::after {
+        top: 354px !important;
+    }
     .Elipse {
         top: 30px !important;
         left: 90px !important;
@@ -1429,7 +1432,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .Home .content-slick-home.movil {
         height: 90vh !important;
     }
-    .Rotate-slick::after {
+    .Rotate-slick::after.movil {
         top: 300px !important;
         background-image: url("../images/img/bannermovil.png") !important;
     }
@@ -1439,6 +1442,9 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .Elipse.movil img {
         width: 180px !important;
         height: 180px !important;
+    }
+    .Rotate-slick.Us.movil {
+        height: 130vh !important;
     }
 }
 
@@ -1580,6 +1586,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
 @media screen and (max-height: 568px) and (max-width: 320px) {
     .Slicks-pm .Rotate-slick.Us .info-slick.Us {
         top: 550px !important;
+        left: 20px !important;
         max-width: 40% !important;
     }
     .info-slick {

@@ -18,8 +18,6 @@ const Slicks = ({ match, banners }) => {
         autoplaySpeed: 10000,
     };
 
-    console.log(banners)
-
     return (
         <Fragment>
             {
@@ -32,7 +30,7 @@ const Slicks = ({ match, banners }) => {
                                     banners && banners.length > 0 ?
                                         banners.map(item => (
                                             <div key={item.id}>
-                                                    <div className="Rotate-slick">
+                                                    <div className="Rotate-slick movil">
                                                         <div className="Elipse movil">
                                                             <img src={require('../images/img/circlebanner.png')} alt=""/>
                                                         </div>
@@ -64,7 +62,7 @@ const Slicks = ({ match, banners }) => {
                             <div className="Radius Us"></div>
                             <Slider {...settings}>
                                 <div>
-                                    <div className="Rotate-slick Us">
+                                    <div className="Rotate-slick Us movil">
                                         <div className="info-slick Us">
                                             <h2>Nosotros</h2>
                                             <p>Ofrecemos soluciones innovadoras y personalizadas de empaques sostenibles</p>
@@ -82,7 +80,7 @@ const Slicks = ({ match, banners }) => {
                             <div className="Radius Us"></div>
                             <Slider {...settings}>
                                 <div>
-                                    <div className="Rotate-slick Us Sb">
+                                    <div className="Rotate-slick Us Sb movil">
                                         <div className="info-slick Us">
                                             <h2>Sostenibilidad</h2>
                                             <p>Nuestro compromiso con el entorno para ser rentables</p>
@@ -100,7 +98,7 @@ const Slicks = ({ match, banners }) => {
                             <div className="Radius Us"></div>
                             <Slider {...settings}>
                                 <div>
-                                    <div className="Rotate-slick Us Wu">
+                                    <div className="Rotate-slick Us Wu movil">
                                         <div className="info-slick Us">
                                             <h2>¡Trabaja con nosotros y se parte de nuestra familia!</h2>
                                         </div>
@@ -117,7 +115,7 @@ const Slicks = ({ match, banners }) => {
                             <div className="Radius Us Clients"></div>
                             <Slider {...settings}>
                                 <div>
-                                    <div className="Rotate-slick Us Cl">
+                                    <div className="Rotate-slick Us Cl movil">
                                         <div className="info-slick Us">
                                             <h2>Clientes</h2>
                                             <p>Experiencia y calidad a su servicio</p>
@@ -135,7 +133,7 @@ const Slicks = ({ match, banners }) => {
                             <div className="Radius Us News"></div>
                             <Slider {...settings}>
                                 <div>
-                                    <div className="Rotate-slick Us New">
+                                    <div className="Rotate-slick Us New movil">
                                         <div className="info-slick Us">
                                             <h2>Noticias</h2>
                                             <p>Entérate de nuestras últimas novedades</p>
@@ -153,7 +151,7 @@ const Slicks = ({ match, banners }) => {
                             <div className="Radius Us"></div>
                             <Slider {...settings}>
                                 <div>
-                                    <div className="Rotate-slick Us Ctt">
+                                    <div className="Rotate-slick Us Ctt movil">
                                         <div className="info-slick Us">
                                             <h2>Contacto</h2>
                                             <p>Queremos conocerte</p>
