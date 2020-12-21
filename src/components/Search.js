@@ -45,7 +45,7 @@ const Search = ({ match,typesBusiness,setSearch,searchPress,onChangeUbication,se
     };
 
     const goBack = () => {
-        history.goBack();
+        history.replace('/productos');
     }
 
     const body = (

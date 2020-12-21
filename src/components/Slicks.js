@@ -31,8 +31,11 @@ const Slicks = ({ match, banners }) => {
                                         banners.map(item => (
                                             <div key={item.id}>
                                                     <div className="Rotate-slick movil">
-                                                        <div className="Elipse movil">
+                                                        <div className="Elipse movil x">
                                                             <img src={require('../images/img/circlebanner.png')} alt=""/>
+                                                        </div>
+                                                        <div className="biof movil x">
+                                                            <img src={require('../images/img/bioformbanner.png')} alt=""/>
                                                         </div>
                                                         <div className="info-slick">
                                                             <h2>{item.name}</h2>
