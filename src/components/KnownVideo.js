@@ -73,7 +73,7 @@ const KnownVideo = ({closeVideoModal, handleShowVideoModal, showVideoModal}) => 
 
                                 <div className="img-company-sgs">
                                 </div>
-                                <div className="img-company-sgs-iso">
+                                <div className="img-company-sgiso">
                                 </div>
                                 <div className="img-company-brc">
                                 </div>
@@ -86,7 +86,7 @@ const KnownVideo = ({closeVideoModal, handleShowVideoModal, showVideoModal}) => 
                                 </div>
                                 <div className="img-company-gpw">
                                 </div>
-                                <div className="img-company-gp2">
+                                <div className="img-company-gplast">
                                 </div>
                                 <div className="img-company-abe">
                                 </div>

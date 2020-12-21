@@ -554,11 +554,11 @@
     background-blend-mode: darken;
 }
 
-.companies .img-company-sgs-iso {
+.companies .img-company-sgsiso {
     position: relative;
     width: 68px;
     height: 67px;
-    background-image: url('../images/img/sgs_iso.png');
+    background-image: url('../images/img/iso.png');
     background-size: cover;
     background-color: #D1EBFC;
     background-blend-mode: darken;
@@ -641,7 +641,7 @@
 .info-footer_news_us {
     grid-column: 5/8;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 .container-footer_news_us {
@@ -752,11 +752,11 @@
     background-size: cover;    
 }
 
-.companies_us .img-company-sgs-iso {
+.companies_us .img-company-sgiso {
     position: relative;
     width: 103px;
     height: 101px;
-    background-image: url('../images/img/sgs_iso.png');
+    background-image: url('../images/img/iso.png');
     background-size: cover;    
 }
 
@@ -780,12 +780,12 @@
     position: relative; 
 }
 
-.companies-second_us .img-company-gp2 {
+.companies-second_us .img-company-gplast {
     position: relative;
     width: 109px;
     margin-bottom: 30px;
     height: 109px;
-    background-image: url('../images/img/greatperu2.png');
+    background-image: url('../images/img/greatplacelast.png');
     background-size: cover;
     position: relative; 
 }

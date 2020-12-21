@@ -38,7 +38,7 @@ const Informations = () => {
 
                                     <div className="img-company-sgs">
                                     </div>
-                                    <div className="img-company-sgs-iso">
+                                    <div className="img-company-sgiso">
                                     </div>
                                     <div className="img-company-brc">
                                     </div>
