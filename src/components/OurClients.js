@@ -49,16 +49,16 @@ const OurClients = () => {
                                 <a href="#traditional"><Box /></a>
                                 <a href="#autoservices"><Buy /></a>
                                 <a href="#foodservices"><Hamburguer /></a>
-                                <a href="#exportation"><Cartel /></a>
+                                <a href="#industrial"><Cartel /></a>
                                 <a href="#agroindustrial"><Maiz /></a>
-                                <a href="#industrial"><House /></a>
+                                <a href="#exportation"><House /></a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div id="traditional" className="client-info hide">
                     <div  className="info-client-footer">
-                        <h6 style={{ color: "#005286" }}>Canal tradicional</h6>
+                        <h6 style={{ color: "#005286" }}>Clientes masivos</h6>
                         <p>Abastecemos de empaques para alimentos los diferentes  mercados de abastos a través de nuestros socios mayoristas y minoristas. El canal tiene como característica principal   la comercialización de volúmenes importantes.
                                 </p>
                     </div>
@@ -94,7 +94,7 @@ const OurClients = () => {
                                 data-wow-duration="2s"
                                 data-wow-delay="1.8s">
                                 <div className="img">
-                                    <img src={require('../images/img/client5.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/client7.jpg')} alt="imagen" />
                                 </div>
                             </div>
                         </div>

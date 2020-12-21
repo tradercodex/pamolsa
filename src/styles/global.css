@@ -1559,6 +1559,12 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
 }
 
+@media screen and (max-height: 838px) and (max-width: 414px) {
+    .Home .content-slick-home {
+        height: 90vh !important;
+    }
+}
+
 @media screen and (max-height: 800px) and (max-width: 600px) {
     .Rotate-slick.Us {
         height: 115vh !important;
