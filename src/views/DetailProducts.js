@@ -61,6 +61,12 @@ const DetailProducts = ({match}) => {
 
     let number = Object.keys(cartItems).length
 
+    const searchPress = (e) => {
+        if (e.keyCode === 13) {
+            window.location.replace(`/productos/${e.target.value}`)
+        }
+    }
+
     const onTextChanged = (e) => {
         const value = e.target.value;
         let suggestions = []
@@ -92,7 +98,7 @@ const DetailProducts = ({match}) => {
     return ( 
         <Fragment>
             <Header number={number} />
-            <MenuCategory search={search} onTextChanged={onTextChanged} renderSuggestions={renderSuggestions} typesBusiness={business} typesProducts={typesProducts} />
+            <MenuCategory searchPress={searchPress} search={search} onTextChanged={onTextChanged} renderSuggestions={renderSuggestions} typesBusiness={business} typesProducts={typesProducts} />
             <DetailProduct product={product} />
             <ProductsPopulate relacionates={relacionates} />
             <Footer />

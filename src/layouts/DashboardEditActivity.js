@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { useForm, Controller } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import $ from 'jquery'
-import ReactQuill from 'react-quill'
 import { useHistory } from 'react-router-dom'
 import '../styles/dashboard.css'
 import { setAlert } from '../redux/actions/alert'
@@ -14,12 +13,12 @@ const DashboardEditActivity = ({match}) => {
     const history = useHistory();
 
     const id = match.params.id
-    console.log(id)
 
     const [activity, setActivity] = useState({
         title: '',
-        description: '',
-        file: ''
+        subtitle: '',
+        url_video: '',
+        file: '',
     });
 
     const { errors, handleSubmit, register,control } = useForm({
@@ -33,11 +32,12 @@ const DashboardEditActivity = ({match}) => {
     const getActivity = async () => {
         const res = await axios.get(`https://wspamolsa.com.pe/api/activity/find/${id}`)
         console.log(res.data)
-        // setActivity({
-        //     title: res.data.data.title,
-        //     description: res.data.data.description,
-        //     file: res.data.data.file.url
-        // })
+        setActivity({
+            title: res.data.data.title,
+            description: res.data.data.subtitle,
+            url_video: res.data.data.uri_video,
+            file: res.data.data.file.url
+        })
     }
 
     useEffect(() => {
@@ -120,32 +120,46 @@ const DashboardEditActivity = ({match}) => {
                                         </div>
                                     </div>
                                     <div className="input-ds">
-                                        <div><label>Descripción</label></div>
-                                        <Controller
-                                            control={control}
-                                            name="description"
-                                            rules={{
-                                                validate: "Enter at least 10 words in the description",
-                                                required: {
-                                                    value: true,
-                                                    message: "Escriba la descripción"
-                                                }
-                                            }}
-                                            error={errors.description}
-                                            render={({ onChange, value }) => (
-                                                <ReactQuill
-                                                    style={{ height: "450px", color: "#fff", marginBottom: "60px" }}
-                                                    theme="snow"
-                                                    onChange={(description) => onChange(description)}
-                                                    value={value || activity.description}
-                                                />
-                                            )}
+                                        <div>
+                                            <label>Subtítulo</label>
+                                        </div>
+                                        <input
+                                            type="text"
+                                            name="subtitle"
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: true,
+                                                        message: 'Ingrese el subtítulo de la actividad'
+                                                    }
+                                                })
+                                            }
                                         />
                                         <div className="error-ds">
-                                            {errors.body && errors.body.message}
+                                            {errors.subtitle && errors.subtitle.message}
                                         </div>
                                     </div>
-                                    
+                                    <div className="input-ds">
+                                        <div>
+                                            <label>URL del video</label>
+                                        </div>
+                                        <input
+                                            type="text"
+                                            name="url_video"
+                                            defaultValue={activity.url_video}
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: true,
+                                                        message: 'Ingrese la url del video'
+                                                    }
+                                                })
+                                            }
+                                        />
+                                        <div className="error-ds">
+                                            {errors.url_video && errors.url_video.message}
+                                        </div>
+                                    </div>
                                     <button type="submit">Guardar</button>
                                 </div>
                                 <div>
