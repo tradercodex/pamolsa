@@ -65,7 +65,7 @@ const Clients = ({ match }) => {
                         <div className="title-client">
                             <div>
                                 <h4>CLIENTES AGROINDUSTRIALES</h4>
-                                <p>crecemos juntos</p>
+                                <p>Crecemos juntos</p>
                             </div>
                         </div>
                         <div className="img-clients_pm">
@@ -107,7 +107,7 @@ const Clients = ({ match }) => {
                         <div className="title-client">
                             <div>
                                 <h4>CLIENTES FOOD SERVICE</h4>
-                                <p>Creciendo y mejorando con ustedes</p>
+                                <p>Crecemos juntos</p>
                             </div>
                         </div>
                         <div className="img-clients_pm">
@@ -149,7 +149,7 @@ const Clients = ({ match }) => {
                         <div className="title-client">
                             <div>
                                 <h4>CLIENTES FOOD SERVICE</h4>
-                                <p>Creciendo y mejorando con ustedes</p>
+                                <p>Crecemos juntos</p>
                             </div>
                         </div>
                         <div className="img-clients_pm">
@@ -188,7 +188,7 @@ const Clients = ({ match }) => {
                         <div className="title-client">
                             <div>
                                 <h4>CLIENTES INDUSTRIAL</h4>
-                                <p>Creciendo y mejorando con ustedes</p>
+                                <p>Crecemos juntos</p>
                             </div>
                         </div>
                         <div className="img-clients_pm">
@@ -230,7 +230,7 @@ const Clients = ({ match }) => {
                         <div className="title-client">
                             <div>
                                 <h4>CLIENTES AUTOSERVICIOS</h4>
-                                <p>Creciendo y mejorando con ustedes</p>
+                                <p>Crecemos juntos</p>
                             </div>
                         </div>
                         <div className="img-clients_pm">
@@ -270,7 +270,7 @@ const Clients = ({ match }) => {
                         <div className="title-client">
                             <div>
                                 <h4>CLIENTES EXPORTACIONES</h4>
-                                <p>Creciendo y mejorando con ustedes</p>
+                                <p>Crecemos juntos</p>
                             </div>
                         </div>
                         <div className="img-clients_pm">
@@ -294,7 +294,7 @@ const Clients = ({ match }) => {
                         <div className="title-client">
                             <div>
                                 <h4>CLIENTES TRADICIONAL</h4>
-                                <p>Creciendo y mejorando con ustedes</p>
+                                <p>Crecemos juntos</p>
                             </div>
                         </div>
                         <div className="img-clients_pm">

@@ -26,6 +26,8 @@ const ProductsByBusiness = ({ match }) => {
     const [lines, setLines] = useState();
     const [types, setTypes] = useState();
     const [materials, setMaterials] = useState();
+    const [productsItems, setProductsItems] = useState([]);
+    const [suggestions, setSuggestions] = useState([])
     const [search, setSearch] = useState('')
     const [materialId, setMaterialId] = useState({
         ids: ''
@@ -108,6 +110,13 @@ const ProductsByBusiness = ({ match }) => {
             header.classList.remove('movile-active')
         })
 
+        const loadProductsItems = async () => {
+            const res = await Axios.get('http://3.120.185.254:8090/api/product/list');
+            setProductsItems(res.data.data)
+        }
+
+        loadProductsItems();
+
         apiGetLines();
         apiGetTypes();
         apiGetMaterial();
@@ -136,43 +145,70 @@ const ProductsByBusiness = ({ match }) => {
         }
     }
 
+    const onTextChanged = (e) => {
+        const value = e.target.value;
+        let suggestions = []
+        if (value.length > 0) {
+            const regex = new RegExp(`^${value}`, 'i');
+            suggestions = productsItems.sort().filter(v => regex.test(v.name));
+        }
+        setSuggestions(suggestions)
+        setSearch(value)
+    }
+
+    const suggestionSelected = (value) => {
+        setSearch(value);
+        setSuggestions([]);
+    }
+
+
+    const renderSuggestions = () => {
+        if (suggestions.length === 0) {
+            return null
+        }
+        return (
+            <ul className="autocomplete">
+                {suggestions.map((item) => <li onClick={() => suggestionSelected(item.name)}>{item.name}</li>)}
+            </ul>
+        )
+    }
+
     return (
         <>
             <div className="">
-            <Header number={number} />
-            <SearchProductsByLine typesBusiness={typesBusiness} searchPress={searchPress} setSearch={setSearch} />
-
-            <div className="Quotes-pm">
-                <div className="Sidebar-Material_Quote">
-                    <SidebarProductsByBusiness
-                        lines={lines}
-                        types={types}
-                        materials={materials}
-                        toggleTypesProductsRadio={toggleTypesProductsRadio}
-                        toggleMaterialsProductsRadio={toggleMaterialsProductsRadio}
-                        toggleLinesProductsRadio={toggleLineProductsRadio}
-                    />
+                <Header number={number} />
+                <SearchProductsByLine search={search} onTextChanged={onTextChanged} renderSuggestions={renderSuggestions} typesBusiness={typesBusiness} searchPress={searchPress} setSearch={setSearch} />
+                <div className="Quotes-pm">
+                    <div className="Sidebar-Material_Quote">
+                        <SidebarProductsByBusiness
+                            lines={lines}
+                            types={types}
+                            materials={materials}
+                            toggleTypesProductsRadio={toggleTypesProductsRadio}
+                            toggleMaterialsProductsRadio={toggleMaterialsProductsRadio}
+                            toggleLinesProductsRadio={toggleLineProductsRadio}
+                        />
+                    </div>
+                    <div className="Products-Quote">
+                        <Products
+                            lines={lines}
+                            types={types}
+                            materials={materials}
+                            toggleTypesProductsRadio={toggleTypesProductsRadio}
+                            toggleMaterialsProductsRadio={toggleMaterialsProductsRadio}
+                            toggleLinesProductsRadio={toggleLineProductsRadio}
+                            nameTypeBusiness={nameTypeBusiness}
+                            productsByFilter={currentPostsByFilter}
+                            countProductsByFilter={countProductsByFilter}
+                        />
+                        <Pagination
+                            postsPerPage={postsPerPage}
+                            totalPostsFilter={productsByFilter.length}
+                            paginate={paginate}
+                        />
+                    </div>
                 </div>
-                <div className="Products-Quote">
-                    <Products
-                        lines={lines}
-                        types={types}
-                        materials={materials}
-                        toggleTypesProductsRadio={toggleTypesProductsRadio}
-                        toggleMaterialsProductsRadio={toggleMaterialsProductsRadio}
-                        toggleLinesProductsRadio={toggleLineProductsRadio}
-                        nameTypeBusiness={nameTypeBusiness}
-                        productsByFilter={currentPostsByFilter}
-                        countProductsByFilter={countProductsByFilter}
-                    />
-                    <Pagination
-                        postsPerPage={postsPerPage}
-                        totalPostsFilter={productsByFilter.length}
-                        paginate={paginate}
-                    />
-                </div>
-            </div>
-            <Footer />
+                <Footer />
             </div>
         </>
     );

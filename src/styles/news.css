@@ -426,6 +426,7 @@
 .img-new_slick img {
     border-radius: 50px;
     width: 100%;
+    object-fit: cover;
     height: 100%;
 }
 
@@ -1452,6 +1453,7 @@
 .new-slick.work.sbl img {
     width: 100%;
     height: 500px;
+    object-fit: cover;
     border-radius: 26px;
 }
 

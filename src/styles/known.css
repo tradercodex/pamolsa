@@ -197,7 +197,6 @@
     width: 100%;
     height: 100%;
     border-radius: 50px;
-    object-fit: cover;
 }
 
 .play-button_pm {
@@ -533,9 +532,6 @@ body.date-20201112 {
     .form-contact {
         grid-column: 2/9 !important;
         max-width: 980px;
-    }
-    .Rotate-slick {
-        border-radius: 120px !important;
     }
     .img-video_known .img img,.container-products_pm img, .img-video_known .img::after, .bioform-pm::after, .line-products_pm::after, .material-pm::after, .use-app_pm::after {
         border-radius: 20px !important;

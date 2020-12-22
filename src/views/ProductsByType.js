@@ -33,8 +33,10 @@ const ProductsByType = ({ match }) => {
     const [postsPerPage] = useState(12)
     const [lines, setLines] = useState();
     const [business, setBusiness] = useState();
-    const [setSearch] = useState('')
+    const [search, setSearch] = useState('')
     const [material, setMaterial] = useState();
+    const [productsItems, setProductsItems] = useState([]);
+    const [suggestions, setSuggestions] = useState([])
     const [products] = useState([]);
     const [materialId, setMaterialId] = useState({
         ids: []
@@ -120,6 +122,13 @@ const ProductsByType = ({ match }) => {
             header.classList.remove('movile-active')
         })
 
+        const loadProductsItems = async () => {
+            const res = await Axios.get('http://3.120.185.254:8090/api/product/list');
+            setProductsItems(res.data.data)
+        }
+
+        loadProductsItems();
+
         apiGetMaterial();
         apiGetLines();
         apiGetBusiness();
@@ -147,10 +156,39 @@ const ProductsByType = ({ match }) => {
         }
     }
 
+    const onTextChanged = (e) => {
+        const value = e.target.value;
+        let suggestions = []
+        if (value.length > 0) {
+            const regex = new RegExp(`^${value}`, 'i');
+            suggestions = productsItems.sort().filter(v => regex.test(v.name));
+        }
+        setSuggestions(suggestions)
+        setSearch(value)
+    }
+
+    const suggestionSelected = (value) => {
+        setSearch(value);
+        setSuggestions([]);
+    }
+
+
+    const renderSuggestions = () => {
+        if (suggestions.length === 0) {
+            return null
+        }
+        return (
+            <ul className="autocomplete">
+                {suggestions.map((item) => <li onClick={() => suggestionSelected(item.name)}>{item.name}</li>)}
+            </ul>
+        )
+    }
+
+
     return (
         <Fragment>
             <Header number={number} />
-            <MenuCategory typesBusiness={typesBusiness} setSearch={setSearch} searchPress={searchPress} typesProducts={typesProducts} />
+            <MenuCategory search={search} onTextChanged={onTextChanged} renderSuggestions={renderSuggestions} typesBusiness={typesBusiness} setSearch={setSearch} searchPress={searchPress} typesProducts={typesProducts} />
             <div className="Quotes-pm">
                 <div className="Sidebar-Material_Quote">
                     <SidebarProducts

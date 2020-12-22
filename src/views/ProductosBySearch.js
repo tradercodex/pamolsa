@@ -1,9 +1,9 @@
-import React ,{ useState, useEffect } from  'react'
+import React, { useState, useEffect } from 'react'
 import Header from '../components/Header'
 import SearchProductsByLine from '../components/SearchProductsByLine'
-import { useSelector,useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import Axios from 'axios'
-import { getTypesBusiness  } from '../redux/actions/product'
+import { getTypesBusiness } from '../redux/actions/product'
 // import SidebarProductsByBusiness from '../components/SidebarProductsByBusiness'
 import Products from '../components/Products'
 import axios from 'axios'
@@ -11,7 +11,7 @@ import Pagination from '../components/Pagination'
 import ProductsPopulate from '../components/ProductsPopulate'
 import Footer from '../components/Footer'
 
-const ProductsBySearch = ({match}) => {
+const ProductsBySearch = ({ match }) => {
 
     const business_id = match.params.id
     const nameFilter = match.params.name
@@ -30,6 +30,8 @@ const ProductsBySearch = ({match}) => {
     const [types, setTypes] = useState();
     const [productsFilter, setProductsFilter] = useState([])
     const [materials, setMaterials] = useState();
+    const [productsItems, setProductsItems] = useState([]);
+    const [suggestions, setSuggestions] = useState([])
     const [search, setSearch] = useState('')
     const [materialId, setMaterialId] = useState({
         ids: ''
@@ -104,24 +106,31 @@ const ProductsBySearch = ({match}) => {
         setMaterials(response.data.data)
     }
 
-    const apiProductsPopulate = async ( ) => {
+    const apiProductsPopulate = async () => {
         const res = await axios.get('http://3.120.185.254:8090/api/product/find/popular')
         setProductsPopulate(res.data.data)
-   }
+    }
 
-    useEffect(()=>{
+    useEffect(() => {
 
         const movilOpen = document.getElementById('movil');
         const header = document.getElementById('header')
         const movilClose = document.getElementById('close-movil')
-    
-        movilOpen.addEventListener('click',function(){
+
+        movilOpen.addEventListener('click', function () {
             header.classList.add('movile-active')
         })
-    
-        movilClose.addEventListener('click',function(){
+
+        movilClose.addEventListener('click', function () {
             header.classList.remove('movile-active')
         })
+
+        const loadProductsItems = async () => {
+            const res = await axios.get('http://3.120.185.254:8090/api/product/list');
+            setProductsItems(res.data.data)
+       }
+
+       loadProductsItems();
 
         apiGetLines();
         apiGetTypes();
@@ -130,7 +139,7 @@ const ProductsBySearch = ({match}) => {
         apiGetSearch();
         apiProductsPopulate();
         dispatch(getTypesBusiness(8, 1));
-    },[])
+    }, [])
 
     useEffect(() => {
         setCartItems(cart.cartItems)
@@ -147,17 +156,45 @@ const ProductsBySearch = ({match}) => {
     const countProductsByFilter = productsFilter.length
 
     const searchPress = (e) => {
-        if(e.keyCode === 13) {
-             window.location.replace(`/productos/${e.target.value}`)
+        if (e.keyCode === 13) {
+            window.location.replace(`/productos/${e.target.value}`)
         }
-   }
+    }
 
-    return ( 
+    const onTextChanged = (e) => {
+        const value = e.target.value;
+        let suggestions = []
+        if (value.length > 0) {
+            const regex = new RegExp(`^${value}`, 'i');
+            suggestions = productsItems.sort().filter(v => regex.test(v.name));
+        }
+        setSuggestions(suggestions)
+        setSearch(value)
+    }
+
+    const suggestionSelected = (value) => {
+        setSearch(value);
+        setSuggestions([]);
+    }
+
+
+    const renderSuggestions = () => {
+        if (suggestions.length === 0) {
+            return null
+        }
+        return (
+            <ul className="autocomplete">
+                {suggestions.map((item) => <li onClick={() => suggestionSelected(item.name)}>{item.name}</li>)}
+            </ul>
+        )
+    }
+
+    return (
         <>
-        <Header number={number} />
-        <SearchProductsByLine setSearch={setSearch} searchPress={searchPress} typesBusiness={typesBusiness} />
-        <div className="Quotes-pm">
-            {/* <div className="Sidebar-Material_Quote">
+            <Header number={number} />
+            <SearchProductsByLine search={search} onTextChanged={onTextChanged} renderSuggestions={renderSuggestions} setSearch={setSearch} searchPress={searchPress} typesBusiness={typesBusiness} />
+            <div className="Quotes-pm">
+                {/* <div className="Sidebar-Material_Quote">
                 <SidebarProductsByBusiness
                     lines={lines}
                     types={types}
@@ -167,23 +204,23 @@ const ProductsBySearch = ({match}) => {
                     toggleLinesProductsRadio={toggleLineProductsRadio}
                 />
             </div> */}
-            <div className="Products-Quote Search-Products" style={{gridColumn: "1/12"}}>
-                <Products
-                    nameFilter={nameFilter}     
-                    productsByFilter={productsFilter || currentPostsByFilter}
-                    countProductsByFilter={countProductsByFilter}
-                />
-                <Pagination
-                    postsPerPage={postsPerPage}
-                    totalPostsFilter={productsByFilter.length}
-                    paginate={paginate}
-                />
+                <div className="Products-Quote Search-Products" style={{ gridColumn: "1/12" }}>
+                    <Products
+                        nameFilter={nameFilter}
+                        productsByFilter={productsFilter || currentPostsByFilter}
+                        countProductsByFilter={countProductsByFilter}
+                    />
+                    <Pagination
+                        postsPerPage={postsPerPage}
+                        totalPostsFilter={productsByFilter.length}
+                        paginate={paginate}
+                    />
+                </div>
             </div>
-        </div>
-        <ProductsPopulate productsPopulate={productsPopulate}/>   
-        <Footer />
+            <ProductsPopulate productsPopulate={productsPopulate} />
+            <Footer />
         </>
-     );
+    );
 }
- 
+
 export default ProductsBySearch;

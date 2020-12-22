@@ -56,7 +56,7 @@ const OurClients = () => {
                         </div>
                     </div>
                 </div>
-                <div id="traditional" className="client-info hide">
+                <div id="default" className="client-info hide">
                     <div  className="info-client-footer">
                         <h6 style={{ color: "#005286" }}>Clientes masivos</h6>
                         <p>Abastecemos de empaques para alimentos los diferentes  mercados de abastos a través de nuestros socios mayoristas y minoristas. El canal tiene como característica principal   la comercialización de volúmenes importantes.
@@ -73,6 +73,28 @@ const OurClients = () => {
                                 data-wow-delay="1.8s">
                                 <div className="img">
                                     <img src={require('../images/img/client6.jpg')} alt="imagen" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="traditional" className="client-info hide">
+                    <div  className="info-client-footer">
+                        <h6 style={{ color: "#005286" }}>Canal tradicional</h6>
+                        <p>Abastecemos de empaques para alimentos los diferentes  mercados de abastos a través de nuestros socios mayoristas y minoristas. El canal tiene como característica principal   la comercialización de volúmenes importantes.
+                                </p>
+                    </div>
+                    <div className="prs-clients">
+                        <div>
+                            <div className="square wow animate__animated animate__fadeIn"
+                                data-wow-duration="2s"
+                                data-wow-delay="1.4s">
+                            </div>
+                            <div className="img-video_known wow animate__animated animate__fadeInRight"
+                                data-wow-duration="2s"
+                                data-wow-delay="1.8s">
+                                <div className="img">
+                                    <img src={require('../images/img/client5.jpg')} alt="imagen" />
                                 </div>
                             </div>
                         </div>
