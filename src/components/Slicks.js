@@ -26,33 +26,28 @@ const Slicks = ({ match, banners }) => {
                         <div className="Slicks-pm">
                             <div className="Radius"></div>
                             <Slider {...settings}>
-                                {
-                                    banners && banners.length > 0 ?
-                                        banners.map(item => (
-                                            <div key={item.id}>
-                                                    <div className="Rotate-slick movil">
-                                                        <div className="Elipse movil x">
-                                                            <img src={require('../images/img/circlebanner.png')} alt=""/>
-                                                        </div>
-                                                        <div className="biof movil x">
-                                                            <img src={require('../images/img/bioformbanner.png')} alt=""/>
-                                                        </div>
-                                                        <div className="info-slick">
-                                                            <h2>{item.name}</h2>
-                                                            <p>{item.subname}</p>
-                                                            <div className="more-btn">
-                                                                <Link to="/productos/linea/2">Conocer más</Link>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                <div className="footer-slick">
-                                                    <div className="tree-pm banner">
-                                                        <img src={require('../images/img/tree.gif')} alt="imagen" />
-                                                    </div>
-                                                </div>
+                                <div>
+                                    <div className="Rotate-slick movil">
+                                        <div className="Elipse movil x">
+                                            <img src={require('../images/img/circlebanner.png')} alt="" />
+                                        </div>
+                                        <div className="biof movil x">
+                                            <img src={require('../images/img/bioformbanner.png')} alt="" />
+                                        </div>
+                                        <div className="info-slick">
+                                            <h2>Nuestra línea de empaques</h2>
+                                            <p>hechos con fibra de bagazo de caña de azúcar</p>
+                                            <div className="more-btn">
+                                                <Link to="/productos/linea/2">Conocer más</Link>
                                             </div>
-                                        )) : ''
-                                }
+                                        </div>
+                                    </div>
+                                    <div className="footer-slick">
+                                        <div className="tree-pm banner">
+                                            <img src={require('../images/img/tree.gif')} alt="imagen" />
+                                        </div>
+                                    </div>
+                                </div>
                             </Slider>
                         </div>
                     </div> : ''
