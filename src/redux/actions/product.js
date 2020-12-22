@@ -1,4 +1,4 @@
-import { 
+import {
     GET_LINES_PRODUCTS,
     GET_LINES_PRODUCTS_ERROR,
     GET_TYPES_PRODUCTS,
@@ -27,7 +27,7 @@ import {
     GET_PRODUCTS_BY_TYPE_ERROR,
     GET_PRODUCT,
     GET_PRODUCT_ERROR
- } from './types'
+} from './types'
 import axios from 'axios'
 
 const root = 'https://wspamolsa.com.pe/api'
@@ -42,7 +42,7 @@ let config = {
 
 export const sendProduct = (data) => async dispatch => {
     try {
-        const res = await axios.post(`${root}/product/save`,data,config);
+        const res = await axios.post(`${root}/product/save`, data, config);
         dispatch({
             type: SEND_PRODUCT,
             payload: res.data.data
@@ -56,7 +56,7 @@ export const sendProduct = (data) => async dispatch => {
 
 export const deleteImageProduct = (id) => async dispatch => {
     try {
-        const res = await axios.put(`${root}/product/deleteImage?image_id=${id}`,null,config);
+        const res = await axios.put(`${root}/product/deleteImage?image_id=${id}`, null, config);
         dispatch({
             type: DELETE_IMAGE_PRODUCT,
             payload: res.data.data
@@ -68,9 +68,9 @@ export const deleteImageProduct = (id) => async dispatch => {
     }
 }
 
-export const updateProduct= (data) => async dispatch => {
+export const updateProduct = (data) => async dispatch => {
     try {
-        const res = await axios.put(`${root}/product/update`,data, config);
+        const res = await axios.put(`${root}/product/update`, data, config);
         dispatch({
             type: UPDATE_PRODUCT,
             payload: res.data.data
@@ -96,7 +96,7 @@ export const getLineProducts = () => async dispatch => {
     }
 }
 
-export const getTypesProducts = (size,page) => async dispatch => {
+export const getTypesProducts = (size, page) => async dispatch => {
     try {
         const res = await axios.get(`${root}/product/types/list?size=${size}&page=${page}`);
         dispatch({
@@ -166,258 +166,27 @@ export const getMaterials = () => async dispatch => {
     }
 }
 
-export const getProductByFilter = (line_id,type_id,material_id,business) => async dispatch => {
+export const getProductByFilter = (line_id, type_id, material_id, business) => async dispatch => {
 
     var url;
-    var params;
-    // LINEA DE PRODUCTO
+    var params = [];
 
-    if(line_id) {
-        params = [['line_id', line_id]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
+    params.push(["line_id", line_id])
 
-    if(line_id && material_id[0]) {
-        params = [['line_id', line_id],['material_id', material_id[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
+    type_id.forEach(id => {
+        params.push(["type_id", id])
+    });
 
-    if(line_id && material_id[0] && material_id[1]) {
-        params = [['line_id', line_id],['material_id', material_id[0]],['material_id', material_id[1]]]
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
+    material_id.forEach(id => {
+        params.push(["material_id", id])
+    });
 
-    if(line_id && material_id[0] && material_id[1] && material_id[2]) {
-        params = [['line_id', line_id],['material_id', material_id[0]],['material_id', material_id[1]],['material_id', material_id[2]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
+    business.forEach(id => {
+        params.push(["business", id])
+    });
 
-    if(line_id && material_id[0] && material_id[1] && material_id[2] && material_id[3]) {
-        params = [['line_id', line_id],['material_id', material_id[0]],['material_id', material_id[1]],['material_id', material_id[2]],['material_id', material_id[3]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(line_id && material_id[0] && material_id[1] && material_id[2] && material_id[3] && material_id[4]) {
-        params = [['line_id', line_id],['material_id', material_id[0]],['material_id', material_id[1]],['material_id', material_id[2]],['material_id', material_id[3]],['material_id', material_id[4]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(line_id && material_id[0] && material_id[1] && material_id[2] && material_id[3] && material_id[4] && material_id[5]) {
-        params = [['line_id', line_id],['material_id', material_id[0]],['material_id', material_id[1]],['material_id', material_id[2]],['material_id', material_id[3]],['material_id', material_id[4]],['material_id', material_id[5]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(line_id && material_id[0] && material_id[1] && material_id[2] && material_id[3] && material_id[4] && material_id[5] && material_id[6]) {
-        params = [['line_id', line_id],['material_id', material_id[0]],['material_id', material_id[1]],['material_id', material_id[2]],['material_id', material_id[3]],['material_id', material_id[4]],['material_id', material_id[5]],['material_id', material_id[6]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(line_id && type_id[0]) {
-        params = [['line_id', line_id],['type_id', type_id[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(line_id && type_id[0] && type_id[1]) {
-        params = [['line_id', line_id],['type_id', type_id[0]],['type_id', type_id[1]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(line_id && type_id[0] && type_id[1] && type_id[2]) {
-        params = [['line_id', line_id],['type_id', type_id[0]],['type_id', type_id[1]],['type_id', type_id[2]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(line_id && type_id[0] && type_id[1] && type_id[2] && business[0]) {
-        params = [['line_id', line_id],['type_id',type_id[0]],['type_id',type_id[1]],['type_id',type_id[2]],['business', business[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-
-    if(line_id && type_id[0] && type_id[1] && type_id[2] && type_id[3]) {
-        params = [['line_id', line_id],['type_id', type_id[0]],['type_id', type_id[1]],['type_id', type_id[2]],['type_id', type_id[3]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(line_id && type_id[0] && type_id[1] && type_id[2] && type_id[3] && type_id[4]) {
-        params = [['line_id', line_id],['type_id', type_id[0]],['type_id', type_id[1]],['type_id', type_id[2]],['type_id', type_id[3]],['type_id', type_id[4]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(line_id && type_id[0] && type_id[1] && type_id[2] && type_id[3] && type_id[4] && type_id[5]) {
-        params = [['line_id', line_id],['type_id', type_id[0]],['type_id', type_id[1]],['type_id', type_id[2]],['type_id', type_id[3]],['type_id', type_id[4]],['type_id', type_id[5]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(line_id && type_id[0] && type_id[1] && type_id[2] && type_id[3] && type_id[4] && type_id[5] && type_id[6]) {
-        params = [['line_id', line_id],['type_id', type_id[0]],['type_id', type_id[1]],['type_id', type_id[2]],['type_id', type_id[3]],['type_id', type_id[4]],['type_id', type_id[5]],['type_id', type_id[6]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(line_id && business[0]) {
-        params = [['line_id', line_id],['business', business[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(line_id && business[0] && business[1]) {
-        params = [['line_id', line_id],['business', business[0]],['business', business[1]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(line_id && type_id[0] && business[0] && business[1] && business[2]) {
-        params = [['line_id', line_id],['type_id',type_id[0]],['business', business[0]],['business', business[1]],['business', business[2]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(line_id && type_id[0] && business[0] && business[1] && business[2] && business[3]) {
-        params = [['line_id', line_id],['type_id',type_id[0]],['business', business[0]],['business', business[1]],['business', business[2]],['business', business[3]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(line_id && type_id[0] && business[0] && business[1] && business[2] && business[3] && business[4]) {
-        params = [['line_id', line_id],['type_id',type_id[0]],['business', business[0]],['business', business[1]],['business', business[2]],['business', business[3]],['business', business[4]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(line_id && type_id[0] && business[0] && business[1] && business[2] && business[3] && business[4] && business[5]) {
-        params = [['line_id', line_id],['type_id',type_id[0]],['business', business[0]],['business', business[1]],['business', business[2]],['business', business[3]],['business', business[4]],['business', business[5]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(line_id && type_id[0] && business[0] && business[1] && business[2] && business[3] && business[4] && business[5] && business[6]) {
-        params = [['line_id', line_id],['type_id',type_id[0]],['business', business[0]],['business', business[1]],['business', business[2]],['business', business[3]],['business', business[4]],['business', business[5]],['business', business[6]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-     if(line_id && business[0]) {
-        params = [['line_id', line_id],['business', business[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(line_id && business[0] && business[1]) {
-        params = [['line_id', line_id],['business', business[0]],['business', business[1]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(line_id && business[0] && business[1] && business[2]) {
-        params = [['line_id', line_id],['business', business[0]],['business', business[1]],['business', business[2]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(line_id && business[0] && business[1] && business[2] && business[3]) {
-        params = [['line_id', line_id],['business', business[0]],['business', business[1]],['business', business[2]],['business', business[3]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(line_id && business[0] && business[1] && business[2] && business[3] && business[4]) {
-        params = [['line_id', line_id],['business', business[0]],['business', business[1]],['business', business[2]],['business', business[3]],['business', business[4]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(line_id && business[0] && business[1] && business[2] && business[3] && business[4] && business[5]) {
-        params = [['line_id', line_id],['business', business[0]],['business', business[1]],['business', business[2]],['business', business[3]],['business', business[4]],['business', business[5]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(line_id && business[0] && business[1] && business[2] && business[3] && business[4] && business[5] && business[6]) {
-        params = [['line_id', line_id],['business', business[0]],['business', business[1]],['business', business[2]],['business', business[3]],['business', business[4]],['business', business[5]],['business', business[6]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(line_id && business[0] && material_id[0]) {
-        params = [['line_id', line_id],['material_id', material_id[0]],['business', business[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
-
-    if(line_id && business[0] && material_id[0] && material_id[1]) {
-        params = [['line_id', line_id],['material_id', material_id[0]],['material_id', material_id[1]],['business', business[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
-
-    if(line_id && business[0] && business[1] && material_id[0] && material_id[1]) {
-        params = [['line_id', line_id],['material_id', material_id[0]],['material_id', material_id[1]],['business', business[0]],['business', business[1]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
-
-    if(line_id && business[0] && material_id[0] && material_id[1] && material_id[2]) {
-        params = [['line_id', line_id],['material_id', material_id[0]],['material_id', material_id[1]],['material_id', material_id[2]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
-
-    if(line_id && business[0] && business[1] && material_id[0] && material_id[1] && material_id[2]) {
-        params = [['line_id', line_id],['business', business[0]],['business', business[1]],['material_id', material_id[0]],['material_id', material_id[1]],['material_id', material_id[2]],['material_id', material_id[3]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
-
-    if(line_id && business[0] && material_id[0] && type_id[0]) {
-        params = [['line_id', line_id],['material_id', material_id[0]],['type_id', type_id[0]],['business', business[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
-
-    if(line_id && business[0] && material_id[0] && type_id[0]) {
-        params = [['line_id', line_id],['material_id', material_id[0]],['type_id', type_id[0]],['business', business[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
-
-    if(line_id && business[0] && material_id[0] && type_id[0] && type_id[1]) {
-        params = [['line_id', line_id],['material_id', material_id[0]],['type_id', type_id[0]],['type_id', type_id[1]],['business', business[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
-
-    if(line_id && business[0] && type_id[0] && type_id[1]) {
-        params = [['line_id', line_id],['type_id', type_id[0]],['type_id', type_id[1]],['business', business[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
-
-    if(line_id && business[0] && material_id[0] && type_id[0] && type_id[1]) {
-        params = [['line_id', line_id],['material_id', material_id[0]],['type_id', type_id[0]],['type_id', type_id[1]],['business', business[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
-
-    if(line_id && business[0] && material_id[0] && material_id[1] && type_id[0] && type_id[1]) {
-        params = [['line_id', line_id],['material_id', material_id[0]],['material_id', material_id[1]],['type_id', type_id[0]],['type_id', type_id[1]],['business', business[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
+    url = new URL(root + '/product/list?')
+    url.search = new URLSearchParams(params).toString()
 
     try {
         const res = await axios.get(url);
@@ -462,7 +231,7 @@ export const getProductsByType = (type_id) => async dispatch => {
 
 export const deleteProduct = (data) => async dispatch => {
     try {
-        const res = await axios.put(`${root}/product/delete`,data,config);
+        const res = await axios.put(`${root}/product/delete`, data, config);
         dispatch({
             type: DELETE_PRODUCT,
             payload: Number(res.data.data.product_id)
@@ -489,252 +258,27 @@ export const getProduct = id => async dispatch => {
 }
 
 
-export const getProductByFilterType = (type_id,line_id,material_id,business) => async dispatch => {
+export const getProductByFilterType = (type_id, line_id, material_id, business) => async dispatch => {
 
     var url;
-    var params;
-    // LINEA DE PRODUCTO
+    var params = [];
 
-    if(type_id) {
-        params = [['type_id', type_id]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
+    params.push(["type_id", type_id])
 
-    if(type_id && material_id[0]) {
-        params = [['type_id', type_id],['material_id', material_id[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
+    line_id.forEach(id => {
+        params.push(["line_id", id])
+    });
 
-    if(type_id && material_id[0] && material_id[1]) {
-        params = [['type_id', type_id],['material_id', material_id[0]],['material_id', material_id[1]]]
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
+    material_id.forEach(id => {
+        params.push(["material_id", id])
+    });
 
-    if(type_id && material_id[0] && material_id[1] && material_id[2]) {
-        params = [['type_id', type_id],['material_id', material_id[0]],['material_id', material_id[1]],['material_id', material_id[2]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
+    business.forEach(id => {
+        params.push(["business", id])
+    });
 
-    if(type_id && material_id[0] && material_id[1] && material_id[2] && material_id[3]) {
-        params = [['type_id', type_id],['material_id', material_id[0]],['material_id', material_id[1]],['material_id', material_id[2]],['material_id', material_id[3]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(type_id && material_id[0] && material_id[1] && material_id[2] && material_id[3] && material_id[4]) {
-        params = [['type_id', type_id],['material_id', material_id[0]],['material_id', material_id[1]],['material_id', material_id[2]],['material_id', material_id[3]],['material_id', material_id[4]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(type_id && material_id[0] && material_id[1] && material_id[2] && material_id[3] && material_id[4] && material_id[5]) {
-        params = [['type_id', type_id],['material_id', material_id[0]],['material_id', material_id[1]],['material_id', material_id[2]],['material_id', material_id[3]],['material_id', material_id[4]],['material_id', material_id[5]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(type_id && material_id[0] && material_id[1] && material_id[2] && material_id[3] && material_id[4] && material_id[5] && material_id[6]) {
-        params = [['type_id', type_id],['material_id', material_id[0]],['material_id', material_id[1]],['material_id', material_id[2]],['material_id', material_id[3]],['material_id', material_id[4]],['material_id', material_id[5]],['material_id', material_id[6]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(type_id && line_id[0]) {
-        params = [['type_id', type_id],['line_id', line_id[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(type_id && line_id[0] && line_id[1]) {
-        params = [['type_id', type_id],['line_id',line_id[0]],['line_id', line_id[1]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(type_id && line_id[0] && line_id[1] && line_id[2]) {
-        params = [['type_id', type_id],['line_id',line_id[0]],['line_id', line_id[1]],['line_id', line_id[2]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(type_id && line_id[0] && line_id[1] && line_id[2] && business[0]) {
-        params = [['type_id', type_id],['line_id',line_id[0]],['line_id',line_id[1]],['line_id',line_id[2]],['business', business[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-
-    if(type_id && line_id[0] && line_id[1] && line_id[2] && line_id[3]) {
-        params = [['type_id', type_id],['line_id',line_id[0]],['line_id', line_id[1]],['line_id', line_id[2]],['line_id', line_id[3]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(type_id && line_id[0] && line_id[1] && line_id[2] && line_id[3] && line_id[4]) {
-        params = [['type_id', type_id],['line_id',line_id[0]],['line_id', line_id[1]],['line_id', line_id[2]],['line_id', line_id[3]],['line_id', line_id[4]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(type_id && line_id[0] && line_id[1] && line_id[2] && line_id[3] && line_id[4] && line_id[5]) {
-        params = [['type_id', type_id],['line_id',line_id[0]],['line_id', line_id[1]],['line_id', line_id[2]],['line_id', line_id[3]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(type_id && business[0]) {
-        params = [['type_id', type_id],['business', business[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(type_id && business[0] && business[1]) {
-        params = [['type_id', type_id],['business', business[0]],['business', business[1]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(type_id && line_id[0] && business[0] && business[1] && business[2]) {
-        params = [['type_id', type_id],['line_id',line_id[0]],['business', business[0]],['business', business[1]],['business', business[2]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(type_id && line_id[0] && business[0] && business[1] && business[2] && business[3]) {
-        params = [['type_id', type_id],['line_id',line_id[0]],['business', business[0]],['business', business[1]],['business', business[2]],['business', business[3]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(type_id && line_id[0] && business[0] && business[1] && business[2] && business[3] && business[4]) {
-        params = [['type_id', type_id],['line_id',line_id[0]],['business', business[0]],['business', business[1]],['business', business[2]],['business', business[3]],['business', business[4]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(type_id && line_id[0] && business[0] && business[1] && business[2] && business[3] && business[4] && business[5]) {
-        params = [['type_id', type_id],['line_id',line_id[0]],['business', business[0]],['business', business[1]],['business', business[2]],['business', business[3]],['business', business[4]],['business', business[5]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(type_id && line_id[0] && business[0] && business[1] && business[2] && business[3] && business[4] && business[5] && business[6]) {
-        params = [['type_id', type_id],['line_id',line_id[0]],['business', business[0]],['business', business[1]],['business', business[2]],['business', business[3]],['business', business[4]],['business', business[5]],['business', business[6]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-     if(type_id && business[0]) {
-        params = [['type_id', type_id],['business', business[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(type_id && business[0] && business[1]) {
-        params = [['type_id', type_id],['business', business[0]],['business', business[1]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(type_id && business[0] && business[1] && business[2]) {
-        params = [['type_id', type_id],['business', business[0]],['business', business[1]],['business', business[2]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(type_id && business[0] && business[1] && business[2] && business[3]) {
-        params = [['type_id', type_id],['business', business[0]],['business', business[1]],['business', business[2]],['business', business[3]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(type_id && business[0] && business[1] && business[2] && business[3] && business[4]) {
-        params = [['type_id', type_id],['business', business[0]],['business', business[1]],['business', business[2]],['business', business[3]],['business', business[4]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(type_id && business[0] && business[1] && business[2] && business[3] && business[4] && business[5]) {
-        params = [['type_id', type_id],['business', business[0]],['business', business[1]],['business', business[2]],['business', business[3]],['business', business[4]],['business', business[5]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(type_id && business[0] && business[1] && business[2] && business[3] && business[4] && business[5] && business[6]) {
-        params = [['type_id', type_id],['business', business[0]],['business', business[1]],['business', business[2]],['business', business[3]],['business', business[4]],['business', business[5]],['business', business[6]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(type_id && business[0] && material_id[0]) {
-        params = [['type_id', type_id],['material_id', material_id[0]],['business', business[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
-
-    if(type_id && business[0] && material_id[0] && material_id[1]) {
-        params = [['type_id', type_id],['material_id', material_id[0]],['material_id', material_id[1]],['business', business[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
-
-    if(type_id && business[0] && business[1] && material_id[0] && material_id[1]) {
-        params = [['type_id', type_id],['material_id', material_id[0]],['material_id', material_id[1]],['business', business[0]],['business', business[1]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
-
-    if(type_id && business[0] && material_id[0] && material_id[1] && material_id[2]) {
-        params = [['type_id', type_id],['material_id', material_id[0]],['material_id', material_id[1]],['material_id', material_id[2]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
-
-    if(type_id && business[0] && business[1] && material_id[0] && material_id[1] && material_id[2]) {
-        params = [['type_id', type_id],['business', business[0]],['business', business[1]],['material_id', material_id[0]],['material_id', material_id[1]],['material_id', material_id[2]],['material_id', material_id[3]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
-
-    if(type_id && business[0] && material_id[0] && line_id[0]) {
-        params = [['type_id', type_id],['material_id', material_id[0]],['line_id',line_id[0]],['business', business[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
-
-    if(type_id && business[0] && material_id[0] && line_id[0]) {
-        params = [['type_id', type_id],['material_id', material_id[0]],['line_id',line_id[0]],['business', business[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
-
-    if(type_id && business[0] && material_id[0] && line_id[0] && line_id[1]) {
-        params = [['type_id', type_id],['material_id', material_id[0]],['line_id',line_id[0]],['line_id', line_id[1]],['business', business[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
-
-    if(type_id && business[0] && line_id[0] && line_id[1]) {
-        params = [['type_id', type_id],['line_id',line_id[0]],['line_id', line_id[1]],['business', business[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
-
-    if(type_id && business[0] && material_id[0] && line_id[0] && line_id[1]) {
-        params = [['type_id', type_id],['material_id', material_id[0]],['line_id',line_id[0]],['type_id', type_id[1]],['business', business[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
-
-    if(type_id && business[0] && material_id[0] && material_id[1] && line_id[0] && line_id[1]) {
-        params = [['type_id', type_id],['material_id', material_id[0]],['material_id', material_id[1]],['line_id',line_id[0]],['line_id', line_id[1]],['business', business[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
+    url = new URL(root + '/product/list?')
+    url.search = new URLSearchParams(params).toString()
 
     try {
         const res = await axios.get(url);
@@ -749,204 +293,27 @@ export const getProductByFilterType = (type_id,line_id,material_id,business) => 
     }
 }
 
-export const getProductByFilterBusiness = (business,line_id,type_id,material_id) => async dispatch => {
+export const getProductByFilterBusiness = (business, line_id, type_id, material_id) => async dispatch => {
 
     var url;
-    var params;
-    // LINEA DE PRODUCTO
+    var params = [];
 
-    if(business) {
-        params = [['business', business]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
+    params.push(["business", business])
 
-    if(business && material_id[0]) {
-        params = [['business', business],['material_id', material_id[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
+    line_id.forEach(id => {
+        params.push(["line_id", id])
+    });
 
-    if(business && type_id[0]) {
-        params = [['business', business],['type_id', type_id[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
+    material_id.forEach(id => {
+        params.push(["material_id", id])
+    });
 
-    if(business && material_id[0] && material_id[1]) {
-        params = [['business', business],['material_id', material_id[0]],['material_id', material_id[1]]]
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
+    type_id.forEach(id => {
+        params.push(["type_id", id])
+    });
 
-    if(business && material_id[0] && material_id[1] && material_id[2]) {
-        params = [['business', business],['material_id', material_id[0]],['material_id', material_id[1]],['material_id', material_id[2]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(business && material_id[0] && material_id[1] && material_id[2] && material_id[3]) {
-        params = [['business', business],['material_id', material_id[0]],['material_id', material_id[1]],['material_id', material_id[2]],['material_id', material_id[3]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(business && material_id[0] && material_id[1] && material_id[2] && material_id[3] && material_id[4]) {
-        params = [['business', business],['material_id', material_id[0]],['material_id', material_id[1]],['material_id', material_id[2]],['material_id', material_id[3]],['material_id', material_id[4]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(business && material_id[0] && material_id[1] && material_id[2] && material_id[3] && material_id[4] && material_id[5]) {
-        params = [['business', business],['material_id', material_id[0]],['material_id', material_id[1]],['material_id', material_id[2]],['material_id', material_id[3]],['material_id', material_id[4]],['material_id', material_id[5]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(business && material_id[0] && material_id[1] && material_id[2] && material_id[3] && material_id[4] && material_id[5] && material_id[6]) {
-        params = [['business', business],['material_id', material_id[0]],['material_id', material_id[1]],['material_id', material_id[2]],['material_id', material_id[3]],['material_id', material_id[4]],['material_id', material_id[5]],['material_id', material_id[6]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(business && line_id[0]) {
-        params = [['business', business],['line_id', line_id[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(business && line_id[0] && line_id[1]) {
-        params = [['business', business],['line_id',line_id[0]],['line_id', line_id[1]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(business && line_id[0] && line_id[1] && line_id[2]) {
-        params = [['business', business],['line_id',line_id[0]],['line_id', line_id[1]],['line_id', line_id[2]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(business && line_id[0] && line_id[1] && line_id[2] && business[0]) {
-        params = [['business', business],['line_id',line_id[0]],['line_id',line_id[1]],['line_id',line_id[2]],['business', business[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-
-    if(business && line_id[0] && line_id[1] && line_id[2] && line_id[3]) {
-        params = [['business', business],['line_id',line_id[0]],['line_id', line_id[1]],['line_id', line_id[2]],['line_id', line_id[3]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(business && line_id[0] && line_id[1] && line_id[2] && line_id[3] && line_id[4]) {
-        params = [['business', business],['line_id',line_id[0]],['line_id', line_id[1]],['line_id', line_id[2]],['line_id', line_id[3]],['line_id', line_id[4]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(business && line_id[0] && line_id[1] && line_id[2] && line_id[3] && line_id[4] && line_id[5]) {
-        params = [['business', business],['line_id',line_id[0]],['line_id', line_id[1]],['line_id', line_id[2]],['line_id', line_id[3]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(business && line_id[0] && line_id[1]) {
-        params = [['business', business],['line_id', line_id[0]],['line_id', line_id[1]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(business && line_id[0] && line_id[0] && line_id[1] && line_id[2]) {
-        params = [['business', business],['line_id',line_id[0]],['line_id', line_id[0]],['line_id', line_id[1]],['line_id', line_id[2]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(business && line_id[0] && material_id[0] && material_id[1] && material_id[2] && material_id[3] && material_id[4] && material_id[5]) {
-        params = [['business', business],['line_id',line_id[0]],['material_id', material_id[0]],['material_id', material_id[1]],['material_id', material_id[2]],['material_id', material_id[3]],['material_id', material_id[4]],['material_id', material_id[5]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(business && line_id[0] && material_id[0] && material_id[1] && material_id[2] && material_id[3] && material_id[4] && material_id[5] && material_id[6]) {
-        params = [['business', business],['line_id',line_id[0]],['material_id', material_id[0]],['material_id', material_id[1]],['material_id', material_id[2]],['material_id', material_id[3]],['material_id', material_id[4]],['material_id', material_id[5]],['material_id', material_id[6]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-     if(business && material_id[0]) {
-        params = [['business', business],['material_id', material_id[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(business && type_id[0] && type_id[1]) {
-        params = [['business', business],['type_id', type_id[0]],['type_id', type_id[1]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(business && type_id[0] && type_id[1] && type_id[2]) {
-        params = [['business', business],['type_id', type_id[0]],['type_id', type_id[1]],['type_id', type_id[2]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(business && type_id[0] && type_id[1] && type_id[2] && type_id[3]) {
-        params = [['business', business],['type_id', type_id[0]],['type_id', type_id[1]],['type_id', type_id[2]],['type_id', type_id[3]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(business && material_id[0] && material_id[1] && type_id[0] && type_id[1] && type_id[2]) {
-        params = [['business', business],['material_id', material_id[0]],['material_id', material_id[1]],['type_id', type_id[0]],['type_id', type_id[1]]] 
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(business && material_id[0] && material_id[1] && material_id[2] && type_id[0] && type_id[1] && type_id[2]) {
-        params = [['business', business],['material_id', material_id[0]],['material_id', material_id[1]],['material_id', material_id[2]],['type_id', type_id[0]],['type_id', type_id[1]],['type_id', type_id[2]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(business && material_id[0] && material_id[1] && material_id[2] && material_id[3] && type_id[0] && type_id[1] && type_id[2]) {
-        params = [['business', business],['material_id', material_id[0]],['material_id', material_id[1]],['material_id', material_id[2]],['material_id', material_id[3]],['type_id', type_id[0]],['type_id', type_id[1]],['type_id', type_id[2]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    }
-
-    if(business && line_id[0] && material_id[0]) {
-        params = [['business', business],['line_id', line_id[0]],['material_id', material_id[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
-
-    if(business && line_id[0] && line_id[1] && material_id[0]) {
-        params = [['business', business],['line_id', line_id[0]],['line_id', line_id[1]],['material_id', material_id[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
-
-    if(business && line_id[0] && line_id[1] && type_id[0] && material_id[0]) {
-        params = [['business', business],['line_id', line_id[0]],['line_id', line_id[1]],['type_id', type_id[0]],['material_id', material_id[0]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
-
-    if(business && line_id[0] && material_id[0] && material_id[1] && material_id[2]) {
-        params = [['business', business],['line_id', line_id[0]],['material_id', material_id[0]],['material_id', material_id[1]],['material_id', material_id[2]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
-
-    if(business && line_id[0] && line_id[1] && material_id[0] && material_id[1] && material_id[2]) {
-        params = [['business', business],['line_id', line_id[0]],['line_id', line_id[1]],['material_id', material_id[0]],['material_id', material_id[1]],['material_id', material_id[2]],['material_id', material_id[3]]]  
-        url = new URL(root + '/product/list?')
-        url.search = new URLSearchParams(params).toString()
-    } 
+    url = new URL(root + '/product/list?')
+    url.search = new URLSearchParams(params).toString()
 
     try {
         const res = await axios.get(url);

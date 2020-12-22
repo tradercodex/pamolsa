@@ -30,13 +30,13 @@ const ProductsByBusiness = ({ match }) => {
     const [suggestions, setSuggestions] = useState([])
     const [search, setSearch] = useState('')
     const [materialId, setMaterialId] = useState({
-        ids: ''
+        ids: []
     })
     const [lineId, setLineId] = useState({
-        ids: ''
+        ids: []
     });
     const [typeId, setTypeId] = useState({
-        ids: ''
+        ids: []
     });
 
     const toggleLineProductsRadio = (e, item) => {
