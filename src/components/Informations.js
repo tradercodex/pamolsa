@@ -28,7 +28,7 @@ const Informations = () => {
                                 <h6>Nuestras Certificaciones</h6>
                                 <span>Cumplimos con normas y reglamentos internacionales</span>
                                 <p>
-                                Comprometidos con nuestros clientes, colaboradores y proveedores buscamos trabajar dentro de estandares internacionales que garanticen la calidad de nuestros productos, procesos y sistemas, así como la mejora continua en la seguridad y salud de nuestros colaboradores.
+                                Comprometidos con nuestros clientes, colaboradores y proveedores buscamos trabajar dentro de estándares internacionales que garanticen la calidad de nuestros productos, procesos y sistemas, así como la mejora continua en la seguridad y salud de nuestros colaboradores.
                                 </p>
                             </div>
                         </div>

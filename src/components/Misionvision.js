@@ -74,19 +74,19 @@ const MisionVision = () => {
                 <div className="img-values">
                     <div>
                         <House />
-                        <p>Integridad.</p>
+                        <p>Integridad</p>
                     </div>
                     <div>
                         <Hands />
-                        <p>Respeto.</p>
+                        <p>Respeto</p>
                     </div>
                     <div>
                         <ArrowUs />
-                        <p>Orientación al cliente y usuario.</p>
+                        <p>Orientación al cliente y usuario</p>
                     </div>
                     <div>
                         <World />
-                        <p>Innovación.</p>
+                        <p>Innovación</p>
                     </div>
                     <div>
                         <Users />
@@ -94,7 +94,7 @@ const MisionVision = () => {
                     </div>
                     <div>
                         <Chart />
-                        <p>Compromiso con los resultados.</p>
+                        <p>Compromiso con los resultados</p>
                     </div>
                 </div>
             </div>

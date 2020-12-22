@@ -257,7 +257,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                                 <h4>Planta Faucett</h4>
                                             </div>
                                             <h6>Lima</h6>
-                                            <p>Planta de producción se encuentra ubicada en el  Callao en un área de  19,000 m2 .</p>
+                                            <p>Planta de producción se encuentra ubicada en el  Callao en un área de  19,000m2 .</p>
                                         </div>
                                         <div className="post-new_slick_us">
                                             <div className="square-slick">
@@ -275,7 +275,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                                 <h4>Planta Gambetta</h4>
                                             </div>
                                             <h6>Lima</h6>
-                                            <p>Planta de producción inaugurada el 2018 se encuentra ubicada en el  Callao en un área de  16,000 m2 .</p>
+                                            <p>Planta de producción inaugurada el 2018 se encuentra ubicada en el  Callao en un área de  16,000m2 .</p>
                                         </div>
                                         <div className="post-new_slick_us">
                                             <div className="square-slick">
@@ -294,7 +294,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                             </div>
                                             <h6>Lima</h6>
                                             <p>Inaugurada el 2020,  nuestra planta de reciclaje Recicloplas tiene una capacidad de producción de 8,000 toneladas de PET posconsumo al año,
-                                                se encuentra ubicada en el Callao en un área de 2,350 m2. </p>
+                                                se encuentra ubicada en el Callao en un área de 2,350m2. </p>
                                         </div>
                                         <div className="post-new_slick_us">
                                             <div className="square-slick">
@@ -320,7 +320,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                             <p>
                                                 En Recicloplas Perú, planta de reciclaje de Pamolsa , reciclamos PET posconsumo para luego  procesarlo y producir  materia prima de alta calidad que posteriormente es utilizada por Pamolsa para su transformación en productos terminados. Con esto, no solo evitamos que sean depositados en nuestros ríos, mares y rellenos sanitarios, también reducimos los requerimientos de PET virgen, lo cual significa una menor emisión de gases de efecto invernadero y un menor consumo de energía y petróleo.
                                             <br /><br />
-                                            Actualmente Recicloplas  genera ingresos para más de 1,500 familias recicladoras.
+                                            Actualmente, Recicloplas  genera ingresos para más de 1,500 familias recicladoras.
                                             <br />
                                             De esta manera contribuimos con el medio ambiente y con la sociedad.
                                             <br /><br />
@@ -536,7 +536,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                     <p>Te estamos buscando</p>
                                 </div>
                             </div>
-                            <Slider {...settingsWorks} className="new-slick work tablet">
+                            <Slider {...settingsWorks} className="new-slick work tablet xs">
                                 {
                                     vacants && vacants.length ?
                                         vacants.map(item => (

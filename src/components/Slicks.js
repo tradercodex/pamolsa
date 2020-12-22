@@ -22,7 +22,7 @@ const Slicks = ({ match, banners }) => {
         <Fragment>
             {
                 pathname === "/" ?
-                    <div className="content-slick-home movil">
+                    <div className="content-slick-home movil xs">
                         <div className="Slicks-pm">
                             <div className="Radius"></div>
                             <Slider {...settings}>
@@ -65,7 +65,7 @@ const Slicks = ({ match, banners }) => {
                             <div className="Radius Us"></div>
                             <Slider {...settings}>
                                 <div>
-                                    <div className="Rotate-slick Us movil">
+                                    <div className="Rotate-slick Us movil xs">
                                         <div className="info-slick Us">
                                             <h2>Nosotros</h2>
                                             <p>Ofrecemos soluciones innovadoras y personalizadas de empaques sostenibles</p>
@@ -83,7 +83,7 @@ const Slicks = ({ match, banners }) => {
                             <div className="Radius Us"></div>
                             <Slider {...settings}>
                                 <div>
-                                    <div className="Rotate-slick Us Sb movil">
+                                    <div className="Rotate-slick Us Sb movil xs">
                                         <div className="info-slick Us">
                                             <h2>Sostenibilidad</h2>
                                             <p>Nuestro compromiso con el entorno para ser rentables</p>
@@ -101,7 +101,7 @@ const Slicks = ({ match, banners }) => {
                             <div className="Radius Us"></div>
                             <Slider {...settings}>
                                 <div>
-                                    <div className="Rotate-slick Us Wu movil">
+                                    <div className="Rotate-slick Us Wu movil xs">
                                         <div className="info-slick Us">
                                             <h2>¡Trabaja con nosotros y se parte de nuestra familia!</h2>
                                         </div>
@@ -118,7 +118,7 @@ const Slicks = ({ match, banners }) => {
                             <div className="Radius Us Clients"></div>
                             <Slider {...settings}>
                                 <div>
-                                    <div className="Rotate-slick Us Cl movil">
+                                    <div className="Rotate-slick Us Cl movil xs">
                                         <div className="info-slick Us">
                                             <h2>Clientes</h2>
                                             <p>Experiencia y calidad a su servicio</p>
@@ -136,7 +136,7 @@ const Slicks = ({ match, banners }) => {
                             <div className="Radius Us News"></div>
                             <Slider {...settings}>
                                 <div>
-                                    <div className="Rotate-slick Us New movil">
+                                    <div className="Rotate-slick Us New movil xs">
                                         <div className="info-slick Us">
                                             <h2>Noticias</h2>
                                             <p>Entérate de nuestras últimas novedades</p>
@@ -154,7 +154,7 @@ const Slicks = ({ match, banners }) => {
                             <div className="Radius Us"></div>
                             <Slider {...settings}>
                                 <div>
-                                    <div className="Rotate-slick Us Ctt movil">
+                                    <div className="Rotate-slick Us Ctt movil xs">
                                         <div className="info-slick Us">
                                             <h2>Contacto</h2>
                                             <p>Queremos conocerte</p>

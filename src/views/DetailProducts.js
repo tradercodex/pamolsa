@@ -8,6 +8,7 @@ import '../styles/quotes.css'
 import Footer from '../components/Footer';
 import Axios from 'axios';
 import ProductsPopulate from '../components/ProductsPopulate';
+import axios from 'axios'
 
 const DetailProducts = ({match}) => {
 
@@ -21,6 +22,9 @@ const DetailProducts = ({match}) => {
 
     const [cartItems, setCartItems] = useState(cart.cartItems)
     const [ relacionates, setRelacionates ] = useState([])
+    const [productsItems, setProductsItems] = useState([]);
+    const [suggestions, setSuggestions] = useState([])
+    const [search, setSearch] = useState('')
 
     const getRelacionate = async () => {
         const response = await Axios.get(`https://wspamolsa.com.pe/api/product/find/related?product_id=${id}`)
@@ -41,6 +45,13 @@ const DetailProducts = ({match}) => {
             header.classList.remove('movile-active')
         })
 
+        const loadProductsItems = async () => {
+            const res = await axios.get('https://wspamolsa.com.pe/api/product/list');
+            setProductsItems(res.data.data)
+       }
+
+       loadProductsItems();
+
         dispatch(getTypesBusiness());
         getRelacionate();
         dispatch(getTypesProducts(9,1));
@@ -50,10 +61,38 @@ const DetailProducts = ({match}) => {
 
     let number = Object.keys(cartItems).length
 
+    const onTextChanged = (e) => {
+        const value = e.target.value;
+        let suggestions = []
+        if (value.length > 0) {
+            const regex = new RegExp(`^${value}`, 'i');
+            suggestions = productsItems.sort().filter(v => regex.test(v.name));
+        }
+        setSuggestions(suggestions)
+        setSearch(value)
+    }
+
+    const suggestionSelected = (value) => {
+        setSearch(value);
+        setSuggestions([]);
+    }
+
+
+    const renderSuggestions = () => {
+        if (suggestions.length === 0) {
+            return null
+        }
+        return (
+            <ul className="autocomplete">
+                {suggestions.map((item) => <li onClick={() => suggestionSelected(item.name)}>{item.name}</li>)}
+            </ul>
+        )
+    }
+
     return ( 
         <Fragment>
             <Header number={number} />
-            <MenuCategory typesBusiness={business} typesProducts={typesProducts} />
+            <MenuCategory search={search} onTextChanged={onTextChanged} renderSuggestions={renderSuggestions} typesBusiness={business} typesProducts={typesProducts} />
             <DetailProduct product={product} />
             <ProductsPopulate relacionates={relacionates} />
             <Footer />

@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProductByFilter, getTypesBusiness } from '../redux/actions/product'
 import Pagination from '../components/Pagination';
 import Footer from '../components/Footer';
+import axios from 'axios'
 
 const ProductByLine = ({ match, location }) => {
 
@@ -29,7 +30,8 @@ const ProductByLine = ({ match, location }) => {
     const [search, setSearch] = useState('')
     const [postsPerPage] = useState(12)
     const [business, setBusiness] = useState();
-
+    const [productsItems, setProductsItems] = useState([]);
+    const [suggestions, setSuggestions] = useState([])
     const [types, setTypes] = useState();
     const [materials, setMaterial] = useState();
     const [typeId, setTypeId] = useState({
@@ -115,6 +117,13 @@ const ProductByLine = ({ match, location }) => {
             header.classList.remove('movile-active')
         })
 
+        const loadProductsItems = async () => {
+            const res = await axios.get('https://wspamolsa.com.pe/api/product/list');
+            setProductsItems(res.data.data)
+       }
+
+       loadProductsItems();
+
         apiGetBusiness();
         apiGetTypes();
         apiGetMaterial();
@@ -134,20 +143,44 @@ const ProductByLine = ({ match, location }) => {
 
     let number = Object.keys(cartItems).length
 
-    const filter = currentPostsByFilter.filter(product => {
-        return product.name.includes(search)
-    })
-
     const searchPress = (e) => {
         if (e.keyCode === 13) {
             window.location.replace(`/productos/${e.target.value}`)
         }
     }
 
+    const onTextChanged = (e) => {
+        const value = e.target.value;
+        let suggestions = []
+        if (value.length > 0) {
+            const regex = new RegExp(`^${value}`, 'i');
+            suggestions = productsItems.sort().filter(v => regex.test(v.name));
+        }
+        setSuggestions(suggestions)
+        setSearch(value)
+    }
+
+    const suggestionSelected = (value) => {
+        setSearch(value);
+        setSuggestions([]);
+    }
+
+
+    const renderSuggestions = () => {
+        if (suggestions.length === 0) {
+            return null
+        }
+        return (
+            <ul className="autocomplete">
+                {suggestions.map((item) => <li onClick={() => suggestionSelected(item.name)}>{item.name}</li>)}
+            </ul>
+        )
+    }
+
     return (
         <>
             <Header number={number} />
-            <SearchProductsByLine setSearch={setSearch} searchPress={searchPress} typesBusiness={typesBusiness} />
+            <SearchProductsByLine search={search} onTextChanged={onTextChanged} renderSuggestions={renderSuggestions} setSearch={setSearch} searchPress={searchPress} typesBusiness={typesBusiness} />
             <div className="Quotes-pm">
                 <div className="Sidebar-Material_Quote">
                     <SidebarProductsByLine
@@ -173,13 +206,13 @@ const ProductByLine = ({ match, location }) => {
                         lineFoodService={lineFoodService}
                         lineIndustrial={lineIndustrial}
                         lineAgroIndustrial={lineAgroIndustrial}
-                        productsByFilter={filter}
+                        productsByFilter={currentPostsByFilter}
                         countProductsByFilter={countProductsByFilter}
                     />
                     <Pagination
                         postsPerPage={postsPerPage}
                         totalPostsFilter={productsByFilter.length}
-                        totalFilter={filter.length}
+                        totalFilter={currentPostsByFilter.length}
                         paginate={paginate}
                     />
                 </div>

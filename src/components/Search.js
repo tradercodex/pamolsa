@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const Search = ({ match,typesBusiness,setSearch,searchPress,onChangeUbication,searchPressUbication}) => {
+const Search = ({search,onTextChanged,renderSuggestions,display,options,match,typesBusiness,setSearch,searchPress,onChangeUbication,searchPressUbication}) => {
 
     const pathname = match.path
     const url = match.url
@@ -77,8 +77,24 @@ const Search = ({ match,typesBusiness,setSearch,searchPress,onChangeUbication,se
                         <button onClick={goBack} className="btn-back">Volver</button>
                         <div className="Search-container">
                             <SearchIcon />
-                            <input onKeyUp={searchPress} onChange={e => setSearch(e.target.value)} style={{padding: "15px 5px 15px 50px"}} type="text" placeholder="¿Qué producto necesitas?" />
+                            <input onKeyUp={searchPress} value={search} onChange={onTextChanged} style={{padding: "15px 5px 15px 50px"}} type="text" placeholder="¿Qué producto necesitas?" />
+                            {renderSuggestions()}
                             <button type="button" onClick={handleOpen}><FilterIcon /></button>
+                            {
+                                display && (
+                                    <div className="autocontainer">
+                                        {
+                                            options.map((v,i ) => {
+                                                return (
+                                                    <div key={i}>
+                                                        <span>{v.name}</span>
+                                                    </div>
+                                                )
+                                            })
+                                        }
+                                    </div>
+                                )
+                            }
                             <Modal
                                 open={open}
                                 onClose={handleClose}
@@ -107,7 +123,8 @@ const Search = ({ match,typesBusiness,setSearch,searchPress,onChangeUbication,se
                          <button onClick={goBack} className="btn-back">Volver</button>
                         <div className="Search-container lines">
                             <SearchIcon />
-                            <input style={{marginBottom: "0"}} name="query" type="text" onKeyUp={searchPress} onChange={e => setSearch(e.target.value)} placeholder="¿Qué producto necesitas?" />
+                            <input style={{marginBottom: "0"}} name="query" type="text" onKeyUp={searchPress} value={search} onChange={onTextChanged} placeholder="¿Qué producto necesitas?" />
+                            {renderSuggestions()}
                             <button type="button" onClick={handleOpen}><FilterIcon /></button>
                             <Modal
                                 open={open}

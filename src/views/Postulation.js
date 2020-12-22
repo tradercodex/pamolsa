@@ -128,7 +128,7 @@ const Postulation = () => {
         }),
         control: (base, state) => ({
             ...base,
-            height: 42,
+            height: 47,
             minHeight: 32,
             fontSize: 14,
             paddingLeft: "20px",
@@ -427,7 +427,7 @@ const Postulation = () => {
                                     }
                                 />
                             </div>
-                            <div style={{ gridColumn: "4/5", position: "relative", textAlign: "center" }}>
+                            <div className="btn-adj" style={{ gridColumn: "4/5", position: "relative", textAlign: "center" }}>
                                 <label htmlFor="cv">Adjuntar</label>
                             </div>
                             <span className="complete-form" style={{ top: "-10px" }}>
