@@ -56,7 +56,7 @@ const Known = ({
                             data-wow-duration="2s"
                             data-wow-delay="0.4"
                         >
-                            <Link to="#" onClick={goLineTwo}>
+                            <Link to="/productos/linea/2">
                                 <img src={require('../images/img/lineproducts.png')} alt="imagen" />
                                 <p>Línea Ecoamigable Bioform</p>
                             </Link>
@@ -65,7 +65,7 @@ const Known = ({
                             data-wow-duration="2s"
                             data-wow-delay="0.4"
                         >
-                            <Link to="#" onClick={goLineOne}>
+                            <Link to="/productos/linea/1">
                                 <img src={require('../images/img/foodservices.png')} alt="imagen" />
                                 <p>Línea Food Service</p>
                             </Link>
@@ -74,7 +74,7 @@ const Known = ({
                             data-wow-duration="2s"
                             data-wow-delay="2.4"
                         >
-                            <Link to="#" onClick={goLineThree}>
+                            <Link to="/productos/linea/3">
                                 <img src={require('../images/img/useapplication.png')} alt="imagen" />
                                 <p>Línea Industrial Consumo</p>
                             </Link>
@@ -83,7 +83,7 @@ const Known = ({
                             data-wow-duration="2s"
                             data-wow-delay="2.4"
                         >
-                            <Link to="#" onClick={goLineFour}>
+                            <Link to="/productos/linea/4">
                                 <img src={require('../images/img/lineagro.png')} alt="imagen" />
                                 <p>Línea Agroindustrial</p>
                             </Link>
