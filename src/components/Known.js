@@ -3,7 +3,8 @@ import '../styles/known.css'
 import FoodServices from '../images/svg/foodservice'
 import Industrial from '../images/svg/industrial'
 import Agroindustrial from '../images/svg/agroindustrial'
-import { Link, useHistory } from 'react-router-dom';
+import { Link as LinkRouter } from 'react-router-dom';
+import { Link } from 'react-scroll'
 import ModalFoodService from './ModalFoodService';
 import industrial from '../pdf/catalogoindustrial.pdf'
 import agroindustrial from '../pdf/catalogoagroindustrial.pdf'
@@ -12,24 +13,6 @@ const Known = ({
     closePdfModal, showPdfModal,
     handleShowPdfModal,
 }) => {
-
-    const history = useHistory()
-
-    const goLineTwo = () => {
-        history.replace('/productos/linea/2')
-    }
-
-    const goLineOne = () => {
-        history.replace('/productos/linea/1')
-    }
-
-    const goLineThree = () => {
-        history.replace('/productos/linea/3')
-    }
-
-    const goLineFour = () => {
-        history.replace('/productos/linea/4')
-    }
 
     return (
         <div className="Known-pm home">
@@ -56,37 +39,37 @@ const Known = ({
                             data-wow-duration="2s"
                             data-wow-delay="0.4"
                         >
-                            <Link to="/productos/linea/2">
+                            <Link to="header" smooth={true} duration={1000} offset={-2000}><LinkRouter to="/productos/linea/2">
                                 <img src={require('../images/img/lineproducts.png')} alt="imagen" />
                                 <p>Línea Ecoamigable Bioform</p>
-                            </Link>
+                            </LinkRouter></Link>
                         </div>
                         <div className="line-products_pm top wow animate__animated animate__fadeInDown"
                             data-wow-duration="2s"
                             data-wow-delay="0.4"
                         >
-                            <Link to="/productos/linea/1">
+                            <Link to="header" smooth={true} duration={1000} offset={-2000}><LinkRouter to="/productos/linea/1">
                                 <img src={require('../images/img/foodservices.png')} alt="imagen" />
                                 <p>Línea Food Service</p>
-                            </Link>
+                            </LinkRouter></Link>
                         </div>
                         <div className="use-app_pm wow animate__animated animate__fadeInUp"
                             data-wow-duration="2s"
                             data-wow-delay="2.4"
                         >
-                            <Link to="/productos/linea/3">
+                            <Link to="header" smooth={true} duration={1000} offset={-2000}><LinkRouter to="/productos/linea/3">
                                 <img src={require('../images/img/useapplication.png')} alt="imagen" />
                                 <p>Línea Industrial Consumo</p>
-                            </Link>
+                            </LinkRouter></Link>
                         </div>
                         <div className="material-pm top wow animate__animated animate__fadeInRight"
                             data-wow-duration="2s"
                             data-wow-delay="2.4"
                         >
-                            <Link to="/productos/linea/4">
+                            <Link to="header" smooth={true} duration={1000} offset={-2000}><LinkRouter to="/productos/linea/4">
                                 <img src={require('../images/img/lineagro.png')} alt="imagen" />
                                 <p>Línea Agroindustrial</p>
-                            </Link>
+                            </LinkRouter></Link>
                         </div>
                     </div>
                 </div>
@@ -160,11 +143,11 @@ const Known = ({
                             data-wow-delay="1s">
                             Ingresa tu ubicación y encuentra los puntos de venta más cercanos
                             </p>
-                        <Link
+                        <LinkRouter
                             className="wow animate__animated animate__fadeInLeft"
                             data-wow-duration="2s"
                             data-wow-delay="1.4s"
-                            to="/home/distribuidores"><button>Buscar</button></Link>
+                            to="/home/distribuidores"><button>Buscar</button></LinkRouter>
                     </div>
                 </div>
                 <div className="img-distributor_hm">
