@@ -527,6 +527,26 @@
     .Rotate-slick.Us {
         height: 104vh !important;
     }
+    .Rotate-slick.Us.Sb::after {
+        top: 515px !important;
+        left: -120px !important;
+    }
+    .Rotate-slick.Us.Wu::after {
+        top: 615px !important;
+        left: -280px !important;
+    }
+    .Rotate-slick.Us.Cl::after {
+        top: 595px !important;
+        left: -100px !important;
+    }
+    .Rotate-slick.Us.New::after {
+        top: 435px !important;
+        left: -280px !important;
+    }
+    .Rotate-slick.Us.Ctt::after {
+        top: 615px !important;
+        left: -280px !important;
+    }
 }
 
 @media only screen and (max-width: 1440px) and (max-height: 750px) {
@@ -542,9 +562,25 @@
     .info-slick.Us {
         left: 50px !important;
     }
-    .Rotate-slick.Us::after {
-        top: 530px !important;
+    .Rotate-slick.Us.Sb::after {
+        top: 515px !important;
+        left: -120px !important;
+    }
+    .Rotate-slick.Us.Wu::after {
+        top: 615px !important;
+        left: -280px !important;
+    }
+    .Rotate-slick.Us.Cl::after {
+        top: 595px !important;
         left: -100px !important;
+    }
+    .Rotate-slick.Us.New::after {
+        top: 435px !important;
+        left: -280px !important;
+    }
+    .Rotate-slick.Us.Ctt::after {
+        top: 615px !important;
+        left: -280px !important;
     }
     .tree-new.contact img {
         top: 100px !important;
