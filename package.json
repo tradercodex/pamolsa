@@ -26,6 +26,7 @@
     "qs": "^6.9.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-gtm-module": "^2.0.11",
     "react-hook-form": "^6.9.2",
     "react-html-parser": "^2.0.2",
     "react-player": "^2.6.2",
@@ -67,5 +68,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-gtm-module": "^2.0.0"
   }
 }
