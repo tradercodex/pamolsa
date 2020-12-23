@@ -22,7 +22,7 @@ const ProductsFilterByLine = ({
                                     {
                                         product.image.map((thumb, index) =>
                                             <div className="img-product" key={index}>
-                                                <img src={`http://` + thumb.url} alt="" />
+                                                <img src={`https://` + thumb.url} alt="" />
                                             </div>
                                         )
                                     }

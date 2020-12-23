@@ -7,7 +7,7 @@ const Banner = ({ id,img,deletingBanner }) => {
         <Fragment>
             <div className="gallery-items" key={id}>
                 <div>
-                    <img src={`http://` + img} width="300px" height="300px" alt="imagen" />
+                    <img src={`https://` + img} width="300px" height="300px" alt="imagen" />
                     <button onClick={() => deletingBanner(id)} className="delete"><Delete /></button>
                 </div>
             </div>

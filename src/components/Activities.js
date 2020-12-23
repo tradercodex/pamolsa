@@ -9,7 +9,7 @@ const Activities = ({id,img,title,deletingActivity}) => {
             <div className="gallery-items" key={id}>
                 <div>
                     <p>{title}</p>
-                    <img src={`http://` + img} width="300px" height="300px" alt="imagen" />
+                    <img src={`https://` + img} width="300px" height="300px" alt="imagen" />
                     <Link className="edit" to={`/administrador/actividades/editar/${id}`}><Edit /></Link>
                     <button onClick={()=>deletingActivity(id)} className="delete"><Delete /></button>
                 </div>

@@ -10,7 +10,7 @@ const New = ({ title, created, img, id,deletingNew }) => {
                 <div>
                     <span>{created}</span>
                     <p>{title}</p>
-                    <img src={`http://` + img} width="300px" height="300px" alt={title} />
+                    <img src={`https://` + img} width="300px" height="300px" alt={title} />
                     <Link to={`/administrador/noticias/editar/${id}`} className="edit"><Edit /></Link>
                     <button onClick={()=> deletingNew(id)}  className="delete"><Delete /></button>
                 </div>

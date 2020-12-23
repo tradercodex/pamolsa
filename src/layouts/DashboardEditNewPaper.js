@@ -139,7 +139,7 @@ const DashboardEditNewPaper = ({match}) => {
                                 <div className="input-ds">
                                     <div><label>Imagen de la galería periodística</label></div>
                                     <div className="img-input-ds">
-                                        <img style={{ width: "100%" }} id="imgPerfil" src={`http://` + newpaperId.file || require('../images/img/uploadimage.jpg')} alt="img" />
+                                        <img style={{ width: "100%" }} id="imgPerfil" src={`https://` + newpaperId.file || require('../images/img/uploadimage.jpg')} alt="img" />
                                         <input
                                             type="file"
                                             name="file"

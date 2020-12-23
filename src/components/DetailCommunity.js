@@ -14,7 +14,7 @@ const DetailCommunity = ({ title, description, file }) => {
     return (
         <Fragment>
             <div className="Detail-new_pm">
-                <img src={`http://` + file} alt="community"/>
+                <img src={`https://` + file} alt="community"/>
                 <div className="back">
                     <button onClick={back}><Arrow />Volver</button>
                 </div>

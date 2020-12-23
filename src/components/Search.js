@@ -56,7 +56,7 @@ const Search = ({search,onTextChanged,renderSuggestions,display,options,match,ty
                     typesBusiness && typesBusiness.length > 0 ?
                     typesBusiness.map(item => (
                             <div className="business-choose" key={item.id}>
-                                <a className={url === `/productos/negocio/${item.name}/${item.id}` ? "active-category" : 'category'} href={`/productos/negocio/${item.name}/${item.id}`}><img src={`http://` + item.url} alt=""/>{item.name}</a>
+                                <a className={url === `/productos/negocio/${item.name}/${item.id}` ? "active-category" : 'category'} href={`/productos/negocio/${item.name}/${item.id}`}><img src={`https://` + item.url} alt=""/>{item.name}</a>
                             </div>
                     )) : ''
                 }

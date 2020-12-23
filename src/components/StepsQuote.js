@@ -85,7 +85,7 @@ const StepsQuote = ({
                                                         <div className="box-quote" key={item.id}>
                                                             <div className="info-box-quote">
                                                                 <div className="img-quote">
-                                                                    <img src={`http://` + item.image} alt="" />
+                                                                    <img src={`https://` + item.image} alt="" />
                                                                 </div>
                                                                 <div className="info">
                                                                     <p>Producto</p>
@@ -260,7 +260,7 @@ const StepsQuote = ({
                                                                 <div className="box-quote" key={item.id}>
                                                                     <div className="info-box-quote">
                                                                         <div className="img-quote">
-                                                                            <img src={`http://` + item.image} alt="" />
+                                                                            <img src={`https://` + item.image} alt="" />
                                                                         </div>
                                                                         <div className="info">
                                                                             <p>Producto</p>

@@ -716,7 +716,7 @@ const DashboardEditProduct = ({ match }) => {
                                                 product.file && product.file.length > 0 ?
                                                     product.file.map(item => (
                                                         <div>
-                                                            <img style={{ width: "100%" }} id="imgPerfil" src={`http://` + item.url || require('../images/img/uploadimage.jpg')} alt="img" />
+                                                            <img style={{ width: "100%" }} id="imgPerfil" src={`https://` + item.url || require('../images/img/uploadimage.jpg')} alt="img" />
                                                             <button onClick={() => deletingProductImage(item.id)} className="delete"><Delete /></button>
                                                         </div>
                                                     )) :

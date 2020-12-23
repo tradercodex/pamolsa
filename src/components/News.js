@@ -215,7 +215,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                                     <div className="square-slick">
                                                     </div>
                                                     <div className="img-new_slick">
-                                                        <img src={`http://` + item.file.url} alt="imagen" />
+                                                        <img src={`https://` + item.file.url} alt="imagen" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -467,7 +467,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                                     <div key={item.id}>
                                                         <div className="card-work">
                                                             <div className="header-work">
-                                                                <img src={`http://` + item.file.url} alt="imagen" />
+                                                                <img src={`https://` + item.file.url} alt="imagen" />
                                                             </div>
                                                             <div className="card-body">
                                                                 <h6>{item.title}</h6>
@@ -492,7 +492,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                                         <div className="post-pet-sbl activity">
                                                             <div className="square-pet-sbl activity"></div>
                                                             <div className="img-new_slick activity">
-                                                                <img src={`http://` + item.file.url} alt="imagen" />
+                                                                <img src={`https://` + item.file.url} alt="imagen" />
                                                             </div>
                                                             <div className="play-button_pm activity">
                                                                 <button onClick={handleShowVideoModal}><Play /></button>
@@ -543,7 +543,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                             <div key={item.id}>
                                                 <div className="card-work">
                                                     <div className="header-work">
-                                                        <img src={`http://` + item.file.url || require('../images/img/work.png')} alt="imagen" />
+                                                        <img src={`https://` + item.file.url || require('../images/img/work.png')} alt="imagen" />
                                                     </div>
                                                     <div className="card-body">
                                                         <h6>{item.title}</h6>
