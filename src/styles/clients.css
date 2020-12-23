@@ -281,6 +281,14 @@ a.active svg circle {
     color: #4d4d4d;
 }
 
+.img-video_known .img img {
+    object-fit: cover;
+}
+
+.img-company-abe {
+    top: -10px;
+}
+
 .input label {
     padding: 14px 25px;
     border-radius: 30px;

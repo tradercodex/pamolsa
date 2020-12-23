@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import ReactSelect from 'react-select'
 import { useForm, Controller } from 'react-hook-form'
+import CreatableSelect from 'react-select/creatable'
 import makeAnimated from 'react-select/animated';
 import { useHistory } from 'react-router-dom'
 import Delete from '@material-ui/icons/Delete'
@@ -37,6 +38,7 @@ const DashboardEditProduct = ({ match }) => {
     const [productsImages, setProductsImages] = useState({
         images: []
     })
+    const [products, setProducts] = useState([])
 
     const [product, setProduct] = useState({
         name: '',
@@ -59,7 +61,8 @@ const DashboardEditProduct = ({ match }) => {
         brand: '',
         shape: '',
         colour: '',
-        temperature: ''
+        temperature: '',
+        related_products: [],
     })
 
     const { errors, handleSubmit, register, control, setValue } = useForm({
@@ -91,13 +94,15 @@ const DashboardEditProduct = ({ match }) => {
             min_quantity: res.data.data.min_quantity,
             line: { label: res.data.data.product_line.name, value: res.data.data.product_line.id },
             product_type: { label: res.data.data.product_type.name, value: res.data.data.product_type.id },
-            business_types: res.data.data.business?.map(item => ({ label: item.name, value: item.id }))
+            business_types: res.data.data.business?.map(item => ({ label: item.name, value: item.id })),
+            related_products: res.data.data.related_products?.map(item => ({label: item.code, value: item.id }))
         })
         setValue("line", { label: res.data.data.product_line.name, value: res.data.data.product_line.id })
         setValue("product_type", { label: res.data.data.product_type.name, value: res.data.data.product_type.id })
         setValue("product_addtl_subtype", { label: res.data.data.product_addtl_subtype.name, value: res.data.data.product_addtl_subtype.id })
         setValue("material", { label: res.data.data.material.name, value: res.data.data.material.id })
         setValue("business", res.data.data.business?.map(item => ({ name: item.name, id: item.id })))
+        setValue("related_products", res.data.data.related_products?.map(item => ({code: item.code, id: item.id })))
     }
 
     const linesSelect = lines?.map(item => ({ label: item.name, value: item.id }))
@@ -131,6 +136,13 @@ const DashboardEditProduct = ({ match }) => {
                 $('#imgPerfil').attr("src", result);
             }
         }
+
+        const loadProductsItems = async () => {
+            const res = await axios.get('https://wspamolsa.com.pe/api/product/list');
+            setProducts(res.data.data)
+        }
+
+        loadProductsItems();
 
         dispatch(getLineProducts());
         dispatch(getTypesProducts(9, 1));
@@ -230,6 +242,9 @@ const DashboardEditProduct = ({ match }) => {
         formData.append('material_short_name', data.material_short_name);
         for (var i = 0; i < data.business.length; i++) {
             formData.append('business', data.business[i].name);
+        }
+        for (var i = 0; i < data.related_products.length; i++) {
+            formData.append('related_products', data.related_products[i].code);
         }
         for (let pic of productsImages.images) {
             formData.append('file', pic)
@@ -481,6 +496,33 @@ const DashboardEditProduct = ({ match }) => {
                                                 })
                                             }
                                         />
+                                    </div>
+                                </div>
+                                <div className="input-ds rt">
+                                    <div>
+                                        <label>Agregue los productos relacionados</label>
+                                    </div>
+                                    <Controller
+                                        as={
+                                            <CreatableSelect
+                                                isMulti
+                                                styles={selectStyles}
+                                                options={products}
+                                                getOptionLabel={products => products.code}
+                                                getOptionValue={products => products.id}
+                                            />}
+                                        name="related_products"
+                                        isClearable
+                                        control={control}
+                                        rules={{
+                                            required: {
+                                                value: true,
+                                                message: "Ingrese los productos relacionados con el producto"
+                                            }
+                                        }}
+                                    />
+                                    <div className="error-ds">
+                                        {errors.business && errors.business.message}
                                     </div>
                                 </div>
                                 <div className="container-grid-ds-forms doble">

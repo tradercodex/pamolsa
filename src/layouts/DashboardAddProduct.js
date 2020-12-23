@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom'
 import { useForm, Controller } from 'react-hook-form'
 import { setAlert } from '../redux/actions/alert'
 import makeAnimated from 'react-select/animated';
+import Axios from 'axios'
 import $ from 'jquery'
 import '../styles/dashboard.css'
 import {
@@ -32,6 +33,7 @@ const DashboardAddProduct = () => {
     const business = useSelector(state => state.products.typesBusiness)
     const dispatch = useDispatch();
 
+    const [products, setProducts] = useState([]);
     const [productsImages, setProductsImages] = useState({
         images: []
     })
@@ -63,6 +65,13 @@ const DashboardAddProduct = () => {
             }
         }
 
+        const loadProductsItems = async () => {
+            const res = await Axios.get('https://wspamolsa.com.pe/api/product/list');
+            setProducts(res.data.data)
+        }
+
+        loadProductsItems();
+
         dispatch(getLineProducts());
         dispatch(getTypesProducts(100, 1));
         dispatch(getSubtypes());
@@ -70,6 +79,8 @@ const DashboardAddProduct = () => {
         dispatch(getMaterials());
         dispatch(getTypesBusiness());
     }, [])
+
+    console.log(products)
 
     const selectStyles = {
         option: (provided, state) => ({
@@ -156,10 +167,12 @@ const DashboardAddProduct = () => {
         for (var i = 0; i < data.business.length; i++) {
             formData.append('business', data.business[i].name);
         }
+        for (var i = 0; i < data.related_product.length; i++) {
+            formData.append('related_product', data.related_product[i].code);
+        }
         for (let pic of productsImages.images) {
             formData.append('file', pic)
         }
-
         if (formData) {
             dispatch(sendProduct(formData))
             setTimeout(() => {
@@ -171,6 +184,10 @@ const DashboardAddProduct = () => {
         console.log(data)
         e.target.reset();
     }
+
+    const handleChange = (newValue, actionMeta) => {
+
+    };
 
     return (
         <div className="content-ds-fluid">
@@ -402,6 +419,39 @@ const DashboardAddProduct = () => {
                                                 })
                                             }
                                         />
+                                    </div>
+                                </div>
+                                <div className="input-ds rt">
+                                    <div>
+                                        <label>Agregue los productos relacionados</label>
+                                    </div>
+                                    <Controller
+                                        as={
+                                            <CreatableSelect
+                                                isMulti
+                                                styles={selectStyles}
+                                                options={products}
+                                                getOptionLabel={products => products.code}
+                                                getOptionValue={products => products.id}
+                                                components={makeAnimated}
+                                                getNewOptionData={(inputValue, optionLabel) => ({
+                                                    id: optionLabel,
+                                                    code: inputValue,
+                                                    __isNew__: true
+                                                })}
+                                            />}
+                                        name="related_product"
+                                        isClearable
+                                        control={control}
+                                        rules={{
+                                            required: {
+                                                value: true,
+                                                message: "Ingrese los productos relacionados con el producto"
+                                            }
+                                        }}
+                                    />
+                                    <div className="error-ds">
+                                        {errors.business && errors.business.message}
                                     </div>
                                 </div>
                                 <div className="container-grid-ds-forms doble">

@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import { withRouter } from 'react-router-dom'
 import Slider from "react-slick";
 import '../styles/slicks.css'
-import Style from 'style-it'
 import { Link } from 'react-router-dom'
 
 const Slicks = ({ match, banners }) => {

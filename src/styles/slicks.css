@@ -533,6 +533,22 @@
     .content-slick-new {
         height: 80vh !important;
     }
+    .Rotate-slick.Us {
+        height: 111vh !important;
+    }
+    .Radius.Us {
+        top: -70px !important;
+    }
+    .info-slick.Us {
+        left: 50px !important;
+    }
+    .Rotate-slick.Us::after {
+        top: 530px !important;
+        left: -100px !important;
+    }
+    .tree-new.contact img {
+        top: 100px !important;
+    }
 }
  
 @media only screen and (max-width: 1440px) and (max-height: 900px) { 
