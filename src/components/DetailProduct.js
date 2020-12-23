@@ -56,7 +56,7 @@ const DetailProduct = ({ product }) => {
                                     {
                                         product.image && product.image.length > 0 ? 
                                         product.image.map(item => (
-                                            <img src={`http://` + item.url} alt="imagen" />
+                                            <img src={`http://` + item.url} alt={`imagen` + item.url} />
                                         )) : ''
                                     }
                                 </Slider>

@@ -1,9 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Logo from '../images/svg/logo';
 import '../styles/footer.css'
 import ArrowFooter from '../images/svg/arrowfooter'
-import $ from 'jquery'
-
 
 const Footer = () => {
 
@@ -58,9 +56,9 @@ const Footer = () => {
                     <div className="copy-right">
                         <div className="span">Nuestras redes</div>
                         <div className="socials">
-                            <a rel="noopener noreferrer" href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} /></a>
-                            <a rel="noopener noreferrer" href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} /></a>
-                            <a rel="noopener noreferrer" href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} /></a>
+                            <a rel="noopener noreferrer" href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} alt="social"/></a>
+                            <a rel="noopener noreferrer" href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} alt="social"/></a>
+                            <a rel="noopener noreferrer" href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} alt="social"/></a>
                         </div>
                     </div>
                 </div>
@@ -68,9 +66,9 @@ const Footer = () => {
                     <div className="copy-right">
                         <div className="span">Nuestras redes</div>
                         <div className="socials">
-                            <a rel="noopener noreferrer" href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} /></a>
-                            <a rel="noopener noreferrer" href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} /></a>
-                            <a rel="noopener noreferrer" href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} /></a>
+                            <a rel="noopener noreferrer" href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} alt="social"/></a>
+                            <a rel="noopener noreferrer" href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} alt="social"/></a>
+                            <a rel="noopener noreferrer" href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} alt="social"/></a>
                         </div>
                     </div>
                     <div className="copy">
@@ -139,9 +137,9 @@ const Footer = () => {
                     <div className="copy-right">
                         <div className="span">Nuestras redes</div>
                         <div className="socials">
-                            <a rel="noopener noreferrer" href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} /></a>
-                            <a rel="noopener noreferrer" href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} /></a>
-                            <a rel="noopener noreferrer" href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} /></a>
+                            <a rel="noopener noreferrer" href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} alt="social"/></a>
+                            <a rel="noopener noreferrer" href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} alt="social"/></a>
+                            <a rel="noopener noreferrer" href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} alt="social"/></a>
                         </div>
                     </div>
                 </div>
@@ -149,9 +147,9 @@ const Footer = () => {
                     <div className="copy-right">
                         <div className="span">Nuestras redes</div>
                         <div className="socials">
-                            <a rel="noopener noreferrer" href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} /></a>
-                            <a rel="noopener noreferrer" href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} /></a>
-                            <a rel="noopener noreferrer" href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} /></a>
+                            <a rel="noopener noreferrer" href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} alt="social"/></a>
+                            <a rel="noopener noreferrer" href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} alt="social"/></a>
+                            <a rel="noopener noreferrer" href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} alt="social"/></a>
                         </div>
                     </div>
                     <div className="copy">

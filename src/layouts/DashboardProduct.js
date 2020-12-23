@@ -14,14 +14,14 @@ import EditIcon from '@material-ui/icons/Edit'
 import DeleteIcon from '@material-ui/icons/Delete'
 import Pagination from '../components/Pagination'
 
-const useStyles = makeStyles({
+/*const useStyles = makeStyles({
     root: {
         width: '100%',
     },
     container: {
         maxHeight: 440,
     },
-});
+});*/
 
 const DashboardProduct = () => {
 

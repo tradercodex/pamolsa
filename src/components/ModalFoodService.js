@@ -14,15 +14,15 @@ const ModalFoodService = ({ closeModal,title }) => {
                     <div className="informs-pdfs">
                         <h6>{title}</h6>
                         <div className="box-informs-pdf" style={{width: "100%"}}>
-                            <a href={foodService1} target="_blank"><InformDownload /></a>
+                            <a href={foodService1} target="_blank" rel="noopener noreferrer"><InformDownload /></a>
                             <p>Catálogo Food Service</p>
                         </div>
                         <div className="box-informs-pdf" style={{width: "100%"}}>
-                            <a href={foodService2} target="_blank"><InformDownload /></a>
+                            <a href={foodService2} target="_blank" rel="noopener noreferrer"><InformDownload /></a>
                             <p>Catálogo Bioform Cartón</p>
                         </div>
                         <div className="box-informs-pdf" style={{width: "100%"}}>
-                            <a href={foodService3} target="_blank"><InformDownload /></a>
+                            <a href={foodService3} target="_blank" rel="noopener noreferrer"><InformDownload /></a>
                             <p>Catálogo Bioform Fibra</p>
                         </div>
                     </div>

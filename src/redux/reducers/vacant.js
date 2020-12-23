@@ -1,4 +1,4 @@
-import { GET_VACANT, DELETE_VACANT,UPDATE_VACANT } from '../actions/types'
+import { GET_VACANT, DELETE_VACANT, UPDATE_VACANT } from '../actions/types'
 
 const initialState = {
     vacants: []

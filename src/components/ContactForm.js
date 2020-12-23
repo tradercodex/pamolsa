@@ -93,7 +93,6 @@ const ContactForm = () => {
             request: data.request.label,
             country: data.country.label,
         }
-        console.log(body)
         dispacth(sendContact(body))
         handleShowModal();
         e.target.reset();
