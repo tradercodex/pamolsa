@@ -285,6 +285,10 @@ a.active svg circle {
     object-fit: cover;
 }
 
+.img-company-abe {
+    top: -10px;
+}
+
 .input label {
     padding: 14px 25px;
     border-radius: 30px;
