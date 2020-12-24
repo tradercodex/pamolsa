@@ -418,6 +418,11 @@
     transform: rotate(21.34deg);
 }
 
+.Rotate-slick.Us.Main .info-slick.Us {
+    left: 260px;
+    top: 600px ;
+}
+
 .info-slick.Us p {
     width: 385px;
 }
@@ -594,6 +599,10 @@
     .content-slick-home {
         height: 120vh;
     }
+    .Rotate-slick.Us.Main .info-slick.Us {
+        left: -20px !important;
+        top: 880px !important;
+    }
     .Rotate-slick.Us::after {
         background-size: contain;
     }
@@ -618,7 +627,7 @@
         transform: rotate(-20.85deg);
     }
     .info-slick.Us {
-        transform: rotate(26.85deg);
+        transform: rotate(26.34deg);
         top: 1000px !important;
     }
     .Rotate-slick.Us {
@@ -826,6 +835,44 @@
         left: 120px !important;
     }
 }
+
+@media screen and (max-width: 1280px) and (max-height: 800px) {
+    .info-slick.Us {
+        left: 10px;
+    }
+    .Rotate-slick.Us {
+        height: 110vh !important;
+    }
+    .Rotate-slick.Us.Main::after {
+        top: 605px !important;
+        left: -350px !important;
+    }
+    .Rotate-slick.Us.Main.tablet .info-slick {
+        top: 890px !important;
+        left: -100px !important;
+    }
+    .Rotate-slick.Us.Sb::after {
+        top: 605px !important;
+        left: -240px !important;
+    }
+    .Rotate-slick.Us.Wu::after {
+        top: 615px !important;
+        left: -280px !important;
+    }
+    .Rotate-slick.Us.Cl::after {
+        top: 695px !important;
+        left: -260px !important;
+    }
+    .Rotate-slick.Us.New::after {
+        top: 635px !important;
+        left: -380px !important;
+    }
+    .Rotate-slick.Us.Ctt::after {
+        top: 615px !important;
+        left: -280px !important;
+    }
+}
+
 
 @media only screen and (max-width: 1024px) {
     .container-header-rs .Logo-pm {

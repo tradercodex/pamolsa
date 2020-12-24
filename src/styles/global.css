@@ -169,6 +169,34 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
 }
 
 @media screen and (max-height: 1064px) and (max-width: 768px) {
+    .Rotate-slick.Us.Main .info-slick.Us.ls {
+        top: 740px !important;
+        left: -125px !important;
+    }
+    .Rotate-slick.Us.Main.tablet .info-slick {
+        top: 890px !important;
+        left: -100px !important;
+    }
+    .Rotate-slick.Us.Sb.ls::after {
+        top: 355px !important;
+        left: -240px !important;
+    }
+    .Rotate-slick.Us.Wu::after {
+        top: 515px !important;
+        left: -280px !important;
+    }
+    .Rotate-slick.Us.Cl.ls::after {
+        top: 595px !important;
+        left: -260px !important;
+    }
+    .Rotate-slick.Us.New.ls::after {
+        top: 435px !important;
+        left: -380px !important;
+    }
+    .Rotate-slick.Us.Ctt::after {
+        top: 515px !important;
+        left: -380px !important;
+    }
     .form-container .grid-form_doble , .form-container .grid-form_triple , .grid-form_doble_right{
         grid-template-columns: repeat(1,1fr) !important;
     }
@@ -1298,6 +1326,14 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
 
 
 @media screen and (max-height: 896px) and (max-width: 450px) {
+    .Rotate-slick.Us.Wu.ls::after {
+        top: 450px !important;
+        left: -450px !important;
+    }
+    .Rotate-slick.Us.Ctt.ls::after {
+        top: 450px !important;
+        left: -550px !important;
+    }
     .info-slick {
         top: 640px !important;
         left: 0px !important;
@@ -1452,7 +1488,22 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .Rotate-slick.Us.xs::after {
         background-position: 0px -80px !important;
     }
-
+    .Rotate-slick.Us.Sb.ls::after {
+        top: 420px !important;
+        left: -300px !important;
+    }
+    .Rotate-slick.Us.Wu.ls::after {
+        top: 520px !important;
+        left: -400px !important;
+    }
+    .Rotate-slick.Us.New.ls::after {
+        top: 520px !important;
+        left: -400px !important;
+    }
+    .Rotate-slick.Us.Ctt.ls::after {
+        top: 520px !important;
+        left: -480px !important;
+    }
 }
 
 @media screen and (max-height: 896px) and (max-width: 414px) {
@@ -1519,7 +1570,45 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
 }
 
+@media screen and (max-height: 872px) and (max-width: 375px) {
+    .Rotate-slick.Us.ls {
+        height: 108vh !important;
+    }
+    .Rotate-slick.Us.Main .info-slick.Us.ls {
+        top: 700px !important;
+        left: -125px !important;
+    }
+}
+
 @media screen and (max-height: 568px) and (max-width: 320px) {
+    .Rotate-slick.Us.Main.ls::after {
+        top: 220px !important;
+        left: -420px !important;
+    }
+    .Rotate-slick.Us.Main .info-slick.Us.ls {
+        top: 460px !important;
+        left: -100px !important;
+    }
+    .Rotate-slick.Us.Sb.ls::after {
+        top: 220px !important;
+        left: -300px !important;
+    }
+    .Rotate-slick.Us.Wu.ls::after {
+        top: 320px !important;
+        left: -420px !important;
+    }
+    .Rotate-slick.Us.Cl.ls::after {
+        top: 520px !important;
+        left: -200px !important;
+    }
+    .Rotate-slick.Us.New.ls::after {
+        top: 320px !important;
+        left: -400px !important;
+    }
+    .Rotate-slick.Us.Ctt.ls::after {
+        top: 320px !important;
+        left: -550px !important;
+    }
     .Home .content-slick-home.movil {
         height: 90vh !important;
     }
@@ -1667,15 +1756,6 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
 }
 
-@media screen and (max-height: 736px) and (max-width: 414px) {
-    .Rotate-slick.Us {
-        height: 115vh !important;
-    }
-    .Elipse {
-        left: 75px !important;
-    }
-}
-
 @media screen and (max-height: 838px) and (max-width: 414px) {
     .Home .content-slick-home {
         height: 90vh !important;
@@ -1688,6 +1768,22 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
 }
 
+@media screen and (max-height: 736px) and (max-width: 414px) {
+    .Rotate-slick.Us {
+        height: 115vh !important;
+    }
+    .Elipse {
+        left: 75px !important;
+    }
+    .Slicks-pm .info-slick.Us {
+        left: 0px !important;
+    }
+    .Rotate-slick.Us.Main .info-slick.Us.ls {
+        top: 690px !important;
+        left: -125px !important;
+    }
+}
+
 @media screen and (max-height: 667px) and (max-width: 375px) {
     .slick-list .Rotate-slick.Us {
         top: -600px !important;
@@ -1696,7 +1792,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         min-height: 164vh !important;
     }
     .Slicks-pm.Us .slick-slider.slick-initialized .slick-slide {
-        height: 70vh !important;
+        height: 55vh !important;
     }
     .Slicks-pm .Rotate-slick.Us .info-slick.Us {
         top: 700px !important;
@@ -1704,9 +1800,40 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .Slicks-pm .Rotate-slick.Us::after {
         background-position: top !important;
     }
+    .Rotate-slick.Us.Main .info-slick.Us.ls {
+        top: 590px !important;
+        left: -125px !important;
+    }
+    .Rotate-slick.Us.ls {
+        height: 110vh !important;
+    }
+    .Rotate-slick.Us.Main.ls::after {
+        top: 230px !important;
+        left: -550px !important;
+    }
+    .Rotate-slick.Us.Sb.ls::after {
+        top: 240px !important;
+    }
+    .Rotate-slick.Us.Cl.ls::after {
+        top: 430px !important;
+    }
+    .Rotate-slick.Us.New.ls::after {
+        top: 330px !important;
+    }
+    .Rotate-slick.Us.Ctt.ls::after {
+        top: 330px !important;
+        left: -550px !important;
+    }
 }
 
 @media screen and (max-height: 568px) and (max-width: 320px) {
+    .Rotate-slick.Us.Main .info-slick.Us.ls {
+        top: 460px !important;
+        left: -110px !important;
+    }
+    .Rotate-slick.Us.ls {
+        height: 122vh !important;
+    }
     .Slicks-pm .Rotate-slick.Us .info-slick.Us {
         top: 550px !important;
         left: 20px !important;
