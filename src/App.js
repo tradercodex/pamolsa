@@ -37,6 +37,10 @@ TagManager.initialize(tagManagerArgs)
 
 function App() {
 
+  window.dataLayer.push ({ 
+    evento: 'pageview' 
+  });
+
   const dispatch = useDispatch();
 
   useEffect(() => {
