@@ -26,7 +26,7 @@ const Slicks = ({ match, banners }) => {
                             <div className="Radius"></div>
                             <Slider {...settings}>
                                 <div>
-                                    <div className="Rotate-slick movil">
+                                    <div className="Rotate-slick movil xs">
                                         <div className="Elipse movil x">
                                             <img src={require('../images/img/circlebanner.png')} alt="" />
                                         </div>
