@@ -1826,7 +1826,10 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
 }
 
-@media screen and (max-height: 568px) and (max-width: 320px) {
+@media screen and (max-height: 656px) and (max-width: 320px) {
+    .Home .content-slick-home.movil {
+        height: 87vh !important;
+    }
     .Rotate-slick.Us.Main .info-slick.Us.ls {
         top: 460px !important;
         left: -110px !important;
@@ -1844,10 +1847,13 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         left: -10px !important;
     }
     .Rotate-slick::before {
-        height: 145vh !important;
+        height: 160vh !important;
     }
     .Rotate-slick::after {
         height: 86vh !important;
+    }
+    .Rotate-slick.xs::after {
+        background-size: contain !important;
     }
     .img-carbajal.about ,.container-grid.first .square-img-card, .square-sl-sbl, .square-distributor, .container-known_video .play-known .square, .tablet .container-news .square-slick, .wc .square-carbajal, .card-about .square.us, .container-grid .play-known .square {
         max-width: 220px !important;
@@ -1879,6 +1885,12 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         top: 50px !important;
         border-radius: 30px !important;
     }
+    .Known-pm.home .container-products_pm img {
+        max-width: 116px !important;
+    }
+}
+
+@media screen and (min-height: 656px) and (max-width: 320px) {
     .Known-pm.home .container-products_pm img {
         max-width: 116px !important;
     }
