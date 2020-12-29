@@ -224,19 +224,13 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         width: 210px !important;
         height: 240px !important;
     }
-
     .biof {
         top: 150px !important;
         left: 140px !important;
     }
-
     .biof img {
         width: 100px !important;
         height: 70px !important;
-    }
-
-    .client-slick .slick-next::before, .client-slick .slick-prev::before {
-        display: none;
     }
     .Footer-pm {
         display: none;
@@ -1784,6 +1778,15 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
 }
 
+@media screen and (max-height: 851px) and (max-width: 393px) {
+    .Home .content-slick-home.movil {
+        height: 87vh !important;
+    }
+    .Rotate-slick.xs::after {
+        background-size: contain !important;
+    }
+}
+
 @media screen and (max-height: 667px) and (max-width: 375px) {
     .slick-list .Rotate-slick.Us {
         top: -600px !important;
@@ -1826,6 +1829,15 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
 }
 
+@media screen and (max-height: 740px) and (max-width: 360px) {
+    .Home .content-slick-home.movil {
+        height: 87vh !important;
+    }
+    .Rotate-slick.xs::after {
+        background-size: contain !important;
+    }
+}
+
 @media screen and (max-height: 656px) and (max-width: 320px) {
     .Home .content-slick-home.movil {
         height: 87vh !important;
@@ -1852,12 +1864,12 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .Rotate-slick::after {
         height: 86vh !important;
     }
-    .Rotate-slick.xs::after {
-        background-size: contain !important;
-    }
-    .img-carbajal.about ,.container-grid.first .square-img-card, .square-sl-sbl, .square-distributor, .container-known_video .play-known .square, .tablet .container-news .square-slick, .wc .square-carbajal, .card-about .square.us, .container-grid .play-known .square {
+    .img-carbajal.about ,.container-grid.first .square-img-card, .square-sl-sbl, .square-distributor, .container-known_video .play-known .square, .wc .square-carbajal, .card-about .square.us, .container-grid .play-known .square {
         max-width: 220px !important;
         top: -20px !important;
+    }
+    .tablet .container-news .square-slick {
+        max-width: 220px !important;
     }
     .container-vision, .container-mision, .container-promise-value, .container-propose {
         margin-left: 40px !important;
