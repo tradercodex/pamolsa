@@ -31,7 +31,7 @@ import TagManager from 'react-gtm-module'
 const token = localStorage.getItem('token')
 
 const tagManagerArgs = {
-  gtmId: 'GTM-5PSG6K4'
+  gtmId: 'GTM-KZRK4WX'
 }
 TagManager.initialize(tagManagerArgs)
 
