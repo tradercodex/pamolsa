@@ -55,7 +55,7 @@ const DashbaordAddNewspaper = () => {
                 history.push('/administrador/noticias');
                 dispatch(setAlert("Galería guardada correctamente","", 4000))
                 dispatch(getNewsPaper());
-            }, 2000);
+            }, 4000);
         }
         e.target.reset();
     }

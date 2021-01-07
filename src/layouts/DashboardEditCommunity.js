@@ -79,7 +79,7 @@ const DashbaordEditCommunity = ({match}) => {
                 history.push('/administrador/comunidad');
                 dispatch(setAlert("Comunidad editado correctamente", "", 4000))
                 dispatch(getCommunities());
-            }, 2000);
+            }, 4000);
         }
     }
 

@@ -60,7 +60,7 @@ const DashbaordAddNew = () => {
                 history.push('/administrador/noticias');
                 dispatch(setAlert("Noticia guardado correctamente","", 4000))
                 dispatch(getNews(100, 1));
-            }, 2000);
+            }, 4000);
         }
 
         e.target.reset();

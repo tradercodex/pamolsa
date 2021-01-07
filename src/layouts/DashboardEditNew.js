@@ -89,7 +89,7 @@ const DashboardEditNew = ({match}) => {
                 history.push('/administrador/noticias');
                 dispatch(setAlert("Noticia editada correctamente","", 4000))
                 dispatch(getNews());
-            }, 2000);
+            }, 4000);
         }
     }
 

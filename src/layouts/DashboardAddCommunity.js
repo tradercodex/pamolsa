@@ -56,7 +56,7 @@ const DashbaordAddCommunity = () => {
                 history.push('/administrador/comunidad');
                 dispatch(setAlert("Comunidad guardado correctamente", "", 4000))
                 dispatch(getCommunities());
-            }, 2000);
+            }, 4000);
         }
         e.target.reset();
     }

@@ -53,7 +53,7 @@ const StepsQuote = ({
                 dispatch(updateCard());
                 localStorage.clear();
                 history.push('/productos')
-            }, 2000);
+            }, 4000);
         }
         e.target.reset();
     }

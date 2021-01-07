@@ -699,6 +699,10 @@ h2.title-choose_business {
     font-size: 14px;
 }
 
+.img-detail_product .img-product button.slick-next , .img-detail_product .img-product button.slick-prev {
+    display: none !important;
+}
+
 .Count-products {
     grid-column: 4/7;
     position: relative; 

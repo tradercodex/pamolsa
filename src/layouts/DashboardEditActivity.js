@@ -83,7 +83,7 @@ const DashboardEditActivity = ({match}) => {
                 history.push('/administrador/actividades');
                 dispatch(setAlert("Actividad editado correctamente", "", 4000))
                 dispatch(getActivities());
-            }, 2000);
+            }, 4000);
         }
     }
 

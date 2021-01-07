@@ -55,7 +55,7 @@ const DashbaordAddNew = () => {
                 history.push('/administrador/banners');
                 dispatch(setAlert("Banner guardado correctamente","", 4000))
                 dispatch(getBanners(100, 1));
-            }, 2000);
+            }, 4000);
         }
         e.target.reset();
     }

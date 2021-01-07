@@ -1548,8 +1548,8 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
 }
 
 @media screen and (max-height: 667px) and (max-width: 375px) {
-    .Home .content-slick-home.movil {
-        height: 60vh !important;
+    .Home .content-slick-home.md.movil {
+        height: 20vh !important;
     }
     .info-slick {
         top: 580px !important;

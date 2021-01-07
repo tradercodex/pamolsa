@@ -167,9 +167,11 @@ const DashboardAddProduct = () => {
         for (var i = 0; i < data.business.length; i++) {
             formData.append('business', data.business[i].name);
         }
-        for (var i = 0; i < data.related_product.length; i++) {
-            formData.append('related_product', data.related_product[i].code);
-        }
+        if(data.related_product) {
+            for (var i = 0; i < data.related_product.length; i++) {
+                formData.append('related_product', data.related_product[i].code);
+            }
+        } 
         for (let pic of productsImages.images) {
             formData.append('file', pic)
         }
@@ -179,7 +181,7 @@ const DashboardAddProduct = () => {
                 history.push('/administrador/productos');
                 dispatch(setAlert("Producto guardado correctamente", "", 4000))
                 dispatch(getProduct(100, 1));
-            }, 2000);
+            }, 4000);
         }
         console.log(data)
         e.target.reset();
@@ -445,13 +447,13 @@ const DashboardAddProduct = () => {
                                         control={control}
                                         rules={{
                                             required: {
-                                                value: true,
+                                                value: false,
                                                 message: "Ingrese los productos relacionados con el producto"
                                             }
                                         }}
                                     />
                                     <div className="error-ds">
-                                        {errors.business && errors.business.message}
+                                        {errors.related_product && errors.related_product.message}
                                     </div>
                                 </div>
                                 <div className="container-grid-ds-forms doble">

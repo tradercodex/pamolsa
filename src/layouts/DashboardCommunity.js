@@ -22,8 +22,8 @@ const DashboardCommunity = () => {
             setTimeout(() => {
                 dispatch(deleteCommunity(formData));
                 dispatch(getCommunities());
-                dispatch(setAlert("Comunidad eliminada correctamente", "", 2000))
-            }, 2000);
+                dispatch(setAlert("Comunidad eliminada correctamente", "", 4000))
+            }, 4000);
         }
     }
 

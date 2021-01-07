@@ -56,7 +56,7 @@ const DashboardAddActivity = () => {
                 history.push('/administrador/actividades');
                 dispatch(setAlert("Comunidad guardado correctamente", "", 4000))
                 dispatch(getActivities());
-            }, 2000);
+            }, 4000);
         }
         e.target.reset();
     }

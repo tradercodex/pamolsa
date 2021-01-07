@@ -27,7 +27,7 @@ const DashboardVacant = () => {
                 history.push('/administrador/vacantes');
                 dispatch(setAlert("Vacante eliminado correctamente", "", 4000))
                 dispatch(getVacants(100, 1))
-            }, 2000);
+            }, 4000);
         }
     }
 

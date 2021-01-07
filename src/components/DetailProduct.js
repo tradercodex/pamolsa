@@ -93,11 +93,12 @@ const DetailProduct = ({ product }) => {
                                 <div className="whant-need">
                                     <label>Cuantas unidades necesitas</label>
                                     <input 
-                                        type="text" 
+                                        type="number" 
                                         name="units" 
                                         placeholder="1000 unidades" 
                                         ref={
                                             register({
+                                                min: 1, max: 1000,
                                                 required: {
                                                     value: true,
                                                     message: 'Ingrese cuantas unidades desea'

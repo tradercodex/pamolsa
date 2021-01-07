@@ -22,8 +22,8 @@ const DashboardActivity = () => {
             setTimeout(() => {
                 dispatch(deleteActivity(formData));
                 dispatch(getActivities());
-                dispatch(setAlert("Actividad eliminada correctamente", "", 2000))
-            }, 2000);
+                dispatch(setAlert("Actividad eliminada correctamente", "", 4000))
+            }, 4000);
         }
     }
 

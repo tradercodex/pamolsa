@@ -39,9 +39,9 @@ const DashboardNew = () => {
         if (result === true) {
             setTimeout(() => {
                 dispatch(deleteNew(formData))
-                dispatch(setAlert("Noticia eliminada correctamente", "", 2000))
+                dispatch(setAlert("Noticia eliminada correctamente", "", 4000))
                 dispatch(getNews());
-            }, 2000);
+            }, 4000);
         }
     }
 
@@ -53,8 +53,8 @@ const DashboardNew = () => {
             setTimeout(() => {
                 dispatch(getNewsPaper());
                 dispatch(deleteNewPaper(formData))
-                dispatch(setAlert("Galería de noticia eliminada correctamente", "", 2000))
-            }, 2000);
+                dispatch(setAlert("Galería de noticia eliminada correctamente", "", 4000))
+            }, 4000);
         }
     }
 
