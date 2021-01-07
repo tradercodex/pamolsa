@@ -58,7 +58,7 @@ const DashbaordAddVacant = () => {
                 history.push('/administrador/vacantes');
                 dispatch(setAlert("Vacante guardado correctamente", "", 4000))
                 dispatch(getVacants(100, 1));
-            }, 2000);
+            }, 4000);
         }
         e.target.reset();
     }

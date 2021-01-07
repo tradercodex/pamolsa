@@ -21,7 +21,7 @@ const Slicks = ({ match, banners }) => {
         <Fragment>
             {
                 pathname === "/" ?
-                    <div className="content-slick-home movil xs">
+                    <div className="content-slick-home md movil xs">
                         <div className="Slicks-pm">
                             <div className="Radius"></div>
                             <Slider {...settings}>

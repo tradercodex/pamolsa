@@ -65,6 +65,7 @@ const DashboardProduct = () => {
                                 <Table stickyHeader aria-label="sticky table">
                                     <TableHead>
                                         <TableRow>
+                                            <TableCell style={{ color: "#fff" }}>Código</TableCell>
                                             <TableCell style={{ color: "#fff" }}>Imagen</TableCell>
                                             <TableCell style={{ color: "#fff" }}>Producto</TableCell>
                                             <TableCell style={{ color: "#fff" }}>Nombre comercial</TableCell>
@@ -77,7 +78,8 @@ const DashboardProduct = () => {
                                             currentPostsByFilter.map(item => {
                                                 return (
                                                     <TableRow key={item.id}>
-                                                        <TableCell style={{ color: "#fff" }}>{ item.image[0] ? <img width="60" src={`http://` + item.image[0].url} alt="imagen"/> : 'FALTA IMAGEN' }</TableCell>
+                                                        <TableCell style={{ color: "#fff" }}>{item.code}</TableCell>
+                                                        <TableCell style={{ color: "#fff" }}>{item.image[0] ? <img width="60" src={`http://` + item.image[0].url} alt="imagen" /> : 'FALTA IMAGEN'}</TableCell>
                                                         <TableCell style={{ color: "#fff" }}>{item.name}</TableCell>
                                                         <TableCell style={{ color: "#fff" }}>{item.tradename}</TableCell>
                                                         <TableCell><Link style={{ color: "#55F09D" }} to={`/administrador/productos/editar/${item.id}`}><EditIcon /></Link></TableCell>

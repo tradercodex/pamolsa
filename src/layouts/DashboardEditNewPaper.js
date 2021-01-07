@@ -79,7 +79,7 @@ const DashboardEditNewPaper = ({match}) => {
                 history.push('/administrador/noticias');
                 dispatch(setAlert("Galería editada correctamente","", 4000))
                 dispatch(getNewsPaper());
-            }, 2000);
+            }, 4000);
         }
         e.target.reset();
     }

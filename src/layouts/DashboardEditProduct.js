@@ -38,6 +38,11 @@ const DashboardEditProduct = ({ match }) => {
     const [productsImages, setProductsImages] = useState({
         images: []
     })
+
+    const [relatedProducts, setRelatedProducts] = useState({
+        related: []
+    })
+
     const [products, setProducts] = useState([])
 
     const [product, setProduct] = useState({
@@ -96,14 +101,14 @@ const DashboardEditProduct = ({ match }) => {
             line: { label: res.data.data.product_line.name, value: res.data.data.product_line.id },
             product_type: { label: res.data.data.product_type.name, value: res.data.data.product_type.id },
             business_types: res.data.data.business?.map(item => ({ label: item.name, value: item.id })),
-            related_products: res.data.data.related_products?.map(item => ({label: item.code, value: item.id }))
+            related_products: res.data.data.related_products?.map(item => ({ code: item.code, id: item.id }))
         })
         setValue("line", { label: res.data.data.product_line.name, value: res.data.data.product_line.id })
         setValue("product_type", { label: res.data.data.product_type.name, value: res.data.data.product_type.id })
         setValue("product_addtl_subtype", { label: res.data.data.product_addtl_subtype.name, value: res.data.data.product_addtl_subtype.id })
         setValue("material", { label: res.data.data.material.name, value: res.data.data.material.id })
         setValue("business", res.data.data.business?.map(item => ({ name: item.name, id: item.id })))
-        setValue("related_products", res.data.data.related_products?.map(item => ({code: item.code, id: item.id })))
+        setValue("related_products", res.data.data.related_products?.map(item => ({ code: item.code, id: item.id })))
     }
 
     const linesSelect = lines?.map(item => ({ label: item.name, value: item.id }))
@@ -202,6 +207,13 @@ const DashboardEditProduct = ({ match }) => {
         })
     }
 
+    const handleProductsRelated = (e) => {
+        setRelatedProducts({
+            related: e.target.value
+        })
+        console.log(relatedProducts)
+    }
+
     const deleteImage = i => () => {
         setProductsImages({
             images: productsImages.images.filter((image, index) => i !== index)
@@ -214,6 +226,9 @@ const DashboardEditProduct = ({ match }) => {
             popular: e.target.value
         })
     }
+
+    console.log(productsImages)
+    console.log(relatedProducts)
 
     const sendSubmit = (data, e) => {
         const formData = new FormData;
@@ -244,8 +259,8 @@ const DashboardEditProduct = ({ match }) => {
         for (var i = 0; i < data.business.length; i++) {
             formData.append('business', data.business[i].name);
         }
-        for (var i = 0; i < data.related_products.length; i++) {
-            formData.append('related_products', data.related_products[i].code);
+        for (var i = 0; i < data.related_product.length; i++) {
+            formData.append('related_product', data.related_product[i].code);
         }
         for (let pic of productsImages.images) {
             formData.append('file', pic)
@@ -257,7 +272,7 @@ const DashboardEditProduct = ({ match }) => {
                 history.push('/administrador/productos');
                 dispatch(setAlert("Producto editado correctamente", "", 4000))
                 dispatch(getProducts(100, 1));
-            }, 2000);
+            }, 4000);
         }
         e.target.reset();
     }
@@ -269,9 +284,11 @@ const DashboardEditProduct = ({ match }) => {
             setTimeout(() => {
                 window.location.replace(`/administrador/productos/editar/${id}`);
                 dispatch(setAlert("Se elimino la imagen  del producto", "", 4000))
-            }, 2000);
+            }, 4000);
         }
     }
+
+    console.log(product.related_products)
 
     return (
         <div className="content-ds-fluid">
@@ -377,7 +394,7 @@ const DashboardEditProduct = ({ match }) => {
                                                 })
                                             }
                                         />
-                                         <div className="error-ds">
+                                        <div className="error-ds">
                                             {errors.diameter && errors.diameter.message}
                                         </div>
                                     </div>
@@ -396,7 +413,7 @@ const DashboardEditProduct = ({ match }) => {
                                                 })
                                             }
                                         />
-                                          <div className="error-ds">
+                                        <div className="error-ds">
                                             {errors.height && errors.height.message}
                                         </div>
                                     </div>
@@ -415,7 +432,7 @@ const DashboardEditProduct = ({ match }) => {
                                                 })
                                             }
                                         />
-                                         <div className="error-ds">
+                                        <div className="error-ds">
                                             {errors.weight && errors.weight.message}
                                         </div>
                                     </div>
@@ -499,6 +516,7 @@ const DashboardEditProduct = ({ match }) => {
                                         />
                                     </div>
                                 </div>
+
                                 <div className="input-ds rt">
                                     <div>
                                         <label>Agregue los productos relacionados</label>
@@ -517,13 +535,13 @@ const DashboardEditProduct = ({ match }) => {
                                         control={control}
                                         rules={{
                                             required: {
-                                                value: true,
+                                                value: false,
                                                 message: "Ingrese los productos relacionados con el producto"
                                             }
                                         }}
                                     />
                                     <div className="error-ds">
-                                        {errors.business && errors.business.message}
+                                        {errors.related_products && errors.related_products.message}
                                     </div>
                                 </div>
                                 <div className="container-grid-ds-forms doble">
@@ -758,7 +776,7 @@ const DashboardEditProduct = ({ match }) => {
                                             {
                                                 product.file && product.file.length > 0 ?
                                                     product.file.map(item => (
-                                                        <div>
+                                                        <div key={item.id}>
                                                             <img style={{ width: "100%" }} id="imgPerfil" src={`http://` + item.url || require('../images/img/uploadimage.jpg')} alt="img" />
                                                             <button onClick={() => deletingProductImage(item.id)} className="delete"><Delete /></button>
                                                         </div>

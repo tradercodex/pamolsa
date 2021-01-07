@@ -305,6 +305,18 @@ const Clients = ({ match }) => {
                                 <div className="img-client_slick">
                                     <img src={require('../images/img/tradicional2.jpg')} alt="imagen" />
                                 </div>
+                                <div className="img-client_slick">
+                                    <img src={require('../images/img/tradicional3.png')} alt="imagen" />
+                                </div>
+                                <div className="img-client_slick">
+                                    <img src={require('../images/img/tradicional4.png')} alt="imagen" />
+                                </div>
+                                <div className="img-client_slick">
+                                    <img src={require('../images/img/tradicional5.jpg')} alt="imagen" />
+                                </div>
+                                <div className="img-client_slick">
+                                    <img src={require('../images/img/tradicional6.png')} alt="imagen" />
+                                </div>
                             </div>
                         </div>
                     </div>
