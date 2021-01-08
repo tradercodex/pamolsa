@@ -33,9 +33,11 @@ const DashboardAddProduct = () => {
     const business = useSelector(state => state.products.typesBusiness)
     const dispatch = useDispatch();
 
-    const [products, setProducts] = useState([]);
     const [productsImages, setProductsImages] = useState({
         images: []
+    })
+    const [productsRelationates, setProductsRelationates] = useState({
+        related_products: []
     })
 
     useEffect(() => {
@@ -65,13 +67,6 @@ const DashboardAddProduct = () => {
             }
         }
 
-        const loadProductsItems = async () => {
-            const res = await Axios.get('https://wspamolsa.com.pe/api/product/list');
-            setProducts(res.data.data)
-        }
-
-        loadProductsItems();
-
         dispatch(getLineProducts());
         dispatch(getTypesProducts(100, 1));
         dispatch(getSubtypes());
@@ -79,8 +74,6 @@ const DashboardAddProduct = () => {
         dispatch(getMaterials());
         dispatch(getTypesBusiness());
     }, [])
-
-    console.log(products)
 
     const selectStyles = {
         option: (provided, state) => ({
@@ -152,7 +145,7 @@ const DashboardAddProduct = () => {
         formData.append('ue_intern', data.ue_intern)
         formData.append('ue_master', data.ue_master);
         formData.append('uee', data.uee);
-        formData.append('popular',data.popular)
+        formData.append('popular', data.popular)
         formData.append('unit', data.unit)
         formData.append('min_quantity', data.min_quantity);
         formData.append('shape', data.shape)
@@ -167,13 +160,11 @@ const DashboardAddProduct = () => {
         for (var i = 0; i < data.business.length; i++) {
             formData.append('business', data.business[i].name);
         }
-        if(data.related_product) {
-            for (var i = 0; i < data.related_product.length; i++) {
-                formData.append('related_product', data.related_product[i].code);
-            }
-        } 
         for (let pic of productsImages.images) {
             formData.append('file', pic)
+        }
+        for (let picRelated of productsRelationates.related_products) {
+            formData.append('related_product', picRelated.related_product)
         }
         if (formData) {
             dispatch(sendProduct(formData))
@@ -185,6 +176,31 @@ const DashboardAddProduct = () => {
         }
         console.log(data)
         e.target.reset();
+    }
+
+    const addProductRelacionated = () => {
+        setProductsRelationates({
+            related_products: productsRelationates.related_products.concat([{ related_product: '' }])
+        })
+    }
+
+    const deleteProductRelacionated = i => () => {
+        setProductsRelationates({
+            related_products: productsRelationates.related_products.filter((related_product,index) => i !== index)
+        })
+    }
+
+    const readCode = i => e => {
+        const newCode = productsRelationates.related_products.map((related_product, index) => {
+            if(i !== index) return related_product;
+            return {
+                ...related_product,
+                related_product: e.target.value
+            }
+        }) 
+        setProductsRelationates({
+            related_products: newCode
+        })
     }
 
     const handleChange = (newValue, actionMeta) => {
@@ -308,7 +324,7 @@ const DashboardAddProduct = () => {
                                                 })
                                             }
                                         />
-                                         <div className="error-ds">
+                                        <div className="error-ds">
                                             {errors.diameter && errors.diameter.message}
                                         </div>
                                     </div>
@@ -326,7 +342,7 @@ const DashboardAddProduct = () => {
                                                 })
                                             }
                                         />
-                                          <div className="error-ds">
+                                        <div className="error-ds">
                                             {errors.height && errors.height.message}
                                         </div>
                                     </div>
@@ -344,7 +360,7 @@ const DashboardAddProduct = () => {
                                                 })
                                             }
                                         />
-                                         <div className="error-ds">
+                                        <div className="error-ds">
                                             {errors.weight && errors.weight.message}
                                         </div>
                                     </div>
@@ -424,37 +440,24 @@ const DashboardAddProduct = () => {
                                     </div>
                                 </div>
                                 <div className="input-ds rt">
-                                    <div>
+                                    <div className="related-products_add">
                                         <label>Agregue los productos relacionados</label>
+                                        <button onClick={addProductRelacionated} type="button"> + Agregar producto relacionado</button>
                                     </div>
-                                    <Controller
-                                        as={
-                                            <CreatableSelect
-                                                isMulti
-                                                styles={selectStyles}
-                                                options={products}
-                                                getOptionLabel={products => products.code}
-                                                getOptionValue={products => products.id}
-                                                components={makeAnimated}
-                                                getNewOptionData={(inputValue, optionLabel) => ({
-                                                    id: optionLabel,
-                                                    code: inputValue,
-                                                    __isNew__: true
-                                                })}
-                                            />}
-                                        name="related_product"
-                                        isClearable
-                                        control={control}
-                                        rules={{
-                                            required: {
-                                                value: false,
-                                                message: "Ingrese los productos relacionados con el producto"
-                                            }
-                                        }}
-                                    />
-                                    <div className="error-ds">
-                                        {errors.related_product && errors.related_product.message}
-                                    </div>
+                                    {
+                                        productsRelationates.related_products.map((input, index) => (
+                                            <div key={index}>
+                                                <label>Producto relacionado {index + 1}:</label>
+                                                <div className="related-products_add">
+                                                    <input
+                                                        type="text"
+                                                        onChange={readCode(index)}
+                                                    />
+                                                    <button onClick={deleteProductRelacionated(index)} type="button">Eliminar</button>
+                                                </div>
+                                            </div>
+                                        ))
+                                    }
                                 </div>
                                 <div className="container-grid-ds-forms doble">
                                     <div className="input-ds">
@@ -616,7 +619,7 @@ const DashboardAddProduct = () => {
                                         rules={{
                                             required: {
                                                 value: true,
-                                                message: "Ingrese el agredado del tipo del producto"
+                                                message: "Ingrese el agregado del tipo del producto"
                                             }
                                         }}
                                     />

@@ -48,6 +48,11 @@
     border-radius: 10px;
 }
 
+.related-products_add {
+    display: flex;
+    justify-content: space-between;
+}
+
 body {
     background: #F9F9F9;
     position: relative;
