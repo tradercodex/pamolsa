@@ -289,7 +289,7 @@ const DashboardEditProduct = ({ match }) => {
             ...product,
             related_products: product.related_products.filter((related_product, index) => i !== index)
         })
-        const res = await axios.put(`http://3.120.185.254:8090/api/product/related/delete?related_product_id=${id}`,null,config)
+        const res = await axios.put(`https://wspamolsa.com.pe/api/product/related/delete?related_product_id=${id}`,null,config)
         console.log(res.data)
     }
 
