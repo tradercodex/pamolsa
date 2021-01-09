@@ -48,6 +48,11 @@
     border-radius: 10px;
 }
 
+.related-products_add {
+    display: flex;
+    justify-content: space-between;
+}
+
 body {
     background: #F9F9F9;
     position: relative;
@@ -745,19 +750,22 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .Rotate-slick::before {
         left: -23px !important;
         height: 144vh !important;
-        background-color: rgba(0, 82, 134, 0.4) !important;
+        /* background-color: rgba(0, 82, 134, 0.4) !important; */
         transform: rotate(19deg) !important;
     }
     .Rotate-slick {
         height: 87vh !important;
         left: -80px !important;
+        /* top: -380px !important; */
         top: -380px !important;
         transform: rotate(-19deg) !important;
         border-radius: 60px !important;
     }
     .Rotate-slick::after {
         height: 85vh !important;
-        left: -42px !important;
+        /* left: -42px !important; */
+        top: 300px !important;
+        left: -52px !important;
         background-size: unset !important;
         transform: rotate(19deg) !important;
     }
@@ -1549,7 +1557,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
 
 @media screen and (max-height: 667px) and (max-width: 375px) {
     .Home .content-slick-home.md.movil {
-        height: 20vh !important;
+        height: 60vh !important;
     }
     .info-slick {
         top: 580px !important;
@@ -1603,12 +1611,12 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         top: 320px !important;
         left: -550px !important;
     }
-    .Home .content-slick-home.movil {
+    .Home .content-slick-home.movil.ss {
         height: 90vh !important;
     }
     .Rotate-slick::after.movil {
         top: 300px !important;
-        background-image: url("../images/img/bannermovil.png") !important;
+        /* background-image: url("../images/img/bannermovil.png") !important; */
     }
     .Elipse.movil {
         top: 0px !important;

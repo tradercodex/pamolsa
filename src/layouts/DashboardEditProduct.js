@@ -23,6 +23,14 @@ import {
 }
     from '../redux/actions/product'
 
+const token = localStorage.getItem('token')
+
+let config = {
+    headers: {
+        'x-access-token': token
+    }
+}
+
 const DashboardEditProduct = ({ match }) => {
 
     const id = match.params.id
@@ -39,11 +47,9 @@ const DashboardEditProduct = ({ match }) => {
         images: []
     })
 
-    const [relatedProducts, setRelatedProducts] = useState({
-        related: []
+    const [productsRelationates, setProductsRelationates] = useState({
+        related_products: []
     })
-
-    const [products, setProducts] = useState([])
 
     const [product, setProduct] = useState({
         name: '',
@@ -100,7 +106,7 @@ const DashboardEditProduct = ({ match }) => {
             line: { label: res.data.data.product_line.name, value: res.data.data.product_line.id },
             product_type: { label: res.data.data.product_type.name, value: res.data.data.product_type.id },
             business_types: res.data.data.business?.map(item => ({ label: item.name, value: item.id })),
-            related_products: res.data.data.related_products?.map(item => ({ code: item.code, id: item.id }))
+            related_products: res.data.data.related_products?.map(item => ({ related_product: item.code, id: item.id }))
         })
         setValue("line", { label: res.data.data.product_line.name, value: res.data.data.product_line.id })
         setValue("product_type", { label: res.data.data.product_type.name, value: res.data.data.product_type.id })
@@ -141,13 +147,6 @@ const DashboardEditProduct = ({ match }) => {
                 $('#imgPerfil').attr("src", result);
             }
         }
-
-        const loadProductsItems = async () => {
-            const res = await axios.get('https://wspamolsa.com.pe/api/product/list');
-            setProducts(res.data.data)
-        }
-
-        loadProductsItems();
 
         dispatch(getLineProducts());
         dispatch(getTypesProducts(9, 1));
@@ -206,13 +205,6 @@ const DashboardEditProduct = ({ match }) => {
         })
     }
 
-    const handleProductsRelated = (e) => {
-        setRelatedProducts({
-            related: e.target.value
-        })
-        console.log(relatedProducts)
-    }
-
     const deleteImage = i => () => {
         setProductsImages({
             images: productsImages.images.filter((image, index) => i !== index)
@@ -225,9 +217,6 @@ const DashboardEditProduct = ({ match }) => {
             popular: e.target.value
         })
     }
-
-    console.log(productsImages)
-    console.log(relatedProducts)
 
     const sendSubmit = (data, e) => {
         const formData = new FormData;
@@ -258,8 +247,8 @@ const DashboardEditProduct = ({ match }) => {
         for (var i = 0; i < data.business.length; i++) {
             formData.append('business', data.business[i].name);
         }
-        for (var i = 0; i < data.related_product.length; i++) {
-            formData.append('related_product', data.related_product[i].code);
+        for (let picRelated of product.related_products) {
+            formData.append('related_product', picRelated.related_product)
         }
         for (let pic of productsImages.images) {
             formData.append('file', pic)
@@ -273,6 +262,7 @@ const DashboardEditProduct = ({ match }) => {
                 dispatch(getProducts(100, 1));
             }, 4000);
         }
+        console.log(data)
         e.target.reset();
     }
 
@@ -287,7 +277,35 @@ const DashboardEditProduct = ({ match }) => {
         }
     }
 
-    console.log(product.related_products)
+    const addProductRelacionated = () => {
+        setProduct({
+            ...product,
+            related_products: product.related_products.concat([{ related_product: '' }])
+        })
+    }
+
+    const deleteProductRelacionated = (id,i) => async() => {
+        setProduct({
+            ...product,
+            related_products: product.related_products.filter((related_product, index) => i !== index)
+        })
+        const res = await axios.put(`http://3.120.185.254:8090/api/product/related/delete?related_product_id=${id}`,null,config)
+        console.log(res.data)
+    }
+
+    const readCode = i => e => {
+        const newCode = product.related_products.map((related_product, index) => {
+            if (i !== index) return related_product;
+            return {
+                ...related_product,
+                related_product: e.target.value
+            }
+        })
+        setProduct({
+            ...product,
+            related_products: newCode
+        })
+    }
 
     return (
         <div className="content-ds-fluid">
@@ -515,33 +533,26 @@ const DashboardEditProduct = ({ match }) => {
                                         />
                                     </div>
                                 </div>
-
                                 <div className="input-ds rt">
-                                    <div>
+                                    <div className="related-products_add">
                                         <label>Agregue los productos relacionados</label>
+                                        <button onClick={addProductRelacionated} type="button"> + Agregar producto relacionado</button>
                                     </div>
-                                    <Controller
-                                        as={
-                                            <CreatableSelect
-                                                isMulti
-                                                styles={selectStyles}
-                                                options={products}
-                                                getOptionLabel={products => products.code}
-                                                getOptionValue={products => products.id}
-                                            />}
-                                        name="related_products"
-                                        isClearable
-                                        control={control}
-                                        rules={{
-                                            required: {
-                                                value: false,
-                                                message: "Ingrese los productos relacionados con el producto"
-                                            }
-                                        }}
-                                    />
-                                    <div className="error-ds">
-                                        {errors.related_products && errors.related_products.message}
-                                    </div>
+                                    {
+                                        product.related_products.map((input, index) => (
+                                            <div key={index}>
+                                                <label>Producto relacionado {index + 1}:</label>
+                                                <div className="related-products_add">
+                                                    <input
+                                                        type="text"
+                                                        onChange={readCode(index)}
+                                                        defaultValue={input.related_product}
+                                                    />
+                                                    <button onClick={deleteProductRelacionated(input.id, index)} type="button">Eliminar</button>
+                                                </div>
+                                            </div>
+                                        ))
+                                    }
                                 </div>
                                 <div className="container-grid-ds-forms doble">
                                     <div className="input-ds">

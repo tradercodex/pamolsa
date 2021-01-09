@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import { withRouter } from 'react-router-dom'
 import Slider from "react-slick";
+import catalogoExpress from '../pdf/catalogoexpress.pdf'
 import '../styles/slicks.css'
-import { Link } from 'react-router-dom'
 
 const Slicks = ({ match, banners }) => {
 
@@ -21,31 +21,33 @@ const Slicks = ({ match, banners }) => {
         <Fragment>
             {
                 pathname === "/" ?
-                    <div className="content-slick-home md movil xs">
+                    <div className="content-slick-home md movil xs ss">
                         <div className="Slicks-pm">
                             <div className="Radius"></div>
                             <Slider {...settings}>
                                 <div>
-                                    <div className="Rotate-slick movil xs">
-                                        <div className="Elipse movil x">
+                                    <a target="_blank" href={catalogoExpress}>
+                                        <div className="Rotate-slick movil xs ss">
+                                            {/* <div className="Elipse movil x">
                                             <img src={require('../images/img/circlebanner.png')} alt="" />
                                         </div>
                                         <div className="biof movil x">
                                             <img src={require('../images/img/bioformbanner.png')} alt="" />
-                                        </div>
-                                        <div className="info-slick">
+                                        </div> */}
+                                            {/* <div className="info-slick">
                                             <h2>Nuestra línea de empaques</h2>
                                             <p>hechos con fibra de bagazo de caña de azúcar</p>
                                             <div className="more-btn">
                                                 <Link to="/productos/linea/2">Conocer más</Link>
                                             </div>
+                                        </div> */}
                                         </div>
-                                    </div>
-                                    <div className="footer-slick">
-                                        <div className="tree-pm banner">
-                                            <img src={require('../images/img/tree.gif')} alt="imagen" />
+                                        <div className="footer-slick">
+                                            <div className="tree-pm banner">
+                                                <img src={require('../images/img/tree.gif')} alt="imagen" />
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                             </Slider>
                         </div>
