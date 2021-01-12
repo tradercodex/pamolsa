@@ -523,6 +523,9 @@ body.date-20201112 {
 }
 
 @media screen and (max-height: 1366px) and (max-width: 1024px) {
+    .Rotate-slick::before {
+        left: 92px;
+    }
     .content-slick-new.new {
         height: 55vh !important;
     }
