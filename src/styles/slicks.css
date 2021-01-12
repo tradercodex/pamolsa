@@ -56,8 +56,8 @@
     position: absolute;
     z-index: 1023;
     content: '';
-    /* background-color: rgba(0, 82, 134, 0.2); */
-    left: 0px;
+    background-color: rgba(0, 82, 134, 0.2);
+    left: 45px;
     top: 240px;
     transform: rotate(21.34deg);
     width: 100%;
@@ -81,15 +81,31 @@
     z-index: 1022;
     position: absolute;
     background-blend-mode: soft-light;
-    background-color: rgba(156, 167, 8, 0.1);
+    background-color: rgba(144, 145, 135, 0.3);
     background-repeat: no-repeat;
     background-size: cover;
-    left: -26px;
-    top: 317px;
-    background-image: url("../images/img/bannerexpress.jpg");
+    left: 28px;
+    top: 346px;
+    background-image: url("../images/img/bannerexpress.png");
     transform: rotate(21.34deg);
     min-width: 100%;
-    height: 100%;
+    height: 101%;
+}
+
+.Rotate-slick.second::after {
+    content: '';
+    z-index: 1022;
+    position: absolute;
+    background-blend-mode: soft-light;
+    background-color: rgba(8, 117, 167, 0.3);
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 28px;
+    top: 346px;
+    background-image: url("../images/img/bannerhome.jpg");
+    transform: rotate(21.34deg);
+    min-width: 100%;
+    height: 101%;
 }
 
 .Rotate-slick.Us::after {
@@ -348,7 +364,7 @@
     position: absolute;
     z-index: 999999;
     top: 50px;
-    left: 230px;
+    left: 234px;
     transform: rotate(21.34deg);
     background-repeat: no-repeat;
 }
@@ -375,9 +391,10 @@
 .Slicks-pm ul.slick-dots {
     transform: rotate(90deg);
     right: 0px;
-    top: -210px;
+    top: 270px;
     z-index: 1000;
-    height: 100%;
+    width: 15%;
+    height: 10%;
 }
 
 .slick-dots li button:before {
