@@ -29,12 +29,12 @@ const Footer = () => {
                                 <div className="center">
                                     <a rel="noopener noreferrer" target="_blank" href="https://pamolsa.com.pe/web/frontend/files/POLITICA_DE_PROTECCION_DE_DATOS2020.pdf">Politica de privacidad</a>
                                 </div>
-                                <div className="cell">
+                                {/*<div className="cell">
                                     <a href="">Documento 1</a>
                                 </div>
                                 <div className="cell">
                                     <a href="">Documento 2</a>
-                                </div>
+                                </div>*/}
                             </div>
                         </div>
                     </div>
@@ -43,7 +43,8 @@ const Footer = () => {
                             <h6>Contacto</h6>
                             <div className="info-contact">
                                 <div className="center">Central: (511) 710 3020</div>
-                                <div className="cell">Central de ventas: (01) 641 9595 WhatsApp: 934 440 291</div>
+                                <div className="cell">Central de ventas: (01) 641 9595</div>
+                                <div className="cell">WhatsApp: 934 440 291</div>
                             </div>
                         </div>
                     </div>
@@ -122,7 +123,8 @@ const Footer = () => {
                                 </div>
                                 <div className="info-contact content">
                                     <div className="center">Central: (511) 710 3020</div>
-                                    <div className="cell">Central de ventas: (01) 641 9595 WhatsApp: 934 440 291</div>
+                                    <div className="cell">Central de ventas: (01) 641 9595</div>
+                                    <div className="cell">WhatsApp: 934 440 291</div>
                                 </div>
                             </div>
                         </div>
