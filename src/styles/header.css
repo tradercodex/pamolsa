@@ -70,7 +70,7 @@
     margin-right: 20px;
 }
 
-.Container-header_pm .Options-pm_qe .Ecommerce-btn button, .container-header-rs .Ecommerce-btn button {
+.Container-header_pm .Options-pm_qe .Ecommerce-btn a, .container-header-rs .Ecommerce-btn a {
     background: #009FE3;
     border-radius: 30px;
     border: none;
@@ -83,13 +83,14 @@
     font-size: 14px;
     font-weight: bold;
     padding: 10px 20px;
+    text-decoration: none;
 }
 
-.container-header-rs .Ecommerce-btn button {
+.container-header-rs .Ecommerce-btn a {
     display: none !important;
 }
 
-.Container-header_pm .Options-pm_qe .Ecommerce-btn button svg{
+.Container-header_pm .Options-pm_qe .Ecommerce-btn a svg{
     margin-right: 10px;
 }
 
@@ -133,7 +134,7 @@
     color: #4D4D4C;
     font-size: 14px;
   }
-  
+
   .select-sim::after {
     content:"";
     background-image: url('../images/img/arrowselect.png');
@@ -146,11 +147,11 @@
     right: 10px;
     transform:translate(90%, -30%);
   }
-  
+
   .container-header-rs .close-modal {
         display: none;
   }
-  
+
   .select-sim .options .option input {
     width:0;
     height:0;
@@ -161,7 +162,7 @@
     justify-content: flex-start;
     position: absolute;
   }
-  
+
   .select-sim .options .option input:checked + label {
     display:flex;
     justify-content: flex-start;
@@ -289,7 +290,7 @@
         display: block !important;
         margin-top: 6px;
         margin-bottom: 2px;
-    }    
+    }
     .movile-active .container-header-rs .Logo-pm svg {
         display: none;
     }

@@ -108,9 +108,9 @@ const ContactForm = () => {
                             <div className="input">
                                 <Controller
                                     as={
-                                    <ReactSelect 
-                                        styles={selectStyles} 
-                                        options={optionsContact} 
+                                    <ReactSelect
+                                        styles={selectStyles}
+                                        options={optionsContact}
                                         placeholder="¿Cuál es tu requerimiento?"
                                     />}
                                     name="request"
@@ -184,9 +184,9 @@ const ContactForm = () => {
                             <div className="input">
                                 <Controller
                                     as={
-                                        <ReactSelect 
-                                        styles={selectStyles} 
-                                        options={optionsCountry} 
+                                        <ReactSelect
+                                        styles={selectStyles}
+                                        options={optionsCountry}
                                         placeholder="País"
                                         />
                                     }
@@ -243,7 +243,7 @@ const ContactForm = () => {
                                 {errors.comments && errors.comments.message}
                             </span>
                             <div className="conditions">
-                               <input 
+                               <input
                                 type="checkbox"
                                 name="condition"
                                 ref={
@@ -286,7 +286,7 @@ const ContactForm = () => {
                         <div className="flx">
                             <ContactMarker />
                             <div>
-                                <p>Dirección</p>
+                                <p>Teléfonos</p>
                                 <span>Av. Elmer Faucett 3486 Urb.Bocanegra, Callao</span>
                             </div>
                         </div>
