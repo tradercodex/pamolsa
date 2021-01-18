@@ -40,9 +40,9 @@ const Header = ({ match, number }) => {
                     <div className="container-header-rs">
                         <div className="Logo-pm">
                             <Link to="/"><Logo /></Link>
-                            {/* <div className="Ecommerce-btn">
-                                <button><Cart />Ir a ecommerce</button>
-                            </div> */}
+                            <div className="Ecommerce-btn">
+                                <a href="https://www.pamolsaexpress.com" target="_blank"><Cart />Ir a ecommerce</a>
+                            </div>
                         </div>
                         <div className="options-pm-rs">
                             <div className="Quote-btn">
@@ -56,7 +56,7 @@ const Header = ({ match, number }) => {
                             </div>
                         </div>
                         {
-                            token ? 
+                            token ?
                             <nav className="Nav-pm">
                             <ul>
                                 <li><Link to="/administrador/banners">Admin</Link></li>
@@ -116,7 +116,7 @@ const Header = ({ match, number }) => {
                     <div className="Call-pm" style={{ background: "#ECECEC" }}>
                         <div className="Container-header_pm">
                             {
-                                token ? 
+                                token ?
                                 <li style={{listStyle: "none", marginLeft: "50px"}}><Link style={{color: "#4d4d4d"}} to="/administrador/banners"><User /></Link></li> : ''
                             }
                             <div className="phones">
@@ -160,9 +160,9 @@ const Header = ({ match, number }) => {
                                 <div className="Quote-btn">
                                     <Link to="/cotizador"><Quote number={number} /></Link>
                                 </div>
-                                {/* <div className="Ecommerce-btn">
-                                    <button><Cart />Ir a ecommerce</button>
-                                </div> */}
+                                <div className="Ecommerce-btn">
+                                    <a href="https://www.pamolsaexpress.com" target="_blank"><Cart />Ir a ecommerce</a>
+                                </div>
                             </div>
                         </div>
                     </div>

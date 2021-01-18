@@ -109,9 +109,9 @@ const ContactForm = () => {
                             <div className="input">
                                 <Controller
                                     as={
-                                    <ReactSelect 
-                                        styles={selectStyles} 
-                                        options={optionsContact} 
+                                    <ReactSelect
+                                        styles={selectStyles}
+                                        options={optionsContact}
                                         placeholder="¿Cuál es tu requerimiento?"
                                     />}
                                     name="request"
@@ -185,9 +185,9 @@ const ContactForm = () => {
                             <div className="input">
                                 <Controller
                                     as={
-                                        <ReactSelect 
-                                        styles={selectStyles} 
-                                        options={optionsCountry} 
+                                        <ReactSelect
+                                        styles={selectStyles}
+                                        options={optionsCountry}
                                         placeholder="País"
                                         />
                                     }
@@ -244,7 +244,7 @@ const ContactForm = () => {
                                 {errors.comments && errors.comments.message}
                             </span>
                             <div className="conditions">
-                               <input 
+                               <input
                                 type="checkbox"
                                 name="condition"
                                 ref={
@@ -287,7 +287,7 @@ const ContactForm = () => {
                         <div className="flx">
                             <ContactMarker />
                             <div>
-                                <p>Dirección</p>
+                                <p>Teléfonos</p>
                                 <span>Av. Elmer Faucett 3486 Urb.Bocanegra, Callao</span>
                             </div>
                         </div>
@@ -298,8 +298,8 @@ const ContactForm = () => {
                             <ContactCall />
                             <div>
                                 <p>Dirección</p>
-                                <div><span>Teléfonos Central: (511) 710-3020</span></div>
-                                <div><span>Ventas: 994644843 / 994647087</span><div>
+                                <div><span>Central: (511) 710 3020</span></div>
+                                <div><span>Central de ventas: (01) 641 9595 WhatsApp: 934 440 291</span><div>
                                 </div>
                                 </div>
                             </div>

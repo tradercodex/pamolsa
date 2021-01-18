@@ -112,7 +112,7 @@ const Slicks = ({ match, banners }) => {
                                             <p>Tel: (01) 641-9595  - Wsp: 934-440291</p>
                                             <p>Horario de atención: Lunes a viernes 8:30 am - 5:30 pm</p>
                                             <div className="more-btn">
-                                                <a style={{ background: "#005382" }} target="_blank" href={catalogoExpress}>Ver catálogo</a>
+                                                <a style={{ background: "#005382" }} href="https://www.pamolsaexpress.com" target="_blank">Ir al Ecommerce</a>
                                             </div>
                                         </div>
                                     </div>
