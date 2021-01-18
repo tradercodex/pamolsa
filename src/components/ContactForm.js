@@ -297,11 +297,11 @@ const ContactForm = () => {
                         <div className="flx">
                             <ContactCall />
                             <div>
-                                <p>Dirección</p>
-                                <div><span>Teléfonos Central: (511) 710-3020</span></div>
-                                <div><span>Ventas: 994644843 / 994647087</span><div>
-                                </div>
-                                </div>
+                                <p>Teléfonos</p>
+                                <div><span>Central: (511) 710 3020</span></div>
+                                <div><span>Central de ventas: (01) 641 9595</span></div>
+                                <div><span>WhatsApp: 934 440 291</span></div>
+                                
                             </div>
                         </div>
                     </div>

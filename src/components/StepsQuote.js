@@ -280,7 +280,7 @@ const StepsQuote = ({
                                                 </div>
                                             </div>
                                             <div class="form-group clearfix send-options-quote">
-                                                <a href="javascript:;" class="form-wizard-previous-btn float-left">Ir a Ecommerce</a>
+                                                <a href="javascript:;" class="form-wizard-previous-btn float-left">Ir al Ecommerce</a>
                                                 <button className="send-cart" type="submit" style={{ background: "#82A776" }}>Enviar cotización</button>
                                             </div>
                                         </fieldset>
