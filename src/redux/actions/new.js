@@ -27,7 +27,7 @@ let config = {
 
 export const sendNew = (data) => async dispatch => {
     try {
-        const res = await axios.post(`${root}/news/save`, data, config);
+        const res = await axios.post(`https://wspamolsa.com.pe/api/news/save`, data, config);
         dispatch({
             type: SEND_NEW,
             payload: res.data
