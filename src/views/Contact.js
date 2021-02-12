@@ -7,6 +7,8 @@ import { useSelector } from 'react-redux'
 
 const Contact = () => {
 
+    
+
     const cart = useSelector(state => state.cart)
 
     const [cartItems, setCartItems] = useState(cart.cartItems)
