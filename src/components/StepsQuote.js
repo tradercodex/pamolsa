@@ -294,7 +294,7 @@ const StepsQuote = ({
                         <Link className="quote-back" to="/productos">Productos</Link>
                     </div>
             }
-            { showModal && <ModalSendCart closeModal={closeModal} title="Su cotización fue enviada con exito" subtitle="Muy pronto le responderemos con una cotización ideal para usted" />}
+            { showModal && <ModalSendCart closeModal={closeModal} title="Su cotización fue enviada con exito" subtitle="Muy pronto le responderemos con una cotización ideal para usted" classModalName="thanks-cotizacion" />}
         </>
     );
 }

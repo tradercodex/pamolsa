@@ -2,7 +2,7 @@ import React from 'react'
 import CheckSend from '../images/svg/checksend'
 import CloseModal from '../images/svg/closemodal';
 
-const ModalSendCart = ({closeModal, title, subtitle}) => {
+const ModalSendCart = ({closeModal, title, subtitle, classModalName = ""}) => {
     return (
         <div className="content-modal quote">
             <div className="modal-send">
@@ -10,7 +10,7 @@ const ModalSendCart = ({closeModal, title, subtitle}) => {
                 <div className="info-content">
                     <CheckSend />
                     <h4>{title}</h4>
-                    <p>{subtitle}</p>
+                    <p className={classModalName}>{subtitle}</p>
                 </div>
             </div>
         </div>
