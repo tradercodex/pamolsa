@@ -88,17 +88,7 @@ const ContactForm = () => {
     };
 
     const onSubmit = (data,e) => {
-
-        window.dataLayer.push ({ 
-            event: 'event',
-            eventProps: {
-                category: 'client',
-                action: 'contact',
-                label: 'premium',
-                value: 1
-            }
-        });
-        
+                
         const body = {
             ...data,
             request: data.request.label,
