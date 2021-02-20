@@ -41,11 +41,7 @@ const Header = ({ match, number }) => {
                         <div className="Logo-pm">
                             <Link to="/"><Logo /></Link>
                             <div className="Ecommerce-btn">
-<<<<<<< HEAD
                                 <a href="https://www.pamolsaexpress.com" target="_blank"><Cart />Ir a ecommerce</a>
-=======
-                                <a href="http://www.pamolsaexpress.com" target="_blank"><button><Cart />Ir a ecommerce</button></a>
->>>>>>> f50f6dcf6bf2468fa2c329e09ebe1d33d17c877d
                             </div>
                         </div>
                         <div className="options-pm-rs">
@@ -165,11 +161,7 @@ const Header = ({ match, number }) => {
                                     <Link to="/cotizador"><Quote number={number} /></Link>
                                 </div>
                                 <div className="Ecommerce-btn">
-<<<<<<< HEAD
                                     <a href="https://www.pamolsaexpress.com" target="_blank"><Cart />Ir a ecommerce</a>
-=======
-                                    <a href="http://www.pamolsaexpress.com" target="_blank"><button><Cart />Ir a ecommerce</button></a>
->>>>>>> f50f6dcf6bf2468fa2c329e09ebe1d33d17c877d
                                 </div>
                             </div>
                         </div>
