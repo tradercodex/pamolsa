@@ -512,7 +512,7 @@
 }
 
 .content-slick-home {
-    height: 120vh;
+    height: 125vh;
 }
 
 .content-slick-new {
@@ -608,13 +608,19 @@
         top: 100px !important;
     }
 }
- 
+
+@media only screen and (max-width: 1920px) and (max-height: 735px) {
+    .content-slick-home.bg {
+        height: 149vh !important;
+    }
+}
+  
 @media only screen and (max-width: 1440px) and (max-height: 900px) { 
     .Rotate-slick::after {
         background-size: contain !important;
     }
     .content-slick-home {
-        height: 120vh;
+        height: 125vh;
     }
     .Rotate-slick.Us.Main .info-slick.Us {
         left: -20px !important;
