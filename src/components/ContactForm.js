@@ -301,6 +301,7 @@ const ContactForm = () => {
                                 <div><span>Central: (511) 710 3020</span></div>
                                 <div><span>Central de ventas: (01) 641 9595</span></div>
                                 <div><span>WhatsApp: 934 440 291</span></div>
+                                
                             </div>
                         </div>
                     </div>
