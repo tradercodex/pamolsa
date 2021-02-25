@@ -6,7 +6,6 @@ import { useHistory } from 'react-router-dom'
 import { useForm, Controller } from 'react-hook-form'
 import { setAlert } from '../redux/actions/alert'
 import makeAnimated from 'react-select/animated';
-import Axios from 'axios'
 import $ from 'jquery'
 import '../styles/dashboard.css'
 import {
