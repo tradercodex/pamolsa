@@ -29,7 +29,7 @@ const DashboardProduct = () => {
     const dispatch = useDispatch();
 
     const [currentPage, setCurrentPage] = useState(1)
-    const [postsPerPage] = useState(8)
+    const [postsPerPage] = useState(20)
 
     useEffect(() => {
         dispatch(getAllProducts(1));

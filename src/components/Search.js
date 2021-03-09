@@ -74,7 +74,9 @@ const Search = ({search,onTextChanged,renderSuggestions,display,options,match,ty
                 pathname === "/productos/:name"
                 ?
                     <div className="Search product">
-                        <button onClick={goBack} className="btn-back">Volver</button>
+                        {
+                            pathname === "/productos" ? '' : <button onClick={goBack} className="btn-back">Volver</button>
+                        }
                         <div className="Search-container">
                             <SearchIcon />
                             <input onKeyUp={searchPress} value={search} onChange={onTextChanged} style={{padding: "15px 5px 15px 50px"}} type="text" placeholder="¿Qué producto necesitas?" />

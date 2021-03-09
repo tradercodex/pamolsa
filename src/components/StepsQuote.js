@@ -17,7 +17,7 @@ const StepsQuote = ({
     cartItems,
     handleShowModal,
     closeModal,
-    showModal
+    showModal,
 }) => {
 
     const history = useHistory();
@@ -37,6 +37,7 @@ const StepsQuote = ({
     }
 
     const sendCartItems = (data, e) => {
+
         const body = {
             fullname: data.fullname,
             cellphone: data.cellphone,
@@ -46,6 +47,7 @@ const StepsQuote = ({
             district: data.district.name,
             products: cartItems
         }
+
         if (body) {
             handleShowModal();
             setTimeout(() => {
@@ -281,7 +283,7 @@ const StepsQuote = ({
                                             </div>
                                             <div class="form-group clearfix send-options-quote">
                                                 <a href="javascript:;" class="form-wizard-previous-btn float-left">Ir a Ecommerce</a>
-                                                <button className="send-cart" type="submit" style={{ background: "#82A776" }}>Enviar cotización</button>
+                                                <button className="send-cart complete" type="submit" >Enviar cotización</button>
                                             </div>
                                         </fieldset>
                                     </form>

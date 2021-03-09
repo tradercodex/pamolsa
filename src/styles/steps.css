@@ -130,6 +130,30 @@
     border: none;
     cursor: pointer;
   }
+  button.send-cart.complete {
+    background-color:#32711E;
+    color: #ffffff;
+    border-radius: 30px;
+    text-decoration: none;
+    padding: 13px 45px;
+    text-align: right;
+    font-family: 'Amble';
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  button.send-cart__incomplete {
+    background-color:#82A776;
+    color: #ffffff;
+    border-radius: 30px;
+    text-decoration: none;
+    padding: 13px 45px;
+    text-align: right;
+    font-family: 'Amble';
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
   .form-wizard .form-control {
     font-weight: 300;
     height: auto !important;

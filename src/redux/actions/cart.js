@@ -1,7 +1,7 @@
 import { ADD_CART, DELETE_CART, SEND_CART, SEND_CART_ERROR } from './types'
 import axios from 'axios'
 import store from '../store'
-const root = 'http://3.120.185.254:8090/api'
+const root = 'https://wspamolsa.com.pe/api'
 
 export const addToCart = (product) => {
     return async dispatch => {
@@ -40,7 +40,6 @@ export const removeCart = (product) => {
 export const sendCart = (data) => async dispatch => {
     try {
         const res = await axios.post(`${root}/quote/save`, data);
-        console.log(res.data)
         dispatch({
             type: SEND_CART,
             payload: res.data

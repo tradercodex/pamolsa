@@ -1256,7 +1256,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .form-wizard .form-wizard-previous-btn , .container-quotes-products.step-final {
         display: none;
     }
-    button.send-cart {
+    button.send-cart.complete {
         background: #32711E !important;
     }
     form.form-quote {
