@@ -40,7 +40,6 @@ export const removeCart = (product) => {
 export const sendCart = (data) => async dispatch => {
     try {
         const res = await axios.post(`${root}/quote/save`, data);
-        console.log(res.data)
         dispatch({
             type: SEND_CART,
             payload: res.data

@@ -28,6 +28,8 @@ import NotFound from './components/NotFound'
 import ProductosBySearch from './views/ProductosBySearch'
 import TagManager from 'react-gtm-module'
 
+// http://3.120.185.254:8090/api
+
 const token = localStorage.getItem('token')
 
 const tagManagerArgs = {
