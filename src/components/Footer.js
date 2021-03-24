@@ -91,7 +91,7 @@ const Footer = () => {
                                 </div>
                                 <div className="info-contact content">
                                     <div className="center">
-                                        <a rel="noopener noreferrer" target="_blank" href="https://pamolsa.com.pe/web/frontend/files/DECLARACION_BENEFICIARIO_FINAL.pdf">Peruana de Modelos SAC</a>
+                                        <a rel="noopener noreferrer" target="_blank" href="https://pamolsa.com.pe/web/frontend/files/DECLARACION_BENEFICIARIO_FINAL.pdf">Peruana de Moldeados SAC</a>
                                     </div>
                                 </div>
                             </div>
