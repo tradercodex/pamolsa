@@ -106,7 +106,7 @@ const ProductsBySearch = ({ match }) => {
         setMaterials(response.data.data)
     }
 
-    const apiProductsPopulate = async ( ) => {
+    const apiProductsPopulate = async () => {
         const res = await axios.get('https://wspamolsa.com.pe/api/product/find/popular')
         setProductsPopulate(res.data.data)
     }
