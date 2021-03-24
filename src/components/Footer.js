@@ -17,7 +17,7 @@ const Footer = () => {
                             <h6>Declaración de beneficiario final</h6>
                             <div className="info-contact">
                                 <div className="center">
-                                <a rel="noopener noreferrer" target="_blank" href="https://pamolsa.com.pe/web/frontend/files/DECLARACION_BENEFICIARIO_FINAL.pdf">Peruana de Modelos SAC</a>
+                                <a rel="noopener noreferrer" target="_blank" href="https://pamolsa.com.pe/web/frontend/files/DECLARACION_BENEFICIARIO_FINAL.pdf">Peruana de Moldeados SAC</a>
                                 </div>
                             </div>
                         </div>
