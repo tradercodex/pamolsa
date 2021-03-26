@@ -19,8 +19,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-window.dataLayer.push ({ 
-  event: 'pageview'
-})
-
 serviceWorker.unregister();
