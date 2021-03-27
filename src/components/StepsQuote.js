@@ -37,6 +37,13 @@ const StepsQuote = ({
     }
 
     const sendCartItems = (data, e) => {
+        
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+        'event': 'formSubmission',
+        'formType': 'Enviar cotizacion',
+        'formPlace': 'Cotizador'
+        });
 
         const body = {
             fullname: data.fullname,
@@ -58,6 +65,7 @@ const StepsQuote = ({
             }, 4000);
         }
         e.target.reset();
+
     }
 
     return (
