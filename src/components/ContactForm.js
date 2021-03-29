@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux'
 import { useForm, Controller } from 'react-hook-form'
 import { sendContact } from '../redux/actions/contact'
 import ModalSend from './ModalSend';
+import proteccion from '../pdf/politicaproteccion.pdf'
 import '../styles/contact.css'
 
 const ContactForm = () => {
@@ -255,7 +256,7 @@ const ContactForm = () => {
                                         }
                                     })
                                 }
-                               /><p>Acepto la política de protección de datos personales de este sitio</p>
+                               /><p>Acepto la <a style={{ textDecoration: "none", color: "#FBBA00" }} target="_blank" href={proteccion}>política de protección de datos</a> personales de este sitio</p>
                             </div>
                             <span className="complete-form">
                                 {errors.condition && errors.condition.message}

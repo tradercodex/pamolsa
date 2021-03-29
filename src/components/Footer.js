@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import Logo from '../images/svg/logo';
 import '../styles/footer.css'
 import ArrowFooter from '../images/svg/arrowfooter'
-import $ from 'jquery'
-
+import declaration from '../pdf/declaracion.pdf'
+import politicaproteccion from '../pdf/politicaproteccion.pdf'
 
 const Footer = () => {
 
@@ -19,7 +19,7 @@ const Footer = () => {
                             <h6>Declaración de beneficiario final</h6>
                             <div className="info-contact">
                                 <div className="center">
-                                <a rel="noopener noreferrer" target="_blank" href="https://pamolsa.com.pe/web/frontend/files/DECLARACION_BENEFICIARIO_FINAL.pdf">Peruana de Moldeados SAC</a>
+                                <a rel="noopener noreferrer" target="_blank" href={declaration}>Peruana de Moldeados SAC</a>
                                 </div>
                             </div>
                         </div>
@@ -29,7 +29,7 @@ const Footer = () => {
                             <h6>Documento informativo</h6>
                             <div className="info-contact">
                                 <div className="center">
-                                    <a rel="noopener noreferrer" target="_blank" href="https://pamolsa.com.pe/web/frontend/files/POLITICA_DE_PROTECCION_DE_DATOS2020.pdf">Politica de privacidad</a>
+                                    <a rel="noopener noreferrer" target="_blank" href={politicaproteccion}>Politica de privacidad</a>
                                 </div>
                                 {/*<div className="cell">
                                     <a href="">Documento 1</a>
@@ -89,11 +89,11 @@ const Footer = () => {
                         <div className="declaration collapse-footer" id="declaration">
                             <div className="title">
                                 <div className="sp-title">
-                                    <a rel="noopener noreferrer" href="#declaration" className="">Declaración de beneficiario final</a><ArrowFooter />
+                                    <a rel="noopener noreferrer" target="_blank"  className="">Declaración de beneficiario final</a><ArrowFooter />
                                 </div>
                                 <div className="info-contact content">
                                     <div className="center">
-                                        <a rel="noopener noreferrer" target="_blank" href="https://pamolsa.com.pe/web/frontend/files/DECLARACION_BENEFICIARIO_FINAL.pdf">Peruana de Modelos SAC</a>
+                                        <a rel="noopener noreferrer" target="_blank" href={declaration}>Peruana de Modelos SAC</a>
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +106,7 @@ const Footer = () => {
                                 </div>
                                 <div className="info-contact content">
                                     <div className="center">
-                                        <a rel="noopener noreferrer" target="_blank" href="https://pamolsa.com.pe/web/frontend/files/POLITICA_DE_PROTECCION_DE_DATOS2020.pdf">Politica de privacidad</a>
+                                        <a rel="noopener noreferrer" target="_blank" href={politicaproteccion}>Politica de privacidad</a>
                                     </div>
                                     <div className="cell">
                                         <a rel="noopener noreferrer" target="_blank" href="">Documento 1</a>
