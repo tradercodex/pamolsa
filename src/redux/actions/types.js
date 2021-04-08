@@ -95,3 +95,6 @@ export const SIGNIN_SUCCESS = 'SIGNIN_SUCCESS'
 export const SIGNIN_ERROR = 'SIGNIN_ERROR'
 export const AUTH_SUCCESS = 'AUTH_SUCCESS'
 export const AUTH_ERROR = 'AUTH_ERROR'
+
+export const SEND_NEW_FILE = 'SEND_NEW_FILE'
+export const SEND_NEW_FILE_ERROR = 'SEND_NEW_FILE_ERROR'

@@ -10,6 +10,7 @@ import activities from './activity'
 import communities from './community'
 import cart from './cart'
 import auth from './auth'
+import newfile from './newFile'
 
 export default combineReducers({
     contact,
@@ -22,5 +23,6 @@ export default combineReducers({
     activities,
     communities,
     cart,
-    auth
+    auth,
+    newfile
 });
