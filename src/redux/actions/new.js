@@ -15,7 +15,7 @@ import {
 
 import axios from 'axios'
 
-const root = 'http://localhost:8090/api'
+const root = 'https://wspamolsa.com.pe/api'
 
 let token = localStorage.getItem('token')
 
@@ -27,7 +27,7 @@ let config = {
 
 export const sendNew = (data) => async dispatch => {
     try {
-        const res = await axios.post(`http://localhost:8090/api/news/save`, data, config);
+        const res = await axios.post(`https://wspamolsa.com.pe/api/news/save`, data, config);
         dispatch({
             type: SEND_NEW,
             payload: res.data
