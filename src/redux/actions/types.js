@@ -98,3 +98,8 @@ export const AUTH_ERROR = 'AUTH_ERROR'
 
 export const SEND_NEW_FILE = 'SEND_NEW_FILE'
 export const SEND_NEW_FILE_ERROR = 'SEND_NEW_FILE_ERROR'
+
+export const GET_COUNTRY = 'GET_COUNTRY'
+export const GET_COUNTRY_ERROR = 'GET_COUNTRY_ERROR'
+export const GET_CITY = 'GET_CITY'
+export const GET_CITY_ERROR = 'GET_CITY_ERROR'

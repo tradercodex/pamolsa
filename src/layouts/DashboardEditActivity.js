@@ -30,7 +30,7 @@ const DashboardEditActivity = ({match}) => {
     const dispatch = useDispatch();
 
     const getActivity = async () => {
-        const res = await axios.get(`https://wspamolsa.com.pe/api/activity/find/${id}`)
+        const res = await axios.get(`http://localhost:8090/api/activity/find/${id}`)
         console.log(res.data)
         setActivity({
             title: res.data.data.title,
