@@ -1,7 +1,7 @@
 import { SEND_CONTACT, SEND_CONTACT_ERROR } from './types'
 import axios from 'axios'
 
-const root = 'http://localhost:8090/api'
+const root = 'https://wspamolsa.com.pe/api'
 
 export const sendContact = (data) => async dispatch => {
     try {

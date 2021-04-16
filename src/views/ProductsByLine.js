@@ -87,17 +87,17 @@ const ProductByLine = ({ match, location }) => {
     }
 
     const apiGetTypes = async () => {
-        const response = await Axios.get(`http://localhost:8090/api/product/types/list?line_id=${line}`);
+        const response = await Axios.get(`https://wspamolsa.com.pe/api/product/types/list?line_id=${line}`);
         setTypes(response.data.data)
     }
 
     const apiGetBusiness = async () => {
-        const response = await Axios.get(`http://localhost:8090/api/product/business/list?line_id=${line}`);
+        const response = await Axios.get(`https://wspamolsa.com.pe/api/product/business/list?line_id=${line}`);
         setBusiness(response.data.data)
     }
 
     const apiGetMaterial = async () => {
-        const response = await Axios.get(`http://localhost:8090/api/product/material/list?line_id=${line}`);
+        const response = await Axios.get(`https://wspamolsa.com.pe/api/product/material/list?line_id=${line}`);
         setMaterial(response.data.data)
     }
 
@@ -118,7 +118,7 @@ const ProductByLine = ({ match, location }) => {
         })
 
         const loadProductsItems = async () => {
-            const res = await axios.get('http://localhost:8090/api/product/list');
+            const res = await axios.get('https://wspamolsa.com.pe/api/product/list');
             setProductsItems(res.data.data)
        }
 
