@@ -56,7 +56,7 @@ const DashbaordEditCommunity = ({match}) => {
             }
         }
         
-        const res = await axios.get(`http://192.168.157.27/api/community/find/${id}`)
+        const res = await axios.get(`https://wspamolsa.com.pe/api/community/find/${id}`)
         setCommunity({
             title: res.data.data.title,
             description: res.data.data.description,
