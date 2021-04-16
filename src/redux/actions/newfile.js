@@ -1,7 +1,7 @@
 import { SEND_NEW_FILE, SEND_NEW_FILE_ERROR } from './types'
 import axios from 'axios'
 
-const root = 'https://wspamolsa.com.pe/api'
+const root = 'http://localhost:8090/api'
 
 const token = localStorage.getItem('token')
 
