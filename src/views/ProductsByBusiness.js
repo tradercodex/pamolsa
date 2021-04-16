@@ -82,17 +82,17 @@ const ProductsByBusiness = ({ match }) => {
     }
 
     const apiGetLines = async () => {
-        const response = await Axios.get(`https://wspamolsa.com.pe/api/product/line/list?business=${business_id}`);
+        const response = await Axios.get(`http://192.168.157.27/api/product/line/list?business=${business_id}`);
         setLines(response.data.data)
     }
 
     const apiGetTypes = async () => {
-        const response = await Axios.get(`https://wspamolsa.com.pe/api/product/types/list?business=${business_id}`);
+        const response = await Axios.get(`http://192.168.157.27/api/product/types/list?business=${business_id}`);
         setTypes(response.data.data)
     }
 
     const apiGetMaterial = async () => {
-        const response = await Axios.get(`https://wspamolsa.com.pe/api/product/material/list?business=${business_id}`);
+        const response = await Axios.get(`http://192.168.157.27/api/product/material/list?business=${business_id}`);
         setMaterials(response.data.data)
     }
 
@@ -111,7 +111,7 @@ const ProductsByBusiness = ({ match }) => {
         })
 
         const loadProductsItems = async () => {
-            const res = await Axios.get('https://wspamolsa.com.pe/api/product/list');
+            const res = await Axios.get('http://192.168.157.27/api/product/list');
             setProductsItems(res.data.data)
         }
 

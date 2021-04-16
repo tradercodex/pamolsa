@@ -52,7 +52,7 @@ const DashboardEditVacant = ({ match }) => {
             }
         }
 
-        const res = await axios.get(`https://wspamolsa.com.pe/api/vacant/find/${id}`)
+        const res = await axios.get(`http://192.168.157.27/api/vacant/find/${id}`)
         setVacant({
             title: res.data.data.title,
             description: res.data.data.description,

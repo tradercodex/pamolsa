@@ -83,7 +83,7 @@ const DashboardEditProduct = ({ match }) => {
     })
 
     const getProduct = async () => {
-        const res = await axios.get(`https://wspamolsa.com.pe/api/product/find?product_id=${id}`)
+        const res = await axios.get(`http://192.168.157.27/api/product/find?product_id=${id}`)
         setProduct({
             name: res.data.data.name,
             code: res.data.data.code,
@@ -289,7 +289,7 @@ const DashboardEditProduct = ({ match }) => {
             ...product,
             related_products: product.related_products.filter((related_product, index) => i !== index)
         })
-        const res = await axios.put(`https://wspamolsa.com.pe/api/product/related/delete?related_product_id=${id}`,null,config)
+        const res = await axios.put(`http://192.168.157.27/api/product/related/delete?related_product_id=${id}`,null,config)
         console.log(res.data)
     }
 
