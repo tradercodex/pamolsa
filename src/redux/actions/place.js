@@ -6,8 +6,8 @@ import {
 } from "./types";
 import axios from "axios";
 
-//const root = "http://192.168.157.27/api";
-const root = "http://192.168.157.27/api";
+//const root = "https://wspamolsa.com.pe/api";
+const root = "https://wspamolsa.com.pe/api";
 
 export const geCountry = () => async (dispatch) => {
   try {

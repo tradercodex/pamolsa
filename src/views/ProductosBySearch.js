@@ -86,28 +86,28 @@ const ProductsBySearch = ({ match }) => {
     // }
 
     const apiGetSearch = async () => {
-        const response = await Axios.get(`http://192.168.157.27/api/product/find/query?query=${nameFilter}`);
+        const response = await Axios.get(`https://wspamolsa.com.pe/api/product/find/query?query=${nameFilter}`);
         setProductsFilter(response.data.data)
         console.log(response.data.data)
     }
 
     const apiGetLines = async () => {
-        const response = await Axios.get(`http://192.168.157.27/api/product/line/list?business=${business_id}`);
+        const response = await Axios.get(`https://wspamolsa.com.pe/api/product/line/list?business=${business_id}`);
         setLines(response.data.data)
     }
 
     const apiGetTypes = async () => {
-        const response = await Axios.get(`http://192.168.157.27/api/product/types/list?business=${business_id}`);
+        const response = await Axios.get(`https://wspamolsa.com.pe/api/product/types/list?business=${business_id}`);
         setTypes(response.data.data)
     }
 
     const apiGetMaterial = async () => {
-        const response = await Axios.get(`http://192.168.157.27/api/product/material/list?business=${business_id}`);
+        const response = await Axios.get(`https://wspamolsa.com.pe/api/product/material/list?business=${business_id}`);
         setMaterials(response.data.data)
     }
 
     const apiProductsPopulate = async () => {
-        const res = await axios.get('http://192.168.157.27/api/product/find/popular')
+        const res = await axios.get('https://wspamolsa.com.pe/api/product/find/popular')
         setProductsPopulate(res.data.data)
     }
 
@@ -126,7 +126,7 @@ const ProductsBySearch = ({ match }) => {
         })
 
         const loadProductsItems = async () => {
-            const res = await axios.get('http://192.168.157.27/api/product/list');
+            const res = await axios.get('https://wspamolsa.com.pe/api/product/list');
             setProductsItems(res.data.data)
        }
 
