@@ -33,7 +33,7 @@ const DashboardEditNew = ({match}) => {
     const dispatch = useDispatch();
 
     const getNewApi = async () => {
-        const response = await Axios.get(`https://wspamolsa.com.pe/api/news/findById/${id}`)
+        const response = await Axios.get(`http://192.168.157.27/api/news/findById/${id}`)
         setNewId({
             title: response.data.data.title,
             description: response.data.data.body,
