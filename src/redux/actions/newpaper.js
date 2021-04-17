@@ -10,7 +10,7 @@ import {
 } from './types'
 import axios from 'axios'
 
-const root = 'https://www.wspamolsa.com.pe/api'
+const root = 'https://wspamolsa.com.pe/api'
 
 const token = localStorage.getItem('token')
 
