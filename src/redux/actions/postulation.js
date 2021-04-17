@@ -1,7 +1,7 @@
 import { SEND_POSTULATION, SEND_POSTULATION_ERROR } from './types'
 import axios from 'axios'
 
-const root = 'https://wspamolsa.com.pe/api'
+const root = 'https://www.wspamolsa.com.pe/api'
 
 export const sendPostulation = (data) => async dispatch => {
     try {

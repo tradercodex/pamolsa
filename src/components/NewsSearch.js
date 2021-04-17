@@ -93,7 +93,7 @@ const NewsSearch = ({ news }) => {
   const getNewDate = async () => {
 
     const { month, year, order } = selectDate
-    const res = await Axios.get(`https://wspamolsa.com.pe/api/news/listByDate?page=1&year=${year}&month=${month}&order=${order}`);
+    const res = await Axios.get(`https://www.wspamolsa.com.pe/api/news/listByDate?page=1&year=${year}&month=${month}&order=${order}`);
     setNewDate(res.data.data)
   }
 

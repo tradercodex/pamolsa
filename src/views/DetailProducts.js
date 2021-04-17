@@ -27,7 +27,7 @@ const DetailProducts = ({match}) => {
     const [search, setSearch] = useState('')
 
     const getRelacionate = async () => {
-        const response = await Axios.get(`https://wspamolsa.com.pe/api/product/find/related?product_id=${id}`)
+        const response = await Axios.get(`https://www.wspamolsa.com.pe/api/product/find/related?product_id=${id}`)
         setRelacionates(response.data.data)
     }
 
@@ -46,7 +46,7 @@ const DetailProducts = ({match}) => {
         })
 
         const loadProductsItems = async () => {
-            const res = await axios.get('https://wspamolsa.com.pe/api/product/list');
+            const res = await axios.get('https://www.wspamolsa.com.pe/api/product/list');
             setProductsItems(res.data.data)
        }
 
