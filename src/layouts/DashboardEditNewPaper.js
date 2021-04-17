@@ -28,7 +28,7 @@ const DashboardEditNewPaper = ({match}) => {
     })
 
     const getNewPaperApi = async () => {
-        const response = await Axios.get(`https://www.wspamolsa.com.pe/api/news/findByIdGallery/${id}`)
+        const response = await Axios.get(`https://wspamolsa.com.pe/api/news/findByIdGallery/${id}`)
         setNewpaperId({
             name_newspaper: response.data.data.name_newspaper,
             created: response.data.data.created,

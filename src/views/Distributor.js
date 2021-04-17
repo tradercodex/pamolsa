@@ -23,13 +23,13 @@ const Distributor = () => {
     const [cartItems, setCartItems] = useState(cart.cartItems)
 
     const getMarkertsApi = async () => {
-        const res = await axios.get('https://www.wspamolsa.com.pe/api/distributor/list');
+        const res = await axios.get('https://wspamolsa.com.pe/api/distributor/list');
         setUbications(res.data.data);
     }
 
     const getApiGeode = async () => {
         if (latitude && longitude) {
-            const res = await axios.get(`https://www.wspamolsa.com.pe/api/distributor/find/point/close?longitude=${longitude}&latitude=${latitude}`)
+            const res = await axios.get(`https://wspamolsa.com.pe/api/distributor/find/point/close?longitude=${longitude}&latitude=${latitude}`)
             setUbication(res.data.data)
         }
     }
