@@ -13,16 +13,12 @@ import { geCountry, getCity } from "../redux/actions/place";
 const ContactForm = () => {
   const dispatch = useDispatch();
 
-  const { register, handleSubmit, errors, control } = useForm();
+  const { register, handleSubmit, errors, control, setValue } = useForm();
 
   const countries = useSelector((state) => state.places.countries);
   const cities = useSelector((state) => state.places.cities);
 
   const [showModal, setShowModal ] = useState(false);
-  const [ selectedPlace, setSelectedPlace ] = useState({
-    country: '',
-    city: ''
-  })
 
   const handleShowModal = () => {
     setShowModal(true);
@@ -32,37 +28,30 @@ const ContactForm = () => {
     setShowModal(false);
   };
 
+  let selectRef = null;
+
+  const clearValue = () => {
+    selectRef.select.clearValue();
+  };
+
+  const handleChangeCountry = (selectedOption) => {
+    clearValue()
+    dispatch(getCity(selectedOption.id));
+    setValue("country", selectedOption, {
+      shouldDirty: true
+    });
+  }
+
   useEffect(() => {
     dispatch(geCountry());
-    dispatch(getCity(0));
   }, []);
 
-  /*const handleChangeCountry = (selectedOption) => {
-    console.log(selectedOption);
-    setSelectedOption({
-      ...selectedPlace,
-      country: selectedOption.value
-    })
-  }*/
-
   const optionsContact = [
-    { value: "1", label: "Consultas" },
-    { value: "2", label: "Reclamos" },
-    { value: "3", label: "Cliente" },
-    { value: "4", label: "Nuevo cliente" },
-    { value: "5", label: "Es colaborador" },
-    { value: "6", label: "Proveedor" },
-    { value: "7", label: "Otros" },
-  ];
-
-  const optionsCountry = [
-    { value: "1", label: "Perú" },
-    { value: "2", label: "Colombia" },
-    { value: "3", label: "Paraguay" },
-    { value: "4", label: "Brazil" },
-    { value: "5", label: "Argentina" },
-    { value: "6", label: "Ecuador" },
-    { value: "7", label: "Chile" },
+    { value: "1", label: "Producto" },
+    { value: "3", label: "Empleabilidad" },
+    { value: "4", label: "Proveedores" },
+    { value: "5", label: "Otros" },
+    { value: "10", label: "Apoyos/Donaciones" },
   ];
 
   const selectStyles = {
@@ -111,8 +100,9 @@ const ContactForm = () => {
   const onSubmit = (data, e) => {
     const body = {
       ...data,
-      request: data.request.label,
-      country: data.country.label,
+      request: data.request,
+      country: data.country,
+      city: data.city
     };
     dispatch(sendContact(body));
     handleShowModal();
@@ -198,22 +188,7 @@ const ContactForm = () => {
                 {errors.email && errors.email.message}
               </span>
               <div className="input">
-                <Controller
-                  as={
-                    <ReactSelect
-                      styles={selectStyles}
-                      options={countries}
-                      placeholder="País"
-                      //onChange={handleChangeCountry}
-                      getOptionLabel={(countries) => countries.name}
-                      getOptionValue={(countries) => countries.id}
-                      getNewOptionData={(inputValue, optionLabel) => ({
-                        id: optionLabel,
-                        name: inputValue,
-                        __isNew__: true,
-                      })}
-                    />
-                  }
+              <Controller
                   name="country"
                   isClearable
                   control={control}
@@ -223,6 +198,22 @@ const ContactForm = () => {
                       message: "Ingrese su país",
                     },
                   }}
+                  render={({field}) => (
+                    <ReactSelect
+                      {...field}
+                      options={countries}
+                      styles={selectStyles}
+                      placeholder="País"
+                      onChange={handleChangeCountry}
+                      getOptionLabel={(countries) => countries.name}
+                      getOptionValue={(countries) => countries.id}
+                      getNewOptionData={(inputValue, optionLabel) => ({
+                        id: optionLabel,
+                        name: inputValue,
+                        __isNew__: true,
+                      })}
+                    />
+                  )}
                 />
               </div>
               <span className="complete-form">
@@ -232,9 +223,13 @@ const ContactForm = () => {
                 <Controller
                   as={
                     <ReactSelect
+                      ref={ref => {
+                        selectRef = ref;
+                      }}
                       styles={selectStyles}
                       options={cities}
                       placeholder="Ciudad"
+                      value={(cities) => cities.id}
                       getOptionLabel={(cities) => cities.name}
                       getOptionValue={(cities) => cities.id}
                       getNewOptionData={(inputValue, optionLabel) => ({
@@ -257,6 +252,22 @@ const ContactForm = () => {
               </div>
               <span className="complete-form">
                 {errors.city && errors.city.message}
+              </span>
+              <div className="input">
+                <input
+                  type="text"
+                  name="address"
+                  placeholder="Dirección"
+                  ref={register({
+                    required: {
+                      value: true,
+                      message: "Ingrese su dirección",
+                    },
+                  })}
+                />
+              </div>
+              <span className="complete-form">
+                {errors.email && errors.email.message}
               </span>
               <div className="input">
                 <input
