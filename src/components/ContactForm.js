@@ -35,11 +35,11 @@ const ContactForm = () => {
   };
 
   const handleChangeCountry = (selectedOption) => {
-    clearValue()
     dispatch(getCity(selectedOption.id));
     setValue("country", selectedOption, {
       shouldDirty: true
     });
+    clearValue();
   }
 
   useEffect(() => {
