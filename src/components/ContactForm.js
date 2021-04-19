@@ -18,7 +18,7 @@ const ContactForm = () => {
   const countries = useSelector((state) => state.places.countries);
   const cities = useSelector((state) => state.places.cities);
 
-  const [showModal, setShowModal ] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const handleShowModal = () => {
     setShowModal(true);
@@ -31,16 +31,18 @@ const ContactForm = () => {
   let selectRef = null;
 
   const clearValue = () => {
-    selectRef.select.clearValue();
+    if (selectRef.select != undefined) {
+      selectRef.select.clearValue();
+    }
   };
 
   const handleChangeCountry = (selectedOption) => {
     dispatch(getCity(selectedOption.id));
     setValue("country", selectedOption, {
-      shouldDirty: true
+      shouldDirty: true,
     });
     clearValue();
-  }
+  };
 
   useEffect(() => {
     dispatch(geCountry());
@@ -102,7 +104,7 @@ const ContactForm = () => {
       ...data,
       request: data.request,
       country: data.country,
-      city: data.city
+      city: data.city,
     };
     dispatch(sendContact(body));
     handleShowModal();
@@ -188,7 +190,7 @@ const ContactForm = () => {
                 {errors.email && errors.email.message}
               </span>
               <div className="input">
-              <Controller
+                <Controller
                   name="country"
                   isClearable
                   control={control}
@@ -198,7 +200,7 @@ const ContactForm = () => {
                       message: "Ingrese su país",
                     },
                   }}
-                  render={({field}) => (
+                  render={({ field }) => (
                     <ReactSelect
                       {...field}
                       options={countries}
@@ -223,7 +225,7 @@ const ContactForm = () => {
                 <Controller
                   as={
                     <ReactSelect
-                      ref={ref => {
+                      ref={(ref) => {
                         selectRef = ref;
                       }}
                       styles={selectStyles}
