@@ -30,18 +30,14 @@ const ContactForm = () => {
 
   let selectRef = null;
 
-  const clearValue = () => {
-    if (selectRef.select != undefined) {
-      selectRef.select.clearValue();
-    }
-  };
-
   const handleChangeCountry = (selectedOption) => {
     dispatch(getCity(selectedOption.id));
     setValue("country", selectedOption, {
       shouldDirty: true,
     });
-    clearValue();
+    setValue("city", null, {
+      shouldDirty: true,
+    });
   };
 
   useEffect(() => {
@@ -225,9 +221,6 @@ const ContactForm = () => {
                 <Controller
                   as={
                     <ReactSelect
-                      ref={(ref) => {
-                        selectRef = ref;
-                      }}
                       styles={selectStyles}
                       options={cities}
                       placeholder="Ciudad"
