@@ -49,6 +49,7 @@ const ContactForm = () => {
     { value: "3", label: "Empleabilidad" },
     { value: "4", label: "Proveedores" },
     { value: "5", label: "Otros" },
+    { value: "7", label: "Reclamos/Sugerencias" },
     { value: "10", label: "Apoyos/Donaciones" },
   ];
 
