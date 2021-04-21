@@ -8,7 +8,13 @@ import { sendContact } from "../redux/actions/contact";
 import ModalSend from "./ModalSend";
 import proteccion from "../pdf/politicaproteccion.pdf";
 import "../styles/contact.css";
-import { geCountry, getCity } from "../redux/actions/place";
+import {
+  getCountry,
+  getCity,
+  getDepartment,
+  getProvince,
+  getDistrict,
+} from "../redux/actions/place";
 
 const ContactForm = () => {
   const dispatch = useDispatch();
@@ -17,6 +23,9 @@ const ContactForm = () => {
 
   const countries = useSelector((state) => state.places.countries);
   const cities = useSelector((state) => state.places.cities);
+  const departments = useSelector((state) => state.places.departments);
+  const provinces = useSelector((state) => state.places.provinces);
+  const districts = useSelector((state) => state.places.districts);
 
   const [showModal, setShowModal] = useState(false);
 
@@ -27,21 +36,33 @@ const ContactForm = () => {
   const closeModal = () => {
     setShowModal(false);
   };
-
-  let selectRef = null;
-
+ 
   const handleChangeCountry = (selectedOption) => {
-    dispatch(getCity(selectedOption.id));
-    setValue("country", selectedOption, {
-      shouldDirty: true,
-    });
-    setValue("city", null, {
-      shouldDirty: true,
-    });
+    dispatch(getDepartment(selectedOption.id));//dispatch(getCity(selectedOption.id));
+    setValue("country", selectedOption, { shouldDirty: true });
+    //setValue("department", null, { shouldDirty: true });
+    //setValue("province", null, { shouldDirty: true });
+    setValue("district", null, { shouldDirty: true });
+    dispatch(getProvince(0));
+    dispatch(getDistrict(0));
+  };
+
+  const handleChangeDepartment = (selectedOption) => {
+    dispatch(getProvince(selectedOption.id));
+    setValue("department", selectedOption, { shouldDirty: true });
+    //setValue("province", null, { shouldDirty: true });
+    setValue("district", null, { shouldDirty: true });
+    dispatch(getDistrict(0));
+  };
+
+  const handleChangeProvince = (selectedOption) => {
+    dispatch(getDistrict(selectedOption.id));
+    setValue("province", selectedOption, { shouldDirty: true });
+    setValue("district", null, { shouldDirty: true });
   };
 
   useEffect(() => {
-    dispatch(geCountry());
+    dispatch(getCountry());
   }, []);
 
   const optionsContact = [
@@ -99,9 +120,10 @@ const ContactForm = () => {
   const onSubmit = (data, e) => {
     const body = {
       ...data,
-      request: data.request,
-      country: data.country,
-      city: data.city,
+      //request: data.request,
+      //country: data.country,
+      //district: data.district,
+      //city: data.city || "",
     };
     dispatch(sendContact(body));
     handleShowModal();
@@ -218,7 +240,7 @@ const ContactForm = () => {
               <span className="complete-form">
                 {errors.country && errors.country.message}
               </span>
-              <div className="input">
+              {/**<div className="input">
                 <Controller
                   as={
                     <ReactSelect
@@ -248,6 +270,100 @@ const ContactForm = () => {
               </div>
               <span className="complete-form">
                 {errors.city && errors.city.message}
+                </span>*/}
+              <div className="input">
+                <Controller
+                  name="department"
+                  isClearable
+                  control={control}
+                  rules={{
+                    required: {
+                      value: true,
+                      message: "Ingrese su departamento",
+                    },
+                  }}
+                  render={({ field }) => (
+                    <ReactSelect
+                      {...field}
+                      options={departments}
+                      styles={selectStyles}
+                      placeholder="Departamento"
+                      onChange={handleChangeDepartment}
+                      getOptionLabel={(departments) => departments.name}
+                      getOptionValue={(departments) => departments.id}
+                      getNewOptionData={(inputValue, optionLabel) => ({
+                        id: optionLabel,
+                        name: inputValue,
+                        __isNew__: true,
+                      })}
+                    />
+                  )}
+                />
+              </div>
+              <span className="complete-form">
+                {errors.city && errors.department.message}
+              </span>
+              <div className="input">
+                <Controller
+                  name="province"
+                  isClearable
+                  control={control}
+                  rules={{
+                    required: {
+                      value: true,
+                      message: "Ingrese su provincia",
+                    },
+                  }}
+                  render={({ field }) => (
+                    <ReactSelect
+                      {...field}
+                      options={provinces}
+                      styles={selectStyles}
+                      placeholder="Provincia"
+                      onChange={handleChangeProvince}
+                      getOptionLabel={(provinces) => provinces.name}
+                      getOptionValue={(provinces) => provinces.id}
+                      getNewOptionData={(inputValue, optionLabel) => ({
+                        id: optionLabel,
+                        name: inputValue,
+                        __isNew__: true,
+                      })}
+                    />
+                  )}
+                />
+              </div>
+              <span className="complete-form">
+                {errors.city && errors.province.message}
+              </span>
+              <div className="input">
+                <Controller
+                  as={
+                    <ReactSelect
+                      options={districts}
+                      styles={selectStyles}
+                      placeholder="Distrito"
+                      getOptionLabel={(districts) => districts.name}
+                      getOptionValue={(districts) => districts.id}
+                      getNewOptionData={(inputValue, optionLabel) => ({
+                        id: optionLabel,
+                        name: inputValue,
+                        __isNew__: true,
+                      })}
+                    />
+                  }
+                  name="district"
+                  isClearable
+                  control={control}
+                  rules={{
+                    required: {
+                      value: true,
+                      message: "Ingrese su distrito",
+                    },
+                  }}
+                />
+              </div>
+              <span className="complete-form">
+                {errors.city && errors.district.message}
               </span>
               <div className="input">
                 <input
@@ -263,7 +379,7 @@ const ContactForm = () => {
                 />
               </div>
               <span className="complete-form">
-                {errors.email && errors.email.message}
+                {errors.email && errors.address.message}
               </span>
               <div className="input">
                 <input

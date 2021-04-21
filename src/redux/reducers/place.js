@@ -1,8 +1,11 @@
-import { GET_COUNTRY, GET_CITY } from '../actions/types'
+import { GET_COUNTRY, GET_CITY, GET_DEPARTMENT, GET_PROVINCE, GET_DISTRICT } from '../actions/types'
 
 const initialState = {
     countries: [],
-    cities: []
+    cities: [],
+    departments: [],
+    provinces: [],
+    districts: []
 }
 
 export default function (state = initialState, action) {
@@ -19,6 +22,21 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 cities: payload
+            }
+        case GET_DEPARTMENT:
+            return {
+                ...state,
+                departments: payload
+            }
+        case GET_PROVINCE:
+            return {
+                ...state,
+                provinces: payload
+            }
+        case GET_DISTRICT:
+            return {
+                ...state,
+                districts: payload
             }
         default:
             return state;
