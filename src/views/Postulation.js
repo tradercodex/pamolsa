@@ -445,7 +445,7 @@ const Postulation = () => {
                                         register({
                                             required: {
                                                 value: true,
-                                                message: 'Ingrese su cumpleaños'
+                                                message: 'Ingrese su CV'
                                             }
                                         })
                                     }
