@@ -305,7 +305,7 @@ const ContactForm = () => {
                     />
                   </div>
                   <span className="complete-form">
-                    {errors.city && errors.department.message}
+                    {errors.department && errors.department.message}
                   </span>
                   <div className="input">
                     <Controller
@@ -337,7 +337,7 @@ const ContactForm = () => {
                     />
                   </div>
                   <span className="complete-form">
-                    {errors.city && errors.province.message}
+                    {errors.province && errors.province.message}
                   </span>
                   <div className="input">
                     <Controller
@@ -367,7 +367,7 @@ const ContactForm = () => {
                     />
                   </div>
                   <span className="complete-form">
-                    {errors.city && errors.district.message}
+                    {errors.district && errors.district.message}
                   </span>
                 </div>
               ) : (
@@ -388,7 +388,7 @@ const ContactForm = () => {
                 />
               </div>
               <span className="complete-form">
-                {errors.email && errors.address.message}
+                {errors.address && errors.address.message}
               </span>
               <div className="input">
                 <input
