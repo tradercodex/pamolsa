@@ -29,7 +29,10 @@ const Footer = () => {
                             <h6>Documento informativo</h6>
                             <div className="info-contact">
                                 <div className="center">
-                                    <a rel="noopener noreferrer" target="_blank" href={politicaproteccion}>Politica de privacidad</a>
+                                    <a rel="noopener noreferrer" target="_blank" href={politicaproteccion}>Política de privacidad</a>
+                                </div>
+                                <div className="center">
+                                    <a rel="noopener noreferrer" target="_blank" href="https://wspamolsa.com.pe/res/files/pdf/POLITICA_DEL_SISTEMA_INTEGRADO_DE_GESTION_V.04.png">Política de SIG</a>
                                 </div>
                                 {/*<div className="cell">
                                     <a href="">Documento 1</a>
@@ -106,14 +109,17 @@ const Footer = () => {
                                 </div>
                                 <div className="info-contact content">
                                     <div className="center">
-                                        <a rel="noopener noreferrer" target="_blank" href={politicaproteccion}>Politica de privacidad</a>
+                                        <a rel="noopener noreferrer" target="_blank" href={politicaproteccion}>Política de privacidad</a>
                                     </div>
-                                    <div className="cell">
+                                    <div className="center">
+                                        <a rel="noopener noreferrer" target="_blank" href="https://wspamolsa.com.pe/res/files/pdf/POLITICA_DEL_SISTEMA_INTEGRADO_DE_GESTION_V.04.png">Política de SIG</a>
+                                    </div>
+                                    {/*<div className="cell">
                                         <a rel="noopener noreferrer" target="_blank" href="">Documento 1</a>
                                     </div>
                                     <div className="cell">
                                         <a rel="noopener noreferrer" target="_blank" href="">Documento 2</a>
-                                    </div>
+                                    </div>*/}
                                 </div>
                             </div>
                         </div>

@@ -36,10 +36,10 @@ const Informations = () => {
                             <div>
                                 <div className="companies_us">
 
-                                    <a href="https://wspamolsa.com.pe/res/files/pdf/POLITICA_DEL_SISTEMA_INTEGRADO_DE_GESTION_V.04.png" target="_blank">
+                                    <a href="https://www.sgs.pe/es-es/certified-clients-and-products/certified-client-directory" target="_blank"> 
                                         <div className="img-company-sgs"></div>
                                     </a>
-                                    <a href="https://wspamolsa.com.pe/res/files/pdf/POLITICA_DEL_SISTEMA_INTEGRADO_DE_GESTION_V.04.png" target="_blank">
+                                    <a href="https://www.sgs.pe/es-es/certified-clients-and-products/certified-client-directory" target="_blank">
                                         <div className="img-company-sgiso"></div>
                                     </a>
                                     <div className="img-company-brc">
