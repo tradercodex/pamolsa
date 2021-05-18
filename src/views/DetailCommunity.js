@@ -20,7 +20,7 @@ const DetailCommunity = ({ match }) => {
     })
 
     const getCommunity = async () => {
-        const res = await axios.get(`https://wspamolsa.com.pe/api/community/find/${id}`)
+        const res = await axios.get(`https://pamolsa-back.herokuapp.com/api/community/find/${id}`)
         setCommunity({
             title: res.data.data.title,
             description: res.data.data.description,

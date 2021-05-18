@@ -1,7 +1,7 @@
 import { SEND_CONTACT, SEND_CONTACT_ERROR } from './types'
 import axios from 'axios'
 
-const root = 'https://wspamolsa.com.pe/api'
+const root = 'https://pamolsa-back.herokuapp.com/api'
 //const root = 'http://localhost:8090/api'
 
 export const sendContact = (data) => async dispatch => {

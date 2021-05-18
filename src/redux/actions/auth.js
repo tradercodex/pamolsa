@@ -2,7 +2,7 @@ import { SIGNIN_SUCCESS, SIGNIN_ERROR, AUTH_SUCCESS, AUTH_ERROR } from './types'
 // import { setAlert } from './alert'
 import axios from 'axios'
 
-const root = 'https://wspamolsa.com.pe/api'
+const root = 'https://pamolsa-back.herokuapp.com/api'
  
 export const signin = (data) => async dispatch => {
     try {
