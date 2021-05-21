@@ -28,7 +28,7 @@ const Quote = () => {
     let number = Object.keys(cartItems).length
 
     const apiDepartments = async () => {
-        const response = await axios.get('https://wspamolsa.com.pe/api/department/list?country_id=15');
+        const response = await axios.get('https://ws.pamolsa.com.pe/api/department/list?country_id=15');
         setDepartments(response.data.data)
     }
 

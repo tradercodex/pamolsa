@@ -24,7 +24,7 @@ const Products = () => {
      const dispatch = useDispatch();
 
      const apiProductsPopulate = async () => {
-          const res = await axios.get('https://wspamolsa.com.pe/api/product/find/popular')
+          const res = await axios.get('https://ws.pamolsa.com.pe/api/product/find/popular')
           setProductsPopulate(res.data.data)
      }
 
@@ -43,7 +43,7 @@ const Products = () => {
           })
 
           const loadProductsItems = async () => {
-               const res = await axios.get('https://wspamolsa.com.pe/api/product/list');
+               const res = await axios.get('https://ws.pamolsa.com.pe/api/product/list');
                setProductsItems(res.data.data)
           }
 

@@ -30,7 +30,7 @@ import {
 } from './types'
 import axios from 'axios'
 
-const root = 'https://wspamolsa.com.pe/api'
+const root = 'https://ws.pamolsa.com.pe/api'
 
 let token = localStorage.getItem('token')
 

@@ -13,7 +13,7 @@ import {
 import axios from "axios";
 
 //const root = "http://localhost:8090/api";
-const root = "https://wspamolsa.com.pe/api";
+const root = "https://ws.pamolsa.com.pe/api";
 
 export const getCountry = () => async (dispatch) => {
   try {
