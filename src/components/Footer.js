@@ -4,6 +4,8 @@ import '../styles/footer.css'
 import ArrowFooter from '../images/svg/arrowfooter'
 import declaration from '../pdf/declaracion.pdf'
 import politicaproteccion from '../pdf/politicaproteccion.pdf'
+import catalogomayo from '../pdf/list/CATALOGO_PAMOLSA_EXPRESS_MAYO.pdf'
+import politicasig from '../images/img/politicasig.png'
 
 const Footer = () => {
 
@@ -32,12 +34,9 @@ const Footer = () => {
                                     <a rel="noopener noreferrer" target="_blank" href={politicaproteccion}>Política de privacidad</a>
                                 </div>
                                 <div className="center">
-                                    <a rel="noopener noreferrer" target="_blank" href="https://ws.pamolsa.com.pe/res/files/pdf/POLITICA_DEL_SISTEMA_INTEGRADO_DE_GESTION_V.04.png">Política de SIG</a>
+                                    <a rel="noopener noreferrer" target="_blank" href={politicasig}>Política de SIG</a>
                                 </div>
                                 {/*<div className="cell">
-                                    <a href="">Documento 1</a>
-                                </div>
-                                <div className="cell">
                                     <a href="">Documento 2</a>
                                 </div>*/}
                             </div>
@@ -112,7 +111,10 @@ const Footer = () => {
                                         <a rel="noopener noreferrer" target="_blank" href={politicaproteccion}>Política de privacidad</a>
                                     </div>
                                     <div className="center">
-                                        <a rel="noopener noreferrer" target="_blank" href="https://ws.pamolsa.com.pe/res/files/pdf/POLITICA_DEL_SISTEMA_INTEGRADO_DE_GESTION_V.04.png">Política de SIG</a>
+                                        <a rel="noopener noreferrer" target="_blank" href={politicasig}>Política de SIG</a>
+                                    </div>
+                                    <div className="cell">
+                                        <a rel="noopener noreferrer" target="_blank" href={catalogomayo}>Catálogo Mayo</a>
                                     </div>
                                     {/*<div className="cell">
                                         <a rel="noopener noreferrer" target="_blank" href="">Documento 1</a>
