@@ -68,9 +68,9 @@ const StepsQuote = ({
             fullname: data.fullname,
             cellphone: data.cellphone,
             email: data.email,
-            department: data.department.name,
-            province: data.province.name,
-            district: data.district.name,
+            department: data.department,
+            province: data.province,
+            district: data.district,
             products: cartItems
         }
 
