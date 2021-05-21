@@ -2,8 +2,7 @@ import React from 'react'
 import CloseModal from '../images/svg/closemodal';
 import InformDownload from '../images/svg/informdownload'
 import foodService1 from '../pdf/catalogofoodservice.pdf'
-import foodService2 from '../pdf/catalogobioformcarton.pdf'
-import foodService3 from '../pdf/catalogobioformfibra.pdf'
+import bioform from '../pdf/bioform.pdf'
 
 const ModalFoodService = ({ closeModal,title }) => {
     return (
@@ -18,7 +17,7 @@ const ModalFoodService = ({ closeModal,title }) => {
                             <p>Catálogo Food Service</p>
                         </div>
                         <div className="box-informs-pdf" style={{width: "100%"}}>
-                            <a href="https://ws.pamolsa.com.pe/res/files/pdf/BIOFORM_PDF.pdf" target="_blank" rel="noopener noreferrer"><InformDownload /></a>
+                            <a href={bioform} target="_blank" rel="noopener noreferrer"><InformDownload /></a>
                             <p>Catálogo Bioform</p>
                         </div>
                     </div>
