@@ -1,7 +1,7 @@
 import { ADD_CART, DELETE_CART, SEND_CART, SEND_CART_ERROR } from './types'
 import axios from 'axios'
 import store from '../store'
-const root = 'https://pamolsa-back.herokuapp.com/api'
+const root = 'https://ws.pamolsa.com.pe/api'
 
 export const addToCart = (product) => {
     return async dispatch => {

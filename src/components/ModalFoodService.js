@@ -18,7 +18,7 @@ const ModalFoodService = ({ closeModal,title }) => {
                             <p>Catálogo Food Service</p>
                         </div>
                         <div className="box-informs-pdf" style={{width: "100%"}}>
-                            <a href="https://pamolsa-back.herokuapp.com/res/files/pdf/BIOFORM_PDF.pdf" target="_blank" rel="noopener noreferrer"><InformDownload /></a>
+                            <a href="https://ws.pamolsa.com.pe/res/files/pdf/BIOFORM_PDF.pdf" target="_blank" rel="noopener noreferrer"><InformDownload /></a>
                             <p>Catálogo Bioform</p>
                         </div>
                     </div>

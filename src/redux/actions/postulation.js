@@ -1,7 +1,7 @@
 import { SEND_POSTULATION, SEND_POSTULATION_ERROR } from './types'
 import axios from 'axios'
 
-const root = 'https://pamolsa-back.herokuapp.com/api'
+const root = 'https://ws.pamolsa.com.pe/api'
 
 export const sendPostulation = (data) => async dispatch => {
     try {

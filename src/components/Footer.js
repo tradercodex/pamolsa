@@ -32,7 +32,7 @@ const Footer = () => {
                                     <a rel="noopener noreferrer" target="_blank" href={politicaproteccion}>Política de privacidad</a>
                                 </div>
                                 <div className="center">
-                                    <a rel="noopener noreferrer" target="_blank" href="https://pamolsa-back.herokuapp.com/res/files/pdf/POLITICA_DEL_SISTEMA_INTEGRADO_DE_GESTION_V.04.png">Política de SIG</a>
+                                    <a rel="noopener noreferrer" target="_blank" href="https://ws.pamolsa.com.pe/res/files/pdf/POLITICA_DEL_SISTEMA_INTEGRADO_DE_GESTION_V.04.png">Política de SIG</a>
                                 </div>
                                 {/*<div className="cell">
                                     <a href="">Documento 1</a>
@@ -112,7 +112,7 @@ const Footer = () => {
                                         <a rel="noopener noreferrer" target="_blank" href={politicaproteccion}>Política de privacidad</a>
                                     </div>
                                     <div className="center">
-                                        <a rel="noopener noreferrer" target="_blank" href="https://pamolsa-back.herokuapp.com/res/files/pdf/POLITICA_DEL_SISTEMA_INTEGRADO_DE_GESTION_V.04.png">Política de SIG</a>
+                                        <a rel="noopener noreferrer" target="_blank" href="https://ws.pamolsa.com.pe/res/files/pdf/POLITICA_DEL_SISTEMA_INTEGRADO_DE_GESTION_V.04.png">Política de SIG</a>
                                     </div>
                                     {/*<div className="cell">
                                         <a rel="noopener noreferrer" target="_blank" href="">Documento 1</a>

@@ -1,7 +1,7 @@
 import { SEND_NEW_FILE, SEND_NEW_FILE_ERROR } from './types'
 import axios from 'axios'
 
-const root = 'https://pamolsa-back.herokuapp.com/api'
+const root = 'https://ws.pamolsa.com.pe/api'
 
 const token = localStorage.getItem('token')
 

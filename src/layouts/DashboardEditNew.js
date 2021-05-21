@@ -33,7 +33,7 @@ const DashboardEditNew = ({match}) => {
     const dispatch = useDispatch();
 
     const getNewApi = async () => {
-        const response = await Axios.get(`https://pamolsa-back.herokuapp.com/api/news/findById/${id}`)
+        const response = await Axios.get(`https://ws.pamolsa.com.pe/api/news/findById/${id}`)
         setNewId({
             title: response.data.data.title,
             description: response.data.data.body,
