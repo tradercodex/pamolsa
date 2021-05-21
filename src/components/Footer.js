@@ -36,6 +36,9 @@ const Footer = () => {
                                 <div className="center">
                                     <a rel="noopener noreferrer" target="_blank" href={politicasig}>Política de SIG</a>
                                 </div>
+                                <div className="cell">
+                                    <a rel="noopener noreferrer" target="_blank" href={catalogomayo}>Catálogo Pamolsa Express</a>
+                                </div>
                                 {/*<div className="cell">
                                     <a href="">Documento 2</a>
                                 </div>*/}
@@ -114,7 +117,7 @@ const Footer = () => {
                                         <a rel="noopener noreferrer" target="_blank" href={politicasig}>Política de SIG</a>
                                     </div>
                                     <div className="cell">
-                                        <a rel="noopener noreferrer" target="_blank" href={catalogomayo}>Catálogo Mayo</a>
+                                        <a rel="noopener noreferrer" target="_blank" href={catalogomayo}>Catálogo Pamolsa Express</a>
                                     </div>
                                     {/*<div className="cell">
                                         <a rel="noopener noreferrer" target="_blank" href="">Documento 1</a>
