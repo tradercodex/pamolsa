@@ -76,6 +76,8 @@ const Quote = () => {
     };
 
     useEffect(() => {
+        
+        number = Object.keys(cartItems).length
 
         const movilOpen = document.getElementById('movil');
         const header = document.getElementById('header')
