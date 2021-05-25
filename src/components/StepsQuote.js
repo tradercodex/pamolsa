@@ -74,12 +74,12 @@ const StepsQuote = ({
             products: cartItems
         }
 
-        if (body) {
-            handleShowModal();
+        if (body) {           
+            dispatch(sendCart(body)) 
             setTimeout(() => {
-                dispatch(sendCart(body))
+                handleShowModal();
                 dispatch(updateCard());
-                localStorage.clear();
+                localStorage.clear(); 
                 history.push('/productos')
             }, 4000);
         }
