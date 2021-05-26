@@ -95,7 +95,7 @@ const DetailProduct = ({ product }) => {
                                     <input 
                                         type="number" 
                                         name="units" 
-                                        placeholder="1000 unidades" 
+                                        placeholder="máximo 1000" 
                                         ref={
                                             register({
                                                 min: 1, max: 1000,

@@ -9,7 +9,7 @@ import ModalSendCart from './ModalSendCart';
 import {
     getProvince,
     getDistrict,
-  } from "../redux/actions/place";
+} from "../redux/actions/place";
 
 const StepsQuote = ({
     number,
@@ -48,7 +48,7 @@ const StepsQuote = ({
         setValue("district", null, { shouldDirty: true });
         dispatch(getDistrict(0));
     };
-    
+
     const handleChangeProvince = (selectedOption) => {
         dispatch(getDistrict(selectedOption.id));
         setValue("province", selectedOption, { shouldDirty: true });
@@ -56,12 +56,12 @@ const StepsQuote = ({
     };
 
     const sendCartItems = (data, e) => {
-        
+
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
-        'event': 'formSubmission',
-        'formType': 'Enviar cotizacion',
-        'formPlace': 'Cotizador'
+            'event': 'formSubmission',
+            'formType': 'Enviar cotizacion',
+            'formPlace': 'Cotizador'
         });
 
         const body = {
@@ -74,15 +74,12 @@ const StepsQuote = ({
             products: cartItems
         }
 
-        if (body) {           
-            dispatch(sendCart(body)) 
-            setTimeout(() => {
-                handleShowModal();
-                dispatch(updateCard());
-                localStorage.clear(); 
-                history.push('/productos')
-            }, 4000);
-        }
+        dispatch(sendCart(body))
+        handleShowModal();
+        dispatch(updateCard());
+        localStorage.clear();
+        history.push('/productos')
+
         e.target.reset();
 
     }
@@ -204,64 +201,64 @@ const StepsQuote = ({
                                                             {errors.email && errors.email.message}
                                                         </span>
                                                         <div style={{ marginTop: "23px" }}>
-                                                        <Controller
-                                                            name="department"
-                                                            isClearable
-                                                            control={control}
-                                                            rules={{
-                                                                required: {
-                                                                value: true,
-                                                                message: "Ingrese su departamento",
-                                                                },
-                                                            }}
-                                                            render={({ field }) => (
-                                                                <ReactSelect
-                                                                {...field}
-                                                                options={departments}
-                                                                styles={selectStyles}
-                                                                placeholder="Departamento"
-                                                                onChange={handleChangeDepartment}
-                                                                getOptionLabel={(departments) => departments.name}
-                                                                getOptionValue={(departments) => departments.id}
-                                                                getNewOptionData={(inputValue, optionLabel) => ({
-                                                                    id: optionLabel,
-                                                                    name: inputValue,
-                                                                    __isNew__: true,
-                                                                })}
-                                                                />
-                                                            )}
+                                                            <Controller
+                                                                name="department"
+                                                                isClearable
+                                                                control={control}
+                                                                rules={{
+                                                                    required: {
+                                                                        value: true,
+                                                                        message: "Ingrese su departamento",
+                                                                    },
+                                                                }}
+                                                                render={({ field }) => (
+                                                                    <ReactSelect
+                                                                        {...field}
+                                                                        options={departments}
+                                                                        styles={selectStyles}
+                                                                        placeholder="Departamento"
+                                                                        onChange={handleChangeDepartment}
+                                                                        getOptionLabel={(departments) => departments.name}
+                                                                        getOptionValue={(departments) => departments.id}
+                                                                        getNewOptionData={(inputValue, optionLabel) => ({
+                                                                            id: optionLabel,
+                                                                            name: inputValue,
+                                                                            __isNew__: true,
+                                                                        })}
+                                                                    />
+                                                                )}
                                                             />
                                                             <span className="complete-form">
                                                                 {errors.department && errors.department.message}
                                                             </span>
                                                         </div>
                                                         <div style={{ marginTop: "23px" }}>
-                                                        <Controller
-                                                            name="province"
-                                                            isClearable
-                                                            control={control}
-                                                            rules={{
-                                                                required: {
-                                                                value: true,
-                                                                message: "Ingrese su provincia",
-                                                                },
-                                                            }}
-                                                            render={({ field }) => (
-                                                                <ReactSelect
-                                                                {...field}
-                                                                options={provinces}
-                                                                styles={selectStyles}
-                                                                placeholder="Provincia"
-                                                                onChange={handleChangeProvince}
-                                                                getOptionLabel={(provinces) => provinces.name}
-                                                                getOptionValue={(provinces) => provinces.id}
-                                                                getNewOptionData={(inputValue, optionLabel) => ({
-                                                                    id: optionLabel,
-                                                                    name: inputValue,
-                                                                    __isNew__: true,
-                                                                })}
-                                                                />
-                                                            )}
+                                                            <Controller
+                                                                name="province"
+                                                                isClearable
+                                                                control={control}
+                                                                rules={{
+                                                                    required: {
+                                                                        value: true,
+                                                                        message: "Ingrese su provincia",
+                                                                    },
+                                                                }}
+                                                                render={({ field }) => (
+                                                                    <ReactSelect
+                                                                        {...field}
+                                                                        options={provinces}
+                                                                        styles={selectStyles}
+                                                                        placeholder="Provincia"
+                                                                        onChange={handleChangeProvince}
+                                                                        getOptionLabel={(provinces) => provinces.name}
+                                                                        getOptionValue={(provinces) => provinces.id}
+                                                                        getNewOptionData={(inputValue, optionLabel) => ({
+                                                                            id: optionLabel,
+                                                                            name: inputValue,
+                                                                            __isNew__: true,
+                                                                        })}
+                                                                    />
+                                                                )}
                                                             />
                                                             <span className="complete-form">
                                                                 {errors.province && errors.province.message}
@@ -334,7 +331,7 @@ const StepsQuote = ({
                             </div>
                         </div>
                     </section> :
-                    <div className="no-quote" style={{paddingBottom: "100px"}}>
+                    <div className="no-quote" style={{ paddingBottom: "100px" }}>
                         <p>Aún no tienes productos para cotizar, te recomedamos agregar los productos que deseas </p>
                         <Link className="quote-back" to="/productos">Productos</Link>
                     </div>
