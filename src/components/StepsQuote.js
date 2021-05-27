@@ -74,14 +74,16 @@ const StepsQuote = ({
             products: cartItems
         }
 
-        dispatch(sendCart(body))
-        handleShowModal();
-        dispatch(updateCard());
-        localStorage.clear();
-        history.push('/productos')
-
+        if (body) {
+            handleShowModal();
+            dispatch(sendCart(body))
+            setTimeout(() => {
+                dispatch(updateCard());
+                localStorage.clear();
+                history.push('/productos')
+            }, 4000);
+        }
         e.target.reset();
-
     }
 
     return (
