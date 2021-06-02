@@ -4,7 +4,6 @@ import '../styles/footer.css'
 import ArrowFooter from '../images/svg/arrowfooter'
 import declaration from '../pdf/declaracion.pdf'
 import politicaproteccion from '../pdf/politicaproteccion.pdf'
-import catalogomayo from '../pdf/list/CATALOGO_PAMOLSA_EXPRESS_MAYO.pdf'
 import politicasig from '../images/img/politicasig.png'
 
 const Footer = () => {
@@ -35,9 +34,6 @@ const Footer = () => {
                                 </div>
                                 <div className="center">
                                     <a rel="noopener noreferrer" target="_blank" href={politicasig}>Política de SIG</a>
-                                </div>
-                                <div className="cell">
-                                    <a rel="noopener noreferrer" target="_blank" href={catalogomayo}>Catálogo Pamolsa Express</a>
                                 </div>
                                 {/*<div className="cell">
                                     <a href="">Documento 2</a>
@@ -115,9 +111,6 @@ const Footer = () => {
                                     </div>
                                     <div className="center">
                                         <a rel="noopener noreferrer" target="_blank" href={politicasig}>Política de SIG</a>
-                                    </div>
-                                    <div className="cell">
-                                        <a rel="noopener noreferrer" target="_blank" href={catalogomayo}>Catálogo Pamolsa Express</a>
                                     </div>
                                     {/*<div className="cell">
                                         <a rel="noopener noreferrer" target="_blank" href="">Documento 1</a>
