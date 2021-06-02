@@ -598,6 +598,16 @@
     background-blend-mode: darken;
 }
 
+.companies-second .img-company-gp2 {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-image: url('../images/img/greatperu2.png');
+    background-size: cover;
+    background-color: #D1EBFC;
+    background-blend-mode: darken;
+}
+
 .companies-second .img-company-gpl {
     position: relative;
     width: 183px;

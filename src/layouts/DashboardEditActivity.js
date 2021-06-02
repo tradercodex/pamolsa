@@ -30,7 +30,7 @@ const DashboardEditActivity = ({match}) => {
     const dispatch = useDispatch();
 
     const getActivity = async () => {
-        const res = await axios.get(`https://wspamolsa.com.pe/api/activity/find/${id}`)
+        const res = await axios.get(`https://ws.pamolsa.com.pe/api/activity/find/${id}`)
         console.log(res.data)
         setActivity({
             title: res.data.data.title,
@@ -166,7 +166,7 @@ const DashboardEditActivity = ({match}) => {
                                 <div className="input-ds">
                                         <div><label>Imagen del banner (tamaño recomendable - 1920x 1080)</label></div>
                                         <div className="img-input-ds">
-                                            <img style={{ width: "100%" }} id="imgPerfil" src={`http://` + activity.file || require('../images/img/uploadimage.jpg')} alt="img" />
+                                            <img style={{ width: "100%" }} id="imgPerfil" src={`https://` + activity.file || require('../images/img/uploadimage.jpg')} alt="img" />
                                             <input
                                                 type="file"
                                                 name="file"

@@ -10,7 +10,7 @@ const GalleryNews = ({ newDate }) => {
                     newDate && newDate.length > 0 ?
                         newDate.map(gl => (
                             <div className="gallery-item" key={gl.id}>
-                                <img src={`http://` + gl.file.url} alt="" />
+                                <img src={`https://` + gl.file.url} alt="" />
                                 <div className="gallery-info">
                                     <span className="gallery-date">{gl.created}</span>
                                     <p className="gallery-title">{gl.title}</p>

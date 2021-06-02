@@ -1,19 +1,21 @@
 import React, { useState } from 'react'
 import { useForm, Controller } from 'react-hook-form'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import ReactSelect from 'react-select'
 import DeleteCart from '../images/svg/deletecart';
 import { sendCart, updateCard } from '../redux/actions/cart'
 import ModalSendCart from './ModalSendCart';
+import {
+    getProvince,
+    getDistrict,
+} from "../redux/actions/place";
 
 const StepsQuote = ({
     number,
     selectStyles,
     deleteProductCart,
     departments,
-    provinces,
-    districts,
     cartItems,
     handleShowModal,
     closeModal,
@@ -21,9 +23,13 @@ const StepsQuote = ({
 }) => {
 
     const history = useHistory();
-    const { register, handleSubmit, errors, control } = useForm();
+    const { register, handleSubmit, errors, control, setValue } = useForm();
     const [quantity, setQuantity] = useState();
     const dispatch = useDispatch();
+
+    const provinces = useSelector((state) => state.places.provinces);
+    const districts = useSelector((state) => state.places.districts);
+
 
     if (localStorage.getItem('cart') === null) {
         return <div className="no-quote">
@@ -36,22 +42,42 @@ const StepsQuote = ({
         setQuantity(e.target.value)
     }
 
+    const handleChangeDepartment = (selectedOption) => {
+        dispatch(getProvince(selectedOption.id));
+        setValue("department", selectedOption, { shouldDirty: true });
+        setValue("district", null, { shouldDirty: true });
+        dispatch(getDistrict(0));
+    };
+
+    const handleChangeProvince = (selectedOption) => {
+        dispatch(getDistrict(selectedOption.id));
+        setValue("province", selectedOption, { shouldDirty: true });
+        setValue("district", null, { shouldDirty: true });
+    };
+
     const sendCartItems = (data, e) => {
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'event': 'formSubmission',
+            'formType': 'Enviar cotizacion',
+            'formPlace': 'Cotizador'
+        });
 
         const body = {
             fullname: data.fullname,
             cellphone: data.cellphone,
             email: data.email,
-            department: data.department.name,
-            province: data.province.name,
-            district: data.district.name,
+            department: data.department,
+            province: data.province,
+            district: data.district,
             products: cartItems
         }
 
         if (body) {
             handleShowModal();
+            dispatch(sendCart(body))
             setTimeout(() => {
-                dispatch(sendCart(body))
                 dispatch(updateCard());
                 localStorage.clear();
                 history.push('/productos')
@@ -87,7 +113,7 @@ const StepsQuote = ({
                                                         <div className="box-quote" key={item.id}>
                                                             <div className="info-box-quote">
                                                                 <div className="img-quote">
-                                                                    <img src={`http://` + item.image} alt="" />
+                                                                    <img src={`https://` + item.image} alt="" />
                                                                 </div>
                                                                 <div className="info">
                                                                     <p>Producto</p>
@@ -178,23 +204,31 @@ const StepsQuote = ({
                                                         </span>
                                                         <div style={{ marginTop: "23px" }}>
                                                             <Controller
-                                                                as={
-                                                                    <ReactSelect
-                                                                        placeholder="Departamento"
-                                                                        styles={selectStyles}
-                                                                        options={departments}
-                                                                        getOptionLabel={departments => departments.name}
-                                                                        getOptionValue={departments => departments.id}
-                                                                    />}
                                                                 name="department"
                                                                 isClearable
                                                                 control={control}
                                                                 rules={{
                                                                     required: {
                                                                         value: true,
-                                                                        message: "Ingrese el departamento"
-                                                                    }
+                                                                        message: "Ingrese su departamento",
+                                                                    },
                                                                 }}
+                                                                render={({ field }) => (
+                                                                    <ReactSelect
+                                                                        {...field}
+                                                                        options={departments}
+                                                                        styles={selectStyles}
+                                                                        placeholder="Departamento"
+                                                                        onChange={handleChangeDepartment}
+                                                                        getOptionLabel={(departments) => departments.name}
+                                                                        getOptionValue={(departments) => departments.id}
+                                                                        getNewOptionData={(inputValue, optionLabel) => ({
+                                                                            id: optionLabel,
+                                                                            name: inputValue,
+                                                                            __isNew__: true,
+                                                                        })}
+                                                                    />
+                                                                )}
                                                             />
                                                             <span className="complete-form">
                                                                 {errors.department && errors.department.message}
@@ -202,23 +236,31 @@ const StepsQuote = ({
                                                         </div>
                                                         <div style={{ marginTop: "23px" }}>
                                                             <Controller
-                                                                as={
-                                                                    <ReactSelect
-                                                                        placeholder="Provincia"
-                                                                        styles={selectStyles}
-                                                                        options={provinces}
-                                                                        getOptionLabel={provinces => provinces.name}
-                                                                        getOptionValue={provinces => provinces.id}
-                                                                    />}
                                                                 name="province"
                                                                 isClearable
                                                                 control={control}
                                                                 rules={{
                                                                     required: {
                                                                         value: true,
-                                                                        message: "Ingrese la provincia"
-                                                                    }
+                                                                        message: "Ingrese su provincia",
+                                                                    },
                                                                 }}
+                                                                render={({ field }) => (
+                                                                    <ReactSelect
+                                                                        {...field}
+                                                                        options={provinces}
+                                                                        styles={selectStyles}
+                                                                        placeholder="Provincia"
+                                                                        onChange={handleChangeProvince}
+                                                                        getOptionLabel={(provinces) => provinces.name}
+                                                                        getOptionValue={(provinces) => provinces.id}
+                                                                        getNewOptionData={(inputValue, optionLabel) => ({
+                                                                            id: optionLabel,
+                                                                            name: inputValue,
+                                                                            __isNew__: true,
+                                                                        })}
+                                                                    />
+                                                                )}
                                                             />
                                                             <span className="complete-form">
                                                                 {errors.province && errors.province.message}
@@ -262,7 +304,7 @@ const StepsQuote = ({
                                                                 <div className="box-quote" key={item.id}>
                                                                     <div className="info-box-quote">
                                                                         <div className="img-quote">
-                                                                            <img src={`http://` + item.image} alt="" />
+                                                                            <img src={`https://` + item.image} alt="" />
                                                                         </div>
                                                                         <div className="info">
                                                                             <p>Producto</p>
@@ -282,7 +324,7 @@ const StepsQuote = ({
                                                 </div>
                                             </div>
                                             <div class="form-group clearfix send-options-quote">
-                                                <a href="javascript:;" class="form-wizard-previous-btn float-left">Ir a Ecommerce</a>
+                                                <a href="javascript:;" class="form-wizard-previous-btn float-left" target="_blank" href="http://www.pamolsaexpress.com/">Ir a Ecommerce</a>
                                                 <button className="send-cart complete" type="submit" >Enviar cotización</button>
                                             </div>
                                         </fieldset>
@@ -291,12 +333,12 @@ const StepsQuote = ({
                             </div>
                         </div>
                     </section> :
-                    <div className="no-quote" style={{paddingBottom: "100px"}}>
+                    <div className="no-quote" style={{ paddingBottom: "100px" }}>
                         <p>Aún no tienes productos para cotizar, te recomedamos agregar los productos que deseas </p>
                         <Link className="quote-back" to="/productos">Productos</Link>
                     </div>
             }
-            { showModal && <ModalSendCart closeModal={closeModal} title="Su cotización fue enviada con exito" subtitle="Muy pronto le responderemos con una cotización ideal para usted" />}
+            { showModal && <ModalSendCart closeModal={closeModal} title="Su cotización fue enviada con exito" subtitle="Muy pronto le responderemos con una cotización ideal para usted" classModalName="thanks-cotizacion" />}
         </>
     );
 }

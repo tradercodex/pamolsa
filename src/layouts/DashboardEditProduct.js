@@ -83,8 +83,7 @@ const DashboardEditProduct = ({ match }) => {
     })
 
     const getProduct = async () => {
-        const res = await axios.get(`https://wspamolsa.com.pe/api/product/find?product_id=${id}`)
-        console.log(res.data.data)
+        const res = await axios.get(`https://ws.pamolsa.com.pe/api/product/find?product_id=${id}`)
         setProduct({
             name: res.data.data.name,
             code: res.data.data.code,
@@ -290,7 +289,7 @@ const DashboardEditProduct = ({ match }) => {
             ...product,
             related_products: product.related_products.filter((related_product, index) => i !== index)
         })
-        const res = await axios.put(`https://wspamolsa.com.pe/api/product/related/delete?related_product_id=${id}`,null,config)
+        const res = await axios.put(`https://ws.pamolsa.com.pe/api/product/related/delete?related_product_id=${id}`,null,config)
         console.log(res.data)
     }
 
@@ -787,8 +786,8 @@ const DashboardEditProduct = ({ match }) => {
                                             {
                                                 product.file && product.file.length > 0 ?
                                                     product.file.map(item => (
-                                                        <div key={item.id}>
-                                                            <img style={{ width: "100%" }} id="imgPerfil" src={`http://` + item.url || require('../images/img/uploadimage.jpg')} alt="img" />
+                                                        <div>
+                                                            <img style={{ width: "100%" }} id="imgPerfil" src={`https://` + item.url || require('../images/img/uploadimage.jpg')} alt="img" />
                                                             <button onClick={() => deletingProductImage(item.id)} className="delete"><Delete /></button>
                                                         </div>
                                                     )) :

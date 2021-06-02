@@ -14,14 +14,14 @@ import EditIcon from '@material-ui/icons/Edit'
 import DeleteIcon from '@material-ui/icons/Delete'
 import Pagination from '../components/Pagination'
 
-const useStyles = makeStyles({
+/*const useStyles = makeStyles({
     root: {
         width: '100%',
     },
     container: {
         maxHeight: 440,
     },
-});
+});*/
 
 const DashboardProduct = () => {
 
@@ -79,7 +79,7 @@ const DashboardProduct = () => {
                                                 return (
                                                     <TableRow key={item.id}>
                                                         <TableCell style={{ color: "#fff" }}>{item.code}</TableCell>
-                                                        <TableCell style={{ color: "#fff" }}>{item.image[0] ? <img width="60" src={`http://` + item.image[0].url} alt="imagen" /> : 'FALTA IMAGEN'}</TableCell>
+                                                        <TableCell style={{ color: "#fff" }}>{item.image[0] ? <img width="60" src={`https://` + item.image[0].url} alt="imagen" /> : 'FALTA IMAGEN'}</TableCell>
                                                         <TableCell style={{ color: "#fff" }}>{item.name}</TableCell>
                                                         <TableCell style={{ color: "#fff" }}>{item.tradename}</TableCell>
                                                         <TableCell><Link style={{ color: "#55F09D" }} to={`/administrador/productos/editar/${item.id}`}><EditIcon /></Link></TableCell>

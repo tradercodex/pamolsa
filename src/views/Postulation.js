@@ -7,7 +7,7 @@ import axios from 'axios'
 import { useForm, Controller } from 'react-hook-form'
 import ReactSelect from 'react-select'
 import DateFnsUtils from '@date-io/date-fns';
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { sendPostulation } from '../redux/actions/postulation'
 import { es } from 'date-fns/esm/locale'
 import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/pickers';
@@ -16,18 +16,24 @@ import { createMuiTheme, MuiThemeProvider } from '@material-ui/core'
 import 'moment/locale/es'
 import moment from 'moment';
 import ModalSend from '../components/ModalSend';
+import {
+    getCity,
+    getDepartment,
+    getProvince,
+    getDistrict,
+  } from "../redux/actions/place";
 
 const Postulation = () => {
 
     const history = useHistory();
 
-    const [departments, setDepartments] = useState([]);
-    const [provinces, setProvinces] = useState([]);
-    const [districts, setDistricts] = useState([]);
+    const departments = useSelector((state) => state.places.departments);
+    const provinces = useSelector((state) => state.places.provinces);
+    const districts = useSelector((state) => state.places.districts);
     const [selectedDate, setSelectedDate] = React.useState(new Date());
     const [showModal, setShowModal] = useState(false);
 
-    const { register, handleSubmit, errors, control } = useForm();
+    const { register, handleSubmit, errors, control, setValue } = useForm();
 
     const dispatch = useDispatch();
 
@@ -39,20 +45,18 @@ const Postulation = () => {
         setShowModal(false)
     }
 
-    const apiDepartments = async () => {
-        const response = await axios.get('https://wspamolsa.com.pe/api/department/list');
-        setDepartments(response.data.data)
-    }
-
-    const apiProvinces = async () => {
-        const response = await axios.get('https://wspamolsa.com.pe/api/province/list');
-        setProvinces(response.data.data)
-    }
-
-    const apiDistricts = async () => {
-        const response = await axios.get('https://wspamolsa.com.pe/api/district/list');
-        setDistricts(response.data.data)
-    }
+    const handleChangeDepartment = (selectedOption) => {
+        dispatch(getProvince(selectedOption.id));
+        setValue("department", selectedOption, { shouldDirty: true });
+        setValue("district", null, { shouldDirty: true });
+        dispatch(getDistrict(0));
+      };
+    
+      const handleChangeProvince = (selectedOption) => {
+        dispatch(getDistrict(selectedOption.id));
+        setValue("province", selectedOption, { shouldDirty: true });
+        setValue("district", null, { shouldDirty: true });
+      };
 
     const customTheme = createMuiTheme({
         overrides: {
@@ -98,9 +102,7 @@ const Postulation = () => {
             header.classList.remove('movile-active')
         })
 
-        apiDepartments();
-        apiProvinces();
-        apiDistricts();
+        dispatch(getDepartment(15));
     }, [])
 
     const back = () => {
@@ -332,72 +334,94 @@ const Postulation = () => {
                         </div>
                         <div className="grid-form_triple">
                             <div>
-                                <Controller
-                                    as={
-                                        <ReactSelect
-                                            placeholder="Departamento"
-                                            styles={selectStyles}
-                                            options={departments}
-                                            getOptionLabel={departments => departments.name}
-                                            getOptionValue={departments => departments.id}
-                                        />}
-                                    name="department"
-                                    isClearable
-                                    control={control}
-                                    rules={{
-                                        required: {
-                                            value: true,
-                                            message: "Ingrese el departamento"
-                                        }
-                                    }}
+                            <Controller
+                                name="department"
+                                isClearable
+                                control={control}
+                                rules={{
+                                    required: {
+                                    value: true,
+                                    message: "Ingrese su departamento",
+                                    },
+                                }}
+                                render={({ field }) => (
+                                    <ReactSelect
+                                    {...field}
+                                    options={departments}
+                                    styles={selectStyles}
+                                    placeholder="Departamento"
+                                    onChange={handleChangeDepartment}
+                                    getOptionLabel={(departments) => departments.name}
+                                    getOptionValue={(departments) => departments.id}
+                                    getNewOptionData={(inputValue, optionLabel) => ({
+                                        id: optionLabel,
+                                        name: inputValue,
+                                        __isNew__: true,
+                                    })}
+                                    />
+                                )}
                                 />
                                 <span className="complete-form">
                                     {errors.department && errors.department.message}
                                 </span>
                             </div>
                             <div>
-                                <Controller
-                                    as={
-                                        <ReactSelect
-                                            placeholder="Provincia"
-                                            styles={selectStyles}
-                                            options={provinces}
-                                            getOptionLabel={provinces => provinces.name}
-                                            getOptionValue={provinces => provinces.id}
-                                        />}
-                                    name="province"
-                                    isClearable
-                                    control={control}
-                                    rules={{
-                                        required: {
-                                            value: true,
-                                            message: "Ingrese la provincia"
-                                        }
-                                    }}
+                            <Controller
+                                name="province"
+                                isClearable
+                                control={control}
+                                rules={{
+                                    required: {
+                                    value: true,
+                                    message: "Ingrese su provincia",
+                                    },
+                                }}
+                                render={({ field }) => (
+                                    <ReactSelect
+                                    {...field}
+                                    options={provinces}
+                                    styles={selectStyles}
+                                    placeholder="Provincia"
+                                    onChange={handleChangeProvince}
+                                    getOptionLabel={(provinces) => provinces.name}
+                                    getOptionValue={(provinces) => provinces.id}
+                                    getNewOptionData={(inputValue, optionLabel) => ({
+                                        id: optionLabel,
+                                        name: inputValue,
+                                        __isNew__: true,
+                                    })}
+                                    />
+                                )}
                                 />
                                 <span className="complete-form">
                                     {errors.province && errors.province.message}
                                 </span>
                             </div>
                             <div>
-                                <Controller
-                                    as={
-                                        <ReactSelect
-                                            placeholder="Distrito"
-                                            styles={selectStyles}
-                                            options={districts}
-                                            getOptionLabel={districts => districts.name}
-                                            getOptionValue={districts => districts.id}
-                                        />}
-                                    name="district"
-                                    isClearable
-                                    control={control}
-                                    rules={{
-                                        required: {
-                                            value: true,
-                                            message: "Ingrese el distrito"
-                                        }
-                                    }}
+                            <Controller
+                                as={
+                                    <ReactSelect
+                                    options={districts}
+                                    styles={selectStyles}
+                                    placeholder="Distrito"
+                                    getOptionLabel={(districts) => districts.name}
+                                    getOptionValue={(districts) => districts.id}
+                                    getNewOptionData={(inputValue, optionLabel) => ({
+                                        id: optionLabel,
+                                        name: inputValue,
+                                        __isNew__: true,
+                                    })}
+                                    />
+                                }
+                                name="district"
+                                isClearable
+                                control={control}
+                                rules={{
+                                    required: {
+                                    value: true,
+                                    message: "Ingrese su distrito",
+                                    },
+                                }}
                                 />
                                 <span className="complete-form">
                                     {errors.district && errors.district.message}
@@ -421,7 +445,7 @@ const Postulation = () => {
                                         register({
                                             required: {
                                                 value: true,
-                                                message: 'Ingrese su cumpleaños'
+                                                message: 'Ingrese su CV'
                                             }
                                         })
                                     }

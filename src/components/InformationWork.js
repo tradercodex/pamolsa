@@ -16,7 +16,7 @@ const InformationWork = () => {
                         <div className="square"></div>
                         <div className="img-video_known">
                             <div className="img">
-                                <img src={require('../images/img/obrero.png')} />
+                                <img src={require('../images/img/obrero.png')} alt="obrero"/>
                             </div>
                         </div>
                         <div className="play-button_pm">
@@ -31,7 +31,7 @@ const InformationWork = () => {
                         <div className="square" style={{left: "120px"}}></div>
                         <div className="img-video_known">
                             <div className="img">
-                                <img src={require('../images/img/work.png')} />
+                                <img src={require('../images/img/work.png')} alt="trabajo"/>
                             </div>
                         </div>
                     </div>

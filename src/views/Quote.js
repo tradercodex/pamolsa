@@ -15,8 +15,6 @@ const Quote = () => {
 
     const [cartItems, setCartItems] = useState(cart.cartItems)
     const [departments, setDepartments] = useState([]);
-    const [provinces, setProvinces] = useState([]);
-    const [districts, setDistricts] = useState([]);
     const [showModal, setShowModal] = useState(false);
 
     const handleShowModal = () => {
@@ -30,18 +28,8 @@ const Quote = () => {
     let number = Object.keys(cartItems).length
 
     const apiDepartments = async () => {
-        const response = await axios.get('https://wspamolsa.com.pe/api/department/list');
+        const response = await axios.get('https://ws.pamolsa.com.pe/api/department/list?country_id=15');
         setDepartments(response.data.data)
-    }
-
-    const apiProvinces = async () => {
-        const response = await axios.get('https://wspamolsa.com.pe/api/province/list');
-        setProvinces(response.data.data)
-    }
-
-    const apiDistricts = async () => {
-        const response = await axios.get('https://wspamolsa.com.pe/api/district/list');
-        setDistricts(response.data.data)
     }
 
     const selectStyles = {
@@ -88,6 +76,8 @@ const Quote = () => {
     };
 
     useEffect(() => {
+        
+        number = Object.keys(cartItems).length
 
         const movilOpen = document.getElementById('movil');
         const header = document.getElementById('header')
@@ -102,8 +92,6 @@ const Quote = () => {
         })
 
         apiDepartments();
-        apiProvinces();
-        apiDistricts();
         setCartItems(cart.cartItems)
         $(document).ready(function () {
             // click on next button
@@ -162,8 +150,6 @@ const Quote = () => {
                 selectStyles={selectStyles}
                 deleteProductCart={deleteProductCart} 
                 departments={departments}
-                provinces={provinces}
-                districts={districts}
                 cartItems={cartItems}
                 closeModal={closeModal}
             />

@@ -23,13 +23,13 @@ const Distributor = () => {
     const [cartItems, setCartItems] = useState(cart.cartItems)
 
     const getMarkertsApi = async () => {
-        const res = await axios.get('https://wspamolsa.com.pe/api/distributor/list');
+        const res = await axios.get('https://ws.pamolsa.com.pe/api/distributor/list');
         setUbications(res.data.data);
     }
 
     const getApiGeode = async () => {
         if (latitude && longitude) {
-            const res = await axios.get(`https://wspamolsa.com.pe/api/distributor/find/point/close?longitude=${longitude}&latitude=${latitude}`)
+            const res = await axios.get(`https://ws.pamolsa.com.pe/api/distributor/find/point/close?longitude=${longitude}&latitude=${latitude}`)
             setUbication(res.data.data)
         }
     }
@@ -87,7 +87,7 @@ const Distributor = () => {
             <div className="container-grid distributor">
                 <div className="info-container">
                     <div className="title-blue-container" style={{ marginBottom: "40px" }}>
-                        {ubication.latitude ? <h3 style={{ width: "700px" }}>Se encontro un punto de venta cercano</h3> : <h3>Puntos de venta más cercano</h3>}
+                        {ubication.latitude ? <h3 style={{ width: "700px" }}>Se encontro un punto de venta cercano</h3> : <h3>Puntos de venta más cercanos</h3>}
                     </div>
                 </div>
             </div>

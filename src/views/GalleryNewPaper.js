@@ -116,7 +116,7 @@ const GalleryNewPaper = () => {
                                 <div key={item.id} style={{maxWidth: "1440px", margin: "0 auto"}}>
                                     <div className="newpaper-gallery" style={{marginLeft:"20px"}}>
                                         <div className="newpaper-header-gallery">
-                                            <img src={`http://` + item.file.url} alt=""/>
+                                            <img src={`https://` + item.file.url} alt=""/>
                                         </div>
                                         <div className="newpaper-body">
                                             <span>{item.created}</span>

@@ -69,12 +69,13 @@ const KnownVideo = ({closeVideoModal, handleShowVideoModal, showVideoModal}) => 
                     <div className="certifications-companies">
                         <div>
                             <h6 className="companies-title">Certificaciones Internacionales</h6>
-                            <div className="companies_us">
-
-                                <div className="img-company-sgs">
-                                </div>
-                                <div className="img-company-sgiso">
-                                </div>
+                            <div className="companies_us">                               
+                                <a href="https://www.sgs.pe/es-es/certified-clients-and-products/certified-client-directory" target="_blank">
+                                    <div className="img-company-sgs"></div>
+                                </a>
+                                <a href="https://www.sgs.pe/es-es/certified-clients-and-products/certified-client-directory" target="_blank">
+                                    <div className="img-company-sgiso"></div> 
+                                </a>
                                 <div className="img-company-brc">
                                 </div>
                             </div>

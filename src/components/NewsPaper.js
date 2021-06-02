@@ -10,7 +10,7 @@ const NewsPaper = ({ id ,name, created, img, deletingPaper }) => {
                 <div>
                     <span>{created}</span>
                     <p>{name}</p>
-                    <img src={`http://` + img} width="300px" height="300px" alt={name} />
+                    <img src={`https://` + img} width="300px" height="300px" alt={name} />
                     <Link to={`/administrador/noticias/galeria/editar/${id}`} className="edit"><Edit /></Link>
                     <button onClick={()=> deletingPaper(id)}  className="delete"><Delete /></button>
                 </div>

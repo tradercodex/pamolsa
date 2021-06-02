@@ -18,7 +18,7 @@ const MenuCategory = ({search,onTextChanged,renderSuggestions,display,options,se
                             {
                                 typesProducts.map(tp => (
                                     <li key={tp.id}>
-                                        <Link to={`/productos/${tp.name}/${tp.id}`} className={ url === `/productos/${tp.name}/${tp.id}` ? "active-category" : 'category' }><img width="20px" src={`http://` + tp.url} /><span>{tp.name}</span></Link>
+                                        <Link to={`/productos/${tp.name}/${tp.id}`} className={ url === `/productos/${tp.name}/${tp.id}` ? "active-category" : 'category' }><img width="20px" src={`https://` + tp.url} /><span>{tp.name}</span></Link>
                                     </li>
                                 )) 
                             }

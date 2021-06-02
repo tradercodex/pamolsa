@@ -61,6 +61,18 @@ const Sidebar = () => {
                             </Link>
                         </li>
                         <li>
+                            <Link to="/administrador/archivo/nuevo">
+                                <i class="fas fa-file"></i>
+                                <span>Archivo nuevo</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/administrador/email/editar">
+                                <i class="fas fa-envelope-square"></i>
+                                <span>Email configuracion</span>
+                            </Link>
+                        </li>
+                        <li>
                             <Link onClick={logout} to="#">
                                 <i className="fas fa-sign-out-alt"></i>
                                 <span>Cerra Sesión</span>

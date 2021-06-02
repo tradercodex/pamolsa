@@ -215,7 +215,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                                     <div className="square-slick">
                                                     </div>
                                                     <div className="img-new_slick">
-                                                        <img src={`http://` + item.file.url} alt="imagen" />
+                                                        <img src={`https://` + item.file.url} alt="imagen" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -467,7 +467,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                                     <div key={item.id}>
                                                         <div className="card-work">
                                                             <div className="header-work">
-                                                                <img src={`http://` + item.file.url} alt="imagen" />
+                                                                <img src={`https://` + item.file.url} alt="imagen" />
                                                             </div>
                                                             <div className="card-body">
                                                                 <h6>{item.title}</h6>
@@ -492,7 +492,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                                         <div className="post-pet-sbl activity">
                                                             <div className="square-pet-sbl activity"></div>
                                                             <div className="img-new_slick activity">
-                                                                <img src={`http://` + item.file.url} alt="imagen" />
+                                                                <img src={`https://` + item.file.url} alt="imagen" />
                                                             </div>
                                                             <div className="play-button_pm activity">
                                                                 <button onClick={handleShowVideoModal}><Play /></button>
@@ -543,12 +543,12 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                             <div key={item.id}>
                                                 <div className="card-work">
                                                     <div className="header-work">
-                                                        <img src={`http://` + item.file.url || require('../images/img/work.png')} alt="imagen" />
+                                                        <img src={`https://` + item.file.url || require('../images/img/work.png')} alt="imagen" />
                                                     </div>
                                                     <div className="card-body">
                                                         <h6>{item.title}</h6>
                                                         <p className="text">{ReactHtmlParser((item.description).substring(0, 110) + '...')}</p>
-                                                        <a href={item.job_functions} target="_blank" >Ver más</a>
+                                                        <a href={item.job_functions} target="_blank" rel="noopener noreferrer">Ver más</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -619,20 +619,20 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                             <div className="box-container question" style={{ zIndex: "1", gridColumn: "4/8", marginTop: "100px", display: "flex", justifyContent: "center" }}>
                                 <div className="accordion">
 
-                                    <div class="container-accordion">
-                                        <details class="default square-accordion">
+                                    <div className="container-accordion">
+                                        <details className="default square-accordion">
                                             <summary><BarBox /><span>¿Cuánto tiempo tarda el proceso de selección?</span></summary>
                                             <p>El tiempo varía de acuerdo a cada proceso; pero en promedio es entre 7 y 15 días.</p>
                                         </details>
-                                        <details class="primary square-accordion">
+                                        <details className="primary square-accordion">
                                             <summary><BarBox /><span>¿Puedo enviar mi Currículum Vitae algún correo?</span></summary>
                                             <p>Sí, enviarlo a desarrollo.organizacional@carvajal.com indicando en asunto del correo el nombre del puesto al que postulas. Ejemplo: “Asistente de Endomarketing”.</p>
                                         </details>
-                                        <details class="primary square-accordion">
+                                        <details className="primary square-accordion">
                                             <summary><BarBox /><span>¿Puedo postular a más de una vacante?</span></summary>
                                             <p>Lo importante es que analices si tu experiencia, conocimientos y formación se ajusten a lo que se solicita en la vacante. Si cumples con ello puedes postular.</p>
                                         </details>
-                                        <details class="primary square-accordion">
+                                        <details className="primary square-accordion">
                                             <summary><BarBox /><span>¿Pamolsa paga todos los beneficios de acuerdo a ley?</span> </summary>
                                             <p>Sí, somos una empresa formal y cumplimos con pagar todos los beneficios que la ley exige; adicional a beneficios corporativos que la empresa otorga.</p>
                                         </details>

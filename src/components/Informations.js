@@ -36,10 +36,12 @@ const Informations = () => {
                             <div>
                                 <div className="companies_us">
 
-                                    <div className="img-company-sgs">
-                                    </div>
-                                    <div className="img-company-sgiso">
-                                    </div>
+                                    <a href="https://www.sgs.pe/es-es/certified-clients-and-products/certified-client-directory" target="_blank"> 
+                                        <div className="img-company-sgs"></div>
+                                    </a>
+                                    <a href="https://www.sgs.pe/es-es/certified-clients-and-products/certified-client-directory" target="_blank">
+                                        <div className="img-company-sgiso"></div>
+                                    </a>
                                     <div className="img-company-brc">
                                     </div>
                                 </div>

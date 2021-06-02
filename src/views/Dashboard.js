@@ -25,6 +25,8 @@ import DashboardEditActivity from '../layouts/DashboardEditActivity'
 import DashboardCommunity from '../layouts/DashboardCommunity'
 import DashboardAddCommunity from '../layouts/DashboardAddCommunity'
 import DashboardEditCommunity from '../layouts/DashboardEditCommunity'
+import DashboardAddPublicFile from '../layouts/DashboardAddPublicFile'
+import DashboardEditEmailConfig from '../layouts/DashboardEditEmailConfig'
 import ProtectedRoute from '../ProtectedRoute'
 
 const token = localStorage.getItem('token')
@@ -98,6 +100,8 @@ const Dashboard = () => {
                         <ProtectedRoute exact path="/administrador/comunidad" component={DashboardCommunity} />
                         <ProtectedRoute exact path="/administrador/comunidad/nuevo" component={DashboardAddCommunity} />
                         <ProtectedRoute exact path="/administrador/comunidad/editar/:id" component={DashboardEditCommunity} />
+                        <ProtectedRoute exact path="/administrador/archivo/nuevo" component={DashboardAddPublicFile}/>
+                        <ProtectedRoute exact path="/administrador/email/editar" component={DashboardEditEmailConfig}/>
                     </div>
                 </div>
             </div>

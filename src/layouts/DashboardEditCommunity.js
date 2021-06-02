@@ -56,7 +56,7 @@ const DashbaordEditCommunity = ({match}) => {
             }
         }
         
-        const res = await axios.get(`https://wspamolsa.com.pe/api/community/find/${id}`)
+        const res = await axios.get(`https://ws.pamolsa.com.pe/api/community/find/${id}`)
         setCommunity({
             title: res.data.data.title,
             description: res.data.data.description,
@@ -148,7 +148,7 @@ const DashbaordEditCommunity = ({match}) => {
                                 <div className="input-ds">
                                         <div><label>Imagen del banner (tamaño recomendable - 1920x 1080)</label></div>
                                         <div className="img-input-ds">
-                                            <img style={{ width: "100%" }} id="imgPerfil" src={`http://` + community.file || require('../images/img/uploadimage.jpg')} alt="img" />
+                                            <img style={{ width: "100%" }} id="imgPerfil" src={`https://` + community.file || require('../images/img/uploadimage.jpg')} alt="img" />
                                             <input
                                                 type="file"
                                                 name="file"

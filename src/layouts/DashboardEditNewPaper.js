@@ -28,7 +28,7 @@ const DashboardEditNewPaper = ({match}) => {
     })
 
     const getNewPaperApi = async () => {
-        const response = await Axios.get(`https://wspamolsa.com.pe/api/news/findByIdGallery/${id}`)
+        const response = await Axios.get(`https://ws.pamolsa.com.pe/api/news/findByIdGallery/${id}`)
         setNewpaperId({
             name_newspaper: response.data.data.name_newspaper,
             created: response.data.data.created,
@@ -139,7 +139,7 @@ const DashboardEditNewPaper = ({match}) => {
                                 <div className="input-ds">
                                     <div><label>Imagen de la galería periodística</label></div>
                                     <div className="img-input-ds">
-                                        <img style={{ width: "100%" }} id="imgPerfil" src={`http://` + newpaperId.file || require('../images/img/uploadimage.jpg')} alt="img" />
+                                        <img style={{ width: "100%" }} id="imgPerfil" src={`https://` + newpaperId.file || require('../images/img/uploadimage.jpg')} alt="img" />
                                         <input
                                             type="file"
                                             name="file"

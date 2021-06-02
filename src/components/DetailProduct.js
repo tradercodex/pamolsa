@@ -56,7 +56,7 @@ const DetailProduct = ({ product }) => {
                                     {
                                         product.image && product.image.length > 0 ? 
                                         product.image.map(item => (
-                                            <img src={`http://` + item.url} alt="imagen" />
+                                            <img src={`https://` + item.url} alt={`imagen` + item.url} />
                                         )) : ''
                                     }
                                 </Slider>
@@ -95,7 +95,7 @@ const DetailProduct = ({ product }) => {
                                     <input 
                                         type="number" 
                                         name="units" 
-                                        placeholder="1000 unidades" 
+                                        placeholder="máximo 1000" 
                                         ref={
                                             register({
                                                 min: 1, max: 1000,
@@ -117,7 +117,7 @@ const DetailProduct = ({ product }) => {
                                             product.business && product.business.length > 0 ?
                                             product.business.map(item => (
                                                 <div className="business-choose">
-                                                    <button type="button"><img className="detail-product" src={`http://` + item.url} alt=""/>{item.name}</button>
+                                                    <button type="button"><img className="detail-product" src={`https://` + item.url} alt=""/>{item.name}</button>
                                                 </div>
                                             )) : ''
                                         }

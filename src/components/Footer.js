@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Logo from '../images/svg/logo';
 import '../styles/footer.css'
 import ArrowFooter from '../images/svg/arrowfooter'
 import declaration from '../pdf/declaracion.pdf'
 import politicaproteccion from '../pdf/politicaproteccion.pdf'
+import politicasig from '../images/img/politicasig.png'
 
 const Footer = () => {
 
@@ -29,12 +30,12 @@ const Footer = () => {
                             <h6>Documento informativo</h6>
                             <div className="info-contact">
                                 <div className="center">
-                                    <a rel="noopener noreferrer" target="_blank" href={politicaproteccion}>Politica de privacidad</a>
+                                    <a rel="noopener noreferrer" target="_blank" href={politicaproteccion}>Política de privacidad</a>
+                                </div>
+                                <div className="center">
+                                    <a rel="noopener noreferrer" target="_blank" href={politicasig}>Política de SIG</a>
                                 </div>
                                 {/*<div className="cell">
-                                    <a href="">Documento 1</a>
-                                </div>
-                                <div className="cell">
                                     <a href="">Documento 2</a>
                                 </div>*/}
                             </div>
@@ -54,14 +55,14 @@ const Footer = () => {
                 <hr />
                 <div className="copy-socials desktop">
                     <div className="copy">
-                        <a style={{ textDecoration: "none" }} target="_blank" href="http://www.arquimarkets.com/"><p>© Todos los derechos reservados 2020 - Make by Arquimarkets</p></a>
+                        <a style={{ textDecoration: "none" }} target="_blank" href="http://www.arquimarkets.com/"><p>© Todos los derechos reservados 2020 - Made by Arquimarkets</p></a>
                     </div>
                     <div className="copy-right">
                         <div className="span">Nuestras redes</div>
                         <div className="socials">
-                            <a rel="noopener noreferrer" href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} /></a>
-                            <a rel="noopener noreferrer" href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} /></a>
-                            <a rel="noopener noreferrer" href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} /></a>
+                            <a rel="noopener noreferrer" href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} alt="social"/></a>
+                            <a rel="noopener noreferrer" href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} alt="social"/></a>
+                            <a rel="noopener noreferrer" href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} alt="social"/></a>
                         </div>
                     </div>
                 </div>
@@ -69,13 +70,13 @@ const Footer = () => {
                     <div className="copy-right">
                         <div className="span">Nuestras redes</div>
                         <div className="socials">
-                            <a rel="noopener noreferrer" href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} /></a>
-                            <a rel="noopener noreferrer" href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} /></a>
-                            <a rel="noopener noreferrer" href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} /></a>
+                            <a rel="noopener noreferrer" href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} alt="social"/></a>
+                            <a rel="noopener noreferrer" href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} alt="social"/></a>
+                            <a rel="noopener noreferrer" href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} alt="social"/></a>
                         </div>
                     </div>
                     <div className="copy">
-                        <a style={{ textDecoration: "none" }} target="_blank" href="http://www.arquimarkets.com/"><p>© Todos los derechos reservados 2020 - Make by Arquimarkets</p></a>
+                        <a style={{ textDecoration: "none" }} target="_blank" href="http://www.arquimarkets.com/"><p>© Todos los derechos reservados 2020 - Made by Arquimarkets</p></a>
                     </div>
 
                 </div>
@@ -93,7 +94,7 @@ const Footer = () => {
                                 </div>
                                 <div className="info-contact content">
                                     <div className="center">
-                                        <a rel="noopener noreferrer" target="_blank" href={declaration}>Peruana de Modelos SAC</a>
+                                        <a rel="noopener noreferrer" target="_blank" href={declaration}>Peruana de Moldeados SAC</a>
                                     </div>
                                 </div>
                             </div>
@@ -106,14 +107,17 @@ const Footer = () => {
                                 </div>
                                 <div className="info-contact content">
                                     <div className="center">
-                                        <a rel="noopener noreferrer" target="_blank" href={politicaproteccion}>Politica de privacidad</a>
+                                        <a rel="noopener noreferrer" target="_blank" href={politicaproteccion}>Política de privacidad</a>
                                     </div>
-                                    <div className="cell">
+                                    <div className="center">
+                                        <a rel="noopener noreferrer" target="_blank" href={politicasig}>Política de SIG</a>
+                                    </div>
+                                    {/*<div className="cell">
                                         <a rel="noopener noreferrer" target="_blank" href="">Documento 1</a>
                                     </div>
                                     <div className="cell">
                                         <a rel="noopener noreferrer" target="_blank" href="">Documento 2</a>
-                                    </div>
+                                    </div>*/}
                                 </div>
                             </div>
                         </div>
@@ -136,14 +140,14 @@ const Footer = () => {
                 <hr />
                 <div className="copy-socials desktop">
                     <div className="copy">
-                        <a style={{ textDecoration: "none" }} target="_blank" href="http://www.arquimarkets.com/"><p>© Todos los derechos reservados 2020 - Make by Arquimarkets</p></a>
+                        <a style={{ textDecoration: "none" }} target="_blank" href="http://www.arquimarkets.com/"><p>© Todos los derechos reservados 2020 - Made by Arquimarkets</p></a>
                     </div>
                     <div className="copy-right">
                         <div className="span">Nuestras redes</div>
                         <div className="socials">
-                            <a rel="noopener noreferrer" href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} /></a>
-                            <a rel="noopener noreferrer" href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} /></a>
-                            <a rel="noopener noreferrer" href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} /></a>
+                            <a rel="noopener noreferrer" href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} alt="social"/></a>
+                            <a rel="noopener noreferrer" href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} alt="social"/></a>
+                            <a rel="noopener noreferrer" href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} alt="social"/></a>
                         </div>
                     </div>
                 </div>
@@ -151,13 +155,13 @@ const Footer = () => {
                     <div className="copy-right">
                         <div className="span">Nuestras redes</div>
                         <div className="socials">
-                            <a rel="noopener noreferrer" href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} /></a>
-                            <a rel="noopener noreferrer" href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} /></a>
-                            <a rel="noopener noreferrer" href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} /></a>
+                            <a rel="noopener noreferrer" href="https://www.facebook.com/pamolsaoficial" target="_blank"><img src={require('../images/img/facebook.png')} alt="social"/></a>
+                            <a rel="noopener noreferrer" href="https://www.linkedin.com/company/13052324/admin/" target="_blank"><img src={require('../images/img/in.png')} alt="social"/></a>
+                            <a rel="noopener noreferrer" href="https://www.instagram.com/pamolsa/" target="_blank"><img src={require('../images/img/instagram.png')} alt="social"/></a>
                         </div>
                     </div>
                     <div className="copy">
-                        <a style={{ textDecoration: "none" }} target="_blank" href="http://www.arquimarkets.com/"><p>© Todos los derechos reservados 2020 - Make by Arquimarkets</p></a>
+                        <a style={{ textDecoration: "none" }} target="_blank" href="http://www.arquimarkets.com/"><p>© Todos los derechos reservados 2020 - Made by Arquimarkets</p></a>
                     </div>
                 </div>
             </div>

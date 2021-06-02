@@ -33,7 +33,7 @@ const DashboardEditNew = ({match}) => {
     const dispatch = useDispatch();
 
     const getNewApi = async () => {
-        const response = await Axios.get(`https://wspamolsa.com.pe/api/news/findById/${id}`)
+        const response = await Axios.get(`https://ws.pamolsa.com.pe/api/news/findById/${id}`)
         setNewId({
             title: response.data.data.title,
             description: response.data.data.body,
@@ -195,7 +195,7 @@ const DashboardEditNew = ({match}) => {
                                 <div className="input-ds">
                                     <div><label>Imagen de la noticia (tamaño recomendable - 1920x 1080)</label></div>
                                     <div className="img-input-ds">   
-                                        <img style={{ width: "100%" }} id="imgPerfil" src={`http://` + newId.file || require('../images/img/uploadimage.jpg')} alt="img" />
+                                        <img style={{ width: "100%" }} id="imgPerfil" src={`https://` + newId.file || require('../images/img/uploadimage.jpg')} alt="img" />
                                         <input
                                             type="file"
                                             name="file"

@@ -14,7 +14,7 @@ const Login = () => {
     const { register,errors, handleSubmit } = useForm()
 
     const dispatch = useDispatch();
-    const history = useHistory();
+    //const history = useHistory();
 
     useEffect(() => {
         const inputs = document.querySelectorAll('.input');
@@ -62,21 +62,17 @@ const Login = () => {
             <div className="container" style={{ background: "transparent" }}>
                 <div className="modal-container">
                     <div className="banner-container">
-                        <p>Pamolsa</p>
-                        <div className="img-container">
+                        <p>Pamolsa - Dashboard</p>
+                        <div className="img-container" alt="dashboard">
                             <LoginDrawn />
-                        </div>
-                        <div className="info-banner">
-                            <p>Aprende a enseñar porque enseñando aprenderás</p>
                         </div>
                     </div>
                     <div className="form-container">
                         <div className="welcome">
-                            <h2>Buenos dias!</h2>
-                            <h2>Inicia sesión ahora</h2>
+                            <h2>Inicia sesión</h2>
                         </div>
                         <div className="info-form">
-                            <p>Ingresa correctamente los datos y accede a nuestro sistema</p>
+                            <p>Ingresa correctamente los datos y accede al dashboard</p>
                         </div>
                         <form action="" onSubmit={handleSubmit(sendLogin)}>
                             <div className="input-div one">
@@ -93,7 +89,7 @@ const Login = () => {
                                             register({
                                                 required: {
                                                     value: true,
-                                                    message: 'Ingrese el título de la noticia'
+                                                    message: 'Ingrese el email'
                                                 }
                                             })
                                         }
@@ -117,7 +113,7 @@ const Login = () => {
                                             register({
                                                 required: {
                                                     value: true,
-                                                    message: 'Ingrese el título de la noticia'
+                                                    message: 'Ingrese la contraseña'
                                                 }
                                             })
                                         }

@@ -136,12 +136,12 @@ const Known = ({
                     <div>
                         <h3 className="wow animate__animated animate__fadeInLeft"
                             data-wow-duration="2s"
-                            data-wow-delay="0.6s">Conoce nuestros puntos de ventas más cercanos</h3>
+                            data-wow-delay="0.6s">Conoce nuestros puntos de venta más cercanos</h3>
                         <p
                             className="wow animate__animated animate__fadeInLeft"
                             data-wow-duration="2s"
                             data-wow-delay="1s">
-                            Ingresa tu ubicación y encuentra los puntos de venta más cercanos
+                            Ingresa tu ubicación y encuentra el punto de venta más cercano
                             </p>
                         <LinkRouter
                             className="wow animate__animated animate__fadeInLeft"
