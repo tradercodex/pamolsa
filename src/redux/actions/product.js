@@ -26,7 +26,9 @@ import {
     GET_PRODUCTS_BY_TYPE,
     GET_PRODUCTS_BY_TYPE_ERROR,
     GET_PRODUCT,
-    GET_PRODUCT_ERROR
+    GET_PRODUCT_ERROR,
+    GET_KEYWORDS,
+    GET_KEYWORDS_ERROR
 } from './types'
 import axios from 'axios'
 
@@ -120,6 +122,20 @@ export const getTypesBusiness = () => async dispatch => {
     } catch (error) {
         dispatch({
             type: GET_TYPES_BUSINESS_ERROR
+        })
+    }
+}
+
+export const getKeywords = () => async dispatch => {
+    try {
+        const res = await axios.get(`${root}/keyword/list`);
+        dispatch({
+            type: GET_KEYWORDS,
+            payload: res.data.data
+        })
+    } catch (error) {
+        dispatch({
+            type: GET_KEYWORDS_ERROR
         })
     }
 }

@@ -18,6 +18,7 @@ import {
     getAddSubtypes,
     getMaterials,
     getTypesBusiness,
+    getKeywords,
     updateProduct,
     getProduct as getProducts
 }
@@ -40,6 +41,7 @@ const DashboardEditProduct = ({ match }) => {
     const addSubTypes = useSelector(state => state.products.addSubTypesProducts)
     const materials = useSelector(state => state.products.materials)
     const business = useSelector(state => state.products.typesBusiness)
+    const keywords = useSelector(state => state.products.keywords)
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -106,6 +108,7 @@ const DashboardEditProduct = ({ match }) => {
             line: { label: res.data.data.product_line.name, value: res.data.data.product_line.id },
             product_type: { label: res.data.data.product_type.name, value: res.data.data.product_type.id },
             business_types: res.data.data.business?.map(item => ({ label: item.name, value: item.id })),
+            keywords: res.data.data.keywords?.map(item => ({ label: item.name, value: item.id })),
             related_products: res.data.data.related_products?.map(item => ({ related_product: item.code, id: item.id }))
         })
         setValue("line", { label: res.data.data.product_line.name, value: res.data.data.product_line.id })
@@ -113,6 +116,7 @@ const DashboardEditProduct = ({ match }) => {
         setValue("product_addtl_subtype", { label: res.data.data.product_addtl_subtype.name, value: res.data.data.product_addtl_subtype.id })
         setValue("material", { label: res.data.data.material.name, value: res.data.data.material.id })
         setValue("business", res.data.data.business?.map(item => ({ name: item.name, id: item.id })))
+        setValue("keywords", res.data.data.keywords?.map(item => ({ name: item.name, id: item.id })))
         setValue("related_products", res.data.data.related_products?.map(item => ({ code: item.code, id: item.id })))
     }
 
@@ -154,6 +158,7 @@ const DashboardEditProduct = ({ match }) => {
         dispatch(getAddSubtypes());
         dispatch(getMaterials());
         dispatch(getTypesBusiness());
+        dispatch(getKeywords());
         getProduct();
     }, [])
 
@@ -246,6 +251,9 @@ const DashboardEditProduct = ({ match }) => {
         formData.append('material_short_name', data.material_short_name);
         for (var i = 0; i < data.business.length; i++) {
             formData.append('business', data.business[i].name);
+        }
+        for (var i = 0; i < data.keywords.length; i++) {
+            formData.append('keywords', data.keywords[i].name);
         }
         for (let picRelated of product.related_products) {
             formData.append('related_product', picRelated.related_product)
@@ -736,7 +744,7 @@ const DashboardEditProduct = ({ match }) => {
                             <div>
                                 <div className="input-ds rt">
                                     <div>
-                                        <label>Agregue los tipos de nogocio</label>
+                                        <label>Agregue los tipos de negocio</label>
                                     </div>
                                     <Controller
                                         as={
@@ -760,6 +768,33 @@ const DashboardEditProduct = ({ match }) => {
                                     />
                                     <div className="error-ds">
                                         {errors.business && errors.business.message}
+                                    </div>
+                                </div>
+                                <div className="input-ds rt">
+                                    <div>
+                                        <label>Agregue los keywords</label>
+                                    </div>
+                                    <Controller
+                                        as={
+                                            <CreatableSelect
+                                                isMulti
+                                                styles={selectStyles}
+                                                options={keywords}
+                                                getOptionLabel={keywords => keywords.name}
+                                                getOptionValue={keywords => keywords.id}
+                                                components={makeAnimated}
+                                                getNewOptionData={(inputValue, optionLabel) => ({
+                                                    id: optionLabel,
+                                                    name: inputValue,
+                                                    __isNew__: true
+                                                })}
+                                            />}
+                                        name="keywords"
+                                        isClearable
+                                        control={control}
+                                    />
+                                    <div className="error-ds">
+                                        {errors.keywords && errors.keywords.message}
                                     </div>
                                 </div>
                                 <div className="input-ds" style={{ marginTop: "20px" }}>
