@@ -16,7 +16,8 @@ import {
     getMaterials,
     getTypesBusiness,
     sendProduct,
-    getProduct
+    getProduct,
+    getKeywords
 }
     from '../redux/actions/product'
 
@@ -30,6 +31,7 @@ const DashboardAddProduct = () => {
     const addSubTypes = useSelector(state => state.products.addSubTypesProducts)
     const materials = useSelector(state => state.products.materials)
     const business = useSelector(state => state.products.typesBusiness)
+    const keywords = useSelector(state => state.products.keywords)
     const dispatch = useDispatch();
 
     const [productsImages, setProductsImages] = useState({
@@ -72,6 +74,7 @@ const DashboardAddProduct = () => {
         dispatch(getAddSubtypes());
         dispatch(getMaterials());
         dispatch(getTypesBusiness());
+        dispatch(getKeywords());
     }, [])
 
     const selectStyles = {
@@ -158,6 +161,9 @@ const DashboardAddProduct = () => {
         formData.append('material_short_name', data.material_short_name);
         for (var i = 0; i < data.business.length; i++) {
             formData.append('business', data.business[i].name);
+        }
+        for (var i = 0; i < data.keywords.length; i++) {
+            formData.append('keywords', data.keywords[i].name);
         }
         for (let pic of productsImages.images) {
             formData.append('file', pic)
@@ -675,7 +681,7 @@ const DashboardAddProduct = () => {
                                 </div>
                                 <div className="input-ds rt">
                                     <div>
-                                        <label>Agregue los tipos de nogocio</label>
+                                        <label>Agregue los tipos de negocio</label>
                                     </div>
                                     <Controller
                                         as={
@@ -704,6 +710,33 @@ const DashboardAddProduct = () => {
                                     />
                                     <div className="error-ds">
                                         {errors.business && errors.business.message}
+                                    </div>
+                                </div>
+                                <div className="input-ds rt">
+                                    <div>
+                                        <label>Agregue los keywords</label>
+                                    </div>
+                                    <Controller
+                                        as={
+                                            <CreatableSelect
+                                                isMulti
+                                                styles={selectStyles}
+                                                options={keywords}
+                                                getOptionLabel={keywords => keywords.name}
+                                                getOptionValue={keywords => keywords.id}
+                                                components={makeAnimated}
+                                                getNewOptionData={(inputValue, optionLabel) => ({
+                                                    id: optionLabel,
+                                                    name: inputValue,
+                                                    __isNew__: true
+                                                })}
+                                            />}
+                                        name="keywords"
+                                        isClearable
+                                        control={control}
+                                    />
+                                    <div className="error-ds">
+                                        {errors.keywords && errors.keywords.message}
                                     </div>
                                 </div>
                                 <div className="input-ds" style={{ marginTop: "20px" }}>

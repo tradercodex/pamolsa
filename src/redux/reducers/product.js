@@ -10,6 +10,7 @@ import {
     DELETE_PRODUCT,
     GET_PRODUCTS_BY_TYPE,
     GET_PRODUCT,
+    GET_KEYWORDS,
 } from '../actions/types'
 
 const initialState = {
@@ -22,6 +23,7 @@ const initialState = {
     addSubTypesProducts: [],
     materials: [],
     productsByFilter: [],
+    keywords: [],
     getProduct: {
         material: {
             name: ''
@@ -92,6 +94,11 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 products: state.products.filter(product => product.id !== payload)
+            }
+        case GET_KEYWORDS:
+            return {
+                ...state,
+                keywords: payload
             }
         default:
             return state;
