@@ -81,23 +81,23 @@ const ProductsByBusiness = ({ match }) => {
         })
     }
 
-    const apiGetLines = async () => {
-        const response = await Axios.get(`https://ws.pamolsa.com.pe/api/product/line/list?business=${business_id}`);
-        setLines(response.data.data)
-    }
-
-    const apiGetTypes = async () => {
-        const response = await Axios.get(`https://ws.pamolsa.com.pe/api/product/types/list?business=${business_id}`);
-        setTypes(response.data.data)
-    }
-
-    const apiGetMaterial = async () => {
-        const response = await Axios.get(`https://ws.pamolsa.com.pe/api/product/material/list?business=${business_id}`);
-        setMaterials(response.data.data)
-    }
-
     useEffect(() => {
 
+        const apiGetLines = async () => {
+            const response = await Axios.get(`https://ws.pamolsa.com.pe/api/product/line/list?business=${business_id}`);
+            setLines(response.data.data)
+        }
+    
+        const apiGetTypes = async () => {
+            const response = await Axios.get(`https://ws.pamolsa.com.pe/api/product/types/list?business=${business_id}`);
+            setTypes(response.data.data)
+        }
+    
+        const apiGetMaterial = async () => {
+            const response = await Axios.get(`https://ws.pamolsa.com.pe/api/product/material/list?business=${business_id}`);
+            setMaterials(response.data.data)
+        }
+        
         const movilOpen = document.getElementById('movil');
         const header = document.getElementById('header')
         const movilClose = document.getElementById('close-movil')

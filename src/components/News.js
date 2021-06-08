@@ -194,7 +194,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                 pathname === "/" ?
                     <div className="News-pm">
                         <div className="tree-new news">
-                            <img src={require('../images/img/tree.gif')} alt="imagen" />
+                            <img src={require('../images/img/tree.webp')} alt="imagen" />
                         </div>
                         <div className="square-new"></div>
                         <Slider {...settingsHome} className="new-slick tablet">

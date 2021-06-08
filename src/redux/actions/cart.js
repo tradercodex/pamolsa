@@ -5,7 +5,6 @@ const root = 'https://ws.pamolsa.com.pe/api'
 
 export const addToCart = (product) => {
     return async dispatch => {
-        console.log(product)
         const cartItems = store.getState().cart.cartItems.slice();
         cartItems.push({ ...product })
         localStorage.setItem('cart', JSON.stringify(cartItems))

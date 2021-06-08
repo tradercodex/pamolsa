@@ -7,7 +7,6 @@ const root = 'https://ws.pamolsa.com.pe/api'
 export const sendContact = (data) => async dispatch => {
     try {
         const res = await axios.post(`${root}/contact/save`, data);
-        console.log(res.data)
         dispatch({
             type: SEND_CONTACT,
             payload: res.data

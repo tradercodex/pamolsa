@@ -31,7 +31,6 @@ const DashboardEditActivity = ({match}) => {
 
     const getActivity = async () => {
         const res = await axios.get(`https://ws.pamolsa.com.pe/api/activity/find/${id}`)
-        console.log(res.data)
         setActivity({
             title: res.data.data.title,
             description: res.data.data.subtitle,

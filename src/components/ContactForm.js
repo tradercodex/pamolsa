@@ -22,7 +22,7 @@ const ContactForm = () => {
   const { register, handleSubmit, errors, control, setValue } = useForm();
 
   const countries = useSelector((state) => state.places.countries);
-  const cities = useSelector((state) => state.places.cities);
+  //const cities = useSelector((state) => state.places.cities);
   const departments = useSelector((state) => state.places.departments);
   const provinces = useSelector((state) => state.places.provinces);
   const districts = useSelector((state) => state.places.districts);
@@ -440,6 +440,7 @@ const ContactForm = () => {
                   <a
                     style={{ textDecoration: "none", color: "#FBBA00" }}
                     target="_blank"
+                    rel="noopener noreferrer"
                     href={proteccion}
                   >
                     política de protección de datos
@@ -472,7 +473,7 @@ const ContactForm = () => {
       </div>
       <div className="footer-contact">
         <div className="tree-new contact-info">
-          <img src={require("../images/img/tree.gif")} alt="" />
+          <img src={require("../images/img/tree.webp")} alt="" />
         </div>
         <div className="container-grid">
           <div className="marker-contact">

@@ -160,8 +160,6 @@ const Postulation = () => {
 
         const formData = new FormData();
 
-        console.log(data);
-
         formData.append('name', data.name);
         formData.append('lastname', data.lastname);
         formData.append('email', data.email);
