@@ -8,7 +8,7 @@ const Informations = () => {
             <div className="Map_pm container" style={{background: "#F9F9F9"}}>
                 <div className="container-grid_img" style={{marginTop: "50px", alignItems: "center"}}>
                     <div className="img-map_pm information">
-                        <img src={require('../images/img/mappamolsa.png')} alt="imagen del mapa" />
+                        <img src={require('../images/img/mappamolsa.webp')} alt="imagen del mapa" />
                     </div>
                     <div className="info-map_pm">
                         <div className="footer-dc text-map_pm" style={{fontSize:"24px"}}>

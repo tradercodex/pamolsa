@@ -108,13 +108,13 @@ const InformationSostenibility = ({ sostenibilidad2019, sostenibilidad2018, sost
                                     <div className="square-sl-sbl">
                                     </div>
                                     <div className="img-new_slick">
-                                        <img src={require('../images/img/stbslider1.png')} alt="imagen" />
+                                        <img src={require('../images/img/stbslider1.webp')} alt="imagen" />
                                     </div>
                                 </div>
                                 <div className="info-sl-sbl">
                                     <div className="info-sbl">
                                         <h4 style={{ width: "520px" }}>Innovación que genera valor</h4>
-                                        <img src={require('../images/img/bioform.png')} alt="bioform" />
+                                        <img src={require('../images/img/bioform.webp')} alt="bioform" />
                                         <h6>PRIMERA LÍNEA DE EMPAQUES BIODEGRADABLES</h6>
                                         <p>Fabricada en el país con cartón de bagazo de caña de azúcar, amplió su portafolio el 2019 con el lanzamiento de nuevas referencias en platos, contenedores, bandejas y vasos para el mercado de Food Service.</p>
                                     </div>
@@ -133,7 +133,7 @@ const InformationSostenibility = ({ sostenibilidad2019, sostenibilidad2018, sost
                                 <div className="info-sl-sbl">
                                     <div className="info-sbl">
                                         <h4 style={{ width: "520px" }}>Innovación que genera valor</h4>
-                                        <img src={require('../images/img/petplus.png')} alt="bioform" />
+                                        <img src={require('../images/img/petplus.webp')} alt="bioform" />
                                         <p>Desarrollamos PET+, una tecnología que permite obtener productos con una funcionalidad superior a la de un empaque de PET tradicional utilizando hasta 50% menos de material. Adicionalmente mejora las propiedades de aislamiento térmico y la apariencia del producto.</p>
                                     </div>
                                 </div>

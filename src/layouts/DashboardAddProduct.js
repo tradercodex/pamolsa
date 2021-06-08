@@ -742,7 +742,7 @@ const DashboardAddProduct = () => {
                                 <div className="input-ds" style={{ marginTop: "20px" }}>
                                     <div><label>Imagen de la noticia</label></div>
                                     <div className="img-input-ds">
-                                        <img style={{ width: "100%" }} id="imgPerfil" src={require('../images/img/uploadimage.jpg')} alt="img" />
+                                        <img style={{ width: "100%" }} id="imgPerfil" src={require('../images/img/uploadimage.webp')} alt="img" />
                                         <input
                                             type="file"
                                             name="file"

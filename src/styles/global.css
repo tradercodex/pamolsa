@@ -1632,7 +1632,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
     .Rotate-slick::after.movil {
         top: 300px !important;
-        /* background-image: url("../images/img/bannermovil.png") !important; */
+        /* background-image: url("../images/img/bannermovil.webp") !important; */
     }
     .Elipse.movil {
         top: 0px !important;

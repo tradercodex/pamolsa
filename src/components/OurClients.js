@@ -72,7 +72,7 @@ const OurClients = () => {
                                 data-wow-duration="2s"
                                 data-wow-delay="1.8s">
                                 <div className="img">
-                                    <img src={require('../images/img/client6.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/client6.2.webp')} alt="imagen" />
                                 </div>
                             </div>
                         </div>
@@ -94,7 +94,7 @@ const OurClients = () => {
                                 data-wow-duration="2s"
                                 data-wow-delay="1.8s">
                                 <div className="img">
-                                    <img src={require('../images/img/client5.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/client5.2.webp')} alt="imagen" />
                                 </div>
                             </div>
                         </div>
@@ -116,7 +116,7 @@ const OurClients = () => {
                                 data-wow-duration="2s"
                                 data-wow-delay="1.8s">
                                 <div className="img">
-                                    <img src={require('../images/img/client7.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/client7.2.webp')} alt="imagen" />
                                 </div>
                             </div>
                         </div>
@@ -138,7 +138,7 @@ const OurClients = () => {
                                 data-wow-duration="2s"
                                 data-wow-delay="1.8s">
                                 <div className="img">
-                                    <img src={require('../images/img/client4.webp')} alt="imagen" />
+                                    <img src={require('../images/img/client4.2.webp')} alt="imagen" />
                                 </div>
                             </div>
                         </div>

@@ -26,16 +26,8 @@ import { updateCard } from './redux/actions/cart';
 import DetailCommunity from './views/DetailCommunity';
 import NotFound from './components/NotFound'
 import ProductosBySearch from './views/ProductosBySearch'
-//import TagManager from 'react-gtm-module'
-
-// http://3.120.185.254:8090/api
 
 const token = localStorage.getItem('token')
-
-/*const tagManagerArgs = {
-  gtmId: 'GTM-5PSG6K4'
-}
-TagManager.initialize(tagManagerArgs)*/
 
 function App() {
   
@@ -50,13 +42,7 @@ function App() {
   })
 
   return (
-    <Suspense fallback={
-      <div className="content" id="content">
-        <div className="cube-wrapper">
-          <span className="loading" data-name="Loading">Cargando</span>
-        </div>
-      </div>
-    }>
+    <Suspense fallback={null}>
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />

@@ -13,7 +13,7 @@ const AboutUs = () => {
             <div className="container-informations footer">
                 <div className="info-carbajal about">
                     <div>
-                        <img src={require('../images/img/aboutcarbajal.png')} alt="imagen" />
+                        <img src={require('../images/img/aboutcarbajal.webp')} alt="imagen" />
                         <p>
                             Somos parte de Carvajal Empaques, compañía de la Organización Carvajal especializada en el diseño, producción y distribución de soluciones personalizadas e innovadoras de empaques para alimentos.
                             </p>
@@ -22,7 +22,7 @@ const AboutUs = () => {
                 <div className="img-carbajal about">
                     <div className="wc">
                         <div className="square-carbajal"></div>
-                        <img src={require('../images/img/carbajal.png')} />
+                        <img src={require('../images/img/carbajal.webp')} />
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@ const AboutUs = () => {
             <div className="Map_pm container">
                 <div className="container-grid_img">
                     <div className="img-map_pm">
-                        <img src={require('../images/img/mapcarbajal.png')} />
+                        <img src={require('../images/img/mapcarbajal.webp')} />
                     </div>
                     <div className="info-map_pm">
                         <div className="info-map-flex">
@@ -127,7 +127,7 @@ const AboutUs = () => {
                         </div>
                         <div className="img-about_us">
                             <div className="img">
-                                <img src={require('../images/img/boyspamolsa.png')} />
+                                <img src={require('../images/img/boyspamolsa.webp')} />
                             </div>
                         </div>
                     </div>

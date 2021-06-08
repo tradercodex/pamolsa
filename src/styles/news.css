@@ -20,7 +20,7 @@
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-image: url('../images/img/squarenews.png');
+    background-image: url('../images/img/squarenews.webp');
     background-repeat: no-repeat;
 }
 
@@ -32,7 +32,7 @@
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-image: url('../images/img/squarestb.png');
+    background-image: url('../images/img/squarestb.webp');
     background-repeat: no-repeat;
 }
 
@@ -119,7 +119,7 @@
     z-index: 1;
     width: 1708.8px;
     height: 1489.8px;
-    background-image: url('../images/img/elipsevideo.png');
+    background-image: url('../images/img/elipsevideo.webp');
     background-repeat: no-repeat;
 }
 
@@ -550,7 +550,7 @@
     position: relative;
     width: 68px;
     height: 67px;
-    background-image: url('../images/img/sgs.png');
+    background-image: url('../images/img/sgs.webp');
     background-size: cover;
     background-color: #D1EBFC;
     background-blend-mode: darken;
@@ -560,7 +560,7 @@
     position: relative;
     width: 68px;
     height: 67px;
-    background-image: url('../images/img/iso.png');
+    background-image: url('../images/img/iso.webp');
     background-size: cover;
     background-color: #D1EBFC;
     background-blend-mode: darken;
@@ -570,7 +570,7 @@
     position: relative;
     width: 67px;
     height: 58px;
-    background-image: url('../images/img/brcpackaging.png');
+    background-image: url('../images/img/brcpackaging.webp');
     background-size: cover;
     background-color: #D1EBFC;
     background-blend-mode: darken;
@@ -582,7 +582,7 @@
     height: 140px;
     right: 12px;
     background-color: #F9F9F9;
-    background-image: url('../images/img/selloemprendedor.png');
+    background-image: url('../images/img/selloemprendedor.webp');
     background-size: cover;
     background-blend-mode: darken;
 }
@@ -592,7 +592,7 @@
     position: relative;
     width: 60px;
     height: 60px;
-    background-image: url('../images/img/greatperu.png');
+    background-image: url('../images/img/greatperu.webp');
     background-size: cover;
     background-color: #D1EBFC;
     background-blend-mode: darken;
@@ -602,7 +602,7 @@
     position: relative;
     width: 60px;
     height: 60px;
-    background-image: url('../images/img/greatperu2.png');
+    background-image: url('../images/img/greatperu2.webp');
     background-size: cover;
     background-color: #D1EBFC;
     background-blend-mode: darken;
@@ -612,7 +612,7 @@
     position: relative;
     width: 183px;
     height: 57px;
-    background-image: url('../images/img/greatplaces.png');
+    background-image: url('../images/img/greatplaces.webp');
     background-size: cover;
     background-color: #D1EBFC;
     background-blend-mode: darken;
@@ -750,7 +750,7 @@
     position: relative;
     width: 103px;
     height: 101px;
-    background-image: url('../images/img/sgs.png');
+    background-image: url('../images/img/sgs.webp');
     background-size: cover;    
 }
 
@@ -758,7 +758,7 @@
     position: relative;
     width: 103px;
     height: 101px;
-    background-image: url('../images/img/iso.png');
+    background-image: url('../images/img/iso.webp');
     background-size: cover;    
 }
 
@@ -766,7 +766,7 @@
     position: relative;
     width: 121px;
     height: 101px;
-    background-image: url('../images/img/brcpackaging.png');
+    background-image: url('../images/img/brcpackaging.webp');
     background-size: contain;
     position: relative;   
     background-repeat: no-repeat;         
@@ -777,7 +777,7 @@
     width: 109px;
     margin-bottom: 30px;
     height: 109px;
-    background-image: url('../images/img/greatperu.png');
+    background-image: url('../images/img/greatperu.webp');
     background-size: cover;
     position: relative; 
 }
@@ -787,7 +787,7 @@
     width: 109px;
     margin-bottom: 30px;
     height: 109px;
-    background-image: url('../images/img/greatplacelast.png');
+    background-image: url('../images/img/greatplacelast.webp');
     background-size: cover;
     position: relative; 
 }
@@ -797,7 +797,7 @@
     width: 109px;
     height: 109px;
     margin-bottom: 30px;
-    background-image: url('../images/img/greatplaces.png');
+    background-image: url('../images/img/greatplaces.webp');
     background-size: cover;
     position: relative;
 }
@@ -807,7 +807,7 @@
     width: 109px;
     height: 109px;
     margin-bottom: 30px;
-    background-image: url('../images/img/grateplacework.png');
+    background-image: url('../images/img/grateplacework.webp');
     background-size: cover;
     position: relative;
 }
@@ -1302,7 +1302,7 @@
 }
 
 .Detail-new_pm.gallery-paper {
-    background-image: url('../images/img/galeriaperiodisticabanner.png') !important;
+    background-image: url('../images/img/galeriaperiodisticabanner.webp') !important;
 }
 
 .Detail-new_pm::after {
