@@ -323,7 +323,7 @@
     width: 232.98px;
     height: 284.53px;
     z-index: 3;
-    background-image: url('../images/img/fondocanaright.png');
+    background-image: url('../images/img/fondocanaright.webp');
 }
 
 .tree-right {
@@ -335,7 +335,7 @@
     width: 232.98px;
     height: 284.53px;
     z-index: 3;
-    background-image: url('../images/img/fondocanaleft.png');
+    background-image: url('../images/img/fondocanaleft.webp');
 }
 
 
@@ -348,7 +348,7 @@
     width: 132.98px;
     height: 184.53px;
     z-index: 3;
-    background-image: url('../images/img/bioform.png');
+    background-image: url('../images/img/bioform.webp');
 }
 
 .pen {
@@ -361,7 +361,7 @@
     height: 226px;
     left: -50px;
     z-index: 1;
-    background-image: url('../images/img/pen1.png');
+    background-image: url('../images/img/pen1.webp');
     opacity: 1;
     transform: rotate(121.08deg);
 }
@@ -375,7 +375,7 @@
     width: 186px;
     height: 226px;
     z-index: 1;
-    background-image: url('../images/img/pen2.png');
+    background-image: url('../images/img/pen2.webp');
     opacity: 0.5;
     transform: rotate(180deg);
 }
@@ -731,9 +731,9 @@ h2.title-choose_business {
     font-family: 'Amble';
 }
 
-.img-product .slick-prev:before, .slick-next:before {
-    /* display: none; */
-}
+  /* .img-product .slick-prev:before, .slick-next:before {
+  display: none; 
+}*/
 
 .img-product .slick-dots {
     transform: rotate(90deg);

@@ -40,7 +40,7 @@ const Known = ({
                             data-wow-delay="0.4"
                         >
                             <Link to="header" smooth={true} duration={1000} offset={-2000}><LinkRouter to="/productos/linea/2">
-                                <img src={require('../images/img/lineproducts.png')} alt="imagen" />
+                                <img src={require('../images/img/lineproducts.webp')} alt="imagen" />
                                 <p>Línea Ecoamigable Bioform</p>
                             </LinkRouter></Link>
                         </div>
@@ -49,7 +49,7 @@ const Known = ({
                             data-wow-delay="0.4"
                         >
                             <Link to="header" smooth={true} duration={1000} offset={-2000}><LinkRouter to="/productos/linea/1">
-                                <img src={require('../images/img/foodservices.png')} alt="imagen" />
+                                <img src={require('../images/img/foodservices.webp')} alt="imagen" />
                                 <p>Línea Food Service</p>
                             </LinkRouter></Link>
                         </div>
@@ -58,7 +58,7 @@ const Known = ({
                             data-wow-delay="2.4"
                         >
                             <Link to="header" smooth={true} duration={1000} offset={-2000}><LinkRouter to="/productos/linea/3">
-                                <img src={require('../images/img/useapplication.png')} alt="imagen" />
+                                <img src={require('../images/img/useapplication.webp')} alt="imagen" />
                                 <p>Línea Industrial Consumo</p>
                             </LinkRouter></Link>
                         </div>
@@ -67,7 +67,7 @@ const Known = ({
                             data-wow-delay="2.4"
                         >
                             <Link to="header" smooth={true} duration={1000} offset={-2000}><LinkRouter to="/productos/linea/4">
-                                <img src={require('../images/img/lineagro.png')} alt="imagen" />
+                                <img src={require('../images/img/lineagro.webp')} alt="imagen" />
                                 <p>Línea Agroindustrial</p>
                             </LinkRouter></Link>
                         </div>
@@ -162,7 +162,7 @@ const Known = ({
                             className="wow animate__animated animate__fadeInRight"
                             data-wow-duration="2s"
                             data-wow-delay="1.8s"
-                            src={require('../images/img/distributor.png')} alt="imagen" />
+                            src={require('../images/img/distributor.webp')} alt="imagen" />
                     </div>
                 </div>
             </div>

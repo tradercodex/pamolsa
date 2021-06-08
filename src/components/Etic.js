@@ -17,7 +17,7 @@ const Etic = () => {
                     <div className="square-img-card right-up">
                     </div>
                     <div className="img-card">
-                        <img src={require('../images/img/carbajalempresa.png')} alt="imagen"/>
+                        <img src={require('../images/img/carbajalempresa.webp')} alt="imagen"/>
                     </div>
                 </div>
             </div>

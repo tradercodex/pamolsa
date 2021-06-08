@@ -11,7 +11,7 @@ const Vacants = ({ title, id, deletingVacant, file }) => {
              <div className="gallery-items">
                 <div>
                     <p style={{top: "20px", position: "absolute", zIndex: "999999"}}>{title}</p>
-                    <img src={`https://` + file || require('../images/img/work.png')} width="300px" height="300px" alt={title} />
+                    <img src={`https://` + file || require('../images/img/work.webp')} width="300px" height="300px" alt={title} />
                     <Link to={`/administrador/vacantes/editar/${id}`} className="edit"><Edit /></Link>
                     <button onClick={()=> deletingVacant(id)}  className="delete"><Delete /></button>
                 </div>

@@ -32,7 +32,7 @@ const GalleryNews = ({ newDate }) => {
                         <Link to="/noticias/galeria-periodistica">Visualizar</Link>
                     </div>
                     <div className="img-view_journalists">
-                        <img src={require('../images/img/galeriaperiodistica.png')} alt="" />
+                        <img src={require('../images/img/galeriaperiodistica.webp')} alt="" />
                     </div>
                 </div>
             </div>

@@ -71,34 +71,34 @@ const Clients = ({ match }) => {
                         <div className="img-clients_pm">
                             <div className="img-clients">
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/clienteagro1.png')} alt="imagen" />
+                                    <img src={require('../images/img/clienteagro1.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/clienteagro2.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/clienteagro2.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/clienteagro3.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/clienteagro3.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/clienteagro4.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/clienteagro4.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/clienteagro5.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/clienteagro5.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/clienteagro6.png')} alt="imagen" />
+                                    <img src={require('../images/img/clienteagro6.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/clienteagro7.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/clienteagro7.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/clienteagro8.png')} alt="imagen" />
+                                    <img src={require('../images/img/clienteagro8.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/clienteagro9.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/clienteagro9.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/clienteagro10.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/clienteagro10.webp')} alt="imagen" />
                                 </div>
                             </div>
                         </div>
@@ -113,34 +113,34 @@ const Clients = ({ match }) => {
                         <div className="img-clients_pm">
                             <div className="img-clients">
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/food1.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/food1.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/food2.png')} alt="imagen" />
+                                    <img src={require('../images/img/food2.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/food3.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/food3.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/food4.png')} alt="imagen" />
+                                    <img src={require('../images/img/food4.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/food5.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/food5.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
                                     <img src={require('../images/img/food6.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/food7.png')} alt="imagen" />
+                                    <img src={require('../images/img/food7.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/food8.png')} alt="imagen" />
+                                    <img src={require('../images/img/food8.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/food9.png')} alt="imagen" />
+                                    <img src={require('../images/img/food9.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/food10.png')} alt="imagen" />
+                                    <img src={require('../images/img/food10.webp')} alt="imagen" />
                                 </div>
                             </div>
                         </div>
@@ -155,31 +155,31 @@ const Clients = ({ match }) => {
                         <div className="img-clients_pm">
                             <div className="img-clients">
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/food11.png')} alt="imagen" />
+                                    <img src={require('../images/img/food11.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/food13.png')} alt="imagen" />
+                                    <img src={require('../images/img/food13.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/food14.png')} alt="imagen" />
+                                    <img src={require('../images/img/food14.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/food15.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/food15.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/food5.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/food5.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/food17.png')} alt="imagen" />
+                                    <img src={require('../images/img/food17.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/food18.png')} alt="imagen" />
+                                    <img src={require('../images/img/food18.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/food19.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/food19.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/food20.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/food20.webp')} alt="imagen" />
                                 </div>
                             </div>
                         </div>
@@ -194,34 +194,34 @@ const Clients = ({ match }) => {
                         <div className="img-clients_pm">
                             <div className="img-clients">
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/industrial1.png')} alt="imagen" />
+                                    <img src={require('../images/img/industrial1.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/industrial2.png')} alt="imagen" />
+                                    <img src={require('../images/img/industrial2.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/industrial3.png')} alt="imagen" />
+                                    <img src={require('../images/img/industrial3.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/industrial4.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/industrial4.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/industrial5.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/industrial5.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/industrial6.png')} alt="imagen" />
+                                    <img src={require('../images/img/industrial6.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/industrial7.png')} alt="imagen" />
+                                    <img src={require('../images/img/industrial7.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/industrial8.png')} alt="imagen" />
+                                    <img src={require('../images/img/industrial8.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/industrial9.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/industrial9.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/industrial10.png')} alt="imagen" />
+                                    <img src={require('../images/img/industrial10.webp')} alt="imagen" />
                                 </div>
                             </div>
                         </div>
@@ -236,31 +236,31 @@ const Clients = ({ match }) => {
                         <div className="img-clients_pm">
                             <div className="img-clients">
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/auto1.png')} alt="imagen" />
+                                    <img src={require('../images/img/auto1.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/auto2.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/auto2.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/auto3.png')} alt="imagen" />
+                                    <img src={require('../images/img/auto3.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/auto4.png')} alt="imagen" />
+                                    <img src={require('../images/img/auto4.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/auto5.png')} alt="imagen" />
+                                    <img src={require('../images/img/auto5.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/auto6.png')} alt="imagen" />
+                                    <img src={require('../images/img/auto6.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/auto7.png')} alt="imagen" />
+                                    <img src={require('../images/img/auto7.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/auto8.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/auto8.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/auto9.png')} alt="imagen" />
+                                    <img src={require('../images/img/auto9.webp')} alt="imagen" />
                                 </div>
 
                             </div>
@@ -276,16 +276,16 @@ const Clients = ({ match }) => {
                         <div className="img-clients_pm">
                             <div className="img-clients">
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/expo1.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/expo1.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/expo2.png')} alt="imagen" />
+                                    <img src={require('../images/img/expo2.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/expo3.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/expo3.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/expo4.png')} alt="imagen" />
+                                    <img src={require('../images/img/expo4.webp')} alt="imagen" />
                                 </div>
                             </div>
                         </div>
@@ -300,22 +300,22 @@ const Clients = ({ match }) => {
                         <div className="img-clients_pm">
                             <div className="img-clients">
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/tradicional1.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/tradicional1.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/tradicional2.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/tradicional2.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/tradicional3.png')} alt="imagen" />
+                                    <img src={require('../images/img/tradicional3.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/tradicional4.png')} alt="imagen" />
+                                    <img src={require('../images/img/tradicional4.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/tradicional5.jpg')} alt="imagen" />
+                                    <img src={require('../images/img/tradicional5.webp')} alt="imagen" />
                                 </div>
                                 <div className="img-client_slick">
-                                    <img src={require('../images/img/tradicional6.png')} alt="imagen" />
+                                    <img src={require('../images/img/tradicional6.webp')} alt="imagen" />
                                 </div>
                             </div>
                         </div>

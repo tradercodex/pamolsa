@@ -463,7 +463,7 @@ const ContactForm = () => {
               <div className="img" style={{ height: "100%" }}>
                 <img
                   style={{ height: "640px" }}
-                  src={require("../images/img/contactform.png")}
+                  src={require("../images/img/contactform.webp")}
                 />
               </div>
             </div>

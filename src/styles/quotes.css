@@ -191,7 +191,7 @@ div.checkRadioContainer > label > input:checked + i {
 
 /* When the radio button is checked, add a blue background */
 .con1 input:checked ~ .checkmark {
-    background-image: url('../images/img/checkproduct.png');
+    background-image: url('../images/img/checkproduct.webp');
     background-size: cover;
     width: 15px;
     height: 15px;

@@ -148,7 +148,7 @@ const DashbaordEditCommunity = ({match}) => {
                                 <div className="input-ds">
                                         <div><label>Imagen del banner (tamaño recomendable - 1920x 1080)</label></div>
                                         <div className="img-input-ds">
-                                            <img style={{ width: "100%" }} id="imgPerfil" src={`https://` + community.file || require('../images/img/uploadimage.jpg')} alt="img" />
+                                            <img style={{ width: "100%" }} id="imgPerfil" src={`https://` + community.file || require('../images/img/uploadimage.webp')} alt="img" />
                                             <input
                                                 type="file"
                                                 name="file"

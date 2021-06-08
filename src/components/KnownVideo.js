@@ -31,7 +31,7 @@ const KnownVideo = ({closeVideoModal, handleShowVideoModal, showVideoModal}) => 
                             <div className="img wow animate__animated animate__fadeInLeft"
                                 data-wow-duration="2s"
                                 data-wow-delay="0.6s">
-                                <img src={require('../images/img/videoimg.png')} />
+                                <img src={require('../images/img/videoimg.webp')} />
                             </div>
                         </div>
                         <div className="play-button_pm wow animate__animated animate__fadeIn"

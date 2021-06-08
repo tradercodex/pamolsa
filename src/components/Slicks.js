@@ -79,10 +79,10 @@ const Slicks = ({ match, banners }) => {
                                 <div>
                                     <div className="Rotate-slick second movil xs ss">
                                         <div className="Elipse movil x">
-                                            <img src={require('../images/img/circlebanner.png')} alt="" />
+                                            <img src={require('../images/img/circlebanner.webp')} alt="" />
                                         </div>
                                         <div className="biof movil x">
-                                            <img src={require('../images/img/bioformbanner.png')} alt="" />
+                                            <img src={require('../images/img/bioformbanner.webp')} alt="" />
                                         </div>
                                         <div className="info-slick">
                                             <h2>Nuestra línea de empaques</h2>
@@ -102,10 +102,10 @@ const Slicks = ({ match, banners }) => {
 
                                     <div className="Rotate-slick movil xs ss">
                                         {/* <div className="Elipse movil x">
-                                            <img src={require('../images/img/circlebanner.png')} alt="" />
+                                            <img src={require('../images/img/circlebanner.webp')} alt="" />
                                         </div>
                                         <div className="biof movil x">
-                                            <img src={require('../images/img/bioformbanner.png')} alt="" />
+                                            <img src={require('../images/img/bioformbanner.webp')} alt="" />
                                         </div> */}
                                         <div className="info-slick second" style={{top: "650px", left: "200px"}}>
                                             <h2>Ahora llegamos a la puerta de tu negocio</h2>

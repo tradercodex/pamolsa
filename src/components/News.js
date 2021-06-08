@@ -245,7 +245,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                             <div className="square-slick">
                                             </div>
                                             <div className="img-new_slick_us">
-                                                <img src={require('../images/img/us1.png')} alt="imagen" />
+                                                <img src={require('../images/img/us1.webp')} alt="imagen" />
                                             </div>
                                         </div>
                                     </div>
@@ -263,7 +263,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                             <div className="square-slick">
                                             </div>
                                             <div className="img-new_slick">
-                                                <img src={require('../images/img/plantafaucet.jpg')} alt="imagen" />
+                                                <img src={require('../images/img/plantafaucet.webp')} alt="imagen" />
                                             </div>
                                         </div>
                                     </div>
@@ -343,7 +343,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                             <div className="container-grid sbl" style={{ paddingTop: "290px", alignItems: "center", paddingBottom: "100px" }}>
                                 <div className="info-pm">
                                     <div>
-                                        <img src={require('../images/img/recicoplas.png')} alt="imagen" />
+                                        <img src={require('../images/img/recicoplas.webp')} alt="imagen" />
                                         <h6 style={{ color: "#32711E", marginTop: "30px" }}>Ciclo de cierre de nuestro productos</h6>
                                         <p style={{ marginTop: "30px", marginBottom: "30px" }}>Desde el 2013, nuestra operación de reciclaje “Recicloplas Perú” es una de los principales
                                         actores del reciclaje en el Perú. De esta manera reafirmamos nuestros compromiso con
@@ -358,7 +358,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                     <div className="square"></div>
                                     <div className="img-video_known">
                                         <div className="img">
-                                            <img src={require('../images/img/obrero.png')} alt="imagen" />
+                                            <img src={require('../images/img/obrero.webp')} alt="imagen" />
                                         </div>
                                     </div>
                                     <div className="play-button_pm">
@@ -377,7 +377,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                         <div className="square-pet-sbl">
                                         </div>
                                         <div className="img-new_slick">
-                                            <img src={require('../images/img/handice.png')} alt="imagen" />
+                                            <img src={require('../images/img/handice.webp')} alt="imagen" />
                                         </div>
                                     </div>
                                     <div className="info-pet-sbl">
@@ -445,7 +445,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                         <div className="square-img-card">
                                         </div>
                                         <div className="img-card">
-                                            <img src={require('../images/img/postprod.png')} alt="imagen" />
+                                            <img src={require('../images/img/postprod.webp')} alt="imagen" />
                                         </div>
                                     </div>
                                 </div>
@@ -543,7 +543,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                             <div key={item.id}>
                                                 <div className="card-work">
                                                     <div className="header-work">
-                                                        <img src={`https://` + item.file.url || require('../images/img/work.png')} alt="imagen" />
+                                                        <img src={`https://` + item.file.url || require('../images/img/work.webp')} alt="imagen" />
                                                     </div>
                                                     <div className="card-body">
                                                         <h6>{item.title}</h6>
@@ -562,7 +562,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                 <div className="square" style={{ background: "#1F6795" }}></div>
                                 <div className="img-video_known">
                                     <div className="img">
-                                        <img src={require('../images/img/workpostula.png')} alt="imagen" />
+                                        <img src={require('../images/img/workpostula.webp')} alt="imagen" />
                                     </div>
                                 </div>
                             </div>
