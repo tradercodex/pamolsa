@@ -270,7 +270,6 @@ const DashboardEditProduct = ({ match }) => {
                 dispatch(getProducts(100, 1));
             }, 4000);
         }
-        console.log(data)
         e.target.reset();
     }
 
@@ -298,7 +297,6 @@ const DashboardEditProduct = ({ match }) => {
             related_products: product.related_products.filter((related_product, index) => i !== index)
         })
         const res = await axios.put(`https://ws.pamolsa.com.pe/api/product/related/delete?related_product_id=${id}`,null,config)
-        console.log(res.data)
     }
 
     const readCode = i => e => {

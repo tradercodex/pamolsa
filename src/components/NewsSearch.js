@@ -90,13 +90,6 @@ const NewsSearch = ({ news }) => {
     })
   };
 
-  const getNewDate = async () => {
-
-    const { month, year, order } = selectDate
-    const res = await Axios.get(`https://ws.pamolsa.com.pe/api/news/listByDate?page=1&year=${year}&month=${month}&order=${order}`);
-    setNewDate(res.data.data)
-  }
-
   const handleChangeMonth = (selectedOption) => {
     setSelectDate({
       ...selectDate,
@@ -119,7 +112,13 @@ const NewsSearch = ({ news }) => {
   }
 
   useEffect(()=> {
+    const getNewDate = async () => {
+      const { month, year, order } = selectDate
+      const res = await Axios.get(`https://ws.pamolsa.com.pe/api/news/listByDate?page=1&year=${year}&month=${month}&order=${order}`);
+      setNewDate(res.data.data)
+    }
     getNewDate();
+    
   },[selectDate])
 
 

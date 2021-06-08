@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect } from 'react';
+import React, { Suspense, useEffect, lazy } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import './styles/global.css'
 
@@ -41,8 +41,30 @@ function App() {
     return import('./views/Home');
   })
 
+ /* const Home = lazy(() => import('./views/Home'));
+  const Us = lazy(() => import('./views/Us'));
+  const Products = lazy(() => import('./views/Products'));
+  const ProductsByLine = lazy(() => import('./views/ProductsByLine'));
+  const Quote = lazy(() => import('./views/Quote'));
+  const ProductsByBusiness = lazy(() => import('./views/ProductsByBusiness'));
+  const ProductosBySearch = lazy(() => import('./views/ProductosBySearch'));
+  const Sustainability = lazy(() => import('./views/Sustainability'));
+  const WorkWithUs = lazy(() => import('./views/WorkWithUs'));
+  const Postulation = lazy(() => import('./views/Postulation'));
+  const Clients = lazy(() => import('./views/Clients'));
+  const News = lazy(() => import('./views/News'));
+  const Contact = lazy(() => import('./views/Contact'));
+  const Distributor = lazy(() => import('./views/Distributor'));
+  const ProductsByType = lazy(() => import('./views/ProductsByType'));
+  const DetailProducts = lazy(() => import('./views/DetailProducts'));
+  const GalleryNewPaper = lazy(() => import('./views/GalleryNewPaper'));
+  const DetailNew = lazy(() => import('./views/DetailNew'));
+  const DetailCommunity = lazy(() => import('./views/DetailCommunity'));
+  const Login = lazy(() => import('./views/Login'));
+  const Dashboard = lazy(() => import('./views/Login'));*/
+
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<div>Cargando...</div>}>
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />

@@ -133,7 +133,6 @@ const DashboardAddProduct = () => {
 
 
     const sendSubmit = (data, e) => {
-        console.log(data)
         const formData = new FormData;
 
         formData.append('name', data.name);
@@ -179,7 +178,6 @@ const DashboardAddProduct = () => {
                 dispatch(getProduct(100, 1));
             }, 4000);
         }
-        console.log(data)
         e.target.reset();
     }
 

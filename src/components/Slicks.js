@@ -61,7 +61,7 @@ const Slicks = ({ match, banners }) => {
     //                 </Style>
     //                 <div className="footer-slick">
     //                     <div className="tree-pm banner">
-    //                         <img src={require('../images/img/tree.gif')} />
+    //                         <img src={require('../images/img/tree.webp')} />
     //                     </div>
     //                 </div>
     //             </div>
@@ -94,7 +94,7 @@ const Slicks = ({ match, banners }) => {
                                     </div>
                                     <div className="footer-slick">
                                         <div className="tree-pm banner">
-                                            <img src={require('../images/img/tree.gif')} alt="imagen" />
+                                            <img src={require('../images/img/tree.webp')} alt="imagen" />
                                         </div>
                                     </div>
                                 </div>
@@ -118,7 +118,7 @@ const Slicks = ({ match, banners }) => {
                                     </div>
                                     {/* <div className="footer-slick">
                                             <div className="tree-pm banner">
-                                                <img src={require('../images/img/tree.gif')} alt="imagen" />
+                                                <img src={require('../images/img/tree.webp')} alt="imagen" />
                                             </div>
                                         </div> */}
                                 </div>
@@ -232,7 +232,7 @@ const Slicks = ({ match, banners }) => {
                                 </div>
                             </Slider>
                             <div className="tree-new contact">
-                                <img src={require('../images/img/tree.gif')} />
+                                <img src={require('../images/img/tree.webp')} />
                             </div>
                         </div>
                     </div> : ''

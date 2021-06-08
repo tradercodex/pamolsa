@@ -44,7 +44,6 @@ const DashbaordAddVacant = () => {
     }, [])
 
     const sendSubmit = (data, e) => {
-        console.log(data)
         const formData = new FormData();
 
         formData.append('title', data.title);
