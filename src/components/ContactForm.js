@@ -480,7 +480,7 @@ const ContactForm = () => {
             <div className="flx">
               <ContactMarker />
               <div>
-                <p>Teléfonos</p>
+                <p>Dirección</p>
                 <span>Av. Elmer Faucett 3486 Urb.Bocanegra, Callao</span>
               </div>
             </div>
