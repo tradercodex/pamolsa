@@ -1589,6 +1589,13 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         top: 700px !important;
         left: -125px !important;
     }
+    .Rotate-slick.first .info-slick {
+        top: 600px !important;
+        left: -10px !important;
+    }
+    .Rotate-slick.first {
+        top: -335px !important;
+    }
 }
 
 @media screen and (max-height: 568px) and (max-width: 320px) {
@@ -1800,6 +1807,9 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
         top: 690px !important;
         left: -125px !important;
     }
+    .Rotate-slick.first {
+        top: -335px !important;
+    }
 }
 
 @media screen and (max-height: 851px) and (max-width: 393px) {
@@ -1930,4 +1940,19 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .Known-pm.home .container-products_pm img {
         max-width: 116px !important;
     }
+}
+
+@media screen and (max-width: 374px) {
+    .Rotate-slick.first .info-slick.second {
+        top: 500px !important;
+        left: -10px !important;
+    }
+    .Rotate-slick.first {
+        top: -335px !important;
+    }
+    .Slicks-pm ul.slick-dots {
+        width: 24% !important;
+        right: 5px !important;
+        top: 150px !important;
+     }
 }
