@@ -13,7 +13,7 @@ let config = {
 
 export const sendBanner = (data) => async dispatch => {
     try {
-        const res = await axios.post(`${root}/home/saveImage`, data);
+        const res = await axios.post(`${root}/home/saveImage`, data, config);
         dispatch({
             type: SEND_BANNER,
             payload: res.data
