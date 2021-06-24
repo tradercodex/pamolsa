@@ -82,13 +82,10 @@ const Slicks = ({ match, banners }) => {
                     style={{ top: "850px", left: "200px" }}
                   >
                     <h2>Bioform</h2>
-                    <p>La opción más práctica y segura para tus creaciones</p>
-                    <p style={{marginBottom: "50px"}}>
-                      Horario de atención: Lunes a viernes 8:30 am - 5:30 pm
-                    </p>
+                    <p style={{marginBottom: "50px"}}>La opción más práctica y segura para tus creaciones</p>
                     <div className="more-btn">
                       <a
-                        style={{ background: "#3E7A46"}}
+                        style={{ background: "#498332"}}
                         target="_blank"
                         href="http://www.bioform.pe/"
                       >
