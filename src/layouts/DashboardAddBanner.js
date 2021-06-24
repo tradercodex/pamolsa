@@ -45,9 +45,14 @@ const DashbaordAddNew = () => {
     const sendSubmit = (data, e) => {
 
         const formData = new FormData();
+        console.log(data)
         formData.append('file', data.file[0])
         formData.append('name', data.name)
         formData.append('subname', data.subname)
+        formData.append('subname2', data.subname2)
+        formData.append('button_text', data.button_text)
+        formData.append('button_url', data.button_url)
+        formData.append('button_color', data.button_color)
 
         if (formData) {
             dispatch(sendBanner(formData))
@@ -64,7 +69,7 @@ const DashbaordAddNew = () => {
         <>
             <div className="content-ds-fluid">
                 <div className="title-content-ds">
-                    <h6>Agregar una nueva noticia</h6>
+                    <h6>Agregar un banner</h6>
                 </div>
                 <div className="content-form">
                     <div className="">
@@ -109,6 +114,60 @@ const DashbaordAddNew = () => {
                                         />
                                         <div className="error-ds">
                                             {errors.subname && errors.subname.message}
+                                        </div>
+                                    </div>
+                                    <div className="input-ds">
+                                        <div>
+                                            <label>Texto adicional</label>
+                                        </div>
+                                        <input
+                                            type="text"
+                                            name="subname2"
+                                        />
+                                        <div className="error-ds">
+                                            {errors.subname2 && errors.subname2.message}
+                                        </div>
+                                    </div>
+                                    <div className="input-ds">
+                                        <div>
+                                            <label>Texto del botón</label>
+                                        </div>
+                                        <input
+                                            type="text"
+                                            name="button_text"
+                                        />
+                                        <div className="error-ds">
+                                            {errors.button_text && errors.button_text.message}
+                                        </div>
+                                    </div>
+                                    <div className="input-ds">
+                                        <div>
+                                            <label>URL del botón</label>
+                                        </div>
+                                        <input
+                                            type="text"
+                                            name="button_url"
+                                        />
+                                        <div className="error-ds">
+                                            {errors.button_url && errors.button_url.message}
+                                        </div>
+                                    </div>
+                                    <div className="input-ds">
+                                        <div>
+                                            <label>Color del botón</label>
+                                            <div>
+                                                <label> *Coloque en formato hexadecimal Ejm: #C2381B</label>
+                                                <br></br>
+                                                <label> *Pagina para encontrar colores: </label>
+                                                <a style={{color:"blue"}} href="https://htmlcolorcodes.com/es/" target="_blank"> https://htmlcolorcodes.com/es/</a>
+                                            </div>
+                                        </div>
+                                        <input
+                                            type="text"
+                                            name="button_color"
+                                        />
+                                        <div className="error-ds">
+                                            {errors.button_color && errors.button_color.message}
                                         </div>
                                     </div>
                                     <div className="input-ds">
