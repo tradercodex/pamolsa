@@ -123,6 +123,14 @@ const DashbaordAddNew = () => {
                                         <input
                                             type="text"
                                             name="subname2"
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false,
+                                                        message: 'Ingrese el texto adicional'
+                                                    }
+                                                })
+                                            }
                                         />
                                         <div className="error-ds">
                                             {errors.subname2 && errors.subname2.message}
@@ -135,6 +143,14 @@ const DashbaordAddNew = () => {
                                         <input
                                             type="text"
                                             name="button_text"
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false,
+                                                        message: 'Ingrese el texto del botón'
+                                                    }
+                                                })
+                                            }
                                         />
                                         <div className="error-ds">
                                             {errors.button_text && errors.button_text.message}
@@ -147,6 +163,14 @@ const DashbaordAddNew = () => {
                                         <input
                                             type="text"
                                             name="button_url"
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false,
+                                                        message: 'Ingrese la URL del botón'
+                                                    }
+                                                })
+                                            }
                                         />
                                         <div className="error-ds">
                                             {errors.button_url && errors.button_url.message}
@@ -165,6 +189,14 @@ const DashbaordAddNew = () => {
                                         <input
                                             type="text"
                                             name="button_color"
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false,
+                                                        message: 'Ingrese el color del botón'
+                                                    }
+                                                })
+                                            }
                                         />
                                         <div className="error-ds">
                                             {errors.button_color && errors.button_color.message}
