@@ -584,7 +584,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                             marginTop: "150px"
                                         }}
                                     >¿No encontraste
-                                    una vancante de tu interés?</h6>
+                                    una vacante de tu interés?</h6>
                                     <p
                                         style={{
                                             color: "#fff",
