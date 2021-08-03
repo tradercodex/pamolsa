@@ -19,7 +19,7 @@ const MisionVision = () => {
                         <div>
                             <h6>NUESTRO PROPÓSITO</h6>
                             <p>
-                            Cuidar lo esencial.
+                            Impulsamos el desarrollo económico y social haciendo las cosas bien. 
                             </p>
                         </div>
                     </div>
@@ -32,7 +32,7 @@ const MisionVision = () => {
                         <div>
                             <h6>MISIÓN</h6>
                             <p>
-                            Desarrollar soluciones de empaques confiables que hacen la vida más práctica y segura.
+                            Desarrollamos, producimos y comercializamos empaques rígidos para alimentos, innovadores y de alta calidad, que hacen la vida más práctica y segura, creando valor de forma sostenible para nuestros socios, consumidores y comunidad.
                             </p>
                         </div>
                     </div>
