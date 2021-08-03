@@ -96,6 +96,9 @@
         grid-column: 1/4 !important;
         justify-content: center;
     }
+    .mision, .propose, .vision {
+        margin-bottom: 30px !important;
+    }
     .info-vision, .info-mision, .info-promise_value, .info-propose {
         width: 257px;
     }
