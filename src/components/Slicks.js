@@ -85,7 +85,7 @@ const Slicks = ({ match, banners }) => {
                     <p style={{marginBottom: "50px"}}>La opción más práctica y segura para tus creaciones</p>
                     <div className="more-btn">
                       <a
-                        style={{ background: "#498332" }}
+                        style={{ background: "#498332"}}
                         target="_blank"
                         href="http://www.bioform.pe/"
                       >

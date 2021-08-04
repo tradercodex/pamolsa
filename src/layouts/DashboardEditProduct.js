@@ -542,6 +542,7 @@ const DashboardEditProduct = ({ match }) => {
                                 <div className="input-ds rt">
                                     <div className="related-products_add">
                                         <label>Agregue los productos relacionados</label>
+                                        <label>(Escriba el codigo del producto)</label>
                                         <button onClick={addProductRelacionated} type="button"> + Agregar producto relacionado</button>
                                     </div>
                                     {
