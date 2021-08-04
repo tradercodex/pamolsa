@@ -455,6 +455,7 @@ const DashboardAddProduct = () => {
                                                     <input
                                                         type="text"
                                                         onChange={readCode(index)}
+                                                        placeholder="Código del producto"
                                                     />
                                                     <button onClick={deleteProductRelacionated(index)} type="button">Eliminar</button>
                                                 </div>
