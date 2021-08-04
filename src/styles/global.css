@@ -1399,7 +1399,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
     .Mision-vision_pm .info-vision, .Mision-vision_pm .info-mision, .Mision-vision_pm .info-promise_value, .Mision-vision_pm .info-propose, .Mision-vision_pm .square-mision, .Mision-vision_pm .square-vision, .Mision-vision_pm .square-promise_value, .Mision-vision_pm .square-propose {
         max-width: 260px !important;
-        max-height: 180px !important;
+        max-height: 250px !important;
     }
     .Products-Quote .products-default {
         grid-template-columns: repeat(1,1fr) !important;
