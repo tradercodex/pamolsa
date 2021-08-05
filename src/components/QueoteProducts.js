@@ -38,7 +38,7 @@ const QuoteProducts = () => {
                 <div className="Products-Quote_4">
                 <div className="filter-shadow-white"></div>
                     <div className="info-product_bf_4">
-                        <h4>Línea Agroinsdustrial</h4>
+                        <h4>Línea Agroindustrial</h4>
                         <Link to="productos/linea/4">Ver más</Link>
                     </div>
                     <div className="img-bioform_product_4">
