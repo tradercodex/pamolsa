@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import { withRouter } from "react-router-dom";
 import Slider from "react-slick";
-import catalogoExpress from "../pdf/catalogoexpress.pdf";
 import { Link } from "react-router-dom";
 import "../styles/slicks.css";
 
@@ -74,19 +73,21 @@ const Slicks = ({ match, banners }) => {
           <div className="Slicks-pm">
             <div className="Radius"></div>
             <Slider {...settings}>
-
-            <div>
-            <div className="Rotate-slick first xs ss">
+              <div>
+                <div className="Rotate-slick first xs ss">
                   <div
                     className="info-slick second"
                     style={{ top: "850px", left: "200px" }}
                   >
                     <h2>Bioform</h2>
-                    <p style={{marginBottom: "50px"}}>La opción más práctica y segura para tus creaciones</p>
+                    <p style={{ marginBottom: "50px" }}>
+                      La opción más práctica y segura para tus creaciones
+                    </p>
                     <div className="more-btn">
                       <a
-                        style={{ background: "#498332"}}
+                        style={{ background: "#498332" }}
                         target="_blank"
+                        rel="noopener noreferrer"
                         href="http://www.bioform.pe/"
                       >
                         Conoce más
@@ -94,7 +95,7 @@ const Slicks = ({ match, banners }) => {
                     </div>
                   </div>
                 </div>
-            </div>
+              </div>
 
               <div>
                 <div className="Rotate-slick second movil xs ss">
@@ -125,7 +126,7 @@ const Slicks = ({ match, banners }) => {
                 </div>
               </div>
               <div>
-                <div className="Rotate-slick movil xs ss">
+                <div className="Rotate-slick movil express xs ss">
                   {/* <div className="Elipse movil x">
                                             <img src={require('../images/img/circlebanner.png')} alt="" />
                                         </div>
@@ -145,6 +146,7 @@ const Slicks = ({ match, banners }) => {
                       <a
                         style={{ background: "#005382" }}
                         target="_blank"
+                        rel="noopener noreferrer"
                         href="http://www.pamolsaexpress.com/"
                       >
                         Ir a Ecommerce
