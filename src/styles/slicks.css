@@ -1488,3 +1488,12 @@
         margin-left: 85px !important;
     }
 }
+
+@media only screen and (max-width: 768px) {
+    .Rotate-slick.first::after {
+        background-image: url("../images/img/bioformmovil.png") !important;
+    }
+    .Rotate-slick.movil.express::after {
+        background-image: url("../images/img/expressmobile.png") !important;
+    }
+}

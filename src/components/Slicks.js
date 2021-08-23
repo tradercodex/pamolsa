@@ -82,15 +82,42 @@ const Slicks = ({ match, banners }) => {
                     style={{ top: "850px", left: "200px" }}
                   >
                     <h2>Bioform</h2>
-                    <p style={{marginBottom: "50px"}}>La opción más práctica y segura para tus creaciones</p>
+                    <p style={{ marginBottom: "50px" }}>
+                      La opción más práctica y segura para tus creaciones
+                    </p>
                     <div className="more-btn">
                       <a
-                        style={{ background: "#498332"}}
+                        style={{ background: "#498332" }}
                         target="_blank"
+                        rel="noopener noreferrer"
                         href="http://www.bioform.pe/"
                       >
                         Conoce más
                       </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div className="Rotate-slick second movil xs ss">
+                  <div className="Elipse movil x">
+                    <img
+                      src={require("../images/img/circlebanner.png")}
+                      alt=""
+                    />
+                  </div>
+                  <div className="biof movil x">
+                    <img
+                      src={require("../images/img/bioformbanner.png")}
+                      alt=""
+                    />
+                  </div>
+                  <div className="info-slick">
+                    <h2>Nuestra línea de empaques</h2>
+                    <p>hechos con fibra de bagazo de caña de azúcar</p>
+                    <div className="more-btn">
+                      <Link to="/productos/linea/2">Conocer más</Link>
                     </div>
                   </div>
                 </div>
@@ -102,7 +129,13 @@ const Slicks = ({ match, banners }) => {
               </div>
 
               <div>
-                <div className="Rotate-slick movil xs ss">
+                <div className="Rotate-slick movil express xs ss">
+                  {/* <div className="Elipse movil x">
+                                            <img src={require('../images/img/circlebanner.png')} alt="" />
+                                        </div>
+                                        <div className="biof movil x">
+                                            <img src={require('../images/img/bioformbanner.png')} alt="" />
+                                        </div> */}
                   <div
                     className="info-slick second"
                     style={{ top: "650px", left: "200px" }}
@@ -116,6 +149,7 @@ const Slicks = ({ match, banners }) => {
                       <a
                         style={{ background: "#005382" }}
                         target="_blank"
+                        rel="noopener noreferrer"
                         href="http://www.pamolsaexpress.com/"
                       >
                         Ir a Ecommerce
