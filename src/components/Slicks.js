@@ -103,13 +103,13 @@ const Slicks = ({ match, banners }) => {
                 <div className="Rotate-slick second movil xs ss">
                   <div className="Elipse movil x">
                     <img
-                      src={require("../images/img/circlebanner.png")}
+                      src={require("../images/img/circlebanner.webp")}
                       alt=""
                     />
                   </div>
                   <div className="biof movil x">
                     <img
-                      src={require("../images/img/bioformbanner.png")}
+                      src={require("../images/img/bioformbanner.webp")}
                       alt=""
                     />
                   </div>
