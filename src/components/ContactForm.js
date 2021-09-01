@@ -499,6 +499,9 @@ const ContactForm = () => {
                 <div>
                   <span>WhatsApp: 934 440 291</span>
                 </div>
+                <div>
+                  <span>Horario: Lunes a Viernes de 8:30 AM a 5:30 PM</span>
+                </div>
               </div>
             </div>
           </div>
