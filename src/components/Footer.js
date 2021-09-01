@@ -4,6 +4,7 @@ import "../styles/footer.css";
 import ArrowFooter from "../images/svg/arrowfooter";
 import declaration from "../pdf/declaracion.pdf";
 import procedimiento from "../pdf/procedimiento.pdf";
+import politicasig from '../images/img/politicasig.webp'
 import politicaproteccion from "../pdf/politicaproteccion.pdf";
 
 const Footer = () => {
@@ -40,7 +41,16 @@ const Footer = () => {
                     target="_blank"
                     href={politicaproteccion}
                   >
-                    Politica de privacidad
+                    Pólitica de privacidad
+                  </a>
+                </div>
+                <div className="center">
+                  <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href={politicasig}
+                  >
+                    Pólitica de SIG
                   </a>
                 </div>
                 <div className="center">
@@ -194,7 +204,16 @@ const Footer = () => {
                       target="_blank"
                       href={politicaproteccion}
                     >
-                      Politica de privacidad
+                      Pólitica de privacidad
+                    </a>
+                  </div>
+                  <div className="center">
+                    <a
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      href={politicasig}
+                    >
+                      Pólitica de SIG
                     </a>
                   </div>
                   <div className="center">
