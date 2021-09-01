@@ -96,35 +96,6 @@ const Slicks = ({ match, banners }) => {
                   </div>
                 </div>
               </div>
-
-              <div>
-                <div className="Rotate-slick second movil xs ss">
-                  <div className="Elipse movil x">
-                    <img
-                      src={require("../images/img/circlebanner.png")}
-                      alt=""
-                    />
-                  </div>
-                  <div className="biof movil x">
-                    <img
-                      src={require("../images/img/bioformbanner.png")}
-                      alt=""
-                    />
-                  </div>
-                  <div className="info-slick">
-                    <h2>Nuestra línea de empaques</h2>
-                    <p>hechos con fibra de bagazo de caña de azúcar</p>
-                    <div className="more-btn">
-                      <Link to="/productos/linea/2">Conocer más</Link>
-                    </div>
-                  </div>
-                </div>
-                <div className="footer-slick">
-                  <div className="tree-pm banner">
-                    <img src={require("../images/img/tree.gif")} alt="imagen" />
-                  </div>
-                </div>
-              </div>
               <div>
                 <div className="Rotate-slick movil express xs ss">
                   {/* <div className="Elipse movil x">
