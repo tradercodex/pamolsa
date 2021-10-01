@@ -91,6 +91,8 @@ const KnownVideo = ({closeVideoModal, handleShowVideoModal, showVideoModal}) => 
                                 </div>
                                 <div className="img-company-abe">
                                 </div>
+                                <div className="img-company-gptw21">
+                                </div>
                             </div>
                         </div>
                     </div>

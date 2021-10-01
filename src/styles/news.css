@@ -587,6 +587,15 @@
     background-blend-mode: darken;
 }
 
+.companies-second_us .img-company-gptw21 {
+    position: relative;
+    width: 109px;
+    height: 189px;
+    right: 30px;
+    background-image: url('../images/img/gptw2021.png');
+    background-size: cover;
+    position: relative;
+}
 
 .companies-second .img-company-gp {
     position: relative;
