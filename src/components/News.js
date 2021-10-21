@@ -239,7 +239,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                                 <h4>Plantas en Perú</h4>
                                             </div>
                                             <h6>Siempre adelante</h6>
-                                            <p>En Perú contamos con dos de producción y una planta de reciclaje, en las cuales aseguramos la calidad  en cada uno de los procesos de fabricación de empaques.</p>
+                                            <p>En Perú contamos con dos centros de producción y un aliado estratégico, Recicloplas Perú, en los cuales aseguramos la calidad de cada uno de los procesos de fabricación de empaques así como el correcto cierre de ciclo.</p>
                                         </div>
                                         <div className="post-new_slick_us">
                                             <div className="square-slick">
@@ -286,25 +286,6 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                         </div>
                                     </div>
                                 </div>
-                                <div>
-                                    <div className="container-news">
-                                        <div className="info-new_slick">
-                                            <div className="title-new">
-                                                <h4>Planta de reciclaje Recicloplas</h4>
-                                            </div>
-                                            <h6>Lima</h6>
-                                            <p>Inaugurada el 2020,  nuestra planta de reciclaje Recicloplas tiene una capacidad de producción de 8,000 toneladas de PET posconsumo al año,
-                                                se encuentra ubicada en el Callao en un área de 2,350m2. </p>
-                                        </div>
-                                        <div className="post-new_slick_us">
-                                            <div className="square-slick">
-                                            </div>
-                                            <div className="img-new_slick">
-                                                <img src={require('../images/img/plantarecicloplas.webp')} alt="imagen" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </Slider>
                             <div className="Footer-news_us">
                                 <div className="container-footer_news_us">
@@ -318,7 +299,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                             <h6>Sostenibilidad</h6>
                                             <div className="span">¡Dale Vida a tus residuos con Recicloplas!</div>
                                             <p>
-                                                En Recicloplas Perú, planta de reciclaje de Pamolsa , reciclamos PET posconsumo para luego  procesarlo y producir  materia prima de alta calidad que posteriormente es utilizada por Pamolsa para su transformación en productos terminados. Con esto, no solo evitamos que sean depositados en nuestros ríos, mares y rellenos sanitarios, también reducimos los requerimientos de PET virgen, lo cual significa una menor emisión de gases de efecto invernadero y un menor consumo de energía y petróleo.
+                                            Junto a Recicloplas Perú, aliado estratégico de Pamolsa, reciclamos PET posconsumo para luego procesarlo y producir materia prima de alta calidad que posteriormente es utilizada por Pamolsa para su transformación en productos terminados. Con esto, no solo evitamos que sean depositados en nuestros ríos, mares y rellenos sanitarios, también reducimos los requerimientos de PET virgen, lo cual significa una menor emisión de gases de efecto invernadero y un menor consumo de energía y petróleo.
                                             <br /><br />
                                             Actualmente, Recicloplas  genera ingresos para más de 1,500 familias recicladoras.
                                             <br />
@@ -345,10 +326,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                     <div>
                                         <img src={require('../images/img/recicoplas.webp')} alt="imagen" />
                                         <h6 style={{ color: "#32711E", marginTop: "30px" }}>Ciclo de cierre de nuestro productos</h6>
-                                        <p style={{ marginTop: "30px", marginBottom: "30px" }}>Desde el 2013, nuestra operación de reciclaje “Recicloplas Perú” es una de los principales
-                                        actores del reciclaje en el Perú. De esta manera reafirmamos nuestros compromiso con
-                                        el medio ambiente y con la sociedad mediante la valorización de residuos de plástico
-                                        posconsumo, generando un impacto positivo y sostenible.
+                                        <p style={{ marginTop: "30px", marginBottom: "30px" }}>Desde el 2013, nuestro aliado estratégico “Recicloplas Perú” es uno de los principales actores del reciclaje en el país. De esta manera reafirmamos nuestro compromiso con el medio ambiente y con la sociedad mediante la valorización de residuos de plástico posconsumo, generando impacto positivo y sostenible.
                                         </p>
                                         <span style={{ fontFamily: "Amble-bold", color: "#4D4D4C", fontSize: "16px" }}>¡COMPROMETIDOS DE VERDAD!</span>
                                     </div>
