@@ -459,7 +459,11 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                     </Slider>
                                 </div>
                             </div>
-                            <div>
+                            <div style={{
+                                position: "absolute",
+                                bottom: "0",
+                                zIndex: "-1"
+                            }}>
                                 <div className="container-grid videos" style={{ alignItems: "flex-end", paddingBottom: "0px", paddingTop: "100px" }} onClick={handleClose}>
                                     <div className="elipse-work-videos" onClick={handleClose}></div>
                                     <Slider {...settingsActivities} className="new-slick work activity tablet">
