@@ -27,7 +27,7 @@ import DetailCommunity from './views/DetailCommunity';
 import NotFound from './components/NotFound'
 import ProductosBySearch from './views/ProductosBySearch'
 
-// http://3.120.185.254:8090/api
+// https://ws.pamolsa.com.pe/api
 
 const token = localStorage.getItem('token')
 

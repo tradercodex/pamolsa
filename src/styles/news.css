@@ -117,6 +117,8 @@
     position: absolute;
     overflow: hidden;
     z-index: 1;
+    bottom: 0;
+    background-position: bottom left;
     width: 1708.8px;
     height: 1489.8px;
     background-image: url('../images/img/elipsevideo.png');
