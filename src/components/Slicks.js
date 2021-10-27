@@ -98,7 +98,6 @@ const Slicks = ({ match, banners }) => {
                   </div>
                 </div>
               </div>
-
               <div>
                 <div className="Rotate-slick movil express xs ss">
                   {/* <div className="Elipse movil x">
