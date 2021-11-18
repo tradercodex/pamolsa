@@ -412,6 +412,7 @@ const ContactForm = () => {
                   id=""
                   cols="30"
                   rows="10"
+                  maxLength="500"
                   placeholder="Comentarios"
                   ref={register({
                     required: {
