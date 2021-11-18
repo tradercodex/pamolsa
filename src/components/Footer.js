@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../images/svg/logo";
+import { Link } from 'react-router-dom'
 import "../styles/footer.css";
 import ArrowFooter from "../images/svg/arrowfooter";
 import declaration from "../pdf/declaracion.pdf";
@@ -26,6 +27,13 @@ const Footer = () => {
                   >
                     Peruana de Moldeados SAC
                   </a>
+                </div>
+                <div className="center">
+                  <Link
+                    to="/libro-de-reclamaciones"
+                  >
+                    Libro de reclamaciones
+                  </Link>
                 </div>
               </div>
             </div>

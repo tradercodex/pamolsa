@@ -4,6 +4,7 @@ import './styles/global.css'
 
 // Vistas
 import Us from './views/Us'
+import Claims from './views/Claims'
 import Products from './views/Products';
 import Distributor from './views/Distributor'
 import Sustainability from './views/Sustainability'
@@ -54,6 +55,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/libro-de-reclamaciones" component={Claims} />
           <Route exact path="/nosotros" component={Us} />
           <Route exact path="/productos" component={Products} />
           <Route exact path="/productos/linea/:id" component={ProductsByLine} />
