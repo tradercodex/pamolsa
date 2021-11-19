@@ -174,9 +174,7 @@ const Footer = () => {
               <div className="title">
                 <div className="sp-title">
                   <a
-                    href
-                    rel="noopener noreferrer"
-                    target="_blank"
+                    href="#declaration" 
                     className=""
                   >
                     Declaración de beneficiario final
@@ -192,6 +190,13 @@ const Footer = () => {
                     >
                       Peruana de Modelos SAC
                     </a>
+                  </div>
+                  <div className="center">
+                    <Link
+                      to="/libro-de-reclamaciones"
+                    >
+                      Libro de reclamaciones
+                    </Link>
                   </div>
                 </div>
               </div>
