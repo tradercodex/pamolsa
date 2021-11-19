@@ -107,6 +107,14 @@ const ClaimsForm = () => {
         }
     }
 
+    const token = localStorage.getItem('token')
+
+    let config = {
+        headers: {
+            'x-access-token': token
+        }
+    }
+
     const sendData = async () => {
         const dataSend = {
             nombre: send.nombre,
@@ -135,7 +143,7 @@ const ClaimsForm = () => {
         }
 
         try {
-            const { data } = await Axios.post("https://ws.pamolsa.com.pe/api/book/send", dataSend);
+            const { data } = await Axios.post("https://ws.pamolsa.com.pe/api/book/send", dataSend, config);
         }  catch(e) {
             console.log(e)
         }
