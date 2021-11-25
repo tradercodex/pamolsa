@@ -26,7 +26,7 @@ const ProductsFilterByLine = ({
                                             </div>
                                         )
                                     }
-                                    <Link to="header" smooth={true} duration={1000} offset={-2000}><LinkRouter to={`/producto/detalle/${product.id}`}>Ver más</LinkRouter></Link>
+                                    <Link to="header" smooth={true} duration={1000} offset={-20000}><LinkRouter to={`/producto/detalle/${product.id}`}>Ver más</LinkRouter></Link>
                                 </div>
                             </div>
                         )) :
