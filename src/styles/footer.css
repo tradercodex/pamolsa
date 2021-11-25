@@ -47,7 +47,12 @@
 
 .logo {
     display: flex;
-    grid-column: 1/4;
+    grid-column: 1/3;
+}
+
+.claims {
+    display: flex;
+    grid-column: 3/4;
 }
 
 .declaration {
@@ -138,4 +143,10 @@
 .socials a {
     margin-left: 10px;
     cursor: pointer;
+}
+
+.Footer-pm.movil .claims {
+    margin: 0 auto;
+    margin-bottom: 30px;
+    text-align: center;
 }
