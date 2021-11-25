@@ -1,6 +1,8 @@
 import React from "react";
 import Logo from "../images/svg/logo";
-import { Link } from 'react-router-dom'
+import { Link as LinkRouter } from 'react-router-dom';
+import { Link } from 'react-scroll'
+import Book from '../images/img/bookclaims.png';
 import "../styles/footer.css";
 import ArrowFooter from "../images/svg/arrowfooter";
 import declaration from "../pdf/declaracion.pdf";
@@ -15,6 +17,15 @@ const Footer = () => {
           <div className="logo">
             <Logo />
           </div>
+          <div className="claims">
+            <div className="center">
+              <Link to="header" smooth={true} duration={1000} offset={-2000}><LinkRouter
+                to="/libro-de-reclamaciones"
+              >
+                <img src={Book} alt="libro de reclamaciones" />
+              </LinkRouter></Link>
+            </div>
+          </div>
           <div className="declaration">
             <div className="title">
               <h6>Declaración de beneficiario final</h6>
@@ -27,13 +38,6 @@ const Footer = () => {
                   >
                     Peruana de Moldeados SAC
                   </a>
-                </div>
-                <div className="center">
-                  <Link
-                    to="/libro-de-reclamaciones"
-                  >
-                    Libro de reclamaciones
-                  </Link>
                 </div>
               </div>
             </div>
@@ -159,6 +163,15 @@ const Footer = () => {
           <div className="logo">
             <Logo />
           </div>
+          <div className="claims">
+            <div className="center">
+              <Link to="header" smooth={true} duration={1000} offset={-2000}><LinkRouter
+                to="/libro-de-reclamaciones"
+              >
+                <img src={Book} alt="libro de reclamaciones" />
+              </LinkRouter></Link>
+            </div>
+          </div>
           <div className="accordion-footer">
             <div className="declaration collapse-footer" id="declaration">
               <div className="title">
@@ -166,7 +179,7 @@ const Footer = () => {
                   <a
                     href="#declaration"
                     className=""
-                    
+
                   >
                     Declaración de beneficiario final
                   </a>
@@ -183,11 +196,11 @@ const Footer = () => {
                     </a>
                   </div>
                   <div className="center">
-                    <Link
+                    <Link to="header" smooth={true} duration={1000} offset={-2000}><LinkRouter
                       to="/libro-de-reclamaciones"
                     >
                       Libro de reclamaciones
-                    </Link>
+                    </LinkRouter></Link>
                   </div>
                 </div>
               </div>
