@@ -23,7 +23,7 @@ const Footer = () => {
               <Link to="header" smooth={true} duration={1000} offset={-2000}><LinkRouter
                 to="/libro-de-reclamaciones"
               >
-                <img src={Book} alt="libro de reclamaciones" width="190px" height="100px"/>
+                <img src={Book} alt="libro de reclamaciones" width="210px" height="120px"/>
               </LinkRouter></Link>
             </div>
           </div>
