@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getBanners } from '../redux/actions/banner'
 import { getNewsHome } from '../redux/actions/new'
 import WOW from 'wowjs'
+import Popup from '../components/Popup';
 
 const Home = ({history}) => {
 
@@ -72,8 +73,19 @@ const Home = ({history}) => {
 
     let number = Object.keys(cartItems).length
 
+    const [isOpen, setIsOpen] = useState(true);
+    const togglePopup = () => {
+        setIsOpen(!isOpen);
+    }
+    
     return (
         <div className="Home">
+            {isOpen && <Popup
+                content={<>
+                    <img style={{ width: "100%" }} src={require('../images/img/comunicado.png')} />
+                </>}
+                handleClose={togglePopup}
+            />}
             <Header number={number} />
             <Slicks banners={banners} />
             <Known 
