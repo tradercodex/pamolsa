@@ -29,7 +29,7 @@ const QuoteProducts = () => {
                 <div className="filter-shadow-white"></div>
                     <div className="info-product_bf_3">
                         <h4>Línea Industrial Consumo</h4>
-                        <Link to="productos/linea/3">Ver más</Link>
+                        <Link to="productos/linea/4">Ver más</Link>
                     </div>
                     <div className="img-bioform_product_3">
                     <img src={require('../images/img/bioformproducts3.webp')} alt="imagen de productos" />
@@ -39,7 +39,7 @@ const QuoteProducts = () => {
                 <div className="filter-shadow-white"></div>
                     <div className="info-product_bf_4">
                         <h4>Línea Agroindustrial</h4>
-                        <Link to="productos/linea/4">Ver más</Link>
+                        <Link to="productos/linea/3">Ver más</Link>
                     </div>
                     <div className="img-bioform_product_4">
                         <img src={require('../images/img/bioformproducts4.webp')} alt="imagen de productos" />
