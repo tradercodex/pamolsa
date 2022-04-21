@@ -80,12 +80,12 @@ const Home = ({history}) => {
     
     return (
         <div className="Home">
-            {isOpen && <Popup
+            {/*isOpen && <Popup
                 content={<>
                     <img style={{ width: "100%" }} src={require('../images/img/comunicado.png')} />
                 </>}
                 handleClose={togglePopup}
-            />}
+                />*/}
             <Header number={number} />
             <Slicks banners={banners} />
             <Known 

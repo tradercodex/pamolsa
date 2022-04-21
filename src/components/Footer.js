@@ -160,7 +160,6 @@ const Footer = () => {
             <a
               style={{ textDecoration: "none" }}
               target="_blank"
-              href
               href="http://www.arquimarkets.com/"
             >
               <p>© Todos los derechos reservados 2020 - Make by Arquimarkets</p>

@@ -57,7 +57,7 @@ const Known = ({
                             data-wow-duration="2s"
                             data-wow-delay="2.4"
                         >
-                            <Link to="header" smooth={true} duration={1000} offset={-2000}><LinkRouter to="/productos/linea/3">
+                            <Link to="header" smooth={true} duration={1000} offset={-2000}><LinkRouter to="/productos/linea/4">
                                 <img src={require('../images/img/useapplication.webp')} alt="imagen" />
                                 <p>Línea Industrial Consumo</p>
                             </LinkRouter></Link>
@@ -66,7 +66,7 @@ const Known = ({
                             data-wow-duration="2s"
                             data-wow-delay="2.4"
                         >
-                            <Link to="header" smooth={true} duration={1000} offset={-2000}><LinkRouter to="/productos/linea/4">
+                            <Link to="header" smooth={true} duration={1000} offset={-2000}><LinkRouter to="/productos/linea/3">
                                 <img src={require('../images/img/lineagro.webp')} alt="imagen" />
                                 <p>Línea Agroindustrial</p>
                             </LinkRouter></Link>
