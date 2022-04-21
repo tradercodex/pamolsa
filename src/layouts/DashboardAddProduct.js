@@ -293,7 +293,7 @@ const DashboardAddProduct = () => {
                                         <input
                                             type="number"
                                             name="long"
-                                            maxLength="100"
+                                            step={"0.01"}
                                             ref={
                                                 register({
                                                     required: {
@@ -311,7 +311,7 @@ const DashboardAddProduct = () => {
                                         <input
                                             type="number"
                                             name="width"
-                                            maxLength="10"
+                                            step={"0.01"}
                                             ref={
                                                 register({
                                                     required: {
@@ -331,7 +331,7 @@ const DashboardAddProduct = () => {
                                         <input
                                             type="number"
                                             name="diameter"
-                                            maxLength="10"
+                                            step={"0.01"}
                                             ref={
                                                 register({
                                                     required: {
@@ -349,7 +349,7 @@ const DashboardAddProduct = () => {
                                         <input
                                             type="number"
                                             name="height"
-                                            maxLength="10"
+                                            step={"0.01"}
                                             ref={
                                                 register({
                                                     required: {
@@ -367,7 +367,7 @@ const DashboardAddProduct = () => {
                                         <input
                                             type="number"
                                             name="weight"
-                                            maxLength="10"
+                                            step={"0.01"}
                                             ref={
                                                 register({
                                                     required: {
@@ -387,7 +387,7 @@ const DashboardAddProduct = () => {
                                         <input
                                             type="number"
                                             name="ue_intern"
-                                            maxLength="10"
+                                            step={"0.01"}
                                             ref={
                                                 register({
                                                     required: {
@@ -402,7 +402,7 @@ const DashboardAddProduct = () => {
                                         <input
                                             type="number"
                                             name="ue_master"
-                                            maxLength="10"
+                                            step={"0.01"}
                                             ref={
                                                 register({
                                                     required: {
@@ -434,7 +434,7 @@ const DashboardAddProduct = () => {
                                         <input
                                             type="number"
                                             name="min_quantity"
-                                            maxLength="10"
+                                            step={"0.01"}
                                             ref={
                                                 register({
                                                     required: {
@@ -757,7 +757,7 @@ const DashboardAddProduct = () => {
                                     </div>
                                 </div>
                                 <div className="input-ds" style={{ marginTop: "20px" }}>
-                                    <div><label>Imagen de la noticia</label></div>
+                                    <div><label>Imagen del producto</label></div>
                                     <div className="img-input-ds">
                                         <img style={{ width: "100%" }} id="imgPerfil" src={require('../images/img/uploadimage.webp')} alt="img" />
                                         <input

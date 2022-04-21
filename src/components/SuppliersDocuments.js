@@ -24,7 +24,7 @@ const SuppliersDocuments = ({ procedimiento, politicasig, politicaproteccion }) 
                             <p>Política SIG</p>
                         </div>
                         <div className="box-informs-pdf">
-                            <a rel="noopener noreferrer" href="https://ws.pamolsa.com.pe/res/files/pdf/CARTILLA_KIT_PROVEEDOR_VERSION_2017_4a04.PDF" target="_blank"><InformDownload /></a>
+                            <a rel="noopener noreferrer" href="https://www.carvajal.com/index.php/nuestra-empresa/proveedores/" target="_blank"><InformDownload /></a>
                             <p>Kit de proveedor</p>
                         </div>
                         <div className="box-informs-pdf">
