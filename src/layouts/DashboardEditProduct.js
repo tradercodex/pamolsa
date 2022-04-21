@@ -277,11 +277,14 @@ const DashboardEditProduct = ({ match }) => {
 
     const deletingProductImage = (imageId) => {
         if (imageId) {
-            dispatch(deleteImageProduct(imageId))
-            setTimeout(() => {
-                window.location.replace(`/administrador/productos/editar/${id}`);
-                dispatch(setAlert("Se elimino la imagen  del producto", "", 4000))
-            }, 4000);
+            let result = window.confirm("Seguro que desea eliminar esta imagen")
+            if (result === true) {
+                dispatch(deleteImageProduct(imageId))
+                setTimeout(() => {
+                    window.location.replace(`/administrador/productos/editar/${id}`);
+                    dispatch(setAlert("Se elimino la imagen  del producto", "", 4000))
+                }, 4000);    
+            }
         }
     }
 
@@ -372,7 +375,7 @@ const DashboardEditProduct = ({ match }) => {
                                         <input
                                             type="number"
                                             name="long"
-                                            maxLength="100"
+                                            step={"0.01"}
                                             defaultValue={product.long}
                                             ref={
                                                 register({
@@ -392,7 +395,7 @@ const DashboardEditProduct = ({ match }) => {
                                             type="number"
                                             name="width"
                                             defaultValue={product.width}
-                                            maxLength="10"
+                                            step={"0.01"}
                                             ref={
                                                 register({
                                                     required: {
@@ -413,7 +416,7 @@ const DashboardEditProduct = ({ match }) => {
                                             type="number"
                                             name="diameter"
                                             defaultValue={product.diameter}
-                                            maxLength="10"
+                                            step={"0.01"}
                                             ref={
                                                 register({
                                                     required: {
@@ -432,7 +435,7 @@ const DashboardEditProduct = ({ match }) => {
                                             type="number"
                                             name="height"
                                             defaultValue={product.height}
-                                            maxLength="10"
+                                            step={"0.01"}
                                             ref={
                                                 register({
                                                     required: {
@@ -451,7 +454,7 @@ const DashboardEditProduct = ({ match }) => {
                                             type="number"
                                             name="weight"
                                             defaultValue={product.weight}
-                                            maxLength="10"
+                                            step={"0.01"}
                                             ref={
                                                 register({
                                                     required: {
@@ -472,7 +475,7 @@ const DashboardEditProduct = ({ match }) => {
                                             type="number"
                                             name="ue_intern"
                                             defaultValue={product.ue_intern}
-                                            maxLength="10"
+                                            step={"0.01"}
                                             ref={
                                                 register({
                                                     required: {
@@ -488,7 +491,7 @@ const DashboardEditProduct = ({ match }) => {
                                             type="number"
                                             name="ue_master"
                                             defaultValue={product.ue_master}
-                                            maxLength="10"
+                                            step={"0.01"}
                                             ref={
                                                 register({
                                                     required: {
@@ -522,7 +525,7 @@ const DashboardEditProduct = ({ match }) => {
                                             type="number"
                                             name="min_quantity"
                                             defaultValue={product.min_quantity}
-                                            maxLength="10"
+                                            step={"0.01"}
                                             ref={
                                                 register({
                                                     required: {
@@ -807,7 +810,7 @@ const DashboardEditProduct = ({ match }) => {
                                         />
                                     </div>
                                     <div className="input-ds" style={{ marginTop: "20px" }}>
-                                        <div><label>Imagen de la noticia</label></div>
+                                        <div><label>Imagen del producto</label></div>
                                         {
                                             product.file && product.file.length > 0 ?
                                                 <div className="success-image">
