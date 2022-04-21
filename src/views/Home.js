@@ -85,7 +85,7 @@ const Home = ({history}) => {
                     <img style={{ width: "100%" }} src={require('../images/img/comunicado.png')} />
                 </>}
                 handleClose={togglePopup}
-                />*/}
+            />*/}
             <Header number={number} />
             <Slicks banners={banners} />
             <Known 
