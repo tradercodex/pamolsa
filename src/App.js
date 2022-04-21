@@ -27,6 +27,7 @@ import { updateCard } from './redux/actions/cart';
 import DetailCommunity from './views/DetailCommunity';
 import NotFound from './components/NotFound'
 import ProductosBySearch from './views/ProductosBySearch'
+import Suppliers from './views/Suppliers'
 
 const token = localStorage.getItem('token')
 
@@ -89,6 +90,7 @@ function App() {
           <Route exact path="/noticias/:name" component={DetailNew} />
           <Route exact path="/sostenibilidad/comunidad/:name" component={DetailCommunity} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/proveedores" component={Suppliers} />
           {
             token ? <Route exact patch="/admin" component={Dashboard} /> : <NotFound />
           }

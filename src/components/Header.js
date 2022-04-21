@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState, useRef } from 'react';
 import { Link, withRouter } from 'react-router-dom'
 import Logo from '../images/svg/logo'
 import Cart from '../images/svg/cart'
@@ -13,7 +13,8 @@ import User from '@material-ui/icons/SupervisedUserCircle'
 const token = localStorage.getItem('token')
 
 const Header = ({ match, number }) => {
-
+    const [dropdown, setDropdown] = useState(false);
+    let ref = useRef();
     let pathname = match.path
     let rut = match.params.name
     let id = match.params.id
@@ -31,7 +32,28 @@ const Header = ({ match, number }) => {
         movilClose.addEventListener('click', function () {
             header.classList.remove('movile-active')
         })
-    }, [])
+
+        const handler = (event) => {
+            if (dropdown && ref.current && !ref.current.contains(event.target)) {
+                setDropdown(false);
+            }
+        };
+        document.addEventListener("mousedown", handler);
+        document.addEventListener("touchstart", handler);
+        return () => {
+            // Cleanup the event listener
+            document.removeEventListener("mousedown", handler);
+            document.removeEventListener("touchstart", handler);
+        };
+    }, [dropdown]);
+
+    const onMouseEnter = () => {
+        window.innerWidth > 960 && setDropdown(true);
+    };
+
+    const onMouseLeave = () => {
+        window.innerWidth > 960 && setDropdown(false);
+    };
 
     return (
         <Fragment>
@@ -57,55 +79,65 @@ const Header = ({ match, number }) => {
                         </div>
                         {
                             token ?
-                            <nav className="Nav-pm">
-                            <ul>
-                                <li><Link to="/administrador/banners">Admin</Link></li>
-                                <li><Link to="/" className={pathname === "/" || pathname === "/home/distribuidores" ? "active-mv" : ""}>Home</Link></li>
-                                <li><Link to="/nosotros" className={pathname === "/nosotros" ? "active-mv" : ""}>Nosotros</Link></li>
-                                <li><Link to="/productos"
-                                    className={
-                                        pathname === "/productos" ||
-                                            url === `/productos/${rut}` ||
-                                            url === "/cotizador" ||
-                                            url === `/productos/linea/${id}` ||
-                                            url === `/productos/${rut}/${id}` ||
-                                            url === `/productos/negocio/${rut}/${id}` ||
-                                            url === `/producto/detalle/${id}`
-                                            ? "active-mv" : ""}>Productos</Link></li>
-                                <li><Link to="/sostenibilidad" className={pathname === "/sostenibilidad" || pathname === "/sostenibilidad/comunidad/:name" ? "active-mv" : ""}>Sostenibilidad</Link></li>
-                                <li><Link to="/trabaja-con-nosotros" className={pathname === "/trabaja-con-nosotros" ? "active-mv" : ""}>Trabaja con nosotros</Link></li>
-                                <li><Link to="/clientes" className={pathname === "/clientes" ? "active-mv" : ""}>Clientes</Link></li>
-                                <li><Link to="/noticias" className={
-                                    pathname === "/noticias" ||
-                                        url === `/noticias/${rut}` || pathname === "/noticias/galeria-periodistica"
-                                        ? "active-mv" : ""}>Noticias</Link></li>
-                                <li><Link to="/contacto" className={pathname === "/contacto" ? "active-mv" : ""}>Contacto</Link></li>
-                            </ul>
-                        </nav> :
-                        <nav className="Nav-pm">
-                        <ul>
-                            <li><Link to="/" className={pathname === "/" || pathname === "/home/distribuidores" ? "active-mv" : ""}>Home</Link></li>
-                            <li><Link to="/nosotros" className={pathname === "/nosotros" ? "active-mv" : ""}>Nosotros</Link></li>
-                            <li><Link to="/productos"
-                                className={
-                                    pathname === "/productos" ||
-                                        url === `/productos/${rut}` ||
-                                        url === "/cotizador" ||
-                                        url === `/productos/linea/${id}` ||
-                                        url === `/productos/${rut}/${id}` ||
-                                        url === `/productos/negocio/${rut}/${id}` ||
-                                        url === `/producto/detalle/${id}`
-                                        ? "active-mv" : ""}>Productos</Link></li>
-                            <li><Link to="/sostenibilidad" className={pathname === "/sostenibilidad" || pathname === "/sostenibilidad/comunidad/:name" ? "active-mv" : ""}>Sostenibilidad</Link></li>
-                            <li><Link to="/trabaja-con-nosotros" className={pathname === "/trabaja-con-nosotros" ? "active-mv" : ""}>Trabaja con nosotros</Link></li>
-                            <li><Link to="/clientes" className={pathname === "/clientes" ? "active-mv" : ""}>Clientes</Link></li>
-                            <li><Link to="/noticias" className={
-                                pathname === "/noticias" ||
-                                    url === `/noticias/${rut}` || pathname === "/noticias/galeria-periodistica"
-                                    ? "active-mv" : ""}>Noticias</Link></li>
-                            <li><Link to="/contacto" className={pathname === "/contacto" ? "active-mv" : ""}>Contacto</Link></li>
-                        </ul>
-                    </nav>
+                                <nav className="Nav-pm">
+                                    <ul>
+                                        <li><Link to="/administrador/banners">Admin</Link></li>
+                                        <li><Link to="/" className={pathname === "/" || pathname === "/home/distribuidores" ? "active-mv" : ""}>Home</Link></li>
+                                        <li>
+                                            <Link to="/nosotros" className={pathname === "/nosotros" ? "active-mv" : ""}>Nosotros</Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/proveedores" className={pathname === "/proveedores" ? "active-menu-item-mv" : "menu-item-mv"}>Proveedores</Link>
+                                        </li>
+                                        <li><Link to="/productos"
+                                            className={
+                                                pathname === "/productos" ||
+                                                    url === `/productos/${rut}` ||
+                                                    url === "/cotizador" ||
+                                                    url === `/productos/linea/${id}` ||
+                                                    url === `/productos/${rut}/${id}` ||
+                                                    url === `/productos/negocio/${rut}/${id}` ||
+                                                    url === `/producto/detalle/${id}`
+                                                    ? "active-mv" : ""}>Productos</Link></li>
+                                        <li><Link to="/sostenibilidad" className={pathname === "/sostenibilidad" || pathname === "/sostenibilidad/comunidad/:name" ? "active-mv" : ""}>Sostenibilidad</Link></li>
+                                        <li><Link to="/trabaja-con-nosotros" className={pathname === "/trabaja-con-nosotros" ? "active-mv" : ""}>Trabaja con nosotros</Link></li>
+                                        <li><Link to="/clientes" className={pathname === "/clientes" ? "active-mv" : ""}>Clientes</Link></li>
+                                        <li><Link to="/noticias" className={
+                                            pathname === "/noticias" ||
+                                                url === `/noticias/${rut}` || pathname === "/noticias/galeria-periodistica"
+                                                ? "active-mv" : ""}>Noticias</Link></li>
+                                        <li><Link to="/contacto" className={pathname === "/contacto" ? "active-mv" : ""}>Contacto</Link></li>
+                                    </ul>
+                                </nav> :
+                                <nav className="Nav-pm">
+                                    <ul>
+                                        <li><Link to="/" className={pathname === "/" || pathname === "/home/distribuidores" ? "active-mv" : ""}>Home</Link></li>
+                                        <li>
+                                            <Link to="/nosotros" className={pathname === "/nosotros" ? "active-mv" : ""}>Nosotros</Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/proveedores" className={pathname === "/proveedores" ? "active-menu-item-mv" : "menu-item-mv"}>Proveedores</Link>
+                                        </li>
+                                        <li><Link to="/productos"
+                                            className={
+                                                pathname === "/productos" ||
+                                                    url === `/productos/${rut}` ||
+                                                    url === "/cotizador" ||
+                                                    url === `/productos/linea/${id}` ||
+                                                    url === `/productos/${rut}/${id}` ||
+                                                    url === `/productos/negocio/${rut}/${id}` ||
+                                                    url === `/producto/detalle/${id}`
+                                                    ? "active-mv" : ""}>Productos</Link></li>
+                                        <li><Link to="/sostenibilidad" className={pathname === "/sostenibilidad" || pathname === "/sostenibilidad/comunidad/:name" ? "active-mv" : ""}>Sostenibilidad</Link></li>
+                                        <li><Link to="/trabaja-con-nosotros" className={pathname === "/trabaja-con-nosotros" ? "active-mv" : ""}>Trabaja con nosotros</Link></li>
+                                        <li><Link to="/clientes" className={pathname === "/clientes" ? "active-mv" : ""}>Clientes</Link></li>
+                                        <li><Link to="/noticias" className={
+                                            pathname === "/noticias" ||
+                                                url === `/noticias/${rut}` || pathname === "/noticias/galeria-periodistica"
+                                                ? "active-mv" : ""}>Noticias</Link></li>
+                                        <li><Link to="/contacto" className={pathname === "/contacto" ? "active-mv" : ""}>Contacto</Link></li>
+                                    </ul>
+                                </nav>
                         }
                     </div>
                 </div>
@@ -117,7 +149,7 @@ const Header = ({ match, number }) => {
                         <div className="Container-header_pm">
                             {
                                 token ?
-                                <li style={{listStyle: "none", marginLeft: "50px"}}><Link style={{color: "#4d4d4d"}} to="/administrador/banners"><User /></Link></li> : ''
+                                    <li style={{ listStyle: "none", marginLeft: "50px" }}><Link style={{ color: "#4d4d4d" }} to="/administrador/banners"><User /></Link></li> : ''
                             }
                             <div className="phones">
                                 <div className="icon">
@@ -132,10 +164,34 @@ const Header = ({ match, number }) => {
                             <div className="Logo-pm">
                                 <Link to="/"><Logo /></Link>
                             </div>
-                                <nav className="Nav-pm">
+                            <nav className="Nav-pm">
                                 <ul>
                                     <li><Link to="/" className={pathname === "/" || pathname === "/home/distribuidores" ? "active" : ""}>Home</Link></li>
-                                    <li><Link to="/nosotros" className={pathname === "/nosotros" ? "active" : ""}>Nosotros</Link></li>
+                                    <li
+                                        className="menu-items"
+                                        ref={ref}
+                                        onMouseEnter={onMouseEnter}
+                                        onMouseLeave={onMouseLeave}
+                                    >
+                                        <button
+                                            type="button"
+                                            aria-haspopup="menu"
+                                            aria-expanded={dropdown ? "true" : "false"}
+                                            onClick={() => setDropdown((prev) => !prev)}
+                                        >
+                                            <Link to="/nosotros" className={pathname === "/nosotros" ? "active" : ""}>Nosotros</Link>
+                                        </button>
+                                        <ul className={`dropdown dropdown-submenu ${dropdown ? "show" : ""}`}>
+                                            <li
+                                                className="menu-sub-items"
+                                                ref={ref}
+                                                onMouseEnter={onMouseEnter}
+                                                onMouseLeave={onMouseLeave}
+                                            >
+                                                <Link to="/proveedores" className={pathname === "/proveedores" ? "active" : ""}>Proveedores</Link>
+                                            </li>
+                                        </ul>
+                                    </li>
                                     <li><Link to="/productos"
                                         className={
                                             pathname === "/productos" ||
