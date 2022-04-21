@@ -64,7 +64,6 @@ const DashboardEditProduct = ({ match }) => {
         ue_intern: '',
         popular: '',
         ue_master: '',
-        uee: '',
         line: '',
         business_types: [],
         product_type: '',
@@ -97,7 +96,6 @@ const DashboardEditProduct = ({ match }) => {
             ue_intern: res.data.data.ue_intern,
             ue_master: res.data.data.ue_master,
             popular: res.data.data.popular,
-            uee: res.data.data.uee,
             file: res.data.data.image,
             unit: res.data.data.unit,
             brand: res.data.data.brand,
@@ -153,7 +151,7 @@ const DashboardEditProduct = ({ match }) => {
         }
 
         dispatch(getLineProducts());
-        dispatch(getTypesProducts(9, 1));
+        dispatch(getTypesProducts(20, 1));
         dispatch(getSubtypes());
         dispatch(getAddSubtypes());
         dispatch(getMaterials());
@@ -227,33 +225,36 @@ const DashboardEditProduct = ({ match }) => {
         const formData = new FormData;
 
         formData.append('product_id', id)
-        formData.append('name', data.name);
-        formData.append('code', data.code);
-        formData.append('long', data.long);
-        formData.append('width', data.width);
-        formData.append('diameter', data.diameter);
-        formData.append('height', data.height)
-        formData.append('weight', data.weight);
-        formData.append('ue_intern', data.ue_intern)
-        formData.append('ue_master', data.ue_master);
-        formData.append('uee', data.uee);
-        formData.append('unit', data.unit)
-        formData.append('popular', product.popular)
-        formData.append('min_quantity', data.min_quantity);
-        formData.append('shape', data.shape)
-        formData.append('colour', data.colour);
-        formData.append('temperature', data.temperature);
-        formData.append('brand', data.brand);
-        formData.append('line', data.line.label);
-        formData.append('type', data.product_type.label)
-        formData.append('add_subtype', data.product_addtl_subtype.label)
-        formData.append('material_name', data.material.label)
-        formData.append('material_short_name', data.material_short_name);
-        for (var i = 0; i < data.business.length; i++) {
-            formData.append('business', data.business[i].name);
+        if (data.name) formData.append('name', data.name);
+        if (data.code) formData.append('code', data.code);
+        if (data.long) formData.append('long', data.long);
+        if (data.width) formData.append('width', data.width);
+        if (data.diameter) formData.append('diameter', data.diameter);
+        if (data.height) formData.append('height', data.height)
+        if (data.weight) formData.append('weight', data.weight);
+        if (data.ue_intern) formData.append('ue_intern', data.ue_intern)
+        if (data.ue_master) formData.append('ue_master', data.ue_master);
+        if (data.unit) formData.append('unit', data.unit)
+        if (data.popular) formData.append('popular', product.popular)
+        if (data.min_quantity) formData.append('min_quantity', data.min_quantity);
+        if (data.shape) formData.append('shape', data.shape)
+        if (data.colour) formData.append('colour', data.colour);
+        if (data.temperature) formData.append('temperature', data.temperature);
+        if (data.brand) formData.append('brand', data.brand);
+        if (data.line.label) formData.append('line', data.line.label);
+        if (data.product_type.label) formData.append('type', data.product_type.label)
+        if (data.product_addtl_subtype.label) formData.append('add_subtype', data.product_addtl_subtype.label)
+        if (data.material.label) formData.append('material_name', data.material.label)
+        if (data.material_short_name) formData.append('material_short_name', data.material_short_name);
+        if (data.business) {
+            for (var i = 0; i < data.business.length; i++) {
+                formData.append('business', data.business[i].name);
+            }
         }
-        for (var i = 0; i < data.keywords.length; i++) {
-            formData.append('keywords', data.keywords[i].name);
+        if (data.keywords) {
+            for (var i = 0; i < data.keywords.length; i++) {
+                formData.append('keywords', data.keywords[i].name);
+            }
         }
         for (let picRelated of product.related_products) {
             formData.append('related_product', picRelated.related_product)
@@ -329,6 +330,8 @@ const DashboardEditProduct = ({ match }) => {
                                         type="text"
                                         name="name"
                                         defaultValue={product.name}
+                                        minLength="1"
+                                        maxLength="100"
                                         ref={
                                             register({
                                                 required: {
@@ -349,6 +352,8 @@ const DashboardEditProduct = ({ match }) => {
                                             type="text"
                                             name="code"
                                             defaultValue={product.code}
+                                            minLength="1"
+                                            maxLength="65"
                                             ref={
                                                 register({
                                                     required: {
@@ -365,14 +370,14 @@ const DashboardEditProduct = ({ match }) => {
                                     <div className="input-ds">
                                         <div><label>Largo del producto</label></div>
                                         <input
-                                            type="text"
+                                            type="number"
                                             name="long"
+                                            maxLength="100"
                                             defaultValue={product.long}
                                             ref={
                                                 register({
                                                     required: {
-                                                        value: true,
-                                                        message: "El producto debe tener un largo"
+                                                        value: false
                                                     }
                                                 })
                                             }
@@ -384,14 +389,14 @@ const DashboardEditProduct = ({ match }) => {
                                     <div className="input-ds">
                                         <div><label>Ancho del producto</label></div>
                                         <input
-                                            type="text"
+                                            type="number"
                                             name="width"
                                             defaultValue={product.width}
+                                            maxLength="10"
                                             ref={
                                                 register({
                                                     required: {
-                                                        value: true,
-                                                        message: "El producto debe tener un ancho"
+                                                        value: false
                                                     }
                                                 })
                                             }
@@ -405,14 +410,14 @@ const DashboardEditProduct = ({ match }) => {
                                     <div className="input-ds">
                                         <div><label>Diametro del producto</label></div>
                                         <input
-                                            type="text"
+                                            type="number"
                                             name="diameter"
                                             defaultValue={product.diameter}
+                                            maxLength="10"
                                             ref={
                                                 register({
                                                     required: {
-                                                        value: true,
-                                                        message: "El producto debe tener un diámetro"
+                                                        value: false
                                                     }
                                                 })
                                             }
@@ -424,14 +429,14 @@ const DashboardEditProduct = ({ match }) => {
                                     <div className="input-ds">
                                         <div><label>Altura del producto</label></div>
                                         <input
-                                            type="text"
+                                            type="number"
                                             name="height"
                                             defaultValue={product.height}
+                                            maxLength="10"
                                             ref={
                                                 register({
                                                     required: {
-                                                        value: true,
-                                                        message: "El producto debe tener una altura"
+                                                        value: false
                                                     }
                                                 })
                                             }
@@ -443,14 +448,14 @@ const DashboardEditProduct = ({ match }) => {
                                     <div className="input-ds">
                                         <div><label>Peso del producto</label></div>
                                         <input
-                                            type="text"
+                                            type="number"
                                             name="weight"
                                             defaultValue={product.weight}
+                                            maxLength="10"
                                             ref={
                                                 register({
                                                     required: {
-                                                        value: true,
-                                                        message: "El producto debe tener un peso"
+                                                        value: false
                                                     }
                                                 })
                                             }
@@ -464,9 +469,10 @@ const DashboardEditProduct = ({ match }) => {
                                     <div className="input-ds">
                                         <div><label>UE Interno</label></div>
                                         <input
-                                            type="text"
+                                            type="number"
                                             name="ue_intern"
                                             defaultValue={product.ue_intern}
+                                            maxLength="10"
                                             ref={
                                                 register({
                                                     required: {
@@ -479,28 +485,14 @@ const DashboardEditProduct = ({ match }) => {
                                     <div className="input-ds">
                                         <div><label>UE Master</label></div>
                                         <input
-                                            type="text"
+                                            type="number"
                                             name="ue_master"
                                             defaultValue={product.ue_master}
+                                            maxLength="10"
                                             ref={
                                                 register({
                                                     required: {
                                                         value: false
-                                                    }
-                                                })
-                                            }
-                                        />
-                                    </div>
-                                    <div className="input-ds">
-                                        <div><label>UEE</label></div>
-                                        <input
-                                            type="text"
-                                            name="uee"
-                                            defaultValue={product.uee}
-                                            ref={
-                                                register({
-                                                    required: {
-                                                        value: false,
                                                     }
                                                 })
                                             }
@@ -514,6 +506,7 @@ const DashboardEditProduct = ({ match }) => {
                                             type="text"
                                             name="unit"
                                             defaultValue={product.unit}
+                                            maxLength="100"
                                             ref={
                                                 register({
                                                     required: {
@@ -526,9 +519,10 @@ const DashboardEditProduct = ({ match }) => {
                                     <div className="input-ds">
                                         <div><label>Minima cantidad</label></div>
                                         <input
-                                            type="text"
+                                            type="number"
                                             name="min_quantity"
                                             defaultValue={product.min_quantity}
+                                            maxLength="10"
                                             ref={
                                                 register({
                                                     required: {
@@ -568,6 +562,7 @@ const DashboardEditProduct = ({ match }) => {
                                             type="text"
                                             name="shape"
                                             defaultValue={product.shape}
+                                            maxLength="45"
                                             ref={
                                                 register({
                                                     required: {
@@ -583,6 +578,7 @@ const DashboardEditProduct = ({ match }) => {
                                             type="text"
                                             name="colour"
                                             defaultValue={product.colour}
+                                            maxLength="45"
                                             ref={
                                                 register({
                                                     required: {
@@ -600,6 +596,7 @@ const DashboardEditProduct = ({ match }) => {
                                             type="text"
                                             name="brand"
                                             defaultValue={product.brand}
+                                            maxLength="45"
                                             ref={
                                                 register({
                                                     required: {
@@ -615,6 +612,7 @@ const DashboardEditProduct = ({ match }) => {
                                             type="text"
                                             name="temperature"
                                             defaultValue={product.temperature}
+                                            maxLength="65"
                                             ref={
                                                 register({
                                                     required: {
