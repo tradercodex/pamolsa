@@ -220,7 +220,7 @@ const DashboardAddProduct = () => {
     return (
         <div className="content-ds-fluid">
             <div className="title-content-ds">
-                <h6>Agrega un nuevo producto</h6>
+                <h6>Agregar un nuevo producto</h6>
             </div>
             <div className="content-form">
                 <div className="">
@@ -289,7 +289,7 @@ const DashboardAddProduct = () => {
                                         </div>
                                     </div>
                                     <div className="input-ds">
-                                        <div><label>Largo del producto</label></div>
+                                        <div><label>Largo</label></div>
                                         <input
                                             type="number"
                                             name="long"
@@ -307,11 +307,10 @@ const DashboardAddProduct = () => {
                                         </div>
                                     </div>
                                     <div className="input-ds">
-                                        <div><label>Ancho del producto</label></div>
+                                        <div><label>Unidad del largo</label></div>
                                         <input
-                                            type="number"
-                                            name="width"
-                                            step={"0.01"}
+                                            type="text"
+                                            name="long_unit"
                                             ref={
                                                 register({
                                                     required: {
@@ -321,63 +320,7 @@ const DashboardAddProduct = () => {
                                             }
                                         />
                                         <div className="error-ds">
-                                            {errors.width && errors.width.message}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="container-grid-ds-forms">
-                                    <div className="input-ds">
-                                        <div><label>Diametro del producto</label></div>
-                                        <input
-                                            type="number"
-                                            name="diameter"
-                                            step={"0.01"}
-                                            ref={
-                                                register({
-                                                    required: {
-                                                        value: false
-                                                    }
-                                                })
-                                            }
-                                        />
-                                        <div className="error-ds">
-                                            {errors.diameter && errors.diameter.message}
-                                        </div>
-                                    </div>
-                                    <div className="input-ds">
-                                        <div><label>Altura del producto</label></div>
-                                        <input
-                                            type="number"
-                                            name="height"
-                                            step={"0.01"}
-                                            ref={
-                                                register({
-                                                    required: {
-                                                        value: false
-                                                    }
-                                                })
-                                            }
-                                        />
-                                        <div className="error-ds">
-                                            {errors.height && errors.height.message}
-                                        </div>
-                                    </div>
-                                    <div className="input-ds">
-                                        <div><label>Peso del producto</label></div>
-                                        <input
-                                            type="number"
-                                            name="weight"
-                                            step={"0.01"}
-                                            ref={
-                                                register({
-                                                    required: {
-                                                        value: false
-                                                    }
-                                                })
-                                            }
-                                        />
-                                        <div className="error-ds">
-                                            {errors.weight && errors.weight.message}
+                                            {errors.long_unit && errors.long_unit.message}
                                         </div>
                                     </div>
                                 </div>
@@ -398,6 +341,43 @@ const DashboardAddProduct = () => {
                                         />
                                     </div>
                                     <div className="input-ds">
+                                        <div><label>Ancho</label></div>
+                                        <input
+                                            type="number"
+                                            name="width"
+                                            step={"0.01"}
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                        <div className="error-ds">
+                                            {errors.width && errors.width.message}
+                                        </div>
+                                    </div>
+                                    <div className="input-ds">
+                                        <div><label>Unidad del ancho</label></div>
+                                        <input
+                                            type="text"
+                                            name="width_unit"
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                        <div className="error-ds">
+                                            {errors.width_unit && errors.width_unit.message}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="container-grid-ds-forms">
+                                    <div className="input-ds">
                                         <div><label>UE Master</label></div>
                                         <input
                                             type="number"
@@ -412,14 +392,168 @@ const DashboardAddProduct = () => {
                                             }
                                         />
                                     </div>
+                                    <div className="input-ds">
+                                        <div><label>Diametro</label></div>
+                                        <input
+                                            type="number"
+                                            name="diameter"
+                                            step={"0.01"}
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                        <div className="error-ds">
+                                            {errors.diameter && errors.diameter.message}
+                                        </div>
+                                    </div>
+                                    <div className="input-ds">
+                                        <div><label>Unidad del diametro</label></div>
+                                        <input
+                                            type="text"
+                                            name="diameter_unit"
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                        <div className="error-ds">
+                                            {errors.diameter_unit && errors.diameter_unit.message}
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="container-grid-ds-forms doble">
+                                <div className="container-grid-ds-forms">
+                                    <div className="input-ds">
+                                        <div><label>Forma</label></div>
+                                        <input
+                                            type="text"
+                                            name="shape"
+                                            maxLength="45"
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false,
+                                                    }
+                                                })
+                                            }
+                                        />
+                                    </div>
+                                    <div className="input-ds">
+                                        <div><label>Altura</label></div>
+                                        <input
+                                            type="number"
+                                            name="height"
+                                            step={"0.01"}
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                        <div className="error-ds">
+                                            {errors.height && errors.height.message}
+                                        </div>
+                                    </div>
+                                    <div className="input-ds">
+                                        <div><label>Unidad de la altura</label></div>
+                                        <input
+                                            type="text"
+                                            name="height_unit"
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                        <div className="error-ds">
+                                            {errors.height_unit && errors.height_unit.message}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="container-grid-ds-forms">
+                                    <div className="input-ds">
+                                        <div><label>Color</label></div>
+                                        <input
+                                            type="text"
+                                            name="colour"
+                                            maxLength="45"
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                    </div>
+                                    <div className="input-ds">
+                                        <div><label>Peso</label></div>
+                                        <input
+                                            type="number"
+                                            name="weight"
+                                            step={"0.01"}
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                        <div className="error-ds">
+                                            {errors.weight && errors.weight.message}
+                                        </div>
+                                    </div>
+                                    <div className="input-ds">
+                                        <div><label>Unidad del peso</label></div>
+                                        <input
+                                            type="text"
+                                            name="weight_unit"
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                        <div className="error-ds">
+                                            {errors.weight_unit && errors.weight_unit.message}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="container-grid-ds-forms">
                                     <div className="input-ds">
                                         <div><label>Unidades</label></div>
                                         <input
                                             type="text"
                                             name="unit"
                                             maxLength="100"
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                    </div>
+                                    <div className="input-ds">
+                                        <div><label>Cantidad</label></div>
+                                        <input
+                                            type="number"
+                                            name="unit_quantity"
+                                            step={"0.01"}
                                             ref={
                                                 register({
                                                     required: {
@@ -448,6 +582,7 @@ const DashboardAddProduct = () => {
                                 <div className="input-ds rt">
                                     <div className="related-products_add">
                                         <label>Agregue los productos relacionados</label>
+                                        <label>(Escriba el codigo del producto)</label>
                                         <button onClick={addProductRelacionated} type="button"> + Agregar producto relacionado</button>
                                     </div>
                                     {
@@ -465,38 +600,6 @@ const DashboardAddProduct = () => {
                                             </div>
                                         ))
                                     }
-                                </div>
-                                <div className="container-grid-ds-forms doble">
-                                    <div className="input-ds">
-                                        <div><label>Forma</label></div>
-                                        <input
-                                            type="text"
-                                            name="shape"
-                                            maxLength="45"
-                                            ref={
-                                                register({
-                                                    required: {
-                                                        value: false,
-                                                    }
-                                                })
-                                            }
-                                        />
-                                    </div>
-                                    <div className="input-ds">
-                                        <div><label>Color</label></div>
-                                        <input
-                                            type="text"
-                                            name="colour"
-                                            maxLength="45"
-                                            ref={
-                                                register({
-                                                    required: {
-                                                        value: false
-                                                    }
-                                                })
-                                            }
-                                        />
-                                    </div>
                                 </div>
                                 <div className="container-grid-ds-forms doble">
                                     <div className="input-ds">

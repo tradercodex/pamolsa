@@ -74,20 +74,38 @@ const DetailProduct = ({ product }) => {
                                             <div>Material</div><p>{product.material.name}</p>
                                         </li>
                                         <li className="gray">
-                                            <div>Largo (cm)</div><p>{product.long}</p>
+                                            <div>Largo ({product.long_unit == null ? "cm" : product.long_unit})</div>
+                                            <p>{product.long != null || product.long != "0.00" ? product.long : null}</p>
                                         </li>
                                         <li>
-                                            <div>Ancho(cm)</div><p>{product.width}</p>
+                                            <div>Ancho({product.width_unit == null ? "cm" : product.width_unit})</div>
+                                            <p>{product.width != null || product.width != "0.00" ? product.width : null}</p>
                                         </li>
                                         <li className="gray">
-                                            <div>Altura(cm)</div><p>{product.height}</p>
+                                            <div>Altura({product.height_unit == null ? "cm" : product.height_unit})</div>
+                                            <p>{product.height != null || product.height != "0.00" ? product.height : null}</p>
                                         </li>
                                         <li>
-                                            <div>Diametro(mm)</div><p>{product.diameter}</p>
+                                            <div>Diametro({product.diameter_unit == null ? "mm" : product.diameter_unit})</div>
+                                            <p>{product.diameter != null || product.diameter != "0.00" ? product.diameter : null}</p>
                                         </li>
                                         <li className="gray">
-                                            <div>Peso(gr)</div><p>{product.weight}</p>
+                                            <div>Peso({product.weight_unit == null ? "gr" : product.weight_unit})</div>
+                                            <p>{product.weight != null || product.weight != "0.00" ? product.weight : null}</p>
                                         </li>
+                                        {
+                                            product.unit_quantity != null ? 
+                                            <li>
+                                                <div>{product.unit}</div><p>{product.unit_quantity}</p>
+                                            </li> :
+                                            
+                                            product.unit != null ?
+                                            <li>
+                                                <div>Unidades</div>
+                                                <p>{product.unit != null ? product.unit : null}</p>
+                                            </li> : null
+                                            
+                                        }
                                     </ul>
                                 </div>
                                 <div className="whant-need">
