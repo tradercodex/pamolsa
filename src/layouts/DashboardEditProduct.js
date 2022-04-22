@@ -55,12 +55,18 @@ const DashboardEditProduct = ({ match }) => {
 
     const [product, setProduct] = useState({
         name: '',
+        tradename: '',
         code: '',
         diameter: '',
+        diameter_unit: '',
         height: '',
+        height_unit: '',
         long: '',
+        long_unit: '',
         weight: '',
+        weight_unit: '',
         width: '',
+        width_unit: '',
         ue_intern: '',
         popular: '',
         ue_master: '',
@@ -70,6 +76,7 @@ const DashboardEditProduct = ({ match }) => {
         file: '',
         min_quantity: '',
         unit: '',
+        unit_quantity: '',
         brand: '',
         shape: '',
         colour: '',
@@ -87,17 +94,24 @@ const DashboardEditProduct = ({ match }) => {
         const res = await axios.get(`https://ws.pamolsa.com.pe/api/product/find?product_id=${id}`)
         setProduct({
             name: res.data.data.name,
+            tradename: res.data.data.tradename,
             code: res.data.data.code,
             diameter: res.data.data.diameter,
+            diameter_unit: res.data.data.diameter_unit,
             height: res.data.data.height,
+            height_unit: res.data.data.height_unit,
             long: res.data.data.long,
+            long_unit: res.data.data.long_unit,
             weight: res.data.data.weight,
+            weight_unit: res.data.data.weight_unit,
             width: res.data.data.width,
+            width_unit: res.data.data.width_unit,
             ue_intern: res.data.data.ue_intern,
             ue_master: res.data.data.ue_master,
             popular: res.data.data.popular,
             file: res.data.data.image,
             unit: res.data.data.unit,
+            unit_quantity: res.data.data.unit_quantity,
             brand: res.data.data.brand,
             colour: res.data.data.colour,
             shape: res.data.data.shape,
@@ -226,15 +240,22 @@ const DashboardEditProduct = ({ match }) => {
 
         formData.append('product_id', id)
         if (data.name) formData.append('name', data.name);
+        if (data.tradename) formData.append('tradename', data.tradename);
         if (data.code) formData.append('code', data.code);
         if (data.long) formData.append('long', data.long);
+        if (data.long_unit) formData.append('long_unit', data.long_unit);
         if (data.width) formData.append('width', data.width);
+        if (data.width_unit) formData.append('width_unit', data.width_unit);
         if (data.diameter) formData.append('diameter', data.diameter);
+        if (data.diameter_unit) formData.append('diameter_unit', data.diameter_unit);
         if (data.height) formData.append('height', data.height)
+        if (data.height_unit) formData.append('height_unit', data.height_unit)
         if (data.weight) formData.append('weight', data.weight);
+        if (data.weight_unit) formData.append('weight_unit', data.weight_unit);
         if (data.ue_intern) formData.append('ue_intern', data.ue_intern)
         if (data.ue_master) formData.append('ue_master', data.ue_master);
         if (data.unit) formData.append('unit', data.unit)
+        if (data.unit_quantity) formData.append('unit_quantity', data.unit_quantity)
         if (data.popular) formData.append('popular', product.popular)
         if (data.min_quantity) formData.append('min_quantity', data.min_quantity);
         if (data.shape) formData.append('shape', data.shape)
@@ -276,14 +297,14 @@ const DashboardEditProduct = ({ match }) => {
 
 
     const deletingProductImage = (imageId) => {
-        if (imageId) {
-            let result = window.confirm("Seguro que desea eliminar esta imagen")
-            if (result === true) {
+        let result = window.confirm("Seguro que desea eliminar esta imagen")
+        if (result === true) {
+            if (imageId) {
                 dispatch(deleteImageProduct(imageId))
                 setTimeout(() => {
                     window.location.replace(`/administrador/productos/editar/${id}`);
                     dispatch(setAlert("Se elimino la imagen  del producto", "", 4000))
-                }, 4000);    
+                }, 4000);
             }
         }
     }
@@ -295,12 +316,12 @@ const DashboardEditProduct = ({ match }) => {
         })
     }
 
-    const deleteProductRelacionated = (id,i) => async() => {
+    const deleteProductRelacionated = (id, i) => async () => {
         setProduct({
             ...product,
             related_products: product.related_products.filter((related_product, index) => i !== index)
         })
-        const res = await axios.put(`https://ws.pamolsa.com.pe/api/product/related/delete?related_product_id=${id}`,null,config)
+        const res = await axios.put(`https://ws.pamolsa.com.pe/api/product/related/delete?related_product_id=${id}`, null, config)
     }
 
     const readCode = i => e => {
@@ -320,7 +341,7 @@ const DashboardEditProduct = ({ match }) => {
     return (
         <div className="content-ds-fluid">
             <div className="title-content-ds">
-                <h6>Edite su producto</h6>
+                <h6>Editar producto</h6>
             </div>
             <div className="content-form">
                 <div className="">
@@ -348,6 +369,27 @@ const DashboardEditProduct = ({ match }) => {
                                         {errors.name && errors.name.message}
                                     </div>
                                 </div>
+                                <div className="input-ds">
+                                    <div><label>Nombre comercial del producto</label></div>
+                                    <input
+                                        type="text"
+                                        name="tradename"
+                                        defaultValue={product.tradename}
+                                        minLength="1"
+                                        maxLength="150"
+                                        ref={
+                                            register({
+                                                required: {
+                                                    value: true,
+                                                    message: 'Ingrese el nombre comercial del producto'
+                                                }
+                                            })
+                                        }
+                                    />
+                                    <div className="error-ds">
+                                        {errors.tradename && errors.tradename.message}
+                                    </div>
+                                </div>
                                 <div className="container-grid-ds-forms">
                                     <div className="input-ds">
                                         <div><label>Código del producto</label></div>
@@ -371,7 +413,7 @@ const DashboardEditProduct = ({ match }) => {
                                         </div>
                                     </div>
                                     <div className="input-ds">
-                                        <div><label>Largo del producto</label></div>
+                                        <div><label>Largo</label></div>
                                         <input
                                             type="number"
                                             name="long"
@@ -390,12 +432,11 @@ const DashboardEditProduct = ({ match }) => {
                                         </div>
                                     </div>
                                     <div className="input-ds">
-                                        <div><label>Ancho del producto</label></div>
+                                        <div><label>Unidad del largo</label></div>
                                         <input
-                                            type="number"
-                                            name="width"
-                                            defaultValue={product.width}
-                                            step={"0.01"}
+                                            type="text"
+                                            name="long_unit"
+                                            defaultValue={product.long_unit}
                                             ref={
                                                 register({
                                                     required: {
@@ -405,66 +446,7 @@ const DashboardEditProduct = ({ match }) => {
                                             }
                                         />
                                         <div className="error-ds">
-                                            {errors.width && errors.width.message}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="container-grid-ds-forms">
-                                    <div className="input-ds">
-                                        <div><label>Diametro del producto</label></div>
-                                        <input
-                                            type="number"
-                                            name="diameter"
-                                            defaultValue={product.diameter}
-                                            step={"0.01"}
-                                            ref={
-                                                register({
-                                                    required: {
-                                                        value: false
-                                                    }
-                                                })
-                                            }
-                                        />
-                                        <div className="error-ds">
-                                            {errors.diameter && errors.diameter.message}
-                                        </div>
-                                    </div>
-                                    <div className="input-ds">
-                                        <div><label>Altura del producto</label></div>
-                                        <input
-                                            type="number"
-                                            name="height"
-                                            defaultValue={product.height}
-                                            step={"0.01"}
-                                            ref={
-                                                register({
-                                                    required: {
-                                                        value: false
-                                                    }
-                                                })
-                                            }
-                                        />
-                                        <div className="error-ds">
-                                            {errors.height && errors.height.message}
-                                        </div>
-                                    </div>
-                                    <div className="input-ds">
-                                        <div><label>Peso del producto</label></div>
-                                        <input
-                                            type="number"
-                                            name="weight"
-                                            defaultValue={product.weight}
-                                            step={"0.01"}
-                                            ref={
-                                                register({
-                                                    required: {
-                                                        value: false
-                                                    }
-                                                })
-                                            }
-                                        />
-                                        <div className="error-ds">
-                                            {errors.weight && errors.weight.message}
+                                            {errors.long_unit && errors.long_unit.message}
                                         </div>
                                     </div>
                                 </div>
@@ -486,6 +468,45 @@ const DashboardEditProduct = ({ match }) => {
                                         />
                                     </div>
                                     <div className="input-ds">
+                                        <div><label>Ancho</label></div>
+                                        <input
+                                            type="number"
+                                            name="width"
+                                            defaultValue={product.width}
+                                            step={"0.01"}
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                        <div className="error-ds">
+                                            {errors.width && errors.width.message}
+                                        </div>
+                                    </div>
+                                    <div className="input-ds">
+                                        <div><label>Unidad del ancho</label></div>
+                                        <input
+                                            type="text"
+                                            name="width_unit"
+                                            defaultValue={product.width_unit}
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                        <div className="error-ds">
+                                            {errors.width_unit && errors.width_unit.message}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="container-grid-ds-forms">
+                                    <div className="input-ds">
                                         <div><label>UE Master</label></div>
                                         <input
                                             type="number"
@@ -501,8 +522,155 @@ const DashboardEditProduct = ({ match }) => {
                                             }
                                         />
                                     </div>
+                                    <div className="input-ds">
+                                        <div><label>Diametro</label></div>
+                                        <input
+                                            type="number"
+                                            name="diameter"
+                                            defaultValue={product.diameter}
+                                            step={"0.01"}
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                        <div className="error-ds">
+                                            {errors.diameter && errors.diameter.message}
+                                        </div>
+                                    </div>
+                                    <div className="input-ds">
+                                        <div><label>Unidad del diametro</label></div>
+                                        <input
+                                            type="text"
+                                            name="diameter_unit"
+                                            defaultValue={product.diameter_unit}
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                        <div className="error-ds">
+                                            {errors.diameter_unit && errors.diameter_unit.message}
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="container-grid-ds-forms doble">
+                                <div className="container-grid-ds-forms">
+                                    <div className="input-ds">
+                                        <div><label>Forma</label></div>
+                                        <input
+                                            type="text"
+                                            name="shape"
+                                            defaultValue={product.shape}
+                                            maxLength="45"
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false,
+                                                    }
+                                                })
+                                            }
+                                        />
+                                    </div>
+                                    <div className="input-ds">
+                                        <div><label>Altura</label></div>
+                                        <input
+                                            type="number"
+                                            name="height"
+                                            defaultValue={product.height}
+                                            step={"0.01"}
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                        <div className="error-ds">
+                                            {errors.height && errors.height.message}
+                                        </div>
+                                    </div>
+                                    <div className="input-ds">
+                                        <div><label>Unidad de la altura</label></div>
+                                        <input
+                                            type="text"
+                                            name="height_unit"
+                                            defaultValue={product.height_unit}
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                        <div className="error-ds">
+                                            {errors.height_unit && errors.height_unit.message}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="container-grid-ds-forms">
+                                    <div className="input-ds">
+                                        <div><label>Color</label></div>
+                                        <input
+                                            type="text"
+                                            name="colour"
+                                            defaultValue={product.colour}
+                                            maxLength="45"
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                    </div>
+                                    <div className="input-ds">
+                                        <div><label>Peso</label></div>
+                                        <input
+                                            type="number"
+                                            name="weight"
+                                            defaultValue={product.weight}
+                                            step={"0.01"}
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                        <div className="error-ds">
+                                            {errors.weight && errors.weight.message}
+                                        </div>
+                                    </div>
+                                    <div className="input-ds">
+                                        <div><label>Unidad del peso</label></div>
+                                        <input
+                                            type="text"
+                                            name="weight_unit"
+                                            defaultValue={product.weight_unit}
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                        <div className="error-ds">
+                                            {errors.weight_unit && errors.weight_unit.message}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="container-grid-ds-forms">
                                     <div className="input-ds">
                                         <div><label>Unidades</label></div>
                                         <input
@@ -510,6 +678,22 @@ const DashboardEditProduct = ({ match }) => {
                                             name="unit"
                                             defaultValue={product.unit}
                                             maxLength="100"
+                                            ref={
+                                                register({
+                                                    required: {
+                                                        value: false
+                                                    }
+                                                })
+                                            }
+                                        />
+                                    </div>
+                                    <div className="input-ds">
+                                        <div><label>Cantidad</label></div>
+                                        <input
+                                            type="number"
+                                            name="unit_quantity"
+                                            defaultValue={product.unit_quantity}
+                                            step={"0.01"}
                                             ref={
                                                 register({
                                                     required: {
@@ -557,40 +741,6 @@ const DashboardEditProduct = ({ match }) => {
                                             </div>
                                         ))
                                     }
-                                </div>
-                                <div className="container-grid-ds-forms doble">
-                                    <div className="input-ds">
-                                        <div><label>Forma</label></div>
-                                        <input
-                                            type="text"
-                                            name="shape"
-                                            defaultValue={product.shape}
-                                            maxLength="45"
-                                            ref={
-                                                register({
-                                                    required: {
-                                                        value: false,
-                                                    }
-                                                })
-                                            }
-                                        />
-                                    </div>
-                                    <div className="input-ds">
-                                        <div><label>Color</label></div>
-                                        <input
-                                            type="text"
-                                            name="colour"
-                                            defaultValue={product.colour}
-                                            maxLength="45"
-                                            ref={
-                                                register({
-                                                    required: {
-                                                        value: false
-                                                    }
-                                                })
-                                            }
-                                        />
-                                    </div>
                                 </div>
                                 <div className="container-grid-ds-forms doble">
                                     <div className="input-ds">
