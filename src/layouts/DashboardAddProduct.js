@@ -143,23 +143,29 @@ const DashboardAddProduct = () => {
         if (data.tradename) formData.append('tradename', data.tradename.trim());
         if (data.code) formData.append('code', data.code.trim());
         if (data.long) formData.append('long', data.long.trim());
+        if (data.long_unit) formData.append('long_unit', data.long_unit.trim());
         if (data.width) formData.append('width', data.width.trim());
+        if (data.width_unit) formData.append('width_unit', data.width_unit.trim());
         if (data.diameter) formData.append('diameter', data.diameter.trim());
+        if (data.diameter_unit) formData.append('diameter_unit', data.diameter_unit.trim());
         if (data.height) formData.append('height', data.height.trim());
+        if (data.height_unit) formData.append('height_unit', data.height_unit.trim());
         if (data.weight) formData.append('weight', data.weight.trim());
+        if (data.weight_unit) formData.append('weight_unit', data.weight_unit.trim());
         if (data.ue_intern) formData.append('ue_intern', data.ue_intern.trim());
         if (data.ue_master) formData.append('ue_master', data.ue_master.trim());
-        if (data.popular.value) formData.append('popular', data.popular.value.trim());
+        if (data.popular) formData.append('popular', data.popular.value);
         if (data.unit) formData.append('unit', data.unit.trim());
+        if (data.unit_quantity) formData.append('unit_quantity', data.unit_quantity.trim());
         if (data.min_quantity) formData.append('min_quantity', data.min_quantity.trim());
         if (data.shape) formData.append('shape', data.shape.trim());
         if (data.colour) formData.append('colour', data.colour.trim());
         if (data.temperature) formData.append('temperature', data.temperature.trim());
         if (data.brand) formData.append('brand', data.brand.trim());
-        if (data.line.name) formData.append('line', data.line.name.trim());
-        if (data.type.name) formData.append('type', data.type.name.trim());
-        if (data.add_subtype.name) formData.append('add_subtype', data.add_subtype.name.trim());
-        if (data.material_name.name) formData.append('material_name', data.material_name.name.trim());
+        if (data.line) formData.append('line', data.line.name.trim());
+        if (data.type) formData.append('type', data.type.name.trim());
+        if (data.add_subtype) formData.append('add_subtype', data.add_subtype.name.trim());
+        if (data.material_name) formData.append('material_name', data.material_name.name.trim());
         if (data.material_short_name) formData.append('material_short_name', data.material_short_name.trim());
         if (data.business) {
             for (var i = 0; i < data.business.length; i++) {

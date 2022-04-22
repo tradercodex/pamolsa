@@ -90,6 +90,11 @@ const DashboardEditProduct = ({ match }) => {
         }
     })
 
+    const popularVals = [
+        { value: '0', label: 'No' },
+        { value: '1', label: 'Sí' }
+    ]
+
     const getProduct = async () => {
         const res = await axios.get(`https://ws.pamolsa.com.pe/api/product/find?product_id=${id}`)
         setProduct({
@@ -108,7 +113,7 @@ const DashboardEditProduct = ({ match }) => {
             width_unit: res.data.data.width_unit,
             ue_intern: res.data.data.ue_intern,
             ue_master: res.data.data.ue_master,
-            popular: res.data.data.popular,
+            popular: { value: res.data.data.popular, label: res.data.data.popular == 0 ? "No" : "Si" },
             file: res.data.data.image,
             unit: res.data.data.unit,
             unit_quantity: res.data.data.unit_quantity,
@@ -116,6 +121,7 @@ const DashboardEditProduct = ({ match }) => {
             colour: res.data.data.colour,
             shape: res.data.data.shape,
             temperature: res.data.data.temperature,
+            material_short_name: res.data.data.material.short_name,
             min_quantity: res.data.data.min_quantity,
             line: { label: res.data.data.product_line.name, value: res.data.data.product_line.id },
             product_type: { label: res.data.data.product_type.name, value: res.data.data.product_type.id },
@@ -130,6 +136,7 @@ const DashboardEditProduct = ({ match }) => {
         setValue("business", res.data.data.business?.map(item => ({ name: item.name, id: item.id })))
         setValue("keywords", res.data.data.keywords?.map(item => ({ name: item.name, id: item.id })))
         setValue("related_products", res.data.data.related_products?.map(item => ({ code: item.code, id: item.id })))
+        setValue("popular", { value: res.data.data.popular, label: res.data.data.popular == 0 ? "No" : "Si" })
     }
 
     const linesSelect = lines?.map(item => ({ label: item.name, value: item.id }))
@@ -239,34 +246,34 @@ const DashboardEditProduct = ({ match }) => {
         const formData = new FormData;
 
         formData.append('product_id', id)
-        if (data.name) formData.append('name', data.name);
-        if (data.tradename) formData.append('tradename', data.tradename);
-        if (data.code) formData.append('code', data.code);
-        if (data.long) formData.append('long', data.long);
-        if (data.long_unit) formData.append('long_unit', data.long_unit);
-        if (data.width) formData.append('width', data.width);
-        if (data.width_unit) formData.append('width_unit', data.width_unit);
-        if (data.diameter) formData.append('diameter', data.diameter);
-        if (data.diameter_unit) formData.append('diameter_unit', data.diameter_unit);
-        if (data.height) formData.append('height', data.height)
-        if (data.height_unit) formData.append('height_unit', data.height_unit)
-        if (data.weight) formData.append('weight', data.weight);
-        if (data.weight_unit) formData.append('weight_unit', data.weight_unit);
-        if (data.ue_intern) formData.append('ue_intern', data.ue_intern)
-        if (data.ue_master) formData.append('ue_master', data.ue_master);
-        if (data.unit) formData.append('unit', data.unit)
-        if (data.unit_quantity) formData.append('unit_quantity', data.unit_quantity)
-        if (data.popular) formData.append('popular', product.popular)
-        if (data.min_quantity) formData.append('min_quantity', data.min_quantity);
-        if (data.shape) formData.append('shape', data.shape)
-        if (data.colour) formData.append('colour', data.colour);
-        if (data.temperature) formData.append('temperature', data.temperature);
-        if (data.brand) formData.append('brand', data.brand);
-        if (data.line.label) formData.append('line', data.line.label);
-        if (data.product_type.label) formData.append('type', data.product_type.label)
-        if (data.product_addtl_subtype.label) formData.append('add_subtype', data.product_addtl_subtype.label)
-        if (data.material.label) formData.append('material_name', data.material.label)
-        if (data.material_short_name) formData.append('material_short_name', data.material_short_name);
+        if (data.name) formData.append('name', data.name.trim());
+        if (data.tradename) formData.append('tradename', data.tradename.trim());
+        if (data.code) formData.append('code', data.code.trim());
+        if (data.long) formData.append('long', data.long.trim());
+        if (data.long_unit) formData.append('long_unit', data.long_unit.trim());
+        if (data.width) formData.append('width', data.width.trim());
+        if (data.width_unit) formData.append('width_unit', data.width_unit.trim());
+        if (data.diameter) formData.append('diameter', data.diameter.trim());
+        if (data.diameter_unit) formData.append('diameter_unit', data.diameter_unit.trim());
+        if (data.height) formData.append('height', data.height.trim());
+        if (data.height_unit) formData.append('height_unit', data.height_unit.trim());
+        if (data.weight) formData.append('weight', data.weight.trim());
+        if (data.weight_unit) formData.append('weight_unit', data.weight_unit.trim());
+        if (data.ue_intern) formData.append('ue_intern', data.ue_intern.trim());
+        if (data.ue_master) formData.append('ue_master', data.ue_master.trim());
+        if (data.unit) formData.append('unit', data.unit.trim());
+        if (data.unit_quantity) formData.append('unit_quantity', data.unit_quantity.trim());
+        if (data.popular) formData.append('popular', data.popular.value);
+        if (data.min_quantity) formData.append('min_quantity', data.min_quantity.trim());
+        if (data.shape) formData.append('shape', data.shape.trim());
+        if (data.colour) formData.append('colour', data.colour.trim());
+        if (data.temperature) formData.append('temperature', data.temperature.trim());
+        if (data.brand) formData.append('brand', data.brand.trim());
+        if (data.line) formData.append('line', data.line.label.trim());
+        if (data.product_type) formData.append('type', data.product_type.label.trim());
+        if (data.product_addtl_subtype) formData.append('add_subtype', data.product_addtl_subtype.label.trim());
+        if (data.material) formData.append('material_name', data.material.label.trim());
+        if (data.material_short_name) formData.append('material_short_name', data.material_short_name.trim());
         if (data.business) {
             for (var i = 0; i < data.business.length; i++) {
                 formData.append('business', data.business[i].name);
@@ -876,6 +883,7 @@ const DashboardEditProduct = ({ match }) => {
                                     <input
                                         type="text"
                                         name="material_short_name"
+                                        defaultValue={product.material_short_name}
                                         ref={
                                             register({
                                                 required: {
@@ -898,13 +906,18 @@ const DashboardEditProduct = ({ match }) => {
                                     </div>
                                     <Controller
                                         as={
-                                            <ReactSelect
+                                            <CreatableSelect
                                                 isMulti
                                                 styles={selectStyles}
                                                 options={business}
                                                 getOptionLabel={business => business.name}
                                                 getOptionValue={business => business.id}
                                                 components={makeAnimated}
+                                                getNewOptionData={(inputValue, optionLabel) => ({
+                                                    id: optionLabel,
+                                                    name: inputValue,
+                                                    __isNew__: true
+                                                })}
                                             />}
                                         name="business"
                                         isClearable
@@ -948,17 +961,29 @@ const DashboardEditProduct = ({ match }) => {
                                     </div>
                                 </div>
                                 <div className="input-ds" style={{ marginTop: "20px" }}>
-                                    <div><label>¿Quieres que este producto sea popular ? (Colocar 0 = No ó colocar 1 = Si)</label></div>
-                                    <div className="flex-popular">
-                                        <input
-                                            type="text"
-                                            name="popular"
-                                            min="0"
-                                            defaultValue={product.popular}
-                                            onChange={popularChange}
-                                            max="1"
-                                        />
-                                    </div>
+                                    <div><label>¿Quieres que este producto sea popular?</label></div>
+                                    <Controller
+                                        as={
+                                            <CreatableSelect
+                                                styles={selectStyles}
+                                                options={popularVals}
+                                                getOptionLabel={popularVals => popularVals.label}
+                                                getOptionValue={popularVals => popularVals.value}
+                                                getNewOptionData={(inputValue, optionLabel) => ({
+                                                    id: optionLabel,
+                                                    name: inputValue,
+                                                    __isNew__: true
+                                                })}
+                                            />}
+                                        isClearable
+                                        name="popular"
+                                        control={control}
+                                        rules={{
+                                            required: {
+                                                value: false
+                                            }
+                                        }}
+                                    />
                                     <div className="input-ds" style={{ marginTop: "20px" }}>
                                         <div><label>Imagen del producto</label></div>
                                         {
