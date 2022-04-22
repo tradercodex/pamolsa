@@ -75,23 +75,23 @@ const DetailProduct = ({ product }) => {
                                         </li>
                                         <li className="gray">
                                             <div>Largo ({product.long_unit == null ? "cm" : product.long_unit})</div>
-                                            <p>{product.long != null || product.long != "0.00" ? product.long : null}</p>
+                                            <p>{product.long != null && product.long != "0.00" ? product.long : null}</p>
                                         </li>
                                         <li>
                                             <div>Ancho({product.width_unit == null ? "cm" : product.width_unit})</div>
-                                            <p>{product.width != null || product.width != "0.00" ? product.width : null}</p>
+                                            <p>{product.width != null && product.width != "0.00" ? product.width : null}</p>
                                         </li>
                                         <li className="gray">
                                             <div>Altura({product.height_unit == null ? "cm" : product.height_unit})</div>
-                                            <p>{product.height != null || product.height != "0.00" ? product.height : null}</p>
+                                            <p>{product.height != null && product.height != "0.00" ? product.height : null}</p>
                                         </li>
                                         <li>
                                             <div>Diametro({product.diameter_unit == null ? "mm" : product.diameter_unit})</div>
-                                            <p>{product.diameter != null || product.diameter != "0.00" ? product.diameter : null}</p>
+                                            <p>{product.diameter != null && product.diameter != "0.00" ? product.diameter : null}</p>
                                         </li>
                                         <li className="gray">
                                             <div>Peso({product.weight_unit == null ? "gr" : product.weight_unit})</div>
-                                            <p>{product.weight != null || product.weight != "0.00" ? product.weight : null}</p>
+                                            <p>{product.weight != null && product.weight != "0.00" ? product.weight : null}</p>
                                         </li>
                                         {
                                             product.unit_quantity != null ? 
@@ -99,7 +99,7 @@ const DetailProduct = ({ product }) => {
                                                 <div>{product.unit}</div><p>{product.unit_quantity}</p>
                                             </li> :
                                             
-                                            product.unit != null ?
+                                            product.unit != null && product.unit != "" ?
                                             <li>
                                                 <div>Unidades</div>
                                                 <p>{product.unit != null ? product.unit : null}</p>
