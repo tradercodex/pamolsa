@@ -6,8 +6,9 @@ import Machine from '../images/svg/machine';
 import Book from '../images/svg/book';
 import Chart from '../images/svg/chartus';
 import Logo from '../images/svg/logo';
+import i18n from "i18next";
 
-const AboutUs = () => {
+const AboutUs = ({ t }) => {
     return (
         <>
             <div className="container-informations footer">
@@ -15,8 +16,8 @@ const AboutUs = () => {
                     <div>
                         <img src={require('../images/img/aboutcarbajal.webp')} alt="imagen" />
                         <p>
-                            Somos parte de Carvajal Empaques, compañía de la Organización Carvajal especializada en el diseño, producción y distribución de soluciones personalizadas e innovadoras de empaques para alimentos.
-                            </p>
+                            {t('nosotros.somos')}
+                        </p>
                     </div>
                 </div>
                 <div className="img-carbajal about">
@@ -26,27 +27,28 @@ const AboutUs = () => {
                     </div>
                 </div>
             </div>
-            <div className="container-informations present" style={{background: "#fff",marginTop: "0"}}>
+            <div className="container-informations present" style={{ background: "#fff", marginTop: "0" }}>
                 <div className="info-map_pm title">
                     <div>
-                        <span>Presencia</span>
-                        <h6>Carvajal Empaques</h6>
-                        <span>en el mundo</span>
+                        <span>{t('nosotros.desc_1')}</span>
+                        <h6>{t('nosotros.desc_2')}</h6>
+                        <span>{t('nosotros.desc_3')}</span>
                     </div>
                 </div>
             </div>
             <div className="Map_pm container">
                 <div className="container-grid_img">
                     <div className="img-map_pm">
-                        <img src={require('../images/img/mapcarbajal.webp')} />
+                        {/*{i18n.language === 'es' ? <img src={require('../images/img/mapcarbajal.webp')} /> : <img src={require('../images/img/mapcarbajal_en.png')} />}*/}
+                        {i18n.language === 'es' ? <img src={require('../images/img/mapcarbajal.webp')} /> : <img src={require('../images/img/mapcarbajal.webp')} />}
                     </div>
                     <div className="info-map_pm">
                         <div className="info-map-flex">
-                            <div className="" style={{width: "100%"}}>
+                            <div className="" style={{ width: "100%" }}>
                                 <div className="map-footer-none">
-                                    <span>Presencia</span>
-                                    <h6>Carvajal Empaques</h6>
-                                    <span>en el mundo</span>
+                                    <span>{t('nosotros.desc_1')}</span>
+                                    <h6>{t('nosotros.desc_2')}</h6>
+                                    <span>{t('nosotros.desc_3')}</span>
                                 </div>
                                 <div className="text-map_pm">
                                     <div className="skills-gc">
@@ -55,21 +57,21 @@ const AboutUs = () => {
                                                 <Planta />
                                             </div>
                                             <strong>12</strong>
-                                            <p>número de plantas</p>
+                                            <p>{t('nosotros.num_plantas')}</p>
                                         </div>
                                         <div className="pm-inf_sk ma">
                                             <div>
                                                 <Colaborator />
                                             </div>
                                             <strong>6,200</strong>
-                                            <p>Colaboradores</p>
+                                            <p>{t('nosotros.num_colaboradores')}</p>
                                         </div>
                                         <div className="pm-inf_sk ma">
                                             <div>
                                                 <Families />
                                             </div>
                                             <strong>2,700</strong>
-                                            <p>Clientes</p>
+                                            <p>{t('nosotros.num_clientes')}</p>
                                         </div>
                                     </div>
                                     <div className="skills-gc">
@@ -78,37 +80,37 @@ const AboutUs = () => {
                                                 <Machine />
                                             </div>
                                             <strong>1000</strong>
-                                            <p>número de máquinas</p>
+                                            <p>{t('nosotros.num_maquinas')}</p>
                                         </div>
                                         <div className="pm-inf_sk ma">
                                             <div>
                                                 <Book />
                                             </div>
                                             <strong>10000</strong>
-                                            <p>SKU’s</p>
+                                            <p>{t('nosotros.num_skus')}</p>
                                         </div>
                                         <div className="pm-inf_sk ma">
                                             <div>
                                                 <Chart />
                                             </div>
                                             <strong>USD$430mm</strong>
-                                            <p>Ventas</p>
+                                            <p>{t('nosotros.num_ventas')}</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="footer-dc text-map_pm map-footer-none">
-                            <div>Somos una empresa</div>
-                            <div className="bold">Multilatina</div>
-                            <div>que contribuye con sus empaques</div><div>a que las personas vivas en un mundo mejor</div>
+                            <div>{t('nosotros.somos_1')}</div>
+                            <div className="bold">{t('nosotros.somos_2')}</div>
+                            <div>{t('nosotros.somos_3')}</div><div>{t('nosotros.somos_4')}</div>
                         </div>
                     </div>
                 </div>
                 <div className="footer-dc text-map_pm tablet">
-                    <div>Somos una empresa</div>
-                    <div className="bold">Multilatina</div>
-                    <div>que contribuye con sus empaques</div><div>a que las personas vivas en un mundo mejor</div>
+                    <div>{t('nosotros.somos_1')}</div>
+                    <div className="bold">{t('nosotros.somos_2')}</div>
+                    <div>{t('nosotros.somos_3')}</div><div>{t('nosotros.somos_4')}</div>
                 </div>
             </div>
             <div className="About-us_pm">
@@ -116,10 +118,10 @@ const AboutUs = () => {
                     <div className="info-about">
                         <div>
                             <Logo />
-                            <h3>Quiénes Somos</h3>
+                            <h3>{t('nosotros.quienes_somos')}</h3>
                             <p>
-                                Somos una empresa peruana parte de Carvajal Empaques, con más de 28 años en el mercado, especializada en el diseño, producción y distribución de soluciones personalizadas e innovadoras de empaques, con un crecimiento constante desarrollando nuevas líneas de productos más amigables con el medio ambiente y siguiendo las tendencias del mercado.
-                        </p>
+                                {t('nosotros.quienes_somos_desc')}
+                            </p>
                         </div>
                     </div>
                     <div className="card-about">

@@ -4,8 +4,9 @@ import { withRouter } from 'react-router-dom'
 import { Link as LinkRouter } from 'react-router-dom'
 import '../styles/products.css'
 import { Link } from 'react-scroll'
+import i18n from "i18next";
 
-const ProductsPopulate = ({ match, relacionates, productsPopulate }) => {
+const ProductsPopulate = ({ match, relacionates, productsPopulate, t }) => {
 
     let pathname = match.path
 
@@ -52,8 +53,8 @@ const ProductsPopulate = ({ match, relacionates, productsPopulate }) => {
                             background: "#F9F9F9"
                         }}
                     >
-                        <h4>Productos relacionados</h4>
-                        <p>Pensamos que te pueden interesar estos productos</p>
+                        <h4>{t('productos.relacionados')}</h4>
+                        <p>{t('productos.relacionados_desc')}</p>
                         <div className="products-default" style={{ maxWidth: "1640px", margin: "0 auto" }}>
                             {
                                 relacionates && relacionates.length > 0 ?
@@ -61,7 +62,7 @@ const ProductsPopulate = ({ match, relacionates, productsPopulate }) => {
                                         <div key={product.id} style={{ marginTop: "50px", marginBottom: "80px", display: "flex", justifyContent: "center" }}>
                                             <div className="product">
                                                 <div className="square-products"></div>
-                                                <h5>{product.name}</h5>
+                                                <h5>{i18n.language === 'es' ? product.name : product.tradename}</h5>
                                                 {
                                                     product.image.map((thumb, index) =>
                                                         <div className="img-product" key={index}>
@@ -69,7 +70,7 @@ const ProductsPopulate = ({ match, relacionates, productsPopulate }) => {
                                                         </div>
                                                     )
                                                 }
-                                                <Link style={{ position: "absolute" }} to="header" smooth={true} duration={1000} offset={-2000} ><LinkRouter to={`/producto/detalle/${product.id}`}>Ver más</LinkRouter></Link>
+                                                <Link style={{ position: "absolute" }} to="header" smooth={true} duration={1000} offset={-2000} ><LinkRouter to={`/producto/detalle/${product.id}`}>{t('productos.ver_mas')}</LinkRouter></Link>
                                             </div>
                                         </div>
                                     )) : ''
@@ -78,31 +79,31 @@ const ProductsPopulate = ({ match, relacionates, productsPopulate }) => {
                     </div> : ''
             }
             {
-                pathname === "/productos" || pathname === "/productos/:name" ? 
+                pathname === "/productos" || pathname === "/productos/:name" ?
                     <div className="Products-populate_pm">
-                        <h4>Los más populares</h4>
-                        <p>Estos son nuestros productos más vendidos</p>
+                        <h4>{t('productos.populares')}</h4>
+                        <p>{t('productos.populares_1')}</p>
                         <div className="Container-products_populate">
                             <Slider {...settingsPopulate} className="products-default populate">
-                                    {
-                                        productsPopulate && productsPopulate.length > 0 ?
+                                {
+                                    productsPopulate && productsPopulate.length > 0 ?
                                         productsPopulate.map(product => (
-                                                <div key={product.id}>
-                                                    <div className="product">
-                                                        <div className="square-products"></div>
-                                                        <h5>{product.name}</h5>
-                                                        {
-                                                            product.image.map((thumb, index) =>
-                                                                <div className="img-product" key={index}>
-                                                                    <img src={`https://` + thumb.url} alt="" />
-                                                                </div>
-                                                            )
-                                                        }
-                                                        <Link style={{ position: "absolute" }} to="header" smooth={true} duration={1000} offset={-2000} ><LinkRouter to={`/producto/detalle/${product.id}`}>Ver más</LinkRouter></Link>
-                                                    </div>
+                                            <div key={product.id}>
+                                                <div className="product">
+                                                    <div className="square-products"></div>
+                                                    <h5>{i18n.language === 'es' ? product.name : product.tradename}</h5>
+                                                    {
+                                                        product.image.map((thumb, index) =>
+                                                            <div className="img-product" key={index}>
+                                                                <img src={`https://` + thumb.url} alt="" />
+                                                            </div>
+                                                        )
+                                                    }
+                                                    <Link style={{ position: "absolute" }} to="header" smooth={true} duration={1000} offset={-2000} ><LinkRouter to={`/producto/detalle/${product.id}`}>{t('productos.ver_mas')}</LinkRouter></Link>
                                                 </div>
-                                            )) : ''
-                                    }
+                                            </div>
+                                        )) : ''
+                                }
 
                             </Slider>
                         </div>

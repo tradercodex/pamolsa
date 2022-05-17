@@ -20,6 +20,7 @@ const StepsQuote = ({
     handleShowModal,
     closeModal,
     showModal,
+    t
 }) => {
 
     const history = useHistory();
@@ -104,7 +105,7 @@ const StepsQuote = ({
                                         <fieldset class="wizard-fieldset show">
                                             <div className="quote-count">
                                                 <div className="quote-title">
-                                                    <h6>Cotizador</h6> <span>{number} productos</span>
+                                                    <h6>{t('productos.cotizador')}</h6> <span>{number} {t('productos.productos')}</span>
                                                 </div>
                                             </div>
                                             {
@@ -116,29 +117,29 @@ const StepsQuote = ({
                                                                     <img src={`https://` + item.image} alt="" />
                                                                 </div>
                                                                 <div className="info">
-                                                                    <p>Producto</p>
+                                                                    <p>{t('productos.producto')}</p>
                                                                     <h3>{item.name}</h3>
-                                                                    <p>Cantidad</p>
+                                                                    <p>{t('productos.cantidad')}</p>
                                                                     <div className="input" style={{ marginTop: "10px" }}>
                                                                         <input
                                                                             type="text"
                                                                             disabled
                                                                             name="quantity"
-                                                                            placeholder={`${item.quantity}` + " unidades"}
+                                                                            placeholder={`${item.quantity} unidades`}
                                                                             onChange={handleChange}
                                                                         />
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div className="delete-quote">
-                                                                <button type="button" onClick={() => deleteProductCart(item)}><DeleteCart /><span>Eliminar</span></button>
+                                                                <button type="button" onClick={() => deleteProductCart(item)}><DeleteCart /><span>{t('productos.eliminar')}</span></button>
                                                             </div>
                                                         </div>
                                                     )) : ''
                                             }
                                             <div class="form-group clearfix">
-                                                <Link to="/productos" class="form-wizard-previous-btn float-left">Seguir agregando</Link>
-                                                <a href="javascript:;" class="form-wizard-next-btn float-right">Siguiente</a>
+                                                <Link to="/productos" class="form-wizard-previous-btn float-left">{t('productos.seguir_agregando')}</Link>
+                                                <a href="javascript:;" class="form-wizard-next-btn float-right">{t('productos.siguiente')}</a>
                                             </div>
                                         </fieldset>
                                         <fieldset class="wizard-fieldset">
@@ -152,7 +153,7 @@ const StepsQuote = ({
                                                             <input
                                                                 type="text"
                                                                 name="fullname"
-                                                                placeholder="Nombres y apellidos"
+                                                                placeholder={t('form.nombres')}
                                                                 ref={
                                                                     register({
                                                                         required: {
@@ -170,7 +171,7 @@ const StepsQuote = ({
                                                             <input
                                                                 type="text"
                                                                 name="cellphone"
-                                                                placeholder="Teléfono"
+                                                                placeholder={t('form.telefono')}
                                                                 ref={
                                                                     register({
                                                                         required: {
@@ -188,7 +189,7 @@ const StepsQuote = ({
                                                             <input
                                                                 type="email"
                                                                 name="email"
-                                                                placeholder="E-mail"
+                                                                placeholder={t('form.mail')}
                                                                 ref={
                                                                     register({
                                                                         required: {
@@ -218,7 +219,7 @@ const StepsQuote = ({
                                                                         {...field}
                                                                         options={departments}
                                                                         styles={selectStyles}
-                                                                        placeholder="Departamento"
+                                                                        placeholder={t('form.departamento')}
                                                                         onChange={handleChangeDepartment}
                                                                         getOptionLabel={(departments) => departments.name}
                                                                         getOptionValue={(departments) => departments.id}
@@ -250,7 +251,7 @@ const StepsQuote = ({
                                                                         {...field}
                                                                         options={provinces}
                                                                         styles={selectStyles}
-                                                                        placeholder="Provincia"
+                                                                        placeholder={t('form.provincia')}
                                                                         onChange={handleChangeProvince}
                                                                         getOptionLabel={(provinces) => provinces.name}
                                                                         getOptionValue={(provinces) => provinces.id}
@@ -270,7 +271,7 @@ const StepsQuote = ({
                                                             <Controller
                                                                 as={
                                                                     <ReactSelect
-                                                                        placeholder="Distrito"
+                                                                        placeholder={t('form.distrito')}
                                                                         styles={selectStyles}
                                                                         options={districts}
                                                                         getOptionLabel={districts => districts.name}
@@ -295,7 +296,7 @@ const StepsQuote = ({
                                                 <div className="container-quotes-products step-final" style={{ marginBottom: "20px" }}>
                                                     <div className="quote-count">
                                                         <div className="quote-title">
-                                                            <h6>Cotizador</h6> <span>{number} productos</span>
+                                                            <h6>{t('productos.cotizador')}</h6> <span>{number} {t('productos.productos')}</span>
                                                         </div>
                                                     </div>
                                                     {
@@ -307,16 +308,16 @@ const StepsQuote = ({
                                                                             <img src={`https://` + item.image} alt="" />
                                                                         </div>
                                                                         <div className="info">
-                                                                            <p>Producto</p>
+                                                                            <p>{t('productos.producto')}</p>
                                                                             <h3>{item.name}</h3>
-                                                                            <p>Cantidad</p>
+                                                                            <p>{t('productos.cantidad')}</p>
                                                                             <div className="input" style={{ marginTop: "10px" }}>
                                                                                 <p>{item.quantity}</p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                     <div className="delete-quote">
-                                                                        <button type="button" onClick={() => deleteProductCart(item)}><DeleteCart /><span>Eliminar</span></button>
+                                                                        <button type="button" onClick={() => deleteProductCart(item)}><DeleteCart /><span>{t('productos.eliminar')}</span></button>
                                                                     </div>
                                                                 </div>
                                                             )) : ''
@@ -324,8 +325,8 @@ const StepsQuote = ({
                                                 </div>
                                             </div>
                                             <div class="form-group clearfix send-options-quote">
-                                                <a href="javascript:;" class="form-wizard-previous-btn float-left" target="_blank" href="http://www.pamolsaexpress.com/">Ir a Ecommerce</a>
-                                                <button className="send-cart complete" type="submit" >Enviar cotización</button>
+                                                <a class="form-wizard-previous-btn float-left" target="_blank" href="http://www.pamolsaexpress.com/">Ir a Ecommerce</a>
+                                                <button className="send-cart complete" type="submit" >{t('form.enviar')} cotización</button>
                                             </div>
                                         </fieldset>
                                     </form>
@@ -338,7 +339,7 @@ const StepsQuote = ({
                         <Link className="quote-back" to="/productos">Productos</Link>
                     </div>
             }
-            { showModal && <ModalSendCart closeModal={closeModal} title="Su cotización fue enviada con exito" subtitle="Muy pronto le responderemos con una cotización ideal para usted" classModalName="thanks-cotizacion" />}
+            {showModal && <ModalSendCart closeModal={closeModal} title="Su cotización fue enviada con exito" subtitle="Muy pronto le responderemos con una cotización ideal para usted" classModalName="thanks-cotizacion" />}
         </>
     );
 }

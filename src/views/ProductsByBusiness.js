@@ -9,6 +9,7 @@ import SidebarProductsByBusiness from '../components/SidebarProductsByBusiness'
 import Products from '../components/Products'
 import Pagination from '../components/Pagination'
 import Footer from '../components/Footer'
+import { useTranslation } from 'react-i18next';
 
 const ProductsByBusiness = ({ match }) => {
 
@@ -87,17 +88,17 @@ const ProductsByBusiness = ({ match }) => {
             const response = await Axios.get(`https://ws.pamolsa.com.pe/api/product/line/list?business=${business_id}`);
             setLines(response.data.data)
         }
-    
+
         const apiGetTypes = async () => {
             const response = await Axios.get(`https://ws.pamolsa.com.pe/api/product/types/list?business=${business_id}`);
             setTypes(response.data.data)
         }
-    
+
         const apiGetMaterial = async () => {
             const response = await Axios.get(`https://ws.pamolsa.com.pe/api/product/material/list?business=${business_id}`);
             setMaterials(response.data.data)
         }
-        
+
         const movilOpen = document.getElementById('movil');
         const header = document.getElementById('header')
         const movilClose = document.getElementById('close-movil')
@@ -172,12 +173,20 @@ const ProductsByBusiness = ({ match }) => {
             </ul>
         )
     }
+    const { t } = useTranslation();
 
     return (
         <>
             <div className="">
-                <Header number={number} />
-                <SearchProductsByLine search={search} onTextChanged={onTextChanged} renderSuggestions={renderSuggestions} typesBusiness={typesBusiness} searchPress={searchPress} setSearch={setSearch} />
+                <Header number={number} t={t} />
+                <SearchProductsByLine
+                    search={search}
+                    onTextChanged={onTextChanged}
+                    renderSuggestions={renderSuggestions}
+                    typesBusiness={typesBusiness}
+                    searchPress={searchPress}
+                    setSearch={setSearch}
+                    t={t} />
                 <div className="Quotes-pm">
                     <div className="Sidebar-Material_Quote">
                         <SidebarProductsByBusiness
@@ -187,6 +196,7 @@ const ProductsByBusiness = ({ match }) => {
                             toggleTypesProductsRadio={toggleTypesProductsRadio}
                             toggleMaterialsProductsRadio={toggleMaterialsProductsRadio}
                             toggleLinesProductsRadio={toggleLineProductsRadio}
+                            t={t}
                         />
                     </div>
                     <div className="Products-Quote">
@@ -200,15 +210,17 @@ const ProductsByBusiness = ({ match }) => {
                             nameTypeBusiness={nameTypeBusiness}
                             productsByFilter={currentPostsByFilter}
                             countProductsByFilter={countProductsByFilter}
+                            t={t}
                         />
                         <Pagination
                             postsPerPage={postsPerPage}
                             totalPostsFilter={productsByFilter.length}
                             paginate={paginate}
+                            t={t}
                         />
                     </div>
                 </div>
-                <Footer />
+                <Footer t={t} />
             </div>
         </>
     );

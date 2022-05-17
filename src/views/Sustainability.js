@@ -12,14 +12,15 @@ import { getActivities } from '../redux/actions/activity';
 
 // Pdfs
 import sostenibilidad2019 from '../pdf/sostenibilidad2019.pdf'
-import sostenibilidad2018 from '../pdf/sostenibilidad2018.pdf'
-import sostenibilidad2017 from '../pdf/sostenibilidad2017.pdf'
+import sostenibilidad2020 from '../pdf/sostenibilidad2020.pdf'
+import sostenibilidad2021 from '../pdf/sostenibilidad2021.pdf'
+import { useTranslation } from 'react-i18next';
 
 
-const Sustainability= () => {
+const Sustainability = () => {
 
     const communities = useSelector(state => state.communities.communities)
-    const activities = useSelector(state => state.activities.activities )
+    const activities = useSelector(state => state.activities.activities)
     const cart = useSelector(state => state.cart)
 
     const dispatch = useDispatch()
@@ -38,19 +39,19 @@ const Sustainability= () => {
     const handleShowVideoModalSostenibility = () => {
         setShowVideoModal(true)
     }
-    
+
 
     useEffect(() => {
 
         const movilOpen = document.getElementById('movil');
         const header = document.getElementById('header')
         const movilClose = document.getElementById('close-movil')
-    
-        movilOpen.addEventListener('click',function(){
+
+        movilOpen.addEventListener('click', function () {
             header.classList.add('movile-active')
         })
-    
-        movilClose.addEventListener('click',function(){
+
+        movilClose.addEventListener('click', function () {
             header.classList.remove('movile-active')
         })
 
@@ -61,19 +62,20 @@ const Sustainability= () => {
     }, [cart.cartItems])
 
     let number = Object.keys(cartItems).length
+    const { t } = useTranslation();
 
     return (
         <Fragment>
-            <div style={{overflow: "hidden"}}>
-                <Header number={number} />
-                <Slicks />
-                <InformationSostinibility sostenibilidad2018={sostenibilidad2018} sostenibilidad2017={sostenibilidad2017} sostenibilidad2019={sostenibilidad2019} />
-                <News handleShowVideoModalSostenibility={handleShowVideoModalSostenibility} closeVideoModal={closeVideoModal} showVideoModal={showVideoModal} handleShowVideoModal={handleShowVideoModal} communities={communities} activities={activities} />
-                <Footer />
+            <div style={{ overflow: "hidden" }}>
+                <Header number={number} t={t} />
+                <Slicks t={t} />
+                <InformationSostinibility sostenibilidad2019={sostenibilidad2019} sostenibilidad2020={sostenibilidad2020} sostenibilidad2021={sostenibilidad2021} t={t} />
+                <News handleShowVideoModalSostenibility={handleShowVideoModalSostenibility} closeVideoModal={closeVideoModal} showVideoModal={showVideoModal} handleShowVideoModal={handleShowVideoModal} communities={communities} activities={activities} t={t} />
+                <Footer t={t} />
             </div>
         </Fragment>
     );
 }
- 
+
 export default Sustainability;
 

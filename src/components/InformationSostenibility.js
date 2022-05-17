@@ -7,8 +7,10 @@ import UsersSbl from '../images/svg/usersbl'
 import PlantSbl from '../images/svg/plantasbl'
 import InformDownload from '../images/svg/informdownload'
 import Slider from "react-slick";
+import i18n from "i18next";
 
-const InformationSostenibility = ({ sostenibilidad2019, sostenibilidad2018, sostenibilidad2017 }) => {
+const InformationSostenibility = ({ sostenibilidad2019, sostenibilidad2020, sostenibilidad2021, t }) => {
+
 
     const settingsNews = {
         dots: true,
@@ -36,13 +38,14 @@ const InformationSostenibility = ({ sostenibilidad2019, sostenibilidad2018, sost
             <div className="Container-sb_pm">
                 <div className="sb_pm">
                     <div className="header-title">
-                        <h2>Nuestro modelo de sostenibilidad</h2>
-                        <p>En Pamolsa la sostenibilidad es parte de nuestro ADN. Por ello, trabajamos para aportar al bienestar de las comunidades donde operamos y ser amigables con el medio ambiente. La política de sostenibilidad de Pamolsa asume este proceso como el compromiso con la gestión adecuada de sus recursos y del entorno, buscando el bienestar de las comunidades donde operamos y la rentabilidad de nuestras operaciones.</p>
+                        <h2>{t('sostenibilidad.modelo')}</h2>
+                        <p>{t('sostenibilidad.modelo_desc')}</p>
                     </div>
                     <div className="models-sb">
                         <div className="model_1">
                             <div style={{ display: "flex", justifyContent: "center" }}>
-                                <Sostenibility />
+                                {/*{i18n.language === 'es' ? <Sostenibility /> : <img src={require('../images/img/sostenibilidad.png')} alt="sostenibilidad" />}*/}
+                                {i18n.language === 'es' ? <Sostenibility /> : <Sostenibility />}
                             </div>
                         </div>
                     </div>
@@ -51,50 +54,50 @@ const InformationSostenibility = ({ sostenibilidad2019, sostenibilidad2018, sost
             <div style={{ background: "#F9F9F9" }}>
                 <div className="container-grid">
                     <h2 className="title-container">
-                        Nuestros objetivos de sostenibilidad
+                        {t('sostenibilidad.objetivos')}
                     </h2>
                 </div>
                 <div className="objetives">
                     <div className="objectives-sosten">
                         <PlantSbl />
-                        <p>Asegurar la rentabilidad a partir del desarrollo de <span>nuevas tecnologías y productos.</span></p>
+                        <p>{t('sostenibilidad.objetivos_1')} <span>{t('sostenibilidad.objetivos_1_resaltado')}</span></p>
                     </div>
                     <div className="objectives-sosten">
                         <Vasito />
-                        <p>Mejorar nuestros procesos para <span>minimizar los impactos ambientales.</span></p>
+                        <p>{t('sostenibilidad.objetivos_2')} <span>{t('sostenibilidad.objetivos_2_resaltado')}</span></p>
                     </div>
                     <div className="objectives-sosten">
                         <HandsSbl />
-                        <p>Enmarcar <span>nuestro actuar empresarial</span>n bajo el cumplimiento de la ley.</p>
+                        <p>{t('sostenibilidad.objetivos_3')} <span>{t('sostenibilidad.objetivos_3_resaltado')}</span> {t('sostenibilidad.objetivos_3_1')}</p>
                     </div>
                     <div className="objectives-sosten">
                         <Hoja />
-                        <p>Desarrollar <span>nuevas alternativas de producto</span> que reduzcan el impacto al medio ambiente.</p>
+                        <p>{t('sostenibilidad.objetivos_4')} <span>{t('sostenibilidad.objetivos_4_resaltado')}</span> {t('sostenibilidad.objetivos_4_1')}</p>
                     </div>
                     <div className="objectives-sosten">
                         <UsersSbl />
-                        <p>Desarrollar e implementar estrategias de RSE dirigidas a <span>colaboradores</span> y las <span>comunidades</span> donde operamos.</p>
+                        <p>{t('sostenibilidad.objetivos_5')} <span>{t('sostenibilidad.objetivos_5_resaltado')}</span> {t('sostenibilidad.objetivos_5_1')}</p>
                     </div>
                 </div>
             </div>
             <div style={{ background: "rgba(0, 82, 134, 0.2)", paddingTop: "70px", paddingBottom: "70px" }}>
                 <div className="container-grid">
                     <div className="info-informs">
-                        <h2>Informes de sostenibilidad</h2>
-                        <p>Impulsamos distintas iniciativas con las que buscamos la sostenibilidad de nuestras operaciones y el cuidado de los recursos naturales. Estas iniciativas están recopiladas en nuestros Informes de sostenibilidad.</p>
+                        <h2>{t('sostenibilidad.informes')}</h2>
+                        <p>{t('sostenibilidad.informes_desc')}</p>
                     </div>
                     <div className="informs-pdfs">
                         <div className="box-informs-pdf">
                             <a rel="noopener noreferrer" href={sostenibilidad2019} target="_blank"><InformDownload /></a>
-                            <p>Sostenibilidad 2019</p>
+                            <p>{t('sostenibilidad.sostenibilidad')} 2019</p>
                         </div>
                         <div className="box-informs-pdf">
-                            <a rel="noopener noreferrer" href={sostenibilidad2018} target="_blank"><InformDownload /></a>
-                            <p>Sostenibilidad 2018</p>
+                            <a rel="noopener noreferrer" href={sostenibilidad2020} target="_blank"><InformDownload /></a>
+                            <p>{t('sostenibilidad.sostenibilidad')} 2020</p>
                         </div>
                         <div className="box-informs-pdf">
-                            <a rel="noopener noreferrer" href={sostenibilidad2017} target="_blank"><InformDownload /></a>
-                            <p>Sostenibilidad 2017</p>
+                            <a rel="noopener noreferrer" href={sostenibilidad2021} target="_blank"><InformDownload /></a>
+                            <p>{t('sostenibilidad.sostenibilidad')} 2021</p>
                         </div>
                     </div>
                 </div>
@@ -113,10 +116,10 @@ const InformationSostenibility = ({ sostenibilidad2019, sostenibilidad2018, sost
                                 </div>
                                 <div className="info-sl-sbl">
                                     <div className="info-sbl">
-                                        <h4 style={{ width: "520px" }}>Innovación que genera valor</h4>
+                                        <h4 style={{ width: "520px" }}>{t('sostenibilidad.innovacion')}</h4>
                                         <img src={require('../images/img/bioform.webp')} alt="bioform" />
-                                        <h6>PRIMERA LÍNEA DE EMPAQUES BIODEGRADABLES</h6>
-                                        <p>Fabricada en el país con cartón de bagazo de caña de azúcar, amplió su portafolio el 2019 con el lanzamiento de nuevas referencias en platos, contenedores, bandejas y vasos para el mercado de Food Service.</p>
+                                        <h6>{t('sostenibilidad.innovacion_1')}</h6>
+                                        <p>{t('sostenibilidad.innovacion_1_desc')}</p>
                                     </div>
                                 </div>
                             </div>
@@ -132,9 +135,9 @@ const InformationSostenibility = ({ sostenibilidad2019, sostenibilidad2018, sost
                                 </div>
                                 <div className="info-sl-sbl">
                                     <div className="info-sbl">
-                                        <h4 style={{ width: "520px" }}>Innovación que genera valor</h4>
+                                        <h4 style={{ width: "520px" }}>{t('sostenibilidad.innovacion')}</h4>
                                         <img src={require('../images/img/petplus.webp')} alt="bioform" />
-                                        <p>Desarrollamos PET+, una tecnología que permite obtener productos con una funcionalidad superior a la de un empaque de PET tradicional utilizando hasta 50% menos de material. Adicionalmente mejora las propiedades de aislamiento térmico y la apariencia del producto.</p>
+                                        <p>{t('sostenibilidad.innovacion_2_desc')}</p>
                                     </div>
                                 </div>
                             </div>

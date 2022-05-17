@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import "../styles/slicks.css";
 
-const Slicks = ({ match, banners }) => {
+const Slicks = ({ match, banners, t }) => {
   let pathname = match.path;
 
   const settings = {
@@ -17,7 +17,6 @@ const Slicks = ({ match, banners }) => {
   };
 
   console.log(banners)
-
   // {
   //     banners && banners.length > 0 ?
   //         banners.map(item => (
@@ -83,7 +82,7 @@ const Slicks = ({ match, banners }) => {
                   >
                     <h2>Bioform</h2>
                     <p style={{ marginBottom: "50px" }}>
-                      La opción más práctica y segura para tus creaciones
+                      {t('home.bioform')}
                     </p>
                     <div className="more-btn">
                       <a
@@ -92,7 +91,7 @@ const Slicks = ({ match, banners }) => {
                         rel="noopener noreferrer"
                         href="http://www.bioform.pe/"
                       >
-                        Conoce más
+                        {t('home.conoce_mas')}
                       </a>
                     </div>
                   </div>
@@ -110,10 +109,10 @@ const Slicks = ({ match, banners }) => {
                     className="info-slick second"
                     style={{ top: "650px", left: "200px" }}
                   >
-                    <h2>Ahora llegamos a la puerta de tu negocio</h2>
+                    <h2>{t('home.conoce_mas')}</h2>
                     <p>Tel: (01) 641-9595 - Wsp: 934-440291</p>
                     <p>
-                      Horario de atención: Lunes a viernes 8:30 am - 5:30 pm
+                      {t('home.horario')}
                     </p>
                     <div className="more-btn">
                       <a
@@ -122,7 +121,7 @@ const Slicks = ({ match, banners }) => {
                         rel="noopener noreferrer"
                         href="http://www.pamolsaexpress.com/"
                       >
-                        Ir a Ecommerce
+                        {t('home.ecommerce')}
                       </a>
                     </div>
                   </div>
@@ -143,10 +142,9 @@ const Slicks = ({ match, banners }) => {
               <div>
                 <div className="Rotate-slick Us Main tablet ls movil xs">
                   <div className="info-slick Us ls">
-                    <h2>Nosotros</h2>
+                    <h2>{t('nosotros.nosotros')}</h2>
                     <p>
-                      Ofrecemos soluciones innovadoras y personalizadas de
-                      empaques sostenibles
+                      {t('nosotros.ofrecemos')}
                     </p>
                   </div>
                 </div>
@@ -165,8 +163,8 @@ const Slicks = ({ match, banners }) => {
               <div>
                 <div className="Rotate-slick Us Sb movil ls xs">
                   <div className="info-slick Us">
-                    <h2>Sostenibilidad</h2>
-                    <p>Nuestro compromiso con el entorno para ser rentables</p>
+                    <h2>{t('sostenibilidad.sostenibilidad')}</h2>
+                    <p>{t('sostenibilidad.sostenibilidad_desc')}</p>
                   </div>
                 </div>
               </div>
@@ -185,7 +183,7 @@ const Slicks = ({ match, banners }) => {
                 <div className="Rotate-slick Us Wu movil ls xs">
                   <div className="info-slick Us">
                     <h2>
-                      ¡Trabaja con nosotros y se parte de nuestra familia!
+                      {t('trabaja.trabaja')}
                     </h2>
                   </div>
                 </div>
@@ -204,8 +202,8 @@ const Slicks = ({ match, banners }) => {
               <div>
                 <div className="Rotate-slick Us Cl movil ls xs">
                   <div className="info-slick Us">
-                    <h2>Clientes</h2>
-                    <p>Experiencia y calidad a su servicio</p>
+                    <h2>{t('clientes.clientes')}</h2>
+                    <p>{t('clientes.clientes_desc')}</p>
                   </div>
                 </div>
               </div>
@@ -223,8 +221,8 @@ const Slicks = ({ match, banners }) => {
               <div>
                 <div className="Rotate-slick Us New movil ls xs ">
                   <div className="info-slick Us">
-                    <h2>Noticias</h2>
-                    <p>Entérate de nuestras últimas novedades</p>
+                    <h2>{t('noticias.noticias')}</h2>
+                    <p>{t('noticias.noticias_desc')}</p>
                   </div>
                 </div>
               </div>
@@ -242,8 +240,8 @@ const Slicks = ({ match, banners }) => {
               <div>
                 <div className="Rotate-slick Us Ctt movil ls xs">
                   <div className="info-slick Us">
-                    <h2>Contacto</h2>
-                    <p>Queremos conocerte</p>
+                    <h2>{t('contacto.contacto')}</h2>
+                    <p>{t('contacto.contacto_desc')}</p>
                   </div>
                 </div>
               </div>

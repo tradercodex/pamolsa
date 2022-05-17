@@ -11,7 +11,7 @@ import agroindustrial from '../pdf/catalogoagroindustrial.pdf'
 
 const Known = ({
     closePdfModal, showPdfModal,
-    handleShowPdfModal,
+    handleShowPdfModal, t
 }) => {
 
     return (
@@ -23,14 +23,14 @@ const Known = ({
                             className="wow animate__animated animate__fadeInDown"
                             data-wow-duration="2s"
                             data-wow-delay="0.3s"
-                        >Conoce nuestras líneas de empaques para alimentos</h3>
+                        >{t('home.conoce')}</h3>
                         <p
                             className="wow animate__animated animate__fadeInDown"
                             data-wow-duration="2s"
                             data-wow-delay="0.8"
                         >
-                            Tenemos el empaque que necesitas
-                            </p>
+                            {t('home.tenemos')}
+                        </p>
                     </div>
                 </div>
                 <div className="products-known">
@@ -41,7 +41,7 @@ const Known = ({
                         >
                             <Link to="header" smooth={true} duration={1000} offset={-2000}><LinkRouter to="/productos/linea/2">
                                 <img src={require('../images/img/lineproducts.webp')} alt="imagen" />
-                                <p>Línea Ecoamigable Bioform</p>
+                                <p>{t('home.linea_bioform')}</p>
                             </LinkRouter></Link>
                         </div>
                         <div className="line-products_pm top wow animate__animated animate__fadeInDown"
@@ -50,7 +50,7 @@ const Known = ({
                         >
                             <Link to="header" smooth={true} duration={1000} offset={-2000}><LinkRouter to="/productos/linea/1">
                                 <img src={require('../images/img/foodservices.webp')} alt="imagen" />
-                                <p>Línea Food Service</p>
+                                <p>{t('home.linea_food')}</p>
                             </LinkRouter></Link>
                         </div>
                         <div className="use-app_pm wow animate__animated animate__fadeInUp"
@@ -59,7 +59,7 @@ const Known = ({
                         >
                             <Link to="header" smooth={true} duration={1000} offset={-2000}><LinkRouter to="/productos/linea/4">
                                 <img src={require('../images/img/useapplication.webp')} alt="imagen" />
-                                <p>Línea Industrial Consumo</p>
+                                <p>{t('home.linea_industrial')}</p>
                             </LinkRouter></Link>
                         </div>
                         <div className="material-pm top wow animate__animated animate__fadeInRight"
@@ -68,7 +68,7 @@ const Known = ({
                         >
                             <Link to="header" smooth={true} duration={1000} offset={-2000}><LinkRouter to="/productos/linea/3">
                                 <img src={require('../images/img/lineagro.webp')} alt="imagen" />
-                                <p>Línea Agroindustrial</p>
+                                <p>{t('home.linea_agro')}</p>
                             </LinkRouter></Link>
                         </div>
                     </div>
@@ -78,7 +78,7 @@ const Known = ({
                 <div className="container-title-new">
                     <h6 className="wow animate__animated animate__fadeInLeft"
                         data-wow-duration="2s"
-                        data-wow-delay="0.4">Negocios a los que atendemos</h6>
+                        data-wow-delay="0.4">{t('home.negocios')}</h6>
                 </div>
                 <div className="container-known_business">
                     <div className="container-products_business">
@@ -93,7 +93,7 @@ const Known = ({
                             <div className="button-cat">
                                 <button onClick={handleShowPdfModal} className="wow animate__animated animate__fadeInUp"
                                     data-wow-duration="4s"
-                                    data-wow-delay="2.4">Ver cátalogo
+                                    data-wow-delay="2.4">{t('home.ver')}
                                 </button>
                             </div>
                         </div>
@@ -109,7 +109,7 @@ const Known = ({
                                 <a rel="noopener noreferrer" href={industrial} target="_blank"
                                     className="wow animate__animated animate__fadeInUp"
                                     data-wow-duration="4s"
-                                    data-wow-delay="2.4">Ver cátalogo</a>
+                                    data-wow-delay="2.4">{t('home.ver')}</a>
                             </div>
                         </div>
                         <div>
@@ -119,16 +119,16 @@ const Known = ({
                             >
                                 <Agroindustrial />
                             </div>
-                            <p className="know-lines movil">Agroindustrial</p>
+                            <p className="know-lines movil">{t('home.agroindustrial')}</p>
                             <div className="button-cat">
                                 <a rel="noopener noreferrer" href={agroindustrial} target="_blank"
                                     className="wow animate__animated animate__fadeInUp"
                                     data-wow-duration="4s"
-                                    data-wow-delay="2.4">Ver cátalogo</a>
+                                    data-wow-delay="2.4">{t('home.ver')}</a>
                             </div>
                         </div>
                     </div>
-                    {showPdfModal && <ModalFoodService closeModal={closePdfModal} title="Nuestros catálogos Food Service" />}
+                    {showPdfModal && <ModalFoodService closeModal={closePdfModal} title={t('home.catalogo_food_lista')} t={t} />}
                 </div>
             </div>
             <div className="container-distributor">
@@ -136,18 +136,18 @@ const Known = ({
                     <div>
                         <h3 className="wow animate__animated animate__fadeInLeft"
                             data-wow-duration="2s"
-                            data-wow-delay="0.6s">Conoce nuestros puntos de venta más cercanos</h3>
+                            data-wow-delay="0.6s">{t('home.puntos_venta')}</h3>
                         <p
                             className="wow animate__animated animate__fadeInLeft"
                             data-wow-duration="2s"
                             data-wow-delay="1s">
-                            Ingresa tu ubicación y encuentra el punto de venta más cercano
-                            </p>
+                            {t('home.puntos_venta_cercano')}
+                        </p>
                         <LinkRouter
                             className="wow animate__animated animate__fadeInLeft"
                             data-wow-duration="2s"
                             data-wow-delay="1.4s"
-                            to="/home/distribuidores"><button>Buscar</button></LinkRouter>
+                            to="/home/distribuidores"><button>{t('home.puntos_venta_cercano_buscar')}</button></LinkRouter>
                     </div>
                 </div>
                 <div className="img-distributor_hm">

@@ -2,10 +2,12 @@ import React, { Fragment } from 'react';
 import { Link as LinkRouter, withRouter } from 'react-router-dom'
 import { Link } from 'react-scroll'
 import '../styles/pagination.css'
+import i18n from "i18next";
 
 const ProductsFilterByLine = ({
     lineBioform,
-    productsByFilter
+    productsByFilter,
+    t
 }) => {
 
     return (
@@ -18,7 +20,7 @@ const ProductsFilterByLine = ({
                             <div key={product.id}>
                                 <div className="product">
                                     <div className={`square-products ` + lineBioform}></div>
-                                    <h5>{product.name}</h5>
+                                    <h5>{i18n.language === 'es' ? product.name : product.tradename}</h5>
                                     {
                                         product.image.map((thumb, index) =>
                                             <div className="img-product" key={index}>
@@ -26,7 +28,7 @@ const ProductsFilterByLine = ({
                                             </div>
                                         )
                                     }
-                                    <Link to="header" smooth={true} duration={1000} offset={-20000}><LinkRouter to={`/producto/detalle/${product.id}`}>Ver más</LinkRouter></Link>
+                                    <Link to="header" smooth={true} duration={1000} offset={-20000}><LinkRouter to={`/producto/detalle/${product.id}`}>{t('ver_mas')}</LinkRouter></Link>
                                 </div>
                             </div>
                         )) :

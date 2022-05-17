@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import DetailNewId from '../components/DetailNew'
 import { useDispatch, useSelector } from 'react-redux'
 import { getNewId } from '../redux/actions/new'
+import { useTranslation } from 'react-i18next';
 
 const DetailNew = ({ match }) => {
 
@@ -35,23 +36,26 @@ const DetailNew = ({ match }) => {
     }, [cart.cartItems])
 
     let number = Object.keys(cartItems).length
+    const { t } = useTranslation();
 
     return (
         <Fragment>
-                <Header number={number} />
+            <Header number={number} t={t} />
             {
                 newId ?
                     <DetailNewId
                         title={newId.title}
+                        title_en={newId.title_en}
                         body={newId.body}
                         created={newId.created}
                         place={newId.place}
                         author={newId.author}
                         source={newId.source}
                         file={newId.file.url}
+                        t={t}
                     /> : ''
             }
-            <Footer />
+            <Footer t={t} />
         </Fragment>
 
     );

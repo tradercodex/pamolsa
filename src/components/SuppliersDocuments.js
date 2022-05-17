@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react'
 import InformDownload from '../images/svg/informdownload'
 
-const SuppliersDocuments = ({ procedimiento, politicasig, politicaproteccion }) => {
+const SuppliersDocuments = ({ procedimiento, politicasig, politicaproteccion, t }) => {
 
     return (
         <Fragment>
             <div style={{ background: "rgba(0, 82, 134, 0.2)", paddingTop: "70px", paddingBottom: "70px" }}>
                 <div className="container-grid">
                     <div className="info-informs">
-                        <h2>Proveedores</h2>
+                        <h2>{t('header.proveedores')}</h2>
                     </div>
                     <div className="informs-pdfs">
                         <div className="box-informs-pdf">

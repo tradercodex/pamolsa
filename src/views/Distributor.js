@@ -9,6 +9,7 @@ import MapDistributor from '../components/MapDistributor'
 import axios from 'axios';
 import Marker from '../images/svg/marker';
 import Call from '../images/svg/call';
+import { useTranslation } from 'react-i18next';
 
 const Distributor = () => {
 
@@ -70,19 +71,20 @@ const Distributor = () => {
     }, [longitude, latitude, cart.cartItems])
 
     let number = Object.keys(cartItems).length
+    const { t } = useTranslation();
 
     return (
         <Fragment>
             <div style={{ position: "relative", height: "70px", width: "100%" }}>
-                <Header number={number} />
+                <Header number={number} t={t} />
             </div>
             <div className="Distributor-pm">
                 <div className="back">
-                    <button onClick={back}><Arrow />Volver</button>
+                    <button onClick={back}><Arrow />{t('volver')}</button>
                 </div>
             </div>
             <div className="Distributor-search">
-                <Search onChangeUbication={onChangeUbication} searchPressUbication={searchPressUbication} />
+                <Search onChangeUbication={onChangeUbication} searchPressUbication={searchPressUbication} t={t} />
             </div>
             <div className="container-grid distributor">
                 <div className="info-container">
@@ -93,7 +95,7 @@ const Distributor = () => {
             </div>
             <div className="container-grid" style={{ paddingBottom: "50px" }}>
                 <div className="info-container map-distributor" style={{ gridColumn: "2/5" }}>
-                    <MapDistributor ubications={ubications} ubication={ubication} />
+                    <MapDistributor ubications={ubications} ubication={ubication} t={t} />
                 </div>
                 <div className="ubications">
                     <div>
@@ -121,22 +123,22 @@ const Distributor = () => {
                                     {
                                         ubications.map(item => (
                                             <Fragment key={item.id}>
-                                                    <div className="title-ubication">
-                                                        <h6>{item.name}</h6>
-                                                    </div>
-                                                    <div className="address-ubication">
-                                                        <Marker /><p>{item.address}</p>
-                                                    </div>
-                                                    {
-                                                        item.phones && item.phones.length > 0 ?
-                                                            item.phones.map(item => (
-                                                                <div className="call-ubication" key={item.phone}>
-                                                                    {
-                                                                        item.phone ? <><Call /><p>{item.phone}</p></> : ''
-                                                                    }
-                                                                </div>
-                                                            )) : ''
-                                                    }
+                                                <div className="title-ubication">
+                                                    <h6>{item.name}</h6>
+                                                </div>
+                                                <div className="address-ubication">
+                                                    <Marker /><p>{item.address}</p>
+                                                </div>
+                                                {
+                                                    item.phones && item.phones.length > 0 ?
+                                                        item.phones.map(item => (
+                                                            <div className="call-ubication" key={item.phone}>
+                                                                {
+                                                                    item.phone ? <><Call /><p>{item.phone}</p></> : ''
+                                                                }
+                                                            </div>
+                                                        )) : ''
+                                                }
                                             </Fragment>
                                         ))
                                     }

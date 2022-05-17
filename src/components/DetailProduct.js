@@ -5,15 +5,16 @@ import { addToCart } from '../redux/actions/cart'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import Slider from "react-slick";
+import i18n from "i18next";
 
-const DetailProduct = ({ product }) => {
+const DetailProduct = ({ product, t }) => {
 
     const dispatch = useDispatch();
     const history = useHistory();
     const { register, handleSubmit, errors } = useForm();
 
     const onSubmit = (data, e) => {
-        const { id,name,code } = product
+        const { id, name, code } = product
         const body = {
             product_id: id,
             name: name,
@@ -45,75 +46,75 @@ const DetailProduct = ({ product }) => {
             <div className="Detail-Product_pm movil">
                 <div className="container-detail">
                     <div className="guide-detail_product">
-                        <p>{`PRODUCTO /` + product.name}</p><button onClick={back}><span>Volver</span></button>
+                        <p>{`PRODUCTO / ` + (i18n.language === 'es' ? product.name : product.tradename)}</p><button onClick={back}><span>{t('volver')}</span></button>
                     </div>
                     <div className="container-detail_product">
                         <div className="img-detail_product">
                             <div className="product">
                                 <div className="square-products"></div>
                                 <div className="img-product">
-                                <Slider {...settingsProducts}>
-                                    {
-                                        product.image && product.image.length > 0 ? 
-                                        product.image.map(item => (
-                                            <img src={`https://` + item.url} alt={`imagen` + item.url} />
-                                        )) : ''
-                                    }
-                                </Slider>
+                                    <Slider {...settingsProducts}>
+                                        {
+                                            product.image && product.image.length > 0 ?
+                                                product.image.map(item => (
+                                                    <img src={`https://` + item.url} alt={`imagen` + item.url} />
+                                                )) : ''
+                                        }
+                                    </Slider>
                                 </div>
                             </div>
                         </div>
                         <div className="detail-info">
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <div className="title-detail_product">
-                                    <h4>{product.name}</h4>
+                                    <h4>{i18n.language === 'es' ? product.name : product.tradename}</h4>
                                 </div>
                                 <div className="list-detailt_product">
                                     <ul>
                                         <li>
-                                            <div>Material</div><p>{product.material.name}</p>
+                                            <div>{t('productos.material')}</div><p>{product.material.name}</p>
                                         </li>
                                         <li className="gray">
-                                            <div>Largo ({product.long_unit == null ? "cm" : product.long_unit})</div>
+                                            <div>{t('productos.largo')} ({product.long_unit == null ? "cm" : product.long_unit})</div>
                                             <p>{product.long != null && product.long != "0.00" ? product.long : null}</p>
                                         </li>
                                         <li>
-                                            <div>Ancho({product.width_unit == null ? "cm" : product.width_unit})</div>
+                                            <div>{t('productos.ancho')} ({product.width_unit == null ? "cm" : product.width_unit})</div>
                                             <p>{product.width != null && product.width != "0.00" ? product.width : null}</p>
                                         </li>
                                         <li className="gray">
-                                            <div>Altura({product.height_unit == null ? "cm" : product.height_unit})</div>
+                                            <div>{t('productos.altura')} ({product.height_unit == null ? "cm" : product.height_unit})</div>
                                             <p>{product.height != null && product.height != "0.00" ? product.height : null}</p>
                                         </li>
                                         <li>
-                                            <div>Diametro({product.diameter_unit == null ? "mm" : product.diameter_unit})</div>
+                                            <div>{t('productos.diametro')} ({product.diameter_unit == null ? "mm" : product.diameter_unit})</div>
                                             <p>{product.diameter != null && product.diameter != "0.00" ? product.diameter : null}</p>
                                         </li>
                                         <li className="gray">
-                                            <div>Peso({product.weight_unit == null ? "gr" : product.weight_unit})</div>
+                                            <div>{t('productos.peso')} ({product.weight_unit == null ? "gr" : product.weight_unit})</div>
                                             <p>{product.weight != null && product.weight != "0.00" ? product.weight : null}</p>
                                         </li>
                                         {
-                                            product.unit_quantity != null ? 
-                                            <li>
-                                                <div>{product.unit}</div><p>{product.unit_quantity}</p>
-                                            </li> :
-                                            
-                                            product.unit != null && product.unit != "" ?
-                                            <li>
-                                                <div>Unidades</div>
-                                                <p>{product.unit != null ? product.unit : null}</p>
-                                            </li> : null
-                                            
+                                            product.unit_quantity != null ?
+                                                <li>
+                                                    <div>{product.unit}</div><p>{product.unit_quantity}</p>
+                                                </li> :
+
+                                                product.unit != null && product.unit != "" ?
+                                                    <li>
+                                                        <div>{t('productos.unidades')}</div>
+                                                        <p>{product.unit != null ? product.unit : null}</p>
+                                                    </li> : null
+
                                         }
                                     </ul>
                                 </div>
                                 <div className="whant-need">
-                                    <label>Cuantas unidades necesitas</label>
-                                    <input 
-                                        type="number" 
-                                        name="units" 
-                                        placeholder="máximo 1000" 
+                                    <label>{t('productos.cuantas_unidades')}</label>
+                                    <input
+                                        type="number"
+                                        name="units"
+                                        placeholder="máximo 1000"
                                         ref={
                                             register({
                                                 min: 1, max: 1000,
@@ -129,20 +130,20 @@ const DetailProduct = ({ product }) => {
                                     </span>
                                 </div>
                                 <div className="used whant-need">
-                                    <label>Usos frecuentes</label>
+                                    <label>{t('productos.tipos_negocio')}</label>
                                     <div className="categories-business used">
                                         {
                                             product.business && product.business.length > 0 ?
-                                            product.business.map(item => (
-                                                <div className="business-choose">
-                                                    <button type="button"><img className="detail-product" src={`https://` + item.url} alt=""/>{item.name}</button>
-                                                </div>
-                                            )) : ''
+                                                product.business.map(item => (
+                                                    <div className="business-choose">
+                                                        <button type="button"><img className="detail-product" src={`https://` + item.url} alt="" />{item.name}</button>
+                                                    </div>
+                                                )) : ''
                                         }
                                     </div>
                                 </div>
                                 <div className="btn-cotize">
-                                    <button type="submit">Agregar al cotizador</button>
+                                    <button type="submit">{t('productos.agregar_cotizador')}</button>
                                 </div>
                             </form>
                         </div>

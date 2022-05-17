@@ -2,7 +2,7 @@ import React from 'react'
 
 const Chart = () => {
     return (
-        <svg width="71" height="63" viewBox="0 0 71 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="87" height="86" viewBox="0 0 71 63" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0)">
                 <path opacity="0.23" d="M35.0209 62.4631C52.2648 62.4631 66.2439 48.4841 66.2439 31.2401C66.2439 13.9961 52.2648 0.0170898 35.0209 0.0170898C17.7769 0.0170898 3.79785 13.9961 3.79785 31.2401C3.79785 48.4841 17.7769 62.4631 35.0209 62.4631Z" fill="#009FE3" />
                 <path d="M29.593 31.9541H23.959V51.5321H29.722C29.64 51.3471 29.593 51.1431 29.593 50.9281V31.9541Z" fill="#009FE3" />
@@ -14,7 +14,7 @@ const Chart = () => {
             </g>
             <defs>
                 <clipPath id="clip0">
-                    <rect width="70.043" height="62.445" fill="white" transform="translate(0 0.0170898)" />
+                    <rect width="87" height="86" fill="white" transform="translate(0 0.0170898)" />
                 </clipPath>
             </defs>
         </svg>

@@ -10,6 +10,7 @@ import axios from 'axios'
 import Pagination from '../components/Pagination'
 import ProductsPopulate from '../components/ProductsPopulate'
 import Footer from '../components/Footer'
+import { useTranslation } from 'react-i18next';
 
 const ProductsBySearch = ({ match }) => {
 
@@ -187,11 +188,12 @@ const ProductsBySearch = ({ match }) => {
             </ul>
         )
     }
+    const { t } = useTranslation();
 
     return (
         <>
-            <Header number={number} />
-            <SearchProductsByLine search={search} onTextChanged={onTextChanged} renderSuggestions={renderSuggestions} setSearch={setSearch} searchPress={searchPress} typesBusiness={typesBusiness} />
+            <Header number={number} t={t} />
+            <SearchProductsByLine search={search} onTextChanged={onTextChanged} renderSuggestions={renderSuggestions} setSearch={setSearch} searchPress={searchPress} typesBusiness={typesBusiness} t={t} />
             <div className="Quotes-pm">
                 {/* <div className="Sidebar-Material_Quote">
                 <SidebarProductsByBusiness
@@ -216,8 +218,8 @@ const ProductsBySearch = ({ match }) => {
                     />
                 </div>
             </div>
-            <ProductsPopulate productsPopulate={productsPopulate} />
-            <Footer />
+            <ProductsPopulate productsPopulate={productsPopulate} t={t} />
+            <Footer t={t} />
         </>
     );
 }

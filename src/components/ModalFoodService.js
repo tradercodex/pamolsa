@@ -4,7 +4,7 @@ import InformDownload from '../images/svg/informdownload'
 import foodService1 from '../pdf/catalogofoodservice.pdf'
 import bioform from '../pdf/bioform.pdf'
 
-const ModalFoodService = ({ closeModal,title }) => {
+const ModalFoodService = ({ closeModal, title, t }) => {
     return (
         <div className="content-modal pdfs" style={{ top: 0 }}>
             <div className="modal-send">
@@ -12,13 +12,13 @@ const ModalFoodService = ({ closeModal,title }) => {
                 <div className="info-content">
                     <div className="informs-pdfs">
                         <h6>{title}</h6>
-                        <div className="box-informs-pdf" style={{width: "100%"}}>
+                        <div className="box-informs-pdf" style={{ width: "100%" }}>
                             <a href={foodService1} target="_blank" rel="noopener noreferrer"><InformDownload /></a>
-                            <p>Catálogo Food Service</p>
+                            <p>{t('home.catalogo_food')}</p>
                         </div>
-                        <div className="box-informs-pdf" style={{width: "100%"}}>
+                        <div className="box-informs-pdf" style={{ width: "100%" }}>
                             <a href={bioform} target="_blank" rel="noopener noreferrer"><InformDownload /></a>
-                            <p>Catálogo Bioform</p>
+                            <p>{t('home.catalogo_bioform')}</p>
                         </div>
                     </div>
                 </div>

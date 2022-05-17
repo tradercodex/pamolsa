@@ -16,7 +16,7 @@ import {
   getDistrict,
 } from "../redux/actions/place";
 
-const ContactForm = () => {
+const ContactForm = ({ t }) => {
   const dispatch = useDispatch();
 
   const { register, handleSubmit, errors, control, setValue } = useForm();
@@ -68,12 +68,12 @@ const ContactForm = () => {
   }, [countryId]);
 
   const optionsContact = [
-    { value: "1", label: "Producto" },
-    { value: "3", label: "Empleabilidad" },
-    { value: "4", label: "Proveedores" },
-    { value: "5", label: "Otros" },
-    { value: "7", label: "Reclamos/Sugerencias" },
-    { value: "10", label: "Apoyos/Donaciones" },
+    { value: "1", label: t('contacto.producto') },
+    { value: "3", label: t('contacto.empleabilidad') },
+    { value: "4", label: t('contacto.proveedores') },
+    { value: "5", label: t('contacto.otros') },
+    { value: "7", label: t('contacto.reclamos') },
+    { value: "10", label: t('contacto.apoyos') },
   ];
 
   const selectStyles = {
@@ -136,7 +136,7 @@ const ContactForm = () => {
     <Fragment>
       <div className="container-form_contact">
         <div className="form-contact">
-          <h2>Contáctenos</h2>
+          <h2>{t('contacto.contactenos')}</h2>
           <div className="form">
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="input">
@@ -145,7 +145,7 @@ const ContactForm = () => {
                     <ReactSelect
                       styles={selectStyles}
                       options={optionsContact}
-                      placeholder="¿Cuál es tu requerimiento?"
+                      placeholder={t('contacto.requerimiento')}
                     />
                   }
                   name="request"
@@ -166,7 +166,7 @@ const ContactForm = () => {
                 <input
                   type="text"
                   name="fullname"
-                  placeholder="Nombres y apellidos"
+                  placeholder={t('form.nombres')}
                   ref={register({
                     required: {
                       value: true,
@@ -182,7 +182,7 @@ const ContactForm = () => {
                 <input
                   type="text"
                   name="company"
-                  placeholder="Empresa"
+                  placeholder={t('contacto.empresa')}
                   ref={register({
                     required: {
                       value: true,
@@ -198,7 +198,7 @@ const ContactForm = () => {
                 <input
                   type="text"
                   name="email"
-                  placeholder="E-mail"
+                  placeholder={t('form.mail')}
                   ref={register({
                     required: {
                       value: true,
@@ -226,7 +226,7 @@ const ContactForm = () => {
                       {...field}
                       options={countries}
                       styles={selectStyles}
-                      placeholder="País"
+                      placeholder={t('contacto.pais')}
                       onChange={handleChangeCountry}
                       getOptionLabel={(countries) => countries.name}
                       getOptionValue={(countries) => countries.id}
@@ -291,7 +291,7 @@ const ContactForm = () => {
                           {...field}
                           options={departments}
                           styles={selectStyles}
-                          placeholder="Departamento"
+                          placeholder={t('form.departamento')}
                           onChange={handleChangeDepartment}
                           getOptionLabel={(departments) => departments.name}
                           getOptionValue={(departments) => departments.id}
@@ -323,7 +323,7 @@ const ContactForm = () => {
                           {...field}
                           options={provinces}
                           styles={selectStyles}
-                          placeholder="Provincia"
+                          placeholder={t('form.provincia')}
                           onChange={handleChangeProvince}
                           getOptionLabel={(provinces) => provinces.name}
                           getOptionValue={(provinces) => provinces.id}
@@ -345,7 +345,7 @@ const ContactForm = () => {
                         <ReactSelect
                           options={districts}
                           styles={selectStyles}
-                          placeholder="Distrito"
+                          placeholder={t('form.distrito')}
                           getOptionLabel={(districts) => districts.name}
                           getOptionValue={(districts) => districts.id}
                           getNewOptionData={(inputValue, optionLabel) => ({
@@ -378,7 +378,7 @@ const ContactForm = () => {
                 <input
                   type="text"
                   name="address"
-                  placeholder="Dirección"
+                  placeholder={t('contacto.direccion')}
                   ref={register({
                     required: {
                       value: true,
@@ -394,7 +394,7 @@ const ContactForm = () => {
                 <input
                   type="text"
                   name="phone"
-                  placeholder="Telefono"
+                  placeholder={t('form.telefono')}
                   ref={register({
                     required: {
                       value: true,
@@ -413,7 +413,7 @@ const ContactForm = () => {
                   cols="30"
                   rows="10"
                   maxLength="500"
-                  placeholder="Comentarios"
+                  placeholder={t('contacto.comentarios')}
                   ref={register({
                     required: {
                       value: true,
@@ -437,23 +437,23 @@ const ContactForm = () => {
                   })}
                 />
                 <p>
-                  Acepto la{" "}
+                  {t('form.privacidad')}{" "}
                   <a
                     style={{ textDecoration: "none", color: "#FBBA00" }}
                     target="_blank"
                     rel="noopener noreferrer"
                     href={proteccion}
                   >
-                    política de protección de datos
+                    {t('form.privacidad_1')}
                   </a>{" "}
-                  personales de este sitio
+                  {t('form.privacidad_2')}
                 </p>
               </div>
               <span className="complete-form">
                 {errors.condition && errors.condition.message}
               </span>
               <div className="btn-send">
-                <button type="submit">Enviar</button>
+                <button type="submit">{t('form.enviar')}</button>
               </div>
             </form>
           </div>
@@ -481,7 +481,7 @@ const ContactForm = () => {
             <div className="flx">
               <ContactMarker />
               <div>
-                <p>Dirección</p>
+                <p>{t('contacto.direccion')}</p>
                 <span>Av. Elmer Faucett 3486 Urb.Bocanegra, Callao</span>
               </div>
             </div>
@@ -490,18 +490,18 @@ const ContactForm = () => {
             <div className="flx">
               <ContactCall />
               <div>
-                <p>Teléfonos</p>
+                <p>{t('telefonos')}</p>
                 <div>
                   <span>Central: (511) 710 3020</span>
                 </div>
                 <div>
-                  <span>Central de ventas: (01) 641 9595</span>
+                  <span>{t('footer.central')}: (01) 641 9595</span>
                 </div>
                 <div>
                   <span>WhatsApp: 934 440 291</span>
                 </div>
                 <div>
-                  <span>Horario: Lunes a Viernes de 8:30 AM a 5:30 PM</span>
+                  <span>{t('footer.horario')}</span>
                 </div>
               </div>
             </div>

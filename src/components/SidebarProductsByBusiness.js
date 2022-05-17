@@ -1,4 +1,5 @@
 import React from 'react'
+import i18n from "i18next";
 
 const SidebarProductsByLine = ({
     lines,
@@ -6,14 +7,15 @@ const SidebarProductsByLine = ({
     materials,
     toggleTypesProductsRadio,
     toggleMaterialsProductsRadio,
-    toggleLinesProductsRadio
+    toggleLinesProductsRadio,
+    t
 }) => {
 
     return (
         <div className="Materials-sidebar_pm">
             <div>
                 <div style={{ padding: "0px 10px 10px 10px" }}>
-                    <h5 style={{ color: "#4D4D4C", fontSize: "12px", fontFamily: "Amble-bold" }}>Lineas de producto</h5>
+                    <h5 style={{ color: "#4D4D4C", fontSize: "12px", fontFamily: "Amble-bold" }}>{t('productos.lineas_productos')}</h5>
                 </div>
                 <div className="line">
                     {
@@ -31,14 +33,14 @@ const SidebarProductsByLine = ({
                     }
                 </div>
                 <div style={{ padding: "0px 10px 10px 10px" }}>
-                    <h5 style={{ color: "#4D4D4C", fontSize: "12px", fontFamily: "Amble-bold" }}>Tipos de productos</h5>
+                    <h5 style={{ color: "#4D4D4C", fontSize: "12px", fontFamily: "Amble-bold" }}>{t('productos.tipos_productos')}</h5>
                 </div>
                 <div className="line">
                     {
                         types && types.length > 0 ?
                             types.map(item => (
                                 <div key={item.id} className="material">
-                                     <label className="con1" htmlFor=""><span>{item.name}</span>
+                                    <label className="con1" htmlFor=""><span>{i18n.language === 'es' ? item.name : item.name_en}</span>
                                         <input className="only-one" name="line" value={item.id} onClick={(e) => toggleTypesProductsRadio(e, item.id)} style={{ marginRight: "10px" }} type="checkbox" />
                                         <span className="checkmark"></span>
                                     </label>
@@ -47,7 +49,7 @@ const SidebarProductsByLine = ({
                     }
                 </div>
                 <div style={{ padding: "0px 10px 10px 10px" }}>
-                    <h5 style={{ color: "#4D4D4C", fontSize: "12px", fontFamily: "Amble-bold" }}>Material</h5>
+                    <h5 style={{ color: "#4D4D4C", fontSize: "12px", fontFamily: "Amble-bold" }}>{t('productos.material')}</h5>
                 </div>
                 <div>
                     {

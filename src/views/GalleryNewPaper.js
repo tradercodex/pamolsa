@@ -8,8 +8,10 @@ import { getNewsPaper } from '../redux/actions/newpaper'
 import Arrow from '../images/svg/arrowback'
 import Slider from 'react-slick'
 import ModalView from '../components/ModalView'
+import { useTranslation } from 'react-i18next';
 
 const GalleryNewPaper = () => {
+    const { t } = useTranslation();
 
     const history = useHistory();
 
@@ -17,7 +19,7 @@ const GalleryNewPaper = () => {
     const cart = useSelector(state => state.cart)
 
     const [cartItems, setCartItems] = useState(cart.cartItems)
-    const [ loadingNewspaper, setLoadingNewspaper] = useState(true)
+    const [loadingNewspaper, setLoadingNewspaper] = useState(true)
     const [showModal, setShowModal] = useState(false);
     const [img, setImg] = useState('')
 
@@ -79,12 +81,12 @@ const GalleryNewPaper = () => {
         handleShowModal();
     }
 
-    useEffect(()=> {
+    useEffect(() => {
         apiNewsPaper();
         setCartItems(cart.cartItems)
-    },[cart.cartItems])
+    }, [cart.cartItems])
 
-    if(loadingNewspaper) {
+    if (loadingNewspaper) {
         return 'Loading'
     }
 
@@ -92,45 +94,45 @@ const GalleryNewPaper = () => {
 
     return (
         <Fragment>
-            <Header number={number}/>
+            <Header number={number} t={t} />
             <div className="Detail-new_pm gallery-paper">
                 <div className="back">
-                    <button onClick={back}><Arrow />Volver</button>
+                    <button onClick={back}><Arrow />{t('volver')}</button>
                 </div>
             </div>
-            <div className="container-detail_new news-search" style={{background: "#f9f9f9"}}>
-                <h2>Galería periodística</h2>
+            <div className="container-detail_new news-search" style={{ background: "#f9f9f9" }}>
+                <h2>{t('noticias.galeria')}</h2>
                 <p className="text">Visita nuestra galería de artículos impresos, conoce más de nosotros y de nuestro compromiso con la sociedad y le medioambiente</p>
-                { showModal && <ModalView closeModal={closeModal} img={img} /> }
+                {showModal && <ModalView closeModal={closeModal} img={img} />}
                 <div className="" style={{
-                        position: "relative",
-                        width: "100%",
-                        overflow: "hidden",
-                        margin: "90px auto",
-                        height: "auto",
+                    position: "relative",
+                    width: "100%",
+                    overflow: "hidden",
+                    margin: "90px auto",
+                    height: "auto",
                 }}>
                     <Slider {...settingsNewsPaper}>
                         {
                             newspaper && newspaper.length > 0 ?
-                            newspaper.map(item => (
-                                <div key={item.id} style={{maxWidth: "1440px", margin: "0 auto"}}>
-                                    <div className="newpaper-gallery" style={{marginLeft:"20px"}}>
-                                        <div className="newpaper-header-gallery">
-                                            <img src={`https://` + item.file.url} alt=""/>
-                                        </div>
-                                        <div className="newpaper-body">
-                                            <span>{item.created}</span>
-                                            <p>{item.name_newspaper}</p>
-                                            <Link to="newpaper" smooth={true} duration={1000} offset={-100}><LinkRouter onClick={()=> zoomGallery(item.file.url)} >Visualizar</LinkRouter></Link>
+                                newspaper.map(item => (
+                                    <div key={item.id} style={{ maxWidth: "1440px", margin: "0 auto" }}>
+                                        <div className="newpaper-gallery" style={{ marginLeft: "20px" }}>
+                                            <div className="newpaper-header-gallery">
+                                                <img src={`https://` + item.file.url} alt="" />
+                                            </div>
+                                            <div className="newpaper-body">
+                                                <span>{item.created}</span>
+                                                <p>{item.name_newspaper}</p>
+                                                <Link to="newpaper" smooth={true} duration={1000} offset={-100}><LinkRouter onClick={() => zoomGallery(item.file.url)} >{t('noticias.visualizar')}</LinkRouter></Link>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            )) : ''
+                                )) : ''
                         }
                     </Slider>
                 </div>
             </div>
-            <Footer />
+            <Footer t={t} />
         </Fragment>
     );
 }

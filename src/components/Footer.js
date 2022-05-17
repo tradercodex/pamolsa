@@ -10,7 +10,7 @@ import procedimiento from "../pdf/procedimiento.pdf";
 import politicasig from '../images/img/politicasig.webp'
 import politicaproteccion from "../pdf/politicaproteccion.pdf";
 
-const Footer = () => {
+const Footer = ({ t }) => {
   return (
     <div>
       <div className="Footer-pm">
@@ -23,13 +23,13 @@ const Footer = () => {
               <Link to="header" smooth={true} duration={1000} offset={-2000}><LinkRouter
                 to="/libro-de-reclamaciones"
               >
-                <img src={Book} alt="libro de reclamaciones" width="210px" height="120px"/>
+                <img src={Book} alt="libro de reclamaciones" width="210px" height="120px" />
               </LinkRouter></Link>
             </div>
           </div>
           <div className="declaration">
             <div className="title">
-              <h6>Declaración de beneficiario final</h6>
+              <h6>{t('footer.declaracion')}</h6>
               <div className="info-contact">
                 <div className="center">
                   <a
@@ -45,7 +45,7 @@ const Footer = () => {
           </div>
           <div className="information">
             <div className="title">
-              <h6>Documento informativo</h6>
+              <h6>{t('footer.documento_informativo')}</h6>
               <div className="info-contact">
                 <div className="center">
                   <a
@@ -53,7 +53,7 @@ const Footer = () => {
                     target="_blank"
                     href={politicaproteccion}
                   >
-                    Pólitica de privacidad
+                    {t('footer.politica_privacidad')}
                   </a>
                 </div>
                 <div className="center">
@@ -62,7 +62,7 @@ const Footer = () => {
                     target="_blank"
                     href={politicasig}
                   >
-                    Pólitica de SIG
+                    {t('footer.politica_sig')}
                   </a>
                 </div>
                 <div className="center">
@@ -71,7 +71,7 @@ const Footer = () => {
                     target="_blank"
                     href={procedimiento}
                   >
-                    Procedimiento de aplicación del programa de cumplimiento
+                    {t('footer.procedimiento')}
                   </a>
                 </div>
               </div>
@@ -79,13 +79,13 @@ const Footer = () => {
           </div>
           <div className="contact">
             <div className="title">
-              <h6>Contacto</h6>
+              <h6>{t('footer.contacto')}</h6>
               <div className="info-contact">
                 <div className="center">Central: (511) 710 3020</div>
-                <div className="cell">Central de ventas: (01) 641 9595</div>
+                <div className="cell">{t('footer.central')}: (01) 641 9595</div>
                 <div className="cell">WhatsApp: 934 440 291</div>
                 <div className="cell">
-                  Horario: Lunes a Viernes de 8:30 AM a 5:30 PM
+                  {t('footer.horario')}
                 </div>
               </div>
             </div>
@@ -99,7 +99,7 @@ const Footer = () => {
               target="_blank"
               href="http://www.arquimarkets.com/"
             >
-              <p>© Todos los derechos reservados 2020 - Make by Arquimarkets</p>
+              <p>© Todos los derechos reservados 2022 - Make by Arquimarkets</p>
             </a>
           </div>
           <div className="copy-right">
@@ -162,7 +162,7 @@ const Footer = () => {
               target="_blank"
               href="http://www.arquimarkets.com/"
             >
-              <p>© Todos los derechos reservados 2020 - Make by Arquimarkets</p>
+              <p>© Todos los derechos reservados 2022 - Make by Arquimarkets</p>
             </a>
           </div>
         </div>
@@ -186,10 +186,10 @@ const Footer = () => {
               <div className="title">
                 <div className="sp-title">
                   <a
-                    href="#declaration" 
+                    href="#declaration"
                     className=""
                   >
-                    Declaración de beneficiario final
+                    {t('footer.declaracion')}
                   </a>
                   <ArrowFooter />
                 </div>
@@ -218,7 +218,7 @@ const Footer = () => {
               <div className="title">
                 <div className="sp-title">
                   <a href="#information" className="">
-                    Documento informativo
+                    {t('footer.documento_informativo')}
                   </a>
                   <ArrowFooter />
                 </div>
@@ -229,7 +229,7 @@ const Footer = () => {
                       target="_blank"
                       href={politicaproteccion}
                     >
-                      Pólitica de privacidad
+                      {t('footer.politica_privacidad')}
                     </a>
                   </div>
                   <div className="center">
@@ -238,7 +238,7 @@ const Footer = () => {
                       target="_blank"
                       href={politicasig}
                     >
-                      Pólitica de SIG
+                      {t('footer.politica_sig')}
                     </a>
                   </div>
                   <div className="center">
@@ -247,7 +247,7 @@ const Footer = () => {
                       target="_blank"
                       href={procedimiento}
                     >
-                      Procedimiento de aplicación del programa de cumplimiento
+                      {t('footer.procedimiento')}
                     </a>
                   </div>
                 </div>
@@ -258,16 +258,16 @@ const Footer = () => {
               <div className="title">
                 <div className="sp-title">
                   <a rel="noopener noreferrer" href="#contact" className="">
-                    Contacto
+                    {t('footer.contacto')}
                   </a>
                   <ArrowFooter />
                 </div>
                 <div className="info-contact content">
                   <div className="center">Central: (511) 710 3020</div>
-                  <div className="cell">Central de ventas: (01) 641 9595</div>
+                  <div className="cell">{t('footer.central')}: (01) 641 9595</div>
                   <div className="cell">WhatsApp: 934 440 291</div>
                   <div className="cell">
-                    Horario: Lunes a Viernes de 8:30 AM a 5:30 PM
+                    {t('footer.horario')}
                   </div>
                 </div>
               </div>
@@ -282,7 +282,7 @@ const Footer = () => {
               target="_blank"
               href="http://www.arquimarkets.com/"
             >
-              <p>© Todos los derechos reservados 2020 - Make by Arquimarkets</p>
+              <p>© Todos los derechos reservados 2022 - Make by Arquimarkets</p>
             </a>
           </div>
           <div className="copy-right">
@@ -345,7 +345,7 @@ const Footer = () => {
               target="_blank"
               href="http://www.arquimarkets.com/"
             >
-              <p>© Todos los derechos reservados 2020 - Make by Arquimarkets</p>
+              <p>© Todos los derechos reservados 2022 - Make by Arquimarkets</p>
             </a>
           </div>
         </div>

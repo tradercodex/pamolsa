@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Logo from '../images/svg/logopamolsa'
 
-const Sidebar = () => {
+const Sidebar = ({ t }) => {
 
     const logout = () => {
         localStorage.removeItem('token');
@@ -38,8 +38,8 @@ const Sidebar = () => {
                         </li>
                         <li>
                             <Link to="/administrador/noticias">
-                            <i className="far fa-newspaper"></i>
-                                <span>Noticias</span>
+                                <i className="far fa-newspaper"></i>
+                                <span>{t('noticias.noticias')}</span>
                             </Link>
                         </li>
                         <li>
