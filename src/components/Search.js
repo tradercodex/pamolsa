@@ -7,6 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import MarkerSearch from '../images/svg/markersearch';
 import { useHistory } from 'react-router-dom'
+import i18n from "i18next";
 
 function getModalStyle() {
 }
@@ -25,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const Search = ({search,onTextChanged,renderSuggestions,display,options,match,typesBusiness,setSearch,searchPress,onChangeUbication,searchPressUbication}) => {
+const Search = ({ search, onTextChanged, renderSuggestions, display, options, match, typesBusiness, setSearch, searchPress, onChangeUbication, searchPressUbication, t }) => {
 
     const pathname = match.path
     const url = match.url
@@ -50,15 +51,18 @@ const Search = ({search,onTextChanged,renderSuggestions,display,options,match,ty
 
     const body = (
         <div style={modalStyle} className={classes.paper}>
-            <h2 id="simple-modal-title" className="title-choose_business">Selecciona el tipo negocio que tienes</h2>
+            <h2 id="simple-modal-title" className="title-choose_business">{t('productos.seleccionar_tipo_negocio')}</h2>
             <div className="categories-business">
                 {
                     typesBusiness && typesBusiness.length > 0 ?
-                    typesBusiness.map(item => (
+                        typesBusiness.map(item => (
                             <div className="business-choose" key={item.id}>
-                                <a className={url === `/productos/negocio/${item.name}/${item.id}` ? "active-category" : 'category'} href={`/productos/negocio/${item.name}/${item.id}`}><img src={`https://` + item.url} alt=""/>{item.name}</a>
+                                <a className={url === `/productos/negocio/${item.name}/${item.id}` ? "active-category" : 'category'} href={`/productos/negocio/${item.name}/${item.id}`}>
+                                    <img src={`https://` + item.url} alt="" />
+                                    {i18n.language === 'es' ? item.name : item.name_en}
+                                </a>
                             </div>
-                    )) : ''
+                        )) : ''
                 }
             </div>
         </div>
@@ -68,25 +72,25 @@ const Search = ({search,onTextChanged,renderSuggestions,display,options,match,ty
     return (
         <div>
             {
-                pathname === "/productos" || 
-                pathname === "/productos/:name/:id" || 
-                pathname === "/productos/:name/detail" || 
-                pathname === "/productos/:name"
-                ?
+                pathname === "/productos" ||
+                    pathname === "/productos/:name/:id" ||
+                    pathname === "/productos/:name/detail" ||
+                    pathname === "/productos/:name"
+                    ?
                     <div className="Search product">
                         {
-                            pathname === "/productos" ? '' : <button onClick={goBack} className="btn-back">Volver</button>
+                            pathname === "/productos" ? '' : <button onClick={goBack} className="btn-back">{t('volver')}</button>
                         }
                         <div className="Search-container">
                             <SearchIcon />
-                            <input onKeyUp={searchPress} value={search} onChange={onTextChanged} style={{padding: "15px 5px 15px 50px"}} type="text" placeholder="¿Qué producto necesitas?" />
+                            <input onKeyUp={searchPress} value={search} onChange={onTextChanged} style={{ padding: "15px 5px 15px 50px" }} type="text" placeholder={t('productos.buscador')} />
                             {renderSuggestions()}
                             <button type="button" onClick={handleOpen}><FilterIcon /></button>
                             {
                                 display && (
                                     <div className="autocontainer">
                                         {
-                                            options.map((v,i ) => {
+                                            options.map((v, i) => {
                                                 return (
                                                     <div key={i}>
                                                         <span>{v.name}</span>
@@ -114,7 +118,7 @@ const Search = ({search,onTextChanged,renderSuggestions,display,options,match,ty
                     <div className="Search">
                         <div className="Search-container distributor">
                             <MarkerSearch />
-                            <input onKeyUp={searchPressUbication}  type="text" name="ubication" onChange={onChangeUbication} placeholder="Ingresa tu distrito o departamento - Ejemplo (Callao)" />
+                            <input onKeyUp={searchPressUbication} type="text" name="ubication" onChange={onChangeUbication} placeholder="Ingresa tu distrito o departamento - Ejemplo (Callao)" />
                         </div>
                     </div> : ''
             }
@@ -122,10 +126,10 @@ const Search = ({search,onTextChanged,renderSuggestions,display,options,match,ty
             {
                 pathname === "/productos/linea/:id" || pathname === "/productos/negocio/:name/:id" || pathname === "/producto/detalle/:id" ?
                     <div className="Search product">
-                         <button onClick={goBack} className="btn-back">Volver</button>
+                        <button onClick={goBack} className="btn-back">{t('volver')}</button>
                         <div className="Search-container lines">
                             <SearchIcon />
-                            <input style={{marginBottom: "0"}} name="query" type="text" onKeyUp={searchPress} value={search} onChange={onTextChanged} placeholder="¿Qué producto necesitas?" />
+                            <input style={{ marginBottom: "0" }} name="query" type="text" onKeyUp={searchPress} value={search} onChange={onTextChanged} placeholder={t('productos.buscador')} />
                             {renderSuggestions()}
                             <button type="button" onClick={handleOpen}><FilterIcon /></button>
                             <Modal

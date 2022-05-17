@@ -3,7 +3,7 @@ import CloseModal from '../images/svg/closemodal';
 import InformDownload from '../images/svg/informdownload'
 import industrial from '../pdf/catalogoindustrial.pdf'
 
-const ModalIndustrial = ({ closeModal,title }) => {
+const ModalIndustrial = ({ closeModal, title, t }) => {
     return (
         <div className="content-modal pdfs" style={{ top: 0 }}>
             <div className="modal-send">
@@ -11,9 +11,9 @@ const ModalIndustrial = ({ closeModal,title }) => {
                 <div className="info-content">
                     <div className="informs-pdfs">
                         <h6>{title}</h6>
-                        <div className="box-informs-pdf" style={{width: "100%"}}>
+                        <div className="box-informs-pdf" style={{ width: "100%" }}>
                             <a href={industrial} target="_blank"><InformDownload /></a>
-                            <p>Catálogo Industrial</p>
+                            <p>{t('home.catalogo_industrial')}</p>
                         </div>
                     </div>
                 </div>

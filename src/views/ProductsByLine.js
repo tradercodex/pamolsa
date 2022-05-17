@@ -9,6 +9,7 @@ import { getProductByFilter, getTypesBusiness } from '../redux/actions/product'
 import Pagination from '../components/Pagination';
 import Footer from '../components/Footer';
 import axios from 'axios'
+import { useTranslation } from 'react-i18next';
 
 const ProductByLine = ({ match, location }) => {
 
@@ -120,9 +121,9 @@ const ProductByLine = ({ match, location }) => {
         const loadProductsItems = async () => {
             const res = await axios.get('https://ws.pamolsa.com.pe/api/product/list');
             setProductsItems(res.data.data)
-       }
+        }
 
-       loadProductsItems();
+        loadProductsItems();
 
         apiGetBusiness();
         apiGetTypes();
@@ -176,11 +177,19 @@ const ProductByLine = ({ match, location }) => {
             </ul>
         )
     }
+    const { t } = useTranslation();
 
     return (
         <>
-            <Header number={number} />
-            <SearchProductsByLine search={search} onTextChanged={onTextChanged} renderSuggestions={renderSuggestions} setSearch={setSearch} searchPress={searchPress} typesBusiness={typesBusiness} />
+            <Header number={number} t={t} />
+            <SearchProductsByLine
+                search={search}
+                onTextChanged={onTextChanged}
+                renderSuggestions={renderSuggestions}
+                setSearch={setSearch}
+                searchPress={searchPress}
+                typesBusiness={typesBusiness}
+                t={t} />
             <div className="Quotes-pm">
                 <div className="Sidebar-Material_Quote">
                     <SidebarProductsByLine
@@ -190,12 +199,13 @@ const ProductByLine = ({ match, location }) => {
                         toggleTypesProductsRadio={toggleTypesProductsRadio}
                         toggleMaterialsProductsRadio={toggleMaterialsProductsRadio}
                         toggleChangeCheckbox={toggleChangeCheckbox}
+                        t={t}
                     />
                 </div>
                 <div className="Products-Quote">
                     <Products
                         line={line}
-                        pathname ={pathname}
+                        pathname={pathname}
                         business={business}
                         types={types}
                         materials={materials}
@@ -208,16 +218,18 @@ const ProductByLine = ({ match, location }) => {
                         lineAgroIndustrial={lineAgroIndustrial}
                         productsByFilter={currentPostsByFilter}
                         countProductsByFilter={countProductsByFilter}
+                        t={t}
                     />
                     <Pagination
                         postsPerPage={postsPerPage}
                         totalPostsFilter={productsByFilter.length}
                         totalFilter={currentPostsByFilter.length}
                         paginate={paginate}
+                        t={t}
                     />
                 </div>
             </div>
-            <Footer />
+            <Footer t={t} />
         </>
     );
 }

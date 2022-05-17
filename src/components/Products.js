@@ -49,7 +49,8 @@ const Products = ({
     materials,
     toggleMaterialsProductsRadio,
     toggleLinesProductsRadio,
-    match
+    match,
+    t
 }) => {
 
     const classes = useStyles();
@@ -80,6 +81,7 @@ const Products = ({
                             toggleTypesProductsRadio={toggleTypesProductsRadio}
                             toggleMaterialsProductsRadio={toggleMaterialsProductsRadio}
                             toggleLinesProductsRadio={toggleLinesProductsRadio}
+                            t={t}
                         />
                     </div>
                     :
@@ -97,6 +99,7 @@ const Products = ({
                                         toggleTypesProductsRadio={toggleTypesProductsRadio}
                                         toggleMaterialsProductsRadio={toggleMaterialsProductsRadio}
                                         toggleLinesProductsRadio={toggleLinesProductsRadio}
+                                        t={t}
                                     />
                                 </div> :
                                 <div style={modalStyle} className={classes.paper}>
@@ -110,6 +113,7 @@ const Products = ({
                                         toggleTypesProductsRadio={toggleTypesProductsRadio}
                                         toggleMaterialsProductsRadio={toggleMaterialsProductsRadio}
                                         toggleLinesProductsRadio={toggleLinesProductsRadio}
+                                        t={t}
                                     />
                                 </div>
                         }
@@ -130,6 +134,7 @@ const Products = ({
                 countProduct={countProduct}
                 countProductsByFilter={countProductsByFilter}
                 nameFilter={nameFilter}
+                t={t}
             />
             <div className="filter-button">
                 <button onClick={handleOpen}><FilterIcon /><span>Filtrar</span></button>
@@ -147,6 +152,7 @@ const Products = ({
                 products={products}
                 toggleTypesProductsRadio={toggleTypesProductsRadio}
                 productsByFilter={productsByFilter}
+                t={t}
             />
         </Fragment>
     );

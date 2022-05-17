@@ -15,6 +15,7 @@ import {
     getTypesBusiness
 } from '../redux/actions/product'
 import { useDispatch, useSelector } from 'react-redux'
+import { useTranslation } from 'react-i18next';
 
 const ProductsByType = ({ match }) => {
 
@@ -183,12 +184,21 @@ const ProductsByType = ({ match }) => {
             </ul>
         )
     }
+    const { t } = useTranslation();
 
 
     return (
         <Fragment>
-            <Header number={number} />
-            <MenuCategory search={search} onTextChanged={onTextChanged} renderSuggestions={renderSuggestions} typesBusiness={typesBusiness} setSearch={setSearch} searchPress={searchPress} typesProducts={typesProducts} />
+            <Header number={number} t={t} />
+            <MenuCategory
+                search={search}
+                onTextChanged={onTextChanged}
+                renderSuggestions={renderSuggestions}
+                typesBusiness={typesBusiness}
+                setSearch={setSearch}
+                searchPress={searchPress}
+                typesProducts={typesProducts}
+                t={t} />
             <div className="Quotes-pm">
                 <div className="Sidebar-Material_Quote">
                     <SidebarProducts
@@ -198,6 +208,7 @@ const ProductsByType = ({ match }) => {
                         toggleChangeCheckbox={toggleChangeCheckbox}
                         toggleLineProductsRadio={toggleLineProductsRadio}
                         toggleMaterialsProductsRadio={toggleMaterialsProductsRadio}
+                        t={t}
                     />
                 </div>
                 <div className="Products-Quote">
@@ -213,15 +224,17 @@ const ProductsByType = ({ match }) => {
                         productsByFilter={currentPostsByFilter}
                         countProduct={countProduct}
                         countProductsByFilter={countProductsByFilter}
+                        t={t}
                     />
                     <Pagination
                         postsPerPage={postsPerPage}
                         totalPostsFilter={productsByFilter.length}
                         paginate={paginate}
+                        t={t}
                     />
                 </div>
             </div>
-            <Footer />
+            <Footer t={t} />
         </Fragment>
     );
 }

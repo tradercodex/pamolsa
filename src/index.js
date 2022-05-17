@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "animate.css/animate.css"
 import 'react-quill/dist/quill.snow.css';
 import 'medium-zoom/dist/medium-zoom.min.js'
+import './i18n';
 
 ReactDOM.render(
   <React.StrictMode>

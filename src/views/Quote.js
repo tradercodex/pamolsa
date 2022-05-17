@@ -1,4 +1,4 @@
-import React, { Fragment, useState,useEffect } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import '../styles/steps.css'
 import $ from 'jquery'
 import Header from '../components/Header';
@@ -7,6 +7,7 @@ import StepsQuote from '../components/StepsQuote'
 import axios from 'axios'
 import { removeCart } from '../redux/actions/cart';
 import Footer from '../components/Footer'
+import { useTranslation } from 'react-i18next';
 
 const Quote = () => {
 
@@ -24,7 +25,7 @@ const Quote = () => {
     const closeModal = () => {
         setShowModal(false)
     }
-    
+
     let number = Object.keys(cartItems).length
 
     const apiDepartments = async () => {
@@ -76,18 +77,18 @@ const Quote = () => {
     };
 
     useEffect(() => {
-        
+
         number = Object.keys(cartItems).length
 
         const movilOpen = document.getElementById('movil');
         const header = document.getElementById('header')
         const movilClose = document.getElementById('close-movil')
-    
-        movilOpen.addEventListener('click',function(){
+
+        movilOpen.addEventListener('click', function () {
             header.classList.add('movile-active')
         })
-    
-        movilClose.addEventListener('click',function(){
+
+        movilClose.addEventListener('click', function () {
             header.classList.remove('movile-active')
         })
 
@@ -134,26 +135,28 @@ const Quote = () => {
             });
             //click on form submit button
         });
-    }, [cart.cartItems])  
+    }, [cart.cartItems])
 
     const deleteProductCart = (product) => {
         dispatch(removeCart(product))
     }
+    const { t } = useTranslation();
 
     return (
         <Fragment>
-            <Header number={number} />
-            <StepsQuote 
+            <Header number={number} t={t} />
+            <StepsQuote
                 handleShowModal={handleShowModal}
                 number={number}
                 showModal={showModal}
                 selectStyles={selectStyles}
-                deleteProductCart={deleteProductCart} 
+                deleteProductCart={deleteProductCart}
                 departments={departments}
                 cartItems={cartItems}
                 closeModal={closeModal}
+                t={t}
             />
-            <Footer/>
+            <Footer t={t} />
         </Fragment>
     );
 }

@@ -3,7 +3,7 @@ import '../styles/clients.css'
 import Slider from "react-slick";
 import { withRouter } from 'react-router-dom';
 
-const Clients = ({ match }) => {
+const Clients = ({ match, t }) => {
 
     let pathname = match.path
 
@@ -64,8 +64,8 @@ const Clients = ({ match }) => {
                     <div className="container-clients">
                         <div className="title-client">
                             <div>
-                                <h4>CLIENTES AGROINDUSTRIALES</h4>
-                                <p>Crecemos juntos</p>
+                                <h4>{t('home.clientes_agroindustriales')}</h4>
+                                <p>{t('clientes.crecemos_juntos')}</p>
                             </div>
                         </div>
                         <div className="img-clients_pm">
@@ -106,8 +106,8 @@ const Clients = ({ match }) => {
                     <div className="container-clients">
                         <div className="title-client">
                             <div>
-                                <h4>CLIENTES FOOD SERVICE</h4>
-                                <p>Crecemos juntos</p>
+                                <h4>{t('home.clientes_food')}</h4>
+                                <p>{t('clientes.crecemos_juntos')}</p>
                             </div>
                         </div>
                         <div className="img-clients_pm">
@@ -148,8 +148,8 @@ const Clients = ({ match }) => {
                     <div className="container-clients">
                         <div className="title-client">
                             <div>
-                                <h4>CLIENTES FOOD SERVICE</h4>
-                                <p>Crecemos juntos</p>
+                                <h4>{t('home.clientes_food')}</h4>
+                                <p>{t('clientes.crecemos_juntos')}</p>
                             </div>
                         </div>
                         <div className="img-clients_pm">
@@ -187,8 +187,8 @@ const Clients = ({ match }) => {
                     <div className="container-clients">
                         <div className="title-client">
                             <div>
-                                <h4>CLIENTES INDUSTRIAL</h4>
-                                <p>Crecemos juntos</p>
+                                <h4>{t('home.clientes_industrial')}</h4>
+                                <p>{t('clientes.crecemos_juntos')}</p>
                             </div>
                         </div>
                         <div className="img-clients_pm">
@@ -229,8 +229,8 @@ const Clients = ({ match }) => {
                     <div className="container-clients">
                         <div className="title-client">
                             <div>
-                                <h4>CLIENTES AUTOSERVICIOS</h4>
-                                <p>Crecemos juntos</p>
+                                <h4>{t('home.clientes_autoservicio')}</h4>
+                                <p>{t('clientes.crecemos_juntos')}</p>
                             </div>
                         </div>
                         <div className="img-clients_pm">
@@ -269,8 +269,8 @@ const Clients = ({ match }) => {
                     <div className="container-clients">
                         <div className="title-client">
                             <div>
-                                <h4>CLIENTES EXPORTACIONES</h4>
-                                <p>Crecemos juntos</p>
+                                <h4>{t('home.clientes_exportaciones')}</h4>
+                                <p>{t('clientes.crecemos_juntos')}</p>
                             </div>
                         </div>
                         <div className="img-clients_pm">
@@ -293,8 +293,8 @@ const Clients = ({ match }) => {
                     <div className="container-clients">
                         <div className="title-client">
                             <div>
-                                <h4>CLIENTES TRADICIONAL</h4>
-                                <p>Crecemos juntos</p>
+                                <h4>{t('home.clientes_tradicional')}</h4>
+                                <p>{t('clientes.crecemos_juntos')}</p>
                             </div>
                         </div>
                         <div className="img-clients_pm">

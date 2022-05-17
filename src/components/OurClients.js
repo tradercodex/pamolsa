@@ -7,7 +7,7 @@ import Maiz from '../images/svg/maiz';
 import House from '../images/svg/house';
 import $ from 'jquery'
 
-const OurClients = () => {
+const OurClients = ({ t }) => {
 
     useEffect(() => {
         $('.clients-page .client-info:first').show();
@@ -30,19 +30,19 @@ const OurClients = () => {
                             data-wow-duration="2s"
                             data-wow-delay="0.6s"
                         >
-                            Nuestros Clientes
-                            </h2>
+                            {t('clientes.nuestros')}
+                        </h2>
                         <p
                             className="wow animate__animated animate__fadeInUp"
                             data-wow-duration="2s"
                             data-wow-delay="1.4s"
                         >
-                            Ofrecemos a nuestros clientes soluciones de empaques  de acuerdo  a las tendencias del mercado, personalizadas e innovadoras, más amigables con el medio ambiente y siguiendo las tendencias del mercado.</p>
+                            {t('clientes.nuestros_desc')}</p>
                         <div className="footer-client_main">
                             <h6 style={{ color: "#005286" }}
                                 className="wow animate__animated animate__fadeInLeft"
                                 data-wow-duration="2s"
-                                data-wow-delay="1.8s">Conoce nuestros tipos de clientes:</h6>
+                                data-wow-delay="1.8s">{t('clientes.tipos')}</h6>
                             <div className="types-clients wow animate__animated animate__fadeInUp"
                                 data-wow-duration="2s"
                                 data-wow-delay="2.6s" >
@@ -57,10 +57,10 @@ const OurClients = () => {
                     </div>
                 </div>
                 <div id="default" className="client-info hide">
-                    <div  className="info-client-footer">
-                        <h6 style={{ color: "#005286" }}>Clientes masivos</h6>
-                        <p>Abastecemos de empaques para alimentos los diferentes  mercados de abastos a través de nuestros socios mayoristas y minoristas. El canal tiene como característica principal   la comercialización de volúmenes importantes.
-                                </p>
+                    <div className="info-client-footer">
+                        <h6 style={{ color: "#005286" }}>{t('clientes.masivos')}</h6>
+                        <p>{t('clientes.abastecemos')}
+                        </p>
                     </div>
                     <div className="prs-clients">
                         <div>
@@ -79,10 +79,10 @@ const OurClients = () => {
                     </div>
                 </div>
                 <div id="traditional" className="client-info hide">
-                    <div  className="info-client-footer">
-                        <h6 style={{ color: "#005286" }}>Canal tradicional</h6>
-                        <p>Abastecemos de empaques para alimentos los diferentes  mercados de abastos a través de nuestros socios mayoristas y minoristas. El canal tiene como característica principal   la comercialización de volúmenes importantes.
-                                </p>
+                    <div className="info-client-footer">
+                        <h6 style={{ color: "#005286" }}>{t('clientes.tradicional')}</h6>
+                        <p>{t('clientes.abastecemos')}
+                        </p>
                     </div>
                     <div className="prs-clients">
                         <div>
@@ -102,9 +102,9 @@ const OurClients = () => {
                 </div>
                 <div id="autoservices" className="client-info hide">
                     <div className="info-client-footer">
-                        <h6 style={{ color: "#005286" }}>Canal Autoservicio</h6>
-                        <p>Canal donde destaca el uso  de nuestros productos para el empacado  de sus alimentos  y comercialización  al usuario final a través de la exhibición en las góndolas de sus tiendas.
-                                </p>
+                        <h6 style={{ color: "#005286" }}>{t('clientes.autoservicio')}</h6>
+                        <p>{t('clientes.autoservicio_desc')}
+                        </p>
                     </div>
                     <div className="prs-clients">
                         <div>
@@ -124,9 +124,9 @@ const OurClients = () => {
                 </div>
                 <div id="foodservices" className="client-info hide">
                     <div className="info-client-footer">
-                        <h6 style={{ color: "#005286" }}>Canal Food Service</h6>
-                        <p>Abastecemos de empaques a las principales cadenas, franquicias de restaurantes, fast food, entre otros. Contamos con un amplio portafolio  de soluciones de empaques para consumo en sitio, exhibir o para llevar así como la oportunidad de adaptar el diseño de los productos acorde a las necesidades del mercado y la personalización del empaque para contribuir al posicionamiento de marca del cliente.
-                                </p>
+                        <h6 style={{ color: "#005286" }}>{t('clientes.foodservice')}</h6>
+                        <p>{t('clientes.foodservice_desc')}
+                        </p>
                     </div>
                     <div className="prs-clients">
                         <div>
@@ -146,9 +146,9 @@ const OurClients = () => {
                 </div>
                 <div id="industrial" className="client-info hide">
                     <div className="info-client-footer">
-                        <h6 style={{ color: "#005286" }}>Canal Industrial Consumo</h6>
-                        <p>Ofrecemos soluciones innovadoras y personalizadas para satisfacer las necesidades de empaque de empresas dedicadas a la producción de productos de consumo en los segmentos: alimentos, aseo del hogar, protegiendo y garantizando la inocuidad y calidad de su contenido, posicionando la marca del cliente y facilitando su consumo.
-                                </p>
+                        <h6 style={{ color: "#005286" }}>{t('clientes.industrial')}</h6>
+                        <p>{t('clientes.industrial_desc')}
+                        </p>
                     </div>
                     <div className="prs-clients">
                         <div>
@@ -168,8 +168,8 @@ const OurClients = () => {
                 </div>
                 <div id="agroindustrial" className="client-info hide">
                     <div className="info-client-footer">
-                        <h6 style={{ color: "#005286" }}>Canal Agroindustrial</h6>
-                        <p>Atendemos a empresas agroexportadoras que producen y empacan productos agroindustriales como frutas y verduras, entregando altos estándares de calidad e inocuidad, lo que garantiza al final de la cadena, productos frescos capaces de diferenciarse en el punto de venta.
+                        <h6 style={{ color: "#005286" }}>{t('clientes.agroindustrial')}</h6>
+                        <p>{t('clientes.agroindustrial_desc')}
                         </p>
                     </div>
                     <div className="prs-clients">
@@ -190,9 +190,9 @@ const OurClients = () => {
                 </div>
                 <div id="exportation" className="client-info hide">
                     <div className="info-client-footer">
-                        <h6 style={{ color: "#005286" }}>Canal Exportaciones</h6>
-                        <p>Nuestra  visión de crecimiento nos ha llevado a atender  canales como  el tradicional, autoservicio, industrial, food service y  agroindustrial, en diferentes mercados internacionales ofreciendo  un portafolio de empaques especializado   de acuerdo al canal  y a la geografía especifica.
-                                </p>
+                        <h6 style={{ color: "#005286" }}>{t('clientes.exportaciones')}</h6>
+                        <p>{t('clientes.exportaciones_desc')}
+                        </p>
                     </div>
                     <div className="prs-clients">
                         <div>

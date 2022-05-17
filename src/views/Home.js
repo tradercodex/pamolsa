@@ -11,8 +11,9 @@ import { getBanners } from '../redux/actions/banner'
 import { getNewsHome } from '../redux/actions/new'
 import WOW from 'wowjs'
 import Popup from '../components/Popup';
+import { useTranslation } from 'react-i18next';
 
-const Home = ({history}) => {
+const Home = ({ history }) => {
 
     const dispatch = useDispatch();
     const news = useSelector(state => state.news.newsHome)
@@ -22,7 +23,7 @@ const Home = ({history}) => {
     const [cartItems, setCartItems] = useState(cart.cartItems)
     const [showVideoModal, setShowVideoModal] = useState(false);
     const [showPdfModal, setPdfModal] = useState(false);
-    const [showPdfAgro,setShowPdfAgro] = useState(false)
+    const [showPdfAgro, setShowPdfAgro] = useState(false)
     const [showPdfIndustrial, setShowPdfIndustrial] = useState(false)
 
     const handleShowVideoModal = () => {
@@ -51,25 +52,25 @@ const Home = ({history}) => {
         setShowPdfIndustrial(false)
     }
 
-    useEffect(()=> {
+    useEffect(() => {
 
         const movilOpen = document.getElementById('movil');
         const header = document.getElementById('header')
         const movilClose = document.getElementById('close-movil')
 
-        movilOpen.addEventListener('click',function(){
+        movilOpen.addEventListener('click', function () {
             header.classList.add('movile-active')
         })
 
-        movilClose.addEventListener('click',function(){
+        movilClose.addEventListener('click', function () {
             header.classList.remove('movile-active')
         })
 
         new WOW.WOW().init();
         setCartItems(cart.cartItems)
-        dispatch(getBanners(4,1));
+        dispatch(getBanners(4, 1));
         dispatch(getNewsHome());
-    },[cart.cartItems])
+    }, [cart.cartItems])
 
     let number = Object.keys(cartItems).length
 
@@ -77,7 +78,7 @@ const Home = ({history}) => {
     const togglePopup = () => {
         setIsOpen(!isOpen);
     }
-    
+    const { t } = useTranslation();
     return (
         <div className="Home">
             {/*isOpen && <Popup
@@ -86,22 +87,34 @@ const Home = ({history}) => {
                 </>}
                 handleClose={togglePopup}
             />*/}
-            <Header number={number} />
-            <Slicks banners={banners} />
-            <Known 
+            <Header
+                number={number}
+                t={t} />
+            <Slicks
+                banners={banners}
+                t={t} />
+            <Known
                 history={history}
-                closePdfModal={closePdfModal} 
-                showPdfModal={showPdfModal} 
+                closePdfModal={closePdfModal}
+                showPdfModal={showPdfModal}
                 handleShowPdfModal={handleShowPdfModal}
                 showPdfAgro={showPdfAgro}
                 handleShowAgro={handleShowAgro}
                 handleShowIndustrial={handleShowIndustrial}
                 showPdfIndustrial={showPdfIndustrial}
-             />
-            <KnownVideo closeVideoModal={closeVideoModal} showVideoModal={showVideoModal} handleShowVideoModal={handleShowVideoModal}  />
-            <News news={news} />
-            <Clients />
-            <Footer />
+                t={t}
+            />
+            <KnownVideo
+                closeVideoModal={closeVideoModal}
+                showVideoModal={showVideoModal}
+                handleShowVideoModal={handleShowVideoModal}
+                t={t} />
+            <News
+                news={news}
+                t={t}
+            />
+            <Clients t={t} />
+            <Footer t={t} />
         </div>
     );
 }

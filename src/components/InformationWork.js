@@ -1,15 +1,15 @@
 import React, { Fragment } from 'react'
 import Play from '../images/svg/play'
 
-const InformationWork = () => {
+const InformationWork = ({t}) => {
     return (
         <Fragment>
             <div className="container" style={{ background: "#F9F9F9" }}>
                 <div className="container-grid why" style={{ paddingTop: "40px", alignItems: "center", paddingBottom: "100px" }}>
                     <div className="info-pm">
                         <div>
-                            <h6 style={{ color: "#8DB72E" }}>¿Por qué Pamolsa?</h6>
-                            <p style={{ marginTop: "50px" }}>En Pamolsa cuidamos que nuestros colaboradores sean buenas personas y cuenten con los conocimientos, habilidades y actitudes que se requieren para ser parte de nuestra cultura organizacional y así poder velar por el ambiente de familia que nos caracteriza.</p>
+                            <h6 style={{ color: "#8DB72E" }}>{t('trabaja.por_que')}</h6>
+                            <p style={{ marginTop: "50px" }}>{t('trabaja.por_que_res')}</p>
                         </div>
                     </div>
                     <div className="play-known">
@@ -39,9 +39,9 @@ const InformationWork = () => {
                         <div className="info-container" style={{position: "relative", right: "50px"}}>
                             <div>
                                 <div className="title-green-dark-container">
-                                    <h6>Somos un gran lugar para trabajar</h6>
+                                    <h6>{t('trabaja.somos')}</h6>
                                 </div>
-                                <p style={{ width: "447px" }}>Fuimos reconocidos por Great Place to Work como una de las mejores industrias para trabajar en Perú en el  2020, posicionándonos entre las industrias más destacadas por segundo año consecutivo, gracias al excelente clima laboral y las buenas prácticas de gestión del talento que nos representa; fruto del esfuerzo y el espíritu colaborativo de nuestra organización. ​</p>
+                                <p style={{ width: "447px" }}>{t('trabaja.somos_desc')} ​</p>
                                 <div className="companies-second_us">
                                     <div className="img-company-gp">
                                     </div>

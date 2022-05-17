@@ -11,7 +11,8 @@ const Filter = ({
     lineIndustrial,
     lineAgroIndustrial,
     countProductsByFilter,
-    nameFilter
+    nameFilter,
+    t
 }) => {
 
     const history = useHistory();
@@ -28,17 +29,17 @@ const Filter = ({
                     nameTypeProduct || nameTypeBusiness || nameFilter ?
                         <>
                             <div className="movil desktop">
-                                <ArrowBackProduct /><p onClick={goBackProduct} className="path" style={{ fontFamily: "Amble-bold", color: "#4D4D4C", fontSize: "10px", marginBottom: "20px" }}>{nameTypeBusiness ? "Tipo de negocio" : <>{nameFilter ? "Busqueda de producto" : 'Tipo de producto'}</>} / <span style={{ color: "#009FE3" }}>
+                                <ArrowBackProduct /><p onClick={goBackProduct} className="path" style={{ fontFamily: "Amble-bold", color: "#4D4D4C", fontSize: "10px", marginBottom: "20px" }}>{nameTypeBusiness ? t('productos.tipos_negocios') : <>{nameFilter ? t('productos.busqueda') : t('productos.tipos_productos')}</>} / <span style={{ color: "#009FE3" }}>
                                     {nameFilter || nameTypeProduct || nameTypeBusiness}
                                 </span></p>
                             </div>
 
-                        </> : 
-                         <div className="movil desktop">
-                            <ArrowBackProduct /><p onClick={goBackProduct} className="path" style={{ fontFamily: "Amble-bold", color: "#4D4D4C", fontSize: "10px", marginBottom: "20px" }}>Linea de producto / <span style={{ color: "#009FE3" }}>
-                            {`${lineBioform || lineFoodService || lineIndustrial || lineAgroIndustrial || nameTypeProduct}`}
-                        </span>
-                        </p>
+                        </> :
+                        <div className="movil desktop">
+                            <ArrowBackProduct /><p onClick={goBackProduct} className="path" style={{ fontFamily: "Amble-bold", color: "#4D4D4C", fontSize: "10px", marginBottom: "20px" }}>{t('productos.lineas_productos')} / <span style={{ color: "#009FE3" }}>
+                                {`${lineBioform || lineFoodService || lineIndustrial || lineAgroIndustrial || nameTypeProduct}`}
+                            </span>
+                            </p>
                         </div>
                 }
                 <div className="Name-category movil">
@@ -54,9 +55,9 @@ const Filter = ({
                     </div>
                     <div className="Count-products">
                         {
-                            countProductsByFilter ? <p>{'' || countProductsByFilter + ` productos`}</p>
+                            countProductsByFilter ? <p>{'' || countProductsByFilter + ' ' + t('productos.productos')}</p>
                                 :
-                                <p>{countProduct || 0 + ` productos`}</p>
+                                <p>{countProduct || 0 + ' ' + t('productos.productos')}</p>
                         }
                     </div>
                 </div>

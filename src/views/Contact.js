@@ -1,13 +1,14 @@
-import React, { Fragment, useState,useEffect } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Slicks from '../components/Slicks';
 import ContactForm from '../components/ContactForm'
 import Footer from '../components/Footer'
 import { useSelector } from 'react-redux'
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
 
-    
+
 
     const cart = useSelector(state => state.cart)
 
@@ -18,12 +19,12 @@ const Contact = () => {
         const movilOpen = document.getElementById('movil');
         const header = document.getElementById('header')
         const movilClose = document.getElementById('close-movil')
-    
-        movilOpen.addEventListener('click',function(){
+
+        movilOpen.addEventListener('click', function () {
             header.classList.add('movile-active')
         })
-    
-        movilClose.addEventListener('click',function(){
+
+        movilClose.addEventListener('click', function () {
             header.classList.remove('movile-active')
         })
 
@@ -31,15 +32,16 @@ const Contact = () => {
     }, [cart.cartItems])
 
     let number = Object.keys(cartItems).length
+    const { t } = useTranslation();
 
-    return ( 
+    return (
         <Fragment>
-            <Header number={number} />
-            <Slicks />
-            <ContactForm />
-            <Footer />
+            <Header number={number} t={t} />
+            <Slicks t={t} />
+            <ContactForm t={t} />
+            <Footer t={t} />
         </Fragment>
-     );
+    );
 }
- 
+
 export default Contact;

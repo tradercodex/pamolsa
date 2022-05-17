@@ -2,15 +2,16 @@ import React, { Fragment, useEffect, useState } from 'react';
 import Header from '../components/Header'
 import MenuCategory from '../components/MenuCategory'
 import DetailProduct from '../components/DetailProduct'
-import { getTypesBusiness, getTypesProducts,getProduct } from '../redux/actions/product'
+import { getTypesBusiness, getTypesProducts, getProduct } from '../redux/actions/product'
 import { useSelector, useDispatch } from 'react-redux'
 import '../styles/quotes.css'
 import Footer from '../components/Footer';
 import Axios from 'axios';
 import ProductsPopulate from '../components/ProductsPopulate';
 import axios from 'axios'
+import { useTranslation } from 'react-i18next';
 
-const DetailProducts = ({match}) => {
+const DetailProducts = ({ match }) => {
 
     const id = match.params.id
 
@@ -21,7 +22,7 @@ const DetailProducts = ({match}) => {
     const cart = useSelector(state => state.cart)
 
     const [cartItems, setCartItems] = useState(cart.cartItems)
-    const [ relacionates, setRelacionates ] = useState([])
+    const [relacionates, setRelacionates] = useState([])
     const [productsItems, setProductsItems] = useState([]);
     const [suggestions, setSuggestions] = useState([])
     const [search, setSearch] = useState('')
@@ -31,33 +32,33 @@ const DetailProducts = ({match}) => {
         setRelacionates(response.data.data)
     }
 
-    useEffect(()=> {
+    useEffect(() => {
 
         const movilOpen = document.getElementById('movil');
         const header = document.getElementById('header')
         const movilClose = document.getElementById('close-movil')
-    
-        movilOpen.addEventListener('click',function(){
+
+        movilOpen.addEventListener('click', function () {
             header.classList.add('movile-active')
         })
-    
-        movilClose.addEventListener('click',function(){
+
+        movilClose.addEventListener('click', function () {
             header.classList.remove('movile-active')
         })
 
         const loadProductsItems = async () => {
             const res = await axios.get('https://ws.pamolsa.com.pe/api/product/list');
             setProductsItems(res.data.data)
-       }
+        }
 
-       loadProductsItems();
+        loadProductsItems();
 
         dispatch(getTypesBusiness());
         getRelacionate();
-        dispatch(getTypesProducts(9,1));
+        dispatch(getTypesProducts(9, 1));
         dispatch(getProduct(id))
         setCartItems(cart.cartItems)
-    },[id,cart.cartItems])
+    }, [id, cart.cartItems])
 
     let number = Object.keys(cartItems).length
 
@@ -94,16 +95,30 @@ const DetailProducts = ({match}) => {
             </ul>
         )
     }
+    const { t } = useTranslation();
 
-    return ( 
+    return (
         <Fragment>
-            <Header number={number} />
-            <MenuCategory searchPress={searchPress} search={search} onTextChanged={onTextChanged} renderSuggestions={renderSuggestions} typesBusiness={business} typesProducts={typesProducts} />
-            <DetailProduct product={product} />
-            <ProductsPopulate relacionates={relacionates} />
-            <Footer />
+            <Header
+                number={number}
+                t={t} />
+            <MenuCategory
+                searchPress={searchPress}
+                search={search}
+                onTextChanged={onTextChanged}
+                renderSuggestions={renderSuggestions}
+                typesBusiness={business}
+                typesProducts={typesProducts}
+                t={t} />
+            <DetailProduct
+                product={product}
+                t={t} />
+            <ProductsPopulate
+                relacionates={relacionates}
+                t={t} />
+            <Footer t={t} />
         </Fragment>
-     );
+    );
 }
- 
+
 export default DetailProducts;

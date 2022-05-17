@@ -925,7 +925,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     .Slicks-pm .info-slick.Us {
         top: 850px !important;
     }
-    .img-footer_new_us svg ,.Container-sb_pm .header-title p {
+    .img-footer_new_us svg, .img-footer_new_us img, .Container-sb_pm .header-title p {
         max-width: 90% !important;
         margin: 0 auto !important;
     }

@@ -2,7 +2,7 @@ import Axios from 'axios';
 import React, { Fragment, useEffect, useState } from 'react';
 import './../styles/claims.css'
 
-const ClaimsForm = () => {
+const ClaimsForm = ({ t }) => {
 
     const [messageSuccess, setMessageSuccess] = useState('')
     const [messageError, setMessageError] = useState('')
@@ -131,10 +131,10 @@ const ClaimsForm = () => {
             job: send.job,
             detalle: send.detalle
         }
-        
+
         console.log(dataSend)
-        if (send.nombre === ""  || send.email === "" ||
-        send.tiporeclamo === "" || send.nropedido === "" || send.codigo === "" || send.job === "" || send.detalle === "") {
+        if (send.nombre === "" || send.email === "" ||
+            send.tiporeclamo === "" || send.nropedido === "" || send.codigo === "" || send.job === "" || send.detalle === "") {
             setMessageError("Te faltan campos aún por llenar")
             setTimeout(() => {
                 setMessageError("");
@@ -144,7 +144,7 @@ const ClaimsForm = () => {
 
         try {
             const { data } = await Axios.post("https://ws.pamolsa.com.pe/api/book/send", dataSend, config);
-        }  catch(e) {
+        } catch (e) {
             console.log(e)
         }
     }
@@ -171,7 +171,7 @@ const ClaimsForm = () => {
                                         <input type="text" name="documento" onChange={handleChange} required />
                                     </div>
                                     <div className="inputBox">
-                                        <label>Teléfono:</label>
+                                        <label>{t('form.telefono')}:</label>
                                         <input type="text" name="telefono" onChange={handleChange} required />
                                     </div>
                                     <div className="inputBox">
@@ -189,7 +189,7 @@ const ClaimsForm = () => {
                                 </form>
                                 {messageError && <div className="messageError">{messageError}</div>}
                                 <div className="buttonSection">
-                                    <button onClick={() => validateFirst()} className="nextButton">Siguiente</button>
+                                    <button onClick={() => validateFirst()} className="nextButton">{t('productos.siguiente')}</button>
                                 </div>
                             </div>
                             <div className="box">
@@ -204,7 +204,7 @@ const ClaimsForm = () => {
                                         <label>Tipo de bien:</label>
                                         <select name="tipobien" onChange={handleChange} required>
                                             <option value="">-</option>
-                                            <option value="Producto">Producto</option>
+                                            <option value="Producto">{t('productos.producto')}</option>
                                             <option value="Servicio">Servicio</option>
                                         </select>
                                     </div>
@@ -216,7 +216,7 @@ const ClaimsForm = () => {
                                 {messageError && <div className="messageError">{messageError}</div>}
                                 <div className="buttonSection">
                                     <button className="previousButton">Anterior</button>
-                                    <button onClick={validateSecond} className="nextButton">Siguiente</button>
+                                    <button onClick={validateSecond} className="nextButton">{t('productos.siguiente')}</button>
                                 </div>
                             </div>
                             <div className="box">
@@ -251,7 +251,7 @@ const ClaimsForm = () => {
                                 {messageError && <div className="messageError">{messageError}</div>}
                                 <div className="buttonSection">
                                     <button className="previousButton">Anterior</button>
-                                    <button onClick={() => sendData()} className="nextButton">Enviar</button>
+                                    <button onClick={() => sendData()} className="nextButton">{t('form.enviar')}</button>
                                 </div>
                             </div>
                         </Fragment> :

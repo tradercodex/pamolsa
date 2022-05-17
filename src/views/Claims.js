@@ -4,6 +4,7 @@ import ClaimsForm from '../components/ClaimsForm';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import './../styles/claims.css'
+import { useTranslation } from 'react-i18next';
 
 const Claims = () => {
 
@@ -29,10 +30,11 @@ const Claims = () => {
     }, [cart.cartItems])
 
     let number = Object.keys(cartItems).length
+    const { t } = useTranslation();
 
     return (
         <Fragment>
-            <Header number={number} />
+            <Header number={number} t={t} />
 
             <div className="Claims">
                 <div className="content-claims">
@@ -57,15 +59,15 @@ const Claims = () => {
                         </div>
                         <div>
                             <img src={require('../images/img/direccion.png')} alt="" />
-                            <p>Dirección</p>
+                            <p>{t('contacto.direccion')}</p>
                             <span>Av. Elmer Faucett 3486 Urb. Bocanegra, Callao</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <ClaimsForm />
-            <Footer />
+            <ClaimsForm t={t} />
+            <Footer t={t} />
         </Fragment>
     );
 }

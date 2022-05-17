@@ -7,6 +7,7 @@ import Footer from '../components/Footer'
 import axios from 'axios'
 import { getTypesProducts, getTypesBusiness } from '../redux/actions/product'
 import { useDispatch, useSelector } from 'react-redux'
+import { useTranslation } from 'react-i18next';
 
 const Products = () => {
 
@@ -89,15 +90,31 @@ const Products = () => {
                </ul>
           )
      }
+     const { t } = useTranslation();
 
      return (
           <Fragment>
                <div className="page-new">
-                    <Header number={number} />
-                    <MenuCategory search={search} onTextChanged={onTextChanged} renderSuggestions={renderSuggestions} display={display} options={options} setSearch={setSearch} searchPress={searchPress} typesBusiness={typesBusiness} typesProducts={typesProducts} />
-                    <QuoteProducts />
-                    <ProductsPopulate productsPopulate={productsPopulate} />
-                    <Footer />
+                    <Header
+                         number={number}
+                         t={t} />
+                    <MenuCategory
+                         search={search}
+                         onTextChanged={onTextChanged}
+                         renderSuggestions={renderSuggestions}
+                         display={display}
+                         options={options}
+                         setSearch={setSearch}
+                         searchPress={searchPress}
+                         typesBusiness={typesBusiness}
+                         typesProducts={typesProducts}
+                         t={t} />
+                    <QuoteProducts
+                         t={t} />
+                    <ProductsPopulate productsPopulate={productsPopulate}
+                         t={t} />
+                    <Footer
+                         t={t} />
                </div>
           </Fragment>
      );

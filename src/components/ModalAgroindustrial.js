@@ -13,7 +13,7 @@ const ModalAgroindustrial = ({ closeModal, title }) => {
                         <h6>{title}</h6>
                         <div className="box-informs-pdf" style={{width: "100%"}}>
                             <a href={agroindustrial} target="_blank"><InformDownload /></a>
-                            <p>Catálogo Agroindustrial</p>
+                            <p>{t('home.catalogo_agro')}</p>
                         </div>
                     </div>
                 </div>

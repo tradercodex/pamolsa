@@ -9,10 +9,11 @@ import Phone from '../images/svg/phone';
 import BarMovile from '../images/svg/barmovile';
 import CloseModal from '../images/svg/closemodal';
 import User from '@material-ui/icons/SupervisedUserCircle'
+import i18n from '../../src/i18n';
 
 const token = localStorage.getItem('token')
 
-const Header = ({ match, number }) => {
+const Header = ({ match, number, t }) => {
     const [dropdown, setDropdown] = useState(false);
     let ref = useRef();
     let pathname = match.path
@@ -54,7 +55,9 @@ const Header = ({ match, number }) => {
     const onMouseLeave = () => {
         window.innerWidth > 960 && setDropdown(false);
     };
-
+    const changeLanguage = (lng) => {
+        i18n.changeLanguage(lng);
+    }
     return (
         <Fragment>
             <div className="movil-header">
@@ -63,7 +66,7 @@ const Header = ({ match, number }) => {
                         <div className="Logo-pm">
                             <Link to="/"><Logo /></Link>
                             <div className="Ecommerce-btn">
-                                <a href="https://www.pamolsaexpress.com" target="_blank"><Cart />Ir a ecommerce</a>
+                                <a href="https://www.pamolsaexpress.com" target="_blank"><Cart />{t('header.ecommerce')}</a>
                             </div>
                         </div>
                         <div className="options-pm-rs">
@@ -84,10 +87,10 @@ const Header = ({ match, number }) => {
                                         <li><Link to="/administrador/banners">Admin</Link></li>
                                         <li><Link to="/" className={pathname === "/" || pathname === "/home/distribuidores" ? "active-mv" : ""}>Home</Link></li>
                                         <li>
-                                            <Link to="/nosotros" className={pathname === "/nosotros" ? "active-mv" : ""}>Nosotros</Link>
+                                            <Link to="/nosotros" className={pathname === "/nosotros" ? "active-mv" : ""}>{t('header.nosotros')}</Link>
                                         </li>
                                         <li>
-                                            <Link to="/proveedores" className={pathname === "/proveedores" ? "active-menu-item-mv" : "menu-item-mv"}>Proveedores</Link>
+                                            <Link to="/proveedores" className={pathname === "/proveedores" ? "active-menu-item-mv" : "menu-item-mv"}>{t('header.proveedores')}</Link>
                                         </li>
                                         <li><Link to="/productos"
                                             className={
@@ -98,25 +101,30 @@ const Header = ({ match, number }) => {
                                                     url === `/productos/${rut}/${id}` ||
                                                     url === `/productos/negocio/${rut}/${id}` ||
                                                     url === `/producto/detalle/${id}`
-                                                    ? "active-mv" : ""}>Productos</Link></li>
-                                        <li><Link to="/sostenibilidad" className={pathname === "/sostenibilidad" || pathname === "/sostenibilidad/comunidad/:name" ? "active-mv" : ""}>Sostenibilidad</Link></li>
-                                        <li><Link to="/trabaja-con-nosotros" className={pathname === "/trabaja-con-nosotros" ? "active-mv" : ""}>Trabaja con nosotros</Link></li>
-                                        <li><Link to="/clientes" className={pathname === "/clientes" ? "active-mv" : ""}>Clientes</Link></li>
+                                                    ? "active-mv" : ""}>{t('header.productos')}</Link></li>
+                                        <li><Link to="/sostenibilidad" className={pathname === "/sostenibilidad" || pathname === "/sostenibilidad/comunidad/:name" ? "active-mv" : ""}>{t('header.sostenibilidad')}</Link></li>
+                                        <li><Link to="/trabaja-con-nosotros" className={pathname === "/trabaja-con-nosotros" ? "active-mv" : ""}>{t('header.trabaja')}</Link></li>
+                                        <li><Link to="/clientes" className={pathname === "/clientes" ? "active-mv" : ""}>{t('header.clientes')}</Link></li>
                                         <li><Link to="/noticias" className={
                                             pathname === "/noticias" ||
                                                 url === `/noticias/${rut}` || pathname === "/noticias/galeria-periodistica"
-                                                ? "active-mv" : ""}>Noticias</Link></li>
-                                        <li><Link to="/contacto" className={pathname === "/contacto" ? "active-mv" : ""}>Contacto</Link></li>
+                                                ? "active-mv" : ""}>{t('header.noticias')}</Link></li>
+                                        <li><Link to="/contacto" className={pathname === "/contacto" ? "active-mv" : ""}>{t('header.contacto')}</Link></li>
+                                        <li>
+                                            <div className="Lng-es">
+                                                <button onClick={() => changeLanguage('es')}>ESP</button> <button onClick={() => changeLanguage('en')}>ENG</button>
+                                            </div>
+                                        </li>
                                     </ul>
                                 </nav> :
                                 <nav className="Nav-pm">
                                     <ul>
                                         <li><Link to="/" className={pathname === "/" || pathname === "/home/distribuidores" ? "active-mv" : ""}>Home</Link></li>
                                         <li>
-                                            <Link to="/nosotros" className={pathname === "/nosotros" ? "active-mv" : ""}>Nosotros</Link>
+                                            <Link to="/nosotros" className={pathname === "/nosotros" ? "active-mv" : ""}>{t('header.nosotros')}</Link>
                                         </li>
                                         <li>
-                                            <Link to="/proveedores" className={pathname === "/proveedores" ? "active-menu-item-mv" : "menu-item-mv"}>Proveedores</Link>
+                                            <Link to="/proveedores" className={pathname === "/proveedores" ? "active-menu-item-mv" : "menu-item-mv"}>{t('header.proveedores')}</Link>
                                         </li>
                                         <li><Link to="/productos"
                                             className={
@@ -127,15 +135,20 @@ const Header = ({ match, number }) => {
                                                     url === `/productos/${rut}/${id}` ||
                                                     url === `/productos/negocio/${rut}/${id}` ||
                                                     url === `/producto/detalle/${id}`
-                                                    ? "active-mv" : ""}>Productos</Link></li>
-                                        <li><Link to="/sostenibilidad" className={pathname === "/sostenibilidad" || pathname === "/sostenibilidad/comunidad/:name" ? "active-mv" : ""}>Sostenibilidad</Link></li>
-                                        <li><Link to="/trabaja-con-nosotros" className={pathname === "/trabaja-con-nosotros" ? "active-mv" : ""}>Trabaja con nosotros</Link></li>
-                                        <li><Link to="/clientes" className={pathname === "/clientes" ? "active-mv" : ""}>Clientes</Link></li>
+                                                    ? "active-mv" : ""}>{t('header.productos')}</Link></li>
+                                        <li><Link to="/sostenibilidad" className={pathname === "/sostenibilidad" || pathname === "/sostenibilidad/comunidad/:name" ? "active-mv" : ""}>{t('header.sostenibilidad')}</Link></li>
+                                        <li><Link to="/trabaja-con-nosotros" className={pathname === "/trabaja-con-nosotros" ? "active-mv" : ""}>{t('header.trabaja')}</Link></li>
+                                        <li><Link to="/clientes" className={pathname === "/clientes" ? "active-mv" : ""}>{t('header.clientes')}</Link></li>
                                         <li><Link to="/noticias" className={
                                             pathname === "/noticias" ||
                                                 url === `/noticias/${rut}` || pathname === "/noticias/galeria-periodistica"
-                                                ? "active-mv" : ""}>Noticias</Link></li>
-                                        <li><Link to="/contacto" className={pathname === "/contacto" ? "active-mv" : ""}>Contacto</Link></li>
+                                                ? "active-mv" : ""}>{t('header.noticias')}</Link></li>
+                                        <li><Link to="/contacto" className={pathname === "/contacto" ? "active-mv" : ""}>{t('header.contacto')}</Link></li>
+                                        <li>
+                                            <div className="Lng-es">
+                                                <button onClick={() => changeLanguage('es')}>ESP</button> <button onClick={() => changeLanguage('en')}>ENG</button>
+                                            </div>
+                                        </li>
                                     </ul>
                                 </nav>
                         }
@@ -155,7 +168,7 @@ const Header = ({ match, number }) => {
                                 <div className="icon">
                                     <Phone />
                                 </div>
-                                <span>Llámanos: Central: (511) 710 3020 | Central de ventas: (01) 641 9595 WhatsApp: 934 440 291 | Horario: Lunes a Viernes de 8:30 AM a 5:30 PM</span>
+                                <span>{t('llamanos')}: Central: (511) 710 3020 | {t('footer.central')}: (01) 641 9595 WhatsApp: 934 440 291 | {t('footer.horario')}</span>
                             </div>
                         </div>
                     </div>
@@ -179,7 +192,7 @@ const Header = ({ match, number }) => {
                                             aria-expanded={dropdown ? "true" : "false"}
                                             onClick={() => setDropdown((prev) => !prev)}
                                         >
-                                            <Link to="/nosotros" className={pathname === "/nosotros" ? "active" : ""}>Nosotros</Link>
+                                            <Link to="/nosotros" className={pathname === "/nosotros" ? "active" : ""}>{t('header.nosotros')}</Link>
                                         </button>
                                         <ul className={`dropdown dropdown-submenu ${dropdown ? "show" : ""}`}>
                                             <li
@@ -188,7 +201,7 @@ const Header = ({ match, number }) => {
                                                 onMouseEnter={onMouseEnter}
                                                 onMouseLeave={onMouseLeave}
                                             >
-                                                <Link to="/proveedores" className={pathname === "/proveedores" ? "active" : ""}>Proveedores</Link>
+                                                <Link to="/proveedores" className={pathname === "/proveedores" ? "active" : ""}>{t('header.proveedores')}</Link>
                                             </li>
                                         </ul>
                                     </li>
@@ -201,15 +214,15 @@ const Header = ({ match, number }) => {
                                                 url === `/productos/${rut}/${id}` ||
                                                 url === `/productos/negocio/${rut}/${id}` ||
                                                 url === `/producto/detalle/${id}`
-                                                ? "active" : ""}>Productos</Link></li>
-                                    <li><Link to="/sostenibilidad" className={pathname === "/sostenibilidad" || pathname === "/sostenibilidad/comunidad/:name" ? "active" : ""}>Sostenibilidad</Link></li>
-                                    <li><Link to="/trabaja-con-nosotros" className={pathname === "/trabaja-con-nosotros" ? "active" : ""}>Trabaja con nosotros</Link></li>
-                                    <li><Link to="/clientes" className={pathname === "/clientes" ? "active" : ""}>Clientes</Link></li>
+                                                ? "active" : ""}>{t('header.productos')}</Link></li>
+                                    <li><Link to="/sostenibilidad" className={pathname === "/sostenibilidad" || pathname === "/sostenibilidad/comunidad/:name" ? "active" : ""}>{t('header.sostenibilidad')}</Link></li>
+                                    <li><Link to="/trabaja-con-nosotros" className={pathname === "/trabaja-con-nosotros" ? "active" : ""}>{t('header.trabaja')}</Link></li>
+                                    <li><Link to="/clientes" className={pathname === "/clientes" ? "active" : ""}>{t('header.clientes')}</Link></li>
                                     <li><Link to="/noticias" className={
                                         pathname === "/noticias" ||
                                             url === `/noticias/${rut}` || pathname === "/noticias/galeria-periodistica"
-                                            ? "active" : ""}>Noticias</Link></li>
-                                    <li><Link to="/contacto" className={pathname === "/contacto" ? "active" : ""}>Contacto</Link></li>
+                                            ? "active" : ""}>{t('header.noticias')}</Link></li>
+                                    <li><Link to="/contacto" className={pathname === "/contacto" ? "active" : ""}>{t('header.contacto')}</Link></li>
                                 </ul>
                             </nav>
                             <div className="Options-pm_qe">
@@ -217,7 +230,16 @@ const Header = ({ match, number }) => {
                                     <Link to="/cotizador"><Quote number={number} /></Link>
                                 </div>
                                 <div className="Ecommerce-btn">
-                                    <a href="https://www.pamolsaexpress.com" target="_blank"><Cart />Ir a ecommerce</a>
+                                    <a href="https://www.pamolsaexpress.com" target="_blank"><Cart />{t('header.ecommerce')}</a>
+                                </div>
+                                <div className="Lng-es">
+                                    <button onClick={() => changeLanguage('es')}>ESP</button>
+                                </div>
+                                <div className="Lng">
+                                    <p> | </p>
+                                </div>
+                                <div className="Lng-en">
+                                    <button onClick={() => changeLanguage('en')}>ENG</button>
                                 </div>
                             </div>
                         </div>

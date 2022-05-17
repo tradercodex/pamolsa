@@ -3,7 +3,7 @@ import Delete from '@material-ui/icons/Delete'
 import { Edit } from '@material-ui/icons';
 import { Link } from 'react-router-dom'
 
-const NewsPaper = ({ id ,name, created, img, deletingPaper }) => {
+const NewsPaper = ({ id, name, created, img, deletingPaper }) => {
     return (
         <Fragment>
             <div className="gallery-items">
@@ -12,7 +12,7 @@ const NewsPaper = ({ id ,name, created, img, deletingPaper }) => {
                     <p>{name}</p>
                     <img src={`https://` + img} width="300px" height="300px" alt={name} />
                     <Link to={`/administrador/noticias/galeria/editar/${id}`} className="edit"><Edit /></Link>
-                    <button onClick={()=> deletingPaper(id)}  className="delete"><Delete /></button>
+                    <button onClick={() => deletingPaper(id)} className="delete"><Delete /></button>
                 </div>
             </div>
         </Fragment>

@@ -4,10 +4,10 @@ import React, { Fragment, useEffect, useState } from 'react';
 import ReactSelect from 'react-select'
 import GalleryNews from '../components/GalleryNews'
 
-const NewsSearch = ({ news }) => {
+const NewsSearch = ({ news, t }) => {
 
-  const [ newDate , setNewDate ] = useState(); 
-  const [ selectDate, setSelectDate ] = useState({
+  const [newDate, setNewDate] = useState();
+  const [selectDate, setSelectDate] = useState({
     month: '',
     year: '',
     order: ''
@@ -19,18 +19,18 @@ const NewsSearch = ({ news }) => {
   ]
 
   const months = [
-    { value: '1', label: 'Enero' },
-    { value: '2', label: 'Febrero' },
-    { value: '3', label: 'Marzo' },
-    { value: '4', label: 'Abril' },
-    { value: '5', label: 'Mayo' },
-    { value: '6', label: 'Junio' },
-    { value: '7', label: 'Julio' },
-    { value: '8', label: 'Agosto' },
-    { value: '9', label: 'Septiembre' },
-    { value: '10', label: 'Octubre' },
-    { value: '11', label: 'Noviembre' },
-    { value: '12', label: 'Diciembre' }
+    { value: '1', label: t('noticias.enero') },
+    { value: '2', label: t('noticias.febrero') },
+    { value: '3', label: t('noticias.marzo') },
+    { value: '4', label: t('noticias.abril') },
+    { value: '5', label: t('noticias.mayo') },
+    { value: '6', label: t('noticias.junio') },
+    { value: '7', label: t('noticias.julio') },
+    { value: '8', label: t('noticias.agosto') },
+    { value: '9', label: t('noticias.septiembre') },
+    { value: '10', label: t('noticias.octubre') },
+    { value: '11', label: t('noticias.noviembre') },
+    { value: '12', label: t('noticias.diciembre') }
   ]
 
   const years = [
@@ -111,15 +111,15 @@ const NewsSearch = ({ news }) => {
     })
   }
 
-  useEffect(()=> {
+  useEffect(() => {
     const getNewDate = async () => {
       const { month, year, order } = selectDate
       const res = await Axios.get(`https://ws.pamolsa.com.pe/api/news/listByDate?page=1&year=${year}&month=${month}&order=${order}`);
       setNewDate(res.data.data)
     }
     getNewDate();
-    
-  },[selectDate])
+
+  }, [selectDate])
 
 
 
@@ -127,13 +127,12 @@ const NewsSearch = ({ news }) => {
   return (
     <Fragment>
       <div className="news-search">
-        <h2>Noticias Pamolsa</h2>
-        <p className="text">Son canales de comercialización de empaques desechables. Atienden en sus locales a diferentes tipos de usuarios, pueden vender al por menor o ser grandes mayoristas.</p>
+        <h2>{t('noticias.pamolsa')}</h2>
 
         <div className="search-date">
           <div className="input-select s1">
             <ReactSelect
-              placeholder="Mes"
+              placeholder={t('noticias.mes')}
               styles={selectStyles}
               options={months}
               onChange={handleChangeMonth}
@@ -141,7 +140,7 @@ const NewsSearch = ({ news }) => {
           </div>
           <div className="input-select s2">
             <ReactSelect
-              placeholder="Año"
+              placeholder={t('noticias.anio')}
               styles={selectStyles}
               options={years}
               onChange={handleChangeYear}
@@ -149,7 +148,7 @@ const NewsSearch = ({ news }) => {
           </div>
           <div className="input-select s3">
             <ReactSelect
-              placeholder="Ordenar por"
+              placeholder={t('noticias.ordenar')}
               styles={selectStyles}
               options={order}
               onChange={handleChangeOrder}
@@ -157,7 +156,7 @@ const NewsSearch = ({ news }) => {
           </div>
         </div>
 
-        <GalleryNews news={news} newDate={newDate} />
+        <GalleryNews news={news} newDate={newDate} t={t} />
       </div>
     </Fragment>
   );
