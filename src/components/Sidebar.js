@@ -39,7 +39,7 @@ const Sidebar = ({ t }) => {
                         <li>
                             <Link to="/administrador/noticias">
                                 <i className="far fa-newspaper"></i>
-                                <span>{t('noticias.noticias')}</span>
+                                <span>Noticias</span>
                             </Link>
                         </li>
                         <li>
