@@ -210,11 +210,13 @@ const ProductsBySearch = ({ match }) => {
                         nameFilter={nameFilter}
                         productsByFilter={productsFilter || currentPostsByFilter}
                         countProductsByFilter={countProductsByFilter}
+                        t={t}
                     />
                     <Pagination
                         postsPerPage={postsPerPage}
                         totalPostsFilter={productsByFilter.length}
                         paginate={paginate}
+                        t={t}
                     />
                 </div>
             </div>
