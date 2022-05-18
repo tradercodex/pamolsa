@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import Sostenibility from '../images/svg/sostenibilidad'
+import SostenibilityEn from '../images/svg/sostenibilidad_en'
 import Vasito from '../images/svg/vasito'
 import HandsSbl from '../images/svg/hand'
 import Hoja from '../images/svg/hoja'
@@ -44,8 +45,7 @@ const InformationSostenibility = ({ sostenibilidad2019, sostenibilidad2020, sost
                     <div className="models-sb">
                         <div className="model_1">
                             <div style={{ display: "flex", justifyContent: "center" }}>
-                                {/*{i18n.language === 'es' ? <Sostenibility /> : <img src={require('../images/img/sostenibilidad.png')} alt="sostenibilidad" />}*/}
-                                {i18n.language === 'es' ? <Sostenibility /> : <Sostenibility />}
+                                {i18n.language === 'es' ? <Sostenibility /> : <SostenibilityEn />}
                             </div>
                         </div>
                     </div>

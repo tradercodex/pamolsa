@@ -39,8 +39,7 @@ const AboutUs = ({ t }) => {
             <div className="Map_pm container">
                 <div className="container-grid_img">
                     <div className="img-map_pm">
-                        {/*{i18n.language === 'es' ? <img src={require('../images/img/mapcarbajal.webp')} /> : <img src={require('../images/img/mapcarbajal_en.png')} />}*/}
-                        {i18n.language === 'es' ? <img src={require('../images/img/mapcarbajal.webp')} /> : <img src={require('../images/img/mapcarbajal.webp')} />}
+                        {i18n.language === 'es' ? <img src={require('../images/img/mapcarbajal.webp')} /> : <img src={require('../images/img/mapcarbajal_en.png')} />}
                     </div>
                     <div className="info-map_pm">
                         <div className="info-map-flex">

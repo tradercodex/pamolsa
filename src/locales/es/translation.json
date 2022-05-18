@@ -144,6 +144,8 @@
         "cotizador": "Cotizador",
         "productos": "productos",
         "producto": "Producto",
+        "producto_mayuscula": "PRODUCTO",
+        "max": "máximo 1000",
         "cantidad": "Cantidad",
         "seguir_agregando": "Seguir agregando",
         "siguiente": "Siguiente",

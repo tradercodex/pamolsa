@@ -11,6 +11,7 @@ import ChartSbl from '../images/svg/chartsbl';
 import BarBox from '../images/svg/barbox';
 import ElipseBlue from '../images/svg/elipseblue';
 import StbNews from '../images/svg/sostenibilitynews';
+import StbNewsEn from '../images/svg/sostenibilitynews_en';
 import ReactHtmlParser from 'react-html-parser';
 import ReactPlayer from 'react-player/lazy';
 import i18n from "i18next";
@@ -292,8 +293,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                 <div className="container-footer_news_us">
                                     <div className="img-footer_news_us">
                                         <div className="img-footer_new_us">
-                                            {/*i18n.language === 'es' ? <StbNews /> : <img src={require('../images/img/sostenibilitynews_en.png')} alt="imagen" />*/}
-                                            {i18n.language === 'es' ? <StbNews /> : <StbNews />}
+                                            {i18n.language === 'es' ? <StbNews /> : <StbNewsEn />}
                                         </div>
                                     </div>
                                     <div className="info-footer_news_us">
