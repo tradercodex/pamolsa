@@ -1,6 +1,6 @@
 import * as React from "react"
 
-const SvgComponent = (props) => (
+const ChartSbl = (props) => (
 	<svg
 		width="440" height="237"
 		id="Capa_1"
@@ -49,4 +49,4 @@ const SvgComponent = (props) => (
 	</svg>
 )
 
-export default SvgComponent
+export default ChartSbl
