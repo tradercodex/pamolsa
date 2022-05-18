@@ -144,6 +144,8 @@
         "cotizador": "Quoter",
         "productos": "products",
         "producto": "Product",
+        "producto_mayuscula": "PRODUCT",
+        "max": "max. 1000 units",
         "cantidad": "Quantity",
         "seguir_agregando": "Continue adding",
         "siguiente": "Next",

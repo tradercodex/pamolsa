@@ -46,7 +46,7 @@ const DetailProduct = ({ product, t }) => {
             <div className="Detail-Product_pm movil">
                 <div className="container-detail">
                     <div className="guide-detail_product">
-                        <p>{`PRODUCTO / ` + (i18n.language === 'es' ? product.name : product.tradename)}</p><button onClick={back}><span>{t('volver')}</span></button>
+                        <p>{t('productos.producto_mayuscula') + ` / ` + (i18n.language === 'es' ? product.name : product.tradename)}</p><button onClick={back}><span>{t('volver')}</span></button>
                     </div>
                     <div className="container-detail_product">
                         <div className="img-detail_product">
@@ -76,34 +76,34 @@ const DetailProduct = ({ product, t }) => {
                                         </li>
                                         <li className="gray">
                                             <div>{t('productos.largo')} ({product.long_unit == null ? "cm" : product.long_unit})</div>
-                                            <p>{product.long != null && product.long != "0.00" ? product.long : null}</p>
+                                            <p>{product.long !== null && product.long !== "0.00" ? product.long : null}</p>
                                         </li>
                                         <li>
                                             <div>{t('productos.ancho')} ({product.width_unit == null ? "cm" : product.width_unit})</div>
-                                            <p>{product.width != null && product.width != "0.00" ? product.width : null}</p>
+                                            <p>{product.width !== null && product.width !== "0.00" ? product.width : null}</p>
                                         </li>
                                         <li className="gray">
                                             <div>{t('productos.altura')} ({product.height_unit == null ? "cm" : product.height_unit})</div>
-                                            <p>{product.height != null && product.height != "0.00" ? product.height : null}</p>
+                                            <p>{product.height !== null && product.height !== "0.00" ? product.height : null}</p>
                                         </li>
                                         <li>
                                             <div>{t('productos.diametro')} ({product.diameter_unit == null ? "mm" : product.diameter_unit})</div>
-                                            <p>{product.diameter != null && product.diameter != "0.00" ? product.diameter : null}</p>
+                                            <p>{product.diameter !== null && product.diameter !== "0.00" ? product.diameter : null}</p>
                                         </li>
                                         <li className="gray">
                                             <div>{t('productos.peso')} ({product.weight_unit == null ? "gr" : product.weight_unit})</div>
-                                            <p>{product.weight != null && product.weight != "0.00" ? product.weight : null}</p>
+                                            <p>{product.weight !== null && product.weight !== "0.00" ? product.weight : null}</p>
                                         </li>
                                         {
-                                            product.unit_quantity != null ?
+                                            product.unit_quantity !== null ?
                                                 <li>
                                                     <div>{product.unit}</div><p>{product.unit_quantity}</p>
                                                 </li> :
 
-                                                product.unit != null && product.unit != "" ?
+                                                product.unit !== null && product.unit !== "" ?
                                                     <li>
                                                         <div>{t('productos.unidades')}</div>
-                                                        <p>{product.unit != null ? product.unit : null}</p>
+                                                        <p>{product.unit !== null ? product.unit : null}</p>
                                                     </li> : null
 
                                         }
@@ -114,7 +114,7 @@ const DetailProduct = ({ product, t }) => {
                                     <input
                                         type="number"
                                         name="units"
-                                        placeholder="máximo 1000"
+                                        placeholder={t('productos.max')}
                                         ref={
                                             register({
                                                 min: 1, max: 1000,
@@ -136,7 +136,10 @@ const DetailProduct = ({ product, t }) => {
                                             product.business && product.business.length > 0 ?
                                                 product.business.map(item => (
                                                     <div className="business-choose">
-                                                        <button type="button"><img className="detail-product" src={`https://` + item.url} alt="" />{item.name}</button>
+                                                        <button type="button">
+                                                            <img className="detail-product" src={`https://` + item.url} alt="" />
+                                                            {i18n.language === 'es' ? item.name : item.name_en}
+                                                        </button>
                                                     </div>
                                                 )) : ''
                                         }
