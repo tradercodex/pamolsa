@@ -102,7 +102,7 @@ const GalleryNewPaper = () => {
             </div>
             <div className="container-detail_new news-search" style={{ background: "#f9f9f9" }}>
                 <h2>{t('noticias.galeria')}</h2>
-                <p className="text">Visita nuestra galería de artículos impresos, conoce más de nosotros y de nuestro compromiso con la sociedad y le medioambiente</p>
+                <p className="text">{t('noticias.galeria_texto')}</p>
                 {showModal && <ModalView closeModal={closeModal} img={img} />}
                 <div className="" style={{
                     position: "relative",

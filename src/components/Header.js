@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom'
 import Logo from '../images/svg/logo'
 import Cart from '../images/svg/cart'
 import Quote from '../images/svg/quote';
+import QuoteEn from '../images/svg/quote_en';
 
 import '../styles/header.css'
 import Phone from '../images/svg/phone';
@@ -71,7 +72,9 @@ const Header = ({ match, number, t }) => {
                         </div>
                         <div className="options-pm-rs">
                             <div className="Quote-btn">
-                                <Link to="/cotizador"><Quote number={number} /></Link>
+                                <Link to="/cotizador">
+                                    {i18n.language === 'es' ? <Quote number={number} /> : <QuoteEn number={number} />}
+                                </Link>
                             </div>
                             <div className="bars" id="movil">
                                 <BarMovile />
@@ -227,7 +230,9 @@ const Header = ({ match, number, t }) => {
                             </nav>
                             <div className="Options-pm_qe">
                                 <div className="Quote-btn">
-                                    <Link to="/cotizador"><Quote number={number} /></Link>
+                                    <Link to="/cotizador">
+                                        {i18n.language === 'es' ? <Quote number={number} /> : <QuoteEn number={number} />}
+                                    </Link>
                                 </div>
                                 <div className="Ecommerce-btn">
                                     <a href="https://www.pamolsaexpress.com" target="_blank"><Cart />{t('header.ecommerce')}</a>

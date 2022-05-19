@@ -12,13 +12,14 @@ import axios from 'axios'
 import { useTranslation } from 'react-i18next';
 
 const ProductByLine = ({ match, location }) => {
+    const { t } = useTranslation();
 
     let pathname = location.pathname
     let line = match.params.id
     let lineFoodService = line == 1 ? "Food Service" : ''
-    let lineBioform = line == 2 ? "Ecoamigable Bioform" : ''
+    let lineBioform = line == 2 ? "Bioform" : ''
     let lineIndustrial = line == 4 ? "Industrial" : ''
-    let lineAgroIndustrial = line == 3 ? "Agroindustrial" : ''
+    let lineAgroIndustrial = line == 3 ? t('home.agroindustrial') : ''
 
     const productsByFilter = useSelector(state => state.products.productsByFilter)
     const typesBusiness = useSelector(state => state.products.typesBusiness)
@@ -177,7 +178,6 @@ const ProductByLine = ({ match, location }) => {
             </ul>
         )
     }
-    const { t } = useTranslation();
 
     return (
         <>

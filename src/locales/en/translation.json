@@ -1,8 +1,11 @@
 {
     "ver_mas": "Learn more",
+    "leer_mas": "Read more",
     "telefonos": "Telephones",
     "llamanos": "Call us",
     "volver": "Back",
+    "derechos": "© All rights reserved 2022 - Made by Arquimarkets",
+    "redes": "Our social networks",
     "header": {
         "nosotros": "About us",
         "productos": "Products",
@@ -25,7 +28,7 @@
         "horario": "Hours: Monday to Friday from 8:30 AM to 5:30 PM"
     },
     "home": {
-        "bioform": "The most practical and secure for tus creations",
+        "bioform": "The most practical and secure for your creations",
         "conoce_mas": "Learn more",
         "delivery": "We deliver to your business door",
         "horario": "Hours: Monday to Friday from 8:30 AM to 5:30 PM",
@@ -35,12 +38,12 @@
         "linea_bioform": "Eco-friendly Line Bioform",
         "linea_food": "Food Service Line",
         "linea_industrial": "Industrial Consume Line",
-        "linea_agro": "Agribusiness Line",
+        "linea_agro": "Agro-industrial Line",
         "negocios": "Business we attend",
         "ver": "Product catalog",
-        "agroindustrial": "Agribusiness",
+        "agroindustrial": "Agro-industrial",
         "puntos_venta": "Our sales points closers to you",
-        "puntos_venta_cercano": "Insert you ubication and find the sale point closer to you",
+        "puntos_venta_cercano": "Insert your location and find the sale point closer to you",
         "puntos_venta_cercano_buscar": "Search",
         "como_hacemos": "How do we make our packaging?",
         "nuestras_certificaciones": "Our Certifications",
@@ -60,7 +63,10 @@
         "catalogo_agro": "Agro-industrial Catalogue",
         "catalogo_food": "Food Service Catalogue",
         "catalogo_bioform": "Bioform Catalogue",
-        "catalogo_industrial": "Industrial Catalogue"
+        "catalogo_industrial": "Industrial Catalogue",
+        "ingresa_ubicacion_buscador": "Insert your district or department - (Example: Callao)",
+        "puntos_venta_buscador": "Points closers to you",
+        "encontro_punto_venta_buscador": "One point of sale was found nearby"
     },
     "nosotros": {
         "nosotros": "About us",
@@ -128,7 +134,7 @@
         "linea_bioform": "Eco-friendly Line Bioform",
         "linea_food": "Food Service Line",
         "linea_industrial": "Industrial Consume Line",
-        "linea_agro": "Agribusiness Line",
+        "linea_agro": "Agro-industrial Line",
         "ver_mas": "Learn more",
         "populares": "Most populars",
         "populares_1": "Best selling products",
@@ -142,6 +148,10 @@
         "cuantas_unidades": "How many units do you need",
         "agregar_cotizador": "Add to quoter",
         "cotizador": "Quoter",
+        "cotizacion": "quote",
+        "no_productos_cotizacion": "You don't have products to quote yet, we recommend you to add the products you want to quote.",
+        "cotizacion_enviada": "Your quotation was successfully sent.",
+        "cotizacion_enviada_mensaje": "We will get back to you very soon with the ideal quote for you.",
         "productos": "products",
         "producto": "Product",
         "producto_mayuscula": "PRODUCT",
@@ -162,6 +172,8 @@
     },
     "form": {
         "nombres": "First and last names",
+        "nombre": "First name",
+        "apellidos": "Last name",
         "telefono": "Telephone",
         "mail": "E-mail",
         "departamento": "Department",
@@ -170,6 +182,8 @@
         "privacidad": "I accept",
         "privacidad_1": "the personal data protection policy",
         "privacidad_2": "of this website",
+        "adjuntar": "Attach",
+        "adjunta_cv": "Attach your CV",
         "enviar": "Send"
     },
     "sostenibilidad": {
@@ -239,7 +253,8 @@
         "postular": "Can I apply for more than one vacancy?",
         "postular_res": "The important thing is you analyze whether your experience, knowledge and training match with the requested vacancy. If you match, you can apply.",
         "paga": "Does Pamolsa pay all benefits according to law?",
-        "paga_res": "Yes, we are a formal company and comply with paying all the benefits required by law; additional to corporate benefits that the company grants to our collaborators."
+        "paga_res": "Yes, we are a formal company and comply with paying all the benefits required by law; additional to corporate benefits that the company grants to our collaborators.",
+        "envia_postulacion": "Submit your application"
     },
     "clientes": {
         "clientes": "Clients",
@@ -284,7 +299,8 @@
         "diciembre": "December",
         "visualizar": "Visualise",
         "galeria": "Journalistic Gallery",
-        "galeria_desc": "See our gallery of printed articles."
+        "galeria_desc": "See our gallery of printed articles.",
+        "galeria_texto": "Visit our gallery of printed articles, learn more about us and our commitment to society and the environment"
     },
     "contacto": {
         "contacto": "Contact",

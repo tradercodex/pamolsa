@@ -210,8 +210,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                                         <h4>{t('home.noticias')}</h4>
                                                     </div>
                                                     <h6>{(i18n.language === 'es' ? item.title : item.title_en).substring(0, 60) + '...'}</h6>
-                                                    <div className="text-new">{ReactHtmlParser((item.body).substring(0, 150) + '...')}</div>
-                                                    <Link to={`/noticias/${item.id}`}>{t('ver_mas')}</Link>
+                                                    <Link to={`/noticias/${item.id}`}>{t('leer_mas')}</Link>
                                                 </div>
                                                 <div className="post-new_slick">
                                                     <div className="square-slick">
@@ -408,7 +407,6 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                     </div>
                                     <div className="img-container">
                                         <ChartSbl />
-                                        {/*<img src={require('../images/img/chartsbl.png')} alt="chartsbl" />*/}
                                     </div>
                                 </div>
                             </div>
@@ -451,7 +449,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                                             <div className="card-body">
                                                                 <h6>{i18n.language === 'es' ? item.title : item.title_en}</h6>
                                                                 <p>{ReactHtmlParser((i18n.language === 'es' ? item.description : item.description_en).substring(0, 100) + '...')}</p>
-                                                                <Link to={`/sostenibilidad/comunidad/${item.id}`} style={{ marginTop: "0px" }}>{t('ver_mas')}</Link>
+                                                                <Link to={`/sostenibilidad/comunidad/${item.id}`} style={{ marginTop: "0px" }}>{t('leer_mas')}</Link>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -487,7 +485,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                                             </div>
                                                         }
                                                         <div className="info-post-activity">
-                                                            <p>{item.title}</p>
+                                                            <p>{i18n.language === 'es' ? item.title : item.title_en}</p>
                                                             <span>{item.subtitle}</span>
                                                         </div>
                                                     </div>
@@ -529,9 +527,9 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                                         <img src={`https://` + item.file.url || require('../images/img/work.webp')} alt="imagen" />
                                                     </div>
                                                     <div className="card-body">
-                                                        <h6>{item.title}</h6>
-                                                        <p className="text">{ReactHtmlParser((item.description).substring(0, 110) + '...')}</p>
-                                                        <a href={item.job_functions} target="_blank" rel="noopener noreferrer">{t('ver_mas')}</a>
+                                                        <h6>{i18n.language === 'es' ? item.title : item.title_en}</h6>
+                                                        <p className="text">{ReactHtmlParser((i18n.language === 'es' ? item.description : item.description_en).substring(0, 110) + '...')}</p>
+                                                        <a href={item.job_functions} target="_blank" rel="noopener noreferrer">{t('leer_mas')}</a>
                                                     </div>
                                                 </div>
                                             </div>

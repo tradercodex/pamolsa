@@ -19,10 +19,10 @@ const ChartSbl = (props) => (
 				".st0{fill:#4d4d4c}.st1{font-family:'Amble-Regular'}.st2{font-size:14.2609px}.st3{fill:#8db72e}.st5{font-family:'Amble-Light'}"
 			}
 		</style>
-		<text transform="translate(389.009 232.1)" className="st0 st1 st2">
+		<text transform="translate(389.009 232.1)" className="st0 st1 st2 st5">
 			{"2021"}
 		</text>
-		<text transform="translate(342.158 232.1)" className="st0 st1 st2">
+		<text transform="translate(342.158 232.1)" className="st0 st1 st2 st5">
 			{"2020"}
 		</text>
 		<path

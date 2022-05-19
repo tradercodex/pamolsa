@@ -57,7 +57,7 @@ const SidebarProducts = ({
                         materials && materials ?
                             materials.map(material => (
                                 <div key={material.id} className="material">
-                                    <label className="con1" htmlFor=""><span>{material.name}</span>
+                                    <label className="con1" htmlFor=""><span>{i18n.language === 'es' ? material.name : material.name_en}</span>
                                         <input className="only-one" name="line" value={material.id} onClick={(e) => toggleMaterialsProductsRadio(e, material.id)} style={{ marginRight: "10px" }} type="checkbox" />
                                         <span className="checkmark"></span>
                                     </label>

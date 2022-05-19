@@ -368,7 +368,7 @@ button.send-cart__incomplete {
 
 ul.form-wizard-steps span.quote::after {
   position: absolute;
-  content: 'Cotizador';
+  content: attr(data-content);
   color: #4D4D4C;
   top: 20px;
   right: -14px;
@@ -378,7 +378,7 @@ ul.form-wizard-steps span.quote::after {
 
 ul.form-wizard-steps span.quote-aditional::after {
   position: absolute;
-  content: 'Datos adicionales';
+  content: attr(data-content);
   color: #4D4D4C;
   width: 400px;
   top: 20px;

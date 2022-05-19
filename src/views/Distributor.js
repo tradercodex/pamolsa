@@ -89,7 +89,7 @@ const Distributor = () => {
             <div className="container-grid distributor">
                 <div className="info-container">
                     <div className="title-blue-container" style={{ marginBottom: "40px" }}>
-                        {ubication.latitude ? <h3 style={{ width: "700px" }}>Se encontro un punto de venta cercano</h3> : <h3>Puntos de venta más cercanos</h3>}
+                        {ubication.latitude ? <h3 style={{ width: "700px" }}>{t('home.encontro_punto_venta_buscador')}</h3> : <h3>{t('home.puntos_venta_buscador')}</h3>}
                     </div>
                 </div>
             </div>
