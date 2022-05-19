@@ -1,8 +1,11 @@
 {
     "ver_mas": "Ver más",
+    "leer_mas": "Ver más",
     "telefonos": "Teléfonos",
     "llamanos": "Llámanos",
     "volver": "Volver",
+    "derechos": "© Todos los derechos reservados 2022 - Make by Arquimarkets",
+    "redes": "Nuestras redes",
     "header": {
         "nosotros": "Nosotros",
         "productos": "Productos",
@@ -60,7 +63,10 @@
         "catalogo_agro": "Catálogo Agroindustrial",
         "catalogo_food": "Catálogo Food Service",
         "catalogo_bioform": "Catálogo Bioform",
-        "catalogo_industrial": "Catálogo Industrial"
+        "catalogo_industrial": "Catálogo Industrial",
+        "ingresa_ubicacion_buscador": "Ingresa tu distrito o departamento - Ejemplo (Callao)",
+        "puntos_venta_buscador": "Puntos de venta más cercanos",
+        "encontro_punto_venta_buscador": "Se encontró un punto de venta cercano"
     },
     "nosotros": {
         "nosotros": "Nosotros",
@@ -142,6 +148,11 @@
         "cuantas_unidades": "Cuantas unidades necesitas",
         "agregar_cotizador": "Agregar al cotizador",
         "cotizador": "Cotizador",
+        "cotizacion": "cotización",
+        "no_productos_cotizacion": "Aún no tienes productos para cotizar, te recomendamos agregar los productos que deseas.",
+        "cotizacion_enviada": "Su cotización fue enviada con éxito.",
+        "cotizacion_enviada_mensaje": "Muy pronto le responderemos con una cotización ideal para usted.",
+        "datos_adicionales": "Datos adicionales",
         "productos": "productos",
         "producto": "Producto",
         "producto_mayuscula": "PRODUCTO",
@@ -162,6 +173,8 @@
     },
     "form": {
         "nombres": "Nombres y apellidos",
+        "nombre": "Nombres",
+        "apellidos": "Apellidos",
         "telefono": "Teléfono",
         "mail": "E-mail",
         "departamento": "Departamento",
@@ -170,6 +183,8 @@
         "privacidad": "Acepto la",
         "privacidad_1": "política de protección de datos",
         "privacidad_2": "personales de este sitio",
+        "adjuntar": "Adjuntar",
+        "adjunta_cv": "Adjuntar tu cv",
         "enviar": "Enviar"
     },
     "sostenibilidad": {
@@ -239,7 +254,8 @@
         "postular": "¿Puedo postular a más de una vacante?",
         "postular_res": "Lo importante es que analices si tu experiencia, conocimientos y formación se ajusten a lo que se solicita en la vacante. Si cumples con ello puedes postular.",
         "paga": "¿Pamolsa paga todos los beneficios de acuerdo a ley?",
-        "paga_res": "Sí, somos una empresa formal y cumplimos con pagar todos los beneficios que la ley exige; adicional a beneficios corporativos que la empresa otorga."
+        "paga_res": "Sí, somos una empresa formal y cumplimos con pagar todos los beneficios que la ley exige; adicional a beneficios corporativos que la empresa otorga.",
+        "envia_postulacion": "¡Envia tu postulación!"
     },
     "clientes": {
         "clientes": "Clientes",
@@ -284,7 +300,8 @@
         "diciembre": "Diciembre",
         "visualizar": "Visualizar",
         "galeria": "Galería periodística",
-        "galeria_desc": "Observa nuestra galería de artículos impresos."
+        "galeria_desc": "Observa nuestra galería de artículos impresos.",
+        "galeria_texto": "Visita cnuestra galería de artículos impresos, conoce más de nosotros y de nuestro compromiso con la sociedad y le medioambiente."
     },
     "contacto": {
         "contacto": "Contacto",

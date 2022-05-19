@@ -18,6 +18,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next';
 
 const ProductsByType = ({ match }) => {
+    const { t } = useTranslation();
 
     const type_id = match.params.id
     const nameTypeProduct = match.params.name
@@ -184,8 +185,6 @@ const ProductsByType = ({ match }) => {
             </ul>
         )
     }
-    const { t } = useTranslation();
-
 
     return (
         <Fragment>

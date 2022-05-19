@@ -99,11 +99,11 @@ const Footer = ({ t }) => {
               target="_blank"
               href="http://www.arquimarkets.com/"
             >
-              <p>© Todos los derechos reservados 2022 - Make by Arquimarkets</p>
+              <p>{t('derechos')}</p>
             </a>
           </div>
           <div className="copy-right">
-            <div className="span">Nuestras redes</div>
+            <div className="span">{t('redes')}</div>
             <div className="socials">
               <a
                 rel="noopener noreferrer"
@@ -131,7 +131,7 @@ const Footer = ({ t }) => {
         </div>
         <div className="copy-socials movil">
           <div className="copy-right">
-            <div className="span">Nuestras redes</div>
+            <div className="span">{t('redes')}</div>
             <div className="socials">
               <a
                 rel="noopener noreferrer"
@@ -162,7 +162,7 @@ const Footer = ({ t }) => {
               target="_blank"
               href="http://www.arquimarkets.com/"
             >
-              <p>© Todos los derechos reservados 2022 - Make by Arquimarkets</p>
+              <p>{t('derechos')}</p>
             </a>
           </div>
         </div>
@@ -282,11 +282,11 @@ const Footer = ({ t }) => {
               target="_blank"
               href="http://www.arquimarkets.com/"
             >
-              <p>© Todos los derechos reservados 2022 - Make by Arquimarkets</p>
+              <p>{t('derechos')}</p>
             </a>
           </div>
           <div className="copy-right">
-            <div className="span">Nuestras redes</div>
+            <div className="span">{t('redes')}</div>
             <div className="socials">
               <a
                 rel="noopener noreferrer"
@@ -314,7 +314,7 @@ const Footer = ({ t }) => {
         </div>
         <div className="copy-socials movil">
           <div className="copy-right">
-            <div className="span">Nuestras redes</div>
+            <div className="span">{t('redes')}</div>
             <div className="socials">
               <a
                 rel="noopener noreferrer"
@@ -345,7 +345,7 @@ const Footer = ({ t }) => {
               target="_blank"
               href="http://www.arquimarkets.com/"
             >
-              <p>© Todos los derechos reservados 2022 - Make by Arquimarkets</p>
+              <p>{t('derechos')}</p>
             </a>
           </div>
         </div>

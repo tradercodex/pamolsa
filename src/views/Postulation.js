@@ -201,7 +201,7 @@ const Postulation = () => {
                         width: "443px",
                         fontFamily: "Amble-bold"
                     }}
-                >¡Envia tu postulación!</h4>
+                >{t('trabaja.envia_postulacion')}</h4>
 
                 <form onSubmit={handleSubmit(sendSubmit)}>
                     <div className="form-container" style={{ padding: "0px", maxWidth: "1440px", marginTop: "40px" }}>
@@ -209,7 +209,7 @@ const Postulation = () => {
                             <div>
                                 <input
                                     type="text"
-                                    placeholder="Nombres"
+                                    placeholder={t('form.nombre')}
                                     name="name"
                                     ref={
                                         register({
@@ -227,7 +227,7 @@ const Postulation = () => {
                             <div>
                                 <input
                                     type="text"
-                                    placeholder="Apellidos"
+                                    placeholder={t('form.apellidos')}
                                     name="lastname"
                                     ref={
                                         register({
@@ -247,7 +247,7 @@ const Postulation = () => {
                             <div>
                                 <input
                                     type="email"
-                                    placeholder="Correo Electrónico"
+                                    placeholder={t('form.mail')}
                                     name="email"
                                     ref={
                                         register({
@@ -434,12 +434,12 @@ const Postulation = () => {
                                     gridColumn: "1/4"
                                 }}
                             >
-                                <div className="input-value" id="inputval">Adjuntar tu cv</div>
+                                <div className="input-value" id="inputval">{t('form.adjunta_cv')}</div>
                                 <input
                                     type="file"
                                     id="cv"
                                     className="upload"
-                                    placeholder="Adjuntar tu cv"
+                                    placeholder={t('form.adjunta_cv')}
                                     name="file"
                                     ref={
                                         register({
@@ -452,7 +452,7 @@ const Postulation = () => {
                                 />
                             </div>
                             <div className="btn-adj" style={{ gridColumn: "4/5", position: "relative", textAlign: "center" }}>
-                                <label htmlFor="cv">Adjuntar</label>
+                                <label htmlFor="cv">{t('form.adjuntar')}</label>
                             </div>
                             <span className="complete-form" style={{ top: "-10px" }}>
                                 {errors.file && errors.file.message}

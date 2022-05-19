@@ -118,7 +118,7 @@ const Search = ({ search, onTextChanged, renderSuggestions, display, options, ma
                     <div className="Search">
                         <div className="Search-container distributor">
                             <MarkerSearch />
-                            <input onKeyUp={searchPressUbication} type="text" name="ubication" onChange={onChangeUbication} placeholder="Ingresa tu distrito o departamento - Ejemplo (Callao)" />
+                            <input onKeyUp={searchPressUbication} type="text" name="ubication" onChange={onChangeUbication} placeholder={t('home.ingresa_ubicacion_buscador')} />
                         </div>
                     </div> : ''
             }

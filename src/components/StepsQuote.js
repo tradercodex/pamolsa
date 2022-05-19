@@ -10,6 +10,7 @@ import {
     getProvince,
     getDistrict,
 } from "../redux/actions/place";
+import i18n from "i18next";
 
 const StepsQuote = ({
     number,
@@ -97,8 +98,8 @@ const StepsQuote = ({
                                 <div class="form-wizard">
                                     <div class="form-wizard-header movil">
                                         <ul class="list-unstyled form-wizard-steps clearfix">
-                                            <li class="active"><span className="quote"></span></li>
-                                            <li className=""><span className="quote-aditional"></span></li>
+                                            <li class="active"><span className="quote" data-content={t('productos.cotizador')}></span></li>
+                                            <li className=""><span className="quote-aditional" data-content={t('productos.datos_adicionales')}></span></li>
                                         </ul>
                                     </div>
                                     <form onSubmit={handleSubmit(sendCartItems)} className="form-quote">
@@ -125,7 +126,7 @@ const StepsQuote = ({
                                                                             type="text"
                                                                             disabled
                                                                             name="quantity"
-                                                                            placeholder={`${item.quantity} unidades`}
+                                                                            placeholder={`${item.quantity} ` + t('productos.unidades')}
                                                                             onChange={handleChange}
                                                                         />
                                                                     </div>
@@ -146,7 +147,7 @@ const StepsQuote = ({
                                             <div className="container-send-quote">
                                                 <div className="container-dates">
                                                     <div className="container-dates-title">
-                                                        <h6>Datos de la cotización</h6>
+                                                        <h6>{t('productos.datos_cotizacion')}</h6>
                                                     </div>
                                                     <div className="container-form-dates">
                                                         <div className="input">
@@ -312,7 +313,7 @@ const StepsQuote = ({
                                                                             <h3>{item.name}</h3>
                                                                             <p>{t('productos.cantidad')}</p>
                                                                             <div className="input" style={{ marginTop: "10px" }}>
-                                                                                <p>{item.quantity}</p>
+                                                                                <p>{`${item.quantity} ` + t('productos.unidades')}</p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -325,8 +326,8 @@ const StepsQuote = ({
                                                 </div>
                                             </div>
                                             <div class="form-group clearfix send-options-quote">
-                                                <a class="form-wizard-previous-btn float-left" target="_blank" href="http://www.pamolsaexpress.com/">Ir a Ecommerce</a>
-                                                <button className="send-cart complete" type="submit" >{t('form.enviar')} cotización</button>
+                                                <a class="form-wizard-previous-btn float-left" target="_blank" href="http://www.pamolsaexpress.com/">{t('home.ecommerce')}</a>
+                                                <button className="send-cart complete" type="submit" >{t('form.enviar')} {t('productos.cotizacion')}</button>
                                             </div>
                                         </fieldset>
                                     </form>
@@ -335,11 +336,11 @@ const StepsQuote = ({
                         </div>
                     </section> :
                     <div className="no-quote" style={{ paddingBottom: "100px" }}>
-                        <p>Aún no tienes productos para cotizar, te recomedamos agregar los productos que deseas </p>
+                        <p>{t('productos.no_productos_cotizacion')}</p>
                         <Link className="quote-back" to="/productos">Productos</Link>
                     </div>
             }
-            {showModal && <ModalSendCart closeModal={closeModal} title="Su cotización fue enviada con exito" subtitle="Muy pronto le responderemos con una cotización ideal para usted" classModalName="thanks-cotizacion" />}
+            {showModal && <ModalSendCart closeModal={closeModal} title={t('productos.cotizacion_enviada')} subtitle={t('productos.cotizacion_enviada_mensaje')} classModalName="thanks-cotizacion" />}
         </>
     );
 }
