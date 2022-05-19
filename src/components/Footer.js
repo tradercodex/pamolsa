@@ -3,12 +3,14 @@ import Logo from "../images/svg/logo";
 import { Link as LinkRouter } from 'react-router-dom';
 import { Link } from 'react-scroll'
 import Book from '../images/img/bookclaims.png';
+import BookEn from '../images/img/bookclaims_en.svg';
 import "../styles/footer.css";
 import ArrowFooter from "../images/svg/arrowfooter";
 import declaration from "../pdf/declaracion.pdf";
 import procedimiento from "../pdf/procedimiento.pdf";
 import politicasig from '../images/img/politicasig.webp'
 import politicaproteccion from "../pdf/politicaproteccion.pdf";
+import i18n from '../../src/i18n';
 
 const Footer = ({ t }) => {
   return (
@@ -23,7 +25,7 @@ const Footer = ({ t }) => {
               <Link to="header" smooth={true} duration={1000} offset={-2000}><LinkRouter
                 to="/libro-de-reclamaciones"
               >
-                <img src={Book} alt="libro de reclamaciones" width="210px" height="120px" />
+                <img src={i18n.language === 'es' ? Book : BookEn} alt="libro de reclamaciones" width="210px" height="120px" />
               </LinkRouter></Link>
             </div>
           </div>
@@ -177,7 +179,7 @@ const Footer = ({ t }) => {
               <Link to="header" smooth={true} duration={1000} offset={-2000}><LinkRouter
                 to="/libro-de-reclamaciones"
               >
-                <img src={Book} alt="libro de reclamaciones" />
+                <img src={i18n.language === 'es' ? Book : BookEn} alt="libro de reclamaciones" width="210px" height="120px" />
               </LinkRouter></Link>
             </div>
           </div>
