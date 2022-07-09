@@ -1,11 +1,13 @@
 import Axios from 'axios';
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState, useRef } from 'react';
+import proteccion from "../pdf/politicaproteccion.pdf";
 import './../styles/claims.css'
 
 const ClaimsForm = ({ t }) => {
 
     const [messageSuccess, setMessageSuccess] = useState('')
     const [messageError, setMessageError] = useState('')
+    const [agree, setAgree] = useState(false);
     const [send, setSend] = useState({
         nombre: '',
         documento: '',
@@ -34,16 +36,32 @@ const ClaimsForm = ({ t }) => {
         var box = document.querySelectorAll(".box");
         var next = document.querySelectorAll(".nextButton");
         var previous = document.querySelectorAll(".previousButton");
-        var inputField = document.querySelectorAll("input");
+        var inputField = document.querySelectorAll("input[type=text], input[type=checkbox], textarea, select");
 
         var isInputValid = [];
 
         function init(index) {
             next[index].addEventListener('click', function () {
-                for (var i = index; i < inputField.length; i++) {
-                    isInputValid.push(!!inputField[i].value);
+                for (var i = 0; i < inputField.length; i++) {
+                    if (inputField[i].type === 'checkbox') {
+                        isInputValid.push(inputField[i].value === 'true' ? true : false);
+                    } else {
+                        isInputValid.push(inputField[i].value.length > 0 ? true : false);
+                    }
                 }
-                if (isInputValid[index] && isInputValid[index + 1]) {
+                let isInputValidRange;
+                switch (index) {
+                    case 0:
+                        isInputValidRange = isInputValid.slice(0, 6)
+                        break;
+                    case 1:
+                        isInputValidRange = isInputValid.slice(6, 9)
+                        break;
+                    case 2:
+                        isInputValidRange = isInputValid.slice(9, 14)
+                        break;
+                }
+                if (isInputValidRange.every(v => v === true)) {
                     box[index].style.animation = "fadeOut 1s";
                     setTimeout(function () {
                         box[index].style.display = "none";
@@ -81,11 +99,15 @@ const ClaimsForm = ({ t }) => {
 
         load(0);
         load(1);
-    }, [])
+    }, [agree])
 
     const validateFirst = () => {
-        if (send.nombre === "" || send.documento === "" || send.email === "") {
-            setMessageError("Todos los campos son obligatorios");
+        if (!agree || send.nombre === "" || send.documento === "" || send.email === "") {
+            let message = "Todos los campos son obligatorios"
+            if (!agree) {
+                message = "Debe aceptar la política de protección de datos"
+            }
+            setMessageError(message);
             setTimeout(() => {
                 setMessageError("");
             }, 2000)
@@ -100,7 +122,7 @@ const ClaimsForm = ({ t }) => {
             setMessageError("Todos los campos son obligatorios")
             setTimeout(() => {
                 setMessageError("");
-            }, 1000)
+            }, 2000)
             return false;
         } else {
             return true
@@ -132,13 +154,12 @@ const ClaimsForm = ({ t }) => {
             detalle: send.detalle
         }
 
-        console.log(dataSend)
         if (send.nombre === "" || send.email === "" ||
             send.tiporeclamo === "" || send.nropedido === "" || send.codigo === "" || send.job === "" || send.detalle === "") {
             setMessageError("Te faltan campos aún por llenar")
             setTimeout(() => {
                 setMessageError("");
-            }, 1000)
+            }, 2000)
             return false;
         }
 
@@ -161,6 +182,26 @@ const ClaimsForm = ({ t }) => {
                             <div className="box">
                                 <h6>Cuéntenos su caso para escalarlo con servicio al cliente.</h6>
                                 <p>1) Identificación del consumidor reclamante</p>
+                                <div className='conditions'>
+                                    <input
+                                        type="checkbox"
+                                        name="condition"
+                                        onClick={(e) => setAgree(e.target.checked)}
+                                        value={agree}
+                                    />
+                                    <p>
+                                        {t('form.privacidad')}{" "}
+                                        <a
+                                            style={{ textDecoration: "none", color: "rgb(0 159 227)" }}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            href={proteccion}
+                                        >
+                                            {t('form.privacidad_1')}
+                                        </a>{" "}
+                                        {t('form.privacidad_2')}
+                                    </p>
+                                </div>
                                 <form>
                                     <div className="inputBox">
                                         <label>Nombre</label>
@@ -181,7 +222,7 @@ const ClaimsForm = ({ t }) => {
                                     <div className="inputBox large">
                                         <label>Padre o Madre: *(Para el caso de menores de edad)</label>
                                         <select name="apoderado" onChange={handleChange} required>
-                                            <option value="">-</option>
+                                            <option value="N/A">-</option>
                                             <option value="Padre">Padre</option>
                                             <option value="Madre">Madre</option>
                                         </select>
@@ -203,7 +244,6 @@ const ClaimsForm = ({ t }) => {
                                     <div className="inputBox">
                                         <label>Tipo de bien:</label>
                                         <select name="tipobien" onChange={handleChange} required>
-                                            <option value="">-</option>
                                             <option value="Producto">{t('productos.producto')}</option>
                                             <option value="Servicio">Servicio</option>
                                         </select>
@@ -226,7 +266,6 @@ const ClaimsForm = ({ t }) => {
                                     <div className="inputBox">
                                         <label>Tipo de reclamación:</label>
                                         <select name="tiporeclamo" onChange={handleChange} required>
-                                            <option value="">-</option>
                                             <option value="Reclamo">Reclamo</option>
                                             <option value="Queja">Queja</option>
                                         </select>

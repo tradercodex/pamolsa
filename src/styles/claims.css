@@ -203,6 +203,23 @@
     margin-bottom: 10px;
 }
 
+.conditions {
+    font-family: 'Amble';
+    color: #808291;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.conditions p {
+    margin-left: 10px;
+}
+
+.conditions input {
+    margin-left: 10px;
+}
+
 @media screen and (max-width: 768px) {
     .content-claims {
         padding: 50px 0px 10px 0px;
