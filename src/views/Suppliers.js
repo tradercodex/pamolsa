@@ -16,7 +16,7 @@ const Suppliers = () => {
 
     const cart = useSelector(state => state.cart)
     const [cartItems, setCartItems] = useState(cart.cartItems)
-
+    const [showPdfModal, setPdfModal] = useState(false);
 
     useEffect(() => {
 
@@ -39,6 +39,14 @@ const Suppliers = () => {
     let number = Object.keys(cartItems).length
     const { t } = useTranslation();
 
+    const handleShowPdfModal = () => {
+        setPdfModal(true)
+    }
+
+    const closePdfModal = () => {
+        setPdfModal(false)
+    }
+
     return (
         <Fragment>
             <div style={{ overflow: "hidden" }}>
@@ -47,6 +55,9 @@ const Suppliers = () => {
                     procedimiento={procedimiento}
                     politicasig={politicasig}
                     politicaproteccion={politicaproteccion}
+                    closePdfModal={closePdfModal}
+                    showPdfModal={showPdfModal}
+                    handleShowPdfModal={handleShowPdfModal}
                     t={t}
                 />
                 <Footer t={t} />
