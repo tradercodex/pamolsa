@@ -138,7 +138,7 @@ const ClaimsForm = ({ t }) => {
     }
 
     const sendData = async () => {
-        if (send.nropedido === "" || send.codigo === "" || send.job === "" || send.detalle === "") {
+        if (send.nropedido === "" || send.codigo === "" || send.job === "" || send.detalle === "" || send.tiporeclamo === "") {
             setMessageError("Te faltan campos aún por llenar")
             setTimeout(() => {
                 setMessageError("");
