@@ -138,6 +138,14 @@ const ClaimsForm = ({ t }) => {
     }
 
     const sendData = async () => {
+        if (send.nropedido === "" || send.codigo === "" || send.job === "" || send.detalle === "") {
+            setMessageError("Te faltan campos aún por llenar")
+            setTimeout(() => {
+                setMessageError("");
+            }, 2000)
+            return false;
+        }
+
         const dataSend = {
             nombre: send.nombre,
             documento: send.documento,
@@ -152,15 +160,6 @@ const ClaimsForm = ({ t }) => {
             codigo: send.codigo,
             job: send.job,
             detalle: send.detalle
-        }
-
-        if (send.nombre === "" || send.email === "" ||
-            send.tiporeclamo === "" || send.nropedido === "" || send.codigo === "" || send.job === "" || send.detalle === "") {
-            setMessageError("Te faltan campos aún por llenar")
-            setTimeout(() => {
-                setMessageError("");
-            }, 2000)
-            return false;
         }
 
         try {
