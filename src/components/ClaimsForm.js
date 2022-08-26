@@ -243,7 +243,8 @@ const ClaimsForm = ({ t }) => {
                                     <div className="inputBox">
                                         <label>Tipo de bien:</label>
                                         <select name="tipobien" onChange={handleChange} required>
-                                            <option value="Producto">{t('productos.producto')}</option>
+                                            <option value="">Seleccione</option>
+                                            <option value="Producto">Producto</option>
                                             <option value="Servicio">Servicio</option>
                                         </select>
                                     </div>
@@ -265,6 +266,7 @@ const ClaimsForm = ({ t }) => {
                                     <div className="inputBox">
                                         <label>Tipo de reclamación:</label>
                                         <select name="tiporeclamo" onChange={handleChange} required>
+                                            <option value="">Seleccione</option>
                                             <option value="Reclamo">Reclamo</option>
                                             <option value="Queja">Queja</option>
                                         </select>
