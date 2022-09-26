@@ -109,7 +109,7 @@ const DetailProduct = ({ product, t }) => {
                                         }
                                     </ul>
                                 </div>
-                                <div className="whant-need">
+                                {/**<div className="whant-need">
                                     <label>{t('productos.cuantas_unidades')}</label>
                                     <input
                                         type="number"
@@ -128,7 +128,7 @@ const DetailProduct = ({ product, t }) => {
                                     <span className="complete-form">
                                         {errors.units && errors.units.message}
                                     </span>
-                                </div>
+                                </div>**/}
                                 <div className="used whant-need">
                                     <label>{t('productos.tipos_negocio')}</label>
                                     <div className="categories-business used">
@@ -145,9 +145,9 @@ const DetailProduct = ({ product, t }) => {
                                         }
                                     </div>
                                 </div>
-                                <div className="btn-cotize">
+                                {/**<div className="btn-cotize">
                                     <button type="submit">{t('productos.agregar_cotizador')}</button>
-                                </div>
+                                    </div>**/}
                             </form>
                         </div>
                     </div>

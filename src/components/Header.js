@@ -71,11 +71,11 @@ const Header = ({ match, number, t }) => {
                             </div>
                         </div>
                         <div className="options-pm-rs">
-                            <div className="Quote-btn">
+                            {/**<div className="Quote-btn">
                                 <Link to="/cotizador">
                                     {i18n.language === 'es' ? <Quote number={number} /> : <QuoteEn number={number} />}
                                 </Link>
-                            </div>
+                            </div>**/}
                             <div className="bars" id="movil">
                                 <BarMovile />
                             </div>
@@ -99,7 +99,7 @@ const Header = ({ match, number, t }) => {
                                             className={
                                                 pathname === "/productos" ||
                                                     url === `/productos/${rut}` ||
-                                                    url === "/cotizador" ||
+                                                    //url === "/cotizador" ||
                                                     url === `/productos/linea/${id}` ||
                                                     url === `/productos/${rut}/${id}` ||
                                                     url === `/productos/negocio/${rut}/${id}` ||
@@ -133,7 +133,7 @@ const Header = ({ match, number, t }) => {
                                             className={
                                                 pathname === "/productos" ||
                                                     url === `/productos/${rut}` ||
-                                                    url === "/cotizador" ||
+                                                    //url === "/cotizador" ||
                                                     url === `/productos/linea/${id}` ||
                                                     url === `/productos/${rut}/${id}` ||
                                                     url === `/productos/negocio/${rut}/${id}` ||
@@ -212,7 +212,7 @@ const Header = ({ match, number, t }) => {
                                         className={
                                             pathname === "/productos" ||
                                                 url === `/productos/${rut}` ||
-                                                url === "/cotizador" ||
+                                                //url === "/cotizador" ||
                                                 url === `/productos/linea/${id}` ||
                                                 url === `/productos/${rut}/${id}` ||
                                                 url === `/productos/negocio/${rut}/${id}` ||
@@ -229,11 +229,11 @@ const Header = ({ match, number, t }) => {
                                 </ul>
                             </nav>
                             <div className="Options-pm_qe">
-                                <div className="Quote-btn">
+                                {/**<div className="Quote-btn">
                                     <Link to="/cotizador">
                                         {i18n.language === 'es' ? <Quote number={number} /> : <QuoteEn number={number} />}
                                     </Link>
-                                </div>
+                                </div>**/}
                                 <div className="Ecommerce-btn">
                                     <a href="https://www.pamolsaexpress.com" target="_blank"><Cart />{t('header.ecommerce')}</a>
                                 </div>
