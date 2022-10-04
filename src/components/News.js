@@ -15,6 +15,7 @@ import StbNewsEn from '../images/svg/sostenibilitynews_en';
 import ReactHtmlParser from 'react-html-parser';
 import ReactPlayer from 'react-player/lazy';
 import i18n from "i18next";
+import BannerWikiempaques from '../images/svg/Banner-Wikiempaques.svg'
 
 const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communities, activities, closeVideoModal, handleShowVideoModal, showVideoModal, t }) => {
     let modalRef = null;
@@ -317,7 +318,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
             }
             {
                 pathname === "/sostenibilidad" ?
-                    <div className="News-pm_us" onClick={handleClose} style={{ background: "#fff" }}>
+                    (<div className="News-pm_us" onClick={handleClose} style={{ background: "#fff" }}>
                         <div className="square-us" style={{ background: "#fff", height: "3920px" }}></div>
                         <div className="square-stb">
                             <div className="container-grid sbl" style={{ paddingTop: "290px", alignItems: "center", paddingBottom: "100px" }}>
@@ -495,8 +496,16 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                 </div>
                             </div>
                         </div>
-                    </div> : ''
+                    </div>) : ''
             }
+
+            {
+                pathname === "/sostenibilidad" && (
+                    <a href="https://wikiempaques.carvajalempaques.com/" target="_blank" rel="noopener noreferrer">
+                        <img src={BannerWikiempaques} alt="Banner Wikiempaques" />
+                    </a>)
+            }
+
             {
                 pathname === "/trabaja-con-nosotros" ?
                     <div className="container workwithme" style={{ background: "#F9F9F9" }}>
