@@ -15,7 +15,7 @@ import StbNewsEn from '../images/svg/sostenibilitynews_en';
 import ReactHtmlParser from 'react-html-parser';
 import ReactPlayer from 'react-player/lazy';
 import i18n from "i18next";
-import BannerWikiempaques from '../images/svg/Banner-Wikiempaques.svg'
+import BannerWikiempaques from '../images/img/BannerWikiempaques.png'
 
 const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communities, activities, closeVideoModal, handleShowVideoModal, showVideoModal, t }) => {
     let modalRef = null;
