@@ -180,7 +180,7 @@ button.gm-control-active, .gm-svpc, .gm-style-mtc, a div img {
     }
 }
 
-@media screen and (max-height: 1064px) and (max-width: 768px) {
+@media screen and (max-height: 1064px) and (max-width: 1050px) {
     .Rotate-slick.Us.Main .info-slick.Us.ls {
         top: 740px !important;
         left: -125px !important;
