@@ -131,7 +131,7 @@
 }
 
 .post-pet-sbl.activity {
-    padding: 100px 0px 80px 0px;
+    padding: 0px 0px 300px 10px;
 }
 
 .tree-new {
@@ -177,7 +177,7 @@
 }
 
 .new-slick.work.activity {
-    grid-column: 2/6 !important;
+    grid-column: 2/7 !important;
     right: 100px;
 }
 
@@ -1586,7 +1586,7 @@
         left: -420px !important;
     }
     .new-slick.work.activity {
-        grid-column: 2/7 !important;
+        grid-column: 2/8 !important;
     }
 }
 
