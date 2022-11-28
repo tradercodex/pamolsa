@@ -78,15 +78,15 @@ const Slicks = ({ match, banners, t }) => {
                 <div className="Rotate-slick first xs ss">
                   <div
                     className="info-slick second"
-                    style={{ top: "850px", left: "200px" }}
+                    style={{ top: "1184px", left: "200px" }}
                   >
-                    <h2>Bioform</h2>
-                    <p style={{ marginBottom: "50px" }}>
+                    {/* <h2>Bioform</h2> */}
+                    {/* <p style={{ marginBottom: "50px" }}>
                       {t('home.bioform')}
-                    </p>
+                    </p> */}
                     <div className="more-btn">
                       <a
-                        style={{ background: "#498332" }}
+                        style={{ background: "#fff", color: "#3F8332", marginTop: "10vh" }}
                         target="_blank"
                         rel="noopener noreferrer"
                         href="http://www.bioform.pe/"
