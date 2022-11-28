@@ -64,6 +64,9 @@ const KnownVideo = ({ closeVideoModal, handleShowVideoModal, showVideoModal, t }
                             <p>
                                 {t('home.comprometidos')}
                             </p>
+                            <p>
+                                {t('home.comprometidos_2')}
+                            </p>
                         </div>
                     </div>
                     <div className="certifications-companies">
