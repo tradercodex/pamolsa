@@ -1,9 +1,19 @@
 import React, { Fragment } from 'react'
 import InformDownload from '../images/svg/informdownload'
 import ModalLineaEtica from './ModalLineaEtica';
+import ModalKitProveedor from './ModalKitProveedor';
 
 const SuppliersDocuments = ({
-    procedimiento, politicasig, politicaproteccion, closePdfModal, showPdfModal, handleShowPdfModal, t
+    procedimiento,
+    politicasig,
+    politicaproteccion,
+    closePdfModal,
+    showPdfModal,
+    handleShowPdfModal,
+    closePdfModalPolitica,
+    showPdfModalPolitica,
+    handleShowPdfModalPolitica,
+    t
 }) => {
 
     return (
@@ -27,7 +37,7 @@ const SuppliersDocuments = ({
                             <p>Política SIG</p>
                         </div>
                         <div className="box-informs-pdf">
-                            <a rel="noopener noreferrer" href="https://www.carvajal.com/proveedores/" target="_blank"><InformDownload /></a>
+                            <a rel="noopener noreferrer" onClick={handleShowPdfModalPolitica} target="_blank"><InformDownload /></a>
                             <p>Kit de proveedor</p>
                         </div>
                         <div className="box-informs-pdf">
@@ -37,6 +47,7 @@ const SuppliersDocuments = ({
                     </div>
                 </div>
                 {showPdfModal && <ModalLineaEtica closeModal={closePdfModal} title="test" t={t} />}
+                {showPdfModalPolitica && <ModalKitProveedor closeModal={closePdfModalPolitica} title="test" t={t} />}
             </div>
         </Fragment>
     );

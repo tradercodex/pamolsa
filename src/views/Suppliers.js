@@ -17,6 +17,7 @@ const Suppliers = () => {
     const cart = useSelector(state => state.cart)
     const [cartItems, setCartItems] = useState(cart.cartItems)
     const [showPdfModal, setPdfModal] = useState(false);
+    const [showPdfModalPolitica, setPdfModalPolitica] = useState(false);
 
     useEffect(() => {
 
@@ -47,6 +48,14 @@ const Suppliers = () => {
         setPdfModal(false)
     }
 
+    const handleShowPdfModalPolitica = () => {
+        setPdfModalPolitica(true)
+    }
+
+    const closePdfModalPolitica = () => {
+        setPdfModalPolitica(false)
+    }
+
     return (
         <Fragment>
             <div style={{ overflow: "hidden" }}>
@@ -58,6 +67,9 @@ const Suppliers = () => {
                     closePdfModal={closePdfModal}
                     showPdfModal={showPdfModal}
                     handleShowPdfModal={handleShowPdfModal}
+                    closePdfModalPolitica={closePdfModalPolitica}
+                    showPdfModalPolitica={showPdfModalPolitica}
+                    handleShowPdfModalPolitica={handleShowPdfModalPolitica}
                     t={t}
                 />
                 <Footer t={t} />
