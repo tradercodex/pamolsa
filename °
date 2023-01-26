@@ -2,7 +2,7 @@
   "name": "pamolsa",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://www.pamolsa.com.pe",
   "dependencies": {
     "@date-io/date-fns": "^1.3.13",
     "@date-io/moment": "^2.10.6",
@@ -66,8 +66,7 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ],
-    "proxy": "https://0.0.0.0:3000"
+    ]
   },
   "devDependencies": {
     "@types/react-gtm-module": "^2.0.0"
