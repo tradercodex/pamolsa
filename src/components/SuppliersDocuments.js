@@ -1,7 +1,36 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import InformDownload from "../images/svg/informdownload";
 import ModalLineaEtica from "./ModalLineaEtica";
 import ModalKitProveedor from "./ModalKitProveedor";
+import ModalProveedor from "./ModalProveedor";
+
+const DetalleProtDatos = () => {
+  return (
+    <div className="informs-pdfs">
+      <h6>Protección de datos personales</h6>
+      <div className="box-informs-pdf" style={{ width: "100%" }}>
+        <a
+          href="https://docs.google.com/document/d/116Md1ci6l8yfNF9dg3AeAbPW6dmCJlDI/edit?usp=share_link&ouid=103251919007214006606&rtpof=true&sd=true"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <InformDownload />
+        </a>
+        <p>Política de protección de datos personales</p>
+      </div>
+      <div className="box-informs-pdf" style={{ width: "100%" }}>
+        <a
+          href="https://docs.google.com/document/d/116Md1ci6l8yfNF9dg3AeAbPW6dmCJlDI/edit?usp=share_link&ouid=103251919007214006606&rtpof=true&sd=true"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <InformDownload />
+        </a>
+        <p>Solicitud ARCO</p>
+      </div>
+    </div>
+  );
+};
 
 const SuppliersDocuments = ({
   procedimiento,
@@ -15,6 +44,8 @@ const SuppliersDocuments = ({
   handleShowPdfModalPolitica,
   t,
 }) => {
+  const [openModalDatos, setOpenModalDatos] = useState(false);
+
   return (
     <Fragment>
       <div
@@ -72,46 +103,26 @@ const SuppliersDocuments = ({
               <p>Línea ética</p>
             </div>
             <div className="box-informs-pdf">
-              <a href="#" target="_blank">
+              <button
+                style={{
+                  border: "none",
+                  background: "none",
+                  cursor: "pointer",
+                }}
+                onClick={() => setOpenModalDatos(true)}
+              >
                 <InformDownload />
-              </a>
-              <p style={{ textDecoration: "none" }}>
-                Protección de datos personales
-              </p>
+              </button>
+              <p>Protección de datos personales</p>
             </div>
-            <ul
-              style={{
-                marginLeft: "4rem",
-                display: "block",
-                lineHeight: "30px",
-                fontFamily: "Amble",
-                color: "#4D4D4C",
-                fontSize: "14px",
-                marginTop: "-5px",
-                listStyleType: "none",
-              }}
-            >
-              <li>
-                <a
-                  href="https://drive.google.com/file/d/1jgs2LOvvb0W5u7o_3xQE-fscZVb4CGLX/view?usp=share_link"
-                  target="_blank"
-                  style={{ color: "#4D4D4C" }}
-                >
-                  Política de protección de datos personales
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://docs.google.com/document/d/116Md1ci6l8yfNF9dg3AeAbPW6dmCJlDI/edit?usp=share_link&ouid=103251919007214006606&rtpof=true&sd=true"
-                  target="_blank"
-                  style={{ color: "#4D4D4C" }}
-                >
-                  Solicitud ARCO
-                </a>
-              </li>
-            </ul>
           </div>
         </div>
+        {openModalDatos && (
+          <ModalProveedor
+            closeModal={setOpenModalDatos}
+            children={<DetalleProtDatos />}
+          />
+        )}
         {showPdfModal && (
           <ModalLineaEtica closeModal={closePdfModal} title="test" t={t} />
         )}
