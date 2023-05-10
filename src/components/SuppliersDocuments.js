@@ -10,7 +10,7 @@ const DetalleProtDatos = () => {
       <h6>Protección de datos personales</h6>
       <div className="box-informs-pdf" style={{ width: "100%" }}>
         <a
-          href="https://docs.google.com/document/d/116Md1ci6l8yfNF9dg3AeAbPW6dmCJlDI/edit?usp=share_link&ouid=103251919007214006606&rtpof=true&sd=true"
+          href="https://drive.google.com/file/d/1jgs2LOvvb0W5u7o_3xQE-fscZVb4CGLX/view?usp=share_link"
           target="_blank"
           rel="noopener noreferrer"
         >
