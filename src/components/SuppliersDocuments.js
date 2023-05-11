@@ -20,7 +20,7 @@ const DetalleProtDatos = () => {
       </div>
       <div className="box-informs-pdf" style={{ width: "100%" }}>
         <a
-          href="https://docs.google.com/document/d/116Md1ci6l8yfNF9dg3AeAbPW6dmCJlDI/edit?usp=share_link&ouid=103251919007214006606&rtpof=true&sd=true"
+          href="https://docs.google.com/document/d/1tM7O2AeIx5b9g8mFODfAVUZkTPGwNSo5/edit?usp=share_link&ouid=103251919007214006606&rtpof=true&sd=true"
           target="_blank"
           rel="noopener noreferrer"
         >
