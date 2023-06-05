@@ -581,7 +581,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                             fontFamily: "Amble-light"
                                         }}
                                     >{t('trabaja.no_encontraste_desc')}</p>
-                                    <a href="/trabaja-con-nosotros/postúlate">
+                                    <a href="/trabaja-con-nosotros/postulate">
                                         <button
                                             style={{
                                                 color: "#fff",

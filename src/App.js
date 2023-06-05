@@ -79,7 +79,7 @@ function App() {
           <Route exact path="/productos/:name" component={ProductosBySearch} />
           <Route exact path="/sostenibilidad" component={Sustainability} />
           <Route exact path="/trabaja-con-nosotros" component={WorkWithUs} />
-          <Route exact path="/trabaja-con-nosotros/postúlate" component={Postulation} />
+          <Route exact path="/trabaja-con-nosotros/postulate" component={Postulation} />
           <Route exact path="/clientes" component={Clients} />
           <Route exact path="/noticias" component={News} />
           <Route exact path="/contacto" component={Contact} />
