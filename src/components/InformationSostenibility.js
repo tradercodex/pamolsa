@@ -9,6 +9,8 @@ import PlantSbl from '../images/svg/plantasbl'
 import InformDownload from '../images/svg/informdownload'
 import Slider from "react-slick";
 import i18n from "i18next";
+import sostenibilidad2022 from "../pdf/sostenibilidad2022.pdf";
+
 
 const InformationSostenibility = ({ sostenibilidad2019, sostenibilidad2020, sostenibilidad2021, t }) => {
 
@@ -98,6 +100,11 @@ const InformationSostenibility = ({ sostenibilidad2019, sostenibilidad2020, sost
                         <div className="box-informs-pdf">
                             <a rel="noopener noreferrer" href={sostenibilidad2021} target="_blank"><InformDownload /></a>
                             <p>{t('sostenibilidad.sostenibilidad')} 2021</p>
+                        </div>
+
+                        <div className="box-informs-pdf">
+                            <a rel="noopener noreferrer" href={sostenibilidad2022} target="_blank"><InformDownload /></a>
+                            <p>{t('sostenibilidad.sostenibilidad')} 2022</p>
                         </div>
                     </div>
                 </div>
