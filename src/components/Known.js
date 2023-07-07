@@ -7,7 +7,7 @@ import { Link as LinkRouter } from 'react-router-dom';
 import { Link } from 'react-scroll'
 import ModalFoodService from './ModalFoodService';
 import industrial from '../pdf/catalogoindustrial.pdf'
-import agroindustrial from '../pdf/catalogoagroindustrial.pdf'
+import agroindustrial from '../pdf/CATALOGO-AGRO-PDF-2023.pdf'
 
 const Known = ({
     closePdfModal, showPdfModal,
