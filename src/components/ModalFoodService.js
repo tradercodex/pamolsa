@@ -1,30 +1,34 @@
-import React from 'react'
-import CloseModal from '../images/svg/closemodal';
-import InformDownload from '../images/svg/informdownload'
-import foodService1 from '../pdf/catalogofoodservice.pdf'
-import bioform from '../pdf/bioform.pdf'
+import React from "react";
+import CloseModal from "../images/svg/closemodal";
+import InformDownload from "../images/svg/informdownload";
+import foodService1 from "../pdf/CATALOGO-FOOD-SERVICE-JULIO-2023.pdf";
+import bioform from "../pdf/bioform.pdf";
 
 const ModalFoodService = ({ closeModal, title, t }) => {
-    return (
-        <div className="content-modal pdfs" style={{ top: 0 }}>
-            <div className="modal-send">
-                <CloseModal closeModal={closeModal} />
-                <div className="info-content">
-                    <div className="informs-pdfs">
-                        <h6>{title}</h6>
-                        <div className="box-informs-pdf" style={{ width: "100%" }}>
-                            <a href={foodService1} target="_blank" rel="noopener noreferrer"><InformDownload /></a>
-                            <p>{t('home.catalogo_food')}</p>
-                        </div>
-                        <div className="box-informs-pdf" style={{ width: "100%" }}>
-                            <a href={bioform} target="_blank" rel="noopener noreferrer"><InformDownload /></a>
-                            <p>{t('home.catalogo_bioform')}</p>
-                        </div>
-                    </div>
-                </div>
+  return (
+    <div className="content-modal pdfs" style={{ top: 0 }}>
+      <div className="modal-send">
+        <CloseModal closeModal={closeModal} />
+        <div className="info-content">
+          <div className="informs-pdfs">
+            <h6>{title}</h6>
+            <div className="box-informs-pdf" style={{ width: "100%" }}>
+              <a href={foodService1} target="_blank" rel="noopener noreferrer">
+                <InformDownload />
+              </a>
+              <p>{t("home.catalogo_food")}</p>
             </div>
+            <div className="box-informs-pdf" style={{ width: "100%" }}>
+              <a href={bioform} target="_blank" rel="noopener noreferrer">
+                <InformDownload />
+              </a>
+              <p>{t("home.catalogo_bioform")}</p>
+            </div>
+          </div>
         </div>
-    );
-}
+      </div>
+    </div>
+  );
+};
 
 export default ModalFoodService;
