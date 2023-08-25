@@ -581,7 +581,7 @@ const News = ({ handleShowVideoModalSostenibility, match, vacants, news, communi
                                             fontFamily: "Amble-light"
                                         }}
                                     >{t('trabaja.no_encontraste_desc')}</p>
-                                    <a href="/trabaja-con-nosotros/postulate">
+                                    <a href="https://www.magneto365.com/co/empresas/pamolsa" target='_blank'>
                                         <button
                                             style={{
                                                 color: "#fff",
