@@ -8,6 +8,9 @@ const ClaimsForm = ({ t }) => {
   const [messageError, setMessageError] = useState("");
   const [agree, setAgree] = useState(false);
   const [send, setSend] = useState({
+    clienteDirecto: "",
+    ruc: "",
+    razonSocial: "",
     nombre: "",
     documento: "",
     telefono: "",
@@ -160,6 +163,9 @@ const ClaimsForm = ({ t }) => {
     }
 
     const dataSend = {
+      clienteDirecto: send.clienteDirecto,
+      ruc: send.ruc,
+      razonSocial: send.razonSocial,
       nombre: send.nombre,
       documento: send.documento,
       telefono: send.telefono,
