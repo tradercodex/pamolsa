@@ -8,6 +8,7 @@ const ClaimsForm = ({ t }) => {
   const [messageError, setMessageError] = useState("");
   const [agree, setAgree] = useState(false);
   const [send, setSend] = useState({
+    condition: "",
     clienteDirecto: "",
     ruc: "",
     razonSocial: "",
@@ -37,8 +38,9 @@ const ClaimsForm = ({ t }) => {
     var box = document.querySelectorAll(".box");
     var next = document.querySelectorAll(".nextButton");
     var previous = document.querySelectorAll(".previousButton");
+    // input[type=checkbox]
     var inputField = document.querySelectorAll(
-      "input[type=text], input[type=checkbox], textarea, select"
+      "input[type=text], textarea, select"
     );
 
     var isInputValid = [];
@@ -106,23 +108,33 @@ const ClaimsForm = ({ t }) => {
     load(1);
   }, [agree]);
 
+  const listClienteDirecto = ["Si", "No"];
+
   const validateFirst = () => {
+    let message = "Todos los campos son obligatorios";
+
+    if(!agree)  {
+      setMessageError("Debe aceptar la política de protección de datos");
+      return false;
+    }
+
+    if (listClienteDirecto.includes(send.clienteDirecto) === false) {
+      setMessageError("Debe seleccionar si es un cliente directo o no");
+      return false;
+    }
+
     if (
-      !agree ||
       send.nombre === "" ||
       send.documento === "" ||
       send.email === ""
     ) {
-      let message = "Todos los campos son obligatorios";
-      if (!agree) {
-        message = "Debe aceptar la política de protección de datos";
-      }
       setMessageError(message);
       setTimeout(() => {
         setMessageError("");
       }, 2000);
       return false;
     } else {
+      console.log("send", send);
       return true;
     }
   };
@@ -207,13 +219,14 @@ const ClaimsForm = ({ t }) => {
                 </h6>
                 <p>1) Identificación del consumidor reclamante</p>
                 <div className="conditions">
-                  <input
-                    type="checkbox"
-                    name="condition"
-                    onClick={(e) => setAgree(e.target.checked)}
-                    value={agree}
-                  />
-                  <p>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="condition"
+                      onClick={(e) => setAgree(e.target.checked)}
+                      value={agree}
+                      style={{ margin: "5px" }}
+                    />
                     {t("form.privacidad")}{" "}
                     <a
                       style={{
@@ -227,9 +240,8 @@ const ClaimsForm = ({ t }) => {
                       {t("form.privacidad_1")}
                     </a>{" "}
                     {t("form.privacidad_2")}
-                  </p>
+                  </label>
                 </div>
-
                 <form>
                   <div>
                     <h6
@@ -247,67 +259,33 @@ const ClaimsForm = ({ t }) => {
                         marginBottom: "15px",
                       }}
                     >
-                      <label
-                        style={{
-                          display: "flex",
-                          maxWidth: "100%",
-                          marginBottom: "5px",
-                          gap: "0.8rem",
-                          color: "#808291",
-                          fontSize: "1rem",
-                        }}
-                      >
-                        <input
-                          type="checkbox"
+                      {listClienteDirecto.map((item, index) => (
+                        <label
+                          key={index}
                           style={{
-                            display: "block",
-                            padding: "6px 12px",
-                            fontSize: "14px",
-                            lineHeight: "1.42857143",
-                            color: "#555",
+                            maxWidth: "100%",
+                            margin: "5px",
+                            color: "#808291",
+                            fontSize: "1rem",
                           }}
-                          name="clienteDirecto"
-                          onChange={handleChange}
-                          value="Si"
-                          required
-                        />{" "}
-                        Si
-                      </label>
-                    </div>
-                    <div
-                      style={{
-                        marginBottom: "15px",
-                      }}
-                    >
-                      <label
-                        style={{
-                          display: "flex",
-                          maxWidth: "100%",
-                          marginBottom: "5px",
-                          gap: "0.8rem",
-                          color: "#808291",
-                          fontSize: "1rem",
-                        }}
-                      >
-                        <input
-                          type="checkbox"
-                          style={{
-                            display: "block",
-                            padding: "6px 12px",
-                            fontSize: "14px",
-                            lineHeight: "1.42857143",
-                            color: "#555",
-                          }}
-                          name="clienteDirecto"
-                          onChange={handleChange}
-                          value="No"
-                          required
-                        />{" "}
-                        No
-                      </label>
+                        >
+                          <input
+                            type="checkbox"
+                            name="clienteDirecto"
+                            value={item}
+                            onChange={handleChange}
+                            checked={item === send.clienteDirecto}
+                            style={{
+                              margin: "5px",
+                            }}
+                          />
+                          {item}
+                        </label>
+                      ))}
                     </div>
                   </div>
                   <div className="inputBox"></div>
+
                   <div className="inputBox">
                     <label>RUC</label>
                     <input
