@@ -19,7 +19,7 @@ const ClaimsForm = ({ t }) => {
     apoderado: "",
     monto: "",
     tipobien: "",
-    descripcion: "",
+    description: "",
     tiporeclamo: "",
     nropedido: "",
     codigo: "",
@@ -39,8 +39,9 @@ const ClaimsForm = ({ t }) => {
     var next = document.querySelectorAll(".nextButton");
     var previous = document.querySelectorAll(".previousButton");
     // input[type=checkbox]
+    //
     var inputField = document.querySelectorAll(
-      "input[type=text], textarea, select"
+      "input[type=text], textarea, select, input[type=checkbox]"
     );
 
     var isInputValid = [];
@@ -48,24 +49,26 @@ const ClaimsForm = ({ t }) => {
     function init(index) {
       next[index].addEventListener("click", function () {
         for (var i = 0; i < inputField.length; i++) {
-          if (inputField[i].type === "checkbox") {
-            isInputValid.push(inputField[i].value === "true" ? true : false);
-          } else {
-            isInputValid.push(inputField[i].value.length > 0 ? true : false);
-          }
+          //   if (inputField[i].type === "checkbox") {
+          //     isInputValid.push(inputField[i].value === "true" ? true : false);
+          //   } else {
+          isInputValid.push(inputField[i].value.length > 0 ? true : false);
+          //   }
         }
         let isInputValidRange;
+        // eslint-disable-next-line default-case
         switch (index) {
           case 0:
-            isInputValidRange = isInputValid.slice(0, 6);
+            isInputValidRange = isInputValid.slice(0, 9);
             break;
           case 1:
-            isInputValidRange = isInputValid.slice(6, 9);
+            isInputValidRange = isInputValid.slice(10, 13);
             break;
           case 2:
-            isInputValidRange = isInputValid.slice(9, 14);
+            isInputValidRange = isInputValid.slice(13, 19);
             break;
         }
+        console.log(isInputValidRange);
         if (isInputValidRange.every((v) => v === true)) {
           box[index].style.animation = "fadeOut 1s";
           setTimeout(function () {
@@ -138,16 +141,17 @@ const ClaimsForm = ({ t }) => {
       setMessageError("");
     }, 2000);
   };
-  
+
   const validateSecond = () => {
-    if (send.monto === "" || send.tipobien === "" || send.descripcion === "") {
-      setMessageError("Todos los campos son obligatorios");
-      setTimeout(() => {
-        setMessageError("");
-      }, 2000);
+    console.log("send", send.description.length);
+    if (send.description.length === 0) {
+      messageFade("descripción es obligatorio.");
       return false;
-    } else {
-      return true;
+    }
+
+    if (send.monto === "" || send.tipobien === "") {
+      messageFade("Todos los campos son obligatorios");
+      return false;
     }
   };
 
@@ -175,6 +179,8 @@ const ClaimsForm = ({ t }) => {
     }
 
     const dataSend = {
+      condition: send.condition,
+      clienteDirecto: send.clienteDirecto,
       clienteDirecto: send.clienteDirecto,
       ruc: send.ruc,
       razonSocial: send.razonSocial,
@@ -185,7 +191,7 @@ const ClaimsForm = ({ t }) => {
       apoderado: send.apoderado,
       monto: send.monto,
       tipobien: send.tipobien,
-      descripcion: send.descripcion,
+      descripcion: send.description,
       tiporeclamo: send.tiporeclamo,
       nropedido: send.nropedido,
       codigo: send.codigo,
@@ -390,10 +396,16 @@ const ClaimsForm = ({ t }) => {
                   <div className="inputBox large">
                     <label>Descripción:</label>
                     <textarea
-                      type="text"
-                      name="descripcion"
-                      onChange={handleChange}
-                      required
+                      name="description"
+                      onChange={(e) =>
+                        setSend({
+                          ...send,
+                          description: e.target.value,
+                        })
+                      }
+                      value={send.description}
+                      require
+                      rows={3}
                     />
                   </div>
                 </form>
@@ -402,7 +414,10 @@ const ClaimsForm = ({ t }) => {
                 )}
                 <div className="buttonSection">
                   <button className="previousButton">Anterior</button>
-                  <button onClick={validateSecond} className="nextButton">
+                  <button
+                    onClick={() => validateSecond()}
+                    className="nextButton"
+                  >
                     {t("productos.siguiente")}
                   </button>
                 </div>
