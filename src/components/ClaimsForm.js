@@ -8,7 +8,7 @@ const ClaimsForm = ({ t }) => {
   const [messageError, setMessageError] = useState("");
   const [agree, setAgree] = useState(false);
   const [send, setSend] = useState({
-    condition: "",
+    condition: false,
     clienteDirecto: "",
     ruc: "",
     razonSocial: "",
@@ -113,25 +113,18 @@ const ClaimsForm = ({ t }) => {
   const validateFirst = () => {
     let message = "Todos los campos son obligatorios";
 
-    if(!agree)  {
-      setMessageError("Debe aceptar la política de protección de datos");
+    if (!send.condition) {
+      messageFade("Debe aceptar la política de protección de datos");
       return false;
     }
 
     if (listClienteDirecto.includes(send.clienteDirecto) === false) {
-      setMessageError("Debe seleccionar si es un cliente directo o no");
+      messageFade("Debe seleccionar si es un cliente directo o no");
       return false;
     }
 
-    if (
-      send.nombre === "" ||
-      send.documento === "" ||
-      send.email === ""
-    ) {
-      setMessageError(message);
-      setTimeout(() => {
-        setMessageError("");
-      }, 2000);
+    if (send.nombre === "" || send.documento === "" || send.email === "") {
+      messageFade(message);
       return false;
     } else {
       console.log("send", send);
@@ -139,6 +132,13 @@ const ClaimsForm = ({ t }) => {
     }
   };
 
+  const messageFade = (message) => {
+    setMessageError(message);
+    setTimeout(() => {
+      setMessageError("");
+    }, 2000);
+  };
+  
   const validateSecond = () => {
     if (send.monto === "" || send.tipobien === "" || send.descripcion === "") {
       setMessageError("Todos los campos son obligatorios");
@@ -223,8 +223,9 @@ const ClaimsForm = ({ t }) => {
                     <input
                       type="checkbox"
                       name="condition"
-                      onClick={(e) => setAgree(e.target.checked)}
-                      value={agree}
+                      value={true}
+                      onChange={handleChange}
+                      checked={send.condition}
                       style={{ margin: "5px" }}
                     />
                     {t("form.privacidad")}{" "}
